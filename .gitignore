@@ -1,1 +1,12 @@
 Reading
+PhDTemplateLATEX
+*.aux
+*.toc
+*.synctex.gz
+*.log
+*.lof
+*.lot
+*.out
+*.pdf
+.DS_Store
+*.nlo
