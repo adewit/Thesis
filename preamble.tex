@@ -3,6 +3,7 @@
 \usepackage{morefloats,subfig,afterpage}
 \usepackage{mathrsfs} % script font
 \usepackage{verbatim}
+\usepackage[parfill]{parskip}
 
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
@@ -52,11 +53,13 @@
 \DeclareRobustCommand{\AtoZh}{\HepProcess{ \PHiggsps \to \PZ \PHiggslight}\xspace}
 \DeclareRobustCommand{\AtoZhtolltautau}{\HepProcess{ \PHiggsps \to \PZ \PHiggslight \to \Plepton \Plepton \Pgt \Pgt}\xspace}
 \DeclareRobustCommand{\emu}{\Pe\Pmu\xspace}
+\DeclareRobustCommand{\ee}{\Pe\Pe\xspace}
+\DeclareRobustCommand{\mumu}{\Pmu\Pmu\xspace}
 \DeclareRobustCommand{\mutau}{\Pmu$\Pgt_{h}$\xspace}
 \DeclareRobustCommand{\etau}{\Pe$\Pgt_{h}$\xspace}
 \DeclareRobustCommand{\tautau}{$\Pgt_{h}\Pgt_{h}$\xspace}
 \DeclareRobustCommand{\mumu}{\Pmu\Pmu \xspace}
-\DeclareRobustCommand{\Zellell}{\HepProcess{ \PZ/\PZ \to \Plepton \Plepton}\xspace}
+\DeclareRobustCommand{\Zellell}{\HepProcess{ \PZ/\Pphotonx \to \Plepton \Plepton}\xspace}
 \DeclareRobustCommand{\Zll}{\HepProcess{ \PZ/\Pphotonx \to ll}\xspace}
 \DeclareRobustCommand{\Ztautau}{\HepProcess{ \PZ/\Pphotonx \to \Pgt \Pgt}\xspace}
 \DeclareRobustCommand{\Wjets}{\PW + jets\xspace}
