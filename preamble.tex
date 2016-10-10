@@ -49,23 +49,34 @@
 \DeclareRobustCommand{\Htohh}{\HepProcess{ \PHiggs \to \PHiggslight \PHiggslight}\xspace}
 \DeclareRobustCommand{\Htohhtobbtautau}{\HepProcess{ \PHiggs \to \PHiggslight \PHiggslight \to \Pbottom \Pbottom \Pgt \Pgt}\xspace}
 \DeclareRobustCommand{\htotautau}{\HepProcess{ \PHiggslight \to \Pgt \Pgt}\xspace}
+\DeclareRobustCommand{\hhtobbtautau}{\HepProcess{ \PHiggslight \to \Pbottom \Pbottom \Pgt \Pgt}\xspace}
 \DeclareRobustCommand{\AHtotautau}{\HepProcess{ \PHiggsps / \PHiggs \to \Pgt \Pgt}\xspace}
 \DeclareRobustCommand{\AtoZh}{\HepProcess{ \PHiggsps \to \PZ \PHiggslight}\xspace}
 \DeclareRobustCommand{\AtoZhtolltautau}{\HepProcess{ \PHiggsps \to \PZ \PHiggslight \to \Plepton \Plepton \Pgt \Pgt}\xspace}
-\DeclareRobustCommand{\emu}{\Pe\Pmu\xspace}
-\DeclareRobustCommand{\ee}{\Pe\Pe\xspace}
-\DeclareRobustCommand{\mumu}{\Pmu\Pmu\xspace}
-\DeclareRobustCommand{\mutau}{\Pmu$\Pgt_{h}$\xspace}
-\DeclareRobustCommand{\etau}{\Pe$\Pgt_{h}$\xspace}
-\DeclareRobustCommand{\tautau}{$\Pgt_{h}\Pgt_{h}$\xspace}
-\DeclareRobustCommand{\mumu}{\Pmu\Pmu \xspace}
+\DeclareRobustCommand{\Zhtolltautau}{\HepProcess{ \PZ \PHiggslight \to \Plepton \Plepton \Pgt \Pgt}\xspace}
+\DeclareRobustCommand{\emu}{\HepProcess{\Pe\Pmu}\xspace}
+\DeclareRobustCommand{\ee}{\HepProcess{\Pe\Pe}\xspace}
+\DeclareRobustCommand{\mumu}{\HepProcess{\Pmu\Pmu}\xspace}
+\newcommand{\mutau}{$\Pgm\Pgt_{h}$\xspace}
+\newcommand{\etau}{$\Pe\Pgt_{h}$\xspace}
+\newcommand{\tautau}{$\Pgt_{h}\Pgt_{h}$\xspace}
+\DeclareRobustCommand{\mumu}{\HepProcess{\Pmu\Pmu} \xspace}
 \DeclareRobustCommand{\Zellell}{\HepProcess{ \PZ/\Pphotonx \to \Plepton \Plepton}\xspace}
 \DeclareRobustCommand{\Zll}{\HepProcess{ \PZ/\Pphotonx \to ll}\xspace}
+\DeclareRobustCommand{\Zmm}{\HepProcess{ \PZ/\Pphotonx \to \Pgm\Pgm}\xspace}
+\DeclareRobustCommand{\Zee}{\HepProcess{ \PZ/\Pphotonx \to \Pe\Pe}\xspace}
 \DeclareRobustCommand{\Ztautau}{\HepProcess{ \PZ/\Pphotonx \to \Pgt \Pgt}\xspace}
 \DeclareRobustCommand{\Wjets}{\PW + jets\xspace}
-\DeclareRobustCommand{\ttbar}{\Ptop \APtop\xspace}
-\DeclareRobustCommand{\WW}{\PW\PW\xspace}
-\DeclareRobustCommand{\WZ}{\PW\PZ\xspace}
-\DeclareRobustCommand{\ZZ}{\PZ\PZ\xspace}
+\DeclareRobustCommand{\ttbar}{\HepProcess{\Ptop\APtop}\xspace}
+\DeclareRobustCommand{\WW}{\HepProcess{\PW\PW}\xspace}
+\DeclareRobustCommand{\WZ}{\HepProcess{\PW\PZ}\xspace}
+\DeclareRobustCommand{\ZZ}{\HepProcess{\PZ\PZ}\xspace}
 \DeclareRobustCommand{\tanb}{$\tan{\beta}$}
+\DeclareRobustCommand{\cosba}{$\cos{\beta-\alpha}$}
+\newcommand{\mA}{$m_{\PHiggsps}$}
+\newcommand{\mH}{$m_{\PHiggs}$}
+\newcommand{\mHplus}{$m_{\PHiggs^{+}}$}
+\newcommand{\mh}{$m_{\PHiggslight}$}
+\newcommand{\pT}{$p_{\text{T}}$}
+\newcommand{\mT}{$m_{\text{T}}$}
 \DeclareRobustCommand{\protonproton}{\Pproton\Pproton\xspace}

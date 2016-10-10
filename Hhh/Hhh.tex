@@ -11,7 +11,7 @@ these interpretations are made in combination with the results of a search for \
 This search will be summarised in this chapter, but will not constitute the main focus.
 Both searches, and their interpretation, are detailed in reference \cite{CMS-HIG-14-034}.
 
-The discovery of the 125 GeV Higgs boson by the ATLAS and CMS collaborations in 2012 (CITATION) has opened up
+The discovery of the 125 GeV Higgs boson by the ATLAS and CMS collaborations in 2012 \cite{HDiscoveryAtlas,HDiscoveryCMS} has opened up
 new possibilities for probing the Higgs sector beyond the Standard Model. In some MSSM scenarios, and some more
 generic type-II 2HDM's, a heavy neutral Higgs boson H can decay to a pair of 125 GeV Higgs bosons for low values
 of \tanb, probing a region of phase space not yet excluded by stringent existing limits. In regions where
@@ -31,14 +31,125 @@ in signal regions with multiple jets. The samples binned in jet multiplicity are
 inclusive samples such that the fraction of events with each jet multiplicity is preserved.
 
 Single top samples were produced with the \texttt{POWHEG} \cite{powheg1,powheg2} generator. Samples of $gg\rightarrow$\Htohhtobbtautau
-were generated in steps of 10 GeV between $m_H = 260 - 350$~GeV using \texttt{PYTHIA 6} \cite{pythia64}. In all of the samples
+were generated in steps of 10 GeV between \mH $= 260 - 350$~GeV using \texttt{PYTHIA 6} \cite{pythia64}. In all of the samples
 \texttt{TAUOLA} \cite{tauola} is used to decay $\tau$s, and parton showering and hadronisation are modelled using \texttt{PYTHIA 6} \cite{pythia64}.
 Minimum bias events generated using \texttt{PYTHIA 6} are added to all MC samples to model additional
 interactions. 
 
 \section{Event selection and categorisation}
 \label{sec:hhh_selection}
-A more detailed description of the physics objects used for this analysis is given in chapter FIXME:write object reco section
+A more detailed description of the physics objects used for this analysis is given in chapter FIXME:write object reco section, 
+in this section only an overview of the event selection is presented.
+
+\subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu-tau channel}}
+\label{sec:hhh_selection_mutau}
+Events in the \mutau channel are first selected by requiring a muon and a 
+hadronic tau. The first step of this selection is a trigger which requires only a muon
+at L1. At the level of the HLT a hadronic tau is also required. This is reconstructed
+with a simpler version of the PF algorithm, and loose isolation requirements are 
+applied. In addition, loose ID and isolation requirements are applied to the muon at 
+this stage. 
+
+In the offline event selection, an oppositely charged \mutau pair is required, 
+separated by $\Delta R > 0.5$.
+The muon is required to have a \pT of at 
+least 20 GeV and $|\eta| < 2.1$, and should be compatible with originating from the 
+primary vertex. This means the impact parameters $d_{xy}$ and $d_{z}$ must be smaller
+than 0.045 and 0.2 cm respectively. Tight muon identification
+criteria and tight isolation requirements $I_{\text{rel}}^{\mu} < 0.1$, as described 
+in section OBJECTS, are applied. The hadronic tau must have a \pT of at least
+20 GeV, $|\eta| < 2.3$, and must have $d_{z} < 0.2$ cm. It is required to pass 
+the decay mode finding identification
+from the HPS algorithm, as described in section OBJECTS. Additionally
+the raw combined isolation, described in the same section, is required to be
+at most 1.5 GeV. To reject $\Pe/\Pgm \rightarrow \Pgt_{h}$ fakes, and to
+reduce the contribution of \Zmm background events, the hadronic tau is 
+also required to pass the tight working point of the anti-$\Pgm$ discriminator
+and the loose working point of the cut--based anti-$\Pe$ discriminator, both
+described in section OBJECTS.
+
+After this selection there is still a chance more than one possible 
+\mutau pair exists
+in the event. If this is the case, the combination with largest 
+\pT$^{\Pgm}$ + \pT$^{\Pgt_{h}}$ is chosen. In order to reduce \Zmm 
+backgrounds further, for cases where the reconstructed hadronic tau originates
+from a misidentified jet, the event is rejected if an opposite--charge pair 
+of lower \pT (at least 15 GeV) muons, passing looser ID and isolation requirements
+than the signal muon, can be formed. Additional vetos, requiring exactly one muon and 
+exactly zero electrons to pass \pT $>10$ GeV and tight ID and isolation requirements, 
+are applied to reduce the \WZ background. 
+
+In addition to the requirements on the di--tau pair, at least 2 jets with \pT$ >20$ GeV are 
+required. No b--tagging requirements are applied at this stage, this will be discussed 
+in more detail in section \ref{sec:hhh_selection_categories}.
+
+
+\subsection{\texorpdfstring{Event selection in the \etau channel}{Event selection in the e-tau channel}}
+\label{sec:hhh_selection_etau}
+Events in the \etau channel are selected by requiring an electron and a hadronic tau.
+As for the \mutau channel the first step of this selection is the trigger, which
+requires an electron at L1, and both an electron and a hadronic tau at HLT. The hadronic
+tau is reconstructed in a similar way to the \mutau channel, and loose ID and isolation requirements
+are also applied to the electron.
+
+Offline, an oppositely charged \etau pair is required, again separated by $\Delta R >0.5$. 
+The electron should have a \pT of at least 24 GeV, $|\eta| < 2.1$, and should
+satisfy $d_{xy} < 0.045$cm and $d_{z} < 0.2$ cm. The electron must pass the tight
+working point of the electron MVA ID discriminator described in section OBJECTS, and the
+relative isolation is required to be $I_{rel}^{\Pe} < 0.1$. The requirements placed on the
+hadronic tau are similar to those required in the \mutau channel, apart from the anti-$\Pgm$ discriminator,
+where the loose working point is required, and the anti--$\Pe$ discriminator, where the medium
+working point of the MVA discriminator is required.
+
+If there is more than one possible \etau pair, the pair with largest \pT$^{\Pe}$+\pT$^{\Pgt_{h}}$
+is taken. Similar additional vetos as in the \mutau channel are applied.
+the event is rejected if an opposite--charge pair of \pT $> 15$ GeV electrons, passing looser ID and
+isolation requirements than the signal electron requirements can be formed. To reduce the \WZ
+background events that have more than one electron or at least one muon passing \pT $>10$ GeV and tight ID and isolation
+requirements are rejected.
+
+In addition to the requirements on the di--tau pair, at least 2 jets with \pT $>20$ GeV are 
+required. 
+
+\subsection{Categorisation}
+\label{sec:hhh_selection_categorisation}
+In both channels an selection on the transverse mass \mT between the electron/muon
+and missing transverse energy, defined as in equation \ref{eqn:hhh_selection_mt}, is applied.
+
+\begin{equation}\label{eqn:hhh_selection_mt}
+m_{\text{T}} = \sqrt{2p_{\text{T}}E_{\text{T}}^{\text{miss}}(1-\cos{\Delta\phi})}
+\end{equation}
+
+Where \pT is the transverse moment of the electron or muon, and $\Delta\phi$ the angle
+between the light lepton and the missing transverse energy.
+In both channels this quantity is required to be smaller than 30 GeV. In events
+where the missing energy and the light lepton are oriented back--to--back, \mT is
+large, whereas it is closer to zero when the two are aligned. In $\PW\rightarrow\ell\nu$
+events, as the W is very heavy, the lepton and neutrino are more likely to emitted back--to--back,
+therefore \mT will be large. For \Ztautau and \htautau events, in a $\tau\rightarrow\ell\nu\nu$ decay 
+the neutrinos are more likely to travel in the same direction as the visible decay products of 
+the tau, due to the smaller mass of the \Pgt compared with the \PW. Therefore requiring the
+transverse mass to be less than 30 GeV reduces the \Wjets background.
+%In this analysis the presence of at least 2 jets increases the relative fraction of \ttbar 
+%background events. Because the missing energy can now originate from multiple
+%heavy objects (two tops) the missing transverse energy alignment is randomised. In some
+%cases the lepton and missing transverse energy can be very much like the W decay
+%topology, whereas in other cases \mT will be lower
+
+After applying the \mT selection, events are divided into three categories to maximise
+sensitivity to the signal: 2jet-0tag (at least 2 jets, exactly 0 of which are b-tagged), 2jet-1tag 
+(at least 2 jets, exactly 1 of which is b-tagged), 2jet-2tag (at least 2 jets, at least 2 of which are b-tagged).
+The 2jet-0tag category does not collect much of the signal and is dominated by 
+backgrounds, the 2jet-2tag category is most sensitive to signal. 
+In signal events, the di--tau pair and di--jet pair 
+are the decay products of an 125 Gev Higgs boson, therefore their invariant
+masses should be close to 125 GeV. To reduce background contributions
+from events where the di--tau or di--jet mass is not compatible with
+125 GeV, requirements are made on the di--jet invariant mass and the di--tau
+invariant mass as reconstructed using the \texttt{SVFit} algorithm (ADD A SECTION ON THIS).
+By requiring $70 < m_{jj} < 150 $GeV and $90 < m_{\Pgt\Pgt} < 150$ GeV a 
+large number of background events can be rejected, while retaining
+most of the signal. This is illustrated in figure SOMETHING.
 
 
 \section{Data to Monte Carlo correction factors}
@@ -46,6 +157,8 @@ A more detailed description of the physics objects used for this analysis is giv
 
 \section{Discriminating variable}
 \label{sec:hhh_discr}
+
+
 
 \section{Background estimation}
 \label{sec:hhh_backgrounds}
@@ -68,12 +181,12 @@ invariant mass of the pair between 60-120 GeV. In case there is more than one po
 pair with invariant mass closest to the \PZ mass is chosen. The \htotautau decay is chosen by selecting
 an oppositely charged pair of isolated leptons in the four channels mentioned earlier. To ensure no overlap
 between different final states is possible, events with additional electrons or muons satisfying the
-$p_{\text{T}}$ and $\eta$ requirements are discarded.
+\pT and $\eta$ requirements are discarded.
 
 To reject some of the backgrounds from misidentified leptons and \ZZ production, a requirement is made
 on the scalar sum of the visible transverse momenta of the two $\tau$ candidates from the \htotautau decay.
 This selection changes by final state and has been chosen to optimise the analysis sensitivity to an 
-\AtoZh signal with $m_A = 220 - 350 $ GeV. Furthermore \ttbar events are discarded by rejecting
+\AtoZh signal with \mA $= 220 - 350 $ GeV. Furthermore \ttbar events are discarded by rejecting
 events with at least one b-tagged jet. 
 
 Remaining backgrounds from \ZZ, triboson and \ttbar\PZ production are estimated using
@@ -81,9 +194,23 @@ Monte Carlo samples. Backgrounds from \PZ+jets %($\ell\ell\tautau$ channel)
 and \WZ+jets %($\ell\ell\mutau$ and $\ell\ell\etau$ channels) 
 events, with at least one misidentified lepton, are estimated from control regions in data.
 
-For signal extraction, the mass of the A boson $m_A$, reconstructed by combining the
+For signal extraction, the mass of the A boson \mA, reconstructed by combining the
 4-vector of the \PZ candidate with the 4-vector of the \Ph -candidate,as obtained by using the 
-\texttt{SVFit} algorithm.
+\texttt{SVFit} algorithm. The expected and observed 95\% confidence level upper limits, for
+all $\ell\ell\tau\tau$ final states combined, is shown in figure \ref{fig:AZhUpperLimits}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_010-a.pdf}
+\caption{The 95\% confidence level expected (dashed) and observed (solid)
+upper limits on the $\sigma \times BR$ for the \AtoZhtolltautau process.
+The green and yellow bands indicate the $\pm 1 \sigma $ and $2\sigma$
+expectations \cite{CMS-HIG-14-034}.}
+\label{fig:AZhUpperLimits}
+\end{center}
+\end{figure}
+
+
 
 More detail on this analysis can be found in reference \cite{CMS-HIG-14-034}.
 
@@ -102,5 +229,135 @@ More detail on this analysis can be found in reference \cite{CMS-HIG-14-034}.
 
 \subsection{Model-dependent results}
 \label{sec:hhh_results_modeldep}
+The results of the analysis are interpreted in two scenarios, the low \tanb MSSM
+scenario, and a type II two--Higgs doublet model (2HDM). 2HDM's are more general
+than the MSSM, are not mativated by supersymmetry, and there are several different types. 
+Of these different classes, type II 2HDM's are most studied
+as the couplings of the MSSM form a subset of the couplings in type II 2HDMs. 
+
+\subsubsection{Interpretation in a type II 2HDM}
+\label{sec:hhh_results_modeldep_2HDM}
+A 2HDM of type II has more free parameters than a specified MSSM scenario: the physical masses of the Higgs bosons (\mh, \mH,
+\mA, \mHplus), the ratio of the vacuum expectation values of the two Higgs doublets (\tanb),
+the CP-even Higgs mixing angle ($\alpha$) and $m_{12}^{2} = m_{\PHiggsps}^{2}[\tan{\beta}/(1+\tan{\beta}^2)]$.
+To leave two free parameters, it is enough to fix the masses of the physical Higgs bosons. For this
+interpretation the assumption that \mA = \mH = \mHplus = $300$~GeV, and \mh = $125$~GeV, is made.
+
+The couplings of the Higgs bosons to quarks and leptons, and of heavy Higgs bosons to other
+particles, are defined by $\alpha$ and $\beta$, as in table \ref{tab:hhh_2HDM_couplings}.
+
+\begin{table}[htdp]
+\begin{center}
+\caption{Couplings in the type II 2HDM}
+\begin{tabular}{@{}ll@{}}
+%\toprule
+\textbf{Decay} & \textbf{Coupling}\\
+\midrule
+$\PHiggslight \rightarrow$ up--type quarks & $\text{SM coupling} \times \frac{\cos{\alpha}}{\sin{\beta}}$ \\
+$\PHiggslight \rightarrow$ down--type quarks, leptons & $\text{SM coupling} \times -\frac{\sin{\alpha}}{\cos{\beta}}$ \\
+$\PHiggs \rightarrow \PHiggslight\PHiggslight$ & $\sim$ \cosba $\times$ terms containing masses,\\
+ & mixing angles, quartic couplings \\
+$\PHiggsps \rightarrow \PZ\PHiggslight$ & $\sim$ \cosba\\
+%\bottomrule
+\end{tabular}
+\label{tab:hhh_2HDM_couplings}
+\end{center}
+\end{table}
+
+FIXME: ALIGNMENT LIMIT
 
 
+The interpretations are made in the \cosba--\tanb plane. Figures \ref{fig:Hhh2HDMOverlaid}
+and \ref{fig:AZh2HDMOverlaid} show the observed and expected exclusion at 95\% confidence level for the \Htohh
+and \AtoZh analyses respectively, overlaid on the production cross--section times branching ratio.
+The exclusion contours have some interesting features, most of which can be explained by the couplings
+from table \ref{tab:hhh_2HDM_couplings}. When \cosba=0, in the alignment limit, the couplings
+of all particles are exactly standard model--like. This is reflected in the \Htohh and \AtoZh branching ratios, 
+which both vanish as \cosba approaches 0. This leads to the corridor of non--exclusion down the 
+centre of figures \ref{fig:Hhh2HDMOverlaid} and \ref{fig:AZh2HDMOverlaid}. Additionally,
+as the couplings of \PHiggslight to pairs of b--quarks and $\Pgt$ leptons are porportional 
+to $\frac{\sin{\alpha}}{\cos{\beta}}$, the branching ratios of \Htohhtobbtautau
+and \AtoZhtolltautau vanish when $\alpha = 0$, leading to the corridor of non--exclusion
+at \cosba $ > 0$ and low \tanb in the \AtoZh figure. A similar corridor is starting
+to become visible in the $\sigma \times BR$ structure of the \Htohh interpretation, but
+the analysis is not yet sensitive enough to actually see a full--blown corridor in this
+region.
+Additional regions of non--exclusion at low \tanb and \cosba near -1 are visible in the \Htohh 
+interpretation, these are a result of the complex \Htohh branching ratio (ADD FIGURE).
+
+
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/Hhh2HDM.pdf}
+\caption{Search for \Htohhtobbtautau interpreted in a type II 
+2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV. The expected (dashed line)
+and observed (solid line) exclusion contours at 95\% confidence level are overlaid
+on the cross--section of $gg\rightarrow \PHiggs$ production
+times the branching ratio of \PHiggs into \hhtobbtautau.
+Regions of the \cosba-\tanb plane where the cross--section times branching
+ratio is larger than the model-independent upper limit set for $m_{H} = 300 $~GeV 
+(see figure FIXME:add plot) are excluded.}
+\label{fig:Hhh2HDMOverlaid}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/AZh2HDM.pdf}
+\caption{Search for \AtoZhtolltautau interpreted in a type II 
+2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV. The expected (dashed line)
+and observed (solid line) exclusion contours at 95\% confidence level are overlaid
+on the cross--section of $gg\rightarrow \PHiggsps$ production
+times the branching ratio of \PHiggsps into \Zhtolltautau.
+Regions of the \cosba-\tanb plane where the cross--section times branching
+ratio is larger than the model-independent upper limit set for $m_{A} = 300 $~GeV 
+(see figure FIXME:add plot) are excluded.}
+\label{fig:AZh2HDMOverlaid}
+\end{center}
+\end{figure}
+
+A combined interpretation of both analyses in this model is presented
+in figure \ref{fig:HhhAZh2HDM}. Some of the features discussed earlier
+in this section are also visible in this combined interpretation.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_012.pdf}
+\caption{Combined interpretation of searches for \AtoZhtolltautau and 
+\Htohhtobbtautau in a type II 2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV.
+The shaded blue area bounded by the solid black line indicates the observed 
+95\% confidence level excluded region. The dashed black line indicates the expected
+exclusion, with the grey bands indicating the $\pm 1\sigma$ and $2\sigma$ 
+exclusion limits \cite{CMS-HIG-14-034}.}
+\label{fig:HhhAZh2HDM}
+\end{center}
+\end{figure}
+
+\subsubsection{Interpretation in the low \tanb MSSM scenario}
+\label{sec:hhh_results_modeldep_lowtb}
+The low \tanb MSSM scenario, as discussed in section FIXME: write theory section that mentions this
+is an MSSM scenario that has been adapted to allow \mh $=125 \pm 3$~GeV for \tanb values
+as low as 1.  
+
+The combined interpretation of both analyses in this model is presented in figure \ref{fig:HhhAZhMSSM}.
+The exclusion in this scenario is driven by the \AtoZh search, the \Htohh search is not
+very sensitive in this model (see figure FIXME add these plots). At 350 GeV the excluded
+region drops off, this is due to the turn--on of the
+$\PHiggsps \rightarrow \ttbar$ decay which becomes kinematically allowed in this region, 
+sharply decreasing the \AtoZh branching ratio.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_011.pdf}
+\caption{Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
+interpreted in the low \tanb MSSM scenario. The shaded blue area bounded by
+the solid black line indicates the observed excluded region at 95\% confidence level.
+The dashed black line indicates the expected exclusion, with the grey bands showing
+the $\pm 1\sigma$ and $2\sigma$ expected exclusion \cite{CMS-HIG-14-034}. The area
+bounded by the red line is the region of phase space where \mh $\neq 125 \pm 3$ 
+GeV and is therefore not accessible.}
+\label{fig:HhhAZhMSSM}
+\end{center}
+\end{figure}
