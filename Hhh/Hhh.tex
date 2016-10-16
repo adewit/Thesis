@@ -302,7 +302,7 @@ Before the fit, from the mass constraint we have (equation \ref{eqn:kinfit_prefi
 m_{h}^2 &= E_{h}^2 - \vec{p_{h}}^2 = (E_{b1}+E_{b2})^2 - (\vec{p_{b1}} + \vec{p_{b2}})^2 \notag\\
 & = 2E_{b1}E_{b2} + m_{b1}^2 +m_{b2}^2 - 2\vec{p_{b1}}\vec{p_{b2}} \notag\\
 & = m_{b1}^2 +m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta_{b2}})\notag\\
-\Rightarrow (1-\vec{\beta_{b1}}\vec{\beta_{b2}}) = \frac{m_h^2 - m_{b1}^2 - m_{b2}^2}{2E_{b1}E_{b2}}
+&\Rightarrow (1-\vec{\beta_{b1}}\vec{\beta_{b2}}) = \frac{m_h^2 - m_{b1}^2 - m_{b2}^2}{2E_{b1}E_{b2}}
 \end{align}
 
 When varying the energy of the first jet in the fit, equation \ref{eqn:kinfit_prefit} can be 
@@ -320,7 +320,7 @@ m_h^2 &= m_{b1}^2 + m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta{b2}}\n
 &= m_{b1}^2 +\frac{E_{b2,fit}^2}{\gamma_{b2}^2} +2\mathcal{A}E_{b1}E_{b2,fit}\notag\\
 \Rightarrow E_{b2}^{fit}& = \frac{(-2E_{b1}\mathcal{A} + \sqrt{4E_{b1}^2\mathcal{A} - 4(m_{b1}^2-m_{h}^2)\gamma_{b2}^{-2}})\gamma_{b2}^2}{2}\notag\\
 &= E_{b1}\mathcal{A}\gamma_{b2}^2+\sqrt{E_{b1}^2\mathcal{A}\gamma_{b2}^4 - (m_{b1}^2 - m_{h}^2)\gamma_{b2}^2}\notag\\
-\Rightarrow E_{b2}^{fit} = E_{b1}\mathcal{A}\gamma_{b2}^2(-1 + \sqrt{1+\frac{m_{h}^2 - m_{b1}^2}{E_{b1}^2\mathcal{A}\gamma_{b2}^2}}\\
+&\Rightarrow E_{b2}^{fit} = E_{b1}\mathcal{A}\gamma_{b2}^2(-1 + \sqrt{1+\frac{m_{h}^2 - m_{b1}^2}{E_{b1}^2\mathcal{A}\gamma_{b2}^2}}\\
 \end{align}
 
 The fitting procedure additionally modifies the masses of the b-jets as (equation \ref{eqn:kinfit_bjetmass})
@@ -341,7 +341,7 @@ enforcing that the heavy Higgs boson recoil from the fit is close to the reconst
 The measured recoil is (equation \ref{eqn:kinfit_recoilmeas})
 
 \begin{equation}\label{eqn:kinfit_recoilmeas}
-\vec{p_{\text{T,recoil}}}^{measured} = -\vec{p_{\text{T,H}}}^{measured} = -\vec{p_{\text{T,miss}}}^{measured} - \vec{p_{\text{T},b_{1}}}^{measured} - \vec{p_{\text{T},b_{2}}}^{measured} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{measured} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{measured}
+\vec{p_{\text{T,recoil}}}^{\text{meas}} = -\vec{p_{\text{T,H}}}^{\text{meas}} = -\vec{p_{\text{T,miss}}}^{\text{meas}} - \vec{p_{\text{T},b_{1}}}^{\text{meas}} - \vec{p_{\text{T},b_{2}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{\text{meas}}
 \end{equation}
 
 With the recoil from the fit (equation \ref{eqn:kinfit_recoilfit})
@@ -352,7 +352,7 @@ With the recoil from the fit (equation \ref{eqn:kinfit_recoilfit})
 A $\chi^2$ corresponding to the agreement between the fitted and measured recoil is reconstructed as (equation \ref{eqn:kinfit_recoilchi2})
 
 \begin{equation}\label{eqn:kinfit_recoilchi2}
-\chi^2_{recoil} = (\vec{p_{text{T,recoil}}}^{\text{fit}} - \vec{p_{text{T,recoil}}}^{\text{measured}})^T V_{\text{recoil}}^{-1}(\vec{p_{text{T,recoil}}}^{\text{fit}} - \vec{p_{text{T,recoil}}}^{\text{measured}})
+\chi^2_{\text{recoil}} = (\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{measured}})^T V_{\text{recoil}}^{-1}(\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{measured}})
 \end{equation}
 
 where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as in equation \ref{eqn:kinfit_recoilcov} from the covariance matrices of the b-jets and
@@ -384,7 +384,7 @@ is forced to 250 GeV.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/CMS-HIG-14-034_Figure-aux-020.pdf}}
+\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/CMS-HIG-14-034_Figure-aux_020.pdf}}
 \subfloat[\ttbar background]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/mHvsmttbb_ttbar.pdf}}
 \end{center}
 \caption{Comparison of the reconstructed heavy Higgs mass using the kinematic fit (blue) and
@@ -400,6 +400,79 @@ accuracy of the mean of the mass distribution in signal events. \cite{HIG-14-034
 \label{sec:hhh_backgrounds}
 To estimated the shape and yield of backgrounds in this analysis, data--driven techniques are
 used where possible. 
+
+\subsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
+\label{sec:hhh_backgrounds_ztt}
+The \Ztautau background is estimated using the embedded samples
+described in section \ref{sec:hhh_datasets}. To estimate the 
+yield of \Ztautau in each category, the total
+yield after the initial event selection (before subdividing into categories) as
+estimated in \Ztautau Monte Carlo samples is scaled by the efficiency with which 
+such events pass the category selection in the embedded sample. The shape of
+the \Ztautau background is taken from the embedded sample after applying the full
+category selection. The contamination from \ttbar backgrounds in the embedded
+sample is accounted for by subtracting this contamination, as evaluated using
+the dedicated \ttbar embedded samples, from the \Ztautau background.
+
+\subsection{\texorpdfstring{\ttbar}{ttbar}}
+Both the \ttbar shape and normalisation are estimated using Monte Carlo samples.
+These are checked against data in dedicated control regions. One such control
+region uses the \emu final state of the taus. In this control region
+a data-to-Monte Carlo scale factor is estimated and applied to the yield estimate from Monte Carlo.
+
+\subsection{\texorpdfstring{\Wjets}{W + jets}}
+\label{sec:hhh_backgrounds_wjets}
+The \Wjets background is greatly reduced by requiring \mT to
+be less than 30 GeV. To estimate the remaining contribution
+from \Wjets in the signal region a sideband with \mT greater
+than 70 GeV is used in the 2jet-0tag and 2jet-1tag categories.
+Contributions from other backgrounds are subtracted 
+from the data in this region, and a high \mT to low \mT
+extrapolation factor is determined from the \Wjets Monte Carlo
+samples. The yield in the signal region is then the other-background-subtracted
+data yield in the high \mT region multiplied by this extrapolation factor.
+In the 2jet-2tag, a slightly different high \mT sideband of 60-120 GeV is used 
+to give larger statistics for the \Wjets estimate after other backgrounds are
+subtracted. The method of extrapolating this yied estimate into
+the signal region is otherwise analogous.
+
+The \Wjets shape is taken from the Monte Carlo samples. To 
+increase the statistics for this estimate, the b-tagging definition
+in the 2jet-1tag and 2jet-2tag categories is loosened to the loose (instead of medium)
+working point for the purposes of shape estimation.
+
+
+\subsection{QCD}
+\label{sec:hhh_backgrounds_qcd}
+A fully data-driven method is used to estimate the QCD background. Data events
+passing the signal region selection cuts, but requiring the di-tau pair to be
+of the same sign, are used for this. Contributions from other backgrounds are 
+subtracted. Because the contribution from opposite- and same-sign QCD are
+not exactly the same an OS/SS ratio of 1.06 is measured using data in which
+the electron/muon isolation requirement was inverted. 
+
+For the 2jet-0tag and 2jet-1tag categories the yield is taken directly from
+the same-sign subtracted data multiplied by the OS/SS ratio. In the 2jet-2tag
+category the statistics are too low for this, so another sideband is defined
+in which the electron/muon isolation requirement is inverted. This 
+sideband is then used to determine an extrapolation factor from events
+with 2 jets to events passing the 2jet-2tag category selection. This extrapolation
+factor is then applied to a QCD estimate as described above, but using the 2-jet 
+selection only, to obtain the yield in the 2jet-2tag category.
+
+The shapes in all categories are taken from same-sign data with the electron/muon
+isolation inverted. For the 2jet-1tag and 2jet-2tag categories, in addition to 
+inverting the light lepton isolation requirements, the category definition
+is loosened to obtain the shapes. For the purposes of QCD shape
+estimation, jets are considered b-tagged if they pass a looser b-tagging
+working point than the working point used elsewhere in the analysis.
+
+\subsection{Other backgrounds}
+\label{sec:hhh_backgrounds_other}
+The remaining backgrounds of \Zellell, di-boson and single-top
+events are small. Both shape and normalisation are
+estimated using Monte Carlo samples.
+ 
 
 \section{Systematic uncertainties}
 \label{sec:hhh_uncs}
@@ -463,6 +536,10 @@ More detail on this analysis can be found in reference \cite{CMS-HIG-14-034}.
 
 \subsection{Model-independent results}
 \label{sec:hhh_results_modelindep}
+
+Add combined plot + per channel comparison (?)
+Combined of mutau and etau only, or full combination even though not having
+worked on fully hadronic?
 
 
 \subsection{Model-dependent results}
