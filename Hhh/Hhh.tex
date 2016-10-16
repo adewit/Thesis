@@ -36,6 +36,18 @@ were generated in steps of 10 GeV between \mH $= 260 - 350$~GeV using \texttt{PY
 Minimum bias events generated using \texttt{PYTHIA 6} are added to all MC samples to model additional
 interactions. 
 
+To better model the \Ztautau background, an embedding technique is used. In this method, 
+\Zmm events are selected in data and the muons are replaced by generator-level taus. \texttt{TAUOLA} is used
+to decay the taus and tau polarisation effectes are modelled using \texttt{TauSpinner} \cite{TauSpinner}. The detector
+response to the tau decay products is modelled using the \texttt{GEANT4}-based \cite{Geant4} detector simulation, and 
+tracks in the inner tracking system, hits in the muon systems and energy deposits in the calorimeters
+due to the simulated taus are combined with the remains of the \Zmm event after the detector signals
+of the two muons originiating from the \PZ have been removed. This technique is also applied to 
+a \ttbar background samples to estimate the \ttbar contamination in the embedded sample. This contribution
+needs to be subtracted from the \Ztautau background estimated using the embedded \Zmm sample to
+avoid double counting with the \ttbar monte carlo.
+
+
 \section{Event selection and categorisation}
 \label{sec:hhh_selection}
 A more detailed description of the physics objects used for this analysis is given in chapter FIXME:write object reco section, 
@@ -80,8 +92,22 @@ exactly zero electrons to pass \pT $>10$ GeV and tight ID and isolation requirem
 are applied to reduce the \WZ background. 
 
 In addition to the requirements on the di--tau pair, at least 2 jets with \pT$ >20$ GeV are 
-required. No b--tagging requirements are applied at this stage, this will be discussed 
+required. No b--tagging requirements are applied at this stage, these will be discussed 
 in more detail in section \ref{sec:hhh_selection_categories}.
+
+Figure \ref{fig:Hhh_selection_kinematics_mt} shows some of the kinematic variables 
+of di-\Pgt candidates in the \mutau channel
+\begin{figure}[h!]
+\begin{center}
+ \subfloat[Muon \pT]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_1_2jetinclusive_mt_2012.pdf}}
+  \subfloat[Hadronic \Pgt \pT ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_2_2jetinclusive_mt_2012.pdf}}~\\
+  \subfloat[Muon $\eta$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_1_2jetinclusive_mt_2012.pdf}}
+  \subfloat[Hadronic \Pgt $\eta$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_2_2jetinclusive_mt_2012.pdf}}~\\
+
+\end{center}
+\caption{Plots of muon and hadronic \Pgt \pT and $\eta$ in the \mutau channel.}
+\label{fig:Hhh_selection_kinematics_mt}
+\end{figure}
 
 
 \subsection{\texorpdfstring{Event selection in the \etau channel}{Event selection in the e-tau channel}}
@@ -111,8 +137,24 @@ requirements are rejected.
 In addition to the requirements on the di--tau pair, at least 2 jets with \pT $>20$ GeV are 
 required. 
 
+Figure \ref{fig:Hhh_selection_kinematics_et} shows some of the kinematic variables 
+of di-\Pgt candidates in the \etau channel
+\begin{figure}[h!]
+\begin{center}
+ \subfloat[Electron \pT]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_1_2jetinclusive_et_2012.pdf}}
+  \subfloat[Hadronic \Pgt \pT ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_2_2jetinclusive_et_2012.pdf}}~\\
+  \subfloat[Electron $\eta$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_1_2jetinclusive_et_2012.pdf}}
+  \subfloat[Hadronic \Pgt $\eta$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_2_2jetinclusive_et_2012.pdf}}~\\
+
+\end{center}
+\caption{Plots of electron and hadronic \Pgt \pT and $\eta$ in the \etau channel.}
+\label{fig:Hhh_selection_kinematics_et}
+\end{figure}
+
+
 \subsection{Categorisation}
-\label{sec:hhh_selection_categorisation}
+\label{sec:hhh_selection_categories}
+ADD b-jet plots?
 In both channels an selection on the transverse mass \mT between the electron/muon
 and missing transverse energy, defined as in equation \ref{eqn:hhh_selection_mt}, is applied.
 
@@ -120,16 +162,31 @@ and missing transverse energy, defined as in equation \ref{eqn:hhh_selection_mt}
 m_{\text{T}} = \sqrt{2p_{\text{T}}E_{\text{T}}^{\text{miss}}(1-\cos{\Delta\phi})}
 \end{equation}
 
-Where \pT is the transverse moment of the electron or muon, and $\Delta\phi$ the angle
-between the light lepton and the missing transverse energy.
+In this eqation \pT is the transverse momentum of the electron or muon, and $\Delta\phi$ the angle
+between the light lepton and the missing transverse energy. The \mT distributions for the \etau
+and \mutau channels, using the selections as
+described in sections \ref{sec:hhh_selection_mutau} and \ref{sec:hhh_selection_etau},
+is shown in figure \ref{fig:Hhh_selection_mt}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_mt_2012.pdf}}
+\subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_et_2012.pdf}}
+\end{center}
+\caption{\mT distributions in the \mutau (left) and \etau (right) channels}
+\label{fig:Hhh_selection_mt}
+\end{figure}
+
 In both channels this quantity is required to be smaller than 30 GeV. In events
 where the missing energy and the light lepton are oriented back--to--back, \mT is
 large, whereas it is closer to zero when the two are aligned. In $\PW\rightarrow\ell\nu$
 events, as the W is very heavy, the lepton and neutrino are more likely to emitted back--to--back,
-therefore \mT will be large. For \Ztautau and \htautau events, in a $\tau\rightarrow\ell\nu\nu$ decay 
+therefore \mT will be large. For \Ztautau and \htotautau events, in a $\tau\rightarrow\ell\nu\nu$ decay 
 the neutrinos are more likely to travel in the same direction as the visible decay products of 
 the tau, due to the smaller mass of the \Pgt compared with the \PW. Therefore requiring the
-transverse mass to be less than 30 GeV reduces the \Wjets background.
+transverse mass to be less than 30 GeV reduces the \Wjets background. This effect
+is also visible in figure \ref{fig:Hhh_selection_mt}, where the \Wjets and the much
+smaller diboson and single-top backgrounds are drawn together as 'electroweak backgrounds'.
 %In this analysis the presence of at least 2 jets increases the relative fraction of \ttbar 
 %background events. Because the missing energy can now originate from multiple
 %heavy objects (two tops) the missing transverse energy alignment is randomised. In some
@@ -149,19 +206,200 @@ from events where the di--tau or di--jet mass is not compatible with
 invariant mass as reconstructed using the \texttt{SVFit} algorithm (ADD A SECTION ON THIS).
 By requiring $70 < m_{jj} < 150 $GeV and $90 < m_{\Pgt\Pgt} < 150$ GeV a 
 large number of background events can be rejected, while retaining
-most of the signal. This is illustrated in figure SOMETHING.
+most of the signal. This is illustrated in figure \ref{fig:Hhh_selection_masscuts} for 
+the 2jet-2tag category.
 
+\begin{figure}[h!]
+\begin{center}
+\subfloat[$m_{\Pgt\Pgt}$ (\mutau channel)]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/m_sv_2jet2tag_mt_2012.pdf}}
+\subfloat[$m_{\Pgt\Pgt}$ (\etau channel)]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/m_sv_2jet2tag_et_2012.pdf}}~\\
+\subfloat[$m_{jj}$ (\mutau channel)]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mjj_2jet2tag_mt_2012.pdf}}
+\subfloat[$m_{jj}$ (\etau channel)]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mjj_2jet2tag_et_2012.pdf}}
+\end{center}
+\caption{Reconstructed di-\Pgt invariant mass (top) and di-jet invariant mass (bottom) in the 2jet-2tag category of the \mutau (left) and \etau (right)
+channels. The signal for a heavy Higgs boson H with mass \mH = 300 GeV at \tanb=2 in an MSSM scenario, enlarged by a factor 10, is overlaid on the figures.
+One can see that this signal peaks at around 125 GeV.}
+\label{fig:Hhh_selection_masscuts}
+\end{figure}
 
 \section{Data to Monte Carlo correction factors}
 \label{sec:hhh_datamc}
+Monte Carlo samples are used for the estimation of some of the backgrounds and the signal, 
+and it is therefore important to correct for any mismodelling. The data to Monte Carlo
+correction factors used for this are estimated in dedicated control regions.
+
+A reweighting is applied to make the pile--up distribution in Monte Carlo
+match the distribution observed in data.DESCRIPTION
+
+Data and Monte Carlo identification, isolation, and trigger efficiencies
+are measured for electrons, muons and hadronic taus. The difference between
+the efficiencies in data and Monte Carlo are applied to Monte Carlo events as a
+scale factor $SF = \frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
+
+For electrons and muons, these scale factors are measured using a 
+tag--and--probe method using \Zeenog and \Zmmnog events, respectively.
+The hadronic taus identification, isolation and trigger efficiencies
+are measured via a similar method that makes use of
+$Z\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgt_{h}$ events.
+
+FIXME: Tau es?
+
+FIXME: top pt reweighting
+FIXME: ttbar scale factor
+
+In the \etau channel a data to Monte Carlo scale factor is applied
+to the \Zee background, to correct for differences in the $e\rightarrow\Pgt_{h}$
+fake rate between data and MC. DERIVED HOW
+
+To correct for the difference in b--tagging efficiency and light jet mis--tagging
+rates between data and Monte Carlo \pT and $\eta$ dependent scale factors are 
+derived using the method described in \cite{BTV8TeV}. There are separate scale factors for 
+b-/c- jets and light jets. There are multiple possible ways to apply these
+scale factors, for this analysis this is done through a promote/demote method.
+
+In this method a demotion or promotion probability is assigned to every
+jet as in equation \ref{eqn:promotedemote}.
+
+\begin{align}\label{eqn:promotedemote}
+&P(\text{demote}) = 1 - SF \text{  for SF < 1 }  \notag \\
+&P(\text{promote}) = \frac{(SF - 1)(\epsilon_{\text{MC}}-1)}{SF} \text{    for SF > 1}
+\end{align}.
+
+In this equation $SF$ is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
+the b--tagging efficiency in Monte Carlo events for the type of jet (light, b- or c-)
+in consideration.
+
+
 
 \section{Discriminating variable}
 \label{sec:hhh_discr}
+The variable of interest in this analysis is the mass of the heavy Higgs boson H. This can be
+reconstructed as the 4--body mass of the two jets and the two taus, however
+a more accurate result can be obtained by using a kinematic fitting 
+procedure that makes use of the 125 GeV mass constraint on the di--tau and
+di--jet candidates. 
 
+In a kinematic fit constraints are made on the event kinematics, in the
+case of this analysis these constraints are
+$m(\Pgt_{1},\Pgt_{2}) = m_{h} = 125 $GeV and
+$m(b_{1},b_{2}) = m_{h} = 125 $ GeV.
+The kinematic observables related to the hadronic taus and jets
+are varied within their uncertainties to fulfill these 
+constraints. A $\chi^2$ cost term is introduced for each
+observable that is varied with respect to the measurement,
+the aim of the fit is to minimise this.
+
+For b-jets, the reconstructed direction in $\eta$ and $\phi$ is 
+assumed to be measured accurately in comparison with their energy.
+Therefore only the energy is varied in the fit. In addition, we assume
+that uncertainties in the energy measurement directly translate to
+uncertainties in the momentum measurement, therefore $\vec{\beta} = \vec{p}/E$ is
+also kept constant. 
+
+Before the fit, from the mass constraint we have (equation \ref{eqn:kinfit_prefit})
+
+\begin{align}\label{eqn:kinfit_prefit}
+m_{h}^2 &= E_{h}^2 - \vec{p_{h}}^2 = (E_{b1}+E_{b2})^2 - (\vec{p_{b1}} + \vec{p_{b2}})^2 \notag\\
+& = 2E_{b1}E_{b2} + m_{b1}^2 +m_{b2}^2 - 2\vec{p_{b1}}\vec{p_{b2}} \notag\\
+& = m_{b1}^2 +m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta_{b2}})\notag\\
+\Rightarrow (1-\vec{\beta_{b1}}\vec{\beta_{b2}}) = \frac{m_h^2 - m_{b1}^2 - m_{b2}^2}{2E_{b1}E_{b2}}
+\end{align}
+
+When varying the energy of the first jet in the fit, equation \ref{eqn:kinfit_prefit} can be 
+rewritten to derive an expression for the updated energy of the second jet. Using $\mathcal{A} = (1-\vec{\beta_{b1}}\vec{\beta_{b2}})$ 
+and equation \ref{eqn:gamma_def}:
+
+\begin{equation}\label{eqn:gamma_def}
+\gamma = \frac{1}{1-\beta^2} \Rightarrow \gamma^2 = \frac{1}{1-\beta^2} = \frac{1}{1-p^2/E^2} = \frac{E^2}{m^2}
+\end{equation}
+
+We get:
+
+\begin{align}\label{eqn:kinfit_variation}
+m_h^2 &= m_{b1}^2 + m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta{b2}}\notag\\
+&= m_{b1}^2 +\frac{E_{b2,fit}^2}{\gamma_{b2}^2} +2\mathcal{A}E_{b1}E_{b2,fit}\notag\\
+\Rightarrow E_{b2}^{fit}& = \frac{(-2E_{b1}\mathcal{A} + \sqrt{4E_{b1}^2\mathcal{A} - 4(m_{b1}^2-m_{h}^2)\gamma_{b2}^{-2}})\gamma_{b2}^2}{2}\notag\\
+&= E_{b1}\mathcal{A}\gamma_{b2}^2+\sqrt{E_{b1}^2\mathcal{A}\gamma_{b2}^4 - (m_{b1}^2 - m_{h}^2)\gamma_{b2}^2}\notag\\
+\Rightarrow E_{b2}^{fit} = E_{b1}\mathcal{A}\gamma_{b2}^2(-1 + \sqrt{1+\frac{m_{h}^2 - m_{b1}^2}{E_{b1}^2\mathcal{A}\gamma_{b2}^2}}\\
+\end{align}
+
+The fitting procedure additionally modifies the masses of the b-jets as (equation \ref{eqn:kinfit_bjetmass})
+\begin{equation}\label{eqn:kinfit_bjetmass}
+m_{b_{1,2}}^{fit} = m_{b_{1,2}}\frac{E_{b_{1,2}}^{fit}}{E_{b_{1,2}}}
+\end{equation}
+
+For each b-jet a $\chi^2$ term is calculated as $\chi_{b1,2}^2 = \frac{E_{b1,2}^{fit}-E_{b1,2}^{meas}}{\sigma_{b1,2}}$.
+
+For taus only the visible decay products are measured. Assuming the visible decay products of the \Pgt point in 
+the same direction as the \Pgt, a similar procedure as for the b-jets can be employed to constrain the mass of the second tau
+when varying the mass of the first tau in the fit. The masses of the taus are kept fixed at $m_{\Pgt}$ throughout the procedure.
+
+Due to the missing energy associated with the \Pgt decays, additional constraints
+on the fit have to be used to reconstruct the correct tau energies. This is done by 
+enforcing that the heavy Higgs boson recoil from the fit is close to the reconstructed recoil.
+
+The measured recoil is (equation \ref{eqn:kinfit_recoilmeas})
+
+\begin{equation}\label{eqn:kinfit_recoilmeas}
+\vec{p_{\text{T,recoil}}}^{measured} = -\vec{p_{\text{T,H}}}^{measured} = -\vec{p_{\text{T,miss}}}^{measured} - \vec{p_{\text{T},b_{1}}}^{measured} - \vec{p_{\text{T},b_{2}}}^{measured} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{measured} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{measured}
+\end{equation}
+
+With the recoil from the fit (equation \ref{eqn:kinfit_recoilfit})
+\begin{equation}\label{eqn:kinfit_recoilfit}
+\vec{p_{\text{T,recoil}}}^{fit} = -\vec{p_{\text{T,H}}}^{fit} = - \vec{p_{\text{T},b_{1}}}^{fit} - \vec{p_{\text{T},b_{2}}}^{fit} - \vec{p_{\text{T},\Pgt_1}}^{fit} - \vec{p_{\text{T},\Pgt_2}}^{fit}
+\end{equation}
+
+A $\chi^2$ corresponding to the agreement between the fitted and measured recoil is reconstructed as (equation \ref{eqn:kinfit_recoilchi2})
+
+\begin{equation}\label{eqn:kinfit_recoilchi2}
+\chi^2_{recoil} = (\vec{p_{text{T,recoil}}}^{\text{fit}} - \vec{p_{text{T,recoil}}}^{\text{measured}})^T V_{\text{recoil}}^{-1}(\vec{p_{text{T,recoil}}}^{\text{fit}} - \vec{p_{text{T,recoil}}}^{\text{measured}})
+\end{equation}
+
+where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as in equation \ref{eqn:kinfit_recoilcov} from the covariance matrices of the b-jets and
+the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET (OBJECT RECO),
+while the covariance matrices of the b-jets can be written in terms of position, momentum and resolution of the b-jets. 
+
+\begin{equation}\label{eqn:kinfit_recoilcov}
+V_{\text{recoil}} = V_{\vec{p_{\text{T,miss}}}} - V_{b_{1}} - V_{b_2} 
+\end{equation}
+
+The total $\chi^2$ term that needs to be minimised in the fit can then be written as (equation \ref{eqn:kinfit_chitot})
+
+\begin{equation}\label{eqn:kinfit_chitot}
+\chi^2 = \chi^2_{b_1} + \chi^2_{b_2} + \chi^2_{\text{recoil}}
+\end{equation}
+
+The result of the kinematic fit are the tau and b-jet 4-vectors with their energies and momenta
+set to the best fit values found for them in the fit. These can then be added together to find
+the mass of the heavy Higgs boson as reconstructed by the kinematic fit.
+
+As illustrated in figure \ref{fig:kinfitvsmjj} the use of the kinematic fit greatly
+improves the resolution of the reconstructed heavy Higgs mass in signal events, when 
+compared with the simple 4-body mass reconstruction. It also shifts the mean of the
+distribution closer to the true value. From the right hand side of
+figure \ref{fig:kinfitvsmjj} one can see that the mass distribution for
+background events is less affected by the kinematic fit, although due to the
+invariant mass constraint the minimum of the reconstructed mass distribution
+is forced to 250 GeV.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/CMS-HIG-14-034_Figure-aux-020.pdf}}
+\subfloat[\ttbar background]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/mHvsmttbb_ttbar.pdf}}
+\end{center}
+\caption{Comparison of the reconstructed heavy Higgs mass using the kinematic fit (blue) and
+4-body mass without use of the kinematic fit (black) in signal events with $m_{H} = 300 $GeV (left) and \ttbar background events (right) in 
+the 2jet-1tag category of the \mutau channel. The kinematic fit greatly improves the resolution and 
+accuracy of the mean of the mass distribution in signal events. \cite{HIG-14-034-additional}}%FIXME plots need to be remade as the bkg one was never released
+%on the public twiki so can't have the CMS label on
+\label{fig:kinfitvsmjj}
+\end{figure}
 
 
 \section{Background estimation}
 \label{sec:hhh_backgrounds}
+To estimated the shape and yield of backgrounds in this analysis, data--driven techniques are
+used where possible. 
 
 \section{Systematic uncertainties}
 \label{sec:hhh_uncs}
