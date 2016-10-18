@@ -384,8 +384,8 @@ is forced to 250 GeV.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/CMS-HIG-14-034_Figure-aux_020.pdf}}
-\subfloat[\ttbar background]{\includegraphics[width=0.5\textwidth]{./Hhh/Plots/mHvsmttbb_ttbar.pdf}}
+\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_020.pdf}}
+\subfloat[\ttbar background]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mHvsmttbb_ttbar.pdf}}
 \end{center}
 \caption{Comparison of the reconstructed heavy Higgs mass using the kinematic fit (blue) and
 4-body mass without use of the kinematic fit (black) in signal events with $m_{H} = 300 $GeV (left) and \ttbar background events (right) in 
@@ -476,6 +476,71 @@ estimated using Monte Carlo samples.
 
 \section{Systematic uncertainties}
 \label{sec:hhh_uncs}
+Two types of systematic uncertainties are considered: normalisation
+uncertainties (which affect only the yield of a process), and shape
+uncertainties (which affect both the yield and shape of a process). Section \ref{sec:hhh_results_extraction}
+describes how these uncertainties are taken into account in the final result.
+
+\subsection{Normalisation uncertainties}
+\label{sec:hhh_uncs_norm}
+
+\subsubsection*{Luminosity uncertainty}
+The uncertainty on the luminosity measurement amounts to 2.6\% for data collected during
+2012 (LUMI POG CITATION?). This uncertainty is applied to all processes in which
+the normalisation is estimated using MC samples.
+
+\subsubsection*{Identification, isolation and trigger efficiencies}
+A systematic uncertainty due to the uncertainty in efficiency measurements
+for the leptons is derived by combining the uncertainties on these measurements
+in quadrature. For electrons and muons this leads to a 2\% uncertainty, for hadronic taus a 6\% 
+uncertainty is measured on the tau identification efficiency, with an additional uncertainty of 3 \% for
+the \Pgt legs of the triggers. This uncertainty is applied to all processes for which
+the normalisation is estimated using MC samples.
+
+\subsubsection*{$e\rightarrow\Pgt_{h}$ and $\mu\rightarrow\Pgt_{h}$ fake rates}
+The uncertainty on both the $e\rightarrow\Pgt$ fake rate measurement and the
+$\mu\rightarrow\Pgt$ fake rate measurement is 30\%. The central value of the $\mu\rightarrow\Pgt$
+fake rate is close to 1, which is why it is not applied, but the uncertainty is 
+taken into account FIXME check if this is true!
+
+
+\subsubsection*{B-tag scale factors}
+The b-tag scale factors are varied within their uncertainties to determine the effect
+on the yields of each process. Both a b-tagging uncertainty and a fake mis-tagging
+uncertainty are obtained by considering the percentage by which these backgrounds
+change when the scale factors are varied within their uncertainty. The b-tagging
+efficiency uncertainty amounts to 1-10\% for most processes in most categories, except for the 2jet-2tag
+category where a 70\% uncertainty applies to the W background. Due to the nature
+of the estimation method, where other backgrounds are subtracted from the data to 
+obtain a W estimate, and the presence of large amounts of \ttbar, a 10\% change in the \ttbar
+yield can vary the W yield by such large amounts.
+The b mistagging rate uncertainty varies between 1-5\% for all processes in all channels.
+
+\subsubsection*{\MET resolution and response}
+Uncertainties on the \MET resolution and response are estimated by varying
+the recoil correction parameters within their estimated uncertainties. This 
+leads to a 1-10\% uncertainty (depending on category and process)
+
+\subsubsection*{Background normalisation}
+\begin{itemize}
+\item \Ztautau : the normalisation of the embedded samples attracts a 3.3\% uncertainty, which is derived
+from combining the estimated normalisation uncertainty on the embedded samples themselves, and the uncertainty on the \ttbar embedded samples. In addition an uncertainty of 5-6\% for extrapolation from the inclusive selection to the category selection is applied.
+\item \Zellell: As this is a very small background after requiring 2 jets, the uncertainty on this estimate is derived from the statistical uncertainty on the yield estimate, which varies between 20-90\%
+\item \ttbar: the uncertainty on the \ttbar cross section is 10\%
+\item di-boson and single top: the uncertainty on the di-boson and single-top cross section is 15\%
+\item \Wjets: As the \Wjets yield is estimated from a high \mT sideband in data, the uncertainty on this yield estimate is primarily due to the statistics available in the control region, the uncertainty range sfrom 10\% in the 2jet-0tag cateogry to 100\% in the 2jet-2tag cateogry
+\item QCD: The QCD normalisation uncertainty is obtained by adding the statistical uncertainty on the data-subtracted same-sign region in quadrature with the 10\% uncertainty on the OS/SS ratio. This yields a 20\% uncertainty in the 2jet-0tag category, a 40\% uncertainty in the 2jet-1tag category and a 60-100\% uncertainty in the 2jet-2tag category.
+\end{itemize}
+
+\subsection{Shape uncertainties}
+\label{sec:hhh_uncerts_shape}
+
+\subsubsection*{Tau energy scale}
+The energy of hadronically decaying taus is varied up and down by its 3\% uncertainty. As this directly affects the kinematic fit mass distribution this uncertainty is then applied as a shape uncertainty.
+
+\subsubsection*{Jet energy scale}
+The uncertainties on the jet energy corrections are applied by shifting the jet energy up and down by the (\pT and $\eta$ dependent) uncertainty. Again, as this affects the shape of the kinematic fit mass distribution this uncertainty is applied as a shape uncertainty 
+
 
 \section{\texorpdfstring{Overview of \AtoZhtolltautau}{Overview of A->Zh->lltautau}}
 \label{sec:hhh_azh}
@@ -537,9 +602,66 @@ More detail on this analysis can be found in reference \cite{CMS-HIG-14-034}.
 \subsection{Model-independent results}
 \label{sec:hhh_results_modelindep}
 
-Add combined plot + per channel comparison (?)
-Combined of mutau and etau only, or full combination even though not having
-worked on fully hadronic?
+The $m_{H}^{\text{kinfit}}$ distributions in the \mutau and \etau channel 
+are shown in figures \ref{fig:hhh_results_mhkinfit_mutau} and \ref{fig:hhh_results_mhkinfit_etau} 
+respectively.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[2jet-0tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_003-a.pdf}}
+\subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_003-b.pdf}}~\\
+\subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_003-c.pdf}}
+\end{center}
+\caption{Distributions of $m_{H}^{kinfit}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
+of the \mutau channel. The \Htohhtobbtautau signal for $m_{H} = 300 $GeV at \tanb=2 in the low\tanb MSSM
+scenario, multiplied by 10, is also overlaid. FIXME need to remake these plots!}
+\label{fig:hhh_results_mhkinfit_mutau}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[2jet-0tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_004-a.pdf}}
+\subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_004-b.pdf}}~\\
+\subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_004-c.pdf}}
+\end{center}
+\caption{Distributions of $m_{H}^{kinfit}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
+of the \etau channel. The \Htohhtobbtautau signal for $m_{H} = 300 $GeV at \tanb=2 in the low\tanb MSSM
+scenario, multiplied by 10, is also overlaid. FIXME need to remake these plots!}
+\label{fig:hhh_results_mhkinfit_etau}
+\end{figure}
+
+None of these distributions show hints of an excess.
+
+The model-independent 95\% CL expected and observed upper limits are shown in 
+figure \ref{fig:hhh_results_modelindep}, with figure \ref{fig:hhh_results_modelindep_perchannel}
+showing the expected sensitivity per channel. These figures include the contribution from the 
+\tautau channel not described in this thesis. Figure \ref{fig:hhh_results_modelindep} shows that
+the expected upper limit on the \Htohhtobbtautau process is around 0.3 pb, the observed ranges
+from 0.2 pb at low mass to 0.4 pb at high mass. From figure \ref{fig:hhh_results_modelindep}
+we can see that the \mutau channel is the most sensitive at masses lower than 320 GeV, with 
+the \tautau channel being the most sensitive beyond this mass point. The \etau channel is always
+less sensitive than the \mutau channel, but at low mass it is still more sensitive than the \tautau 
+channel.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_008-d.pdf}
+\caption{Expected and observed 95\% CL upper limits on cross-section times branching ratio
+for the \Htohhtobbtautau process. In these limits the three final states of \etau, \mutau and \tautau are combined \cite{CMS-HIG-14-034}.}
+\label{fig:hhh_results_modelindep}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_033.pdf}
+\caption{Expected 95\% CL upper limits on cross-section times branching ratio for the \Htohhtobbtautau process.
+The blue line represents the limit for the \tautau channel, the green line for the \mutau channel and the
+red line for the \etau channel. The black line shows the limit for all three channels combined. We see that up to around
+$m_H = 320$ GeV the \mutau channel is the most sensitive, with the \tautau channel being more sensitive at higher masses. FIXME remake this plot!}
+\label{fig:hhh_results_modelindep_perchannel}
+\end{center}
+\end{figure}
 
 
 \subsection{Model-dependent results}
@@ -613,7 +735,7 @@ on the cross--section of $gg\rightarrow \PHiggs$ production
 times the branching ratio of \PHiggs into \hhtobbtautau.
 Regions of the \cosba-\tanb plane where the cross--section times branching
 ratio is larger than the model-independent upper limit set for $m_{H} = 300 $~GeV 
-(see figure FIXME:add plot) are excluded.}
+(see figure \ref{fig:hhh_results_modelindep}) are excluded.}
 \label{fig:Hhh2HDMOverlaid}
 \end{center}
 \end{figure}
@@ -628,7 +750,7 @@ on the cross--section of $gg\rightarrow \PHiggsps$ production
 times the branching ratio of \PHiggsps into \Zhtolltautau.
 Regions of the \cosba-\tanb plane where the cross--section times branching
 ratio is larger than the model-independent upper limit set for $m_{A} = 300 $~GeV 
-(see figure FIXME:add plot) are excluded.}
+(see figure \ref{fig:AZhUpperLimits}) are excluded.}
 \label{fig:AZh2HDMOverlaid}
 \end{center}
 \end{figure}
@@ -656,12 +778,54 @@ The low \tanb MSSM scenario, as discussed in section FIXME: write theory section
 is an MSSM scenario that has been adapted to allow \mh $=125 \pm 3$~GeV for \tanb values
 as low as 1.  
 
+Figure \ref{fig:Hhhlowtanb} shows the cross-section times branching ratio
+of the \Htohhtobbtautau process in the MSSM low \tanb scenario. Comparing these values 
+to the expected and observed upper limits in figure \ref{fig:hhh_results_modelindep} one
+can see that the cross-section times branching ratio in this model is, with exception of a few small 
+areas, lower than the upper limits set by this analysis. This analysis on its own is
+therefore not sensitive enough to exclude any of the \mA-\tanb region in this model. Note that
+at low \tanb ~ \mA and \mH are degenerate, and therefore \mH is not in the studied range of $260-350$ GeV
+throughout the entire \mA-\tanb plane shown here.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/Hhhlowtbhigh.pdf}
+\caption{Cross-section times branching ratio of the \Htohhtobbtautau process
+in the low-\tanb MSSM scenario. No expected and observed exclusion contours
+have been overlaid on these figures as the cross-section times branching
+ratio is smaller than the upper limits set in figure \ref{fig:hhh_results_modelindep}.}
+\label{fig:Hhhlowtanb}
+\end{center}
+\end{figure}
+
+The \AtoZhtolltautau analysis on the other hand can exclude parts of the \mA-\tanb region
+in this model by itself. The expected and observed 95\% CL exclusion contours are overlaid 
+on the cross-section times branching ratio for this process in the low \tanb MSSM scenario in
+figure \ref{fig:AZhlowtanbOverlaid}. The sharp drop in cross-section times branching ratio, and therefore exclusion,
+near \mA $ = 350$ GeV arises from the fact that near this mass the decay $\PHiggsps \rightarrow t\bar{t}$ becomes
+kinematically allowed, resulting in a reduction of the \AtoZh branching ratio.
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{Hhh/Plots/AZhlowtbhigh.pdf}
+\caption{Expected and observed 95 \% CL exclusion limits for the \AtoZhtolltautau analysis
+in the low \tanb MSSM scenario, overlaid on the cross-section times branching ratio. Areas where
+the cross-section times branching ratio is larger than the upper limits in figure \ref{fig:AZhUpperLimits}
+are excluded. The exclusion rapidly drops off at $m_A = 350$ GeV due to the turn-on of the
+$ \PHiggsps \rightarrow$ \ttbar process.}
+\label{fig:AZhlowtanbOverlaid}
+\end{center}
+\end{figure}
+
+
 The combined interpretation of both analyses in this model is presented in figure \ref{fig:HhhAZhMSSM}.
-The exclusion in this scenario is driven by the \AtoZh search, the \Htohh search is not
-very sensitive in this model (see figure FIXME add these plots). At 350 GeV the excluded
-region drops off, this is due to the turn--on of the
-$\PHiggsps \rightarrow \ttbar$ decay which becomes kinematically allowed in this region, 
-sharply decreasing the \AtoZh branching ratio.
+The exclusion in this scenario is driven by the \AtoZh search as the \Htohh search is not
+very sensitive in this model. Combining the two analyses we do see that a slightly larger amount
+of the \mA-\tanb plane can be excluded than using the \AtoZhtolltautau analysis alone. The features
+described for figure \ref{fig:AZhlowtanbOverlaid} are also visible in this figure. A small region of phase
+space, at low \mA and low\tanb predicts a light Higgs boson mass that is not compatible with 125 GeV within 3 GeV.
+This region is therefore excluded, this is indicated by the red band. 
 
 \begin{figure}[h!]
 \begin{center}
