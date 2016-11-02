@@ -19,11 +19,11 @@ the decay \Htohh is enhanced, the \AtoZh decay also has a large branching ratio,
 of both channels for probing the low-\tanb region. The $b\bar{b}$\tautau final state is chosen for the combination
 of the large $h(125) \rightarrow b\bar{b}$ branching ratio and the cleaner \htotautau final state.
 
-\section{Datasets and Monte Carlo samples}
+\section{Datasets and \acl{MC} samples}
 \label{sec:hhh_datasets}
 The dataset used for this analysis corresponds to the full dataset collected by the CMS experiment during the 2012 $p-p$ 
 running period of the LHC. 
-Signal and background events were generated using several different MC event generators. The \texttt{MadGraph}
+Signal and background events were generated using several different \ac{MC} event generators. The \texttt{MadGraph}
 \cite{madgraph} matrix element generator was used to generate samples of \Wjets, \Zellell, \ttbar and \ZZ ,\WZ and \WW
 events. In addition to samples with a mixture of jet multiplicities ('inclusive' samples), samples binned in jet multiplicity
 were used for the \Wjets and \Zellell backgrounds. This increases the number of background events
@@ -33,7 +33,7 @@ inclusive samples such that the fraction of events with each jet multiplicity is
 Single top samples were produced with the \texttt{POWHEG} \cite{powheg1,powheg2} generator. Samples of $gg\rightarrow$\Htohhtobbtautau
 were generated in steps of 10 GeV between \mH $= 260 - 350$~GeV using \texttt{PYTHIA 6} \cite{pythia64}. In all of the samples
 \texttt{TAUOLA} \cite{tauola} is used to decay $\tau$s, and parton showering and hadronisation are modelled using \texttt{PYTHIA 6} \cite{pythia64}.
-Minimum bias events generated using \texttt{PYTHIA 6} are added to all MC samples to model additional
+Minimum bias events generated using \texttt{PYTHIA 6} are added to all \ac{MC} samples to model additional
 interactions. 
 
 To better model the \Ztautau background, an embedding technique is used. In this method, 
@@ -95,19 +95,19 @@ In addition to the requirements on the di--tau pair, at least 2 jets with \pT$ >
 required. No b--tagging requirements are applied at this stage, these will be discussed 
 in more detail in section \ref{sec:hhh_selection_categories}.
 
-Figure \ref{fig:Hhh_selection_kinematics_mt} shows some of the kinematic variables 
-of di-\Pgt candidates in the \mutau channel
-\begin{figure}[h!]
-\begin{center}
- \subfloat[Muon \pT]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_1_2jetinclusive_mt_2012.pdf}}
-  \subfloat[Hadronic \Pgt \pT ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_2_2jetinclusive_mt_2012.pdf}}~\\
-  \subfloat[Muon $\eta$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_1_2jetinclusive_mt_2012.pdf}}
-  \subfloat[Hadronic \Pgt $\eta$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_2_2jetinclusive_mt_2012.pdf}}~\\
-
-\end{center}
-\caption{Plots of muon and hadronic \Pgt \pT and $\eta$ in the \mutau channel.}
-\label{fig:Hhh_selection_kinematics_mt}
-\end{figure}
+%Figure \ref{fig:Hhh_selection_kinematics_mt} shows some of the kinematic variables 
+%of di-\Pgt candidates in the \mutau channel
+%\begin{figure}[h!]
+%\begin{center}
+% \subfloat[Muon \pT]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_1_2jetinclusive_mt_2012.pdf}}
+%  \subfloat[Hadronic \Pgt \pT ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_2_2jetinclusive_mt_2012.pdf}}~\\
+%  \subfloat[Muon $\eta$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_1_2jetinclusive_mt_2012.pdf}}
+%  \subfloat[Hadronic \Pgt $\eta$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_2_2jetinclusive_mt_2012.pdf}}~\\
+%
+%\end{center}
+%\caption{Plots of muon and hadronic \Pgt \pT and $\eta$ in the \mutau channel.}
+%\label{fig:Hhh_selection_kinematics_mt}
+%\end{figure}
 
 
 \subsection{\texorpdfstring{Event selection in the \etau channel}{Event selection in the e-tau channel}}
@@ -137,18 +137,18 @@ requirements are rejected.
 In addition to the requirements on the di--tau pair, at least 2 jets with \pT $>20$ GeV are 
 required. 
 
-Figure \ref{fig:Hhh_selection_kinematics_et} shows some of the kinematic variables 
-of di-\Pgt candidates in the \etau channel
+Figure \ref{fig:Hhh_selection_kinematics_etmt} shows some of the kinematic variables 
+of di-\Pgt candidates in the \etau and \mutau channels
 \begin{figure}[h!]
 \begin{center}
- \subfloat[Electron \pT]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_1_2jetinclusive_et_2012.pdf}}
-  \subfloat[Hadronic \Pgt \pT ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_2_2jetinclusive_et_2012.pdf}}~\\
-  \subfloat[Electron $\eta$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_1_2jetinclusive_et_2012.pdf}}
-  \subfloat[Hadronic \Pgt $\eta$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_2_2jetinclusive_et_2012.pdf}}~\\
+ \subfloat[Electron \pT (\etau)]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_1_2jetinclusive_et_2012.pdf}}
+  \subfloat[Hadronic \Pgt \pT (\mutau)]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/pt_2_2jetinclusive_mt_2012.pdf}}
+%  \subfloat[Electron $\eta$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_1_2jetinclusive_et_2012.pdf}}
+%  \subfloat[Hadronic \Pgt $\eta$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/eta_2_2jetinclusive_et_2012.pdf}}~\\
 
 \end{center}
-\caption{Plots of electron and hadronic \Pgt \pT and $\eta$ in the \etau channel.}
-\label{fig:Hhh_selection_kinematics_et}
+\caption{Plots of electron \pT in the \etau channel and hadronic \Pgt \pT in the \mutau channel.}
+\label{fig:Hhh_selection_kinematics_etmt}
 \end{figure}
 
 
@@ -157,11 +157,9 @@ of di-\Pgt candidates in the \etau channel
 ADD b-jet plots?
 In both channels an selection on the transverse mass \mT between the electron/muon
 and missing transverse energy, defined as in equation \ref{eqn:hhh_selection_mt}, is applied.
-
 \begin{equation}\label{eqn:hhh_selection_mt}
 m_{\text{T}} = \sqrt{2p_{\text{T}}E_{\text{T}}^{\text{miss}}(1-\cos{\Delta\phi})}
 \end{equation}
-
 In this eqation \pT is the transverse momentum of the electron or muon, and $\Delta\phi$ the angle
 between the light lepton and the missing transverse energy. The \mT distributions for the \etau
 and \mutau channels, using the selections as
@@ -222,18 +220,18 @@ One can see that this signal peaks at around 125 GeV.}
 \label{fig:Hhh_selection_masscuts}
 \end{figure}
 
-\section{Data to Monte Carlo correction factors}
+\section{Data to \acl{MC} correction factors}
 \label{sec:hhh_datamc}
-Monte Carlo samples are used for the estimation of some of the backgrounds and the signal, 
-and it is therefore important to correct for any mismodelling. The data to Monte Carlo
+\ac{MC} samples are used for the estimation of some of the backgrounds and the signal, 
+and it is therefore important to correct for any mismodelling. The data to \ac{MC} 
 correction factors used for this are estimated in dedicated control regions.
 
-A reweighting is applied to make the pile--up distribution in Monte Carlo
+A reweighting is applied to make the pile--up distribution in \ac{MC}
 match the distribution observed in data.DESCRIPTION
 
-Data and Monte Carlo identification, isolation, and trigger efficiencies
+Data and \ac{MC} identification, isolation, and trigger efficiencies
 are measured for electrons, muons and hadronic taus. The difference between
-the efficiencies in data and Monte Carlo are applied to Monte Carlo events as a
+the efficiencies in data and \ac{MC} are applied to \ac{MC} events as a
 scale factor $SF = \frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 
 For electrons and muons, these scale factors are measured using a 
@@ -247,26 +245,24 @@ FIXME: Tau es?
 FIXME: top pt reweighting
 FIXME: ttbar scale factor
 
-In the \etau channel a data to Monte Carlo scale factor is applied
+In the \etau channel a data to \ac{MC} scale factor is applied
 to the \Zee background, to correct for differences in the $e\rightarrow\Pgt_{h}$
-fake rate between data and MC. DERIVED HOW
+fake rate between data and \ac{MC}. DERIVED HOW
 
 To correct for the difference in b--tagging efficiency and light jet mis--tagging
-rates between data and Monte Carlo \pT and $\eta$ dependent scale factors are 
+rates between data and \ac{MC} \pT and $\eta$ dependent scale factors are 
 derived using the method described in \cite{BTV8TeV}. There are separate scale factors for 
 b-/c- jets and light jets. There are multiple possible ways to apply these
 scale factors, for this analysis this is done through a promote/demote method.
 
 In this method a demotion or promotion probability is assigned to every
 jet as in equation \ref{eqn:promotedemote}.
-
 \begin{align}\label{eqn:promotedemote}
 &P(\text{demote}) = 1 - SF \text{  for SF < 1 }  \notag \\
 &P(\text{promote}) = \frac{(SF - 1)(\epsilon_{\text{MC}}-1)}{SF} \text{    for SF > 1}
 \end{align}.
-
 In this equation $SF$ is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
-the b--tagging efficiency in Monte Carlo events for the type of jet (light, b- or c-)
+the b--tagging efficiency in \ac{MC} events for the type of jet (light, b- or c-)
 in consideration.
 
 
@@ -297,24 +293,22 @@ uncertainties in the momentum measurement, therefore $\vec{\beta} = \vec{p}/E$ i
 also kept constant. 
 
 Before the fit, from the mass constraint we have (equation \ref{eqn:kinfit_prefit})
-
+~\vspace{-0.5\baselineskip}
 \begin{align}\label{eqn:kinfit_prefit}
 m_{h}^2 &= E_{h}^2 - \vec{p_{h}}^2 = (E_{b1}+E_{b2})^2 - (\vec{p_{b1}} + \vec{p_{b2}})^2 \notag\\
 & = 2E_{b1}E_{b2} + m_{b1}^2 +m_{b2}^2 - 2\vec{p_{b1}}\vec{p_{b2}} \notag\\
 & = m_{b1}^2 +m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta_{b2}})\notag\\
 &\Rightarrow (1-\vec{\beta_{b1}}\vec{\beta_{b2}}) = \frac{m_h^2 - m_{b1}^2 - m_{b2}^2}{2E_{b1}E_{b2}}
 \end{align}
-
 When varying the energy of the first jet in the fit, equation \ref{eqn:kinfit_prefit} can be 
 rewritten to derive an expression for the updated energy of the second jet. Using $\mathcal{A} = (1-\vec{\beta_{b1}}\vec{\beta_{b2}})$ 
 and equation \ref{eqn:gamma_def}:
-
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:gamma_def}
 \gamma = \frac{1}{1-\beta^2} \Rightarrow \gamma^2 = \frac{1}{1-\beta^2} = \frac{1}{1-p^2/E^2} = \frac{E^2}{m^2}
 \end{equation}
-
 We get:
-
+~\vspace{-0.5\baselineskip}
 \begin{align}\label{eqn:kinfit_variation}
 m_h^2 &= m_{b1}^2 + m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta{b2}}\notag\\
 &= m_{b1}^2 +\frac{E_{b2,fit}^2}{\gamma_{b2}^2} +2\mathcal{A}E_{b1}E_{b2,fit}\notag\\
@@ -324,10 +318,10 @@ m_h^2 &= m_{b1}^2 + m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta{b2}}\n
 \end{align}
 
 The fitting procedure additionally modifies the masses of the b-jets as (equation \ref{eqn:kinfit_bjetmass})
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_bjetmass}
 m_{b_{1,2}}^{fit} = m_{b_{1,2}}\frac{E_{b_{1,2}}^{fit}}{E_{b_{1,2}}}
 \end{equation}
-
 For each b-jet a $\chi^2$ term is calculated as $\chi_{b1,2}^2 = \frac{E_{b1,2}^{fit}-E_{b1,2}^{meas}}{\sigma_{b1,2}}$.
 
 For taus only the visible decay products are measured. Assuming the visible decay products of the \Pgt point in 
@@ -339,36 +333,32 @@ on the fit have to be used to reconstruct the correct tau energies. This is done
 enforcing that the heavy Higgs boson recoil from the fit is close to the reconstructed recoil.
 
 The measured recoil is (equation \ref{eqn:kinfit_recoilmeas})
-
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilmeas}
 \vec{p_{\text{T,recoil}}}^{\text{meas}} = -\vec{p_{\text{T,H}}}^{\text{meas}} = -\vec{p_{\text{T,miss}}}^{\text{meas}} - \vec{p_{\text{T},b_{1}}}^{\text{meas}} - \vec{p_{\text{T},b_{2}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{\text{meas}}
 \end{equation}
-
 With the recoil from the fit (equation \ref{eqn:kinfit_recoilfit})
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilfit}
 \vec{p_{\text{T,recoil}}}^{fit} = -\vec{p_{\text{T,H}}}^{fit} = - \vec{p_{\text{T},b_{1}}}^{fit} - \vec{p_{\text{T},b_{2}}}^{fit} - \vec{p_{\text{T},\Pgt_1}}^{fit} - \vec{p_{\text{T},\Pgt_2}}^{fit}
 \end{equation}
-
 A $\chi^2$ corresponding to the agreement between the fitted and measured recoil is reconstructed as (equation \ref{eqn:kinfit_recoilchi2})
-
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilchi2}
 \chi^2_{\text{recoil}} = (\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{measured}})^T V_{\text{recoil}}^{-1}(\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{measured}})
 \end{equation}
-
 where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as in equation \ref{eqn:kinfit_recoilcov} from the covariance matrices of the b-jets and
 the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET (OBJECT RECO),
 while the covariance matrices of the b-jets can be written in terms of position, momentum and resolution of the b-jets. 
-
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilcov}
 V_{\text{recoil}} = V_{\vec{p_{\text{T,miss}}}} - V_{b_{1}} - V_{b_2} 
 \end{equation}
-
 The total $\chi^2$ term that needs to be minimised in the fit can then be written as (equation \ref{eqn:kinfit_chitot})
-
+~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_chitot}
 \chi^2 = \chi^2_{b_1} + \chi^2_{b_2} + \chi^2_{\text{recoil}}
 \end{equation}
-
 The result of the kinematic fit are the tau and b-jet 4-vectors with their energies and momenta
 set to the best fit values found for them in the fit. These can then be added together to find
 the mass of the heavy Higgs boson as reconstructed by the kinematic fit.
@@ -407,7 +397,7 @@ The \Ztautau background is estimated using the embedded samples
 described in section \ref{sec:hhh_datasets}. To estimate the 
 yield of \Ztautau in each category, the total
 yield after the initial event selection (before subdividing into categories) as
-estimated in \Ztautau Monte Carlo samples is scaled by the efficiency with which 
+estimated in \Ztautau \ac{MC} samples is scaled by the efficiency with which 
 such events pass the category selection in the embedded sample. The shape of
 the \Ztautau background is taken from the embedded sample after applying the full
 category selection. The contamination from \ttbar backgrounds in the embedded
@@ -415,10 +405,10 @@ sample is accounted for by subtracting this contamination, as evaluated using
 the dedicated \ttbar embedded samples, from the \Ztautau background.
 
 \subsection{\texorpdfstring{\ttbar}{ttbar}}
-Both the \ttbar shape and normalisation are estimated using Monte Carlo samples.
+Both the \ttbar shape and normalisation are estimated using \ac{MC} samples.
 These are checked against data in dedicated control regions. One such control
 region uses the \emu final state of the taus. In this control region
-a data-to-Monte Carlo scale factor is estimated and applied to the yield estimate from Monte Carlo.
+a data-to-\ac{MC} factor is estimated and applied to the yield estimate from \ac{MC}.
 
 \subsection{\texorpdfstring{\Wjets}{W + jets}}
 \label{sec:hhh_backgrounds_wjets}
@@ -428,7 +418,7 @@ from \Wjets in the signal region a sideband with \mT greater
 than 70 GeV is used in the 2jet-0tag and 2jet-1tag categories.
 Contributions from other backgrounds are subtracted 
 from the data in this region, and a high \mT to low \mT
-extrapolation factor is determined from the \Wjets Monte Carlo
+extrapolation factor is determined from the \Wjets \ac{MC} 
 samples. The yield in the signal region is then the other-background-subtracted
 data yield in the high \mT region multiplied by this extrapolation factor.
 In the 2jet-2tag, a slightly different high \mT sideband of 60-120 GeV is used 
@@ -436,7 +426,7 @@ to give larger statistics for the \Wjets estimate after other backgrounds are
 subtracted. The method of extrapolating this yied estimate into
 the signal region is otherwise analogous.
 
-The \Wjets shape is taken from the Monte Carlo samples. To 
+The \Wjets shape is taken from the \ac{MC} samples. To 
 increase the statistics for this estimate, the b-tagging definition
 in the 2jet-1tag and 2jet-2tag categories is loosened to the loose (instead of medium)
 working point for the purposes of shape estimation.
@@ -471,7 +461,7 @@ working point than the working point used elsewhere in the analysis.
 \label{sec:hhh_backgrounds_other}
 The remaining backgrounds of \Zellell, di-boson and single-top
 events are small. Both shape and normalisation are
-estimated using Monte Carlo samples.
+estimated using \ac{MC} samples.
  
 
 \section{Systematic uncertainties}
@@ -566,7 +556,7 @@ This selection changes by final state and has been chosen to optimise the analys
 events with at least one b-tagged jet. 
 
 Remaining backgrounds from \ZZ, triboson and \ttbar\PZ production are estimated using
-Monte Carlo samples. Backgrounds from \PZ+jets %($\ell\ell\tautau$ channel) 
+\ac{MC} samples. Backgrounds from \PZ+jets %($\ell\ell\tautau$ channel) 
 and \WZ+jets %($\ell\ell\mutau$ and $\ell\ell\etau$ channels) 
 events, with at least one misidentified lepton, are estimated from control regions in data.
 
@@ -598,6 +588,91 @@ More detail on this analysis can be found in reference \cite{CMS-HIG-14-034}.
 
 \subsection{Signal extraction}
 \label{sec:hhh_results_extraction}
+The kinematic fit mass $m_{H}^{\text{kinfit}}$ is used as the discriminating variable.
+For each channel and category, the compatibility of the $m_{H}^{\text{kinfit}}$ distribution
+of the observed data with the expected background distribution can be assessed. All bins
+of the $m_{H}^{\text{kinfit}}$ distribution are used to perform a shape analysis. The 
+methods used for this were developed by the LHC Higgs Combination Group \cite{LHCHComb2011} 
+and are used for all Higgs analyses in ATLAS and CMS. 
+
+For the data a likelihood function is constructed as (equation \ref{eqn:hhh_likelihood}).
+\begin{equation} \label{eqn:hhh_likelihood}
+\mathcal{L}(\text{data}|\mu, \theta) = \Sigma_i\text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta) + b_i(\theta)) )\cdot \Sigma_j p(~\theta_j|\theta_j)
+\end{equation}
+
+Where $\text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta)+b_i(\theta)))$ is given as (equation \ref{eqn:hhh_poisson})
+
+\begin{equation}\label{eqn:hhh_poisson}
+\text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta)+b_i(\theta))) = \frac{(\mu\cdot s_i(\theta) + b_i(\theta))^{n_i})}{n_i!}e^{-(\mu\cdot s_i(\theta)+b_i(\theta))}
+\end{equation}
+
+The first term integrates over all bins of the $m_{H}^{\text{kinfit}}$ distribution 
+in all channels and categories. $s$ represents the number of expected signal events
+in each bin, and $b$ the number of expected background events. These are functions of 
+$\theta$, the full set of nuisance parameters. The systematic uncertainties discussed in section 
+REFERENCE are represented by a nuisance parameter $\theta_j$. The signal strength
+modifier $\mu$ can represent different quantities depending on the normalisation of the 
+signal expectation. In the case of the \Htohhtobbtautau analysis the signal is normalised
+to 1 pb, so the signal strenght modifier represents
+the cross-section $\times$ branching ratio of a possible signal.
+
+IMPROVE THIS:
+The second term $p(~\theta|\theta)$ represents the pdf of the uncertainty on the nominal
+value of the nuisance parameter $~\theta$. 
+
+To compare the data with the background only and signal + background hypothesis, a test
+statistic $~q_{\mu}$ can be defined. This is a single 
+number that is used to distinguish between the two hypotheses. The test
+statistic used for LHC Higgs analyses, known as the profile likelihood, is given 
+in equation \ref{eqn:hhh_profilelikelihood}.
+
+\begin{equation}\label{eqn:hhh_profilelikelihood}
+q_{\mu} = -2\text{ln}\frac{\mathcal{L}(data|\mu,\hat{\theta_{\mu}})}{\mathcal{L}(\text{data}|\hat{\mu},\hat{\theta})}
+\end{equation}
+
+Where we require $0 \leq \hat{\mu} \leq \mu$.
+
+In this equation $\mu$ is the signal strenght modifier being tested, $\hat{\theta_{\mu}}$ denotes the values of the
+nuisance parameters which maximise the likelihood for that particular $\mu$, while $\hat{mu}$ and $\hat{\theta}$ are
+the values of signal strength modifier and nuisance parameters which give the global maximum of the likelihood.
+The requirements on $\mu$ ensure that the signal strenght is non-negative ($ 0 \leq \hat{\mu}$) and that
+a one-sided confidence interval is constructed so as not to allow the observation of  a 
+signal with strength $\hat{mu} > \mu$ to cause rejection of the signal hypothesis ($ \hat{\mu} \leq \mu$).
+
+Describe pdfs
+
+The p-value for $\mu$ and for background-only ($\mu = 0$) can be determined as in equation \ref{eqn:hhh_pvaluesig} and \ref{eqn:hhh_pvaluebkg}.
+
+\begin{equation}\label{eqn:hhh_pvaluesig}
+p_{\mu} = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{s+b}) = \Integral_{q_{\mu}^{\text{obs}}}^{\infty} f(q_{\mu} | \mu,\hat{\theta_{\mu}^{\text{obs}}}) dq_{\mu}
+\end{equation}
+
+\begin{equation}\label{eqn:hhh_pvaluebkg}
+1-p_b = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{b}) = \Integral_{q_{0}^{\text{obs}}}^{\infty} f(q_{\mu} | 0,\hat{\theta_{0}^{\text{obs}}}) dq_{\mu} 
+\end{equation}
+
+$CL_s$ is then defined as (equation \ref{eqn:hhh_cls})
+
+\begin{equation}\label{eqn:hhh_cls}
+CL_s(\mu) = \frac{CL_{s+b}}{CL_b} = \frac{p_{\mu}}{1-p_b}
+\end{equation}
+
+The value of $\mu$ for which $CL_s(\mu) \leq \alpha$ then gives the upper limit 
+In the case of the analysis discussed in this chapter, the value of $\mu$ for which the upper 
+limit on cross-section times branching ratio for the \Htohhtobbtautau process reaches $1-\alpha$ is 
+said to be excluded at a confidence level of $\alpha$. Upper limits at the LHC are generally
+quoted at 95\% confidence level, therefore the upper limit on cross-section times branching ratio
+for the \Htohhtobbtautau process at this level is obtained as the value of $\mu$ for which $CL_s$ 
+equals 0.05. MODIFIED FREQUENTIST APPROACH.
+
+While the distribution of $f(q_{\mu})$ can always be determined by generating toy datasets,
+in the limit of large statistics $f(q_{\mu})$ follows a known formula \cite{AsymptoticFormula}.
+This formula, known as the asymptotic approximation, allows for the calculation
+of the observed limit as well as the median and $\pm 1$ and $2\sigma$ expected limits using
+the properties of the Asimov dataset, a dataset in which the observation in 
+each bin exactly matches the background expectation.
+
+
 
 \subsection{Model-independent results}
 \label{sec:hhh_results_modelindep}
@@ -645,23 +720,28 @@ channel.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_008-d.pdf}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_008-d.pdf}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_033.pdf}}
 \caption{Expected and observed 95\% CL upper limits on cross-section times branching ratio
-for the \Htohhtobbtautau process. In these limits the three final states of \etau, \mutau and \tautau are combined \cite{CMS-HIG-14-034}.}
+for the \Htohhtobbtautau process. In these limits the three final states of \etau, \mutau and \tautau are combined \cite{CMS-HIG-14-034} (left).
+The right hand side panel shows the expected 95\% CL upper limits on cross-section times branching ratio for the \Htohhtobbtautau
+process, separated by channel. The blue line shows the limit for the \tautau channel, the green line for the \mutau channel, the red line
+for the \etau channel and the black line the limit for all three channels combined. Up to around $m_H = 320$ GeV the \mutau channel is the most
+sensitive, with the \tautau channel being more sensitive at higher masses. FIXME remake this plot!}
 \label{fig:hhh_results_modelindep}
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_033.pdf}
-\caption{Expected 95\% CL upper limits on cross-section times branching ratio for the \Htohhtobbtautau process.
-The blue line represents the limit for the \tautau channel, the green line for the \mutau channel and the
-red line for the \etau channel. The black line shows the limit for all three channels combined. We see that up to around
-$m_H = 320$ GeV the \mutau channel is the most sensitive, with the \tautau channel being more sensitive at higher masses. FIXME remake this plot!}
-\label{fig:hhh_results_modelindep_perchannel}
-\end{center}
-\end{figure}
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=0.7\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_033.pdf}
+%\caption{Expected 95\% CL upper limits on cross-section times branching ratio for the \Htohhtobbtautau process.
+%The blue line represents the limit for the \tautau channel, the green line for the \mutau channel and the
+%red line for the \etau channel. The black line shows the limit for all three channels combined. We see that up to around
+%$m_H = 320$ GeV the \mutau channel is the most sensitive, with the \tautau channel being more sensitive at higher masses. FIXME remake this plot!}
+%\label{fig:hhh_results_modelindep_perchannel}
+%\end{center}
+%\end{figure}
 
 
 \subsection{Model-dependent results}
@@ -704,14 +784,14 @@ $\PHiggsps \rightarrow \PZ\PHiggslight$ & $\sim$ \cosba\\
 FIXME: ALIGNMENT LIMIT
 
 
-The interpretations are made in the \cosba--\tanb plane. Figures \ref{fig:Hhh2HDMOverlaid}
-and \ref{fig:AZh2HDMOverlaid} show the observed and expected exclusion at 95\% confidence level for the \Htohh
-and \AtoZh analyses respectively, overlaid on the production cross--section times branching ratio.
+The interpretations are made in the \cosba--\tanb plane. Figure \ref{fig:HhhAndAZh2HDMOverlaid}
+shows the observed and expected exclusion at 95\% confidence level for the \Htohh
+and \AtoZh analyses, overlaid on the production cross--section times branching ratio.
 The exclusion contours have some interesting features, most of which can be explained by the couplings
 from table \ref{tab:hhh_2HDM_couplings}. When \cosba=0, in the alignment limit, the couplings
 of all particles are exactly standard model--like. This is reflected in the \Htohh and \AtoZh branching ratios, 
 which both vanish as \cosba approaches 0. This leads to the corridor of non--exclusion down the 
-centre of figures \ref{fig:Hhh2HDMOverlaid} and \ref{fig:AZh2HDMOverlaid}. Additionally,
+centre of the plots in figure \ref{fig:HhhAndAZh2HDMOverlaid}. Additionally,
 as the couplings of \PHiggslight to pairs of b--quarks and $\Pgt$ leptons are porportional 
 to $\frac{\sin{\alpha}}{\cos{\beta}}$, the branching ratios of \Htohhtobbtautau
 and \AtoZhtolltautau vanish when $\alpha = 0$, leading to the corridor of non--exclusion
@@ -727,50 +807,38 @@ interpretation, these are a result of the complex \Htohh branching ratio (ADD FI
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/Hhh2HDM.pdf}
-\caption{Search for \Htohhtobbtautau interpreted in a type II 
+\subfloat[\Htohhtobbtautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/Hhh2HDM.pdf}}
+\subfloat[\AtoZhtolltautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/AZh2HDM.pdf}}
+\caption{Search for \Htohhtobbtautau (left) and \AtoZhtolltautau (right) interpreted in a type II 
 2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV. The expected (dashed line)
 and observed (solid line) exclusion contours at 95\% confidence level are overlaid
-on the cross--section of $gg\rightarrow \PHiggs$ production
-times the branching ratio of \PHiggs into \hhtobbtautau.
+on the cross--section times branching ratio of the searched-for process.
 Regions of the \cosba-\tanb plane where the cross--section times branching
 ratio is larger than the model-independent upper limit set for $m_{H} = 300 $~GeV 
-(see figure \ref{fig:hhh_results_modelindep}) are excluded.}
-\label{fig:Hhh2HDMOverlaid}
+(see figure \ref{fig:hhh_results_modelindep} and \ref{fig:AZhUpperLimits}) are excluded.}
+\label{fig:HhhandAZh2HDMOverlaid}
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/AZh2HDM.pdf}
-\caption{Search for \AtoZhtolltautau interpreted in a type II 
-2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV. The expected (dashed line)
-and observed (solid line) exclusion contours at 95\% confidence level are overlaid
-on the cross--section of $gg\rightarrow \PHiggsps$ production
-times the branching ratio of \PHiggsps into \Zhtolltautau.
-Regions of the \cosba-\tanb plane where the cross--section times branching
-ratio is larger than the model-independent upper limit set for $m_{A} = 300 $~GeV 
-(see figure \ref{fig:AZhUpperLimits}) are excluded.}
-\label{fig:AZh2HDMOverlaid}
-\end{center}
-\end{figure}
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=0.85\textwidth]{Hhh/Plots/AZh2HDM.pdf}
+%\caption{Search for \AtoZhtolltautau interpreted in a type II 
+%2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV. The expected (dashed line)
+%and observed (solid line) exclusion contours at 95\% confidence level are overlaid
+%on the cross--section of $gg\rightarrow \PHiggsps$ production
+%times the branching ratio of \PHiggsps into \Zhtolltautau.
+%Regions of the \cosba-\tanb plane where the cross--section times branching
+%ratio is larger than the model-independent upper limit set for $m_{A} = 300 $~GeV 
+%(see figure \ref{fig:AZhUpperLimits}) are excluded.}
+%\label{fig:AZh2HDMOverlaid}
+%\end{center}
+%\end{figure}
 
 A combined interpretation of both analyses in this model is presented
-in figure \ref{fig:HhhAZh2HDM}. Some of the features discussed earlier
+in the left-hand side panel of figure \ref{fig:HhhAZhMSSM2HDM}. Some of the features discussed earlier
 in this section are also visible in this combined interpretation.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_012.pdf}
-\caption{Combined interpretation of searches for \AtoZhtolltautau and 
-\Htohhtobbtautau in a type II 2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV.
-The shaded blue area bounded by the solid black line indicates the observed 
-95\% confidence level excluded region. The dashed black line indicates the expected
-exclusion, with the grey bands indicating the $\pm 1\sigma$ and $2\sigma$ 
-exclusion limits \cite{CMS-HIG-14-034}.}
-\label{fig:HhhAZh2HDM}
-\end{center}
-\end{figure}
 
 \subsubsection{Interpretation in the low \tanb MSSM scenario}
 \label{sec:hhh_results_modeldep_lowtb}
@@ -778,7 +846,7 @@ The low \tanb MSSM scenario, as discussed in section FIXME: write theory section
 is an MSSM scenario that has been adapted to allow \mh $=125 \pm 3$~GeV for \tanb values
 as low as 1.  
 
-Figure \ref{fig:Hhhlowtanb} shows the cross-section times branching ratio
+The left-hand side panel of figure \ref{fig:HhhAndAZhlowtanb} shows the cross-section times branching ratio
 of the \Htohhtobbtautau process in the MSSM low \tanb scenario. Comparing these values 
 to the expected and observed upper limits in figure \ref{fig:hhh_results_modelindep} one
 can see that the cross-section times branching ratio in this model is, with exception of a few small 
@@ -787,39 +855,48 @@ therefore not sensitive enough to exclude any of the \mA-\tanb region in this mo
 at low \tanb ~ \mA and \mH are degenerate, and therefore \mH is not in the studied range of $260-350$ GeV
 throughout the entire \mA-\tanb plane shown here.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/Hhhlowtbhigh.pdf}
-\caption{Cross-section times branching ratio of the \Htohhtobbtautau process
-in the low-\tanb MSSM scenario. No expected and observed exclusion contours
-have been overlaid on these figures as the cross-section times branching
-ratio is smaller than the upper limits set in figure \ref{fig:hhh_results_modelindep}.}
-\label{fig:Hhhlowtanb}
-\end{center}
-\end{figure}
-
 The \AtoZhtolltautau analysis on the other hand can exclude parts of the \mA-\tanb region
 in this model by itself. The expected and observed 95\% CL exclusion contours are overlaid 
-on the cross-section times branching ratio for this process in the low \tanb MSSM scenario in
-figure \ref{fig:AZhlowtanbOverlaid}. The sharp drop in cross-section times branching ratio, and therefore exclusion,
+on the cross-section times branching ratio for this process in the low \tanb MSSM scenario in the right-hand side panel 
+of figure \ref{fig:HhhAndAzhlowtanb}. The sharp drop in cross-section times branching ratio, and therefore exclusion,
 near \mA $ = 350$ GeV arises from the fact that near this mass the decay $\PHiggsps \rightarrow t\bar{t}$ becomes
 kinematically allowed, resulting in a reduction of the \AtoZh branching ratio.
 
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/AZhlowtbhigh.pdf}
-\caption{Expected and observed 95 \% CL exclusion limits for the \AtoZhtolltautau analysis
-in the low \tanb MSSM scenario, overlaid on the cross-section times branching ratio. Areas where
-the cross-section times branching ratio is larger than the upper limits in figure \ref{fig:AZhUpperLimits}
-are excluded. The exclusion rapidly drops off at $m_A = 350$ GeV due to the turn-on of the
-$ \PHiggsps \rightarrow$ \ttbar process.}
-\label{fig:AZhlowtanbOverlaid}
+\subfloat[\Htohhtobbtautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/Hhhlowtbhigh.pdf}}
+\subfloat[\AtoZhtolltautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/AZhlowtbhigh.pdf}}
+\caption{Cross-section times branching ratio of the \Htohhtobbtautau process (left) and of the
+\AtoZhtolltautau process (right) in the low-\tanb ~MSSM scenario. On the right-hand side
+plot the expected and observed 95\% CL exclusion limits for the \AtoZhtolltautau analysis in the low \tanb ~MSSM scenario
+have been overlaid on the cross-section times branching ratio. Areas where the cross-section times branching
+ratio is larger than the upper limits in figure \ref{fig:AZhUpperLimits} are excluded. The exclusion rapidly drops
+off at $m_A = 350$ GeV due to the turn-on of the $\PHiggsps \rightarrow$ \ttbar process.
+No expected and observed exclusion contours
+have been overlaid on the lef-hand side plot as the cross-section times branching
+ratio is smaller than the upper limits set in figure \ref{fig:hhh_results_modelindep}.}
+\label{fig:HhhAndAZhlowtanb}
 \end{center}
 \end{figure}
 
 
-The combined interpretation of both analyses in this model is presented in figure \ref{fig:HhhAZhMSSM}.
+
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=0.85\textwidth]{Hhh/Plots/AZhlowtbhigh.pdf}
+%\caption{Expected and observed 95 \% CL exclusion limits for the \AtoZhtolltautau analysis
+%in the low \tanb MSSM scenario, overlaid on the cross-section times branching ratio. Areas where
+%the cross-section times branching ratio is larger than the upper limits in figure \ref{fig:AZhUpperLimits}
+%are excluded. The exclusion rapidly drops off at $m_A = 350$ GeV due to the turn-on of the
+%$ \PHiggsps \rightarrow$ \ttbar process.}
+%\label{fig:AZhlowtanbOverlaid}
+%\end{center}
+%\end{figure}
+
+
+The combined interpretation of both analyses in this model is presented in the right-hand side panel of
+figure \ref{fig:HhhAZhMSSM2HDM}.
 The exclusion in this scenario is driven by the \AtoZh search as the \Htohh search is not
 very sensitive in this model. Combining the two analyses we do see that a slightly larger amount
 of the \mA-\tanb plane can be excluded than using the \AtoZhtolltautau analysis alone. The features
@@ -827,16 +904,32 @@ described for figure \ref{fig:AZhlowtanbOverlaid} are also visible in this figur
 space, at low \mA and low\tanb predicts a light Higgs boson mass that is not compatible with 125 GeV within 3 GeV.
 This region is therefore excluded, this is indicated by the red band. 
 
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_012.pdf}
+%\caption{Combined interpretation of searches for \AtoZhtolltautau and 
+%\Htohhtobbtautau in a type II 2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV.
+%The shaded blue area bounded by the solid black line indicates the observed 
+%95\% confidence level excluded region. The dashed black line indicates the expected
+%exclusion, with the grey bands indicating the $\pm 1\sigma$ and $2\sigma$ 
+%exclusion limits \cite{CMS-HIG-14-034}.}
+%\label{fig:HhhAZh2HDM}
+%\end{center}
+%\end{figure}
+
+
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_011.pdf}
+\subfloat[type-II 2HDM]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_012.pdf}}
+\subfloat[low \tanb ~MSSM scenario]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_011.pdf}}
 \caption{Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
-interpreted in the low \tanb MSSM scenario. The shaded blue area bounded by
+interpreted in a type II 2HDM assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV (left) and interpreted
+in the low \tanb ~MSSM scenario (right). The shaded blue area bounded by
 the solid black line indicates the observed excluded region at 95\% confidence level.
 The dashed black line indicates the expected exclusion, with the grey bands showing
 the $\pm 1\sigma$ and $2\sigma$ expected exclusion \cite{CMS-HIG-14-034}. The area
 bounded by the red line is the region of phase space where \mh $\neq 125 \pm 3$ 
 GeV and is therefore not accessible.}
-\label{fig:HhhAZhMSSM}
+\label{fig:HhhAZhMSSM2HDM}
 \end{center}
 \end{figure}
