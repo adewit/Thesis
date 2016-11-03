@@ -1,6 +1,5 @@
 \chapter{\texorpdfstring{Search for \Htohhtobbtautau}{Search for H -> hh -> bbtautau}}
 \label{sec:hhh}
-
 In this chapter the search for a heavy Higgs boson decaying to a pair of 125 GeV Higgs bosons, with one of these Higgs bosons decaying to 
 a pair of b-jets and the other decaying to a pair of \Ptau leptons is discussed. This \Pgt-pair final states studied in this analysis
 are the \etau, \mutau and \tautau channels. The results of this search are model-independent
@@ -46,7 +45,6 @@ of the two muons originiating from the \PZ have been removed. This technique is 
 a \ttbar background samples to estimate the \ttbar contamination in the embedded sample. This contribution
 needs to be subtracted from the \Ztautau background estimated using the embedded \Zmm sample to
 avoid double counting with the \ttbar monte carlo.
-
 
 \section{Event selection and categorisation}
 \label{sec:hhh_selection}
@@ -227,7 +225,7 @@ and it is therefore important to correct for any mismodelling. The data to \ac{M
 correction factors used for this are estimated in dedicated control regions.
 
 A reweighting is applied to make the pile--up distribution in \ac{MC}
-match the distribution observed in data.DESCRIPTION
+match the distribution observed in data, as described in chapter OBJECT RECO.
 
 Data and \ac{MC} identification, isolation, and trigger efficiencies
 are measured for electrons, muons and hadronic taus. The difference between
@@ -236,18 +234,22 @@ scale factor $SF = \frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 
 For electrons and muons, these scale factors are measured using a 
 tag--and--probe method using \Zeenog and \Zmmnog events, respectively.
-The hadronic taus identification, isolation and trigger efficiencies
+The hadronic tau identification, isolation and trigger efficiencies
 are measured via a similar method that makes use of
 $Z\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgt_{h}$ events.
 
-FIXME: Tau es?
-
-FIXME: top pt reweighting
-FIXME: ttbar scale factor
+The energy scale for hadronic taus is determined by fitting the mass of the 
+hadronic tau candidate in $Z\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgt_{h}$ events.
+This fit is performed separately for each hadronic tau decay mode to obtain
+an energy scaling that is applied to reconstructed hadronic taus matched
+to generator-level hadronic tau decays in MC events.
 
 In the \etau channel a data to \ac{MC} scale factor is applied
 to the \Zee background, to correct for differences in the $e\rightarrow\Pgt_{h}$
-fake rate between data and \ac{MC}. DERIVED HOW
+fake rate between data and \ac{MC}. This scale factor is derived separately
+for the 1-prong + 0$\pi^0$ hadronic tau decay mode, and 1-prong + at least one
+$\pi^0$ decay modes by fitting the visible mass of the \Pe+$\Pgt_{h}$ pair
+in $Z\rightarrow\Pgt\Pgt\rightarrow\Pe\Pgt_{h}$ events.
 
 To correct for the difference in b--tagging efficiency and light jet mis--tagging
 rates between data and \ac{MC} \pT and $\eta$ dependent scale factors are 
@@ -264,8 +266,6 @@ jet as in equation \ref{eqn:promotedemote}.
 In this equation $SF$ is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
 the b--tagging efficiency in \ac{MC} events for the type of jet (light, b- or c-)
 in consideration.
-
-
 
 \section{Discriminating variable}
 \label{sec:hhh_discr}
@@ -374,13 +374,13 @@ is forced to 250 GeV.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_020.pdf}}
+\subfloat[Signal]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mHvsmttbb_signal.pdf}}
 \subfloat[\ttbar background]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mHvsmttbb_ttbar.pdf}}
 \end{center}
 \caption{Comparison of the reconstructed heavy Higgs mass using the kinematic fit (blue) and
 4-body mass without use of the kinematic fit (black) in signal events with $m_{H} = 300 $GeV (left) and \ttbar background events (right) in 
 the 2jet-1tag category of the \mutau channel. The kinematic fit greatly improves the resolution and 
-accuracy of the mean of the mass distribution in signal events. \cite{HIG-14-034-additional}}%FIXME plots need to be remade as the bkg one was never released
+accuracy of the mean of the mass distribution in signal events.}%FIXME plots need to be remade as the bkg one was never released
 %on the public twiki so can't have the CMS label on
 \label{fig:kinfitvsmjj}
 \end{figure}
@@ -388,9 +388,8 @@ accuracy of the mean of the mass distribution in signal events. \cite{HIG-14-034
 
 \section{Background estimation}
 \label{sec:hhh_backgrounds}
-To estimated the shape and yield of backgrounds in this analysis, data--driven techniques are
+To estimate the shape and yield of backgrounds in this analysis, data--driven techniques are
 used where possible. 
-
 \subsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
 \label{sec:hhh_backgrounds_ztt}
 The \Ztautau background is estimated using the embedded samples
@@ -403,13 +402,11 @@ the \Ztautau background is taken from the embedded sample after applying the ful
 category selection. The contamination from \ttbar backgrounds in the embedded
 sample is accounted for by subtracting this contamination, as evaluated using
 the dedicated \ttbar embedded samples, from the \Ztautau background.
-
 \subsection{\texorpdfstring{\ttbar}{ttbar}}
 Both the \ttbar shape and normalisation are estimated using \ac{MC} samples.
 These are checked against data in dedicated control regions. One such control
 region uses the \emu final state of the taus. In this control region
 a data-to-\ac{MC} factor is estimated and applied to the yield estimate from \ac{MC}.
-
 \subsection{\texorpdfstring{\Wjets}{W + jets}}
 \label{sec:hhh_backgrounds_wjets}
 The \Wjets background is greatly reduced by requiring \mT to
@@ -430,8 +427,6 @@ The \Wjets shape is taken from the \ac{MC} samples. To
 increase the statistics for this estimate, the b-tagging definition
 in the 2jet-1tag and 2jet-2tag categories is loosened to the loose (instead of medium)
 working point for the purposes of shape estimation.
-
-
 \subsection{QCD}
 \label{sec:hhh_backgrounds_qcd}
 A fully data-driven method is used to estimate the QCD background. Data events
@@ -456,29 +451,24 @@ inverting the light lepton isolation requirements, the category definition
 is loosened to obtain the shapes. For the purposes of QCD shape
 estimation, jets are considered b-tagged if they pass a looser b-tagging
 working point than the working point used elsewhere in the analysis.
-
 \subsection{Other backgrounds}
 \label{sec:hhh_backgrounds_other}
 The remaining backgrounds of \Zellell, di-boson and single-top
 events are small. Both shape and normalisation are
 estimated using \ac{MC} samples.
  
-
 \section{Systematic uncertainties}
 \label{sec:hhh_uncs}
 Two types of systematic uncertainties are considered: normalisation
 uncertainties (which affect only the yield of a process), and shape
 uncertainties (which affect both the yield and shape of a process). Section \ref{sec:hhh_results_extraction}
 describes how these uncertainties are taken into account in the final result.
-
 \subsection{Normalisation uncertainties}
 \label{sec:hhh_uncs_norm}
-
 \subsubsection*{Luminosity uncertainty}
 The uncertainty on the luminosity measurement amounts to 2.6\% for data collected during
 2012 (LUMI POG CITATION?). This uncertainty is applied to all processes in which
 the normalisation is estimated using MC samples.
-
 \subsubsection*{Identification, isolation and trigger efficiencies}
 A systematic uncertainty due to the uncertainty in efficiency measurements
 for the leptons is derived by combining the uncertainties on these measurements
@@ -486,14 +476,11 @@ in quadrature. For electrons and muons this leads to a 2\% uncertainty, for hadr
 uncertainty is measured on the tau identification efficiency, with an additional uncertainty of 3 \% for
 the \Pgt legs of the triggers. This uncertainty is applied to all processes for which
 the normalisation is estimated using MC samples.
-
 \subsubsection*{$e\rightarrow\Pgt_{h}$ and $\mu\rightarrow\Pgt_{h}$ fake rates}
 The uncertainty on both the $e\rightarrow\Pgt$ fake rate measurement and the
 $\mu\rightarrow\Pgt$ fake rate measurement is 30\%. The central value of the $\mu\rightarrow\Pgt$
 fake rate is close to 1, which is why it is not applied, but the uncertainty is 
-taken into account FIXME check if this is true!
-
-
+taken into account.
 \subsubsection*{B-tag scale factors}
 The b-tag scale factors are varied within their uncertainties to determine the effect
 on the yields of each process. Both a b-tagging uncertainty and a fake mis-tagging
@@ -505,12 +492,10 @@ of the estimation method, where other backgrounds are subtracted from the data t
 obtain a W estimate, and the presence of large amounts of \ttbar, a 10\% change in the \ttbar
 yield can vary the W yield by such large amounts.
 The b mistagging rate uncertainty varies between 1-5\% for all processes in all channels.
-
 \subsubsection*{\MET resolution and response}
 Uncertainties on the \MET resolution and response are estimated by varying
 the recoil correction parameters within their estimated uncertainties. This 
 leads to a 1-10\% uncertainty (depending on category and process)
-
 \subsubsection*{Background normalisation}
 \begin{itemize}
 \item \Ztautau : the normalisation of the embedded samples attracts a 3.3\% uncertainty, which is derived
@@ -521,17 +506,12 @@ from combining the estimated normalisation uncertainty on the embedded samples t
 \item \Wjets: As the \Wjets yield is estimated from a high \mT sideband in data, the uncertainty on this yield estimate is primarily due to the statistics available in the control region, the uncertainty range sfrom 10\% in the 2jet-0tag cateogry to 100\% in the 2jet-2tag cateogry
 \item QCD: The QCD normalisation uncertainty is obtained by adding the statistical uncertainty on the data-subtracted same-sign region in quadrature with the 10\% uncertainty on the OS/SS ratio. This yields a 20\% uncertainty in the 2jet-0tag category, a 40\% uncertainty in the 2jet-1tag category and a 60-100\% uncertainty in the 2jet-2tag category.
 \end{itemize}
-
 \subsection{Shape uncertainties}
 \label{sec:hhh_uncerts_shape}
-
 \subsubsection*{Tau energy scale}
 The energy of hadronically decaying taus is varied up and down by its 3\% uncertainty. As this directly affects the kinematic fit mass distribution this uncertainty is then applied as a shape uncertainty.
-
 \subsubsection*{Jet energy scale}
 The uncertainties on the jet energy corrections are applied by shifting the jet energy up and down by the (\pT and $\eta$ dependent) uncertainty. Again, as this affects the shape of the kinematic fit mass distribution this uncertainty is applied as a shape uncertainty 
-
-
 \section{\texorpdfstring{Overview of \AtoZhtolltautau}{Overview of A->Zh->lltautau}}
 \label{sec:hhh_azh}
 In this section a summary of the \AtoZhtolltautau analysis, which is combined with the 
@@ -567,7 +547,7 @@ all $\ell\ell\tau\tau$ final states combined, is shown in figure \ref{fig:AZhUpp
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.85\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_010-a.pdf}
+\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_010-a.pdf}
 \caption{The 95\% confidence level expected (dashed) and observed (solid)
 upper limits on the $\sigma \times BR$ for the \AtoZhtolltautau process.
 The green and yellow bands indicate the $\pm 1 \sigma $ and $2\sigma$
@@ -576,16 +556,16 @@ expectations \cite{CMS-HIG-14-034}.}
 \end{center}
 \end{figure}
 
-
-
 More detail on this analysis can be found in reference \cite{CMS-HIG-14-034}.
-
-
-
+Systematic uncertainties are also applied in the \AtoZhtolltautau analysis. 
+For the purposes of combining the results with the \Htohhtobbtautau search,
+some of these are correlated between the two analyses.
+This applies to the
+luminosity uncertainty and the uncertainties on b-tagging efficiency
+and light jet mistagging rate.
 
 \section{Results}
 \label{sec:hhh_results}
-
 \subsection{Signal extraction}
 \label{sec:hhh_results_extraction}
 The kinematic fit mass $m_{H}^{\text{kinfit}}$ is used as the discriminating variable.
@@ -597,11 +577,10 @@ and are used for all Higgs analyses in ATLAS and CMS.
 
 For the data a likelihood function is constructed as (equation \ref{eqn:hhh_likelihood}).
 \begin{equation} \label{eqn:hhh_likelihood}
-\mathcal{L}(\text{data}|\mu, \theta) = \Sigma_i\text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta) + b_i(\theta)) )\cdot \Sigma_j p(~\theta_j|\theta_j)
+\mathcal{L}(\text{data}|\mu, \theta) = \Sigma_i\text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta) + b_i(\theta)) )\cdot p(\tilde{\theta}|\theta)
 \end{equation}
 
 Where $\text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta)+b_i(\theta)))$ is given as (equation \ref{eqn:hhh_poisson})
-
 \begin{equation}\label{eqn:hhh_poisson}
 \text{Poisson}(n_{\text{data},i}|(\mu\cdot s_i(\theta)+b_i(\theta))) = \frac{(\mu\cdot s_i(\theta) + b_i(\theta))^{n_i})}{n_i!}e^{-(\mu\cdot s_i(\theta)+b_i(\theta))}
 \end{equation}
@@ -610,22 +589,34 @@ The first term integrates over all bins of the $m_{H}^{\text{kinfit}}$ distribut
 in all channels and categories. $s$ represents the number of expected signal events
 in each bin, and $b$ the number of expected background events. These are functions of 
 $\theta$, the full set of nuisance parameters. The systematic uncertainties discussed in section 
-REFERENCE are represented by a nuisance parameter $\theta_j$. The signal strength
+\ref{sec:hhh_uncs} are each represented by a nuisance parameter $\theta_j$. The signal strength
 modifier $\mu$ can represent different quantities depending on the normalisation of the 
 signal expectation. In the case of the \Htohhtobbtautau analysis the signal is normalised
 to 1 pb, so the signal strenght modifier represents
 the cross-section $\times$ branching ratio of a possible signal.
 
-IMPROVE THIS:
-The second term $p(~\theta|\theta)$ represents the pdf of the uncertainty on the nominal
-value of the nuisance parameter $~\theta$. 
+The second term $p(\tilde{\theta}|\theta)$ represents the full set of 
+probability density functions of the uncertainties on the nominal
+values of the nuisance parameters $\tilde{\theta}$. Each nuisance parameter represents a systematic uncertainty
+as discussed in section\ref{sec:hhh_uncs}. The functional form of the probability density function
+depends on the type of systematic uncertainy. Normalisation uncertainties are applied as log-normal constraints.
+For a log-normal constraint an $n~\sigma$ upwards pull on a nuisance parameter $\theta$ measured with a systematic
+uncertainty $\kappa$ multiplies the yield of processes affected by this nuisance parameter by $(1+\kappa)^n$, while
+an $n~\sigma$ downwards pull multiplies the process yields by $(1+\kappa)^{-n}$, ensuring that process
+yields do not become negative. Shape uncertainties are accounted for using a vertical template morphing
+technique. For each nuisance parameter that affects the shape of the fitted distribution, two additional
+templates corresponding to the quantity varied by $\pm 1 \sigma$ are generated. A nuisance
+parameter $\lambda$ is added to the likelihood model as a gaussian constraint to smoothly interpolate between
+the nominal and $\pm 1\sigma$ templates. Limitations in event statistics for shape templates
+are accounted for by the Barlow-Beeston method\cite{BarlowBeeston}, in which each of the bins of each 
+shape template are allowed to float within their statistical uncertainty, independent of the other bins. These
+variations are controlled by log-normal constraints in the likelihood function.
 
-To compare the data with the background only and signal + background hypothesis, a test
-statistic $~q_{\mu}$ can be defined. This is a single 
+To compare the data with the background only and signal + background hypotheses, a test
+statistic $q_{\mu}$ can be defined. This is a single 
 number that is used to distinguish between the two hypotheses. The test
 statistic used for LHC Higgs analyses, known as the profile likelihood, is given 
 in equation \ref{eqn:hhh_profilelikelihood}.
-
 \begin{equation}\label{eqn:hhh_profilelikelihood}
 q_{\mu} = -2\text{ln}\frac{\mathcal{L}(data|\mu,\hat{\theta_{\mu}})}{\mathcal{L}(\text{data}|\hat{\mu},\hat{\theta})}
 \end{equation}
@@ -639,20 +630,21 @@ The requirements on $\mu$ ensure that the signal strenght is non-negative ($ 0 \
 a one-sided confidence interval is constructed so as not to allow the observation of  a 
 signal with strength $\hat{mu} > \mu$ to cause rejection of the signal hypothesis ($ \hat{\mu} \leq \mu$).
 
-Describe pdfs
-
-The p-value for $\mu$ and for background-only ($\mu = 0$) can be determined as in equation \ref{eqn:hhh_pvaluesig} and \ref{eqn:hhh_pvaluebkg}.
+The probability of finding a value $q_{\mu}$ at least as large as the observed value $q_{\mu}^{\text{obs}}$, assuming the signal+background hypothesis
+and assuming the background-only hypothesis, is given in equations \ref{eqn:hhh_pvaluesig} and \ref{eqn:hhh_pvaluebkg}, respectively.
 
 \begin{equation}\label{eqn:hhh_pvaluesig}
-p_{\mu} = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{s+b}) = \Integral_{q_{\mu}^{\text{obs}}}^{\infty} f(q_{\mu} | \mu,\hat{\theta_{\mu}^{\text{obs}}}) dq_{\mu}
+p_{\mu} = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{s+b}) = \int_{q_{\mu}^{\text{obs}}}^{\infty} f(q_{\mu} | \mu,\hat{\theta_{\mu}^{\text{obs}}}) dq_{\mu}
 \end{equation}
 
 \begin{equation}\label{eqn:hhh_pvaluebkg}
-1-p_b = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{b}) = \Integral_{q_{0}^{\text{obs}}}^{\infty} f(q_{\mu} | 0,\hat{\theta_{0}^{\text{obs}}}) dq_{\mu} 
+1-p_b = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{b}) = \int_{q_{0}^{\text{obs}}}^{\infty} f(q_{\mu} | 0,\hat{\theta_{0}^{\text{obs}}}) dq_{\mu} 
 \end{equation}
 
-$CL_s$ is then defined as (equation \ref{eqn:hhh_cls})
+Where $f(q_{\mu}|\mu,\hat{\theta_{\mu}})$ and $f(q_{\mu} | 0,\hat{\theta_0})$ are the probability denstiy functions of $q_{\mu}$ under
+the signal+background and background-only hypotheses.
 
+Using this, $CL_s$ is defined as (equation \ref{eqn:hhh_cls})
 \begin{equation}\label{eqn:hhh_cls}
 CL_s(\mu) = \frac{CL_{s+b}}{CL_b} = \frac{p_{\mu}}{1-p_b}
 \end{equation}
@@ -661,18 +653,25 @@ The value of $\mu$ for which $CL_s(\mu) \leq \alpha$ then gives the upper limit
 In the case of the analysis discussed in this chapter, the value of $\mu$ for which the upper 
 limit on cross-section times branching ratio for the \Htohhtobbtautau process reaches $1-\alpha$ is 
 said to be excluded at a confidence level of $\alpha$. Upper limits at the LHC are generally
-quoted at 95\% confidence level, therefore the upper limit on cross-section times branching ratio
-for the \Htohhtobbtautau process at this level is obtained as the value of $\mu$ for which $CL_s$ 
-equals 0.05. MODIFIED FREQUENTIST APPROACH.
+quoted at 95\% confidence level. %, therefore the upper limit on cross-section times branching ratio
+%for the \Htohhtobbtautau process at this level is obtained as the value of $\mu$ for which $CL_s$ 
+%equals 0.05. The use of $CL_s$ to set
+The use of $CL_s$ to set exclusion limits is referred to as the modified frequentist approach\cite{CLS}.
 
-While the distribution of $f(q_{\mu})$ can always be determined by generating toy datasets,
-in the limit of large statistics $f(q_{\mu})$ follows a known formula \cite{AsymptoticFormula}.
+The distributions $f(q_{\mu}|\mu,\hat{\theta_{\mu}})$ and $f(q_{\mu}|0,\hat{\theta_0})$ are determined
+using toy MC datasets. These datasets are generated from the sum of signal+background or background only expectation respectively. 
+For each toy dataset the nuisance parameters fixed to the best-fit values found in the fit to observed data are taken as a starting
+point, and the effect of systematic uncertainties is then taken into account by varying the nuisance parameters within
+their uncertainty. The probability distribution function of $q_{\mu}$ under the relevant hypothesis (signal+background or background only)
+can by found be accumulating a large number of toy datasets and evaluating $q_{\mu}$ for each of them.
+
+This method of generating toy MC datasets is computationally intensive.
+In the limit of large statistics $f(q_{\mu})$ follows a known formula \cite{AsymptoticFormula}.
 This formula, known as the asymptotic approximation, allows for the calculation
 of the observed limit as well as the median and $\pm 1$ and $2\sigma$ expected limits using
 the properties of the Asimov dataset, a dataset in which the observation in 
-each bin exactly matches the background expectation.
-
-
+each bin exactly matches the predictions of the model. This method is used for the analysis
+described in this chapter, removing the need to generate toy datasets.
 
 \subsection{Model-independent results}
 \label{sec:hhh_results_modelindep}
@@ -683,37 +682,39 @@ respectively.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[2jet-0tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_003-a.pdf}}
-\subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_003-b.pdf}}~\\
-\subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_003-c.pdf}}
+\subfloat[2jet-0tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_mt_0_shapes_postfit.pdf}}
+\subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_mt_1_shapes_postfit.pdf}}~\\
+\subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_mt_2_shapes_postfit.pdf}}
 \end{center}
 \caption{Distributions of $m_{H}^{kinfit}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
-of the \mutau channel. The \Htohhtobbtautau signal for $m_{H} = 300 $GeV at \tanb=2 in the low\tanb MSSM
-scenario, multiplied by 10, is also overlaid. FIXME need to remake these plots!}
+of the \mutau channel. The \Htohhtobbtautau signal for $m_{A} = 300 $GeV at \tanb=2 in the low \tanb~MSSM
+scenario, multiplied by 10, is also overlaid. Note that at low \tanb $m_{A}\neq m_{H}$, $m_{H}$ at the point
+in the MSSM scenario considered is around 316 GeV.}
 \label{fig:hhh_results_mhkinfit_mutau}
 \end{figure}
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[2jet-0tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_004-a.pdf}}
-\subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_004-b.pdf}}~\\
-\subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_004-c.pdf}}
+\subfloat[2jet-0tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_et_0_shapes_postfit.pdf}}
+\subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_et_1_shapes_postfit.pdf}}~\\
+\subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_et_2_shapes_postfit.pdf}}
 \end{center}
 \caption{Distributions of $m_{H}^{kinfit}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
-of the \etau channel. The \Htohhtobbtautau signal for $m_{H} = 300 $GeV at \tanb=2 in the low\tanb MSSM
-scenario, multiplied by 10, is also overlaid. FIXME need to remake these plots!}
+of the \etau channel. The \Htohhtobbtautau signal for $m_{A} = 300 $GeV at \tanb=2 in the low \tanb~ MSSM
+scenario, multiplied by 10, is also overlaid. Note that at this low value of \tanb $m_{A}\neq m_{H}$, in 
+this case $m_{H}$ is around 316 GeV.}
 \label{fig:hhh_results_mhkinfit_etau}
 \end{figure}
 
 None of these distributions show hints of an excess.
 
-The model-independent 95\% CL expected and observed upper limits are shown in 
-figure \ref{fig:hhh_results_modelindep}, with figure \ref{fig:hhh_results_modelindep_perchannel}
+The model-independent 95\% CL expected and observed upper limits are shown in the left-hand side 
+panel of figure \ref{fig:hhh_results_modelindep}, with the right-hand side of the same figure
 showing the expected sensitivity per channel. These figures include the contribution from the 
-\tautau channel not described in this thesis. Figure \ref{fig:hhh_results_modelindep} shows that
-the expected upper limit on the \Htohhtobbtautau process is around 0.3 pb, the observed ranges
-from 0.2 pb at low mass to 0.4 pb at high mass. From figure \ref{fig:hhh_results_modelindep}
-we can see that the \mutau channel is the most sensitive at masses lower than 320 GeV, with 
+\tautau channel not described in this thesis. The expected upper limit
+on the \Htohhtobbtautau process is around 0.3 pb, the observed ranges
+from 0.2 pb at low mass to 0.4 pb at high mass. We can
+see that the \mutau channel is the most sensitive at masses lower than 320 GeV, with 
 the \tautau channel being the most sensitive beyond this mass point. The \etau channel is always
 less sensitive than the \mutau channel, but at low mass it is still more sensitive than the \tautau 
 channel.
@@ -721,13 +722,13 @@ channel.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_008-d.pdf}}
-\subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_033.pdf}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/hhh_limit_comparison.pdf}}
 \caption{Expected and observed 95\% CL upper limits on cross-section times branching ratio
 for the \Htohhtobbtautau process. In these limits the three final states of \etau, \mutau and \tautau are combined \cite{CMS-HIG-14-034} (left).
 The right hand side panel shows the expected 95\% CL upper limits on cross-section times branching ratio for the \Htohhtobbtautau
 process, separated by channel. The blue line shows the limit for the \tautau channel, the green line for the \mutau channel, the red line
 for the \etau channel and the black line the limit for all three channels combined. Up to around $m_H = 320$ GeV the \mutau channel is the most
-sensitive, with the \tautau channel being more sensitive at higher masses. FIXME remake this plot!}
+sensitive, with the \tautau channel being more sensitive at higher masses.}
 \label{fig:hhh_results_modelindep}
 \end{center}
 \end{figure}
@@ -781,9 +782,6 @@ $\PHiggsps \rightarrow \PZ\PHiggslight$ & $\sim$ \cosba\\
 \end{center}
 \end{table}
 
-FIXME: ALIGNMENT LIMIT
-
-
 The interpretations are made in the \cosba--\tanb plane. Figure \ref{fig:HhhAndAZh2HDMOverlaid}
 shows the observed and expected exclusion at 95\% confidence level for the \Htohh
 and \AtoZh analyses, overlaid on the production cross--section times branching ratio.
@@ -799,11 +797,8 @@ at \cosba $ > 0$ and low \tanb in the \AtoZh figure. A similar corridor is start
 to become visible in the $\sigma \times BR$ structure of the \Htohh interpretation, but
 the analysis is not yet sensitive enough to actually see a full--blown corridor in this
 region.
-Additional regions of non--exclusion at low \tanb and \cosba near -1 are visible in the \Htohh 
-interpretation, these are a result of the complex \Htohh branching ratio (ADD FIGURE).
-
-
-
+%Additional regions of non--exclusion at low \tanb and \cosba near -1 are visible in the \Htohh 
+%interpretation, these are a result of the complex \Htohh branching ratio.
 
 \begin{figure}[h!]
 \begin{center}

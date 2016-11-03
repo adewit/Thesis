@@ -5,6 +5,13 @@
 \usepackage{verbatim}
 \usepackage[printonlyused,withpage]{acronym}
 \usepackage[parfill]{parskip}
+\usepackage{titlesec}
+\setlength{\parskip}{\baselineskip}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{-0.5\baselineskip}
+\titlespacing{\subsubsection}{0pt}{0pt}{-0.5\baselineskip}
+\titleformat{\chapter}{\Huge\bfseries}{\chaptername\ \thechapter}{0pt}{\vskip 20pt\raggedright}
+\titlespacing{\chapter}{0pt}{0pt}{2\baselineskip}
 
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
