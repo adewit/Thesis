@@ -1,4 +1,4 @@
-\chapter{The \acs{CMS} experiment and the \acs{LHC}}
+\chapter{The \acs{LHC} and the \acs{CMS} experiment}
 \label{chap:CMSLHC}
 
 \section{The \acs{LHC}}
@@ -14,6 +14,14 @@ energies of up to 14 TeV. It therefore consists of two rings in which the two be
 of protons are individually accelerated. In addition to colliding beams of protons, the \ac{LHC}
 is also used for proton--lead and lead--lead collisions.
 
+The \ac{LHC} does not operate on its own, a chain of accelerators leads
+the protons into the \ac{LHC}. Figure \ref{fig:lhc_schematic} shows a schematic
+of the \ac{CERN} accelerator complex.
+\begin{figure}[h!]
+\includegraphics[width=0.8\textwidth]{./Detector/Plots/LHC_default.jpg}
+\caption{Schematic of the \ac{CERN} accelerator complex \cite{lhc-schematic}.}
+\label{fig:lhc_schematic}
+\end{figure}
 Protons originate from hydrogen gas, where electrons are stripped off the 
 hydrogen atoms using an electric field. The protons then pass through an injector
 chain which increases the energy of the protons in several steps. After the protons
@@ -23,14 +31,37 @@ are created from the hydrogen gas, they are accelerated to a centre of mass ener
 The next accelerator in the chain, the \acf{PS}, further accelerates the protons to 25 GeV,
 with the \acf{SPS} bringing the energy up to 450 GeV. When this energy has been 
 reached the protons are injected into the \ac{LHC}, where they are further accelerated to 
-the required centre of mass energy. lbha blah blah. The beams collide at four points
+the required centre of mass energy. The beams collide at four points
 around the ring, where the collisions are recorded by the ATLAS, CMS, ALICE, and LHCb detectors.
 
-As the processes the \ac{LHC} was built to study have a small cross-section
-compared with the total proton-proton inelastic cross-section (add figure!), the
-LHC operates at high instantaneous luminosity. blah blah blah blah
+The processes the \ac{LHC} was built to study have a small cross-section
+compared with the total proton-proton inelastic cross-section, as seen from figure
+\ref{fig:stirling_xs}. For example, the production cross-section of the
+standard model Higgs boson is 9-10 orders of magniuted smaller than the total p--p cross section.
 
-After an initial testing phase, the \ac{LHC} becan its first physics run in May 2010 with 
+\begin{figure}[h!]
+\includegraphics[width=0.5\textwidth]{./Detector/Plots/crosssections2013.jpg}
+\caption{Total proton-proton cross section, and the cross-sections
+for several processes studied at the LHC \cite{stirling-crosssection}.
+The cross sections of these processes
+are often many orders of magnitude smaller than the total p--p cross section.}
+\label{fig:stirling_xs}
+\end{figure}
+
+In order to be able to study these relatively rare processes, 
+the LHC operates at high instantaneous luminosity, defined as in equation
+\ref{eqn:CMSLHC_luminosity}. 
+\begin{equation}\label{eqn:CMSLHC_luminosity}
+\mathcal{L} = \frac{N_b^2n_bf_{\text{rev}}\gamma}{4\pi\epsilon_n\beta^{*}}F
+\end{equation}
+
+In this equation, $N_b$ is the number of protons per bunch, $n_b$ the number of
+bunches per beam, $f_{\text{rev}}$ the revolution frequency, $\gamma$ the 
+Lorentz factor, $\epsilon_n$ the normalised beam
+emittance, $\beta^{*}$ the $\beta$-function at the interaction point and F a reduction
+factor due to the crossing angle. 
+
+After an initial testing phase, the \ac{LHC} began its first physics run in May 2010 with 
 a centre of mass energy of 7 TeV. The CMS experiment recorded an integrated luminosity of 45 pb$^{-1}$
 during 2010. In 2011 the \ac{LHC} continued operating at a centre-of-mass energy of 7 TeV, delivering an integrated 
 luminosity of 6.1 fb$^{-1}$ to the CMS experiment. The centre of mass energy was increased to 8 TeV
@@ -38,9 +69,215 @@ for the 2012 data-taking period, during which an integrated luminosity of 23.3 f
 This completed Run 1 of the \ac{LHC}, after which the 2-year \ac{LS1} was used to 
 upgrade the LHC and the detectors for collisions at a centre of mass energy of 13 TeV.
 
-In April 2015 the \ac{LHC} restarted with collisions at a centre-of-mass energy of 13 TeV
+In April 2015 the \ac{LHC} restarted with collisions at a centre-of-mass energy of 13 TeV, and during 
+this year 4.2 fb$^{-1}$ was delivered. Collisions at a centre-of-mass energy of 13 TeV continued
+in 2016, when a total of 41.1 fb$^{-1}$ was delivered. 
+The integrated luminosity as a function of time is shown in figure \ref{fig:CMSLHC_intlumi},
+separated by running year.
+
+\begin{figure}[h!]
+\includegraphics[width=0.85\textwidth]{./Detector/Plots/int_lumi_cumulative_pp_2.pdf}
+\caption{Cumulative integrated luminosity for p--p collisions at the LHC, separated
+by running year \cite{cms-lumi-public}.}
+\label{fig:CMSLHC_intlumi}
+\end{figure}
+
+The data-taking efficiency of CMS is not 100\%, for example the detector might be
+switched off for part of the time collisions are ongoing. In 2012, the data-taking 
+efficiency was 93.5\%, in 2015 it was 90.3\% and in 2016 it was 92.4 \%
+
+From all of the data that is recorded, a subset is used for analyses. Data is 
+certified as good for use in analyses if it is known that all relevant subdetectors
+were functioning correctly. The certification efficiency in 2012 was 90.4\%,
+leading to an integrated luminosity of 19.7 fb$^{-1}$ for which all subdetectors
+were working well, in 2015 it was 60.4 \%, leading to 2.3 fb$^{-1}$ of analysable data
+for which the full detector was operational. An additional 0.6 fb$^{-1}$ was taken
+with the magnet switched off. The certification efficiency for the full 2016 p--p running period was 95.4\%.
+
+The \ac{LHC} was designed for a nominal
+peak luminosity of $10^{32}$cm$^{-2}$s$^{-1}$ for proton-proton collisions. In 2012 peak
+luminosities of $7.7*10^{33}$cm$^{-2}$s$^{-1}$ were reached, with the peak luminosity in
+2015 being $5.1*10^{33}$cm$^{-2}$s$^{-1}$. Since July 2016
+the \ac{LHC} has been operating at instantaneous luminosities upwards of the 
+design luminosity, with peak luminosities of $1.5*10^{32}$cm$^{-2}$s$^{-1}$ reached
+in October 2016.
+
+Due to the high operating luminosity, multiple proton-proton collisions per 
+bunch crossing are likely to occur. The average number of interactions
+per bunch crossing is X in 2012, Y in 2015, Z in 2016. Additional 
+interactions on top of events of interest are referred to as pile-up.
+
+\section{The \acs{CMS} detector}
+\label{sec:CMSLHC_CMS}
+To meet the demands of the \ac{LHC} physics programme, the
+ \ac{CMS} detector was designed to be very perfomant in searches
+for physics at the TeV scale and to be able to 
+function in the challenging high-luminosity environment.
+The detector is 21.6 m long, 14.6 m in diameter, and weighs
+12500 tonnes \cite{cms-jinst}. It consists of several subdetectors, as illustrated
+in figure \ref{fig:cms_detector}. Surrounding the interaction
+point is the silicon tracker, a cylinder 5.8 m in lenght and 2.6 m in 
+diameter. Surrounding the silicon tracker
+the lead-tungstate \ac{ECAL} is found, which in turn is enclosed
+by a brass scintilator \ac{HCAL}. 
+
+The tracking and calorimeter systems are surrounded by a superconducting
+solenoid, 13 meter long and 6 meter in diameter and operating at 3.8 Tesla.
+Charged particles are bent in this magnetic field, allowing for precise 
+measurement of their momentum. Gaseous muon detectors are embedded in the 
+iron return yoke of the solenoid.
+
+For the measurement of physical quantities, \ac{CMS} uses a coordinate
+system with the origin centred at the nominal collision point
+inside the experiment. The y-axis points vertically upward, the x-axis
+points radially inward toward the centre of the \ac{LHC} ring. The z-axis
+points along the beam direction. As such the transverse momentum and energy, 
+\pT and \ET are measured from the x- and y- components of the momentum and energy.
+The azimuthal angle $\phi$ is measured in the x-y plane with respect to the x-axis, 
+the polar angle $\theta$ measured with respect to the z-axis. A coordinate
+more frequently used than the polar angle is the pseudorapidity $\eta = -\ln{[\tan{\frac{\theta}{2}}]}$.
+Distances in the $\eta-\phi$ plane are given as $\Delta R = \sqrt{(\Delta\eta)^2+(\Delta\phi)^2}$. 
+
+The subsystems of the \ac{CMS} detector will be described in more detail in the 
+next sections.
+
+\begin{figure}[h!]
+\includegraphics[width=0.8\textwidth]{./Detector/Plots/cms.png}
+\caption{A blow-up view of the \ac{CMS} detector \cite{cms-jinst}, indicating the
+different sub-parts of the detector.}
+\label{fig:cms_detector}
+\end{figure}
+
+\subsection{Tracker}
+\label{sec:CMSLHC_CMS_tracker}
+The tracker \cite{cms-jinst} is the subdetector closest to the interaction point. It
+is used for accurate reconstruction of charged particle trajectories and 
+the precise reconstruction of secondary vertices, which are important to be
+able to indentify heavy-flavour particles. This means a small impact parameter
+resolution needs to be achieved, for which a highly granular system is required. 
+Due to the large number of particles emerging from 
+each collision, an average of 1000 per bunch crossing (every 25 ns) at LHC design operation, the 
+system also needs to be fast-responding in order to reconstruct trajectories accurately.
+At the same time, this large particle flux calls for a 
+radiation-hard design that is able to survive in this harsh environment
+for a longer period of time. These requirements motivate the use of a silicon tracking
+system. When a charged particle passes through the silicon, an electron-hole pair
+is created, which drift under an applied electric field and produce a current
+that can be read out. %LEARN A BIT MORE ABOUT THIS
+
+The tracker provides coverage up to $|\eta| < 2.5$ and consists of
+several different components. A schematic of the tracking detector is given
+in figure \ref{fig:CMS_tracker}. The part of the tracking system
+closest to the interaction point is the silicon pixel detector, which 
+consists of 3 layers of pixels in the barrel of the detector, with 
+2 pixel endcap disks. The barrel layers sit at radii of 4.4, 7.3 and 10.2 cm 
+and extend up to $z=\pm 26.5$ cm, with the disks placed at $z=\pm 34.5$ cm and
+$z=\pm 46.5$ cm. The pixel detector consists of 66 million silicon pixels, each
+$100 \mu m \times 150 \mu m$ in size. The choice of this pixel size is driven
+by the achievable spatial resolution, which is $15-20 \mu m$ in the $r$ and $z$ directions.
+This allows for 3D vertex reconstruction. With this layout, the pixel tracker
+provides 3 precise position measurements along each charged particle trajectory.
 
 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Detector/Plots/Tracker.png}
+\caption{Schematic of the CMS tracker in the r-z plane, indicating the
+positions of the pixel and strip detectors \cite{cms-jinst}. Each line 
+on the plot represents a detector module}
+\label{fig:CMS_tracker}
+\end{center}
+\end{figure}
 
 
+Beyond the pixel detector the tracking system is made up of a silicon
+strip detector consisting of over 9 million multiple different subsystems. The first part of the
+silicon strip tracker consists of \ac{TIB} and \ac{TID}, providing 4 layers of
+silicon strip detectors in the barrel plus 3 disks at both ends. These two systems
+extend out towards a radius of 55 cm. The barrel layers and disks each consist
+of silicon strips which are 10 cm long, $80-141\mu m$ wide and $320 \mu m$ thick. The \ac{TIB} and \ac{TID}
+provide 4 measurements of the $r-\phi$ position  with a resolution of 23-35 $\mu m$.
+The \ac{TIB} and \ac{TID} are surrounded by the \ac{TOB}, which consists of 6 layers of silicon strip sensors extending
+up to an outer radius of 116 cm and up to $z=\pm 118$ cm. The strips in the \ac{TOB} are 500 $\mu m$ thick, around 25 cm long and 122-183 $\mu m$ 
+wide and this subdetector provides 6 measurements of $r$ and $\phi$, with a resolution
+of 35-53 $\mu m$. Beyond the z-range covered by the \ac{TOB}, coverage is provided by the \ac{TEC},
+consisting of 9 disks of strips.In the \ac{TEC}, the thickness ranges from 320-500 $\mu m$ and the the strip width ranges from $97-184 \mu m$.
+In this way this part of the system provides up to 9 $\phi$ measurements.
+
+Some of the strip modules in the detector carry a second strip detector module mounted back-to-back with a stereo angle %FIXME WTF?
+of 100 mrad, in order to provide measurements of the $z-$ coordinate in the barrel. This is achieved with a resolution of 230-530 $\mu m$.
+
+
+\subsection{ECAL}
+\label{sec:CMSLHC_CMS_ecal}
+The \ac{ECAL} \cite{cms-jinst} is a hermetic homogeneous calorimeter
+made of nearly 70000 lead tungstate (PbWO$_4$) crystals. It has very
+good energy resolution ETC ETC. %Lead tungstate crystals were a good 
+%choice for the CMS \ac{ECAL}, satisfying the requirements of the 
+%LHC and the detector. 
+Despite being further away from the interaction
+point than the tracker, the materials in other parts of the detector
+still need to be radiation hard. In order to be able to place
+the calorimeters inside the bore of the solenoid, a compact \ac{ECAL}
+had to be constructed, and to provide excellent resolution a 
+highly granular system had to be designed. The short radiation
+length and small moli\'ere radius of lead tungstate %NEED TO FIND OUT ABOUT THOSE!
+combined with its radiation hardness and the short scintillation decay
+time in these crystals motivate the choice of lead tungstate.
+
+Figure \ref{fig:CMS_ECAL} shows a schematic of the \ac{ECAL}, indicating
+the geometry. The \ac{ECAL} consists of different subsystems. The \ac{EB} 
+covers the pseudorapidity range up to $|\eta|<1.479$, with
+crystals of $0.0174 \times 0.0174$ in $\eta - \phi$. The \ac{EE}
+provides coverage beyond the range of the \ac{EB}, up to $|\eta|<3.0$
+Each endcap is divided into two halves. In front of the endcaps 
+the preshower detector, covering $1.653<|\eta|<2.6$ is a sampling
+calorimeter whose main use is to neutral pions in the endcaps. Additionally
+it helps electron identification and improves the resolution
+of position determination. The preshower consists
+of lead radiators to initiate the shower, with silicon sensors
+measuring the deposited energy and shower profiles. %Too copied, improve
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Detector/Plots/ECAL.png}
+\caption{Layout of the \ac{ECAL}, indicating the position of the
+different components \cite{cms-jinst}.}
+\label{fig:CMS_ECAL}
+\end{center}
+\end{figure}
+
+\subsection{HCAL}
+\label{sec:CMSLHC_CMS_hcal}
+Figure \ref{fig:CMS_HCAL} shows an illustration of the \ac{HCAL}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Detector/Plots/HCAL.png}
+\caption{Illustration of the \ac{HCAL}, indicating the geometry
+of the detector \cite{cms-jinst}.}
+\label{fig:CMS_HCAL}
+\end{center}
+\end{figure}
+
+\subsection{Muon system}
+\label{sec:CMSLHC_CMS_muons}
+
+A cross-section of one quadrant of the detector, indicating
+the positions of the muon systems, is shown in figure \ref{fig:CMS_MuonSystem}.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./Detector/Plots/MuonSystem.png}
+\caption{Cross-section of one quadrant of the CMS detector, indicating
+the positions of the different muon system components \cite{cms-tdr-vol1}.}
+\label{fig:CMS_MuonSystem}
+\end{center}
+\end{figure}
+%Because of the uncertainty in the eventual background rates and in the ability of the muon system to measure the correct beam-crossing time when the LHC reaches full luminosity, a com- plementary, dedicated trigger system consisting of resistive plate chambers (RPC) was added in both the barrel and endcap regions. The RPCs provide a fast, independent, and highly-segmented trigger with a sharp pT threshold over a large portion of the rapidity range (|η| < 1.6) of the muon system. The RPCs are double-gap chambers, operated in avalanche mode to ensure good operation at high rates. They produce a fast response, with good time resolution but coarser position reso- lution than the DTs or CSCs. They also help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber.
+
+\subsection{Triggering}
+\label{sec:CMSLHC_CMS_trigger}
+
+\subsection{Data processing}
+\label{sec:CMSLHC_CMS_dataproc}
 
