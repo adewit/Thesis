@@ -207,23 +207,44 @@ In this way this part of the system provides up to 9 $\phi$ measurements.
 Some of the strip modules in the detector carry a second strip detector module mounted back-to-back with a stereo angle %FIXME WTF?
 of 100 mrad, in order to provide measurements of the $z-$ coordinate in the barrel. This is achieved with a resolution of 230-530 $\mu m$.
 
+The tracker will be upgraded during the extended year-end technical stop in early 2017. %or just replaced?
 
-\subsection{ECAL}
+
+\subsection{\acl{ECAL}}
 \label{sec:CMSLHC_CMS_ecal}
 The \ac{ECAL} \cite{cms-jinst} is a hermetic homogeneous calorimeter
-made of nearly 70000 lead tungstate (PbWO$_4$) crystals. It has very
-good energy resolution ETC ETC. %Lead tungstate crystals were a good 
-%choice for the CMS \ac{ECAL}, satisfying the requirements of the 
-%LHC and the detector. 
+made of nearly 76000 lead tungstate (PbWO$_4$) crystals. It has very
+good energy resolution, is highly granular and fast-responding, which
+are all needed to be able to detect $H\rightarrow \gamma\gamma$ decays.
+
 Despite being further away from the interaction
 point than the tracker, the materials in other parts of the detector
 still need to be radiation hard. In order to be able to place
 the calorimeters inside the bore of the solenoid, a compact \ac{ECAL}
 had to be constructed, and to provide excellent resolution a 
-highly granular system had to be designed. The short radiation
-length and small moli\'ere radius of lead tungstate %NEED TO FIND OUT ABOUT THOSE!
-combined with its radiation hardness and the short scintillation decay
-time in these crystals motivate the choice of lead tungstate.
+highly granular system had to be designed. The lead tungstate crystals have a 
+radiation length of 0.89 cm, a Moli\'ere radius of 2.2 cm, and 80\% of the light
+from the crystals is emitted in 25 ns. This short radiation
+length, small Moli\'ere radius and short scintillation decay time combined
+with the radiation hardness of the material motivate the choice of lead tungstate. 
+
+%Moliere radius: characteristic constant of a material giving scale of transverse dimenstion
+%of fully contained EM showers. It is the radius of a cylinder containing on average 
+%90pct of the shower's energy deposition. Related to radiation length as 
+%molrad approx 0.0265X0 (Z+1.2) with Z the atomic number.
+%Radiation length: mean distance over which a high energy electron
+%loses all but 1/e of its energy by bremmstrahlung and 7/9 of th emean free path for pair production by 
+%a high energy photon.
+
+When a high energy electron or photon enters a crystal, it starts a
+shower producing a cascade of lower energy particles. Electrons lose
+energy through bremsstrahlung, with photons undergoing $\Pe^+ \Pe^-$ 
+pair production. The shower continues until the photon energy drops below the 
+$\Pe^+\Pe^-$ pair production threshold, and ionisation 
+starts to dominate for electrons. The shower ionises the crystals, 
+which return to their normal state by emitting scintillation light. 
+As the crystals are 25.8 radiation lengths long, most of the shower
+is contained inside them.
 
 Figure \ref{fig:CMS_ECAL} shows a schematic of the \ac{ECAL}, indicating
 the geometry. The \ac{ECAL} consists of different subsystems. The \ac{EB} 
@@ -231,12 +252,13 @@ covers the pseudorapidity range up to $|\eta|<1.479$, with
 crystals of $0.0174 \times 0.0174$ in $\eta - \phi$. The \ac{EE}
 provides coverage beyond the range of the \ac{EB}, up to $|\eta|<3.0$
 Each endcap is divided into two halves. In front of the endcaps 
-the preshower detector, covering $1.653<|\eta|<2.6$ is a sampling
-calorimeter whose main use is to neutral pions in the endcaps. Additionally
+the preshower detectors, covering $1.653<|\eta|<2.6$ is a sampling
+calorimeter whose main use is to indentify neutral pions in the endcaps. Additionally
 it helps electron identification and improves the resolution
-of position determination. The preshower consists
-of lead radiators to initiate the shower, with silicon sensors
-measuring the deposited energy and shower profiles. %Too copied, improve
+of position determination. Each of the two preshower detectors consist
+of two layers of lead radiators to initiate the shower, with silicon sensors
+placed after each layer of radiators to measure the deposited energy. The 
+total thickness of the preshower comprises 3 radiation lenghts.
 
 \begin{figure}[h!]
 \begin{center}
@@ -247,9 +269,48 @@ different components \cite{cms-jinst}.}
 \end{center}
 \end{figure}
 
-\subsection{HCAL}
+To preserve the energy resolution, the \ac{ECAL} crystal and
+photodetector temperatures need to be kept stable within $\pm 0.05^o$C
+as the number of scintillation photons emitted by the crystals,
+and the amplification of the photodetectors are temperature dependent.
+The nominal operating temperature, $18^o$C, is ensured by 
+supplying the detector with water at this temperature.
+
+To record the light yield of the crystals, amplifying photodetectors
+need to be used. In the \ac{EB} avalance photodiodes are employed
+for this, with vacuum phototriodes used in the \ac{EE}.
+
+The energy resolution of the \ac{ECAL} can be parameterised as in
+equation \ref{eqn:ecalres}.
+
+\begin{equation}\label{eqn:ecalres}
+\frac{\sigma}{E} = \sqrt{(\frac{S}{\sqrt{E}})^2+(\frac{N}{E})^2+C^2}
+\end{equation}
+
+Where $S$ is the stochastic term, $N$ the noise term and $C$ the constant term.
+The stochastic term arises from fluctuations in lateral shower containment and 
+fluctuations in scintillation, the noise term due to noise from the electronics
+and additional particles in the event, and the constant term comes
+from calibration errors, and non-uniformity of longitudinal response.
+
+The values of $S$, $N$ and $C$ have been measured in an electron
+test-beam, without a magnetic field or material in front of the \ac{ECAL}. These
+amounted to $S = 0.028$ GeV$^{0.5}$, $N = 0.12$ GeV, $C= 0.003$.
+
+
+
+\subsection{\acl{HCAL}}
 \label{sec:CMSLHC_CMS_hcal}
-Figure \ref{fig:CMS_HCAL} shows an illustration of the \ac{HCAL}.
+The \ac{ECAL} is surrounded by the \ac{HCAL}, important for the
+measurement of the energies of strongly interacting particles. As
+the \ac{ECAL} extends out to a radius of 1.77 m and the magnet coil
+starting at a radius of 2.95 m the barrel region of the \ac{HCAL} consists
+of the \ac{HB}, which sits inside the magnet coil, and the \ac{HO}, sitting outside it, 
+to complement the \ac{HB}. The \ac{HB} and \ac{HO}  provide coverage up to $|\eta|<1.3$, 
+beyond which they are complemented by the \ac{HE} and the \ac{HF}. The \ac{HE} provides
+coverage between $1.3<|\eta|<3$ with the \ac{HF} extending this coverage up to $|\eta| = 5.2$
+The locations of the different subcomponents of the \ac{HCAL} are shown
+in figure \ref{fig:CMS_HCAL}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -259,6 +320,10 @@ of the detector \cite{cms-jinst}.}
 \label{fig:CMS_HCAL}
 \end{center}
 \end{figure}
+
+The \ac{HB} is a sampling calorimeter made of brass absorber
+plates with 
+
 
 \subsection{Muon system}
 \label{sec:CMSLHC_CMS_muons}
