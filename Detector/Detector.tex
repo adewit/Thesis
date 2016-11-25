@@ -207,7 +207,7 @@ In this way this part of the system provides up to 9 $\phi$ measurements.
 Some of the strip modules in the detector carry a second strip detector module mounted back-to-back with a stereo angle %FIXME WTF?
 of 100 mrad, in order to provide measurements of the $z-$ coordinate in the barrel. This is achieved with a resolution of 230-530 $\mu m$.
 
-The tracker will be upgraded during the extended year-end technical stop in early 2017. %or just replaced?
+The pixel tracker will be upgraded during the extended year-end technical stop in early 2017. %or just replaced?
 
 
 \subsection{\acl{ECAL}}
@@ -349,6 +349,8 @@ the quartz fibres, which is read out by photomultiplier tubes.
 %fraction of their energy in the first 22cm) from hadrons.
 
 HCAL RESOLUTION!
+%UPGRADE
+During LS1, the \ac{HO} and \ac{HF} pmts were replaced 
 
 
 
@@ -357,27 +359,71 @@ HCAL RESOLUTION!
 One of the main physics goals of the \ac{CMS} experiment
 at design was to search for $H\rightarrow ZZ\rightarrow 4\mu$ decays. Muons
 suffer less from radiative losses in the tracker material, which means the most accurate
-4-body mass can be constructed when searching for muon final states.
-After discovery of the Higgs boson, the ZZ channel remains important
-for Higgs measurements, while many \ac{BSM} searches make use 
-they 
-
+4-body mass can be constructed when using the dimuon final state of the $Z$'s.
+Since the discovery of the Higgs boson the ZZ channel has continued to be an important
+final state for Higgs measurements, at the same time many \ac{BSM} searches also make use of 
+signatures with muons in the final state.
+All of this means that good muon identification efficiency and precise muon momentum resolution
+are very important. The \ac{CMS} muon system is made up out of three different subsystems which
+are all necessary to ensure the identification requirements can be met. It is located
+outside of the magnet coil, interspersed in the iron return yoke of the solenoid.
+In the barrel of the detector the \ac{DT} chambers provide coverage for $|\eta|<1.2$, with
+the \ac{CSC} covering the $1.2<|\eta|<2.4$ region. The \ac{RPC}, covering the same
+regions as both \ac{DT} and \ac{CSC}, is used as a dedicated triggering system.
 
 A cross-section of one quadrant of the detector, indicating
-the positions of the muon systems, is shown in figure \ref{fig:CMS_MuonSystem}.
+the positions of the \ac{DT},\ac{CSC} and \ac{RPC}, is shown in figure \ref{fig:CMS_MuonSystem}. 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{./Detector/Plots/MuonSystem.png}
+\includegraphics[width=0.8\textwidth]{./Detector/Plots/MuonSystemUpgrade.png}
 \caption{Cross-section of one quadrant of the CMS detector, indicating
-the positions of the different muon system components \cite{cms-tdr-vol1}.}
+the positions of the different muon system components \cite{cms-muon-upgrade}. The 
+fourth muon endcap stations were extended during \ac{LS1}, in Run 1 only the lower
+part existed.}
 \label{fig:CMS_MuonSystem}
 \end{center}
 \end{figure}
+
+The \ac{DT} consists of 
+
+%UPGRADE
+During LS1, the endcaps of the muon system were upgraded. Each endcap received an additional muon station, extending ME/4 (figure \ref{fig:CMS_MuonSystem}) out towards
+$R\approx 700 $cm, in line with the other three muon stations \cite{cms-muon-upgrade}.
 %Because of the uncertainty in the eventual background rates and in the ability of the muon system to measure the correct beam-crossing time when the LHC reaches full luminosity, a com- plementary, dedicated trigger system consisting of resistive plate chambers (RPC) was added in both the barrel and endcap regions. The RPCs provide a fast, independent, and highly-segmented trigger with a sharp pT threshold over a large portion of the rapidity range (|η| < 1.6) of the muon system. The RPCs are double-gap chambers, operated in avalanche mode to ensure good operation at high rates. They produce a fast response, with good time resolution but coarser position reso- lution than the DTs or CSCs. They also help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber.
 
-\subsection{Triggering}
+\subsection{Triggering and data processing}
 \label{sec:CMSLHC_CMS_trigger}
+When the \ac{LHC} is operating under standard conditions, protons are collided at a rate
+of 40 MHz. This rate is too high for the \ac{DAQ} system to read out every event. In
+addition this high collision rate produces such a large number of events that it would
+not be feasible to write every single event, with sizes of around 1 MB, to tape. A trigger
+system is therefore used to select events of interest for study, which reduces the rate
+at which events are written to disk to  $\mathcal{O}(1 \text{ kHz})$.
 
-\subsection{Data processing}
-\label{sec:CMSLHC_CMS_dataproc}
+The trigger system consists of two stages: the \ac{L1} trigger, which only makes use of
+front-end electronics 
+and reduces the event rate from 40 MHz to around 100 kHz, and the
+\ac{HLT}, which runs on a computer farm with around 13000 CPU cores \cite{cms-trigger}.
+During \ac{LS1} and the year-end technical stop at the end of 2015 the \ac{L1} trigger was
+replaced by a completely upgraded system, which provides amongst others 
+improved object isolation, hadronic tau identification, muon \pT resolution and
+jet finding.
+
+An overview of the data flow in the \ac{L1} trigger is given in figure \ref{fig:CMS_Trigger}.
+The \ac{L1} trigger only makes use of information from the calorimeters and the muon systems.
+The calorimeter trigger starts from \ac{HCAL} and \ac{ECAL} energy deposits, 
+which are fed to the first layer of the trigger. This layer maps onto
+columns of the detector, receiving data from many bunch crossings. These data are passed
+on to the second layer of the trigger in a way that bundles data from a single bunch crossing, but
+different columns of the detector, to be processed on one node in the second layer of the
+trigger. In this step basic object identification is performed.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./Detector/Plots/CMSTrigger.png}
+\caption{Schematic of the different components of the \ac{L1} trigger \cite{cms-trigger-upgrade}.}
+\label{fig:CMS_Trigger}
+\end{center}
+\end{figure}
+
 
