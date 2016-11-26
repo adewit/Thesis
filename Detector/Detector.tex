@@ -32,7 +32,8 @@ The next accelerator in the chain, the \acf{PS}, further accelerates the protons
 with the \acf{SPS} bringing the energy up to 450 GeV. When this energy has been 
 reached the protons are injected into the \ac{LHC}, where they are further accelerated to 
 the required centre of mass energy. The beams collide at four points
-around the ring, where the collisions are recorded by the ATLAS, CMS, ALICE, and LHCb detectors.
+around the ring, where the collisions are recorded by the ATLAS\cite{atlas-jinst}, 
+CMS\cite{cms-jinst}, ALICE\cite{alice-jinst}, and LHCb\cite{lhcb-jinst} detectors.
 
 The processes the \ac{LHC} was built to study have a small cross-section
 compared with the total proton-proton inelastic cross-section, as seen from figure
@@ -280,14 +281,13 @@ To record the light yield of the crystals, amplifying photodetectors
 need to be used. In the \ac{EB} avalance photodiodes are employed
 for this, with vacuum phototriodes used in the \ac{EE}.
 
-The energy resolution of the \ac{ECAL} can be parameterised as in
-equation \ref{eqn:ecalres}.
+The energy resolution of the \ac{ECAL} can be parameterised as
 
 \begin{equation}\label{eqn:ecalres}
-\frac{\sigma}{E} = \sqrt{(\frac{S}{\sqrt{E}})^2+(\frac{N}{E})^2+C^2}
+\frac{\sigma}{E} = \frac{S}{\sqrt{E}}\bigoplus\frac{N}{E}\bigoplusC},
 \end{equation}
 
-Where $S$ is the stochastic term, $N$ the noise term and $C$ the constant term.
+where $S$ is the stochastic term, $N$ the noise term and $C$ the constant term.
 The stochastic term arises from fluctuations in lateral shower containment and 
 fluctuations in scintillation, the noise term due to noise from the electronics
 and additional particles in the event, and the constant term comes
@@ -295,7 +295,8 @@ from calibration errors, and non-uniformity of longitudinal response.
 
 The values of $S$, $N$ and $C$ have been measured in an electron
 test-beam, without a magnetic field or material in front of the \ac{ECAL}. These
-amounted to $S = 0.028$ GeV$^{0.5}$, $N = 0.12$ GeV, $C= 0.003$.
+amounted to $S = 0.028$ GeV$^{\frac{1}{2}}$, $N = 0.12$ GeV, $C= 0.003$.
+%S = 2.83 %pm 0.03%, C = 0.26% pm 0.04%
 
 
 
@@ -348,6 +349,16 @@ the quartz fibres, which is read out by photomultiplier tubes.
 %to distinguish electrons and photons (which deposit a large
 %fraction of their energy in the first 22cm) from hadrons.
 
+The energy resolution of the \ac{HCAL} for single charged pions 
+was measured in a test beam \cite{cms-hcalecal}
+and can be parameterised as 
+
+\begin{equation}\label{eqn:hcal_res}
+\frac{\sigma}{E} = \frac{S}{\sqrt{E}} \bigoplus C,
+\end{equation}
+
+where $S$ is the stochastic term, found to be 94.3\% %pm 1.2
+and $C$ is the constant term, measured to be 8.4\% %pm 1.0
 HCAL RESOLUTION!
 %UPGRADE
 During LS1, the \ac{HO} and \ac{HF} pmts were replaced 
@@ -368,11 +379,14 @@ are very important. The \ac{CMS} muon system is made up out of three different s
 are all necessary to ensure the identification requirements can be met. It is located
 outside of the magnet coil, interspersed in the iron return yoke of the solenoid.
 In the barrel of the detector the \ac{DT} chambers provide coverage for $|\eta|<1.2$, with
-the \ac{CSC} covering the $1.2<|\eta|<2.4$ region. The \ac{RPC}, covering the same
-regions as both \ac{DT} and \ac{CSC}, is used as a dedicated triggering system.
+the \ac{CSC} covering the $0.9<|\eta|<2.4$ region. The \ac{RPCs}, covering the same
+regions as both \ac{DT} and \ac{CSCs}, is used as a dedicated triggering system.
 
 A cross-section of one quadrant of the detector, indicating
-the positions of the \ac{DT},\ac{CSC} and \ac{RPC}, is shown in figure \ref{fig:CMS_MuonSystem}. 
+the positions of the \ac{DT},\ac{CSCs} and \ac{RPCs}, is shown in figure \ref{fig:CMS_MuonSystem}.
+The top of the fourth muon endcap station as shown in this figure was added during \ac{LS1}, providing
+additional layers of \ac{CSCs} and \ac{RPCs}.
+\ac{LS1}.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./Detector/Plots/MuonSystemUpgrade.png}
@@ -384,11 +398,51 @@ part existed.}
 \end{center}
 \end{figure}
 
-The \ac{DT} consists of 
+The \ac{DT} consists of layers of drift cells with a cross-section of $4.2 \times 1.3$ cm and
+2.4 m long. The cells are filled with a mixture of %85\% 
+Argon and carbon di-oxide gas.
+Muons passing through the chamber ionise the gas, freeing electrons
+which drift towards the anode wire running along the centre of the tube-shaped cell. 
+This gives rise to an electric signal. There are 4 \ac{DT} stations in each wedge of 
+the detector, each in turn consisting of 8 to 12 layers of drift tubes. Some of
+these layers are oriented parallel to the beam line, providing a measurement of $\phi$.
+There are also layers oriented orthogonal to the beam line, which give a measurement
+of the z-coordinate. Measurements of the spatial resolution were made
+during proton--proton running of the \ac{LHC} in 2010.
+The spatial resolution of the \ac{DT} is 80-120 $\mu$m per chamber for
+measurements in the $\phi$ direction, with the resolution of the $z$ measurement
+is 130-400 $\mu$m\cite{cms-muon-7tev}.
+%Drift lines distorted by magnetic field parallel to the wires
 
-%UPGRADE
-During LS1, the endcaps of the muon system were upgraded. Each endcap received an additional muon station, extending ME/4 (figure \ref{fig:CMS_MuonSystem}) out towards
-$R\approx 700 $cm, in line with the other three muon stations \cite{cms-muon-upgrade}.
+In the endcaps, where the muon rate is higher, the \ac{CSCs} provide
+measurements of the muon track. These detectors are radiation-hard,
+and have a fast response and fine segmentation.
+Each of the CSC modules is a wedge-shaped
+multi-wire proportional chamber %WTF
+with 6 gaseous chambers bounded by cathode planes, with
+sensitive strips placed on these plates in the
+radial direction, to measure the coordinate in the  $r-\phi$ plane
+of the muons. Anode wires in between the cathode planes
+run along the $\phi$ direction and provide a measurement of
+$\eta$. The resolution of the $r-\phi$ measurement is 40-120 $\mu$m \cite{cms-muon-7tev}.
+
+In addition to the \ac{DT} and \ac{CSCs}, the \ac{RPCs} provide coverage
+for $|\eta|<1.6$. These are made up of parallel plates, forming the anode and cathode,
+with a gas gap in between. Ionisation of the gas due to the passing
+muons is read out using aluminium strips running parallel to the 
+beam axis. The position resolution of the \ac{RPCs} is much poorer than
+that of the \ac{DT} and \ac{CSCs}, but their time response is very fast. As
+a result of this the \ac{RPCs} can be used as an independent muon trigger
+which can correctly identify the beam crossing from which the muon
+originated.
+
+To obtain precise muon momentum resolution, information from 
+the tracker hits has to be combined with measurements in the
+muon stations. The momentum resolution of the muon system
+alone is 9\% for muons with \pT up to 200 GeV, and varies with $\eta$ 
+between 15-40\% for muons with \pT of 1 TeV.
+
+
 %Because of the uncertainty in the eventual background rates and in the ability of the muon system to measure the correct beam-crossing time when the LHC reaches full luminosity, a com- plementary, dedicated trigger system consisting of resistive plate chambers (RPC) was added in both the barrel and endcap regions. The RPCs provide a fast, independent, and highly-segmented trigger with a sharp pT threshold over a large portion of the rapidity range (|η| < 1.6) of the muon system. The RPCs are double-gap chambers, operated in avalanche mode to ensure good operation at high rates. They produce a fast response, with good time resolution but coarser position reso- lution than the DTs or CSCs. They also help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber.
 
 \subsection{Triggering and data processing}
@@ -405,25 +459,64 @@ front-end electronics
 and reduces the event rate from 40 MHz to around 100 kHz, and the
 \ac{HLT}, which runs on a computer farm with around 13000 CPU cores \cite{cms-trigger}.
 During \ac{LS1} and the year-end technical stop at the end of 2015 the \ac{L1} trigger was
-replaced by a completely upgraded system, which provides amongst others 
+replaced by a completely upgraded system \cite{cms-trigger-tdr}, which provides amongst others 
 improved object isolation, hadronic tau identification, muon \pT resolution and
-jet finding.
-
+jet finding with respect to the system used during Run 1.
 An overview of the data flow in the \ac{L1} trigger is given in figure \ref{fig:CMS_Trigger}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./Detector/Plots/CMSTrigger.png}
+\caption{Schematic of the different components of the \ac{L1} trigger \cite{cms-trigger-tdr}.}
+\label{fig:CMS_Trigger}
+\end{center}
+\end{figure}
+
+
 The \ac{L1} trigger only makes use of information from the calorimeters and the muon systems.
 The calorimeter trigger starts from \ac{HCAL} and \ac{ECAL} energy deposits, 
 which are fed to the first layer of the trigger. This layer maps onto
 columns of the detector, receiving data from many bunch crossings. These data are passed
 on to the second layer of the trigger in a way that bundles data from a single bunch crossing, but
 different columns of the detector, to be processed on one node in the second layer of the
-trigger. In this step basic object identification is performed.
+trigger. In this step basic object identification is performed based on the energy
+deposits, so that a sorted list of the best candidates can be passed to the global trigger.
+Hits in the muon chambers are read out and passed to the track finder layer 
+of the muon trigger, which combines information from the \ac{CSC}, \ac{DT}
+and \ac{RPC} systems in regions of $\eta-\phi$.
+In further layers of the muon trigger the information from different
+regions is combined, until finally the global muon trigger
+can return a sorted list of the best muon candidates to the global trigger.
+The global trigger combines the information from the calorimeter and muon triggers
+to make a decision on whether the event should be sent to the \ac{HLT} or whether
+it should be discarded. A decision has to be made within 3.2 $\mu s$, the maximum time during
+which data can be stored in the front-end electronics before being lost.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{./Detector/Plots/CMSTrigger.png}
-\caption{Schematic of the different components of the \ac{L1} trigger \cite{cms-trigger-upgrade}.}
-\label{fig:CMS_Trigger}
-\end{center}
-\end{figure}
+%The muon trigger is a tracking trigger that measures the momentum of muons using the magnetic field in the steel yoke of the CMS solenoid; thus its resolution degrades with increasing momentum. This can be improved by maximizing the number of chamber hits along a muon trajectory and by improving the precision and number of position and angular measurements participating in the track fit applied in the trigger logic. Moreover, isolation criteria can be applied using the energy deposits in the calorimeter in order to further reduce the rate of muons from heavy flavor jets.
+
+The \ac{HLT}, running on CPU nodes, makes use of the full information
+from the detector, including tracker hits. This means particles
+can be more accurately identified and their momentum is more
+precisely known. The algorithms used in the \ac{HLT} are usually simpler
+versions of those used in the full offline reconstruction. %Can't use full because time limited
+During the 2012 run of the \ac{LHC} the \ac{HLT} operated with an output
+capacity of around 1 kHz, for Run 2 this has increased. In August 2016, 
+the \ac{HLT} output rate was 1.2 kHz for immediate data processing, with
+an additional 0.6 kHz parked to be reconstructed and analysed when 
+more processing power is available\cite{CMS-PAS-HIG-16-037}. %ie at the end of run 2
+
+While the trigger system reduces the rate substantially, several
+petabytes of data are produced by \ac{CMS} each year, in addition to 
+even larger amounts of simulated datasets. To 
+make these large amounts of data easily available for analysis, 
+\ac{CMS} and the other \ac{LHC} experiments make use of the \ac{WLCG} \cite{lhc-wlcg}. 
+The \ac{WLCG} pools the resources of computer centres at universities and research
+laboratories around the world, based on a system of tiers. The Tier 0, at \ac{CERN} and
+thw Wigner Research Centre for Physics in Budapest, performs the full reconstruction
+and saves the data to tape. Datasets are copied to at least one Tier 1 centre, from
+where data can be distributed to Tier 2 centres. The Tier 2 centres are located
+at over 150 universities and research institutes around the world, providing 
+resources for analysis of the datasets to all researchers associated with the experiment.
+
 
 
