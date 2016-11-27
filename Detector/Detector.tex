@@ -30,10 +30,16 @@ are created from the hydrogen gas, they are accelerated to a centre of mass ener
 \acf{PSB} which accelerates the protons until they reach a centre of mass energy of 1.4 GeV.
 The next accelerator in the chain, the \acf{PS}, further accelerates the protons to 25 GeV,
 with the \acf{SPS} bringing the energy up to 450 GeV. When this energy has been 
-reached the protons are injected into the \ac{LHC}, where they are further accelerated to 
-the required centre of mass energy. The beams collide at four points
-around the ring, where the collisions are recorded by the ATLAS\cite{atlas-jinst}, 
-CMS\cite{cms-jinst}, ALICE\cite{alice-jinst}, and LHCb\cite{lhcb-jinst} detectors.
+reached the protons are injected into the \ac{LHC} in two counter-rotating
+beams. In the \ac{LHC} ring the beams are further accelerated to the required centre of mass energy
+by eight \ac{RF} cavities. At design operation the beams consist of 2808 proton bunches each made up 
+of $\mathcal{O}(10^11)$ protons, spaced 25ns apart. The beams are kept in circulation
+using 1232 niobium-titanium superconducting dipole magnets, cooled to operate at 
+a temperature of 1.9K and generating magnetic fields upwards of 8 T.
+The beams collide at four points
+around the \ac{LHC} ring, where the collisions are recorded by the ATLAS\cite{atlas-jinst}, 
+CMS%\cite{cms-jinst} guess we've cited this already
+, ALICE\cite{alice-jinst}, and LHCb\cite{lhcb-jinst} detectors.
 
 The processes the \ac{LHC} was built to study have a small cross-section
 compared with the total proton-proton inelastic cross-section, as seen from figure
@@ -50,10 +56,10 @@ are often many orders of magnitude smaller than the total p--p cross section.}
 \end{figure}
 
 In order to be able to study these relatively rare processes, 
-the LHC operates at high instantaneous luminosity, defined as in equation
+the LHC operates at high instantaneous luminosity, defined as
 \ref{eqn:CMSLHC_luminosity}. 
 \begin{equation}\label{eqn:CMSLHC_luminosity}
-\mathcal{L} = \frac{N_b^2n_bf_{\text{rev}}\gamma}{4\pi\epsilon_n\beta^{*}}F
+\mathcal{L} = \frac{N_b^2n_bf_{\text{rev}}\gamma}{4\pi\epsilon_n\beta^{*}}F.
 \end{equation}
 
 In this equation, $N_b$ is the number of protons per bunch, $n_b$ the number of
@@ -105,7 +111,18 @@ in October 2016.
 
 Due to the high operating luminosity, multiple proton-proton collisions per 
 bunch crossing are likely to occur. The average number of interactions
-per bunch crossing is X in 2012, Y in 2015, Z in 2016. Additional 
+per bunch crossing was 21 in 2012\cite{cms-lumi-public}. The average number of
+interactions per bunch crossing lowered again at the start of Run 2, with
+an average of 14 interactions per bunch crossing for the data collected
+during 2015. In the data-taking period up to August 2016 the average number of interactions
+per bunch crossing increased to 24\footnote{NoteToBeRemovedBeforeSubmission: Lumi pog letting us down 
+here, no references for what number to quote/no prescriptions for how to calculate it. Use of theoretical
+min bias cross section (80mb) vs min bias cross section tuned for pu reweighting (less than 70 mb both for
+2015 and 2016) can shift the average by 5 evts or more! The 2016 number uses the theoretical
+cross section (only reference to this are various sets of slides presented at conferences), 2015
+number based on the min bias cross section used for pu reweighting (iirc). Assuming the 2012 numer,
+for which there is a public figure, uses the theoretical mb cross section should probably re-calculate the
+number for 2015.}. Additional 
 interactions on top of events of interest are referred to as pile-up.
 
 \section{The \acs{CMS} detector}
@@ -224,9 +241,9 @@ still need to be radiation hard. In order to be able to place
 the calorimeters inside the bore of the solenoid, a compact \ac{ECAL}
 had to be constructed, and to provide excellent resolution a 
 highly granular system had to be designed. The lead tungstate crystals have a 
-radiation length of 0.89 cm, a Moli\'ere radius of 2.2 cm, and 80\% of the light
+radiation length of 0.89 cm, a Moli\`ere radius of 2.2 cm, and 80\% of the light
 from the crystals is emitted in 25 ns. This short radiation
-length, small Moli\'ere radius and short scintillation decay time combined
+length, small Moli\`ere radius and short scintillation decay time combined
 with the radiation hardness of the material motivate the choice of lead tungstate. 
 
 %Moliere radius: characteristic constant of a material giving scale of transverse dimenstion
@@ -284,7 +301,7 @@ for this, with vacuum phototriodes used in the \ac{EE}.
 The energy resolution of the \ac{ECAL} can be parameterised as
 
 \begin{equation}\label{eqn:ecalres}
-\frac{\sigma}{E} = \frac{S}{\sqrt{E}}\bigoplus\frac{N}{E}\bigoplusC},
+\frac{\sigma}{E} = \frac{S}{\sqrt{E}}\bigoplus\frac{N}{E}\bigoplus C,
 \end{equation}
 
 where $S$ is the stochastic term, $N$ the noise term and $C$ the constant term.
@@ -323,9 +340,11 @@ of the detector \cite{cms-jinst}.}
 \end{figure}
 
 The \ac{HB} and \ac{HE} are sampling calorimeters made of brass absorber
-plates with tiles of plastic scintillator as the active material. The tiles 
+plates with tiles of plastic scintillator as the active material. The brass used as 
+absorber fits the constraints imposed by the environment due to its short interaction length
+of 16.42 cm and the fact that it is non-magnetic. The tiles of scintillator 
 are $0.087 \times 0.087$ in $\eta-\phi$ for $|\eta|<1.6$ and $0.17\times0.17$ in $\eta-\phi$
-beyond this range.
+beyond this range. 
 The light from each tile is collected with a wavelength-shifting fibre, 
 which is eventually read out using a hybrid photodiode. In the barrel, the \ac{HCAL}
 has a thickness of between 5.82 and 10.6 interaction lenghts, which is not 

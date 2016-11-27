@@ -1,21 +1,25 @@
 \chapter{\texorpdfstring{Search for \Htohhtobbtautau}{Search for H -> hh -> bbtautau}}
 \label{sec:hhh}
 In this chapter the search for a heavy Higgs boson decaying to a pair of 125 GeV Higgs bosons, with one of these Higgs bosons decaying to 
-a pair of b-jets and the other decaying to a pair of \Ptau leptons is discussed. In this analysis the \etau, \mutau and \tautau final states
-of the \Pgt-pair are studied, these final states are referred to as channels.
+a pair of b-jets and the other decaying to a pair of \Ptau leptons is discussed. In this analysis, which 
+uses a dataset corresponding to 19.8 fb$^{-1}$ collected during the 2012 p--p running
+period of the \ac{LHC}, the \etau, \mutau and \tautau final states
+of the \Pgt-pair are studied; these final states are referred to as channels. 
 The results of this search are model-independent
-upper limits on heavy Higgs production cross--section times branching ratio into h(125)h(125)$\rightarrow b\bar{b} \tau\tau$, for
+upper limits on the heavy Higgs production cross--section times branching ratio into h(125)h(125)$\rightarrow b\bar{b} \tau\tau$, for
 which all three channels are combined. The \etau and \mutau channels will be described in this chapter, the \tautau channel will not
 be covered, although the limits shown in section \ref{sec:hhh_results} will include this final state.
 In addition  the results are interpreted in the context of the MSSM and a type-II Two Higgs Doublet Model (2HDM), 
-these interpretations are made in combination with the results of a search for \AtoZhtolltautau. 
-This search will be summarised in this chapter, but will not constitute the main focus.
+these interpretations are made in combination with the results of a search for \AtoZhtolltautau \cite{CMS-HIG-14-034}. 
+My work focussed on checks for the \mutau and \etau channels, as well as being
+responsible for limit setting for the \Htohh analysis, and performing the model interpretations
+of the \Htohh and \AtoZh analyses, plus their combination.
 Both searches, and their interpretation, are detailed in reference \cite{CMS-HIG-14-034}.
 
 The discovery of the 125 GeV Higgs boson by the ATLAS and CMS collaborations in 2012 \cite{HDiscoveryAtlas,HDiscoveryCMS} has opened up
 new possibilities for probing the Higgs sector beyond the Standard Model. As discussed in chapter THEORY, in some MSSM scenarios, and some more
 generic type-II 2HDM's, a heavy neutral Higgs boson H can decay to a pair of 125 GeV Higgs bosons for low values
-of \tanb, probing a region of phase space not yet excluded by stringent existing limits. In regions where
+of \tanb, probing a region of phase space not yet excluded by the stringent existing limits. In regions where
 the decay \Htohh is enhanced, the \AtoZh decay also has a large branching ratio, indicating the usefulness
 of both channels for probing the low-\tanb region. The $b\bar{b}$\tautau final state is chosen for the combination
 of the large $h(125) \rightarrow b\bar{b}$ branching ratio and the cleaner \htotautau final state.
@@ -27,20 +31,22 @@ running period of the LHC.
 Signal and background events were generated using several different \ac{MC} event generators. The \texttt{MadGraph}
 \cite{madgraph} matrix element generator was used to generate samples of \Wjets, \Zellell, \ttbar and \ZZ ,\WZ and \WW
 events. In addition to samples with a mixture of jet multiplicities (`inclusive' samples), samples binned in jet multiplicity
-were used for the \Wjets and \Zellell backgrounds. This increases the background event statistics
-in regions with multiple jets, which important for this analysis due to the presence of b-jets in the searched-for final state. 
+were used for the \Wjets and \Zellell backgrounds. This increases the number of background events
+in regions with multiple jets, which are important for this analysis due to the presence of b-jets in the final state. 
 The samples binned in jet multiplicity are combined with the
 inclusive samples such that the fraction of events with each jet multiplicity is preserved.
 
 Single top samples were produced with the \texttt{POWHEG} \cite{powheg1,powheg2} generator. Samples of $gg\rightarrow$\Htohhtobbtautau
-were generated in steps of 10 GeV between \mH $= 260 - 350$~GeV using \texttt{PYTHIA 6} \cite{pythia64}. In all of the samples
+were generated in steps of 10 GeV between \mH $= 260 - 350$~GeV using \texttt{PYTHIA 6} \cite{pythia64}. The signal
+\ac{MC} is limited to 350 GeV because for the interpretation of a resonance as a Higgs boson the decay \PHiggs $\rightarrow$ \ttbar
+starts to dominate beyond this mass. In all of the samples
 \texttt{TAUOLA} \cite{tauola} is used to decay $\tau$s, and parton showering and hadronisation are modelled using \texttt{PYTHIA 6} \cite{pythia64}.
 Minimum bias events generated using \texttt{PYTHIA 6} are added to all \ac{MC} samples to model additional
 interactions. 
 
 To better model the \Ztautau background, an embedding technique is used. In this method, 
 \Zmm events are selected in data and the muons are replaced by generator-level taus. \texttt{TAUOLA} is used
-to decay the taus and tau polarisation effectes are modelled using \texttt{TauSpinner} \cite{TauSpinner}. The detector
+to decay the taus and tau polarisation effects are modelled using \texttt{TauSpinner} \cite{TauSpinner}. The detector
 response to the tau decay products is modelled using the \texttt{GEANT4}-based \cite{Geant4} detector simulation, and 
 tracks in the inner tracking system, hits in the muon systems and energy deposits in the calorimeters
 due to the simulated taus are combined with the remains of the \Zmm event after the detector signals
@@ -51,15 +57,15 @@ avoid double counting with the \ttbar \ac{MC}.
 
 \section{Event selection and categorisation}
 \label{sec:hhh_selection}
-A more detailed description of the physics objects used for this analysis is given in chapter OBJECTS
-in this section only an overview of the event selection is presented.
+This section gives an overview of the event selection, a detailed description of the physics
+objecs used in this analysis is given in chapter OBJECTS.
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu-tau channel}}
 \label{sec:hhh_selection_mutau}
 The first step of event selection in the \mutau channel is a trigger 
 which requires only a muon
-at L1. At the level of the HLT a hadronic tau, reconstructed using a simpler version of the
-PF algorithm, is also required. Loose isolation requirements are applied to this hadronic tau, and 
+at \ac{L1}. At the level of the \ac{HLT} a hadronic tau, reconstructed using a simpler version of the
+\ac{PF} algorithm, is also required. Loose isolation requirements are applied to this hadronic tau, and 
 loose ID and isolation requirements are applied to the muon at this stage.
 
 In the offline event selection, an oppositely charged \mutau pair is required, 
@@ -72,13 +78,12 @@ criteria and tight isolation requirements $I_{\text{rel}}^{\mu} < 0.1$, as descr
 in section OBJECTS, are applied. The hadronic tau must have a \pT~of at least
 20 GeV, $|\eta| < 2.3$, and must have $d_{z} < 0.2$ cm. It is required to pass 
 the decay mode finding identification
-from the HPS algorithm, as described in section OBJECTS. Additionally
-the raw combined isolation, described in the same section, is required to be
+from the HPS algorithm. Additionally
+the raw combined isolation is required to be
 at most 1.5 GeV. To reject $\Pe/\Pgm \rightarrow \Pgt_{h}$ fakes, and to
 reduce the contribution of \Zmm background events, the hadronic tau is 
 also required to pass the tight working point of the anti-$\Pgm$ discriminator
-and the loose working point of the cut--based anti-$\Pe$ discriminator, both
-described in section OBJECTS.
+and the loose working point of the cut--based anti-$\Pe$ discriminator.
 
 After this selection there is still a chance more than one possible 
 \mutau pair exists
@@ -121,16 +126,16 @@ are also applied to the electron at this stage.
 After the trigger selection, an oppositely charged \etau pair is required, again separated by $\Delta R >0.5$. 
 The electron should have a \pT~of at least 24 GeV, $|\eta| < 2.1$, and should
 satisfy $d_{xy} < 0.045$cm and $d_{z} < 0.2$ cm. The electron must pass the tight
-working point of the electron MVA ID discriminator described in section OBJECTS, and the
+working point of the electron MVA ID discriminator, and the
 relative isolation is required to be $I_{rel}^{\Pe} < 0.1$. The requirements placed on the
 hadronic tau are similar to those required in the \mutau channel, apart from the anti-$\Pgm$ discriminator,
 where the loose working point is required, and the anti--$\Pe$ discriminator, where the medium
 working point of the MVA discriminator is required.
 
-If there is more than one possible \etau pair, the pair with largest \pT$^{\Pe}$+\pT$^{\Pgt_{h}}$
+If there is more than one possible \etau pair, The pair with largest \pT$^{\Pe}$+\pT$^{\Pgt_{h}}$
 is taken. Similar additional vetos as in the \mutau channel are applied.
 the event is rejected if an opposite--charge pair of electrons with \pT $> 15$ GeV, passing looser ID and
-isolation requirements than the signal electron requirements can be formed. To reduce the \WZ
+isolation requirements than the signal electron requirements, can be formed. To reduce the \WZ
 background, events that have more than one electron or at least one muon passing \pT $>10$ GeV and loose ID and isolation
 requirements are rejected.
 
@@ -154,13 +159,13 @@ required.
 
 \subsection{Categorisation}
 \label{sec:hhh_selection_categories}
-In both channels a selection on the transverse mass \mT~between the electron/muon
+In both channels a selection on the transverse mass, \mT,~between the electron/muon
 and missing transverse energy, defined as in equation \ref{eqn:hhh_selection_mt}, is applied.
 \begin{equation}\label{eqn:hhh_selection_mt}
 m_{\text{T}} = \sqrt{2p_{\text{T}}E_{\text{T}}^{\text{miss}}(1-\cos{\Delta\phi})}
 \end{equation}
-In this eqation \pT~is the transverse momentum of the electron or muon, and $\Delta\phi$ the angle
-between the light lepton and the missing transverse energy. The \mT~distributions for the \etau
+In this eqation \pT~is the transverse momentum of the electron or muon, and $\Delta\phi$ the azimuthal
+angle between the light lepton and the missing transverse energy. The \mT~distributions for the \etau
 and \mutau channels, using the selections as
 described in sections \ref{sec:hhh_selection_mutau} and \ref{sec:hhh_selection_etau},
 are shown in figure \ref{fig:Hhh_selection_mt}.
@@ -193,9 +198,9 @@ smaller diboson and single-top backgrounds are combined into the `electroweak' b
 After applying the \mT~selection, events are divided into three categories to maximise
 sensitivity to the signal: 2jet-0tag (at least 2 jets, exactly 0 of which are b-tagged), 2jet-1tag 
 (at least 2 jets, exactly 1 of which is b-tagged), 2jet-2tag (at least 2 jets, at least 2 of which are b-tagged).
-Jets are considered b-tagged if they pass the medium working point of the b-tagging discriminator described in section OBJECTS.
+Jets are considered b-tagged if they pass the medium working point of the \ac{CSV} b-tagging discriminator.
 The 2jet-0tag category does not collect much of the signal and is dominated by 
-backgrounds, the 2jet-2tag category is most sensitive to signal. 
+backgrounds, the 2jet-2tag category is the most sensitive to signal. 
 Figure \ref{fig:Hhh_selection_bjets}, which shows the number of b-tagged jets in the 2-jet selection of the \mutau and \etau
 channels, illustrates this.
 
@@ -210,7 +215,7 @@ at \mH~=$300$~GeV and \tanb~=2, multiplied by a factor of 10, is overlaid on the
 \end{figure} 
 
 In signal events, the di--tau pair and di--jet pair 
-are the decay products of an 125 Gev Higgs boson, therefore their invariant
+are the decay products of a 125 GeV Higgs boson, therefore their invariant
 masses should be close to 125 GeV. To reduce background contributions
 from events where the di--tau or di--jet mass is not compatible with
 125 GeV, requirements are made on the di--jet invariant mass and the di--tau
@@ -275,7 +280,7 @@ gives more details on how these corrections are derived.
 
 To correct for the difference in b--tagging efficiency and light jet mis--tagging
 rates between data and \ac{MC} \pT~and $\eta$~dependent scale factors are 
-derived using the method described in \cite{BTV8TeV}. There are separate scale factors for 
+derived using the method described in ref. \cite{BTV8TeV}. There are separate scale factors for 
 b-/c- jets and light jets. Multiple possible ways to apply these scale factors
 exist, for this analysis this is done through a promote/demote method.
 
@@ -287,12 +292,12 @@ jet as in equation \ref{eqn:promotedemote}.
 \end{align}
 In this equation $SF$ is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
 the b--tagging efficiency in \ac{MC} events for the type of jet (light, b- or c-)
-in consideration.
+under consideration.
 
 \section{Discriminating variable}
 \label{sec:hhh_discr}
 The variable of interest in this analysis is the mass of the heavy Higgs boson H. This can be
-reconstructed as the 4--body mass of the two jets and the two taus, however
+reconstructed as the 4--body mass of the two jets and the two taus; however
 a more accurate result can be obtained by using a kinematic fitting 
 procedure that makes use of the 125 GeV mass constraint on the di--tau and
 di--jet candidates. 
@@ -314,20 +319,20 @@ that uncertainties in the energy measurement directly translate to
 uncertainties in the momentum measurement, therefore $\vec{\beta} = \vec{p}/E$ is
 also kept constant. 
 
-Before the fit, from the mass constraint we have (equation \ref{eqn:kinfit_prefit})
+Before the fit, from the mass constraint we have:
 ~\vspace{-0.5\baselineskip}
 \begin{align}\label{eqn:kinfit_prefit}
 m_{h}^2 &= E_{h}^2 - \vec{p_{h}}^2 = (E_{b1}+E_{b2})^2 - (\vec{p_{b1}} + \vec{p_{b2}})^2 \notag\\
 & = 2E_{b1}E_{b2} + m_{b1}^2 +m_{b2}^2 - 2\vec{p_{b1}}\vec{p_{b2}} \notag\\
 & = m_{b1}^2 +m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta_{b2}})\notag\\
-&\Rightarrow (1-\vec{\beta_{b1}}\vec{\beta_{b2}}) = \frac{m_h^2 - m_{b1}^2 - m_{b2}^2}{2E_{b1}E_{b2}}
+&\Rightarrow (1-\vec{\beta_{b1}}\vec{\beta_{b2}}) = \frac{m_h^2 - m_{b1}^2 - m_{b2}^2}{2E_{b1}E_{b2}}.
 \end{align}
 When varying the energy of the first jet in the fit, equation \ref{eqn:kinfit_prefit} can be 
 rewritten to derive an expression for the updated energy of the second jet. Using $\mathcal{A} = (1-\vec{\beta_{b1}}\vec{\beta_{b2}})$ 
-and equation \ref{eqn:gamma_def}:
+and
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:gamma_def}
-\gamma = \frac{1}{1-\beta^2} \Rightarrow \gamma^2 = \frac{1}{1-\beta^2} = \frac{1}{1-p^2/E^2} = \frac{E^2}{m^2}
+\gamma = \frac{1}{1-\beta^2} \Rightarrow \gamma^2 = \frac{1}{1-\beta^2} = \frac{1}{1-p^2/E^2} = \frac{E^2}{m^2}.
 \end{equation}
 We get:
 ~\vspace{-0.5\baselineskip}
@@ -339,10 +344,10 @@ m_h^2 &= m_{b1}^2 + m_{b2}^2 - 2E_{b1}E_{b2}(1-\vec{\beta_{b1}}\vec{\beta{b2}})\
 &\Rightarrow E_{b2}^{fit} = E_{b1}\mathcal{A}\gamma_{b2}^2(-1 + \sqrt{1+\frac{m_{h}^2 - m_{b1}^2}{E_{b1}^2\mathcal{A}\gamma_{b2}^2}})
 \end{align}
 
-The fitting procedure additionally modifies the masses of the b-jets as (equation \ref{eqn:kinfit_bjetmass})
+The fitting procedure additionally modifies the masses of the b-jets as 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_bjetmass}
-m_{b_{1,2}}^{fit} = m_{b_{1,2}}\frac{E_{b_{1,2}}^{fit}}{E_{b_{1,2}}}
+m_{b_{1,2}}^{fit} = m_{b_{1,2}}\frac{E_{b_{1,2}}^{fit}}{E_{b_{1,2}}}.
 \end{equation}
 The $\chi^2$ term for each b-jet is calculated as $\chi_{b1,2}^2 = \frac{E_{b1,2}^{fit}-E_{b1,2}^{meas}}{\sigma_{b1,2}}$.
 
@@ -354,15 +359,15 @@ Due to the missing energy associated with the \Pgt decays, additional constraint
 on the fit have to be used to reconstruct the correct tau energies. This is done by 
 enforcing that the heavy Higgs boson recoil from the fit is close to the reconstructed recoil.
 
-The measured recoil is (equation \ref{eqn:kinfit_recoilmeas})
+The measured recoil is 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilmeas}
-\vec{p_{\text{T,recoil}}}^{\text{meas}} = -\vec{p_{\text{T,H}}}^{\text{meas}} = -\vec{p_{\text{T,miss}}}^{\text{meas}} - \vec{p_{\text{T},b_{1}}}^{\text{meas}} - \vec{p_{\text{T},b_{2}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{\text{meas}}
+\vec{p_{\text{T,recoil}}}^{\text{meas}} = -\vec{p_{\text{T,H}}}^{\text{meas}} = -\vec{p_{\text{T,miss}}}^{\text{meas}} - \vec{p_{\text{T},b_{1}}}^{\text{meas}} - \vec{p_{\text{T},b_{2}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{\text{meas}},
 \end{equation}
-With the recoil from the fit (equation \ref{eqn:kinfit_recoilfit})
+and the recoil from the fit is,
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilfit}
-\vec{p_{\text{T,recoil}}}^{fit} = -\vec{p_{\text{T,H}}}^{fit} = - \vec{p_{\text{T},b_{1}}}^{fit} - \vec{p_{\text{T},b_{2}}}^{fit} - \vec{p_{\text{T},\Pgt_1}}^{fit} - \vec{p_{\text{T},\Pgt_2}}^{fit}
+\vec{p_{\text{T,recoil}}}^{fit} = -\vec{p_{\text{T,H}}}^{fit} = - \vec{p_{\text{T},b_{1}}}^{fit} - \vec{p_{\text{T},b_{2}}}^{fit} - \vec{p_{\text{T},\Pgt_1}}^{fit} - \vec{p_{\text{T},\Pgt_2}}^{fit}.
 \end{equation}
 A $\chi^2$ corresponding to the agreement between the fitted and measured recoil is reconstructed as (equation \ref{eqn:kinfit_recoilchi2})
 ~\vspace{-0.5\baselineskip}
@@ -372,17 +377,17 @@ A $\chi^2$ corresponding to the agreement between the fitted and measured recoil
 where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as in equation \ref{eqn:kinfit_recoilcov} from the covariance matrices of the b-jets and
 the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET as discussed in the
 OBJECTS section,
-while the covariance matrices of the b-jets can be written in terms of position, momentum and resolution of the b-jets. 
+while the covariance matrices of the b-jets can be written in terms of the position, momentum and resolution of the b-jets. 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilcov}
 V_{\text{recoil}} = V_{\vec{p_{\text{T,miss}}}} - V_{b_{1}} - V_{b_2} 
 \end{equation}
-The total $\chi^2$ term that needs to be minimised in the fit can then be written as (equation \ref{eqn:kinfit_chitot})
+The total $\chi^2$ term that needs to be minimised in the fit can then be written as
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_chitot}
-\chi^2 = \chi^2_{b_1} + \chi^2_{b_2} + \chi^2_{\text{recoil}}
+\chi^2 = \chi^2_{b_1} + \chi^2_{b_2} + \chi^2_{\text{recoil}}.
 \end{equation}
-The result of the kinematic fit are the tau and b-jet 4-vectors with their energies and momenta
+The results of the kinematic fit are the tau and b-jet 4-vectors with their energies and momenta
 set to the best fit values found for them in the fit. These can then be added together to find
 the mass of the heavy Higgs boson as reconstructed by the kinematic fit.
 
@@ -441,19 +446,19 @@ extrapolation factor is determined from the \Wjets \ac{MC}
 samples. The yield in the signal region is then the other-background-subtracted
 data yield in the high-\mT~region multiplied by this extrapolation factor.
 In the 2jet-2tag, a slightly different high-\mT~sideband of 60-120 GeV is used 
-to give larger statistics for the \Wjets estimate after other backgrounds are
+to give more events for the \Wjets estimate after other backgrounds are
 subtracted. The method of extrapolating this yied estimate into
 the signal region is otherwise analogous.
 
-The \Wjets shape is taken from the \ac{MC} samples. To 
-increase the statistics for this estimate, the b-tagging definition
+The shape of the \Wjets distribution is taken from the \ac{MC} samples. To 
+increase the number of events for this estimate, the b-tagging definition
 in the 2jet-1tag and 2jet-2tag categories is loosened to the loose (instead of medium)
 working point for the purposes of shape estimation.
 \subsection{QCD}
 \label{sec:hhh_backgrounds_qcd}
 A fully data-driven method is used to estimate the QCD background. Data events
-passing the signal region selection cuts, but with the di-\Pgt candidates of
-same sign, are used for this. The contributions from other backgrounds are 
+passing the signal region selection cuts, but with di-\Pgt candidates of
+the same sign, are used for this. The contributions from other backgrounds are 
 subtracted, and the contribution from opposite- and same-sign QCD are
 not exactly the same an OS/SS ratio is applied to the data-other backgrounds in the same--sign region.
 The OS/SS ratio is measured using data with the 
@@ -461,7 +466,7 @@ the electron/muon isolation requirements inverted.
 
 For the 2jet-0tag and 2jet-1tag categories the yield is taken directly from
 the same-sign subtracted data multiplied by the OS/SS ratio. In the 2jet-2tag
-category the statistics are too low for this, so another sideband is defined
+category the number of available events is too low for this, so another sideband is defined
 in which the electron/muon isolation requirement is inverted. This 
 sideband is then used to determine an extrapolation factor from events
 with 2 jets to events passing the 2jet-2tag category selection. This extrapolation
