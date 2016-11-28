@@ -35,7 +35,7 @@ beams. In the \ac{LHC} ring the beams are further accelerated to the required ce
 by eight \ac{RF} cavities. At design operation the beams consist of 2808 proton bunches each made up 
 of $\mathcal{O}(10^{11})$ protons, spaced 25ns apart. The beams are kept in circulation
 using 1232 niobium-titanium superconducting dipole magnets, cooled to operate at 
-a temperature of 1.9K and generating magnetic fields upwards of 8 T.
+a temperature of 1.9K and generating magnetic fields upwards of 8 Tesla.
 The beams collide at four points
 around the \ac{LHC} ring, where the collisions are recorded by the ATLAS\cite{atlas-jinst}, 
 CMS%\cite{cms-jinst} guess we've cited this already
@@ -187,18 +187,19 @@ system. When a charged particle passes through the silicon, an electron-hole pai
 is created, which drift under an applied electric field and produce a current
 that can be read out. %LEARN A BIT MORE ABOUT THIS
 
-The tracker provides coverage up to $|\eta| < 2.5$ and consists of
-several different components. A schematic of the tracking detector is given
-in figure \ref{fig:CMS_tracker}. The part of the tracking system
-closest to the interaction point is the silicon pixel detector, which 
-consists of 3 layers of pixels in the barrel of the detector, with 
-2 pixel endcap disks. The barrel layers sit at radii of 4.4, 7.3 and 10.2 cm 
-and extend up to $z=\pm 26.5$ cm, with the disks placed at $z=\pm 34.5$ cm and
-$z=\pm 46.5$ cm. The pixel detector consists of 66 million silicon pixels, each
-$100 \mu m \times 150 \mu m$ in size. The choice of this pixel size is driven
-by the achievable spatial resolution, which is $15-20 \mu m$ in the $r$ and $z$ directions.
-This allows for 3D vertex reconstruction. With this layout, the pixel tracker
-provides 3 precise position measurements along each charged particle trajectory.
+The tracker, providing coverage up to $|\eta|<2.5$ consists of 
+several different components. A schematic of the tracking detector, indicating
+the location of these components, is given in figure \ref{fig:CMS_tracker}.
+Nearest the interaction point the tracker is a pixel detector made
+of 66 million silicon pixels, each 100 $\mu$m $\times$ 150 $\mu$m in size.
+The choice of this pixel size is driven by the achievable spatial resolution,
+which is 15-20 $\mu$m in the $r$ and $z$ directions in this case. Such a
+precise resolution allows for 3D vertex reconstruction. The pixel
+detector consists of 3 layers of pixels in the barrel region, with 2 pixel disks 
+placed in the endcap region at either side. The barrel layers sit at radii of
+4.4, 7.3 and 10.2 cm and extend out up to $z=\pm 26.5$ cm. The disks are placed
+at $z=\pm 34.5$ cm and $z=\pm 46.5$ cm. With this layout the pixel tracker can
+provide three precies position measurements along each charged particle trajectory.
 
 
 \begin{figure}[h!]
@@ -214,22 +215,23 @@ on the plot represents a detector module}
 
 Beyond the pixel detector the tracking system is made up of a silicon
 strip detector consisting of multiple different subsystems. The first part of the
-silicon strip tracker consists of the \ac{TIB} and \ac{TID}, providing 4 layers of
-silicon strip detectors in the barrel plus 3 disks at both ends. These two systems
+silicon strip tracker consists of the \ac{TIB} and \ac{TID}, providing four layers of
+silicon strip detectors in the barrel plus three disks at both ends. These two systems
 extend out towards a radius of 55 cm. The barrel layers and disks each consist
 of silicon strips which are 10 cm long, $80-141~\mu$m wide and $320~\mu$m thick. The \ac{TIB} and \ac{TID}
-provide 4 measurements of the $r-\phi$ position  with a resolution of 23-35 $\mu m$.
-The \ac{TIB} and \ac{TID} are surrounded by the \ac{TOB}, which consists of 6 layers of silicon strip sensors extending
+provide four measurements of the $r-\phi$ position  with a resolution of 23-35 $\mu$m.
+The \ac{TIB} and \ac{TID} are surrounded by the \ac{TOB}, which consists of six layers of silicon strip sensors extending
 up to an outer radius of 116 cm and up to $z=\pm 118$ cm. The strips in the \ac{TOB} are 500~$\mu$m thick, around 25 cm long and 122-183 $\mu$m 
 wide and this subdetector provides 6 measurements of $r$ and $\phi$, with a resolution
 of 35-53 $\mu$m. Beyond the z-range covered by the \ac{TOB}, coverage is provided by the \ac{TEC},
-consisting of 9 disks of strips. In the \ac{TEC}, the strip thickness ranges from 320-500 $\mu$m and the the strip width ranges from $97-184 \mu m$.
-This part of the system provides up to 9 $\phi$ measurements.
+consisting of nine disks of strips. In the \ac{TEC}, the strip thickness ranges from 320-500 $\mu$m and the the strip width ranges from $97-184 \mu m$.
+This part of the system provides up to nine $\phi$ measurements.
 
 Some of the strip modules in the detector carry a second strip detector module mounted back-to-back with a stereo angle %FIXME WTF?
 of 100 mrad, in order to provide measurements of the $z-$ coordinate in the barrel. This is achieved with a resolution of 230-530 $\mu$m.
 
-The pixel tracker will be upgraded during the extended year-end technical stop in early 2017 \cite{cms-pixel-upgrade}. %or just replaced?
+The pixel tracker will be upgraded during the extended year-end technical stop in early 2017. This upgrade is needed to
+maintain the performance of the tracker as the pile-up increases \cite{cms-pixel-upgrade}. %or just replaced?
 
 
 \subsection{\acl{ECAL}}
@@ -239,16 +241,17 @@ made of nearly 76000 lead tungstate (PbWO$_4$) crystals. It has very
 good energy resolution, is highly granular and fast-responding, all qualities 
 which are needed to be able to detect $H\rightarrow \gamma\gamma$ decays.
 
-Despite being further away from the interaction
-point than the tracker, the materials in other parts of the detector
-still need to be radiation hard. In order to be able to place
-the calorimeters inside the bore of the solenoid, a compact \ac{ECAL}
-had to be constructed, and to provide excellent resolution a 
-highly granular system had to be designed. The lead tungstate crystals have a 
-radiation length of 0.89 cm, a Moli\`ere radius of 2.2 cm, and 80\% of the light
-from the crystals is emitted in 25 ns. This short radiation
-length, small Moli\`ere radius and short scintillation decay time combined
-with the radiation hardness of the material motivate the choice of lead tungstate. 
+The choice of lead tungstate crystals is motivated by the
+radiation-hardness of the material in combination with its
+short radiation length, small Moli\`ere radius and short scintillation
+decay time. With a radiation length of 0.89 cm and a Moli\`ere radius of 2.2 cm,
+lead tungstate crystals allow for the construction of a compact, highly 
+granular \ac{ECAL}. The compactness of the \ac{ECAL} is required in 
+order to be able to fit the calorimeters inside the bore of the magnet. 
+As 80\% of the light from the crystals is emitted within 25 ns, that is
+within the time between two bunch crossings at design operation of the \ac{LHC},
+the lead tungstate crystals satisfy the requirements imposed by the \ac{LHC} operating
+parameters.
 
 %Moliere radius: characteristic constant of a material giving scale of transverse dimenstion
 %of fully contained EM showers. It is the radius of a cylinder containing on average 
@@ -269,7 +272,7 @@ As the crystals are 25.8 radiation lengths long, most of the shower
 is contained inside them.
 
 Figure \ref{fig:CMS_ECAL} shows a schematic of the \ac{ECAL}, indicating
-the geometry. The \ac{ECAL} consists of different subsystems. The \ac{EB} 
+the subsystems it is made up of. The \ac{ECAL} consists of different subsystems. The \ac{EB} 
 covers the pseudorapidity range up to $|\eta|<1.479$, with
 crystals of $0.0174 \times 0.0174$ in $\eta - \phi$. The \ac{EE}
 provides coverage beyond the range of the \ac{EB}, up to $|\eta|<3.0$
@@ -327,12 +330,9 @@ The \ac{ECAL} is surrounded by the \ac{HCAL}, which is important for the
 measurement of the energies of strongly interacting particles. As
 the \ac{ECAL} extends out to a radius of 1.77 m and the magnet coil
 starts at a radius of 2.95 m, space for the \ac{HCAL} inside the magnet
-coil is limited. Therefore the barrel region of the \ac{HCAL} consists
-of the \ac{HB}, which sits inside the magnet coil, and the \ac{HO}, sitting outside it, 
-to complement the \ac{HB}. The \ac{HB} and \ac{HO}  provide coverage up to $|\eta|<1.3$, 
-beyond which they are complemented by the \ac{HE} and the \ac{HF}. The \ac{HE} provides
-coverage between $1.3<|\eta|<3$ with the \ac{HF} extending this coverage up to $|\eta| = 5.2$
-The locations of the different subcomponents of the \ac{HCAL} are shown
+coil is limited. The \ac{HCAL} design takes
+this into account by placing part of the subdetector outside the magnet coil. A schematic of the
+\ac{HCAL}, indicating the different components of the \ac{HCAL} is shown
 in figure \ref{fig:CMS_HCAL}.
 
 \begin{figure}[h!]
@@ -344,7 +344,9 @@ of the detector \cite{cms-jinst}.}
 \end{center}
 \end{figure}
 
-The \ac{HB} and \ac{HE} are sampling calorimeters made of brass absorber
+In the barrel region the \ac{HB}, limited in radius by the magnet coil, provides
+coverage up to $|\eta|<1.3$. Beyond this $\eta$ range the \ac{HE} covers
+the region up to $|\eta|<3$. The \ac{HB} and \ac{HE} are sampling calorimeters made of brass absorber
 plates with tiles of plastic scintillator as the active material. The brass used as 
 absorber fits the constraints imposed by the environment due to its short interaction length
 of 16.42 cm and the fact that it is non-magnetic. The tiles of scintillator 
@@ -356,7 +358,7 @@ has a thickness of between 5.82 and 10.6 interaction lenghts, which is not
 sufficient to identify for example late-starting showers. The \ac{HO}, sitting
 outside of the magnet and using the coil as an additional absorber, extends the 
 thickness to at least 11.8 interaction lenghts. 
-Like in the \ac{HB} the active material consists of plastic scintillator tiles which roughly
+Like in the \ac{HB} the active material of the \ac{HO} consists of plastic scintillator tiles which roughly
 map the granularity of the tiles in the \ac{HB}, and are read out by feeding the light
 to a hybrid photodiode via wavelength shifting fibres.
 %WTF: wavelength-shifting fibres
@@ -392,15 +394,13 @@ next few years \cite{cms-hcal-upgrade}.
 
 \subsection{Muon system}
 \label{sec:CMSLHC_CMS_muons}
-One of the main physics goals of the \ac{CMS} experiment
-at design was to search for $H\rightarrow ZZ\rightarrow 4\mu$ decays. Muons
-suffer less from radiative losses in the tracker material, which means the most accurate
-4-body mass can be constructed when using the dimuon final state of the $Z$'s.
-Since the discovery of the Higgs boson the ZZ channel has continued to be an important
-final state for Higgs measurements, at the same time many \ac{BSM} searches also make use of 
-signatures with muons in the final state.
-All of this means that good muon identification efficiency and precise muon momentum resolution
-are very important. The \ac{CMS} muon system \cite{cms-jinst} is made up out of three different subsystems which
+Precise muon identification is one of the requirements of the \ac{CMS} 
+experiment. Good muon identification efficiency and precision muon momentum 
+resolution are very important, as muons appear as final states in many
+\ac{BSM} signatures the experiment is used to search for. In addition to
+that, final states with muons are very important for the detection of $H\rightarrow ZZ \rightarrow 4\ell$ decays.
+
+The \ac{CMS} muon system \cite{cms-jinst} is made up out of three different subsystems which
 are all necessary to ensure the identification requirements can be met. It is located
 outside of the magnet coil, interspersed in the iron return yoke of the solenoid.
 In the barrel of the detector the \ac{DT} chambers provide coverage for $|\eta|<1.2$, with
