@@ -9,7 +9,7 @@ of the relevant section.
 
 \section{\acl{PF}}
 \label{sec:objects_pf}
-All stable particles are reconstructed and identified using the \ac{PF} algorithm, which
+All stable particles are reconstructed and identified using the \ac{PF} algorithm \cite{cms-pf-2009,cms-pf-2010-1,cms-pf-2010-2}, which
 combines the information from all of the different subdetectors of \ac{CMS}. This makes
 the identification of particles, and determination of position and momentum, as precise
 as possible. All of these particles are then used to build for example jets, \MET and hadronically
@@ -161,41 +161,40 @@ The \Pe or \Pphoton with highest \pT that is not yet included in a strip is used
 The $\eta$ and $\phi$ of this candidate determine the initial position of the strip, the next highest \pT \Pe or \Pphoton  
 within an $\eta \times \phi$ window centered on the strip location is added to the strip and the position is 
 recomputed as the energy-weighted average of the electron/photon constituents in the strip.
-This procedure is repeated until there are no more electrons or photons with \pT $>$ 0.5$~GeV  within the 
+This procedure is repeated until there are no more electrons or photons with \pT $> 0.5$~GeV  within the 
 strip window. The $\Delta \eta$ and $\Delta \phi$ of the strip are varied based on the \pT or \ET to 
 be added to the strip and on the energy the strip already has, as
-
 \begin{equation}\label{eqn:dynamicstrip}
 \begin{split}
-&\Delta \eta  = f(\pT^{\Pe/\Pphoton}) + f(\pT^{\text{strip}}) \notag \\
-&\Delta \phi  = g(\pT^{\Pe/\Pphoton}) + g(\pT^{\text{strip}})\\
+&\Delta \eta  = f(p_{\text{T}}^{\Pe/\Pphoton}) + f(p_{\text{T}}^{\text{strip}}) \\
+&\Delta \phi  = g(p_{\text{T}}^{\Pe/\Pphoton}) + g(p_{\text{T}}^{\text{strip}})\\
 \end{split}
 \end{equation}
-
-Where $\pT^{\Pe/\Pphoton}$ is the transverse momentum of the candidate to be added to the strip
-and $\pT^{\text{strip}}$ is the transverse momentum of the strip before merging a new candidate in.\\
+Where \pT$^{\Pe/\Pphoton}$ is the transverse momentum of the candidate to be added to the strip
+and \pT$^{\text{strip}}$ is the transverse momentum of the strip before merging a new candidate in.\\
 In addition, the strip size is bounded as $0.05 < \Delta\eta < 0.15$, $0.05 < \Delta\phi < 0.3$.
 
 The functions $f(p_{\text{T}})$ and $g(p_{\text{T}})$ are defined as:
-
 \begin{equation}\label{eqn:dynamicstripfg}
 \begin{split}
-&f(\pT) = 0.2\cdot \pT^{-0.66} \text{ and } \notag \\
-&g(\pT) = 0.35\cdot \pT^{-0.71}.\\
+&f(p_{\text{T}}) = 0.2\cdot p_{\text{T}}^{-0.66} \text{ and } \\
+&g(p_{\text{T}}) = 0.35\cdot p_{\text{T}}^{-0.71}.\\
 \end{split}
 \end{equation}
-
-If the $\Sigma \pT$ of the strip is at least 2.5~GeV, it is considered as a \Ppizero candidate.
+If the $\Sigma$ \pT of the strip is at least 2.5~GeV, it is considered as a \Ppizero candidate.
 To reconstruct hadronic taus, charged particles and strips are combined into different signatures which are said to be
-compatible with a certain decay mode if the selection listed below is satisfied. 
+compatible with a certain decay mode if the selection listed below is satisfied. The charged particles
+and strips are required to be within the signal cone $R_{\text{signal}} = \frac{3.0}{p_{\text{T}}[GeV]}$, always
+required to be $0.05 < R_{\text{sig}} < 0.1$.
 If a candidate satisfies more than one of the hypotheses, the one that maximises the \pT is retained.\\
 
-The decay modes considered for reconstructing hadronic taus are:\\
+The decay modes considered for reconstructing hadronic taus are:
 \begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
 \item \textbf{One prong + 0 \Ppizero :} One charged particle, no strips.
-\item \textbf{One prong + 1 \Ppizero :} One charged particle + one strip with mass $ 0.3 < m_{\Pgt} < 1.3 \sqrt{\pT/100}$~GeV. For momenta
+\item \textbf{One prong + 1 \Ppizero :} One charged particle + one strip with mass $ 0.3 < m_{\Pgt} < 1.3 \sqrt{p_{\text{T}}/100}$~GeV. For momenta
 less than 100 GeV, the upper limit is fixed to 1.3 GeV, and for momenta larger than 1044 GeV the upper limit on $m_{\Pgt}$ is fixed to 4.2 GeV.
-\item \textbf{One prong + 2 \Ppizero :} One charged particle + two strips. The $\Pgt$ mass should be $0.4 < m_{\Pgt} < 1.2\sqrt{\pT/100}$~GeV. For momenta
+\item \textbf{One prong + 2 \Ppizero :} One charged particle + two strips. The $\Pgt$ mass should be $0.4 < m_{\Pgt} < 1.2\sqrt{p_{\text{T}}/100}$~GeV. For momenta
 less than 100 GeV, the upper limit is fixed to 1.2 GeV and for momenta larger than 1111 GeV the upper limit on $m_{\Pgt}$ is fixed to 4.0 GeV.
 \item \textbf{Three prong + 0 \Ppizero: } Three charged particles with mass $0.8 < m_{\tau} < 1.5$~GeV. The tracks are required to originate 
 within $\Delta z<0.4$~cm of the same vertex, and their total charge is required to be $\pm 1$.
@@ -203,7 +202,56 @@ within $\Delta z<0.4$~cm of the same vertex, and their total charge is required 
 
 \subsection{Isolation and discrimination against light leptons}
 \label{sec:objects_tau_iso}
+Requiring the reconstructed $\Pgt_{h}$ to be isolated reduces the jet $\rightarrow\Pgt_{h}$ fake rate. The isolation
+can be defined using a cut--based discriminator using the isolation sum,
+\begin{equation}\label{eqn:cutbased_iso}
+I_{\Pgt} = \Sigma p_{\text{T}}^{\text{charged}}(d_Z < 0.2\text{ cm }) + \text{max}(0,\Sigma p_{\text{T}}^{\Pphoton} - \Delta \beta \Sigma p_{\text{T}}^{\text{charged}} (d_Z > 0.2 \text{ cm }) ),
+\end{equation}
+where the first term denotes the sum of the transverse momenta of all charged particles not part
+of the identified hadronic tau,  with \pT $> 0.5$ GeV within a cone $\Delta R = 0.5$ centred around the 
+direction of the hadronic tau, with charged particle tracks required to be compatible with having
+originated from the $\Pgt_{h}$ production vertex within $d_Z < 0.2$ cm. The second term denotes the sum
+of the transverse momenta of photons with \pT $ > 0.5$ GeV within a cone $\Delta R = 0.5$ centred around the direction
+of the hadronic tau. The effect of pile--up on this term is accounted for by subtracting the sum of the momenta of charged
+particles with \pT $ > 0.5$ GeV, within a cone of $\Delta R = 0.8$ around the direction of the hadronic tau and
+tracks not compatible with having originated from the production vertex of the hadronic tau, multiplied by
+a $\Delta \beta$ factor of 0.2.
 
+In addition to the isolation sum, a selection on the sum of transverse momenta
+of electrons and photons included in strips but which are locaetd outside of the signal cone,
+\begin{equation}\label{eqn:ptouter_iso}
+p_{\text{T}}^{\text{strip, outer}} = \Sigma p_{\text{T}}^{\Pe/\Pphoton}(\Delta R > R_{\text{sig}}) < 0.10\cdot p_{\text{T}}^{\Pgt}.
+\end{equation}
+An  MVA $\tau_{h}$ isolation discriminator combines isolation variables with $\tau$ lifetime information into a BDT to discriminate between $\tau_{h}$ decays and quark and gluon jets.
+The variables used as input are:\\
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item The charged-and neutral-particle isolation sums
+\item The reconstructed $\tau_{h}$ decay mode
+\item The transverse impact parameter $d_{xy}$ of the leading track of the $\tau_{h}$ candidate with the vertex, and its significance $d_{xy}/\sigma_{d_{xy}}$, and its sign (the projection of the impact parameter vector on the $\tau_h$ direction)
+\item The 3-dimensional impact parameter $d_{xyz}$ of the leading track, and it significance
+\item The distance between the $\tau$ production and decay vertices, its significance, and information about whether a decay vertex has successfully been reconstructed for a given candidate.
+\item $p_{\text{T}}$ and $\eta$ of the $\tau_{h}$ candidate
+\item $\Delta \beta$ corrected isolation (as equation \ref{eqn:cutbased_iso}
+\item The sum of transverse momenta of electrons and photons included in strips but located outside of the signal cone (equation \ref{eqn:ptouter_iso})
+\item The $\chi^2$ value of the fit for the leading track of the $\tau_{h}$ candidate
+\item The ratio of the total electromagnetic energy to the total energy within the $\tau_h$ signal cone.
+\item The total number of signal and isolation photons with $p_{\text{T}} > 0.5$~GeV
+\item The $p_{\text{T}}$ weighted $\Delta R$ of photons within signal cone and the isolation annulus
+\item The $p_{\text{T}}$ weighted $\Delta \eta$ and $\Delta \phi$ of photons in strips outsie of the signal cone.
+\end{itemize}
+
+Figure \ref{fig:tau_iso_efficiency} compares the \Pgt identification efficiency with the
+jet$\rightarrow \Pgt_{h}$ fake rate for different working points of the
+MVA isolation discriminator, as well as the cut--based isolation discriminator based
+on isolation sum and $\p_{\text{T}}^{\text{strip,outer}}$. The MVA--based 
+discriminator performs best.
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{./Objects/Plots/TauIsolationPlot.png}
+\caption{Something about tau isolation}
+\label{fig:tau_iso_efficiency}
+\end{figure}
 
 \subsection{Differences between Run 1 and Run 2}
 \label{sec:objects_taus_diff}
