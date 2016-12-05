@@ -15,7 +15,85 @@ the identification of particles, and determination of position and momentum, as 
 as possible. All of these particles are then used to build for example jets, \MET and hadronically
 decaying taus.
 
+The \ac{PF} algorithm starts from charged particle tracks measured
+by the inner tracker, muon tracks measured in the muon system, and 
+energy deposits in the calorimeters. These energy deposits are combined
+using a clustering algorithm, so that stable neutral particles can be identified,
+separated from charged hadrons, and electrons and all Bremsstrahlung photons
+can be reconstructed. Clustering is performed separately in the \ac{ECAL} barrel,
+\ac{ECAL} endcaps, first and second \ac{PS} layers, \ac{HCAL} barrel and \ac{HCAL} endcaps, with no 
+clustering employed in the \ac{HF}.
+%And to aid energy measurement of charged hadrons for which
+%tracks were low quality, or high pT
+The clustering algorithm used for \ac{PF} starts from \textit{cluster seeds},
+calorimeter cells with local energy maxima. Topological clusters are built by 
+merging neighbouring cells into the cluster, provided that the cells
+being merged in contain a certain minimum energy.
+The threshold is 800 MeV in the \ac{HCAL} and two standard deviations above the
+expected noise level in the \ac{ECAL}, meaning 80 MeV in the barrel and up 
+to 300 MeV in the endcaps. Cell energies can be shared between multiple
+\ac{PF} clusters, depending on the distance between a cell and the centre of the cluster.
 
+Any given particle will usually give rise to multiple \ac{PF}
+elements in the different subdetectors. To provide full reconstruction
+of each particle, and avoid double counting,  the next step in the
+\ac{PF} algorithm is to link the different elements. This is
+achieved by defining a distance parameter between any two \ac{PF} elements
+in the event, which quantifies the link quality. Directly and indirectly
+linked elements are considered as input blocks to the reconstruction and
+identification algorithm. Links between charged tracks and calorimeter
+clusters are established by extrapolating the track from its last measured
+tracker hit to the \ac{PS} layers, the \ac{ECAL} and the \ac{HCAL}. %in ECAL to expected maximum of a 
+%typical longitudinal electron shower profile and in the HCAL at a depth correspnding to one interaction
+%length.
+If the extrapolated track position is within the boundaries of the cluster, plus the size
+of one cell in each direction to account for gaps between cells and multiple scattering, the
+track is said to be linked to the calorimeter cluster. The distance is taken as the distance $\Delta R$ 
+between the position of the cluster and the position of the track. Tangents to tracks are also extrapolated
+to the ECAL from the track--tracker layer interaction points, and clusters can be 
+linked to the track as a possible Bremsstrahlung photon if the extrapolated tangent
+position is within the boundaries of the cluster.
+Links between calorimeter clusters are made when the cluster position in the
+more granular calorimeter is within the cluster of the less granular calorimeter,
+with the link distance again defined as the $\Delta R$ between two cluster positions.
+To determine links between charged tracks in the inner tracker and a muon track
+in the muon system, a global fit between the two tracks is performed, where the link
+is accepted if requirements on the maximum $\chi^2$ of this fit are met. This
+$\chi^2$ also determines the distance parameter.
+
+For each block, particles are identified following a sequence
+of tests. First, if there is a link between a tracker track and a muon system track,
+a particle flow muon is identified if the combined tracker and muon system
+momentum is compatible with the tracker-only momentum. %within three standard deviations
+The muon track is removed from the block before the next step of the algorithm.
+
+Secondly, tracks are refitted with the \ac{GSF}, the compatibility
+of the track with the already linked \ac{ECAL} clusters is assessed using
+\ac{BDTs} which take several variables into account. If the candidate
+passes, it is identified as a particle flow electron and the track and
+\ac{ECAL} clusters are removed from the block.
+
+Following this, remaining tracks lead to charged hadrons. The track is
+given the momentum from the track fit, assuming the mass of a charged pion. If
+the energy measured in the calorimeters is compatible with the momentum assigned
+to the track, within uncertainties, as charged hadron is identified and the
+momentum redefined by fitting the tracker and calorimeter measurements. If
+the energy of the calorimeter clusters linked to the track is significantly larger than the
+charged particle momentum from the track fit, additional overlapping neutral particles
+are identified. If the difference between tracker momentum and calorimeter
+energies is larger than the total energy registered in associated \ac{ECAL} clusters,
+a particle flow photon with energy equal to the total \ac{ECAL} energy is created.
+Any remaining momentum difference is assigned to a particle flow neutral hadron. If the momentum
+difference is smaller than the energy registered in associated \ac{ECAL} clusters 
+only a particle flow photon is created. %Justified by fact that
+%in jets 25% of the energy is carried by photons while neutral hadrons
+%leave only 3% of the jet energy in the ECAL. This fraction is reduced by one order of magnitued
+%for taus for which decays to final states with neutral hadrons are Cabbibo suppressed to a branching ratio of 
+%about a percent.
+
+Finally, any remaining \ac{ECAL} clusters not linked to a track give
+rise to particle flow photons, with any \ac{HCAL} clusters
+not linked to tracks giving rise to particle flow neutral hadrons.
 
 \section{Tracks and vertices}
 \label{sec:objects_pv}
@@ -26,6 +104,18 @@ decaying taus.
 \section{Muons}
 \label{sec:objects_muo}
 
+\section{Jets and b-tagging}
+\label{sec:objects_jets}
+
+\subsection{Jet energy corrections}
+\label{sec:objects_jets_jec}
+
+\section{Missing energy}
+\label{sec:objects_met}
+
+\subsection{Recoil corrections}
+\label{sec:objects_met_recoilcorr}
+
 \section{Hadronic taus}
 \label{sec:objects_tau}
 Taus are unstable particles and they decay before reaching the detector. In 17.4 \% of 
@@ -33,11 +123,11 @@ cases they decay to muons and neutrinos, with an additional 17.8 \% decaying to 
 plus neutrinos. The remaining 64.8 \% decay hadronically. Hadronically decaying
 taus are characterised by narrow jets containing either one or three charged
 particles ($\pi^{\pm}, K^{\pm}$) and 0,1, or two neutral pions. An overview
-of the possible decay modes is given in table \ref{tab:hadronic_tau_decays}
+of the most common possible decay modes is given in table \ref{tab:hadronic_tau_decays}
 
 \begin{table}[htp]
 \begin{center}
-\caption{Summary of hadronic tau decay modes, with the branching fraction, and intermediate resonance where relevant, indicated \cite{pdg-2014}}
+\caption{Summary of hadronic tau decay modes, indicating the branching fraction, and intermediate resonances where relevant \cite{pdg-2014}.}
 \begin{tabular}{@{}lll@{}}
 %\toprule
 \textbf{Decay mode} & \textbf{Resonance} &\textbf{Branching fraction [\%]}\\
@@ -56,61 +146,74 @@ Total & & 64.8\% \\
 \end{center}
 \end{table}
 
-
-%CP from what I wrote in the HIG-16-006/HIG-16-037 analysis notes:
-Hadronic tau decays are reconstructed using the \texttt{hadrons plus strips} (HPS) algorithm~\cite{cms-tau-run1,cms-tau-2015}, which uses particle flow candidates to reconstruct and identify hadronic tau decays.
-In the reconstruction step, particle-flow charged and neutral particles are grouped into combinations compatible with specific hadronic tau decay modes, and the 4-momentum
-of the candidates is computed. In the identification step, discriminators that separate hadronic taus from quark and gluon jets and from electrons and muons are evaluated. \\
-Taus in the hadrons plus strips algorithm are seeded by jets clustered with the anti-$k_{\text{T}}$ algorithm with a distance parameter $\Delta R = 0.4$.
-
-To reconstruct the energy deposits $\pi^0$ candidates leave in the ECAL, photon and electron constituents of the jet that seeds the $\tau_{h}$ reconstruction are clustered into strips.
-The e or $\gamma$ with highest $p_{\text{T}}$ that is not yet included in a strip is used to build a new strip.
-The $\eta$ and $\phi$ of this candidate determine the initial position of the strip, the next highest $p_{\text{T}}$ e or $\gamma$  within an $\eta \times \phi$ window centered on the strip location is added to the strip and the position is recomputed as the energy-weighted average of the electron/photon constituents in the strip.
-This procedure is repeated until there are no more electrons or photons with $p_{\text{T}} > 0.5$~GeV  within the strip window. The $\Delta \eta$ and $\Delta \phi$ of the strip are varied based on the $p_{\text{T}}$ or $E_{\text{T}}$ to be added to the strip and on the energy the strip already has, as\\
+\subsection{Identification}
+\label{sec:objects_tau_id}
+Hadronic tau decays are reconstructed using the \texttt{hadrons plus strips} (HPS) algorithm~\cite{cms-tau-run1,cms-tau-2015}, 
+which is seeded by jets clustered from \ac{PF} candidates, using the anti-\kT algorithm with a distance parameter $\Delta R = 0.4$. 
+As table \ref{tab:hadronic_tau_decays}
+shows, 60\% of hadronic tau decays contain at least one \Ppizero in the final state. There is a high
+probability that photons from $\Ppizero \rightarrow \Pphoton \Pphoton$ decays convert to
+\APelectron \Pelectron pairs in the tracker volume, which are bent in the magnetic field and 
+therefore cause showers dispersed in the $\phi$ direction in the \ac{ECAL}. Therefore, to 
+reconstruct the energy deposits \Ppizero candidates leave in the ECAL, 
+the photon and electron constituents of the jet that seeds the $\tau_{h}$ reconstruction are clustered into strips.
+The \Pe or \Pphoton with highest \pT that is not yet included in a strip is used to build a new strip.
+The $\eta$ and $\phi$ of this candidate determine the initial position of the strip, the next highest \pT \Pe or \Pphoton  
+within an $\eta \times \phi$ window centered on the strip location is added to the strip and the position is 
+recomputed as the energy-weighted average of the electron/photon constituents in the strip.
+This procedure is repeated until there are no more electrons or photons with \pT $>$ 0.5$~GeV  within the 
+strip window. The $\Delta \eta$ and $\Delta \phi$ of the strip are varied based on the \pT or \ET to 
+be added to the strip and on the energy the strip already has, as
 
 \begin{equation}\label{eqn:dynamicstrip}
 \begin{split}
-&\Delta \eta  = f(p_{\text{T}}^{e/\gamma}) + f(p_{\text{T}}^{\text{strip}})\\
-&\Delta \phi  = g(p_{\text{T}}^{e/\gamma}) + g(p_{\text{T}}^{\text{strip}})\\
+&\Delta \eta  = f(\pT^{\Pe/\Pphoton}) + f(\pT^{\text{strip}}) \notag \\
+&\Delta \phi  = g(\pT^{\Pe/\Pphoton}) + g(\pT^{\text{strip}})\\
 \end{split}
 \end{equation}
 
-Where $p_{\text{T}}^{e/\gamma}$ is the transverse momentum of the candidate to be added to the strip
-and $p_{\text{T}}^{\text{strip}}$ is the transverse momentum of the strip before merging a new candidate in.\\
-In addition, the strip size is bounded as $0.05 < \Delta\eta < 0.15$, $0.05 \Delta\phi < 0.3$.
+Where $\pT^{\Pe/\Pphoton}$ is the transverse momentum of the candidate to be added to the strip
+and $\pT^{\text{strip}}$ is the transverse momentum of the strip before merging a new candidate in.\\
+In addition, the strip size is bounded as $0.05 < \Delta\eta < 0.15$, $0.05 < \Delta\phi < 0.3$.
 
-The functions $f(p_{\text{T}})$ and $g(p_{\text{T}})$ are defined as~\ref{eqn:dynamicstripfg}.
+The functions $f(p_{\text{T}})$ and $g(p_{\text{T}})$ are defined as:
 
 \begin{equation}\label{eqn:dynamicstripfg}
 \begin{split}
-&f(p_{\text{T}}) = 0.2\cdot p_{\text{T}}^{-0.66}\\
-&g(p_{\text{T}}) = 0.35\cdot p_{\text{T}}^{-0.71}\\
+&f(\pT) = 0.2\cdot \pT^{-0.66} \text{ and } \notag \\
+&g(\pT) = 0.35\cdot \pT^{-0.71}.\\
 \end{split}
 \end{equation}
 
-If the $\Sigma p_{\text{T}}$ of the strip is at least 2.5~GeV, it is considered as a $\pi^0$ candidate.\\
- To reconstruct hadronic taus, charged particles and strips are combined into different signatures which are said to be
-compatible with a certain decay mode if the set of cuts listed below is satisfied. If a candidate satisfies more than one of the hypotheses, the one that maximises the $p_{\text{T}}$ is retained.\\
+If the $\Sigma \pT$ of the strip is at least 2.5~GeV, it is considered as a \Ppizero candidate.
+To reconstruct hadronic taus, charged particles and strips are combined into different signatures which are said to be
+compatible with a certain decay mode if the selection listed below is satisfied. 
+If a candidate satisfies more than one of the hypotheses, the one that maximises the \pT is retained.\\
 
-The decay modes considered for reconstructing taus are:\\
+The decay modes considered for reconstructing hadronic taus are:\\
 \begin{itemize}
-\item \textbf{One prong, 0 $\pi^0$ :} One charged particle, no strips.
-\item \textbf{One prong, 1 $\pi^0$ :} One charged particle + one strip with mass $ 0.3 < m_{\tau} < 1.3 \sqrt{p_{\text{T}}/100}$~GeV. The mass window upper limit is constrained to lie between 1.3 and 4.2 GeV.
-\item \textbf{One prong, 2 $\pi^0$ :} One charged particle + two strips. The $\tau_{h}$ mass should be $0.4 < m_{\tau} < 1.2\sqrt{p_{\text{T}}/100}$~GeV. The upper limit on the mass window is constrained to lie between 1.2 and 4.0~GeV.
-\item \textbf{Three prong, 0 $\pi^0$: } Three charged particles with mass $0.8 < m_{\tau} < 1.5$~GeV. The tracks are required to originate within $\Delta z<0.4$~cm of the same vertex.
+\item \textbf{One prong + 0 \Ppizero :} One charged particle, no strips.
+\item \textbf{One prong + 1 \Ppizero :} One charged particle + one strip with mass $ 0.3 < m_{\Pgt} < 1.3 \sqrt{\pT/100}$~GeV. For momenta
+less than 100 GeV, the upper limit is fixed to 1.3 GeV, and for momenta larger than 1044 GeV the upper limit on $m_{\Pgt}$ is fixed to 4.2 GeV.
+\item \textbf{One prong + 2 \Ppizero :} One charged particle + two strips. The $\Pgt$ mass should be $0.4 < m_{\Pgt} < 1.2\sqrt{\pT/100}$~GeV. For momenta
+less than 100 GeV, the upper limit is fixed to 1.2 GeV and for momenta larger than 1111 GeV the upper limit on $m_{\Pgt}$ is fixed to 4.0 GeV.
+\item \textbf{Three prong + 0 \Ppizero: } Three charged particles with mass $0.8 < m_{\tau} < 1.5$~GeV. The tracks are required to originate 
+within $\Delta z<0.4$~cm of the same vertex, and their total charge is required to be $\pm 1$.
 \end{itemize}
 
-% End of C&P
+\subsection{Isolation and discrimination against light leptons}
+\label{sec:objects_tau_iso}
 
-\section{Jets and b-tagging}
-\label{sec:objects_jets}
 
-\subsection{Jet energy corrections}
-\label{sec:objects_jets_jec}
+\subsection{Differences between Run 1 and Run 2}
+\label{sec:objects_taus_diff}
+Broadly speaking the algorithm used for hadronic tau reconstruction during Run 1
+was similar to the Run 2 algorithm described earlier in this section. However, during
+Run 1 strips were reconstructed using a fixed size of $0.05 \times 0.20$ in $\eta \times \phi$.
+The dynamic size used in Run 2 was introduced to mitigate the effects of secondary particles
+with low \pT and multiple \APelectron\Pelectron conversions, resulting in particles ending up outside of 
+the strip window and making the hadronic tau seem less isolated than it actually is.
+SOMETHING ABOUT Jet->Tau FAKE RATES AND e->TAU Misidentification
 
-\section{Missing energy}
-\label{sec:objects_met}
 
-\subsection{Recoil corrections}
-\label{sec:objects_met_recoilcorr}
 
