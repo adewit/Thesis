@@ -5,11 +5,172 @@ In this chapter the physics objects necessary to be able to perform searches wit
 in the final state, and how they are reconstructed in \ac{CMS}, will be discussed. The 
 descriptions correspond to the algorithms as used during Run 2. Where there are differences
 between the algorithms used in Run 1 and Run 2 this will be discussed at the end
-of the relevant section.
+of the relevant section. Section \ref{sec:objects_pv} discusses the algorithms
+used to reconstruct charged tracks in the inner tracker, with section \ref{sec:objects_ele}
+describing how these tracks are combined with \ac{ECAL} energy deposits to reconstruct electrons.
+In section \ref{sec:objects_muo} the combination of charged tracks in the inner tracker with
+hits in the muon chambers to form reconstructed muons will be discussed. Section \ref{sec:objects_pf}
+describes the \ac{PF} algorithm, which uses information from all subdetectors in \ac{CMS} to reconstruct
+all stable particles, which is of particular importance for the reconstruction of jets, missing transverse
+energy and hadronic taus as discussed in sections \ref{sec:objects_jets}, \ref{sec:objects_met} and \ref{sec:objects_tau} 
+respectively.
+
+\section{Tracks and vertices}
+\label{sec:objects_pv}
+To reconstruct the trajectories of charged particles, and therefore
+their momenta and positions, from the hits these particles leave in the 
+inner tracker, dedicated algorithms are required. In \ac{CMS} the
+\ac{CTF} algorithm is used. This algorithm performs four steps:
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item Initial estimates of the parameters of the trajectory are given by track seeds, providing track candidates found using hits in 2 or 3 layers of the inner tracker
+\item The track seeds are extrapolated using a Kalman filter \cite{trk-kf}, which extrapolates the seeding trajectories along the expected flight path of a charged particle 
+and adds additional matched hits it finds in the tracker layers to the track.
+\item After the extrapolation has reached the final tracker layers, the Kalman filter is run again, now with the full set of hits that have been found in the previous step.
+This provides the best estimate of the track parameters
+\item Tracks that fail a specified set of quality criteria are rejected
+\end{itemize}
+
+These four steps are repeated six times. After each iteration
+the hits associated with reconstructed tracks are removed, and the settings
+of the algorithm updated, so as to be able to reconstruct as many
+tracks as possible. The tracking efficiency for muons and pions was measured in p--p
+collisions at $\sqrt{s} = 7$ TeV and found to be $ > 98.5\%$ for tracks
+with \pT $ > 500 $ MeV and $ > 99 \%$ for tracks with \pT $ > 2 $ GeV \cite{cms-trk-7tev}.
+
+%The tracking software at CMS is commonly referred to as the Combinatorial Track Finder (CTF), which is an adaptation of the combinatorial Kalman filter [29–31], which in turn is an extension of the Kalman filter [32] to allow pattern recognition and track fitting to occur in the same frame- work. The collection of reconstructed tracks is produced by multiple passes (iterations) of the CTF track reconstruction sequence, in a process called iterative tracking.
+%Kalman filter : In its linear form the Kal- ,nan filter is the optimal recursive estimator of the state vector of a (discrete) linear dynamic system. In such a system the evolution of the state vector is described by a linear transformation plus a random disturbance w, which is the process noise
+
+The reconstructed tracks are used to determine the positions of all interaction
+vertices in the event. Primary vertices are reconstructed by clustering
+tracks that appear to have originated from the same vertex, then fitting 
+for the position of the vertex using the associated tracks. The tracks 
+are clustered using the \ac{DA} algorithm \cite{vtx-da}, which identifies
+the most probable vertex candidates and assigns tracks to them. Vertex
+candidates with at least two associated tracks are fitted using an adaptive
+vertex fitter \cite{vtx-adaptivefit} to obtain the best estimate
+of the vertex position as well as an indicator for the success of the fit.
+Each track is assigned a weight $w_i$ between 0 and 1 which reflects the probability
+that it belongs to the vertex it is associated with. If the track is consistent
+with the vertex position the weight will be closer to 1, if not the weight 
+will be smaller. Using this the number of degrees of freedom in the fit
+can be defined as
+\begin{equation}\label{eqn:pv_ndof}
+n_{\text{dof}} = -3 + 2 \Sigma_{i=1}^{Ntracks}w_i,
+\end{equation}
+which is strongly correlated with the number of tracks arising from the interaction region
+and can therefore be used to select genuine interactions. For the analysis
+presented in chapter \ref{chap:hhh}, which uses data collected during Run 1, to select the primary vertex, 
+this variable
+was required to be greater than 4, in addition to requirements on the distance between
+the vertex and the nominal interaction point ($\Delta z < 24$ cm and $\Delta x-y < 2$ cm). 
+The primary vertex was then taken as the vertex passing these quality criteria that 
+had the largest scalar sum \pT of associated tracks. For the Run 2 analyses presented
+later the quality requirements were removed and the primary vertex, the vertex
+of the hard scattering process, is simply taken as the reconstructed vertex with
+largest scalar sum \pT of associated tracks.
+The resolution of the z--coordinate of the primary vertex was measured in
+collisions at $\sqrt{s}=7$ TeV and depends strongly on the number of tracks
+associated with the vertex, as figure \ref{fig:objects_tracks_pvres} shows.
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{./Objects/Plots/PrimaryVertexRes.png}
+\caption{Resolution of the z--coordinate of reconstructed primary vertices
+as a function of the number of tracks associated with the vertex, 
+for minimum--bias events in red and for
+events with many jets in black. The resolution improves
+with larger numbers of tracks \cite{cms-trk-algos}.}
+\label{fig:objects_tracks_pvres}
+\end{figure}
+
+\section{Electrons}
+\label{sec:objects_ele}
+Electrons are reconstructed by combining tracks reconstructed
+in the inner tracker with energy deposits in the \ac{ECAL} \cite{cms-elereco-run1}.
+A standalone electron reconstruction algorithm \cite{cms-elereco-run1} complements the \ac{PF} approach
+described in section \ref{sec:objects_pf}. Because electrons lose on average 33-86\% of
+their energy by radiating photons before the \ac{ECAL} is reached, depending on the thickness of
+the intervening material. To accurately reconstruct the energy of the electron it is
+important to catch the energies of photons, which are spread in the $\phi$ direction
+due to the magnetic field. Therefore \textit{supercluster} algorithms are needed to perform
+the clustering. In this approach the clustering
+is done by defining a seed crystal as the one containg the most energy deposited
+in a region being considered and having a certain minimum transverse energy.
+In the barrel arrays of $5\times 1$ crystals in $\eta \times \phi$ are then added
+to the cluster, stepping sideways in both directions in $\phi$, if this
+array contains a minimum energy deposit. These clusters are grouped into 
+superclusters if each distinct cluster has a seed array with a minimum energy deposit.
+In the endcaps the clusters combined into superclusters are arrays of $5\times 5$ crystals,
+merged into superclusters within a range in $\eta$ of $\pm 0.07$ and a range in $\phi$ of $\pm 0.3$ rad.
+
+Because the electrons radiate bremsstrahlung photons in the tracker, the
+change in electron track curvature is large. The reconstruction of these
+tracks using the \ac{CTF} is compromised as a result of this, and 
+therefore a dedicated tracking algorithm is used. For high \pT electrons
+the best efficiency is reached by using an \ac{ECAL}-based track seeding
+algorithm which extrapolates the position and energy of the supercluster
+to the first layers of the tracker to determine rough areas to look for
+tracker seeds in. Once the seeds have been determined they are extrapolated
+and smoothed using the \ac{GSF} \cite{trk-gsf} instead of the Kalman Filter, which 
+approximates the non-Gaussian energy loss in each layer by the combination of 
+Gaussian distributions rather than the single Gaussian used in the Kalman filter.
+
+%Once the hits are collected, a GSF fit is performed to estimate the track parameters. The energy loss in each layer is approximated by a mixture of Gaussian distributions. A weight is at- tributed to each Gaussian distribution that describes the associated probability. Two estimates of track properties are usually exploited at each measurement point that correspond either to the weighted mean of all the components, or to their most probable value (mode).
+
+To be identified as an electron, a particle has to be reconstructed as
+an electron by the \ac{PF} algorithm, and must in addition pass
+more advanced identification criteria based on some of the variables used in the
+standalone electron reconstruction, which provide separation power from backgrounds
+such as photon conversions, jets misidentified as electrons, or electrons from b- and c-quark
+decays. Both cut--based and MVA--based algorithms are available. For the selection of electrons in 
+the analyses presented in later chapters these MVA--based algorithms are usually used, 
+with exceptions for the loose identification criteria required for veto-electrons. 
+The variables used to train the electron identification BDT are:
+
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item Cluster shape variables $\sigma_{i\eta,i\eta}$ and $\sigma_{i\phi,i\phi}$, with $i\eta$ and $i\phi$ the integer
+label of the $\eta$ and $\phi$ calorimeter cell. The circularity =  $1 -\frac{E1\times5}{E5\times5}$, with
+$E1\times5$ and $E5\times5$ the energies in a $1\times5$ and a $5\times5$ grid around the super cluster seed,
+respectively. Shape variable R9 = $\frac{E3\times3}{E_{SC}}$, with $E3\times3$ the energy in a $3\times3$ grid
+of cells around the super cluster seed and $E_{SC}$ the raw energy of the super cluster.
+\item The number of valid hits in the track fit, the $\chi^2$ of the track fit and the $\chi^2$ of the GSFTrack fit
+\item The number of GSFtrack hits, the number of expected missing inner hits and the result of the conversion vertex fit
+\item The distance $\Delta \eta$ and $\Delta \phi$ between the reconstructed super cluster and the associated track at the position of the primary vertex, and the distance in $\eta$ between the super cluster and the track at the calorimeter surface.
+\item H/E, the ratio of the hadronic energy over the electromagnetic energy in the super cluster and E/P, the ratio of the super cluster energy over the momentum of the track associated with the electron
+\item The ratio of the energy of the electron cluster and the momentum of the associated track, evaluated at the electron cluster,
+ and $1/E_e - 1/P_e$, with $E_e$ the energy of the electron candidate and $P_e$ its momentum.
+\end{itemize}
+
+\subsection{Isolation}
+The identification requirements discussed up to now reduce the backgrounds 
+from misidentified electrons, but do not eliminate them completely. If jets are
+misidentified as electrons, or an electron resulting from a heavy--flavour 
+decay is identified, the electron is not isolated. Therefore requirements
+on the electron isolation can reduce these backgrounds even further.
+Different isolation definitions are used in \ac{CMS}, for the analyses presented
+in later chapters a combined isolation variable is defined as:
+\begin{equation}\label{eqn:electron_reliso
+I_{\text{rel}} = \frac{\Sigma p_{\text{T}}(\text{charged}) + \mathrm{max}(\Sigma E_{\text{T}}(\text{neutral}) + \Sigma E_{\text{T}}(\text{photon}) - \Delta\beta \Sigma E_{\text{T}}(\text{PU}),0)}{P_{T}^{e}},
+\end{equation}
+Where the \pT and \ET sums are taken within a cone in $\eta - \phi$ around the direction
+of the electron, $\Delta R = 0.4$ during Run 1 and $\Delta R = 0.3$ during Run 2.
+The sum over \pT$^{\text{charged}}$ corresponds to the \pT of all charged \ac{PF} 
+hadrons associated with the primary vertex and within 
+Where \pT$^{\text{charged}}$ corresponds to the \pT of all charged \ac{PF} hadrons
+associated with the primary vertex
+
+Where $P_{T}(\text{charged})$ corresponds to the $P_{T}$ of all charged hadronic candidates,
+$E_{T}(\text{photon, neutral})$ to the transverse energy of all photon and neutral hadron candidates, and $\Delta \beta$ is the energy
+esitmate of neutral particles due to pileup, which is taken to be 0.5.
+
+
+\section{Muons}
+\label{sec:objects_muo}
 
 \section{\acl{PF}}
 \label{sec:objects_pf}
-All stable particles are reconstructed and identified using the \ac{PF} algorithm \cite{cms-pf-2009,cms-pf-2010-1,cms-pf-2010-2}, which
+All stable particles are reconstructed and identified using the \ac{PF} algorithm \cite{cms-pf-2009,cms-pf-2010-commfirst,cms-pf-2010-2}, which
 combines the information from all of the different subdetectors of \ac{CMS}. This makes
 the identification of particles, and determination of position and momentum, as precise
 as possible. All of these particles are then used to build for example jets, \MET and hadronically
@@ -95,14 +256,7 @@ Finally, any remaining \ac{ECAL} clusters not linked to a track give
 rise to particle flow photons, with any \ac{HCAL} clusters
 not linked to tracks giving rise to particle flow neutral hadrons.
 
-\section{Tracks and vertices}
-\label{sec:objects_pv}
 
-\section{Electrons}
-\label{sec:objects_ele}
-
-\section{Muons}
-\label{sec:objects_muo}
 
 \section{Jets and b-tagging}
 \label{sec:objects_jets}
@@ -172,7 +326,7 @@ be added to the strip and on the energy the strip already has, as
 \end{equation}
 Where \pT$^{\Pe/\Pphoton}$ is the transverse momentum of the candidate to be added to the strip
 and \pT$^{\text{strip}}$ is the transverse momentum of the strip before merging a new candidate in.\\
-In addition, the strip size is bounded as $0.05 < \Delta\eta < 0.15$, $0.05 < \Delta\phi < 0.3$.
+In addition, the strip size is bounded as $0.05 < \Delta\eta < 0.15$, $0.05 < \Delta\phi < 0.3$ \cite{cms-tau-2015}.
 
 The functions $f(p_{\text{T}})$ and $g(p_{\text{T}})$ are defined as:
 \begin{equation}\label{eqn:dynamicstripfg}
@@ -218,7 +372,7 @@ tracks not compatible with having originated from the production vertex of the h
 a $\Delta \beta$ factor of 0.2.
 
 In addition to the isolation sum, a selection on the sum of transverse momenta
-of electrons and photons included in strips but which are locaetd outside of the signal cone,
+of electrons and photons included in strips but which are located outside of the signal cone,
 \begin{equation}\label{eqn:ptouter_iso}
 p_{\text{T}}^{\text{strip, outer}} = \Sigma p_{\text{T}}^{\Pe/\Pphoton}(\Delta R > R_{\text{sig}}) < 0.10\cdot p_{\text{T}}^{\Pgt}.
 \end{equation}
@@ -238,30 +392,66 @@ The variables used as input are:\\
 \item The ratio of the total electromagnetic energy to the total energy within the $\tau_h$ signal cone.
 \item The total number of signal and isolation photons with $p_{\text{T}} > 0.5$~GeV
 \item The $p_{\text{T}}$ weighted $\Delta R$ of photons within signal cone and the isolation annulus
-\item The $p_{\text{T}}$ weighted $\Delta \eta$ and $\Delta \phi$ of photons in strips outsie of the signal cone.
+\item The $p_{\text{T}}$ weighted $\Delta \eta$ and $\Delta \phi$ of photons in strips outside of the signal cone.
 \end{itemize}
 
 Figure \ref{fig:tau_iso_efficiency} compares the \Pgt identification efficiency with the
 jet$\rightarrow \Pgt_{h}$ fake rate for different working points of the
 MVA isolation discriminator, as well as the cut--based isolation discriminator based
-on isolation sum and $\p_{\text{T}}^{\text{strip,outer}}$. The MVA--based 
-discriminator performs best.
+on isolation sum and $p_{\text{T}}^{\text{strip,outer}}$. The MVA--based 
+discriminator has better performance than the cut-based discriminator alone.
 
 \begin{figure}
 \includegraphics[width=0.7\textwidth]{./Objects/Plots/TauIsolationPlot.png}
-\caption{Something about tau isolation}
+\caption{jet$\rightarrow \Pgt_{h}$ fake rate versus $\Pgt_{h}$ identification efficiency for \htotautau events,
+comparing the MVA-based discriminator in red with the cut-based isolation discriminator in pink. Tighter working points
+give lower hadronic tau identification efficiencies and lower fake rates. The MVA-based discriminator
+has a lower fake rate than the cut-based discrminator for the same $\Pgt_{h}$ identification efficiency \cite{cms-tau-2015}.}
 \label{fig:tau_iso_efficiency}
 \end{figure}
+
+In order to reduce the $Pe\rightarrow\Pgt_h$ and $\Pgm\rightarrow\Pgt_h$ fake rate, 
+anti-electron and anti--muon discriminators are used. 
+The anti--electron discriminator is a BDT-based discriminator with the following input variables:
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item \pT, $\eta$ of the $\Pgt_{h}$ candidate
+\item \pT, $\eta$, $\sigma_{p_{\text{T}}}/p_{\text{T}}$ of the \ac{GSF} track
+\item Distance in $\eta$ and $\phi$ of the \ac{GSF} track to the nearest boundary between \ac{ECAL} modules.
+\item Electromagnetic energy fraction $E_{\text{ECAL}}/(E_{\text{ECAL}}+E_{\text{HCAL}})$
+\item Ratio of \ac{ECAL} and \ac{HCAL} energy fractions relative to the momentum of the leading charged track
+\item The \pT weighted RMS distances in $\eta$ and $\phi$ between the photons in any strip and the leading 
+charged track (calculated separately for photons inside and outside the $\Pgt$ signal cone)
+\item The fraction of $\Pgt_{h}$ energy carried by photons (calculated separately for photons inside and outside the $\Pgt_h$ signal cone)
+\item $(p_{in} - p_{out})/p_{in}$
+\item The number of photons in any of the strips associated with the $\Pgt_h$ candidate, calculated separately for photons inside and outside the $\Pgt_h$ signal cone
+\item The ratio between the total \ac{ECAL} energy and inner track momentum
+\item The ratio of energies of bremsstrahlung photons measured in the \ac{ECAL} and the tracker
+\item The visible mass of the $\Pgt_h$ candidate, for photons and charged particles within the $\Pgt_h$ signal cone
+\item $\chi^2/Ndof$ of the GSF track fit
+\item $N_{hits}^{GSF}-N_{hits}^{KF}/N_{hits}^{GSF}+N_{hits}^{KF}$, With $N_{hits}^{GSF}$ the number of hits associated with the track in the \ac{GSF} track reconstruction algorithm, and
+similarly $N_{hits}^{KF}$ for the \ac{KF} track reconstruction algorithm.
+\end{itemize}
+
+Five working points are provided, ranging from very loose to very tight.
+
+The anti--muon discriminator is a cut-based discriminant, for which two working points are provided:\\
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item \textbf{Loose:} The $\tau_h$ candidate is vetoed by this discriminator if track segments are found in at least two muon stations within a cone of $\Delta R = 0.3$ of the $\Pgt_h$ direction, or when the sum of the electromagnetic and hadronic energy ($E_{\text{ECAL}}+E_{\text{HCAL}}$) is $<0.2\cdot p_{\text{leading track}}$.
+Otherwise it passes the discriminator
+\item \textbf{Tight:} The $\Pgt_h$ candidate passes this working point if it passes the loose working point and no hits are present within a cone of $\Delta R=0.3$ of the $\Pgt_h$ direction in the \ac{CSCs},\ac{RPCs} and \ac{DT} in the two outermost muon stations.
+\end{itemize}
 
 \subsection{Differences between Run 1 and Run 2}
 \label{sec:objects_taus_diff}
 Broadly speaking the algorithm used for hadronic tau reconstruction during Run 1
-was similar to the Run 2 algorithm described earlier in this section. However, during
+was similar to the Run 2 algorithm described earlier in this section \cite{cms-tau-run1}. However, during
 Run 1 strips were reconstructed using a fixed size of $0.05 \times 0.20$ in $\eta \times \phi$.
 The dynamic size used in Run 2 was introduced to mitigate the effects of secondary particles
 with low \pT and multiple \APelectron\Pelectron conversions, resulting in particles ending up outside of 
 the strip window and making the hadronic tau seem less isolated than it actually is.
-SOMETHING ABOUT Jet->Tau FAKE RATES AND e->TAU Misidentification
-
+In addition, the anti--electron discriminator MVA was trained with fewer input variables and its performance
+was therefore not as good as the Run 2 version.
 
 
