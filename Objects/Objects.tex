@@ -143,30 +143,106 @@ of cells around the super cluster seed and $E_{SC}$ the raw energy of the super 
 \end{itemize}
 
 \subsection{Isolation}
+\label{sec:objects_ele_iso}
 The identification requirements discussed up to now reduce the backgrounds 
 from misidentified electrons, but do not eliminate them completely. If jets are
 misidentified as electrons, or an electron resulting from a heavy--flavour 
 decay is identified, the electron is not isolated. Therefore requirements
 on the electron isolation can reduce these backgrounds even further.
 Different isolation definitions are used in \ac{CMS}, for the analyses presented
-in later chapters a combined isolation variable is defined as:
-\begin{equation}\label{eqn:electron_reliso
+in later chapters a combined relative isolation variable is defined as:
+\begin{equation}\label{eqn:electron_reliso}
 I_{\text{rel}} = \frac{\Sigma p_{\text{T}}(\text{charged}) + \mathrm{max}(\Sigma E_{\text{T}}(\text{neutral}) + \Sigma E_{\text{T}}(\text{photon}) - \Delta\beta \Sigma E_{\text{T}}(\text{PU}),0)}{P_{T}^{e}},
 \end{equation}
 Where the \pT and \ET sums are taken within a cone in $\eta - \phi$ around the direction
 of the electron, $\Delta R = 0.4$ during Run 1 and $\Delta R = 0.3$ during Run 2.
 The sum over \pT$^{\text{charged}}$ corresponds to the \pT of all charged \ac{PF} 
-hadrons associated with the primary vertex and within 
-Where \pT$^{\text{charged}}$ corresponds to the \pT of all charged \ac{PF} hadrons
-associated with the primary vertex
-
-Where $P_{T}(\text{charged})$ corresponds to the $P_{T}$ of all charged hadronic candidates,
-$E_{T}(\text{photon, neutral})$ to the transverse energy of all photon and neutral hadron candidates, and $\Delta \beta$ is the energy
-esitmate of neutral particles due to pileup, which is taken to be 0.5.
+hadrons associated with the primary vertex and within the cone of radius $\Delta R$ around
+the electron's axis. The \ET$^{\text{neutral}}$ and \ET$^{\text{photon}}$ sums
+run over all neutral hadronic energy and photon energy within the cone of radius $\Delta R$.
+The contribution from neutral particles due to pile--up needs to be subtracted from
+this term, which is estimated as the sum of charged hadronic \pT for hadrons not associated
+with the primary vertex, multiplied by a $\Delta \beta$ factor of $\frac{1}{2}$.
+CITE SOMETHING!
 
 
 \section{Muons}
 \label{sec:objects_muo}
+Muons are reconstructed by combining tracker tracks and tracks
+from the muon system \cite{cms-muon-reco}. Two complementary approaches are used for this,
+\textit{Global muon reconstruction} and \textit{tracker muon reconstruction}. The former starts from 
+tracks reconstructed in the muon system and searches for a matching
+tracker track, then re-applies the Kalman filter on the combination
+of muon system and tracker hits. Conversely, the tracker muon reconstruction starts from
+tracks in the inner tracker which pass requirements on momentum to be considered
+a muon candidate track. The trajectory is then extrapolated to the muon systems and
+considered a muon if at least one muon segment, a track stub in the \ac{DT} or \ac{CSCs} is found.
+Due to the requirement of a single muon segment this method is more efficeint than the global muon
+reconstruction for muons with \pT smaller than 5 GeV \cite{cms-muon-reco}.
+For muons with \pT greater than 200 GeV, the momentum resolution is improved
+by the global muon reconstruction \cite{cms-muon-cosmics-perf}.
+
+The muon momentum resolution was measured in p--p collisions at $\sqrt{s}=7$ TeV
+for muons with \pT up to 100 GeV and found to range from 1--6\% depending
+on detector region. For muons with \pT between 100 GeV and 1 TeV the momentum resolution
+was determined to be better than 10\% in the barrel region using cosmic rays \cite{cms-muon-reco}.
+%At values of the transverse momentum pT below about 200 GeV/c, the momentum resolution for a muon track is driven by measurements in the silicon tracker. As a particle’s momen- tum increases and the curvature of its corresponding track decreases, however, momentum resolution in the tracker becomes limited by position measurement resolution (including mis- alignment effects). One can then benefit from the large lever arm and 3.8 T magnetic field in the region between the tracker and the muon system by including hits in the muon chambers.
+
+For global muon reconstruction non-muon backgrounds are small,
+though there can be small effects from hadronic showers not fully
+contained in the \ac{HCAL}. A larger contribution is expected
+from real muons originating from for example decays of hadrons. These
+backgrounds can be reduced by applying additional identification criteria.
+
+For the analysis presented in chapter CHAPMSSM additional ``Medium'' muon requirements were made \cite{CMS-PAS-HIG-16-037}.
+Apart from having passed either the global or tracker muon reconstruction, the fraction
+of valid tracker hits must be greater than 49\%. Additional requirements are made on the
+$\chi^2$/$N_{\text{dof}}$ of the global track fit, on the compatibility of the tracker- and standalone-reconstructed
+position matching, on the kink finder in the inner tracker, and the segment compatibility. The segment
+compatibility is a weight between 0 and 1 which is a measure of the compatibility of a track with
+the muon track segments in muon stations it has crossed. Numbers closer to 1 represent
+a greater compatibility of the track with the muon segments, and therefore with the track belonging to a muon.
+The kink finder determines the $\chi^2$ compatibility between the positions of the outward- and inward interpolated
+tracks in each layer of the inner tracker. The largest $\chi^2$ value found at any of the tracker layers 
+is used as a discriminator. If the $\chi^2$ value is large, this could signal an in-flight decay.
+The compatibility of the tracker- and standalone-reconstructed position is evaluated
+by extrapolating both the muon track and the tracker track to the same surface and evaluating the $\chi^2$ 
+compatibility there.
+
+To pass the identification, global- or tracker muons
+with a large enough fraction of tracker hits must  \textbf{either} 
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item The muon is reconstructed by the global muon reconstruction algorithm
+\item The $\chi^2$/$N_{\text{dof}}$ of the global track fit, using both the tracker and muon system hits, should be less than 3
+\item The $\chi^2$ compatibility of the tracker-standalone position is smaller than 12
+\item The $\chi^2$ compatibility of the kink finder in the tracker is less than 20
+\item The segment compatibility is $>$ 0.303
+\end{itemize}
+\textit{or}:
+\begin{itemize}
+\item The segment compatibility is $>$ 0.451
+\end{itemize}
+
+In the analysis described in chapter \ref{chap:hhh}, where Run 1 data 
+was used, muons were required to pass ``Tight'' identification requirements \cite{cms-muon-reco}. 
+The criteria are
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item The muon must be reconstructed by the global muon algorithm
+\item The $\chi^2$/$N_{\text{dof}}$ of the global track fit must be smaller than 10
+\item The global track fit must include hits from at least one chamber in the muon system
+\item The inner tracker track must be matched to muon segments in at least two muon stations (ie the muon must be reconstructed as a tracker muon too)
+\item The tracker track must have at least one hit in the pixel detector, and hits in ten tracker layers.
+\end{itemize}
+
+\subsection{Isolation}
+\label{sec:objects_muo_iso}
+As described for electrons in section \ref{sec:objects_ele_iso}, placing isolation 
+requirements on muons will also reduce backgrounds from misidentified jets and heavy--flavour
+decays. The isolation variable used for muons is very similar to the one described for
+electrons in equation \ref{eqn:electron_reliso}, however the cone around the direction of the
+muon was chosen as $\Delta R = 0.4$ both during Run 1 and Run 2.
 
 \section{\acl{PF}}
 \label{sec:objects_pf}
