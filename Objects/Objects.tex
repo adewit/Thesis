@@ -332,13 +332,47 @@ Finally, any remaining \ac{ECAL} clusters not linked to a track give
 rise to particle flow photons, with any \ac{HCAL} clusters
 not linked to tracks giving rise to particle flow neutral hadrons.
 
-
-
 \section{Jets and b-tagging}
 \label{sec:objects_jets}
+Many quarks and gluons are produced in the collisions at the \ac{LHC},
+fragmenting and hadronising immediately and forming collimated
+jets of particles. These particle jets need to be combined
+into single objects so the properties of the original particles can
+be measured.
+
+The particles identified by the \ac{PF} algorithm
+are clustered into jets using the anti-\kT algorithm \cite{antiKT} as implemented
+in \texttt{FastJet} version 3.0.1 \cite{fastjet}. Jet clustering algorithms 
+define distance parameters $d_{ij}$, denoting the distance between object (particle or cluster of 
+particles) $i$ and 
+object $j$, and $d_{iB}$ denoting the distance between 
+object $i$ and the beam. The smallest of the distances
+is defined and if this is a distance between object i and an object j, objects
+i and j are combined. If $d_{iB}$ is the smallest distance, object i
+is called a jet and removed from the list of objects. In the anti-\kT algorithm
+these distance parameters are defined as:
+\begin{align}\label{eqn:objects_antikt}
+d_{ij}=\text{min}(p_{\text{T},i}^{-2},p_{\text{T},j}^{-2})\frac{\Delta_{ij}^2}{R^2}\\
+d_{iB} = p_{\text{T}}^{-2},
+\end{align}
+where $\Delta_{ij} = \sqrt{(y_i-y_j)^2+(\phi_i - \phi_j)^2}$ is the distance
+between the objects i and j in rapidity-azimuthal angle space. The radius
+parameter $R$ was chosen as 0.5 during Run 1 CITATION and as 0.4 during Run 2 \cite{cms-jets-run2}. 
+This algorithm is collinear-- and infrared--safe, which means that the number of jets
+is not affected by the emission of soft collinear gluons or parton splitting. 
+The effects of pile--up particles on the jet energy and substructure can be
+mitigated using several methods. For the analysis presented in CHAPMSSM a
+\ac{CHS} technique is employed \cite{cms-jets-run2}.  In this method
+charged hadronic \ac{PF} candidates not associated with the primary vertex 
+are not considered in the clustering. For the analysis presented in
+chapter \ref{chap:hhh} a dedicated identification algorithm \cite{cms-jets-puid} 
+based on vertex- and jet shape information was used to reject jets due to pile--up.
 
 \subsection{Jet energy corrections}
 \label{sec:objects_jets_jec}
+
+\subsection{B-tagging}
+\label{sec:objects_jets_btag}
 
 \section{Missing energy}
 \label{sec:objects_met}

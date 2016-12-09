@@ -285,12 +285,12 @@ b-/c- jets and light jets. Multiple possible ways to apply these scale factors
 exist, for this analysis this is done through a promote/demote method.
 
 In this method a demotion or promotion probability is assigned to every
-jet as in equation \ref{eqn:promotedemote}.
+jet as:
 \begin{align}\label{eqn:promotedemote}
 &P(\text{demote}) = 1 - SF \text{  for SF < 1 }  \notag \\
-&P(\text{promote}) = \frac{(SF - 1)(\epsilon_{\text{MC}}-1)}{SF} \text{    for SF > 1}
+&P(\text{promote}) = \frac{(SF - 1)(\epsilon_{\text{MC}}-1)}{SF} \text{    for SF > 1},
 \end{align}
-In this equation $SF$ is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
+Where $SF$ is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
 the b--tagging efficiency in \ac{MC} events for the type of jet (light, b- or c-)
 under consideration.
 
