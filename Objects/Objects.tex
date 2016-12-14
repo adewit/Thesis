@@ -162,8 +162,7 @@ the electron's axis. The \ET$^{\text{neutral}}$ and \ET$^{\text{photon}}$ sums
 run over all neutral hadronic energy and photon energy within the cone of radius $\Delta R$.
 The contribution from neutral particles due to pile--up needs to be subtracted from
 this term, which is estimated as the sum of charged hadronic \pT for hadrons not associated
-with the primary vertex, multiplied by a $\Delta \beta$ factor of $\frac{1}{2}$.
-CITE SOMETHING!
+with the primary vertex, multiplied by a $\Delta \beta$ factor of $\frac{1}{2}$ \cite{SMHtautauCMS}.
 
 
 \section{Muons}
@@ -357,7 +356,7 @@ d_{iB} = p_{\text{T}}^{-2},
 \end{align}
 where $\Delta_{ij} = \sqrt{(y_i-y_j)^2+(\phi_i - \phi_j)^2}$ is the distance
 between the objects i and j in rapidity-azimuthal angle space. The radius
-parameter $R$ was chosen as 0.5 during Run 1 CITATION and as 0.4 during Run 2 \cite{cms-jets-run2}. 
+parameter $R$ was chosen as 0.5 during Run 1 \cite{cms-jec-2011} and as 0.4 during Run 2 \cite{cms-jets-run2}. 
 This algorithm is collinear-- and infrared--safe, which means that the number of jets
 is not affected by the emission of soft collinear gluons or parton splitting. 
 The effects of pile--up particles on the jet energy and substructure can be
@@ -370,15 +369,225 @@ based on vertex- and jet shape information was used to reject jets due to pile--
 
 \subsection{Jet energy corrections}
 \label{sec:objects_jets_jec}
+The energy measured for a jet in the detector is usually different from 
+the true particle jet at hadron level. A correction is applied to both
+jets in data and jets in \ac{MC} to match the measured and true
+energies as
+\begin{equation}\label{eqn:objects_jec}
+p_{\mu}^{\text{corr}} = \mathcal{C}\cdot p_{\mu}^{\text{raw}},
+\end{equation}
+
+where $\mathcal{C}$ is a correction factor broken down into different
+components as \cite{cms-jec-2011}
+\begin{equation}\label{eqn:objects_jec_corrfac}
+\mathcal{C} = \text{C}_{\text{offset}}(p_{\text{T}}^{\text{raw}})\cdot
+\text{C}_{\text{MC}}(p_{\text{T}}',\eta)\cdot \text{C}_{\text{rel}}(\eta)
+\cdot \text{C}_{\text{abs}}(p_{\text{T}}'').
+\end{equation}
+
+Here $\text{C}_{\text{offset}}$ is an offset correction, $\text{C}_{\text{MC}}$ an
+\ac{MC} calibration factor, $\text{C}_{\text{rel}}$ a relative residual correction
+factor and $\text{C}_{\text{abs}}$ an absolute residual correction factor. The corrections
+are applied in sequence with $p_{\text{T}}'$ the transverse momentum 
+of the jet after applying the offset correction and $p_{\text{T}}''$ the \pT of the
+jet after all of the preceding corrections.
+
+The offset correction $\text{C}_{\text{offset}}$ estimates and subtracts the energy
+not associated with the hard scatter. The additional energy this correction
+aims to address includes contributions from electronics noise and pile--up. This is
+estimated on an event--by--event basis based on the average--\pT density
+per unit area $\rho$ and the area of the jet $A$ \cite{jet-area}. The factor $\rho$ includes
+constributions from pile--up, electronics noise and the \ac{UE} of the hard interaction, the 
+latter of which should not be corrected for and therefore the average expected contribution
+from the underlying event $\rho_{<\text{UE}>}$ should be subtracted from $\rho$.
+
+The \ac{MC} calibration factor $\text{C}_{\text{MC}}$ corrects the energy of reconstructed
+jets so that is is on average equal to the energy of jets in \ac{MC} events. This
+factor is measured in simulated multi--jet events, measuring the response $\mathcal{R} = \frac{p_{\text{T}}^{\text{reco}}}{p_{\text{T}}^{\text{gen}}}$
+with $p_{\text{T}}^{\text{gen}}$ the generator--level \pT of the jet. The correction
+factor $\text{C}_{\text{MC}}$ is defined as $\text{C}_{\text{MC}} = \frac{1}{<\mathcal{R}>}$.
+
+A di--jet \pT-balancing technique \cite{cms-jec-2011}
+is used to measure the response of a jet at any $\eta$ relative
+to the jet energy response in the region $|\eta|<1.3$, such that 
+the relative residual correction factor makes the response flat
+as a function of $\eta$. This is achieved by requiring a reference jet
+in the central region of the detector ($|\eta|<1.3$), where
+the response is flat, and a probe jet at any 
+$\eta$ value. The relative response, in bins of $\eta$ and \pT  is determined by
+averaging the balancing function $\frac{p_{\text{T}}^{\text{probe}} - p_{\text{T}}^{\text{reference}}}{p_{\text{T}}^{\text{average}}}$.
+
+%The central region is chosen as a reference because of the uniformity of the detector, the small variation of the jet energy response, and because it provides the highest jet pT-reach.
+
+The absolute energy scale correction factor is designed to
+make the response uniform in \pT. It is measured using the \ac{MPF} method \cite{cms-jec-2011}
+ using samples of \Pphoton+jets and \PZ+jets events. This method relies on the fact that \Pphoton+jets
+and \PZ+jets events have no intrinsic missing energy, and so any measured \MET
+is used to calibrate the \pT response of jets in the event.
+
+Uncertainties on the jet energy scale are propagated through to analyses
+and is driven by uncertainties in the energy density used for pile--up
+subtraction, the photon energy scale, and the extrapolation required in the
+\ac{MPF} method.
+
+%The track-based jet types (JPT and PF) require much smaller correction factors because the charged component of the jet shower is measured accurately in the CMS tracker which extends up to |η| = 2.4. The fast rise of the correction factor for JPT jets in the region 2.0 < |η| < 2.5 is explained by the fact that part of the jets lying in this region extends beyond the tracker coverage. For PF jets, the transition beyond the tracker acceptance is smoother because the PF candidates, which are input to the clustering of PF jets, are individually calibrated prior to the clustering. While both PF jets and JPT jets exploit the tracker measurements, the JPT jets require lower correction in the region |η| < 2.0 because the tracker inefficiency is explicitly corrected for by the JPT algorithm. In the forward region (|η| > 3.0) all three jet types converge to simple calorimetric objects and therefore require almost identical corrections.
+
 
 \subsection{B-tagging}
 \label{sec:objects_jets_btag}
+With b--quarks appearing as final states in many of the standard model
+processes being studied at the \ac{LHC}, as well as in final states
+of searches for new physics, correctly identifying jets due to the hadronisation
+of b--quarks is very important. As b--hadrons have a relatively
+large mass of 5--6 GeV and a relatively long lifetime $\tau_B \approx 1.5$ ps \cite{pdg-2014},
+they move for roughl $c\tau_B \approx 450$ $\mu$m before decaying. This means 
+they produce a displaced secondary decay vertex in the inner tracker.
+Algorithms for tagging b--jets usually rely on the information
+from these secondary vertices.
+For the analysis presented in chapter \ref{chap:hhh}
+the \ac{CSV} algorithm \cite{cms-btag-paper} has been used, with the upgraded
+\ac{CSV}v2 version of the algorithm \cite{cms-btag-run2} used for the analysis presented in chapter CHAPMSSM. 
+The \ac{CSV} algorithm takes \ac{PF} jets with \pT$ > 20$ GeV and $|\eta|<2.4$ as input and 
+defines a likelihood--based discriminator to determine 
+whether a jet is likely due to a b--quark hadronisation or not.
+For this algorithm, secondary vertices are reconstructed from high-purity tracks
+within a cone of $\Delta R = 0.3$ around the jet axis, with quality cuts applied
+to reduce contamination from decays of long--lived particles or particles due 
+to interactions with the detector material. Information from the resulting
+secondary vertices is combined with information from the tracks associated
+with the jet into a likelihood ratio.
+
+%The presence of a secondary vertex, and kinematic quantities associated with it, 
+%are helpful in distinguishing between b-- and lighter jets. Secondary
+%vertices are reconstructed by selecting high--purity tracks within
+%a cone of $\Delta R = 0.3$ around the jet axis, which are
+%fitted using an adaptive vertex fit as for primary vertex reconstruction (section \ref{sec:objects_tracks}).
+%For the \ac{CSV} algorithm, secondary vertices need to share less than 65\% of associated tracks
+%with the primary vertex, and the significance of the radial distance between the two vertices
+%must exceed $3\sigma$. The flight direction of each candidate has to be within a cone
+%of $\Delta R < 0.5$ around the jet direction. Secondary vertices which are more
+%than 2.5 cm away from the primary vertex and whose mass is either compatible
+%with that of a \PKzero or exceeds $6.5$ GeV are rejected to reduce the contamination
+%from vertices produced due to interactions of particles with the detector
+%material or decays of long--lived particles. The information from the selected
+%secondary vertices is then combined with information about the tracks in the jet,
+%to form two likelihood ratios to discriminate between b- and c- jets and 
+%between b- and light jets. These likelihood ratios are combined into one
+%a single discriminant.
+The \ac{CSV}v2 algorithm as improved for Run 2
+uses an \ac{IVF} algorithm to reconstruct secondary vertices \cite{cms-ivf}. Instead of 
+using only tracks near the jet, in this algorithm all reconstructed
+tracks in the event which are displaced from the primary vertex are used.
+In addition, the algorithm makes use of a multilayer perceptron to combine the variables
+instead of constructing and combining two likelihood ratios from the input variables \cite{cms-btag-run2}. This allows
+for the addition of extra variables to discriminate between b- and other jets.
+
+Once the discriminator has been constructed, loose- medium- and tight working points
+can be determined as a minimum requirement on the discriminator such that the
+probability of misidentifying light--flavour jets with \pT $ > 30$ GeV is around
+10\%, 1\% and 0.1 \% respectively \cite{cms-btag-paper}. 
+
+Because not all of the input variables to the \ac{CSV} algorithm are perfectly
+modelled in simulation the b--tagging efficiency for different jet
+flavours is different in data and \ac{MC}. Scale factors can be detemined
+as the ratio of tagging efficiencies in data and \ac{MC}, which are applied to the \ac{MC} to align
+the data and \ac{MC} efficiencies. The measurements of the tagging efficiency
+for genuine b--jets makes use of samples containing a muon overlapping with the jet, 
+making use of the $\approx$ 11\% semileptonic branching fraction of b's. For other
+ranges of jet \pT the measurement can be complemented by measurements from samples
+with the kinematic signatures of \ttbar production, making use of 
+the large  $\Ptop \rightarrow \PW \Pbottom$ branching ratio. Measurements
+of mis--tagging efficiencies for light jets are made using negative--tagging
+algorithms to select samples enriched in light jets from multijet events. 
+
+Systematic uncertainties in the scale factors arise from, amongst other things,
+pile--up modelling in simulation, gluon splitting into $b\bar{b}$ pairs, track mismeasurement,
+and uncertainties in the fractions of different jet types.
+
+%Some efficiency measurements are performed using samples that include a jet with a muon within ∆R = 0.4 from the jet axis (a “muon jet”). Because the semileptonic branching fraction of b hadrons is significantly larger than that for other hadrons (about 11%, or 20% when b → c → l cascade decays are included), these jets are more likely to arise from b quarks than from another flavour.
+
+%The combinatorial complexity of the reconstruction of the decay points (secondary vertices) of b or c hadrons is more challenging in the presence of multiple proton-proton interactions. In order to minimize this complexity a different track selection is applied. Tracks must be within a cone of ∆R = 0.3 around the jet axis with a maximal distance to this axis of 0.2 cm and pass a “high-purity” criterion [32]. The “high-purity” criterion uses the normalized χ2 of the track fit, the track length, and impact parameter information to optimize the purity for each of the iterations in track reconstruction. The vertex finding procedure begins with tracks defined by this selection and proceeds iteratively. A vertex candidate is identified by applying an adaptive vertex fit [31], which is robust in the presence of outliers. The fit estimates the vertex position and assigns a weight between 0 and 1 to each track based on its compatibility with the vertex. All tracks with weights > 0.5 are then removed from the sample. The fit procedure is repeated until no new vertex candidate can be found. In the first iteration the interaction region is used as a constraint in order to identify the prompt tracks in the jet. The subsequent iterations produce decay vertex candidates.
+
 
 \section{Missing energy}
 \label{sec:objects_met}
+The \ac{CMS} detector is able to detect most stable and long--lived particles,
+however, neutrinos and hypothetical neutral weakly interacting particles
+travel straight through the detector without being recorded. These particles
+will give rise to an energy imbalance in the transverse plane, and so their
+presence can be inferred from missing energy \MET in the event. 
+
+The \MET is defined as $-\Sigma \vec{p}_{\text{T}}$, where
+the sum runs over all final--state particles and jets in the event. This quantity
+can be mismeasured due to detector inefficiencies, calorimeter energy thresholds,
+the nonlinearity of the calorimeter
+response for hadronic particles.
+
+%The magnitude of the ⃗E/T can be underestimated or overestimated for a variety of reasons, including minimum energy thresholds in the calorimeters, pT thresholds and inefficiencies in the tracker, and the nonlinearity of the response of the calorimeter for hadronic particles due to its non-compensating nature. This bias is significantly reduced by correcting the pT of jets to the particle-level pT using jet energy corrections 
+
+The \MET measurement can therefore be corrected by jet energy corrections as
+\begin{equation}\label{eqn:objects_met_corr}
+\vec{E}_{\text{T}}^{\text{miss, corr}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma_{jets} (\vec{p}_{\text{T,jet}}^{\text{corr}} - p_{\text{T,jet}})
+\end{equation}
+
+The \MET can also be mismeasured due to pile--up interactions, and improved
+measurement of the \MET at high pile--up can be obtained by using the MVA \MET
+algorithm, used for \MET reconstruction in the analyses presented in chapters \ref{chap:hhh} and 
+CHAPMSSM. This algorithm computes a correction to the hadronic
+recoil $\vec{u}_{\text{T}}$ reconstructed from \ac{PF} particles
+\begin{equation}\label{eqn:objects_met_recoil}
+\vec{u}_{\text{T}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma \vec{p}_{\text{T}}^{lep},
+\end{equation}
+
+with $\Sigma \vec{p}_{\text{T}}^{lep}$ corresponds to the vectorial sum of the transverse momenta of the
+candidate constituents selected as signal particles, the di--$\tau$ candidate in the case of \htotautau
+analyses.
+
+Two \ac{BDTs} trained on \Zmm  are used to compute this correction.
+The first one corrects the direction of the hadronic recoil, the second
+one uses a data sample with the corrected recoil direction to compute a correction
+to the magnitued of the hadronic recoil. The BDT regression uses the magnitude of the hadronic
+recoil, the azimuthal angle and scalar \pT sum of all \ac{PF} particles for several 
+different \MET definitions \cite{cms-met-run1} as input. 
+In the process of calculating the corrections to the hadronic recoil using the MVA \MET
+algorithm, the significance of the MVA \MET is also estimated, providing an event--by--event
+estimator of the likelihood that the \MET is due to unseen objects rather than induced
+by mismeasurement of jet energy \cite{cms-met-run1}.
+
+%Further corrections improve the performance of the ⃗E/T reconstruction in events with large numbers of pileup interactions. The contribution to the genuine ⃗E/T from such interactions is
+close to zero, as the probability to produce neutrinos is small in inelastic pp scattering (mini- mum bias) interactions. The vectorial ⃗pT sum of charged particles is therefore expected to be well balanced by that of neutral particles. However, the nonlinearity and minimum energy thresholds in the calorimeters cause ⃗E/ T to point on average in the direction of the vectorial ⃗pT sum of neutral particles.
 
 \subsection{Recoil corrections}
 \label{sec:objects_met_recoilcorr}
+To correct for the mismodelling of \MET in events without genuine \MET recoil corrections are determined. 
+The hadronic recoil $\vec{u}_{\text{T}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma \vec{p}_{\text{T},\nu/\text{leptons}}$ 
+is projected onto the axes parallel $u_{\parallel}$ and perpendicular $u_{\perp}$ to the \pT of the boson producing the leptons
+and neutrinos. For the analyses
+presented in chapters \ref{chap:hhh} and CHAPMSSM it is measured in \Zmm events, where no neutrinos
+are present. Distributions of $u_{\parallel}$ and $u_{\perp}$ are fitted both in data
+and \ac{MC} events, using convolutions of gaussians. Corrections are then applied to the \ac{MC}
+as
+\begin{equation}\label{eqn:met_recoilcorr}
+u_{\parallel,\perp}' = <u_{\parallel,\perp}>_{\text{data}} + u_{\parallel,\perp} - <u_{\parallel,\perp}>_{MC} \cdot \frac{\sigma_{\text{Data}}}{\sigma_{\text{MC}}}
+\end{equation}
+
+%Recoil corrections are applied to correct for the mismodelling of $\MET$ in events without genuine $\MET$ \cite{RecoilCorrPresentation}.
+%The hadronic recoil is defined as
+%$\vec{U} = \vec{E}_{\text{T}}^{mis} - \Sigma \vec{p}_{\text{T},\nu/lep}$. This recoil is projected onto the axes parallel ($U_1$) and
+%orthogonal ($U_2$) to the boson $p_{\text{T}}$ and it is measured in $Z\rightarrow\mu\mu$ events, in which the $\nu$ term is 0. Events are selected
+%by requiring the HLT\_IsoMu22\_v trigger in data, and opposite--sign muon pairs are selected by requiring two muons with opposite charge, passing
+%the medium HIP safe muon ID, the same impact parameter cuts as in the muon selection for the analysis, $I_{rel}^{\mu} < 0.15$. The leading
+%muon must have a $p_{\text{T}}$ of at least 23 GeV, with the trailing muon having a $p_{\text{T}}$ of at least 10 GeV. In addition, for data
+%events the leading muon must have fired the HLT\_IsoMu22\_v trigger. The requirements on muon $\eta$ are $|\eta_1| < 2.1$ and $|\eta_2|<2.4$.
+%At pair level, the two muons must be separated by $\Delta R > 0.5$, and the di-muon mass must be at least 20 GeV. Pile--up reweighting,
+%the muon ID, isolation, and trigger scale factors are applied, as are the muon tracking efficiencies. The DY shape reweighting
+%is applied to DY MC and top $p_{T}$ reweighting is applied to the $t\bar{t}$ MC.
+%The projected hadronic recoil $U$
+%is determined for both $Z\rightarrow\mu\mu$ data and MC events. A double gaussian with means symmetrically shifted away from zero is used to fit the $U_2$ component,
+%with a triple  gaussians for fitting the $U_1$ component. These fits are performed in bins of $Z p_{\text{T}}$ (0-10, 10-20, 20-30, 30-50, and $ > 50$ GeV), and
+%bins of number of jets (0, 1 or at least 2). $Z\rightarrow \mu\mu$ events from around the Z peak are used by requiring $70 <m_{\mu\mu} < 110 $ GeV.
+%To apply the corrections, the offset $w = U{1,2} -<U_{1,2}>_{MC} $ and the recoil in MC is corrected as
+%$U_{1,2}' = <U_{1,2}>_{data} + w\frac{\sigma_{data}}{\sigma_{MC}}$.
 
 \section{Hadronic taus}
 \label{sec:objects_tau}
