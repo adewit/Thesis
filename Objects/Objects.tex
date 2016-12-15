@@ -74,12 +74,17 @@ collisions at $\sqrt{s}=7$ TeV and depends strongly on the number of tracks
 associated with the vertex, as figure \ref{fig:objects_tracks_pvres} shows.
 
 \begin{figure}
-\includegraphics[width=0.5\textwidth]{./Objects/Plots/PrimaryVertexRes.png}
-\caption{Resolution of the z--coordinate of reconstructed primary vertices
-as a function of the number of tracks associated with the vertex, 
-for minimum--bias events in red and for
-events with many jets in black. The resolution improves
-with larger numbers of tracks \cite{cms-trk-algos}.}
+\begin{center}
+\subfloat[Resolution in x]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/PVResX.png}}
+\subfloat[Resolution in z]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/PVResZ.png}}
+\end{center}
+\caption{Resolution of the x-- (a) and z--coordinate  (b)
+of reconstructed primary vertices
+as a function of the scalar sum \pT of the tracks, 
+measured for the 2015 running conditions in blue triangles
+and for 2016 in red squares.
+The resolution improves
+with higher sum \pT (generally corresponding to larger numbers of tracks) \cite{cms-trk-dp}.}
 \label{fig:objects_tracks_pvres}
 \end{figure}
 
@@ -141,6 +146,21 @@ of cells around the super cluster seed and $E_{SC}$ the raw energy of the super 
 \item The ratio of the energy of the electron cluster and the momentum of the associated track, evaluated at the electron cluster,
  and $1/E_e - 1/P_e$, with $E_e$ the energy of the electron candidate and $P_e$ its momentum.
 \end{itemize}
+
+Figure \ref{fig:ele_id_vars} shows the distributions of $\sigma_{i\eta,i\eta}$ and $1/E_{sc} - 1/p_e$ 
+for real and misidentified electrons in the full dataset from the 2012 running period of the \ac{LHC}.
+
+\begin{figure}
+\begin{center}
+\subfloat[$\sigma_{i\eta,i\eta}$]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/Sigmaietaieta.png}}
+\subfloat[$1/E_{\text{SC}} - 1/p_{e}$]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/OneoverEminOneoverp.png}}
+\end{center}
+\caption{$\sigma_{i\eta,i\eta}$ (a) and $1/E_{\text{SC}} - 1/p_{e}$ (b) for real (black points)  and 
+misidentified electrons (yellow triangles) in a dataset corresponding to 19.7 fb$^{-1}$
+taken at $\sqrt{s} = 8$ TeV, overlaid on the variables for simulated 
+real electrons in purple \cite{cms-elereco-run1}.}
+\label{fig:ele_id_vars}
+\end{figure}
 
 \subsection{Isolation}
 \label{sec:objects_ele_iso}
@@ -480,7 +500,8 @@ using only tracks near the jet, in this algorithm all reconstructed
 tracks in the event which are displaced from the primary vertex are used.
 In addition, the algorithm makes use of a multilayer perceptron to combine the variables
 instead of constructing and combining two likelihood ratios from the input variables \cite{cms-btag-run2}. This allows
-for the addition of extra variables to discriminate between b- and other jets.
+for the addition of extra variables to discriminate between b- and other jets. Figure \ref{fig:objects_bjets}a shows
+the distribution of the \ac{CSV}v2 discriminator in multijet events in the 2015 data sample.
 
 Once the discriminator has been constructed, loose- medium- and tight working points
 can be determined as a minimum requirement on the discriminator such that the
@@ -503,6 +524,20 @@ algorithms to select samples enriched in light jets from multijet events.
 Systematic uncertainties in the scale factors arise from, amongst other things,
 pile--up modelling in simulation, gluon splitting into $b\bar{b}$ pairs, track mismeasurement,
 and uncertainties in the fractions of different jet types.
+Figure \ref{fig:objects_bjets}b shows the b--tagging scale factors, and associated errors,
+for the medium working point of the \ac{CSV}v2 discriminator in the
+2015 data sample.
+
+\begin{figure}
+\begin{center}
+\subfloat[CSVv2 distribution]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/CSVDistributionMultijet.pdf}}
+\subfloat[CSVv2 scale factors]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/CSVSF.png}}
+\end{center}
+\caption{(a) distribution of CSVv2 discriminant for multijet events in 2.6 fb$^{-1}$ 
+collected at $\sqrt{s} = 13$ TeV and (b) the b--scale factors and errors
+as a function of jet \pT for the medium working point of the CSVv2 discriminant \cite{cms-btag-run2}.}
+\label{fig:objects_bjets}
+\end{figure}
 
 %Some efficiency measurements are performed using samples that include a jet with a muon within ∆R = 0.4 from the jet axis (a “muon jet”). Because the semileptonic branching fraction of b hadrons is significantly larger than that for other hadrons (about 11%, or 20% when b → c → l cascade decays are included), these jets are more likely to arise from b quarks than from another flavour.
 
@@ -548,14 +583,33 @@ The first one corrects the direction of the hadronic recoil, the second
 one uses a data sample with the corrected recoil direction to compute a correction
 to the magnitued of the hadronic recoil. The BDT regression uses the magnitude of the hadronic
 recoil, the azimuthal angle and scalar \pT sum of all \ac{PF} particles for several 
-different \MET definitions \cite{cms-met-run1} as input. 
+different \MET definitions \cite{cms-met-run1} as input. Figure \ref{fig:objects_mvamet} shows
+the performance of the MVA \MET in data collected at $\sqrt{s}=13$ TeV compared with 
+the \ac{PF} \MET, indicating the lower MVA \MET values for events without genuine
+\MET in figure \ref{fig:objects_mvamet}a and the improved resolution at high pile--up
+in figure \ref{fig:objects_mvamet}b. 
+
+\begin{figure}
+\begin{center}
+\subfloat[\MET distribution in \Zmm events]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/Met_Data.png}}
+\subfloat[\MET resolution]{\includegraphics[width=0.5\texwidth]{./Objects/Plots/transverse_resolution_npv.png}}
+\end{center}
+\caption{(a) \MET distributions comparing MVA \MET (brown circles) to \ac{PF} \MET (black circles) for
+\Zmm events, which contain no genuine \MET, in a sample corresponding to 42 pb${-1}$ of data collected at $\sqrt{s}=13$ TeV. The \MET
+values for MVA \MET are lower than for \ac{PF} \MET. (b) the \MET resolution for \ac{PF} \MET in blue and MVA \MET in red/brown
+circles, as a function of number of vertices. The MVA \MET resolution is more stable with increased pile--up \cite{cms-dp-mvamet}.}
+\label{fig:objects_mvamet}
+\end{figure}
+
+
 In the process of calculating the corrections to the hadronic recoil using the MVA \MET
 algorithm, the significance of the MVA \MET is also estimated, providing an event--by--event
 estimator of the likelihood that the \MET is due to unseen objects rather than induced
 by mismeasurement of jet energy \cite{cms-met-run1}.
 
+
 %Further corrections improve the performance of the ⃗E/T reconstruction in events with large numbers of pileup interactions. The contribution to the genuine ⃗E/T from such interactions is
-close to zero, as the probability to produce neutrinos is small in inelastic pp scattering (mini- mum bias) interactions. The vectorial ⃗pT sum of charged particles is therefore expected to be well balanced by that of neutral particles. However, the nonlinearity and minimum energy thresholds in the calorimeters cause ⃗E/ T to point on average in the direction of the vectorial ⃗pT sum of neutral particles.
+%close to zero, as the probability to produce neutrinos is small in inelastic pp scattering (mini- mum bias) interactions. The vectorial ⃗pT sum of charged particles is therefore expected to be well balanced by that of neutral particles. However, the nonlinearity and minimum energy thresholds in the calorimeters cause ⃗E/ T to point on average in the direction of the vectorial ⃗pT sum of neutral particles.
 
 \subsection{Recoil corrections}
 \label{sec:objects_met_recoilcorr}
@@ -714,20 +768,11 @@ The variables used as input are:\\
 \item The $p_{\text{T}}$ weighted $\Delta \eta$ and $\Delta \phi$ of photons in strips outside of the signal cone.
 \end{itemize}
 
-Figure \ref{fig:tau_iso_efficiency} compares the \Pgt identification efficiency with the
+Figure \ref{fig:tau_iso_efficiency}a compares the \Pgt identification efficiency with the
 jet$\rightarrow \Pgt_{h}$ fake rate for different working points of the
 MVA isolation discriminator, as well as the cut--based isolation discriminator based
 on isolation sum and $p_{\text{T}}^{\text{strip,outer}}$. The MVA--based 
 discriminator has better performance than the cut-based discriminator alone.
-
-\begin{figure}
-\includegraphics[width=0.7\textwidth]{./Objects/Plots/TauIsolationPlot.png}
-\caption{jet$\rightarrow \Pgt_{h}$ fake rate versus $\Pgt_{h}$ identification efficiency for \htotautau events,
-comparing the MVA-based discriminator in red with the cut-based isolation discriminator in pink. Tighter working points
-give lower hadronic tau identification efficiencies and lower fake rates. The MVA-based discriminator
-has a lower fake rate than the cut-based discrminator for the same $\Pgt_{h}$ identification efficiency \cite{cms-tau-2015}.}
-\label{fig:tau_iso_efficiency}
-\end{figure}
 
 In order to reduce the $Pe\rightarrow\Pgt_h$ and $\Pgm\rightarrow\Pgt_h$ fake rate, 
 anti-electron and anti--muon discriminators are used. 
@@ -752,7 +797,27 @@ charged track (calculated separately for photons inside and outside the $\Pgt$ s
 similarly $N_{hits}^{KF}$ for the \ac{KF} track reconstruction algorithm.
 \end{itemize}
 
-Five working points are provided, ranging from very loose to very tight.
+Five working points are provided, ranging from very loose to very tight. The real tau efficiency
+and $Pe\rightarrow\Pgt_h$ fake rate for the various working points are shown in
+figures \ref{fig:tau_efficiency}b and c, respectively.
+
+\begin{figure}
+\begin{center}
+\subfloat[Isolation performance]{\includegraphics[width=0.5\textwidth]{./Plots/Objects/TauEfficiencyIsol.pdf}}\\
+\subfloat[Anti-e discriminator efficiency]{\includegraphics[width=0.5\textwidth]{./Plots/Objects/TauEfficiencyEle.pdf}}
+\subfloat[Anti-e discriminator fake rate]{\includegraphics[width=0.5\textwidth]{./Plots/Objects/TauMisIDEle.pdf}}
+\end{center}
+\caption{(a) the jet$\rightarrow\Pgt_{h}$ fake rate in QCD \ac{MC} events versus $\Pgt_{h}$ identification
+efficiency for \htotautau \ac{MC} events, comparing the MVA-based isolation discriminator in red with the cut-based 
+isolation discriminator in pink. Tighter working points give lower hadronic tau identification
+efficiencies and lower fake rates, and for the same $\Pgt_{h}$ identification efficiency the fake rate
+from the MVA-based discriminator is lower than from the cut-based discriminator. (b) the real $\Pgt_{h}$ identification
+efficiency for different working points of the anti-electron discriminator, as a function of $\Pgt_{h}$ \pT, and (c)
+the $\Pe\rightarrow\Pgt_{h}$ fake rate for different working points of the anti-electron discriminator, as a function of
+\Pe \pT.}
+\label{fig:tau_efficiency}
+\end{figure}
+
 
 The anti--muon discriminator is a cut-based discriminant, for which two working points are provided:\\
 \begin{itemize}
