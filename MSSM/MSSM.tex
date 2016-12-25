@@ -24,12 +24,196 @@ the statistical results, including model--dependent interpretations.
 
 \section{Datasets and MC samples}
 \label{sec:mssm_datasets}
+The dataset used for this analysis corresponds to an integrated 
+luminosity of 12.9 fb$^{-1}$ collected at a centre--of--mass
+energy of 13 TeV during the first half of
+the 2016 p--p running period of the \ac{LHC}. Section
+\ref{sec:mssm_combination} includes the combination of this
+dataset with a dataset collected during the 2015 p--p running
+period of the \ac{LHC}. This dataset corresponds to an integrated
+luminosity of 2.3 fb$^{-1}$ collected at $\sqrt{s} = 13$ TeV.
 
-\section{Optimisation of object selection}
-\label{sec:mssm_baseline_opt}
+Signal and background events were generated using
+various \ac{MC} event generators. Signal samples
+for the $\Pg\Pg \rightarrow \phi$ and $\Pg\Pg \rightarrow b\bar{b}\phi$
+production processes of $\PHiggs/\PHiggsps$ were generated using \texttt{PYTHIA 8.1} \cite{pythia81}.
+These samples were produced in a range of masses between 90 GeV and 3.2 TeV.
+This range is slightly wider than the range in which MSSM Higgs sector
+benchmark computations are available, 90 GeV -- 2 TeV, and 
+improves on the mass range, up to 1 TeV, studied during Run 1 in the context of BSM Higgs searches.
+SM Higgs signal samples are used for the interpretation of the analysis results in 
+MSSM benchmark scenarios. These samples are generated using \texttt{Powheg} \cite{powheg1,powheg2,powheg3}.
+
+\ttbar- and single-top background samples are generated using \texttt{Powheg},
+with \texttt{MadGraph5\_aMC\@NLO} \cite{amcnlo} used for the generation of di--boson background
+samples and part of the W+$\gamma$ background included in the \emu channel only.
+\Wjets and \Zll backgrounds are generated with the \ac{MadGraph 5} \cite{madgraph}
+matrix element generator. Both samples containing a mixture
+of jet multiplicities (`inclusive' samples) and samples with 1,2,3 or 4 jets (`exclusive' samples)
+are generated. These exclusive samples increase the available number of
+background events with higher jet multiplicities.  Part of the W+$\gamma$ background
+samples are also generated with this event generator.
+%note LO samples used because to get same number of effective
+%events would need to generate more NLO samples
+The `inclusive' and `exclusive' samples are reweighted
+before they are combined so as to preserve the correct
+fractions of events with each jet multiplicity.
+
+Parton showering and hadronisation are modelled using \texttt{PYTHIA 8} for all 
+samples. Minimum--bias events generated with \texttt{PYTHIA 8} are
+added to all \ac{MC} samples to model additional interactions.
+
+%THIS SECTION SHOULD JUST GO INTO THE DETAILED EVENT SELECTION
+%SECTION
+%\section{Optimisation of object selection}
+%\label{sec:mssm_baseline_opt}
+%At the start of Run 2 of the \ac{LHC} an effort was first made to
+%optimise the default, \textit{baseline} di-\Pgt pair selection. This provides
+%a common starting point for all $\PHiggs \rightarrow \Pgt\Pgt$ analyses, on
+%top of which additional selections can be made for specific analyses such
+%as the MSSM \AHtotautau analysis presented in this chapter. 
+
+%\subsection{Electrons and muons}
+%\label{sec:mssm_baseline_opt_elemu}
+%For the optimisation of the baseline selection of
+%electrons and muons the main optimisable
+%selection is the choice of isolation discriminator and
+%of 
 
 \section{Event selection and categorisation}
 \label{sec:mssm_eventsel}
+In this section an overview of the event selection,
+and how it was optimised, is given. More detailed information
+on how the used objects used are reconstructed, 
+and a more in--depth description of the identification criteria, 
+is given in chapter \ref{chap:objects}.
+
+\subsection{Pair selection and sorting}
+\label{sec:mssm_eventsel_pairs}
+The basis of the event selection is the selection of \mutau, \etau,
+\tautau and \emu pairs following the requirements described
+in the following subsections. After applying trigger
+requirements, identification criteria and kinematic cuts
+more than one possible candidate pair can exist. In this
+case the pair is chosen as follows:
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
+electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
+and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
+object with raw MVA isolation value nearest to 1.
+\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
+\item If the \pT of candidate 1 is the same in both pairs, prefer the pair with most isolated
+candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
+and the $\Pgt_h$ for \etau and \mutau channels).
+\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
+\end{itemize}
+
+To prevent overlap with other channels, events are rejected
+if there are muons and electrons, other than those in the selected pair,
+with \pT $>10$ GeV and passing loose ID and isolation requirements.
+This also reduces backgrounds from \WZ events. 
+In addition to this, \Zee events are 
+reduced in the \etau channel by rejecting events
+where an opposite--sign pair of electrons of \pT $>15$ GeV
+and passing very loose ID and isolation requirements can be formed. 
+In the \mutau channel the contribution from \Zmm events
+is reduced in a similar fashion.
+
+
+\subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu tau channel}}
+\label{sec:mssm_eventsel_mt}
+The first selection layer in the \mutau channel is a trigger
+that only requires a muon at \ac{L1}. At the level of the \ac{HLT}, 
+loose identification and isolation criteria are then applied to this muon.
+
+The offline event selection proceeds to require an oppositely charged
+muon and hadronically decaying tau, which are well--separated ($\Delta R > 0.5$).
+The minimum \pT of the muon is required to be 23 GeV, with $|\eta| < 2.1$. %due to trigger conditions
+Additional ``medium'' identification requirements are placed on the muon, in addition
+to requiring the muon to be consistent with having originated from the primary vertex, such that
+the impact parameters $d_{xy} < 0.045$ cm and $d_{z} < 0.2$ cm. The muon is also required
+to be isolated, with a selection on its relative isolation variable calculated with a cone size of 0.4 of $< 0.15$.
+
+The hadronic tau needs to have a \pT greater than 30 GeV, $|\eta|<2.3$,
+is required to be reconstructed by the HPS algorithm and to pass the medium
+working point of the MVA isolation discriminator. The hadronic tau also needs
+to have originiated from the primary vertex and so the impact paramter $d_{z}$ is 
+required to be less than 0.2 cm.
+
+The selection on the muon's relative isolation is chosen after comparing
+the performance of several isolation variables at different
+relative isolation values. This was based on a simple \mutau channel
+event selection as described above, with varying isolation variables.
+The selection was optimised based on two figures of merit, both of
+which consider \Ztautau as the signal and the other backgrounds
+as background. The first figure of merit used is the number of signal events divided by the
+square root of the number of background events, $S/\sqrt{B}$, after
+the selection. The aim with this figure of merit is to choose
+the isolation selection that maximises it. The second figure of merit
+is the uncertainty interval on the best-fit value for a maximum--likelihood fit
+to the \Ztautau signal strength, which should be minimised by the choice of
+isolation selection.
+
+Different isolation variables were studied over a range of values
+to cut at. In addition to the $\Delta\beta$ corrected isolation variable analogous
+to the one given for electrons in equation \ref{eqn:electron_reliso} with 
+isolation cone sizes in $\Delta R$ of 0.3 and 0.4, a very similar
+variable which does not just consider charged \ac{PF} hadrons, but
+also electrons and muons in the isolation sum is considered. This
+variable is also studied for both cone sizes of 0.3 and 0.4. Finally,
+a relative isolation variable based solely on the \pT of tracks from the primary
+vertex,
+\begin{equation}\label{eqn:reltrkiso}
+I_{\text{trk}} = \frac{\Sigma p_{\text{T}}^{\text{tracks from PV within cone of 0.3 of the muon}}}{p_{\text{T}}^{\mu}}, \end{equation} 
+is studied. The $S/\sqrt{B}$ for the different isolation variables is shown in figure \ref{fig:mssm_selection_mt_muons}a, with the
+size of the error interval from the maximum--likelihood fit to the \Ztautau signal strength shown in 
+\ref{fig:mssm_selection_mt_muons}b. From the fact that both figures of merit do not
+vary so much with different isolation cuts and different variables we can see that this analysis
+is not so sensitive to fake,nonisolated muons. The choice of isolation variable is therefore
+driven mostly by simplicity and consistency with other \ac{CMS} analyses.
+
+\begin{figure}[h!]
+\subfloat[$S/\sqrt{B}$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/s_over_root_b_mt_m.pdf}}
+\subfloat[Size of error interval]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_muons_iso_errint.pdf}}
+\caption{(a) The $S/\sqrt{B}$ for \Ztautau signal and (b) the size of the error interval on 
+the best--fit value of a maximum--likeihood fit to the \Ztautau signal strength,
+for various cut values of the $\Delta\beta$--corrected
+isolation variable with a cone size of $\Delta R = 0.4$ (solid circles), 
+the $\Delta\beta$--corrected isolation variable with a cone size of $\Delta R = 0.3$ (open circles),
+the $\Delta\beta$--corrected isolation variable including electrons and muons in the isolation
+sum, for a cone size of $\Delta R =0.4$ (upward facing triangles) and $\Delta R =0.3$ (downward facing triangles) and
+the tracker--based relative isolation (solid squares).}
+\label{fig:mssm_selection_mt_muons}
+\end{figure}
+
+A topological selection on the \mT~variable, 
+introduced in section \ref{sec:hhh_selection_categories}, is made on 
+events in the \mutau channel. This selection and the
+cut on hadronic tau isolation working point interfere 
+with each other and therefore they are optimised in a 2D--optimisation. 
+In this method 
+
+
+
+
+
+\subsection{\texorpdfstring{Event selection in the \etau channel}{Event selection in the e tau channel}}
+\label{sec:mssm_eventsel_et}
+
+\subsection{\texorpdfstring{Event selection in the \tautau channel}{Event selection in the tau tau channel}}
+\label{sec:mssm_eventsel_tt}
+
+\subsection{\texorpdfstring{Event selection in the \emu channel}{Event selection in the e mu channel}}
+\label{sec:mssm_eventsel_em}
+
+\subsection{Leptonvetos}
+\label{sec:mssm_eventsel_leptonvetos}
+
+\subsection{Categorisation}
+\label{sec:mssm_eventsel_categories}
+
+NEED FIGURE OF NJETS AND NBJETS WITH SIGNAL ON!
 
 \section{\ac{MC} to data correction factors}
 \label{sec:mssm_mccorrs}
@@ -40,6 +224,61 @@ the statistical results, including model--dependent interpretations.
 \section{Background estimation}
 \label{sec:mssm_bkgs}
 
+\subsection{\texorpdfstring{\mutau and \etau channels}{mutau and etau channels}}
+\label{sec:mssm_bkgs_mtet}
+
+\subsubsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
+\label{sec:mssm_bkgs_mtet_ztt}
+
+\subsubsection{\texorpdfstring{\Wjets}{W+jets}}
+\label{sec:mssm_bkgs_mtet_wjets}
+
+\subsubsection{QCD}
+\label{sec:mssm_bkgs_mtet_qcd}
+
+\subsubsection{\texorpdfstring{\ttbar}{ttbar}}
+\label{sec:mssm_bkgs_mtet_tt}
+
+\subsubsection{Other backgrounds}
+\label{sec:mssm_bkgs_mtet_other}
+
+\subsection{\texorpdfstring{\tautau channel}{tautau channel}}
+\label{sec:mssm_bkgs_tt}
+
+\subsubsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
+\label{sec:mssm_bkgs_tt_ztt}
+
+\subsubsection{QCD}
+\label{sec:mssm_bkgs_tt_qcd}
+
+\subsubsection{\texorpdfstring{\Wjets}{W+jets}}
+\label{sec:mssm_bkgs_tt_wjets}
+
+\subsubsection{\texorpdfstring{\ttbar}{ttbar}}
+\label{sec:mssm_bkgs_tt_tt}
+
+\subsubsection{Other backgrounds}
+\label{sec:mssm_bkgs_tt_other}
+
+\subsection{\texorpdfstring{\emu channel}{emu channel}}
+\label{sec:mssm_bkgs_em}
+
+\subsubsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
+\label{sec:mssm_bkgs_em_ztt}
+
+\subsubsection{QCD}
+\label{sec:mssm_bkgs_em_qcd}
+
+\subsubsection{\texorpdfstring{\Wjets}{W+jets}}
+\label{sec:mssm_bkgs_em_wjets}
+
+\subsubsection{\texorpdfstring{\ttbar}{ttbar}}
+\label{sec:mssm_bkgs_em_tt}
+
+\subsubsection{Other backgrounds}
+\label{sec:mssm_bkgs_em_other}
+
+
 \section{Systematic uncertainties}
 \label{sec:mssm_uncs}
 
@@ -48,7 +287,6 @@ the statistical results, including model--dependent interpretations.
 
 \subsection{Shape uncertainties}
 \label{sec:mssm_uncs_shape}
-
 
 \section{Signal extraction}
 \label{sec:mssm_signalextraction}
