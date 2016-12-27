@@ -88,37 +88,6 @@ on how the used objects used are reconstructed,
 and a more in--depth description of the identification criteria, 
 is given in chapter \ref{chap:objects}.
 
-\subsection{Pair selection and sorting}
-\label{sec:mssm_eventsel_pairs}
-The basis of the event selection is the selection of \mutau, \etau,
-\tautau and \emu pairs following the requirements described
-in the following subsections. After applying trigger
-requirements, identification criteria and kinematic cuts
-more than one possible candidate pair can exist. In this
-case the pair is chosen as follows:
-\begin{itemize}
-\setlength{\itemsep}{-\baselineskip}
-\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
-electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
-and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
-object with raw MVA isolation value nearest to 1.
-\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
-\item If the \pT of candidate 1 is the same in both pairs, prefer the pair with most isolated
-candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
-and the $\Pgt_h$ for \etau and \mutau channels).
-\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
-\end{itemize}
-
-To prevent overlap with other channels, events are rejected
-if there are muons and electrons, other than those in the selected pair,
-with \pT $>10$ GeV and passing loose ID and isolation requirements.
-This also reduces backgrounds from \WZ events. 
-In addition to this, \Zee events are 
-reduced in the \etau channel by rejecting events
-where an opposite--sign pair of electrons of \pT $>15$ GeV
-and passing very loose ID and isolation requirements can be formed. 
-In the \mutau channel the contribution from \Zmm events
-is reduced in a similar fashion.
 
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu tau channel}}
@@ -139,7 +108,9 @@ The hadronic tau needs to have a \pT greater than 30 GeV, $|\eta|<2.3$,
 is required to be reconstructed by the HPS algorithm and to pass the medium
 working point of the MVA isolation discriminator. The hadronic tau also needs
 to have originiated from the primary vertex and so the impact paramter $d_{z}$ is 
-required to be less than 0.2 cm.
+required to be less than 0.2 cm. Finally the hadronic tau is required
+to satisfy the very loose working point of the anti--electron discriminator
+and the tight working point of the anti--muon discriminator.
 
 The selection on the muon's relative isolation is chosen after comparing
 the performance of several isolation variables at different
@@ -240,29 +211,163 @@ point selection combined with a selection on \mT$<40$ GeV.
 The choice of the hadronic tau \pT selection is driven by the effect on the low mass region:
 raising the \pT selection by 10 GeV from the minimum of 20 GeV does not affect the sensivity
 of the analysis for high mass points, while recovering some of the loss of loosening 
-tau isolation working point and \mT~cut. This is because when using \pT$>30$ GeV 
-fewer background events are selected.
+tau isolation working point and \mT~cut. The reason for this is that when using \pT$>30$ GeV 
+fewer background events are selected. The effect of the increased hadronic tau \pT~ cut on the 
+upper limits for the gg$\phi$ production process
+in figure \ref{fig:mssm_tauptcut}a, and on the bb$\phi$ production process
+in figure \ref{fig:mssm_tauptcut}b. At low mass the improvement in the gg$\phi$ limits
+obtained by increasing the \pT~cut is sizeable, for bb$\phi$ events the effect is much
+less pronounced.
 
-
-
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_optimisation_mediummt40_vs_tightmt30pt20_mt_ggH.png}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_optimisation_mediummt40_vs_tightmt30pt20_mt_bbH.png}}
+\end{center}
+\caption{Pre-fit expected limits on $\sigma\times$BR in the \mutau channelfor (a) gg$\phi$ production and (b) bb$\phi$ production. The
+limits using the medium hadronic tau isolation working point and \mT$<40$ GeV selection using a minimum
+hadronic tau \pT~cut of 20 GeV (black circles), 30 GeV (blue circles) and 40 GeV (red circles). The green
+circles show the limits using tighter tau isolation working point and \mT~selection. The limits on
+the gg$\phi$ production process improve at low masses when increasing the hadronic tau \pT~cut,
+the effect on the bb$\phi$ production process is less pronounced. FIXME REMAKE PLOT}
+\label{fig:mssm_tauptcut}
+\end{figure}
 
 
 \subsection{\texorpdfstring{Event selection in the \etau channel}{Event selection in the e tau channel}}
 \label{sec:mssm_eventsel_et}
+For selection of events in the \etau channel, the first step is
+a trigger that only requires an electron at \ac{L1}. At the \ac{HLT}
+loose identification and isolation criteria are then required.
+
+The offline event selection proceeds to require an oppositely charged
+electron and hadronically decaying tau, which are well--separated ($\Delta R > 0.5$).
+The minimum \pT of the electron is required to be 26 GeV, with $|\eta| < 2.1$. %due to trigger conditions
+This electron has to be consistent with having originated from the primary vertex, which
+is achieved by requiring impact parameters $d_{xy} < 0.045$ cm and $d_{z} < 0.2$ cm, and it
+is required to pass additional identification criteria. A selection on the MVA identification, which
+selects electrons from \Zee events with 80\% efficiency, is used. In addition the
+electron needs to be isolated. The relative isolation, calculated with a cone size of 0.3, is required to be $< 0.1$.
+
+The hadronic tau is required to have a \pT greater than 30 GeV, $|\eta|<2.3$,
+and is required to be reconstructed by the HPS algorithm and to pass the medium
+working point of the MVA isolation discriminator. It also needs
+to have originiated from the primary vertex and so the impact paramter $d_{z}$ is 
+required to be less than 0.2 cm. Finally, the hadronic tau should
+pass the tight working point of the anti--electron discriminator
+and the loose working point of the anti--muon discriminator.
+
+Just like for muons, it was found that the analysis is not highly sensitive
+to the choice of electron isolation variable and selection, yet an effort
+is made not to use a suboptimal selection.
+A topological selection on the \mT~ variable is also made in this channel to reject \Wjets events. 
+The used value of $\mT < 50$ is obtained by performing a 2D optimisation where the \mT~ selection
+and hadronic tau isolation working point are varied at the same time. The same considerations as
+for the \mutau channel apply. The choice of the hadronic tau \pT~ selection to 30 GeV is
+chosen to recover some of the sensitivity lost at low mass by using looser \mT~ and hadronic
+tau isolation selections. This is illustrated in figure \ref{fig:mssm_tauptcut_et}.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_optimisation_mediummt50_vs_tightmt40pt20_et_ggH.png}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_optimisation_mediummt50_vs_tightmt40pt20_et_bbH.png}}
+\end{center}
+\caption{Pre-fit expected limits on $\sigma\times$BR in the \etau channel for (a) gg$\phi$ production and (b) bb$\phi$ production. The
+limits using the medium hadronic tau isolation working point and \mT$<40$ GeV selection using a minimum
+hadronic tau \pT~cut of 20 GeV (black circles), 30 GeV (blue circles) and 40 GeV (red circles). The green
+circles show the limits using tighter tau isolation working point and \mT~selection. The limits on
+the gg$\phi$ production process improve at low masses when increasing the hadronic tau \pT~cut,
+the effect on the bb$\phi$ production process is less pronounced. FIXME REMAKE PLOT}
+\label{fig:mssm_tauptcut_et}
+\end{figure}
+
 
 \subsection{\texorpdfstring{Event selection in the \tautau channel}{Event selection in the tau tau channel}}
 \label{sec:mssm_eventsel_tt}
+Selection of events in the \tautau channel starts with a trigger
+that requires two hadronic taus at \ac{L1}. At the level of the \ac{HLT}, loose identification
+and isolation criteria are applied to these hadronic taus.
+
+The offline event selection continues by requiring both hadronic taus to be oppositely charged, separated
+by $\Delta R > 0.5$, have pT~ of at least 40 GeV and $|\eta|<2.1$. Both taus need
+to pass decay mode finding and have originated from the primary vertex, with the impact parameter $d_{z} < 0.2$ cm. 
+Both taus need to pass the tight working point of the isolation discriminator, the very loose 
+working point of the anti--electron discriminator and the loose working point of the anti--muon discriminator. 
+The tight working point of the isolation discriminator is chosen to optimise the sensitivity
+of this channel for higher masses. INSERT PLOT
 
 \subsection{\texorpdfstring{Event selection in the \emu channel}{Event selection in the e mu channel}}
 \label{sec:mssm_eventsel_em}
+Events in the \emu channel are first selected by a trigger
+that requires an electron and muon at \ac{L1} and applies loose ID and
+isolation requirements to these objects at \ac{HLT}.
 
-\subsection{Leptonvetos}
-\label{sec:mssm_eventsel_leptonvetos}
+\subsection{Pair selection and vetos}
+\label{sec:mssm_eventsel_pairs}
+The basis of the event selection is the selection of \mutau, \etau,
+\tautau and \emu pairs following the requirements described
+in the following subsections. After applying trigger
+requirements, identification criteria and kinematic cuts
+more than one possible candidate pair can exist. In this
+case the pair is chosen as follows:
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
+electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
+and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
+object with raw MVA isolation value nearest to 1.
+\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
+\item If the \pT of candidate 1 is the same in both pairs, prefer the pair with most isolated
+candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
+and the $\Pgt_h$ for \etau and \mutau channels).
+\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
+\end{itemize}
+
+To prevent overlap with other channels, events are rejected
+if there are muons and electrons, other than those in the selected pair,
+with \pT $>10$ GeV and passing loose ID and isolation requirements.
+This also reduces backgrounds from \WZ events. 
+In addition to this, \Zee events are 
+reduced in the \etau channel by rejecting events
+where an opposite--sign pair of electrons of \pT $>15$ GeV
+and passing very loose ID and isolation requirements can be formed. 
+In the \mutau channel the contribution from \Zmm events
+is reduced in a similar fashion. 
 
 \subsection{Categorisation}
 \label{sec:mssm_eventsel_categories}
+As the analysis targets both the gluon--gluon fusion
+and the b--associated production modes of MSSM Higgs
+bosons, two exclusive categories are defined based on the 
+number of b--tagged jets, where a jet is considered b--tagged
+if it passes the medium working point of the \ac{CSV}v2 discriminator. 
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item \textbf{No b-tag}: 0 b--tagged jets. This category targets the gg$\phi$ production mode but is also sensitive to some of the bb$\phi$ signal
+\item \textbf{b-tag}: At least 1 b--tagged jet and at most 1 
+jet with \pT$>30$ GeV. Due to the different phase space considered for
+b--tagging than for normal jet reconstruction this requirement does not necessarily
+mean there will be only one jet in the event. The requirement reduces the sizeable \ttbar
+background
+\end{itemize}
 
-NEED FIGURE OF NJETS AND NBJETS WITH SIGNAL ON!
+Figure \ref{fig:mssm_cats_tt}a shows the number of jets 
+in the \tautau channel, with \ref{fig:mssm_cats_tt}b showing
+the number of b--tagged jets in that channel. The gluon--gluon fusion
+signal and bb associated signal are overlaid on these distributions,
+thus indicating the signal--sensitive bins, motivating the choice of categories.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Number of jets]{/includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_jets_inclusive_tt_2016_log.png}}
+\subfloat[Number of b--tagged jets]{/includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_bjets_inclusive_tt_2016_log.png}}
+\end{center}
+\caption{(a) Number of jets and (b) number of b--tagged jets in the \tautau channel. The gluon--gluon fusion signal (COLOUR)
+and bb--associated signal (COLOUR2) are overlaid on the distribution, motivating the choice of
+categorisation to target the two different signals. FIXME REMAKE THESE PLOTS WITH SIGNAL ON!
+\label{fig:mssm_cats_tt}
+\end{figure}
+
 
 \section{\ac{MC} to data correction factors}
 \label{sec:mssm_mccorrs}
