@@ -88,6 +88,39 @@ on how the used objects used are reconstructed,
 and a more in--depth description of the identification criteria, 
 is given in chapter \ref{chap:objects}.
 
+\subsection{Pair selection and vetos}
+\label{sec:mssm_eventsel_pairs}
+The basis of the event selection is the selection of \mutau, \etau,
+\tautau and \emu pairs following the requirements described
+in the following subsections. After applying trigger
+requirements, identification criteria and kinematic cuts
+more than one possible candidate pair can exist. In this
+case the pair is chosen as follows:
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
+electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
+and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
+object with raw MVA isolation value nearest to 1.
+\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
+\item If the \pT of candidate 1 is the same in both pairs, prefer the pair with most isolated
+candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
+and the $\Pgt_h$ for \etau and \mutau channels).
+\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
+\end{itemize}
+
+To prevent overlap with other channels, events are rejected
+if there are muons and electrons, other than those in the selected pair,
+with \pT $>10$ GeV and passing loose ID and isolation requirements.
+This also reduces backgrounds from \WZ events. 
+In addition to this, \Zee events are 
+reduced in the \etau channel by rejecting events
+where an opposite--sign pair of electrons of \pT $>15$ GeV
+and passing very loose ID and isolation requirements can be formed. 
+In the \mutau channel the contribution from \Zmm events
+is reduced in a similar fashion. 
+
+
 
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu tau channel}}
@@ -298,41 +331,56 @@ of this channel for higher masses. INSERT PLOT
 
 \subsection{\texorpdfstring{Event selection in the \emu channel}{Event selection in the e mu channel}}
 \label{sec:mssm_eventsel_em}
-Events in the \emu channel are first selected by a trigger
-that requires an electron and muon at \ac{L1} and applies loose ID and
-isolation requirements to these objects at \ac{HLT}.
+Events in the \emu channel are first selected by two triggers
+that both require an electron and muon at \ac{L1} and apply loose ID and
+isolation requirements to these objects at \ac{HLT}. The \pT requirements on
+the electron and muon are different in the two triggers, thus using the combination of the two
+improves the analysis performance.
 
-\subsection{Pair selection and vetos}
-\label{sec:mssm_eventsel_pairs}
-The basis of the event selection is the selection of \mutau, \etau,
-\tautau and \emu pairs following the requirements described
-in the following subsections. After applying trigger
-requirements, identification criteria and kinematic cuts
-more than one possible candidate pair can exist. In this
-case the pair is chosen as follows:
-\begin{itemize}
-\setlength{\itemsep}{-\baselineskip}
-\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
-electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
-and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
-object with raw MVA isolation value nearest to 1.
-\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
-\item If the \pT of candidate 1 is the same in both pairs, prefer the pair with most isolated
-candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
-and the $\Pgt_h$ for \etau and \mutau channels).
-\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
-\end{itemize}
+The offline requirements to the \emu pair are that the electron 
+and muon are oppositely charged, separated by $\Delta R >$ 0.3. The 
+electron should have a minimum \pT~ of 13 GeV and have $|\eta|< 2.5$. As
+in the \etau channel the electron's impact parameters have to 
+satisfy $d_{xy} < 0.045$ cm and $d_{z}<0.2$ cm. A selection is
+made on the electron identification MVA, using a working point that 
+is 80\% efficient for electrons in \Zee decays. The electron
+also needs to be isolated, with the relative isolation calculated
+with a cone size of 0.3 being less than $<0.15$.
 
-To prevent overlap with other channels, events are rejected
-if there are muons and electrons, other than those in the selected pair,
-with \pT $>10$ GeV and passing loose ID and isolation requirements.
-This also reduces backgrounds from \WZ events. 
-In addition to this, \Zee events are 
-reduced in the \etau channel by rejecting events
-where an opposite--sign pair of electrons of \pT $>15$ GeV
-and passing very loose ID and isolation requirements can be formed. 
-In the \mutau channel the contribution from \Zmm events
-is reduced in a similar fashion. 
+The muons need to have a \pT~of at least 10 GeV, $|\eta|<2.4$ and 
+their impact parameters need to be $d_{xy}<0.045$ cm and $d_{z}<0.2$ cm.
+In addition to the kinematic requirements the muon must
+pass the medium identification criteria and be isolated with the relative
+isolation, calculated with a cone size of 0.4, required to be less than 0.15.
+
+Because a combination of triggers is used, the object firing
+the higher \pT~ trigger leg needs to have a transverse momentum
+of at least 24 GeV on top of the requirements already discussed.
+In addition, a topological selection is made on the $D_{\zeta}$ variable \cite{cdf-dzeta},
+\begin{align}\label{eqn:mssm_em_dzeta}
+D_{\zeta} = P_{\zeta} - 1.85 P_{\zeta}^{\text{vis}}, \notag \\
+\text{where } P_{\zeta} = (\vec{p}_{\text{T},1}^{\text{vis}} + \vec{p}_{\text{T},2}^{\text{vis}} + E_{\text{T}}^{\text{miss}})\frac{\vec{\zeta}}{|\vec{\zeta}|}, \notag \\
+\text{and } P_{\zeta}^{\text{vis}} = (\vec{p}_{\text{T},1}^{\text{vis}}+\vec{p}_{\text{T},2}^{\text{vis}})\frac{\vec{\zeta}}{|\vec{\zeta}|}.
+\end{align}
+
+Thus $D_{\zeta}$ is the difference of the projection of the visible tau decay products plus missing energy \pT+\MET,
+and simply the visible tau decay product \pT on the axis $\vec{\zeta}$. This is the axis that bisects 
+the directions $\vec{p}_{\text{T,1}}^{\text{vis}}$ and $\vec{p}_{\text{T,2}}^{\text{vis}}$
+of the visible decay products in the transverse plane. This selection is illustrated in figure
+\ref{fig:mssm_dzeta}a, with figure \ref{fig:mssm_dzeta}b showing the $D_{\zeta}$ distribution
+for \emu events. The used cut value, $D_{\zeta} > -20$ GeV rejects $\ttbar$, \Wjets and diboson
+events. 
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Reconstruction of $D_{\zeta}$]{./includegraphics[width=0.5\textwidth]{./MSSM/Figures/PZeta.pdf}}
+\subfloat[$D_{\zeta}$ distribution in \emu channel]{./includegraphics[width=0.5\textwidth]{./MSSM/Figures/pzeta_inclusive_em_2016.pdf}}
+\end{center}
+\caption{(a) reconstruction of $D_{\zeta}$ \cite{cdf-dzeta} and (b) $D_{\zeta}$ distribution in the 
+\emu channel\cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_dzeta}
+\end{figure}
+
 
 \subsection{Categorisation}
 \label{sec:mssm_eventsel_categories}
@@ -374,9 +422,28 @@ categorisation to target the two different signals. FIXME REMAKE THESE PLOTS WIT
 
 \section{Discriminating variable}
 \label{sec:mssm_discrvar}
+The discriminating variable used for signal extraction is the total transverse mass,
+\begin{equation}\label{eqn:mttot}
+m_{\text{T}}^{\text{tot}} = \sqrt{(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_1^{\text{vis}}))^2+
+(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_2^{\text{vis}}))^2 + (m_{\text{T}}(\Pgt_1^{\text{vis}},\Pgt_2^{\text{vis}}))^2}.
+\end{equation}
+
+$m_{\text{T}}(1,2)$ is defined as,
+\begin{equation}\label{eqn:mttot_12}
+m_{\text{T}}(1,2) = \sqrt{2p_{\text{T},1}p_{\text{T},2}(1-\cos{(\Delta\phi(1,2))})}.
+\end{equation}
+
+This means that $m_{\text{T}}(E_{\text{T}}^{\text{miss}},\Pgt_1^{\text{vis}})$ is equivalent
+to the \mT~ defined for the \etau and \mutau channels in equation \ref{eqn:hhh_selection_mt}.
+The \mTtot~ variable provides good separation between signal and QCD multi--jet events
+in the \etau, \mutau and \tautau channels, and between
+signal and \ttbar events in the \emu channel.
 
 \section{Background estimation}
 \label{sec:mssm_bkgs}
+The methods used for background estimation will be described in this
+channel. The background estimation in the \etau and \mutau channels
+is very similar and they are combined 
 
 \subsection{\texorpdfstring{\mutau and \etau channels}{mutau and etau channels}}
 \label{sec:mssm_bkgs_mtet}
@@ -456,6 +523,32 @@ categorisation to target the two different signals. FIXME REMAKE THESE PLOTS WIT
 
 \subsection{Interpretation in MSSM benchmark scenarios}
 \label{sec:mssm_results_modeldep}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_012-a.pdf}
+\end{center}
+\caption{Exclusion in the $m_{h}^{\text{mod}+}$ scenario obtained by the combination
+of all channels in the \AHtotautau analysis. The blue shaded area bounded by the 
+solid black line is the observed exclusion, with the dashed black line the
+expected exclusion. The grey bands indicate the $\pm 1,2$ $\sigma$ 
+expected exclusion. The red shaded area
+is excluded by the lack of a light Higgs boson with mass compatible with 125 GeV \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_mhmodp_2016}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_012-b.pdf}
+\end{center}
+\caption{Exclusion in the hMSSM scenario obtained by the combination
+of all channels in the \AHtotautau analysis. The blue shaded area bounded by the 
+solid black line is the observed exclusion, with the dashed black line the
+expected exclusion. The grey bands indicate the $\pm 1,2$ $\sigma$ 
+expected exclusion \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_hmssm_2016}
+\end{figure}
+
 
 \section{Combination of 2015 and 2016 datasets}
 \label{sec:mssm_combination}
