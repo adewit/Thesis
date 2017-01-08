@@ -781,23 +781,74 @@ and the overall change in normalisation for each process in each category is
 evaluated. If the change in normalisation is non-negligible this
 uncertainty is applied. The uncertainty varies from 1--5\%.
 \subsubsection*{\MET resolution and response}
+Uncertainties on \MET resolution and response are estimated
+by varying the recoil correction paramters within their
+uncertainty and evaluating the effect on process
+normalisations. The uncertainty amounts to around 2\%
 \subsubsection*{Background normalisation}
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item \Ztautau: As the \Zmm control region is included in the simultaneous
+fit with the signal region to correct the \Ztautau normalisation
+the Drell-Yan cross section is not applied as an uncertainty. A 3\% (5\%)
+extrapolation uncertainty from \Zmm $\rightarrow$ \Ztautau is applied in 
+the no b-tag (b-tag) category \cite{CMS-PAS-HIG-16-037}.
+\item \Zellell: The uncertainty on the Drell-Yan cross-section
+amounts to 4\% \cite{CMS-PAS-HIG-16-037}.
+\item \ttbar: The uncertainty on the \ttbar cross-section amounts
+to 6\% \cite{CMS-PAS-HIG-16-037}.
+\item di-boson and single-top: The uncertainty on the di-boson and
+single-top production cross-sections amounts to 5\% \cite{CMS-PAS-HIG-16-037}.
+\item \Wjets:
+\item QCD:
+\end{itemize}
 \subsubsection*{Theory uncertainties}
 
 \subsection{Shape uncertainties}
 \label{sec:mssm_uncs_shape}
 \subsubsection*{$\Pgt_{h}$ energy scale}
+The energy of hadronic taus is varied up and down by 3\% \cite{CMS-PAS-HIG-16-037}. As the 
+shape of the total transverse mass distribution depends on the energy of the $\Pgt_{h}$
+it is applied as a shape uncertainty. It is applied to the signal samples and to
+backgrounds containing real hadronic taus in the \etau, \mutau, and \tautau channels:
+\Ztautau, and the components of the \ttbar and single-top+di-boson background with real 
+hadronic taus.
 \subsubsection*{Electron energy scale}
+The energy of electrons is varied by 1\% in the barrel and by 2.5\% in the endcaps \cite{CMS-PAS-HIG-16-037}. This affects
+the shape of the total transverse mass distribution, and this uncertainty is applied to the
+signals and to the \Ztautau background.
 \subsubsection*{High-\pT~ $\Pgt_{h}$ ID efficiency}
+An additional $\Pgt_{h}$ identification uncertainty of $\frac{20\% \times p_{\text{T}}}{\text{TeV}}$
+is applied to account for the extrapolation from the tau ID efficiency
+measurement, which uses mostly taus close to the Z peak, to taus with higher \pT s. This
+uncertainty is applied to signal and backgrounds with real taus in the \etau, \mutau and \tautau channels
 \subsubsection*{Top quark \pT~ reweighting}
+To account for the uncertainty in the derivation of the top-quark \pT~ reweighting, a shape
+uncertainty is applied to the \ttbar background. This uncertainty amounts to a 100\% variation
+of the correction, ie the difference between applying the correction twice and not applying the correction at all.
 \subsubsection*{Drell-Yan shape reweighting}
+An uncertainty on the Drell-Yan shape reweighting based on \Zmm events
+is applied as 100\% of the correction to the \Ztautau background \cite{CMS-PAS-HIG-16-037}. 
 \subsubsection*{Jet$\rightarrow\Pgt_{h}$ fake rate shape reweighting}
+On the \Wjets background in the \etau and \mutau channels a shape 
+uncertainty of $\frac{-20\% \times p_{\text{T}}}{\text{GeV}}$ is 
+applied. This uncertainty is derived from variations in the data/MC ratio
+for the jet$\rightarrow\Pgt_{h}$ fake rate as a function of jet \pT~ in 
+\Wjets events \cite{CMS-PAS-HIG-16-037}.
 
 \section{Signal extraction}
 \label{sec:mssm_signalextraction}
+The total transverse mass \mTtot~ is used as discriminating variable in this analysis.
+All bins of the distribution are used to perform a shape analysis. The statistical
+methods, including the incorporation of nuisance parameters in the fit, were already
+described in section \ref{sec:hhh_results_extraction}. Some additional
+methods are used for this analysis, and they will be discussed in this section.
 
 \subsection{Inclusion of control regions in the fit}
 \label{sec:mssm_sigext_ctrl}
+
+\subsection{MSSMvsSM hypothesis testing}
+\label{sec:mssm_sigext_mssmvssm}
 
 \section{Results}
 \label{sec:mssm_results}
