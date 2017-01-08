@@ -738,13 +738,48 @@ in the final result as described in section \ref{sec:hhh_results_extraction}.
 \subsubsection*{Luminosity uncertainty}
 The uncertainty on the luminosity measurement amounts to 6.2\% for
 data collected during 2016 \cite{cms-pas-lum-15-001}, and it is
-applied to all processes for which the normalisation was estimated 
+applied to all processes for which the normalisation is estimated 
 using \ac{MC} samples.
 \subsubsection*{Identification, isolation and trigger efficiencies}
+The uncertainty on electron and muon identification, isolation, and
+trigger efficiency amounts to 2\% \cite{CMS-PAS-HIG-16-037}. For hadronic taus the identification and
+isolation uncertainty amounts to 6\% in the \etau and \mutau channels
+and 12\% in the \tautau channel, with an additional 7\% uncertainty
+on the tau trigger efficiency added in quadrature for that channel \cite{CMS-PAS-HIG-16-037}. This
+uncertainty is split between a part that is correlated between the channels, 
+a 5\% (10\%) uncertainty in the \etau and \mutau (\tautau) channels. The uncorrelated 
+part amounts to 3\% (9.2\%) for the \etau and \mutau (\tautau) channels.
+The uncertainties on lepton/hadronic tau identificiation, isolation and 
+trigger efficiency are applied to all processes for which the normalisation
+is estimated using \ac{MC} samples.
 \subsubsection*{jet$\rightarrow\Pgt_{h}$ fake rate}
+The uncertainty on the jet$\rightarrow\Pgt_{h}$ fake rate
+is 20\% \cite{cms-tau-2015}. This uncertainty is applied
+to those backgrounds where the normalisation is estimated from \ac{MC} and
+where the hadronic taus are mimicked by jets, that is the \Zellell background
+with a jet faking a hadronic tau, the \Wjets background in the fully hadronic
+channel, and the \ttbar background with a jet faking a hadronic tau. 
 \subsubsection*{$\Pe\rightarrow\Pgt_{h}$ and $\Pgm\rightarrow\Pgt_{h}$ fake rate}
+The $\Pe\rightarrow\Pgt_{h}$ fake rate uncertainty ranges from 10-30\%,
+depending on the anti-electron discriminator used \cite{cms-tau-2015}. This uncertainty is 
+applied to the \Zellell background with the hadronic tau faked by an electron.
+The $\Pgm\rightarrow\Pgt_{h}$ fake rate uncertainty ranges from 20-30\%, depending
+on the anti-muon discriminator used\cite{CMS-PAS-HIG-16-037}. This uncertainty is applied to the \Zellell
+background with the hadronic tau faked by a muon.
 \subsubsection*{Jet energy scale uncertainty}
+The uncertainties on the jet-energy corrections are applied
+by shifting the jet energy up and down by the \pT~ and $\eta$ dependendent
+uncertainty, and evaluating the the change in process normalisation in
+each category. Where the change in normalisation is non-negligible the
+uncertainty is applied. It ranges from 1--10\% depending on process and category.
 \subsubsection*{B-tag scale factors}
+Uncertainties on the b-tagging efficiency and light jet mis-tagging
+rates are given as a function of jet \pT~ and $\eta$ for the 
+medium working point of the \ac{CSV}v2 discriminator \cite{cms-btag-run2}.
+The b-tagging scale factors are are varied within these uncertainties
+and the overall change in normalisation for each process in each category is
+evaluated. If the change in normalisation is non-negligible this
+uncertainty is applied. The uncertainty varies from 1--5\%.
 \subsubsection*{\MET resolution and response}
 \subsubsection*{Background normalisation}
 \subsubsection*{Theory uncertainties}
@@ -769,9 +804,129 @@ using \ac{MC} samples.
 
 \subsection{Model--independent results}
 \label{sec:mssm_results_modelindep}
+The \mTtot~ distributions in the no b-tag and b-tag
+categories of all channels, after the fit to the observed
+data has been performed, are shown in figures \ref{fig:mssm_results_mttot_mt}--\ref{fig:mssm_results_mttot_em}.
+The signal of the 3 neutral Higgs bosons at \mA=1 TeV and \tanb=50 in the $m_{h}^{mod+}$ scenario is overlaid 
+on the total transverse mass distributions. The signal peaks twice due to the presence of a light Higgs boson
+with mass compatible with 125 GeV in this model, which is necessary to incorporate the Higgs boson
+observed at 125 GeV into the model.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[no b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_005-a.pdf}}
+\subfloat[b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_005-b.pdf}}
+\end{center}
+\caption{Distributions of \mTtot~ in the (a) no b-tag and (b) b-tag categories 
+of the \mutau channel. The signal of the 3 neutral Higgs bosons at \mA=1 TeV 
+and \tanb=50 in the $m_{h}^{mod+}$ scenario is overlaid. Note that, to incorporate
+the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
+at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
+the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_results_mttot_mt}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[no b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_006-a.pdf}}
+\subfloat[b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_006-b.pdf}}
+\end{center}
+\caption{Distributions of \mTtot~ in the (a) no b-tag and (b) b-tag categories 
+of the \etau channel. The signal of the 3 neutral Higgs bosons at \mA=1 TeV 
+and \tanb=50 in the $m_{h}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
+%the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
+%at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
+%the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_results_mttot_et}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[no b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_008-a.pdf}}
+\subfloat[b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_008-b.pdf}}
+\end{center}
+\caption{Distributions of \mTtot~ in the (a) no b-tag and (b) b-tag categories 
+of the \tautau channel. The signal of the 3 neutral Higgs bosons at \mA=1 TeV 
+and \tanb=50 in the $m_{h}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
+%the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
+%at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
+%the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_results_mttot_tt}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[no b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_007-a.pdf}}
+\subfloat[b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_007-b.pdf}}
+\end{center}
+\caption{Distributions of \mTtot~ in the (a) no b-tag and (b) b-tag categories 
+of the \tautau channel. The signal of the 3 neutral Higgs bosons at \mA=1 TeV 
+and \tanb=50 in the $m_{h}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
+%the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
+%at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
+%the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_results_mttot_em}
+\end{figure}
+
+None of these distributions show hints of a significant excess. The
+95\% upper limits on $\sigma\times$BR are shown in figure \ref{fig:mssm_results_limits}a
+for gluon--gluon fusion and in figure \ref{fig:mssm_results_limits}b for b--associated
+production. All channels and categories are combined. 
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_009-a.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_009-b.pdf}}
+\end{center}
+\caption{Upper limits at 95\% CL for (a) the gluon--gluon fusion production
+process and (b) the b--associated production process. All four final states and 
+all categories are combined for these limits \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_results_limits}
+\end{figure}
+
+A comparison of the expected limits
+per channel is shown in figure \ref{fig:mssm_results_limits_breakdown}a for gg$\phi$ production
+and in figure \ref{fig:mssm_results_limits_breakdown}b for bb$\phi$ production.
+These figures show that the \mutau channel is the most sensitive at masses up to 
+200 GeV, beyond which the \tautau channel becomes more sensitive. The \etau
+channel is always slightly less sensitivie than the \mutau channel. The \emu channel
+is the least sensitive over a large part of the parameter space, until it overtakes the 
+\etau channel in sensitivity at 1.6 TeV and is slightly more sensitive than the
+\mutau channel at 3.2 TeV. The \emu channel becomes more sensitive at higher masses as
+a narrower binning of the \mTtot~ distribution is possible than for the other channels.
+The \mTtot~ distribution for the high mass signals is therefore wide enough not to
+fall entirely into the last bin used for the fit. This means at high mass this channel
+benefits more from the shape discrimination between signal and backgrounds than
+the other channels.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_010-a.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_010-b.pdf}}
+\end{center}
+\caption{Expected upper limits at 95\% CL for (a) gluon--gluon fusion and (b) b--associated production,
+comparing the combination of all channels (green) with the \mutau (red), \etau (blue) \tautau (black)
+and \emu (gold) channels \cite{CMS-PAS-HIG-16-037}. For masses below 200 GeV the \mutau channel is the most sensitive,
+while the \tautau channel dominates for higher masses. The \etau channel is always
+slightly less sensitive than the \mutau channel. The \emu channel is the least sensitive, 
+until at around 1.6 TeV it starts to overtake the \etau channel, with the sensitivity at 3.2 TeV 
+being similar or slightly better than the \mutau channel. FIXME REMAKE PLOT?}
+\label{fig:mssm_results_limits_breakdown}
+\end{figure}
+
+\subsection{2D likelihood scans}
+\label{sec:mssm_results_2D}
 
 \subsection{Interpretation in MSSM benchmark scenarios}
 \label{sec:mssm_results_modeldep}
+The results are interpreted in two MSSM benchmark scenarios: the $m_{\text{h}}^{\text{mod+}}$
+scenario and the hMSSM scenario. Both scenarios are described in chapter THEORY.
+
+Figure \ref{fig:mssm_mhmodp_2016} shows the expected (dashed line and grey bands) and
+observed (blue shaded area bounded by solid line) exclusion of the search presented in this chapter
+in the \mA-\tanb~ plane of the $m_{\text{h}}^{\text{mod+}}$ scenario. The red shaded band
+indicates the area that is excluded due to the lack of a light Higgs boson with a mass compatible
+with 125 GeV. Compared with the most sensitive limits set during Run 1 of the \ac{LHC} these
+limits at high \tanb~ have improved by around 300 GeV.
 
 \begin{figure}[h!]
 \begin{center}
@@ -785,6 +940,11 @@ expected exclusion. The red shaded area
 is excluded by the lack of a light Higgs boson with mass compatible with 125 GeV \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_mhmodp_2016}
 \end{figure}
+
+Figure \ref{fig:mssm_hmssm_2016} shows the expected (dashed line and grey bands)
+and observed (blue shaded area bounded by solid line) exclusion of the search
+presented in this chapter in the \mA-\tanb~ plane of the hMSSM scenario. 
+MENTION FEATURE
 
 \begin{figure}[h!]
 \begin{center}
