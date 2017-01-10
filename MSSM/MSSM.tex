@@ -61,7 +61,9 @@ fractions of events with each jet multiplicity.
 
 Parton showering and hadronisation are modelled using \texttt{PYTHIA 8} for all 
 samples. Minimum--bias events generated with \texttt{PYTHIA 8} are
-added to all \ac{MC} samples to model additional interactions.
+added to all \ac{MC} samples to model additional interactions. A reweighting
+is then applied to the \ac{MC} samples to make the pile--up distribution match
+that observed in data.
 
 %THIS SECTION SHOULD JUST GO INTO THE DETAILED EVENT SELECTION
 %SECTION
@@ -397,37 +399,122 @@ if it passes the medium working point of the \ac{CSV}v2 discriminator.
 \item \textbf{b-tag}: At least 1 b--tagged jet and at most 1 
 jet with \pT$>30$ GeV. Due to the different phase space considered for
 b--tagging than for normal jet reconstruction this requirement does not necessarily
-mean there will be only one jet in the event. The requirement reduces the sizeable \ttbar
+mean there will be only one b--tagged jet in the event. The requirement reduces the sizeable \ttbar
 background
 \end{itemize}
 
-Figure \ref{fig:mssm_cats_tt}a shows the number of jets 
-in the \tautau channel, with \ref{fig:mssm_cats_tt}b showing
+Figure \ref{fig:mssm_cats_mt}a shows the number of jets 
+in the \mutau channel, with \ref{fig:mssm_cats_mt}b showing
 the number of b--tagged jets in that channel. The gluon--gluon fusion
-signal and bb associated signal are overlaid on these distributions,
-thus indicating the signal--sensitive bins, motivating the choice of categories.
+signal and bb associated signal are overlaid on these distributions, normalised
+to 100 times their cross--section times branching ratio at \mA=1 TeV and 
+\tanb=50 in the $m_{\text{h}}^{\text{mod+}}$ scenario. From the distribution of the
+gluon--gluon fusion signal in figure \ref{fig:mssm_cats_mt}b we can 
+see that the vast majority of these signal events do not have any b-tagged jets, which
+motivates the choice of the no b-tag category to target this signal. From
+the bb associated signal in the same figure we also see that the majority of bb associated
+signal events do not have any b-tagged jets either: either the b-jets in these events 
+are too soft, or they do not pass the b-tagging requirements. This means the no b-tag 
+category is also sensitive to some of the bb$\phi$ signal. The other observation we 
+can make from the bb$\phi$ signal in figure \ref{fig:mssm_cats_mt}b is that there is not
+such a large proportion of events with more than 1 b-tagged jet. From figure \ref{fig:mssm_cats_mt}a
+we see that the \ttbar background starts to become more sizeable for events with more than
+one jet. The definition of the b-tag category is therefore chosen with the inclusion
+of the jet veto, such that the region where the \ttbar background becomes larger is excluded, 
+while retaining a large proportion of the bb$\phi$ signal.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[Number of jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_jets_inclusive_tt_2016_log.png}}
-\subfloat[Number of b--tagged jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_bjets_inclusive_tt_2016_log.png}}
+\subfloat[Number of jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_jets_inclusive_mt_2016_log.pdf}}
+\subfloat[Number of b--tagged jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_bjets_inclusive_mt_2016_log.pdf}}
 \end{center}
-\caption{(a) Number of jets and (b) number of b--tagged jets in the \tautau channel. The gluon--gluon fusion signal (COLOUR)
-and bb--associated signal (COLOUR2) are overlaid on the distribution, motivating the choice of
-categorisation to target the two different signals. FIXME REMAKE THESE PLOTS WITH SIGNAL ON!}
-\label{fig:mssm_cats_tt}
+\caption{(a) Number of jets and (b) number of b--tagged jets in the \mutau channel. The gluon--gluon fusion signal (dashed
+blue line) and bb--associated signal (dashed purple line) are overlaid on the expected background distribution. The signals
+are normalised to 100 times their cross--section times branching ratio at \mA=1 TeV and \tanb=50 in the $m_{\text{h}}^{\text{mod+}}$
+scenario. We can see how the signal--sensitive bins motivate the choice of categories.}
+\label{fig:mssm_cats_mt}
 \end{figure}
 
 
 \section{\ac{MC} to data correction factors}
 \label{sec:mssm_mccorrs}
+Because \ac{MC} samples are used for the signal predication, and 
+to estimate some of the backgrounds, it is important to correct for possible 
+mis-modelling with respect to the data. Dedicated control regions in
+data are used to derive the \ac{MC} to data correction factors
+that are applied to the \ac{MC} samples.
 \subsubsection*{Tracking efficiency}
+A discrepancy between the track reconstruction efficiency
+in data and \ac{MC} for electrons and muons was found. $\eta$--dependent
+scale factors are applied to mitigate the issue \cite{CMS-PAS-HIG-16-037}.
 \subsubsection*{Electron, muon and tau ID and isolation}
+Identification and isolation efficiencies in data and \ac{MC} are measured
+for electrons, muons and hadronic taus. A tag--and--probe
+method using \Zeenog (\Zmmnog) events is used to measure
+the efficiencies for electrons (muons). The hadronic tau identification
+and isolation efficiency is measured using a tag--and--probe method
+making use of $Z\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgt_{h}$ events.
+The measured efficiencies are used to construct scale factors to be
+applied to the \ac{MC} samples as $SF = \frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 \subsubsection*{Trigger efficiency}
+The electron, muon and hadronic tau trigger efficiencies are also measured
+using tag--and--probe methods with the types of events as described for the identification
+and isolation efficiencies. Because no trigger simulation is applied to
+the \ac{MC} samples, the efficiency $\epsilon_{\text{Data}}$ is simply applied
+to the \ac{MC} events. Because two electron/muon cross--triggers are 
+used to select events in the \emu channel, the efficiencies of the different
+cross trigger legs need to be combined. With one of the cross triggers having a
+\pT~cut of 23 GeV on the muon leg and 12 GeV on the electron leg, and the
+other having a minimum \pT~ of 23 GeV on the electron leg and 8 GeV on the muon
+leg, the combined efficiency of the two triggers becomes:
+\begin{equation}\label{eqn:mssm_em_trigeff}
+\epsilon_{\text{data}} = \epsilon_{\text{data}}(\text{Mu23})\cdot\epsilon_{\text{data}}(\text{Ele12}) + \epsilon_{\text{data}}(\text{Mu8})\cdot\epsilon_{\text{data}}(\text{Ele23}) - \epsilon_{\text{data}}(\text{Mu23})\cdot\epsilon_{\text{data}}(\text{Ele23}).
+\end{equation}
 \subsubsection*{$\Pe\rightarrow\Pgt_{h}$ fake rate and $\Pgm\rightarrow\Pgt_{h}$ fake rate}
+The $\Pe\rightarrow\Pgt_{h}$ and $\Pgm\rightarrow\Pgt_{h}$ fake rates
+after applying the anti--electron and anti--muon discriminators are measured
+using a tag--and--probe method with \Zeenog and \Zmmnog events. A scale
+factor, to be applied to \ac{MC} events where the tau is faked by an electron or muon,
+is derived as the ratio between the fake rate in data and the fake rate in \ac{MC} events.
 \subsubsection*{\MET recoil corrections}
+Differences in \MET~ resolution and response between data and \ac{MC} 
+are accounted for by the application of recoil corrections
+to signal, \Wjets and \Ztautau events. These corrections
+are detailed in section \ref{sec:objects_met_recoilcorr}.
+\subsubsection*{B-tag scale factors}
+To correct for the difference in b--tagging efficiency
+and light jet mis--tagging rates between data and \ac{MC}
+\pT~ and $\eta$ dependent scale factors are derived as 
+described in reference \cite{cms-btag-run2}. They 
+are applied using the promote--demote method
+as outlined in equation \ref{eqn:promotedemote}.
 \subsubsection*{Top-quark \pT reweighting}
+A reweighting which was derived during \ac{LHC} Run-1
+to better match the top quark \pT~distribution in \ac{MC}
+to that observed in data is applied to \ttbar events. Despite
+the fact that the correction was derived during Run-1, it still
+improves the data/\ac{MC} agreement in a \ttbar enriched
+control region, as shown in figure \ref{fig:mssm_corrs_toppt}.
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Without top quark \pT~ reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016_notopptrwt.png}}
+\subfloat[With top quark \pT~ reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}}
+\end{center}
+\label{fig:mssm_corrs_toppt}
+\caption{\mTtot~ distribution in the \ttbar enriched control region
+ (a) without and (b) with top quark \pT~ reweighting. The uncertainty band includes
+the statistical uncertainty as well as a 6\% \ttbar cross--section uncertainty. We can see
+that the data/\ac{MC} agreement in this control region improves when applying the top quark \pT~
+reweighting, particularly in the high \mTtot~ tail.}
+\end{figure}
 \subsubsection*{Drell-Yan shape reweighting}
+As the \ac{MC} samples used for the \Ztautau estimate
+do not model the data well for events with high di-lepton
+mass and high Z \pT~, a reweighting is applied to correct for this.
+These weights are derived in bins of $\PZ/Pphoton*$ mass and \pT~
+using \Zmm events in data, in such a way that they do not
+change the overall Drell-Yan normalisation. The weights
+are then applied to the \Ztautau and \Zellell background processes.
 
 \section{Discriminating variable}
 \label{sec:mssm_discrvar}
@@ -573,7 +660,7 @@ the \ac{MC} samples are used to derive a high \mT-to-low \mT extrapolation facto
 The use of the method presented relies on knowledge of $R_{W}^{OS/SS}$,
 $R_{QCD}^{OS/SS}$, and on these two ratios not being too similar to each other. 
 The ratio $R_{QCD}^{OS/SS}$ is measured in an anti--isolated
-control region in data; this is described in section ADD REF. $R_{W}^{OS/SS}$ is 
+control region in data; this is described in section \ref{sec:mssm_bkgs_etmt_qcdosss}. $R_{W}^{OS/SS}$ is 
 taken from the \Wjets \ac{MC} samples, and is found to be between 4 and 5, while $R_{QCD}^{OS/SS}$
 is close to 1.
 
@@ -799,10 +886,11 @@ amounts to 4\% \cite{CMS-PAS-HIG-16-037}.
 to 6\% \cite{CMS-PAS-HIG-16-037}.
 \item di-boson and single-top: The uncertainty on the di-boson and
 single-top production cross-sections amounts to 5\% \cite{CMS-PAS-HIG-16-037}.
-\item \Wjets:
-\item QCD:
+\item \Wjets: FIXME
+\item QCD: FIXME
 \end{itemize}
 \subsubsection*{Theory uncertainties}
+FIXME
 
 \subsection{Shape uncertainties}
 \label{sec:mssm_uncs_shape}
@@ -995,7 +1083,16 @@ is excluded by the lack of a light Higgs boson with mass compatible with 125 GeV
 Figure \ref{fig:mssm_hmssm_2016} shows the expected (dashed line and grey bands)
 and observed (blue shaded area bounded by solid line) exclusion of the search
 presented in this chapter in the \mA-\tanb~ plane of the hMSSM scenario. 
-MENTION FEATURE
+We should note again that this model, although defined for \tanb~ values
+upwards of 10, is only strictly valid for \tanb~ below 10.
+The small excluded area around \mA=200 GeV is genuine. It is caused by the 
+production cross-section times branching ratio in the model, which is driven by
+two effects \cite{CMS-PAS-HIG-16-007}. On the one hand the branching ratio into taus decreases with decreasing
+\tanb~, while on the other hand a negative top--bottom interference effect increases the
+gluon--gluon fusion cross-section with decreasing \tanb~. Therefore the
+combined cross--section times branching ratio decreases with decreasing \tanb, until it
+increases again from a low value of \tanb~ down to \tanb=1. The feature is 
+thus expected to grow with more data.
 
 \begin{figure}[h!]
 \begin{center}
