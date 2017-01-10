@@ -42,7 +42,8 @@ were generated in steps of 10 GeV between \mH $= 260 - 350$~GeV using \texttt{PY
 starts to dominate beyond this mass. In all of the samples
 \texttt{TAUOLA} \cite{tauola} is used to decay $\tau$s, and parton showering and hadronisation are modelled using \texttt{PYTHIA 6} \cite{pythia64}.
 Minimum bias events generated using \texttt{PYTHIA 6} are added to all \ac{MC} samples to model additional
-interactions. 
+interactions. The \ac{MC} samples are then reweighted so that the pile--up distribtuion matches the
+pile--up distribution in data.
 
 To better model the \Ztautau background, an embedding technique is used. In this method, 
 \Zmm events are selected in data and the muons are replaced by generator-level taus. \texttt{TAUOLA} is used
@@ -246,9 +247,6 @@ In both variables the signal peaks at around 125 GeV.}
 \ac{MC} samples are used for the estimation of some of the backgrounds and the signal, 
 and it is therefore important to correct for any mismodelling. The \ac{MC} to data 
 correction factors used for this are estimated in dedicated control regions.
-
-A reweighting is applied to make the pile--up distribution in \ac{MC}
-match the distribution observed in data, as described in chapter OBJECTS.
 
 Data and \ac{MC} identification, isolation, and trigger efficiencies
 are measured for electrons, muons and hadronic taus. The difference between
