@@ -468,7 +468,9 @@ cross trigger legs need to be combined. With one of the cross triggers having a
 other having a minimum \pT~ of 23 GeV on the electron leg and 8 GeV on the muon
 leg, the combined efficiency of the two triggers becomes:
 \begin{equation}\label{eqn:mssm_em_trigeff}
-\epsilon_{\text{data}} = \epsilon_{\text{data}}(\text{Mu23})\cdot\epsilon_{\text{data}}(\text{Ele12}) + \epsilon_{\text{data}}(\text{Mu8})\cdot\epsilon_{\text{data}}(\text{Ele23}) - \epsilon_{\text{data}}(\text{Mu23})\cdot\epsilon_{\text{data}}(\text{Ele23}).
+\begin{split}
+\epsilon_{\text{data}}  = \epsilon_{\text{data}}(\text{Mu23})\cdot\epsilon_{\text{data}}(\text{Ele12}) + \epsilon_{\text{data}}(\text{Mu8})\cdot\epsilon_{\text{data}}(\text{Ele23})~\\ - \epsilon_{\text{data}}(\text{Mu23})\cdot\epsilon_{\text{data}}(\text{Ele23}).
+\end{split}
 \end{equation}
 \subsubsection*{$\Pe\rightarrow\Pgt_{h}$ fake rate and $\Pgm\rightarrow\Pgt_{h}$ fake rate}
 The $\Pe\rightarrow\Pgt_{h}$ and $\Pgm\rightarrow\Pgt_{h}$ fake rates
@@ -785,7 +787,10 @@ The \ttbar shape and normalisation are estimated from \ac{MC}
 samples and are checked against data in a control
 region with a \ttbar purity of 91\%. This control region
 is defined as $D_{\zeta} < -20$ GeV and \MET $>80$ GeV in 
-the \emu channel. INSERT PLOT
+the \emu channel, and it is shown in
+figure \ref{fig:mssm_corrs_toppt}b. Because the 6\%
+\ttbar normalisation uncertainty covers the observed
+discrepancy between data and \ac{MC}, no scale factor is applied.
 In the \mutau, \etau and \tautau channels
 the \ttbar contribution is split into
 two components, one with real taus and 
@@ -886,11 +891,47 @@ amounts to 4\% \cite{CMS-PAS-HIG-16-037}.
 to 6\% \cite{CMS-PAS-HIG-16-037}.
 \item di-boson and single-top: The uncertainty on the di-boson and
 single-top production cross-sections amounts to 5\% \cite{CMS-PAS-HIG-16-037}.
-\item \Wjets: FIXME
-\item QCD: FIXME
+\item \Wjets: In the \mutau and \etau channels the statistical uncertainties
+on the observed data and subtracted backgrounds are taken into account by
+the inclusion of these control regions in the fit. The statistical and 
+uncertainties on $R_{W}^{\text{OS/SS}}$ amounts to 2\% in the no b-tag
+category in both the \etau and \mutau channels, and 11\% (14\%) in the b-tag
+category of the \mutau (\etau) channel. The systematic unsertainty on
+this ratio amounts to 8\% (10\%) in the no b-tag (b-tag) category of both channels.
+The statistical uncertainty on the low \mT/high \mT ratio is 2\% in the no b-tag
+category of both channels and 14\% (17\%) in the b-tag category of the \mutau (\etau) channel.
+The systematic uncertainty on this ratio amounts to 20\%. As the \Wjets background
+in the \tautau and \emu channels is estimated from \ac{MC} a 4\% theoretical
+normalisation uncertainty is applied.
+\item QCD: In the \emu channel the uncertainty on the QCD estimate
+is taken as the uncertainty on the measured opposite--sign to same--sign
+ratio, which is 23\% in the no b-tag category and 34 \% in the b-tag category. In the
+\tautau channel the statistical uncertainty on the QCD estimate is derived from
+the uncertainties on the observations and subtracted backgrounds in the
+sidebands used to derive the estimate. This uncertainty amounts to 3\% in the no b-tag
+category and 20\% in the b-tag category. An additional systematic uncertainty on the
+extrapolation factor from the anti-isolated sideband into the signal region is found
+to be 12\% in the no b-tag category and 14 \% in the b-tag category. For the \etau and
+\mutau channels the statistical
+uncertainties on the observation and subtracted \ac{MC} backgrounds in the control
+region used to derive the QCD estimate from is accounted for by the inclusion of control
+regions in the fit. The uncertainty on the opposite--sign to same--sign ratio, based on
+the studies described in section QCD OSSS is found to be 4\% (60\%) in the 
+no b-tag (b-tag) category of the \mutau channel, and 12\% (60\%) in the no b-tag (b-tag) category
+of the \etau channel. 
 \end{itemize}
-\subsubsection*{Theory uncertainties}
-FIXME
+\subsubsection*{Signal theory uncertainties}
+For interpretations of the results in MSSM benchmark scenarios, theory
+uncertainties on the SM and MSSM Higgs cross section predictions are included. 
+The uncertainties for the SM signal processes are described in more detail in reference \cite{YR4}.
+Uncertainties due to different renormalisation scales. 
+amount to 3.9\% for gluon fusion production,
+0.4\% for vector boson fusion, 2.8\% for ZH and 0.5\% for WH. The uncertainties
+due to different choice of pdf and $\alpha_s$ amount to 3.2\% for gluon fusion, 2.1\% for vector boson fusion,
+1.6\% for ZH and 1.9\% for WH.
+For the MSSM Higgs cross sections used in the models, the uncertainties
+due to different choices of factorisation and renormalisation scale
+are computed, separately for each \mA-\tanb~ point, following the description in refs\cite{pdf-lhc,alphas-uncs}.
 
 \subsection{Shape uncertainties}
 \label{sec:mssm_uncs_shape}
@@ -934,9 +975,113 @@ methods are used for this analysis, and they will be discussed in this section.
 
 \subsection{Inclusion of control regions in the fit}
 \label{sec:mssm_sigext_ctrl}
+The control regions used for estimation of the 
+\Wjets and QCD background contributions in the signal regions, discussed
+in section \ref{sec:mssm_bkgs_etmt_ctrl}, are included in the fit. They
+are added to the likelihood as single-bin counting experiments. In a given
+category of one of the channels, the \Wjets
+normalisation is fully correlated between the three control 
+regions and the signal region. One common, freely floating, nuisance parameter
+controls the \Wjets normalisation in all four regions. The QCD normalisation
+is fully correlated between the opposite--sign high and low \mT~ regions. The
+same is true for the same--sign high and low \mT regions. This means there are
+two freely floating nuisance parameters that govern the QCD normalisation: one
+that controls the QCD normalisation in the two opposite--sign regions, and one
+that controls it in the two same--sign regions. 
+
+The \Zmm control regions mentioned in section \ref{sec:mssm_bkgs_ztt}
+are also included in the likelihood as single-bin counting experiments.
+The \Zmm control region in the no b-tag category is tied
+to the \Ztautau normalisation in the no b-tag categories of all four
+channels, again being controlled by a freely floating nuisance parameter. 
+The same is true for the \Zmm control region in the b-tag category
+and the \Ztautau normalisation in the b-tag categories of all four channels.
+
+\subsection{Signal process profiling and 2D likelihood scans}
+\label{sec:mssm_sigext_profile}
+Because the analysis targets the two main MSSM production modes, gluon fusion and
+b-associated production, limits are set on these two signal processes.
+However, in the upper limits on cross--section times branching ratio for the $gg\phi$
+process we should not make any assumptions about the presence or lack of the $bb\phi$
+process and vice versa. Therefore when calculating the upper limits on the $gg\phi$
+process, the contribution of the $bb\phi$ process is added to the fit as a freely floating nuisance
+parameter, and vice versa, in a process referred to as signal process profiling.
 
 \subsection{MSSMvsSM hypothesis testing}
 \label{sec:mssm_sigext_mssmvssm}
+The results of the search are interpreted in MSSM benchmark
+scenarios, with the interpretation made in the \mA-\tanb~ plane.
+At each point in the \mA-\tanb~ plane each MSSM scenario
+predicts a production cross section, and corresponding branching
+ratio into $\Pgt\Pgt$, for each of the three neutral Higgs bosons. The
+masses of the light h and the scalar H are also given as a function of \mA~ and \tanb.
+To interpret the results of this search in a particular scenario, the predicted
+signal from the three neutral Higgs bosons is combined into a single signal template.
+Examples of what such a combined signal profile might look like are given in figures \ref{fig:mssm_results_mttot_mt}--\ref{fig:mssm_results_mttot_em},
+which give the \mTtot~ distributions for all channels and categories with an example three-Higgs signal overlaid.
+The compatibility of the data with all three Higgs bosons, not just a single one, is thus tested.
+
+Simply comparing a three-Higgs-signal-plus-background hypothesis with a background-only 
+hypothesis to determine the exclusion power of the search in a particular
+model can be problematic. Due to the existence of a Higgs boson with a 
+mass of 125 GeV, all MSSM benchmark scenarios must include a light Higgs boson
+with very similar properties to the boson discovered during Run 1 of the \ac{LHC}.
+This means that we should do a test that distinguishes between three-Higgs-signal-plus-background, and
+standard model Higgs-signal-plus-background.
+
+This means the likelihood function defined in equation \ref{eqn:hhh_likelihood}
+must be modified. Instead of testing for the compatibility of the data with
+a signal + background expectation modified by the signal strenght modifier $\mu$ as
+$\mu \cdot s(\theta) + b(\theta)$, a likelihood must be constructed as:
+\begin{equation}\label{mssm_likelihood}
+\mathcal{L}(\text{data}|\mu, \theta) = \mathcal{L}(\text{data}|\mu \cdot s_{\text{MSSM}}(\theta) + (1-\mu)\cdot s_{\text{SM}}(\theta) + b(\theta)),
+\end{equation}
+where $s_{\text{MSSM}}(\theta)$ corresponds to the MSSM signal expectation, ie the three-Higgs-signal, and $s_{\text{SM}}(\theta)$ 
+corresponds to the SM signal expectation.
+The signal strength modifier $\mu$ takes the role of distinguishing between
+the two hypothesis in this case. The model cannot allow for the coexistence 
+of the SM and MSSM hypotheses; the MSSM hypothesis ($\mu=1$) is tested
+against the SM hypothesis ($\mu=0$).
+
+The modification of the likelihood function means it is no longer possible
+to use the profile likelihood ratio of equation \ref{eqn:hhh_profilelikelihood}:
+we are forced to test $\mu=1$ against $\mu=0$ and 
+$\hat{\mu}$ in the denominator of equation \ref{eqn:hhh_profilelikelihood} is in 
+general not 0. A solution to this problem can be found in test statistic used at the Tevatron \cite{LHCHComb2011},
+\begin{equation}\label{eqn:mssm_tevatron_teststat}
+q_{\mu} = -2\text{ln}\frac{\mathcal{L}(\text{data}|\mu,\hat{\theta_{\mu}})}{\mathcal{L}(\text{data}|0,\hat{\theta_0}} \text{ with } 0\leq\mu.
+\end{equation}
+In this test statistic we test a positive value of $\mu$ against 0, thus we are able to define
+the desired `MSSMvsSM' test statistic as
+\begin{equation}\label{eqn:mssm_mssmvssm_stat}
+q_{\text{MSSMvsSM}} = -2\text{ln}\frac{\mathcal{L}(\text{data}|s_{\text{MSSM}}(\theta) + b(\theta)}{\mathcal{L}(\text{data}|s_{\text{SM}}(\theta)+b(\theta)}.
+\end{equation}
+
+The asymptotic approximation, discussed in section \ref{sec:hhh_results_extraction}, can not be applied
+to the Tevatron test statistic, and therefore the probability density functions need to be generated 
+with toy datasets. Using these pdfs we can then calculate $CL_s{\mu=1}$ as defined in equation \ref{eqn:hhh_cls}.
+If $CL_s < 0.05$ the MSSM hypothesis is excluded at 95 \% CL. This generation of toy datasets and 
+calculation of corresponding $CL_s$ value is performed for many points in a grid in the \mA-\tanb~ plane,
+with interpolation between grid points performed to obtain a smooth exclusion contour.
+The distribution of toy datasets for the SM and MSSM hypothesis, as well as the resulting $CL_s$ values,
+are given for three \mA-\tanb~ points in figure \ref{fig:mssm_mssmvssm_toys}. In figure \ref{fig:mssm_mssmvssm_toys}a
+there is no separation between the MSSM and SM toy distributions, and so we cannot exclude this point. The separation
+between the distributions in figure \ref{fig:mssm_mssmvssm_toys}b is much improved, and the observation is most compatible
+with the SM hypothesis. This point is on the edge of being excluded. Finally the distributions in figure \ref{fig:mssm_mssmvssm_toys}c
+are very well separated, and the observation is compatible with the SM hypothesis, meaning this point of the parameter space is excluded.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[\mA=1.2 TeV, \tanb=16]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/plot_mA_1200_tanb_16.png}}
+\subfloat[\mA=1.2 TeV, \tanb=50]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/plot_mA_1200_tanb_50.png}}~\\
+\subfloat[\mA=700 GeV, \tanb=60]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/plot_mA_700_tanb_60.png}}
+\end{center}
+\caption{Distribution of toys for the SM and MSSM hypothesis at three different points in the $m_{\text{h}}^{\text{mod+}}$
+scenario, each with different levels of separation between the MSSM and SM toy distributions.}
+\label{fig:mssm_mssmvssm_toys}
+\end{figure}
+
+
 
 \section{Results}
 \label{sec:mssm_results}
@@ -1039,16 +1184,16 @@ the other channels.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_010-a.pdf}}
-\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_010-b.pdf}}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_hig16037_limitcomp_ggh.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_hig16037_limitcomp_bbh.pdf}}
 \end{center}
 \caption{Expected upper limits at 95\% CL for (a) gluon--gluon fusion and (b) b--associated production,
 comparing the combination of all channels (green) with the \mutau (red), \etau (blue) \tautau (black)
-and \emu (gold) channels \cite{CMS-PAS-HIG-16-037}. For masses below 200 GeV the \mutau channel is the most sensitive,
+and \emu (gold) channels. For masses below 200 GeV the \mutau channel is the most sensitive,
 while the \tautau channel dominates for higher masses. The \etau channel is always
 slightly less sensitive than the \mutau channel. The \emu channel is the least sensitive, 
 until at around 1.6 TeV it starts to overtake the \etau channel, with the sensitivity at 3.2 TeV 
-being similar or slightly better than the \mutau channel. FIXME REMAKE PLOT?}
+being similar or slightly better than the \mutau channel.}
 \label{fig:mssm_results_limits_breakdown}
 \end{figure}
 
@@ -1109,11 +1254,172 @@ expected exclusion \cite{CMS-PAS-HIG-16-037}.}
 
 \section{Combination of 2015 and 2016 datasets}
 \label{sec:mssm_combination}
+The results outlined in the previous section, for the analysis
+on a dataset corresponding to an integrated luminosity of 12.9 fb$^{-1}$
+at a centre-of-mass energy of 13 TeV, collected during the 2016 running period
+of the \ac{LHC}, can be combined with the results from a very similar analysis
+performed on 2.3 fb$^{-1}$ collected at 13 TeV during 2015, detailed
+in reference \cite{CMS-PAS-HIG-16-006}. This combination should be able
+to improve slighty on the limits set by the 2016 analysis. Because the 
+analysis on the 2015 dataset is very similar to the 2016 analysis it 
+is not described in detail, however, the results will
+be presented, and key differences with the more recent result highlighted
+where needed.
 
-\subsection{Procedure}
+\subsection{Results from 2015 analysis}
+\label{sec:mssm_combination_2015}
+The results from the search for \AHtotautau on a
+dataset corresponding to an integrated luminosity of 2.3 fb$^{-1}$
+collected at a centre-of-mass energy of 13 TeV during 2015 are presented
+in this section. As for the analysis discussed earlier
+in the chapter a shape analysis is performed, however a different
+discriminating variable, the transverse component of the di-$\Pgt$ mass
+as reconstructed using the SVFit algorithm, was used. This variable
+is denoted $m_{\text{T,\Pgt\Pgt}}$. The transverse di-$\Pgt$ mass 
+distributions for the four channels are shown in figures \ref{fig:mssm_hig16006_mtsv_mt} -- \ref{fig:mssm_hig16006_mtsv_em}.
+\begin{figure}[h!]
+\begin{center}
+\subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_mt_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_mt_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\end{center}
+\caption{Transverse component of the di-$\Pgt$ mass for expected backgrounds and
+observed events in the (a) no b-tag and (b) b-tag categories of the \mutau channel.
+The signal overlaid corresponds to the signal of the three Higgs bosons at \mA=1 TeV and \tanb=50
+in the $m_{\text{h}}^{\text{mod+}}$ scenario, and so it peaks once at low mass, for the light Higgs boson,
+and once at higher mass, for the heavy H and A.}
+\label{fig:mssm_hig16006_mtsv_mt}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\end{center}
+\caption{Transverse component of the di-$\Pgt$ mass for expected backgrounds and
+observed events in the (a) no b-tag and (b) b-tag categories of the \etau channel.}
+%The signal overlaid corresponds to the signal of the three Higgs bosons at \mA=1 TeV and \tanb=50
+%in the $m_{\text{h}}^{\text{mod+}}$ scenario, and so it peaks once at low mass, for the light Higgs boson,
+%and once at higher mass, for the heavy H and A.}
+\label{fig:mssm_hig16006_mtsv_et}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_tt_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_tt_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\end{center}
+\caption{Transverse component of the di-$\Pgt$ mass for expected backgrounds and
+observed events in the (a) no b-tag and (b) b-tag categories of the \tautau channel.}
+%The signal overlaid corresponds to the signal of the three Higgs bosons at \mA=1 TeV and \tanb=50
+%in the $m_{\text{h}}^{\text{mod+}}$ scenario, and so it peaks once at low mass, for the light Higgs boson,
+%and once at higher mass, for the heavy H and A.}
+\label{fig:mssm_hig16006_mtsv_tt}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_em_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_em_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\end{center}
+\caption{Transverse component of the di-$\Pgt$ mass for expected backgrounds and
+observed events in the (a) no b-tag and (b) b-tag categories of the \emu channel.}
+%The signal overlaid corresponds to the signal of the three Higgs bosons at \mA=1 TeV and \tanb=50
+%in the $m_{\text{h}}^{\text{mod+}}$ scenario, and so it peaks once at low mass, for the light Higgs boson,
+%and once at higher mass, for the heavy H and A.}
+\label{fig:mssm_hig16006_mtsv_em}
+\end{figure}
+
+These distributions do not show any significant excesses. The upper limits
+on cross--section times branching ratio for the gluon-fusion and b-associated
+process are shown in figure \ref{fig:mssm_results_hig16006_limits}a
+and b, respectively. All channels and categories are combined. A comparison of
+the expected limits per channel is given in figure \ref{fig:mssm_results_limits_breakdown_hig16006}.
+These follow a similar pattern to those given in figure \ref{gi:mssm_results_limits_breakdown}, notice
+however the \emu channel remains the least sensitive even at very high mass, as the
+transverse component of the di-$\Pgt$ mass exhibits a sizeable \ttbar tail in the \emu channel. The total
+transverse mass collapses events from the tail into lower regions of the distribution.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/Figure_006-a.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/Figure_006-b.pdf}}
+\end{center}
+\caption{Upper limits at 95\% CL for (a) the gluon--gluon fusion production
+process and (b) the b--associated production process. All four final states and 
+all categories are combined for these limits \cite{CMS-PAS-HIG-16-006}.}
+\label{fig:mssm_results_hig16006_limits}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_hig16006_limitcomp_ggH.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_hig16006_limitcomp_bbH.pdf}}
+\end{center}
+\caption{Expected upper limits at 95\% CL for (a) gluon--gluon fusion and (b) b--associated production,
+comparing the combination of all channels (green) with the \mutau (red), \etau (blue) \tautau (black)
+and \emu (gold) channels. For masses below 200 GeV the \mutau channel is the most sensitive,
+while the \tautau channel dominates for higher masses. The \etau channel is always
+slightly less sensitive than the \mutau channel. The \emu channel is the least sensitive.}
+\label{fig:mssm_results_limits_breakdown_hig16006}
+\end{figure}
+
+
+\subsection{Combination procedure}
 \label{sec:mssm_combination_procedure}
+The idea of combining the two analyses is to combine the 
+individual likelihoods to improve the analysis sensitivity and
+physics reach. To do this correctly the correlations between
+nuisance parameters in 2015 and 2016 need to be taken into account.
+%Strictly, studies into the underlying correlations between
+%nuisance parameters should be performed. This is however not always
+%feasible and in some cases
+The correlation scheme between nuisance parameters relating to the 2015 and 2016
+analyses, as used for this combination, is given in table ADD TABLE.
 
 \subsection{Results}
 \label{sec:mssm_combination_results}
+The expected and observed upper limits on cross--section times branching ratio,
+for the combination of the 2015 and 2016 analyses, are shown in figure
+\ref{fig:mssm_results_combination_limits}. The limits behave as expected
+from the individual 2015 and 2016 limits. 
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_090117_ggH_cmb.png}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_090117_bbH_cmb.png}}
+\end{center}
+\caption{Upper limits at 95\% CL for (a) the gluon--gluon fusion production
+process and (b) the b--associated production process. These results
+combine all categories and all four final states from both the 2015
+and the 2016 analysis.}
+\label{fig:mssm_results_combination_limits}
+\end{figure}
+
+To get a better idea of which analysis
+is driving the sensitivity of the combination, we should consider the comparison
+of expected limits in figure \ref{fig:mssm_results_combination_limits_comp}. The
+gluon-fusion limits in figure \ref{fig:mssm_results_combination_limits_comp}a show that at
+higher masses the analysis sensitivity is only very slightly improved with respect to the 
+analysis of the 12.9 fb$^{-1}$ dataset. However, for masses between 200 and 800 GeV
+there is a larger improvement in analysis sensitivity from combining the two analyses.
+This is expected since the analysis on the 2016 dataset used a slightly different
+selection that made the analysis more optimal at masses above 800 GeV,
+and slightly less optimal below this mass, than the analysis on the 2015 dataset. This
+effect is less visible on the b--associated production limits shown in figure \ref{fig:mssm_results_combination_limits_comp}b.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_limitcomp_ggH.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_limitcomp_bbH.pdf}}
+\end{center}
+\caption{Comparison of the expected Upper limits at 95\% CL for (a) the gluon--gluon fusion production
+process and (b) the b--associated production process. The green curve shows the results
+from combining the 2015 and 2016 analyses (integrated luminosity of 15.2 fb$^{-1}$),
+with the red line indicating the limits from the 2016 analysis only (integrated luminosity of 12.9 fb$^{-1}$)
+and the blue line indicating the limits from the 2015 analysis only (integrated luminosity of 2.3 fb$^{-1}$).}
+\label{fig:mssm_results_combination_limits_comp}
+\end{figure}
+
+
 
 
