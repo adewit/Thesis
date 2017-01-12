@@ -497,18 +497,6 @@ to that observed in data is applied to \ttbar events. Despite
 the fact that the correction was derived during Run-1, it still
 improves the data/\ac{MC} agreement in a \ttbar enriched
 control region, as shown in figure \ref{fig:mssm_corrs_toppt}.
-\begin{figure}[h!]
-\begin{center}
-\subfloat[Without top quark \pT~ reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016_notopptrwt.png}}
-\subfloat[With top quark \pT~ reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}}
-\end{center}
-\label{fig:mssm_corrs_toppt}
-\caption{\mTtot~ distribution in the \ttbar enriched control region
- (a) without and (b) with top quark \pT~ reweighting. The uncertainty band includes
-the statistical uncertainty as well as a 6\% \ttbar cross--section uncertainty. We can see
-that the data/\ac{MC} agreement in this control region improves when applying the top quark \pT~
-reweighting, particularly in the high \mTtot~ tail.}
-\end{figure}
 \subsubsection*{Drell-Yan shape reweighting}
 As the \ac{MC} samples used for the \Ztautau estimate
 do not model the data well for events with high di-lepton
@@ -624,7 +612,20 @@ The \Wjets normalisation is derived using a high-\mT~ control region, where
 selected events are required to satisfy \mT$>70$ GeV. In the no b-tag
 category the \Wjets
 contribution in this region is enhanced, however there is still
-some contribution from QCD events in this region. Therefore we
+some contribution from QCD events in this region. This is visible in 
+figure \ref{fig:mssm_bkgs_wjets_mutau_mt} which shows the \mT~ distribution in the
+\mutau channel, indicating the signal region and the high-\mT~ control region. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_002.pdf}
+\end{center}
+\caption{Distribution of the transverse mass \mT~ in the \mutau channel, indicating
+the signal region and the high \mT~ control region \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_bkgs_wjets_mutau_mt}
+\end{figure}
+
+Because of this contribution from QCD events in the high \mT~ region we
 have, for \mT$>70$ GeV:
 
 \begin{equation}\label{eqn:wjets_ss_norm}
@@ -677,7 +678,77 @@ $\frac{N_{W,MC}^{OS,\text{low } m_{T},\text{b-tag category}}}{N_{W,MC}^{OS,\text
 
 \subsubsection{QCD OS/SS ratio}
 \label{sec:mssm_bkgs_etmt_qcdosss}
-Studies of QCD OS/SS ratio go here
+The ratio of opposite--sign to same--sign QCD events, $R_{QCD}^{OS/SS}$ is measured
+in two anti-isolated sidebands by performing a fit to the distribution of the
+visible mass of the di-tau pair in 
+opposite-sign events. The QCD template, which is taken from same--sign events 
+assuming $R_{QCD}^{OS/SS} = 1$ is treated as the signal, and a binned maximum
+likelihood fit to the QCD signal strength is performed while allowing the other
+backgrounds to float within reasonable normalisation uncertainties. The
+resulting best fit value of the signal strengh parameter is taken as $R_{QCD}^{OS/SS}$.
+Of the two sidebands used, one is nearer the signal region ($0.15<I_{\text{rel}}^{\mu}<0.25$ and $0.1<I_{\text{rel}}^{e}<0.2$)
+and one further away ($0.25<I_{\text{rel}}^{\mu}<0.5$ and $0.2<I_{\text{rel}}^{e}<0.5$). The results of the fits,
+performed before the categorisation of events into the b-tag and no b-tag categories, are shown in figures \ref{fig:mssm_qcdosss_mtnear}--\ref{fig:mssm_qcdosss_far}
+for the \mutau channel and in figures \ref{fig:mssm_qcdosss_etnear}--\ref{fig:mssm_qcdosss_etfar} for the \etau channel.
+$R_{QCD}^{OS/SS}$ is found to be consistent within 10\% (1\%) in the \etau (\mutau) channel between the two sidebands.
+Adding this in quadrature to the uncertainty on the fit in the sidebands nearest the signal region we find
+an overall uncertainty of 12\% in the \etau channel and 4\% in the \mutau channel.
+When performing the same fits in the no b-tag and b-tag categories to determine differences between
+this pre-categorisation opposite--sign to same--sign ratio, and the ratio as measured in categories it is found that 
+the fit is not stable in the b-tag category due to the number of events in this region being too small.
+The uncertainty on the ratio is increased for the b-tag category to cover the differences.
+The uncertainties are already large enough to cover differences between the pre-categorisation $R_{QCD}^{OS/SS}$ and the
+fits as performed in the no b-tag category. So $R_{QCD}^{OS/SS}$ in the \mutau channel is taken to be
+1.18 in both the b-tag and the no b-tag category, with a 60\% uncertainty in the b-tag category and a 4\% uncertainty in the no b-tag category.
+In the \etau channel $R_{QCD}^{OS/SS}$ is taken to be 1.02 with a 60\% uncertainty in the b-tag category and a 12\% uncertainty
+in the no b-tag category.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Pre-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_mt_1_prefit.png}}
+\subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_mt_1_postfit.png}}
+\end{center}
+\caption{The visible mass distribution of the di-$\tau$ pair in the \mutau channel for the sideband near the signal region, (a) before
+the maximum likelihood fit tot the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+is 1.180$\pm$0.044.}
+\label{fig:mssm_qcdossss_mtnear}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Pre-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_far_mt_1_prefit.png}}
+\subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_far_mt_1_postfit.png}}
+\end{center}
+\caption{The visible mass distribution of the di-$\tau$ pair in the \mutau channel for the sideband further away from the signal region, (a) before
+the maximum likelihood fit tot the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+is 1.184$\pm$0.035.}
+\label{fig:mssm_qcdossss_mtfar}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Pre-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_et_1_prefit.png}}
+\subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_et_1_postfit.png}}
+\end{center}
+\caption{The visible mass distribution of the di-$\tau$ pair in the \etau channel for the sideband near the signal region, (a) before
+the maximum likelihood fit tot the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+is 1.015$\pm$0.059.}
+\label{fig:mssm_qcdossss_etnear}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Pre-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_far_et_1_prefit.png}}
+\subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_far_et_1_postfit.png}}
+\end{center}
+\caption{The visible mass distribution of the di-$\tau$ pair in the \etau channel for the sideband further away from the signal region, (a) before
+the maximum likelihood fit tot the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+is 1.127$\pm$0.045.}
+\label{fig:mssm_qcdossss_etfar}
+\end{figure}
+
+
+
 
 \subsubsection{QCD normalisation}
 \label{sec:mssm_bkgs_etmt_qcdnorm}
@@ -787,8 +858,8 @@ The \ttbar shape and normalisation are estimated from \ac{MC}
 samples and are checked against data in a control
 region with a \ttbar purity of 91\%. This control region
 is defined as $D_{\zeta} < -20$ GeV and \MET $>80$ GeV in 
-the \emu channel, and it is shown in
-figure \ref{fig:mssm_corrs_toppt}b. Because the 6\%
+the \emu channel, and it is shown in \ref{fig:mssm_corrs_toppt}.
+Because the 6\%
 \ttbar normalisation uncertainty covers the observed
 discrepancy between data and \ac{MC}, no scale factor is applied.
 In the \mutau, \etau and \tautau channels
@@ -800,7 +871,17 @@ to a generator level tau. In the fully hadronic channel
 both taus need to be generator matched to a hadronically
 decaying tau.
 
-\subsection{Other backgrounds}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}
+\end{center}
+\caption{\mTtot~ distribution in the \ttbar enriched control region.
+The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross--section uncertainty.}
+\label{fig:mssm_corrs_toppt}
+\end{figure}
+
+
+\subsection{Di--boson plus single--top}
 \label{sec:mssm_bkgs_other}
 For all channels the di--boson plus 
 single--top background is small.
@@ -1000,12 +1081,38 @@ and the \Ztautau normalisation in the b-tag categories of all four channels.
 \subsection{Signal process profiling and 2D likelihood scans}
 \label{sec:mssm_sigext_profile}
 Because the analysis targets the two main MSSM production modes, gluon fusion and
-b-associated production, limits are set on these two signal processes.
+b-associated production, limits are set on these two signal processes. As we
+have seen in section WHATEVER we cannot fully separate the two signals by means
+of the categorisation used. 
 However, in the upper limits on cross--section times branching ratio for the $gg\phi$
 process we should not make any assumptions about the presence or lack of the $bb\phi$
 process and vice versa. Therefore when calculating the upper limits on the $gg\phi$
 process, the contribution of the $bb\phi$ process is added to the fit as a freely floating nuisance
-parameter, and vice versa, in a process referred to as signal process profiling.
+parameter, and vice versa, in a process referred to as signal process profiling. 
+
+Because these two signal processes are targeted by this analysis, it is possible
+to re-define the likelihood as a function of both the gg$\phi$ and bb$\phi$ signals:
+\begin{equation}\label{mssm_2D_likelihood}
+\mathcal{L}(\text{data}|\mu_{gg\phi},\mu_{bb\phi}, \theta) = \mathcal{L}(\text{data}|\mu_{gg\phi} \cdot s_{gg\phi}(\theta) + \mu_{bb\phi}\cdot s_{bb\phi}(\theta) + b(\theta)),
+\end{equation}
+where $s_{gg\phi}$ and $s_{bb\phi}$ are the signal expectations of the two
+production processes and the signal strength modifiers $\mu_{gg\phi}$ and $\mu_{bb\phi}$ now represent the cross--section times branching ratio of the
+processes. Using this definition we can now perform a likelihood scan in two dimensions by 
+constructing a two-dimensional grid in $\mu_{gg\phi}$ and $\mu_{bb\phi}$, both required to be greater than or equal to 0. 
+The negative log-likelihood,
+\begin{equation}\label{eqn:nll}
+\text{NLL} = -\text{ln}\mathcal{L}(\text{data}|\mu_{gg\phi},\mu_{bb\phi},\theta)
+\end{equation}
+is then evaluated at each point. The point in the 2D grid where the NLL reaches
+its lowest value gives the best fit value for $\mu_{gg\phi}$ and $\mu_{bb\phi}$.
+68\% and 95\% confidence intervals are constructed as the values
+$\mu_{gg\phi}^{N\%}$ and $\mu_{bb\phi}^{N\%}$ for which:
+\begin{equation}\label{eqn:mssm_2D_deltaNLL}
+\begin{split}
+\Delta(\text{NLL})_{68\%} = \text{NLL}(\text{best fit}) - \text{NLL}(\mu_{gg\phi}^{68\%},\mu_{bb\phi}^{68\%}) = 0.5, ~\\
+\Delta(\text{NLL})_{95\%} = \text{NLL}(\text{best fit}) - \text{NLL}(\mu_{gg\phi}^{95\%},\mu_{bb\phi}^{95\%}) = 1.92,
+\end{split}
+\end{equation}
 
 \subsection{MSSMvsSM hypothesis testing}
 \label{sec:mssm_sigext_mssmvssm}
@@ -1197,8 +1304,54 @@ being similar or slightly better than the \mutau channel.}
 \label{fig:mssm_results_limits_breakdown}
 \end{figure}
 
+\subsection{Sensitivity to the Standard Model Higgs boson}
+\label{sec:mssm_results_125GeV}
+As we set limits on MSSM Higgs boson production 
+down to masses of 90 GeV it is important to consider possible sensitivity
+to the 125 GeV Higgs boson. As the cross--section times branching ratio for gluon-fusion
+production of the 125 GeV Higgs boson in the standard model, with decay into $\Pgt\Pgt$
+is 3.05 pb \cite{YR4} and the expected limit on cross--section times
+branching ratio for MSSM gg$\phi$ production at around 125 GeV is around 20 pb
+the analysis is not yet sensitive to the SM Higgs boson. The
+limits shown in figure \ref{fig:mssm_results_greenband},
+which include the standard model Higgs boson as part of the backgrounds,
+are almost exactly the same as those shown in figure \ref{fig:mssm_results_limits}. This
+also indicates the current lack of sensitivity to the standard model Higgs boson.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure-aux_005-a.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure-aux_005-b.pdf}}
+\end{center}
+\caption{Upper limits at 95\% CL for (a) the gluon--gluon fusion production
+process and (b) the b--associated production process. The SM, 125 GeV Higgs boson
+is included as one of the backgrounds. All four final states and 
+all categories are combined for these limits \cite{CMS-PAS-HIG-16-037-addit}.}
+\label{fig:mssm_results_greenband}
+\end{figure}
+
+
 \subsection{2D likelihood scans}
 \label{sec:mssm_results_2D}
+The 2D likelihood scans, as described in section \ref{sec:mssm_sigext_profile}, for
+a few mass points are shown in figure \ref{fig:mssm_results_2D_scans},
+for four mass points ranging from 100 GeV to 3.2 TeV. From the shape of the contours
+we can see the correlation between the gg$\phi$ and bb$\phi$ processes, in a show of
+the fact that we cannot fully disentangle the two processes.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[$m_{\phi} = 100$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_011-a.pdf}}
+\subfloat[$m_{\phi} = 700$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_011-g.pdf}}~\\
+\subfloat[$m_{\phi} = 1.6$ TeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_011-i.pdf}}
+\subfloat[$m_{\phi} = 3.2$ TeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_011-l.pdf}}
+\end{center}
+\caption{2D likelihood scans showing the best-fit value (black cross) for cross--section times branching ratio 
+of both the gluon fusion (x-axis) and b- associated production (y-axis) processes. The red diamond indicates the
+expected best fit point for the presence of a 125 GeV SM Higgs boson, and the purple bands indicate the 68\% and
+95\% confidence interval contours \cite{CMS-PAS-HIG-16-037}.}
+\label{fig:mssm_results_2D_scans}
+\end{figure}
 
 \subsection{Interpretation in MSSM benchmark scenarios}
 \label{sec:mssm_results_modeldep}
@@ -1375,6 +1528,44 @@ nuisance parameters in 2015 and 2016 need to be taken into account.
 %feasible and in some cases
 The correlation scheme between nuisance parameters relating to the 2015 and 2016
 analyses, as used for this combination, is given in table ADD TABLE.
+
+\begin{table}[htp]
+\begin{center}
+\caption{Correlations between nuisance parameters in 2015 and 2016 analysis}
+\begin{tabular}{@{}lll@{}}
+%\toprule
+\textbf{Nuisance} & \textbf{Correlation} & \textbf{Motivation}\\
+\midrule
+Luminosity & Partially correlated & As studied by the relevant people in the experiment\\
+Jet energy scale & Fully correlated & Found to be so by those responsible for it in the experiment\\
+b-tagging & Uncorrelated & Scale factors used in 2015 and 2016 analysis measured via different methods\\
+mis-tagging & Part correlated & As recommended by those measuring b-tagging scale factors\\
+Muon ID/isolation/trigger & Uncorrelated & The 2015 and 2016 analyses use different muon ID and isolation working points, and the \ac{L1} trigger was replaced completely between 2015 and 2016\\
+Electron ID/isolation/trigger & Uncorrelated & The \ac{L1} trigger was completely replaced between 2015 and 2016\\
+Tau ID/isolation/trigger& Uncorrelated & On top of the replacement of the \ac{L1} trigger, a tau ID scale factor was applied in the 2016 analysis but not in the 2015 analysis, despite the fact that the yield should have been brought down by around 8\% for the 2015 analysis\\
+High \pT tau ID efficiency & Correlated & This should not be affected by the lack of tau ID scale factor and covers teh same underlying issue in both analyses\\
+Tau energy scale & Correlated & There is no reason to expect a different best-fit energy scale between 2015 and 2016\\
+Drell-Yan shape & Correlated & The same \ac{MC} samples, exhibiting the observed discrepancies, is used. In addition the weights as derived for the 2015 analysis and the 2016 analysis are very similar\\
+W jet$\rightarrow\Pgt_{h}$ fake rate shape & Uncorrelated & Correction not applied in the 2016 dataset while it was applied for the 2015 analysis. The uncertainties have a different functional form, possibly due to different jet$\rightarrow\Pgt_{h}$ fake rates as a result of the use of a different tau isolation working point\\
+MET uncertainties & Correlated & The same MVA \MET training was used both for 2015 and 2016\\
+Top quark \pT reweighting & Correlated & The same corrections were applied to the 2015 and 2016 analyses\\
+Drell-Yan cross section & Correlated & Theoretical uncertainty so should be correlated\\
+Di--boson cross section & Correlated & Theoretical uncertainty so should be correlated\\
+\ttbar cross section & Correlated & Theoretical uncertainty so should be correlated\\
+\Wjets cross section & Correlated & Theoretical uncertainty so should be correlated\\
+SM signal theory uncertainties & Correlated & Theoretical uncertainties so should be correlated\\
+\Ztautau acceptance & - & Uncertainty only exists in 2015 analysis as no fits to the \Zmm control region were included yet\\
+\Ztautau extrapolation& - & Uncertainty only exists in 2016 analysis as fits to the \Zmm control regions were included and this uncertainty should cover only the extrapolation from \Zmm to \Ztautau, not the full acceptance\\
+e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expect to behave the same in 2015 and 2016 datasets\\
+$\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied yet\\
+jet$\rightarrow\Pgt_{h}$ fake rate & Correlated & ....\\
+
+
+\end{tabular}
+\label{tab:mssm_combination_correlations}
+\end{center}
+\end{table}
+
 
 \subsection{Results}
 \label{sec:mssm_combination_results}
