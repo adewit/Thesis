@@ -873,7 +873,7 @@ decaying tau.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}
+\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}
 \end{center}
 \caption{\mTtot~ distribution in the \ttbar enriched control region.
 The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross--section uncertainty.}
@@ -1045,6 +1045,25 @@ uncertainty of $\frac{-20\% \times p_{\text{T}}}{\text{GeV}}$ is
 applied. This uncertainty is derived from variations in the data/MC ratio
 for the jet$\rightarrow\Pgt_{h}$ fake rate as a function of jet \pT~ in 
 \Wjets events \cite{CMS-PAS-HIG-16-037}.
+
+\subsection{Summary of uncertainties and correlations}
+\label{sec:mssm_uncs_summary}
+The systematics that are applied are summarised in
+table \ref{tab:SystematicUncertainties_mt} for the $\mu\tau_h$
+channel, in table \ref{tab:SystematicUncertainties_et} for the $e\tau_h$ channel,
+in table \ref{tab:SystematicUncertainties_tt} for the $\tau_h\tau_h$ channel and
+in table \ref{tab:SystematicUncertainties_em} for the $e\mu$ channel. Additionally,
+the systematic uncertainties for the $Z\rightarrow\mumu$ control region are shown
+in table \ref{tab:SystematicUncertainties_zmm}. Correlations are also indicated.
+Some of the uncertainties
+are different for different processes, where this is the case ranges are given.
+Uncertainties marked "Fully correlated" are correlated between the different
+decay channels and event categories, those marked "Fully uncorrelated" are
+uncorrelated between the different decay channels and event categories. "Cats:C,chns:U"
+indicates that the uncertainty is correlated between categories but uncorrelated between
+the different decay channels.
+\input{MSSM/UncOv}
+\clearpage
 
 \section{Signal extraction}
 \label{sec:mssm_signalextraction}
@@ -1515,6 +1534,7 @@ while the \tautau channel dominates for higher masses. The \etau channel is alwa
 slightly less sensitive than the \mutau channel. The \emu channel is the least sensitive.}
 \label{fig:mssm_results_limits_breakdown_hig16006}
 \end{figure}
+\clearpage
 
 
 \subsection{Combination procedure}
@@ -1527,44 +1547,110 @@ nuisance parameters in 2015 and 2016 need to be taken into account.
 %nuisance parameters should be performed. This is however not always
 %feasible and in some cases
 The correlation scheme between nuisance parameters relating to the 2015 and 2016
-analyses, as used for this combination, is given in table ADD TABLE.
+analyses, as used for this combination, is given in table \ref{tab:mssm_combination_correlations}.
 
 \begin{table}[htp]
 \begin{center}
 \caption{Correlations between nuisance parameters in 2015 and 2016 analysis}
-\begin{tabular}{@{}lll@{}}
-%\toprule
+{\footnotesize
+\begin{tabular}{p{3cm}p{2cm}p{10cm}}
+\toprule
 \textbf{Nuisance} & \textbf{Correlation} & \textbf{Motivation}\\
 \midrule
-Luminosity & Partially correlated & As studied by the relevant people in the experiment\\
-Jet energy scale & Fully correlated & Found to be so by those responsible for it in the experiment\\
+Luminosity & Partially \mbox{correlated} & As studied by the relevant people in the experiment\\
+\midrule
+Jet energy scale & Fully \mbox{correlated} & Found to be so by those responsible for it in the experiment\\
+\midrule
 b-tagging & Uncorrelated & Scale factors used in 2015 and 2016 analysis measured via different methods\\
-mis-tagging & Part correlated & As recommended by those measuring b-tagging scale factors\\
+\midrule
+mis-tagging & Partially \mbox{correlated} & As recommended by those measuring b-tagging scale factors\\
+\midrule
 Muon ID/isolation/trigger & Uncorrelated & The 2015 and 2016 analyses use different muon ID and isolation working points, and the \ac{L1} trigger was replaced completely between 2015 and 2016\\
+\midrule
 Electron ID/isolation/trigger & Uncorrelated & The \ac{L1} trigger was completely replaced between 2015 and 2016\\
-Tau ID/isolation/trigger& Uncorrelated & On top of the replacement of the \ac{L1} trigger, a tau ID scale factor was applied in the 2016 analysis but not in the 2015 analysis, despite the fact that the yield should have been brought down by around 8\% for the 2015 analysis\\
+\midrule
+Tau ID/isolation/trigger& Uncorrelated & \scriptsize{On top of the replacement of the \ac{L1} trigger, a tau ID scale factor was applied in the 2016 analysis but not in the 2015 analysis, despite the fact that the yield should have been brought down by around 8\% for the 2015 analysis}\\
+\midrule
 High \pT tau ID efficiency & Correlated & This should not be affected by the lack of tau ID scale factor and covers teh same underlying issue in both analyses\\
+\midrule
 Tau energy scale & Correlated & There is no reason to expect a different best-fit energy scale between 2015 and 2016\\
-Drell-Yan shape & Correlated & The same \ac{MC} samples, exhibiting the observed discrepancies, is used. In addition the weights as derived for the 2015 analysis and the 2016 analysis are very similar\\
-W jet$\rightarrow\Pgt_{h}$ fake rate shape & Uncorrelated & Correction not applied in the 2016 dataset while it was applied for the 2015 analysis. The uncertainties have a different functional form, possibly due to different jet$\rightarrow\Pgt_{h}$ fake rates as a result of the use of a different tau isolation working point\\
+\midrule
+Drell-Yan shape & Correlated & \scriptsize{The same \ac{MC} samples, exhibiting the observed discrepancies, are used. In addition the weights as derived for the 2015 analysis and the 2016 analysis are very similar}\\
+\midrule
+W jet$\rightarrow\Pgt_{h}$ fake rate shape & Uncorrelated & \scriptsize{Correction not applied in the 2016 dataset while it was applied for the 2015 analysis. The uncertainties have a different functional form, possibly due to different jet$\rightarrow\Pgt_{h}$ fake rates as a result of the use of a different tau isolation working point}\\
+\midrule
 MET uncertainties & Correlated & The same MVA \MET training was used both for 2015 and 2016\\
+\midrule
 Top quark \pT reweighting & Correlated & The same corrections were applied to the 2015 and 2016 analyses\\
-Drell-Yan cross section & Correlated & Theoretical uncertainty so should be correlated\\
-Di--boson cross section & Correlated & Theoretical uncertainty so should be correlated\\
-\ttbar cross section & Correlated & Theoretical uncertainty so should be correlated\\
-\Wjets cross section & Correlated & Theoretical uncertainty so should be correlated\\
+\midrule
+Drell-Yan $\sigma$& Correlated & Theoretical uncertainty so should be correlated\\
+\midrule
+Di--boson $\sigma$ & Correlated & Theoretical uncertainty so should be correlated\\
+\midrule
+\ttbar $\sigma$ & Correlated & Theoretical uncertainty so should be correlated\\
+\midrule
+\Wjets $\sigma$ & Correlated & Theoretical uncertainty so should be correlated\\
+\midrule
 SM signal theory uncertainties & Correlated & Theoretical uncertainties so should be correlated\\
-\Ztautau acceptance & - & Uncertainty only exists in 2015 analysis as no fits to the \Zmm control region were included yet\\
-\Ztautau extrapolation& - & Uncertainty only exists in 2016 analysis as fits to the \Zmm control regions were included and this uncertainty should cover only the extrapolation from \Zmm to \Ztautau, not the full acceptance\\
-e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expect to behave the same in 2015 and 2016 datasets\\
-$\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied yet\\
-jet$\rightarrow\Pgt_{h}$ fake rate & Correlated & ....\\
-
-
-\end{tabular}
+\midrule
+\Ztautau \mbox{acceptance} & N/A & \scriptsize{Uncertainty only exists in 2015 analysis as no fits to the \Zmm control region were included yet.}\\
+\midrule
+\Ztautau \mbox{extrapolation}& N/A & \scriptsize{Uncertainty only exists in 2016 analysis as fits to the \Zmm control regions were included and this uncertainty should cover only the extrapolation from \Zmm to \Ztautau, not the full acceptance.}\\
+\midrule
+%e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expect to behave the same in 2015 and 2016 datasets\\
+%$\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied yet\\
+%jet$\rightarrow\Pgt_{h}$ fake rate & Correlated & ....\\
+%QCD extrapolation uncertainty (\emu channel) & Uncorrelated & Use of slightly different anti-iso sideband in 2015 and 2016 analyses\\
+%QCD normalisation uncertainty (\tautau channel) & Uncorrelated & Use of different anti-isolated sideband\\
+%Parameters tying control regions to signal region normalisations & Uncorrelated & 2016 control region fits should not influence the 2015 SR and vice versa\\
+%Statistical uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated\\
+%Systematic uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Uncertainty based on high \mT~ region with anti-isolated $\Pgt_{h}$, but because of the tau \pT~ cuts being different in 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that\\
+%Statistical uncertainty on W low/high\mT~ ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated\\
+%Systematic uncertainty on W low/high\mT~ ratio (\etau and \mutau) & Uncorrelated & This was already uncorrelated between channels and categories in each individual analysis, we can't claim to know the correlation between the two years any more accurately\\
+%QCD OS/SS ratio statistical uncertainty (\etau and \mutau) & Uncorrelated & Statistical uncertainties should not be correlated\\
+%QCD OS/SS ratio systematic uncertainty (\etau and \mutau) & Uncorrelated & The ratios were measured in different anti-isolated sidebands, and with different $\Pgt_{h}$ \pT~ selections, in the two analyses. Same comments about the correlations between channels and categories within the individual analyses as for the W systematic uncertainties apply.\\
+%bin--by--bin uncertainties for templates with low numbers of events & Uncorrelated &Because the same initial \ac{MC} simulation was used these should in theory be correlated, in practice this is unfeasible to achieve\\
+\end{tabular}}
 \label{tab:mssm_combination_correlations}
 \end{center}
+\clearpage
 \end{table}
+\begin{table}[pt!]
+\begin{center}
+{\footnotesize
+\begin{tabular}{p{3cm}p{2cm}p{10cm}}
+\midrule
+e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expect to behave the same in 2015 and 2016 datasets\\
+\midrule
+$\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied yet\\
+\midrule
+jet$\rightarrow\Pgt_{h}$ fake rate & Correlated & ....\\
+\midrule
+QCD extrapolation uncertainty (\emu channel) & Uncorrelated & Use of slightly different anti-iso sideband in 2015 and 2016 analyses\\
+\midrule
+QCD normalisation uncertainty (\tautau channel) & Uncorrelated & Use of different anti-isolated sideband\\
+\midrule
+Parameters tying control regions to signal region normalisations & Uncorrelated & 2016 control region fits should not influence the 2015 SR and vice versa\\
+\midrule
+Statistical uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated\\
+\midrule
+Systematic uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & \scriptsize{Uncertainty based on high \mT~ region with anti-isolated $\Pgt_{h}$, but because of the tau \pT~ cuts being different in 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that.}\\
+\midrule
+Statistical uncertainty on W low/high\mT~ ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated\\
+\midrule
+Systematic uncertainty on W low/high\mT~ ratio (\etau and \mutau) & Uncorrelated & \scriptsize{This was already uncorrelated between channels and categories in each individual analysis, we can't claim to know the correlation between the two years any more accurately}\\
+\midrule
+QCD OS/SS ratio statistical uncertainty (\etau and \mutau) & Uncorrelated & Statistical uncertainties should not be correlated\\
+\midrule
+QCD OS/SS ratio systematic uncertainty (\etau and \mutau) & Uncorrelated & \scriptsize{The ratios were measured in different anti-isolated sidebands, and with different $\Pgt_{h}$ \pT~ selections, in the two analyses. Same comments about the correlations between channels and categories within the individual analyses as for the W systematic uncertainties apply.}\\
+\midrule
+bin--by--bin uncertainties for templates with low numbers of events & Uncorrelated &Because the same initial \ac{MC} simulation was used these should in theory be correlated, in practice this is unfeasible to achieve\\
+\bottomrule
+\end{tabular}}
+\end{center}
+\end{table}
+\clearpage
+
 
 
 \subsection{Results}

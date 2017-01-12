@@ -283,9 +283,9 @@
     \let\@oldendtabular\endtabular
     \renewenvironment{tabular}[1]{%
       \@oldtabular{@{}#1@{}}%
-      \toprule%
+%      \toprule%
     }{%
-      \bottomrule%
+%      \bottomrule%
       \@oldendtabular%
       \ignorespacesafterend%
     }
