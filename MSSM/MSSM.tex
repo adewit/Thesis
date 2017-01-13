@@ -8,16 +8,18 @@ at $\sqrt{s}=13$ TeV during the first half of the 2016 p--p running period of th
 detailed in reference \cite{CMS-PAS-HIG-16-037}. The \etau, \mutau, \tautau and \emu final
 states of the di-\Pgt pair were studied. The results of this search are 
 model--independent upper limits on $\sigma \times$ BR of \PHiggs or \PHiggsps 
-production in the two decay modes (see THEORY) and decay into $\Pgt\Pgt$. In 
-addition, the results are interpreted in MSSM benchmark scenarios and 2D likelihood
+production in the two modes (see THEORY) and decay into $\Pgt\Pgt$. The gluon fusion
+production mode will also be referred to as gg$\phi$, and the b-associated production
+mode will be referred to as bb$\phi$. In 
+addition to the upper limits on cross--section times branching ratio of these two processes, 
+the results are interpreted in MSSM benchmark scenarios and 2D likelihood
 scans of the two production modes are performed. A very similar analysis
 was performed on 2.3 fb$^{-1}$ of data collected at $\sqrt{s}=13$ TeV during the 2015 \ac{LHC} p--p running period. 
 As it is so similar to the analysis performed on the 2016 dataset it
 will not be described in detail here, more information can be found in reference \cite{CMS-PAS-HIG-16-006}.
-The results of the 2015 analysis will be shown, in addition to a combination of the 2015 and 2016 datasets.
 
 For the analysis described in this chapter, as well as the 2015 analysis not detailed
-here, I was responsible for optimisation of object selection and categorisation,
+here, I was responsible for all stages of the analysis. This includes optimisation of object selection and categorisation,
 as well as studies of background methods for the \mutau, \etau and \tautau channels,
 evaluation of systematic uncertainties in all four channels, and for producing
 the statistical results, including model--dependent interpretations.
@@ -47,17 +49,18 @@ MSSM benchmark scenarios. These samples are generated using \texttt{Powheg} \cit
 \ttbar- and single-top background samples are generated using \texttt{Powheg},
 with \texttt{MadGraph5\_aMC\@NLO} \cite{amcnlo} used for the generation of di--boson background
 samples and part of the W+$\gamma$ background included in the \emu channel only.
-\Wjets and \Zll backgrounds are generated with the \ac{MadGraph 5} \cite{madgraph}
+\Wjets and \Zll backgrounds are generated with the \texttt{MadGraph 5} \cite{madgraph}
 matrix element generator. Both samples containing a mixture
 of jet multiplicities (`inclusive' samples) and samples with 1,2,3 or 4 jets (`exclusive' samples)
 are generated. These exclusive samples increase the available number of
-background events with higher jet multiplicities.  Part of the W+$\gamma$ background
-samples are also generated with this event generator.
-%note LO samples used because to get same number of effective
+background events with higher jet multiplicities. %note LO samples used because to get same number of effective
 %events would need to generate more NLO samples
 The `inclusive' and `exclusive' samples are reweighted
 before they are combined so as to preserve the correct
 fractions of events with each jet multiplicity.
+\texttt{MadGraph 5} 
+is also used to generate part of the W+$\gamma$ background
+samples.
 
 Parton showering and hadronisation are modelled using \texttt{PYTHIA 8} for all 
 samples. Minimum--bias events generated with \texttt{PYTHIA 8} are
@@ -237,11 +240,8 @@ hadronic tau isolation working point varies by mass point, with looser selection
 \label{fig:mssm_selection_mt_taumt}.
 \end{figure}
 
-Based on this information, for the analysis on the 2015 dataset the selection was optimised
-for mass points around 700-800 GeV. For the analysis on the 12.9 fb$^{-1}$ collected
-in the first half of 2016, the selection was further loosened by 10 GeV in \mT~cut
-and one step in hadronic tau isolation working point, to obtain the medium isolation working
-point selection combined with a selection on \mT$<40$ GeV.
+The selection was then optimised for mass points of around 1 TeV to obtain a combination
+of the use of the medium hadronic tau isolation working point and a selection on \mT$<40$ GeV.
 
 The choice of the hadronic tau \pT selection is driven by the effect on the low mass region:
 raising the \pT selection by 10 GeV from the minimum of 20 GeV does not affect the sensivity
@@ -329,7 +329,17 @@ to pass decay mode finding and have originated from the primary vertex, with the
 Both taus need to pass the tight working point of the isolation discriminator, the very loose 
 working point of the anti--electron discriminator and the loose working point of the anti--muon discriminator. 
 The tight working point of the isolation discriminator is chosen to optimise the sensitivity
-of this channel for higher masses. INSERT PLOT
+of this channel for higher masses, while retaining the second best senstivity in the intermediate
+mass range, as seen in figure \ref{fig:mssm_tauid_tt}.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./MSSM/Figures/ggh_tt_isolation.png}
+\end{center}
+\caption{Expected upper limits for gg$\phi$ process in the \tautau channel, using the 
+loose (green), medium (red), tight (blue, very tight (black) and very very tight (gold)
+working point. REMAKE?}
+\label{fig:mssm_tauid_tt}
+\end{figure}
 
 \subsection{\texorpdfstring{Event selection in the \emu channel}{Event selection in the e mu channel}}
 \label{sec:mssm_eventsel_em}
@@ -1424,21 +1434,27 @@ expected exclusion \cite{CMS-PAS-HIG-16-037}.}
 \end{figure}
 
 
-\section{Combination of 2015 and 2016 datasets}
+\chapter{Combination of MSSM analyses}
 \label{sec:mssm_combination}
-The results outlined in the previous section, for the analysis
-on a dataset corresponding to an integrated luminosity of 12.9 fb$^{-1}$
-at a centre-of-mass energy of 13 TeV, collected during the 2016 running period
-of the \ac{LHC}, can be combined with the results from a very similar analysis
-performed on 2.3 fb$^{-1}$ collected at 13 TeV during 2015, detailed
-in reference \cite{CMS-PAS-HIG-16-006}. This combination should be able
-to improve slighty on the limits set by the 2016 analysis. Because the 
-analysis on the 2015 dataset is very similar to the 2016 analysis it 
+The results of the search for MSSM \AHtotautau on a dataset
+corresponding to an integrated luminosity of 12.9 fb$^{-1}$, collected during the
+first half of 2016 and thus referred to as `2016 analysis', can be combined 
+with a previous search. This previous analysis, very similar to the 2016 analysis,
+was performed on a dataset corresponding to an integrated luminosity of 2.3 fb$^{-1}$
+collected during 2015 (`2015 analysis'), detailed in reference \cite{CMS-PAS-HIG-16-006}.
+By combining the two analyses we should be able to set the most stringent
+limits on the two MSSM production modes, and in the \mA-\tanb~ plane of 
+MSSM benchmark scenarios, available at the time of writing. It is also
+a first step on the way to combining the \AHtotautau analysis with
+searches for charged Higgs bosons or heavy neutral Higgs bosons in 
+other final states. 
+
+Because the 2015 analysis is very similar to the 2016 analysis it 
 is not described in detail, however, the results will
 be presented, and key differences with the more recent result highlighted
 where needed.
 
-\subsection{Results from 2015 analysis}
+\section{Results from 2015 analysis}
 \label{sec:mssm_combination_2015}
 The results from the search for \AHtotautau on a
 dataset corresponding to an integrated luminosity of 2.3 fb$^{-1}$
@@ -1537,17 +1553,26 @@ slightly less sensitive than the \mutau channel. The \emu channel is the least s
 \clearpage
 
 
-\subsection{Combination procedure}
+\section{Combination procedure}
 \label{sec:mssm_combination_procedure}
 The idea of combining the two analyses is to combine the 
 individual likelihoods to improve the analysis sensitivity and
 physics reach. To do this correctly the correlations between
-nuisance parameters in 2015 and 2016 need to be taken into account.
+nuisance parameters in the 2015 and 2016 analyses need to be taken into account.
+The only truly correct way to establish the correlations is to perform
+dedicated studies into them. In many cases such studies would be 
+unfeasible to perform, or it would not be clear how to approach the 
+problem in the first place.
+
+Even without performing such studies, a good estimate of what the correlation
+should be can usually be based on reasoning. With a small number of 
+exceptions this is what has been done for this combination.
 %Strictly, studies into the underlying correlations between
 %nuisance parameters should be performed. This is however not always
 %feasible and in some cases
 The correlation scheme between nuisance parameters relating to the 2015 and 2016
-analyses, as used for this combination, is given in table \ref{tab:mssm_combination_correlations}.
+analyses, as used for this combination, is given in table \ref{tab:mssm_combination_correlations}. 
+The third column gives the motivation for the chosen correlation.
 
 \begin{table}[htp]
 \begin{center}
@@ -1672,14 +1697,14 @@ and the 2016 analysis.}
 \label{fig:mssm_results_combination_limits}
 \end{figure}
 
-To get a better idea of which analysis
-is driving the sensitivity of the combination, we should consider the comparison
+To get a better picture of how the sensitivity of the individual analyses compares
+with the combination, we should consider the comparison
 of expected limits in figure \ref{fig:mssm_results_combination_limits_comp}. The
 gluon-fusion limits in figure \ref{fig:mssm_results_combination_limits_comp}a show that at
 higher masses the analysis sensitivity is only very slightly improved with respect to the 
 analysis of the 12.9 fb$^{-1}$ dataset. However, for masses between 200 and 800 GeV
 there is a larger improvement in analysis sensitivity from combining the two analyses.
-This is expected since the analysis on the 2016 dataset used a slightly different
+This behaviour is expected since the analysis on the 2016 dataset used a slightly different
 selection that made the analysis more optimal at masses above 800 GeV,
 and slightly less optimal below this mass, than the analysis on the 2015 dataset. This
 effect is less visible on the b--associated production limits shown in figure \ref{fig:mssm_results_combination_limits_comp}b.
