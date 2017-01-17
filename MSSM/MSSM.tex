@@ -687,13 +687,28 @@ taken from the \Wjets \ac{MC} samples, and is found to be between 4 and 5, while
 is close to 1.
 
 The method described so far works well in the no b-tag categories, but in the b-tag category
-the \ttbar background dominates. For this reason the estimate of the number
+the \ttbar background dominates. This is illustrated in figure \ref{fig:bkgs_highmtctrl}, where
+the high-\mT~region in the no b-tag category (figure \ref{fig:bkgs_highmtctrl}a) is compared with the high-\mT~region in the 
+b-tag category (figure \ref{fig:bkgs_highmtctrl}b) of the \etau channel. It is clear that the \ttbar 
+background is much larger than the \Wjets background in the b-tag high-\mT~control region.
+For this reason the estimate of the number
 of \Wjets events in this category is made with a relaxed category selection where the b-tagging
 requirement itself is removed, but the jet requirements still stand. Events with at least one 
 jet with \pT$>20$ GeV and with $|\eta|<2.4$, but at most one jet with \pT$>30$ GeV and $|\eta|<4.7$, are therefore selected. The final \Wjets estimate in the b-tag category signal
 region is determined by the estimate given by the number of \Wjets events
 estimated in the 1-jet selection, multiplied by an extrapolation factor 
-$\frac{N_{\text{W,MC}}^{\text{OS,low } m_{T},\text{b-tag category}}}{N_{\text{W,MC}}^{\text{OS, low }m_{\text{T}},\text{1-jet selection}}}$
+$\frac{N_{\text{W,MC}}^{\text{OS,low } m_{T},\text{b-tag category}}}{N_{\text{W,MC}}^{\text{OS, low }m_{\text{T}},\text{1-jet selection}}}$.
+\begin{figure}[h!]
+\begin{center}
+\subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_10_shapes_postfit.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_13_shapes_postfit.pdf}}
+\end{center}
+\caption{High-\mT~control region in the (a) no b-tag and (b) b-tag categories of the \etau
+channel. In the no b-tag category the \Wjets background, drawn together with the small
+ di-boson plus single-top backgrounds as the `electroweak' background component, dominates. In the b-tag
+category the \ttbar background is larger than the \Wjets background.}
+\label{fig:bkgs_highmtctrl}
+\end{figure}
 
 \subsubsection{QCD OS/SS ratio}
 \label{sec:mssm_bkgs_etmt_qcdosss}
