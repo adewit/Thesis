@@ -177,7 +177,7 @@
 }
 %% Handle the A4 default paper size
 \ifx\@useAFour\@empty\else%
-  \PassOptionsToClass{a4paper}{scrbook}%
+  \PassOptionsToClass{a4paper,numbers=noenddot}{scrbook}%
 \fi
 
 
