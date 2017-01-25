@@ -6,9 +6,83 @@
 
 \section{Standard model Higgs boson measurements}
 \label{sec:theory_smH}
+The mass of the Higgs boson is a free parameter in the \ac{SM}, and so
+searches for the boson had to be conducted over a large range of
+masses. Searches for the Higgs boson at \ac{LEP} did not lead
+to its observation. However, masses below 114.4 GeV were excluded at 95\% \ac{CL} \cite{LEP-Higgs},
+providing a lower search limit. Subsequent studies at the 
+Tevatron did also not lead to discovery of the Higgs boson, but did provide
+an additional excluded masses range of 140-186 GeV at 95\% \ac{CL} \cite{TEV-Higgs}.
+
+On the fourth of July 2012 the ATLAS and CMS collaborations
+announced the discovery of a boson with a mass of around 125 GeV \cite{HDiscoveryATLAS,HDiscoveryCMS}.
+The observations were based on excesses in the search for $\PHiggslight\rightarrow\gamma\gamma$ and $\PHiggslight\rightarrow \PZ\PZ$.
+More data were collected and analysed during the remainder of 2012, and subsequent studies 
+grew the confidence in this boson being compatible with the standard model Higgs boson. The ATLAS and CMS combined
+mass measurement using the full dataset of Run 1 of the \ac{LHC} 
+found \mh = $125.09 \pm 0.21 \text{ (stat) } \pm 0.11 \text{ (syst) }$ GeV \cite{MassComb}.
+The combined ATLAS and CMS production- and decay rate measurement, also using the full dataset of \ac{LHC} Run 1,
+shows very good agreement with the \ac{SM} predictions \cite{CouplComb}. Some discrepancies
+with the \ac{SM} predicition do remain, and so the measurements of \ac{SM} Higgs boson
+properties are certainly not finished yet.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Gluon fusion]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/feynman_ggH.pdf}}
+\subfloat[Vector boson fusion]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/feynman_qqH.pdf}}~\\
+\subfloat[W/Z associated production]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/feynman_VH.pdf}}
+\subfloat[\ttbar associated production]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/feynman_ttH.pdf}}
+\end{center}
+\caption{Feynman diagrams at tree level for the dominant Higgs boson production modes at
+the \ac{LHC}.}
+\label{fig:theory_smhprod}
+\end{figure}
+
+Figure \ref{fig:theory_smhprod} shows the dominant Higgs boson production modes
+at the \ac{LHC}. From the production cross sections for each mode in figure
+\ref{fig:theory_smhxsbr} we see that gluon fusion is by far dominant. The other modes
+shown have smaller cross sections, but are of importance due to their topologies, with
+additional leptons or jets in the final state. Tagging such topologies can reduce the size
+of the \ac{SM} background.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[\ac{SM} H production cross sections]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/plot_13tev_H_sqrt.pdf}}
+\subfloat[\ac{SM} H branching ratios]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/SMHiggsBRYR4-square.pdf}}
+\end{center}
+\caption{(a) standard model Higgs boson production cross sections at $\sqrt{s} = 13$ TeV and (b) standard model
+Higgs boson branching ratios, for Higgs boson masses between 120 and 130 GeV \cite{YR4}.}
+\label{fig:theory_smhxsbr}
+\end{figure}
+
+It is clear from the branching ratios of the \ac{SM} Higgs boson in figure \ref{fig:theory_smhxsbr}
+that the two discovery channels $\PHiggslight \rightarrow \gamma\gamma$ and $\PHiggslight \rightarrow \PZ
+PZ$ have smaller branching ratios than many other channels. These two channels are very sensitive
+due to the small backgrounds and the excellent photon and lepton energy resolution the detectors provide.
+
+During Run 2
+
+
 
 \section{Beyond the standard model}
 \label{sec:theory_BSM}
+The \ac{SM} has been successfully tested to high accuraccy. However,
+some issues remain that cannot be addressed by the \ac{SM} alone.
+For example BLAH BLAH
+
+Therefore \acf{BSM} theories have been developed
+that aim to cover some of these issues. One of the most
+popular of such theories is \acf{SUSY} \cite{SUSY-primer}, which postulates
+that there is a symmetry between bosons and fermions. Every fermionic
+\ac{SM} particle has a bosonic superpartner (named `s'+name of fermion, e.g.
+sbottom, selectron,...), and every bosonic \ac{SM} particle
+has a fermionic superpartner (named boson name + `ino', e.g. higgsino, Wino,...).
+
+If this symmetry were unbroken the \ac{SUSY} particles must
+have the same mass as their \ac{SM} partners. However, we know that
+this is not the case as such particles would have been detected a long time ago. The 
+only possibility is then that \ac{SUSY} is a broken symmetry and the superpartners
+are heavier than their \ac{SM} equivalents.
 
 \subsection{The Higgs sector of the MSSM}
 \label{sec:theory_MSSM_H}
@@ -84,18 +158,18 @@ and a constraing on $\alpha$,
 The constraint on $m_h$ being less than the mass of the Z boson, 91.2 GeV, seems 
 problematic at first, as we know there is a Higgs state with a mass of 125 GeV. However,
 the tree-level masses and couplings of the Higgs bosons in the MSSM can be
-significantly altered by radiative corrections. The dominat effect is from
+significantly altered by radiative corrections. The dominant effect is from
 incomplete cancellation of the stop- and top-loop corrections, which
-do not completely cancel as SUSY is a broken symmetry. FIND REFERENCE FOR THIS
+do not completely cancel as SUSY is a broken symmetry.
 
-The couplings of the neutral Higgs bosons to bosons and fermions 
+The tree-level couplings of the neutral Higgs bosons to bosons and fermions 
 are modified with respect to the \ac{SM} couplings, by factors
 described in table \ref{tab:mssm_couplings} \cite{YR4}.
 
 \begin{table}[htp]
 \label{tab:mssm_couplings}
 \begin{center}
-\caption{Couplings in the MSSM, as multiplicative factors with
+\caption{Tree-level couplings in the MSSM, as multiplicative factors with
 respect to the \ac{SM} couplings}
 \begin{tabular}{p{2cm}p{4cm}p{4cm}p{4cm}}
 \toprule
@@ -110,7 +184,8 @@ Particle & Coupling to bosons & Coupling to up-type quarks & Coupling to down-ty
 \end{center}
 \end{table}
 
-In the \textit{decoupling limit}, when \mA$>>m_{Z}$, the mixing
+In the \textit{decoupling limit}, when \mA$>>m_{Z}$ and $\cos{(\beta-\alpha)}$ tends
+to 0, the mixing
 angle $\alpha \approx \beta - \pi/2$. This reduces the couplings in table
 \ref{tab:mssm_couplings} to the \ac{SM} couplings for the \PHiggslight boson, 
 with negligible couplings to bosons for the two remaining neutral
@@ -166,23 +241,51 @@ production of neutral Higgs boson in the MSSM \cite{CMS-PAS-HIG-16-037}.}
 \subsection{\acl{2HDM}s}
 \label{sec:theory_2HDM}
 A different approach, also leading to an extended Higgs sector with
-respect to the \ac{SM} case, is found in the \ac{2HDM} \cite{2HDM-I}.
+respect to the \ac{SM} case, is found in the \ac{2HDM} \cite{2HDM-I,2HDM-II}.
 As the name suggests \ac{2HDM}s are a generic class of models in which
 there is not one, but two Higgs doublets. The addition of a second
 Higgs doublet can also motivated by \ac{SUSY}, but also by axion models.
 An important point to note is that despite the presence of a second 
 Higgs doublet, there are no explicit \ac{SUSY} particles in the \ac{2HDM}.
 There are many different types of \ac{2HDM}, all distinguished by the couplings
-of the different Higgs bosons to bosons and fermions. The most studied of the
+of the different Higgs bosons to bosons and fermions. The 
+most general potential for a CP-conserving 2HDM has 9 free parameters,
+taken as \tanb, the mixing angle $\alpha$, already discussed in 
+the context of the \ac{MSSM}, the masses of the five Higgs bosons,
+and quartic couplings appearing in the potential. The most studied of the
 \ac{2HDM}s, the type-II \ac{2HDM}, has a structure very similar to 
-the MSSM Higgs sector. The couplings of the neutral Higgs bosons to 
-vector bosons and fermions are the same as the \ac{MSSM} couplings from table \ref{tab:mssm_couplings}.
+the MSSM Higgs sector. The tree-level couplings of the neutral Higgs bosons to 
+vector bosons and fermions are the same as the tree-level \ac{MSSM} couplings 
+from table \ref{tab:mssm_couplings}. %The decay \AtoZh is also possible,
+%the \AtoZh~coupling is proportional to $\cos{(\beta-\alpha)}, like the \Htohh~coupling.
 
-The differences between the type II \ac{2HDM} and the \ac{MSSM}
-are that $\alpha$ is a free parameter in the \ac{2HDM}, while
-in the \ac{MSSM} it is not. In addition the masses of the Higgs bosons
-are free parameters. In the \textit{alignment} limit, where $\cos{(\beta-\alpha)}$
-approaches 0, the couplings are exactly \ac{SM}-like.
+The behaviour of the \ac{2HDM} couplings in the \textit{alignment} limit,
+where $\cos{(\beta-\alpha)} = 0$, differs from that of the \ac{MSSM} couplings.
+In particular, in the alignment limit the decays \AtoZh~and \Htohh vanish
+in the \ac{2HDM}. This is due to the fact that the coupling is 
+proportional to $\cos{(\beta-\alpha)}$ and there are no radiative corrections
+to make the branching ratio nonzero.
+
+The inclusive $\sigma\times$branching ratios for production of a \PHiggs boson 
+and decays into various states is shown in figure \ref{fig:2hdm_Hxsbr}a for an 
+example of a type-II \ac{2HDM}, at two \tanb points. Figure \ref{fig:2hdm_Hxsbr}b 
+shows the inclusive $\sigma\times$branching ratios for production and decay
+of a \PHiggsps boson in the same type-II \ac{2HDM} example, at two \tanb~points. At
+low \tanb~the $\sigma\times$branching ratio for \Htohh production and decay and \AtoZh production
+and decay are enhanced for $250\leq m_{\PHiggs}\leq 350$ GeV and $220 \leq m_{\PHiggsps} \leq 350$ GeV, respectively.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[\PHiggs]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/typeII2HDMxsbr.png}}
+\subfloat[\PHiggsps]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/typeII2HDMxsbrA.png}}
+\end{center}
+\caption{Inclusive production cross--section times branching ratio for an example
+of a type-II \ac{2HDM}, for (a) the \PHiggs boson and (b) the \PHiggsps boson. The
+top figures use \tanb=1 and $\cos{(\beta-\alpha)}=-0.11$, the bottom
+figures are made for \tanb=10 and $\cos{(\beta-\alpha)}=-0.02$. At low \tanb~the \Htohh and
+\AtoZh decays are enhanced for masses up to 350 GeV \cite{2HDM-II}.}
+\label{fig:2hdm_Hxsbr}
+\end{figure}
 
 
 \section{MSSM benchmark scenarios}
@@ -308,6 +411,7 @@ ratios into $\tau\tau$ are enhanced at high \tanb.}
 
 
 \subsection{MSSM scenarios at low \tanb}
+\label{sec:mssm_theory_lowtb}
 A large area of the \mA-\tanb~plane in the $m_{h}^{\text{mod+}}$ 
 scenario contains a light Higgs boson with a mass compatible with
 125 GeV. However, at low values of \tanb this is not the case, with
