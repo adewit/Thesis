@@ -1,8 +1,139 @@
-\chapter{Introduction and theory}
+\chapter{Theory and motivation}
 \label{chap:theory}
+To understand and motivate the searches presented in chapters 
+\ref{chap:hhh} and \ref{chap:mssm} it is important
+to understand the theory and phenomenology behind them. 
+This chapter describes the \acl{SM} of particle physics, the
+motivations for \acl{SUSY} and the phenomenology of Higgs
+sectors beyond the \acl{SM}.
 
-\section{The standard model of particle physics}
+\section{The \acl{SM} of particle physics}
 \label{sec:theory_sm}
+The \ac{SM} of particle physics is a theory that describes the weak and strong
+nuclear forces, plus the \ac{EM} force, and the interaction of those forces
+with particles. The \ac{SM} is a \ac{QFT} in which matter particles
+are represented by spin-$\frac{1}{2}$ fermions, with the forces represented
+by spin-1 bosons.
+
+\subsection{Fundamental particles and forces}
+\label{sec:theory_sm_particles}
+In the \ac{SM} there are twelve fundamental fermions, six quarks and
+six leptons. The quarks interact via both strong nuclear force and the 
+electroweak force, while
+the leptons only interact via the electoweak force.
+Each of the fermions has a corresponding antiparticle
+with opposite quantum numbers. The quarks and leptons
+are divided into three generations. The particles from different
+generations have similar properties, apart from the mass which increases
+for each generation. The quarks and leptons are summarised in 
+table \ref{tab:theory_fermions}.
+
+\begin{table}[htp]
+\begin{center}
+\caption{The fundamental fermions}
+\begin{tabular}{@{}llll@{}}
+\toprule
+ & \textbf{1st generation} & \textbf{2nd generation} & \textbf{3d generation}\\
+\midrule
+\textbf{Quarks} & & & \\
+\midrule
+Charge: +$\frac{2}{3}$& up (\Pup)  & charm (\Pcharm) & top (\Ptop) \\
+Charge: -$\frac{1}{3}$& down (\Pdown) & strange (\Pstrange) & bottom (\Pbottom) \\
+\midrule
+\textbf{Leptons} & & & \\
+\midrule
+Charge: -1 & electron (\Pe) & muon (\Pgm) & tau (\Pgt) \\
+Charge: 0  & electron neutrino ($\Pgn_{\Pe}$) & muon neutrino ($\Pgn_{\Pgm}$) & tau neutrino ($\Pgn_{\Pgt}$)\\
+\bottomrule
+\end{tabular}
+\label{tab:theory_fermions}
+\end{center}
+\end{table}
+
+The forces in the \ac{SM} are mediated by spin-1 bosons: The gluon (\Pgluon),
+which carries the strong force, the photon (\Pphoton) as the
+electromagnetic force carrier, and the $\PW^{\pm}$ and \PZ bosons, the
+force carriers of the weak nuclear force. 
+
+The particles that interact via the strong force carry colour charge (red, green, or blue),
+as do their mediators, the gluons. The interactions in the \ac{QFT} of the
+strong force, called \ac{QCD}, are governed by an SU(3) (colour) symmetry.
+%There are 8 gluons due to the SU(3) symmetry, colour octet and a colour singlet, but
+%if there was a colour singlet it should occur as a free particle while it does not.
+%See chapter 285 of griffiths
+The quarks are never observed in isolation but always in bound
+hadron states, which is referred to as confinement. Due to asymptotic
+freedom \cite{asympt-I,asympt-II}, the strong coupling strength decreases at 
+high energy (short distances). More detailed introductions to \ac{QCD} can 
+be found in ref. \cite{griffiths}.
+
+Particles that carry electric charge interact via the 
+electromagnetic force, summarised in by the rules of \ac{QED}. 
+The weak interaction, governed by weak isospin transformations,
+only couples to the left-handed part of the fermion states. In 
+general a fermion state can be decomposed into its left- and right-handed parts
+\begin{equation}\label{eqn:leftright}
+\chi=\psi_R+\psi_L,
+\end{equation}
+and only $\psi_L$ will interact via the weak force. Handedness and
+helicity have the same eigenstates for massless particles, and as
+such neutrinos, which are massless in the \ac{SM}, must all be left-handed.
+The observation of neutrino flavour oscillations since the formulation of
+the \ac{SM} implies that neutrinos do have a small but finite mass
+and so there must be right-handed neutrinos in the \ac{SM}. This is
+not discussed further here ADD REFERENCE.
+The weak isospin acts on doublets of left-handed lepton pairs, while
+the right-handed leptons transform as singlet states. This works similarly
+for the quarks, with weak isospin acting three left-handed doublets and
+six right-handed singlets. Note that the weak eigenstates of the quarks
+differ from the physical states, which mix via the \ac{CKM}-matrix CITATION
+in charged current interactions as
+\begin{equation}\label{eqn:ckm_matrix}
+\begin{pmatrix} d' \\
+s' \\
+b'  \end{pmatrix} = \begin{pmatrix} V_{ud} & V_{us} & V_{ub} \\
+V_{cd} & V_{cs} & V_{cb} \\
+V_{td} & V_{ts} & V_{tb} \end{pmatrix} \begin{pmatrix} d \\
+s\\
+b \end{pmatrix}.
+\end{equation}
+
+\subsection{The electroweak force}
+\label{sec:theory_sm_ewk}
+The unification of the weak and electromagnetic forces, introduced
+in the 1960s by Glashow \cite{glashow-ewk}, Weinberg \cite{weinberg-ewk} and Salam \cite{salam-ewk},
+is a key component of the \ac{SM}. The unification of these forces,
+governed by an SU(2)$\times$U(1) symmetry, implies the presence of a charged
+current. A quantum number, weak hypercharge $Y$, is introduced. Weak
+hypercharge is related to weak isospin $I_{1,2,3}$ and electric charge as
+\begin{equation}\label{eqn:hypercharge}
+Q=I_3 + \frac{1}{2}Y.
+\end{equation}
+We then have the three weak isospin fields, $W_{\mu}^{i}$, and the
+weak hypercharge field $Y_{\mu}$, which mix to form the physical \Pphoton,
+\PZ and $\PW^{\pm}$ states as
+\begin{align}\label{eqn:ewk_propagators}
+\PW^{\pm} &= \frac{1}{\sqrt{2}}(W_{\mu}^1 \mp i W_{\mu}^2),\\
+A_{\mu} &= W_{\mu}^3\sin{\theta_W} + Y_{\mu}\cos{\theta_W},\\
+Z_{\mu} &= W_{\mu}^3\cos{\theta_W} - Y_{\mu}\sin{\theta_W}.
+\end{align}
+In these equations $A_{\mu}$ is the photon field and $Z_{\mu}$ the \PZ field.
+The weak mixing angle $\theta_W$ is related to the weak (g) and electromagnetic (g')
+coupling constants as
+\begin{equation}\label{eqn:thetaw}
+g\sin{\theta_W} = g'\cos{\theta_W}
+\end{equation}
+
+The gauge invariance of the Lagrangian would be broken
+by the addition of mass terms. For the photon this is fine, as we know it
+is massless, but it is known that the \PW and \PZ bosons, as well as fermions, 
+are massive. This means electroweak symmetry must be broken. In the \ac{SM}
+this is achieved via the Higgs mechanism.
+
+\subsection{The Higgs mechanism}
+\label{sec:theory_sm_higgsmech}
+The masses of the vector bosons are generated via the
+Higgs mechanism, proposed in the 1960s by Englert and Brout \cite{englertbrout}
 
 \section{Standard model Higgs boson measurements}
 \label{sec:theory_smH}
@@ -22,8 +153,11 @@ grew the confidence in this boson being compatible with the standard model Higgs
 mass measurement using the full dataset of Run 1 of the \ac{LHC} 
 found \mh = $125.09 \pm 0.21 \text{ (stat) } \pm 0.11 \text{ (syst) }$ GeV \cite{MassComb}.
 The combined ATLAS and CMS production- and decay rate measurement, also using the full dataset of \ac{LHC} Run 1,
-shows very good agreement with the \ac{SM} predictions \cite{CouplComb}. Some discrepancies
-with the \ac{SM} predicition do remain, and so the measurements of \ac{SM} Higgs boson
+shows very good agreement with the \ac{SM} predictions \cite{CouplComb}. In addition, through
+this combination the $\PHiggslight \rightarrow \Pgt\Pgt$ decay was observed with a significance of 5.5$\sigma$, while
+the individual experiments did not reach a significance upwards of 5$\sigma$ in this channel during Run 1.
+Despite the good agreement with the \ac{SM}, some discrepancies do remain, 
+and so the measurements of \ac{SM} Higgs boson
 properties are certainly not finished yet.
 
 \begin{figure}[h!]
@@ -60,18 +194,45 @@ that the two discovery channels $\PHiggslight \rightarrow \gamma\gamma$ and $\PH
 PZ$ have smaller branching ratios than many other channels. These two channels are very sensitive
 due to the small backgrounds and the excellent photon and lepton energy resolution the detectors provide.
 
-During Run 2
-
-
+During Run 2 of the LHC, standard model Higgs boson measurements, and searches for the 
+standard model Higgs boson in decay channels not previously established, have 
+already been performed. The decay in to $\gamma\gamma$ has been re-established \cite{CMSHgamgam2016,ATLASHgamgam2016},
+as has the decay in to $ZZ\rightarrow 4\ell$ \cite{CMSHZZ2016,ATLASHZZ2016}. In addition, measurements
+of $H\rightarrow WW$ are under way \cite{CMSHWW2016,ATLASHWW2016}. Establishment of the decay of 
+$H\rightarrow b\bar{b}$ \cite{CMSVBFHbb2016,ATLASVHbb2016} and of $H\rightarrow \mu\mu$ \cite{ATLASHmm2016} 
+is still to be achieved.
+Finally, searches for ttH production, important to establish the top-Higgs coupling, have also been carried 
+out \cite{CMSttH2016,CMSttHmultilep2016,ATLASttHbb2016,ATLASttHmultilep2016}. As the Run 2 dataset
+keeps growing, more such measurements will be made to shed more light on the standard model Higgs boson.
 
 \section{Beyond the standard model}
 \label{sec:theory_BSM}
-The \ac{SM} has been successfully tested to high accuraccy. However,
-some issues remain that cannot be addressed by the \ac{SM} alone.
-For example BLAH BLAH
+The \ac{SM} has been successfully tested to high accuraccy \cite{pdg-2014}. However,
+some issues remain that cannot be addressed by the \ac{SM} alone \cite{griffiths}.
+For example, it does not provide a candidate for dark matter. 
+Additionally, the energy dependence of the running coupling constants
+do not converge the GUT scale, and the force of gravity does not
+appear in the \ac{SM}, no quantum theory can be formulated for it.
 
-Therefore \acf{BSM} theories have been developed
-that aim to cover some of these issues. One of the most
+These issues aside, one of the most pressing issues regarding
+the Higgs sector of the \ac{SM} is the hierarcy problem.
+The \ac{SM}
+is accepted to be an effective field theory that describes
+the elementary particles and their interactions well up to an energy scale $\Lambda$.
+This is the energy scale at which new physics must enter.
+We know that $\Lambda \leq \mathcal{O}(10^{19})$, the Planck scale, as quantum 
+gravitational effects start to become important in that region. $\Lambda$ enters
+the corrections due to fermion and boson loops to the Higgs boson mass quadratically \cite{MSSM-carena-haber}:
+\begin{equation}\label{eqn:mh_hierarchy}
+m_{h_{\text{SM}}}^2  = (m_h^2)_0 + \mathcal{O}(\Lambda^2).
+\end{equation}
+Thus assuming that there is no new physics all the way up to
+the Planck scale the observation \mh=125 GeV would only be compatible with $\Lambda$ of order $10^{19}$ GeV
+if there was extreme fine-tuning of the bare Higgs boson mass $(m_h^2)_0$.
+
+Many \acf{BSM} theories have been developed
+that can to address the hierarchy problem and some of the other issues 
+discussed. One of the most
 popular of such theories is \acf{SUSY} \cite{SUSY-primer}, which postulates
 that there is a symmetry between bosons and fermions. Every fermionic
 \ac{SM} particle has a bosonic superpartner (named `s'+name of fermion, e.g.
@@ -79,15 +240,34 @@ sbottom, selectron,...), and every bosonic \ac{SM} particle
 has a fermionic superpartner (named boson name + `ino', e.g. higgsino, Wino,...).
 
 If this symmetry were unbroken the \ac{SUSY} particles must
-have the same mass as their \ac{SM} partners. However, we know that
-this is not the case as such particles would have been detected a long time ago. The 
+have the same mass as their \ac{SM} partners. However, if that had 
+been the case such particles would have been detected a long time ago. The 
 only possibility is then that \ac{SUSY} is a broken symmetry and the superpartners
-are heavier than their \ac{SM} equivalents.
+are heavier than their \ac{SM} equivalents. It is important to note
+that the fermion and boson loops contribute to the Higgs boson
+mass corrections with opposite sign, and so, if \ac{SUSY}
+was an exact symmetry their contributions to the Higgs boson mass
+would cancel. Due to 
+symmetry breaking the contributions of \ac{SM} particles 
+and their supersymmetric partners do not completely cancel. If
+the \ac{SUSY} breaking scale, where new particles should
+be found, is much larger than a few TeV further fine-tuning of 
+the bare Higgs boson mass would be required \cite{MSSM-carena-haber,SUSY-primer}.
+Apart from solving the hierarchy problem, \ac{SUSY} addresses some
+of the other aforementioned issues. The lightest \ac{SUSY} particle
+would be a candidate for dark matter if it were stable \cite{SUSY-primer}. On top of that
+assuming \ac{SUSY} means the electroweak and strong coupling
+constants intersect at a common energy scale of $\mathcal{O}(10^{16} \text{ GeV })$ \cite{GUT-LEP}. 
 
-\subsection{The Higgs sector of the MSSM}
+The simplest supersymmetric extension of the \ac{SM}, the \ac{MSSM} \cite{SUSY-primer}, only adds the minimum
+number of particles and fields required to formulate a supersymmetric theory.
+%And conserves R-parity, see section 6.2 of the SUSY primer
+
+
+\subsection{The Higgs sector of the \ac{MSSM}}
 \label{sec:theory_MSSM_H}
 At least two Higgs doublets are required in the
-Higgs sector of the MSSM due to the supersymmetric
+Higgs sector of the \ac{MSSM} due to the supersymmetric
 background of the theory \cite{MSSM-carena-haber}. Two complex Higgs doublets are added,
 \begin{equation}\label{eqn:mssm_higgsdoublets}
 \phi_d = \begin{pmatrix} \phi_d^0 \\
@@ -597,9 +777,15 @@ The red exclusion contour in figure \ref{fig:bsm_summary}b is the re-interpretat
 chapter \ref{chap:hhh}.
 
 In Run-2 of the \ac{LHC} searches for \AHtotautau, setting more stringent limits than those shown in \ref{fig:bsm_summary},
-have been performed in \ac{CMS}. The results of these searches will be presented in chapter \ref{chap:mssm}. Other searches
-for heavy Higgs bosons with decays to other final states are also in progress as the Run-2 data keep
-amassing. 
+have been performed in \ac{CMS}. The results of these searches will be presented in chapter \ref{chap:mssm}. 
+Similar searches have been performed by \acs{ATLAS} \cite{ATLASMSSMtautau2016}. Neutral BSM Higgs bosons
+are being searched for in other channels too, with some results for decays into \ttbar \cite{ATLASHttbar}, 
+ZZ \cite{CMSHZZ2016,ATLASHZZ2016}, and WW \cite{ATLASHeavyHWW} already public.
+In addition, searches for charged
+Higgs bosons \cite{ATLASHplustaunu,ATLASHplustb,CMSHplustaunu} and
+di-Higgs searches \cite{ATLASHbbgamgam,ATLASHgamgamWW,ATLASHhhbbbb,CMSbbgamgam,CMSHbbtautau,CMSHbbWW}, both in 
+various final states, have been performed. The interest in these searches will remain, and so
+as more data are collected during Run 2 more of such searches will be performed.
 
 \begin{figure}[h!]
 \begin{center}
