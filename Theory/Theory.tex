@@ -15,7 +15,7 @@ with particles. The \ac{SM} is a \ac{QFT} in which matter particles
 are represented by spin-$\frac{1}{2}$ fermions, with the forces represented
 by spin-1 bosons.
 
-\subsection{Fundamental particles and forces}
+\subsection{Fundamental particles}
 \label{sec:theory_sm_particles}
 In the \ac{SM} there are twelve fundamental fermions, six quarks and
 six leptons. The quarks interact via both strong nuclear force and the 
@@ -50,6 +50,18 @@ Charge: 0  & electron neutrino ($\Pgn_{\Pe}$) & muon neutrino ($\Pgn_{\Pgm}$) & 
 \end{center}
 \end{table}
 
+\subsection{Fundamental forces}
+\label{sec:theory_sm_forces}
+%Symmetries of the Lagrangian describing a physical system lead
+%to conserved quantities, as shown by Noether's theorem \cite{noethersthm}.
+%This is and important concept for the description of particle interactions
+%under different forces: invariance (symmetry) under a certain 
+%transformation group is imposed on 
+%the Lagrangians describing the fundamental forces. This is brought
+%about as local gauge invariance, where the Lagrangians 
+%are required to be invariant under a local phase transformation
+%plus a gauge transformation. The local phase transformation
+%might introduce additional derivatives of potentials, taken care of by gauge transf.
 The forces in the \ac{SM} are mediated by spin-1 bosons: The gluon (\Pgluon),
 which carries the strong force, the photon (\Pphoton) as the
 electromagnetic force carrier, and the $\PW^{\pm}$ and \PZ bosons, the
@@ -67,26 +79,35 @@ freedom \cite{asympt-I,asympt-II}, the strong coupling strength decreases at
 high energy (short distances). More detailed introductions to \ac{QCD} can 
 be found in ref. \cite{griffiths}.
 
-Particles that carry electric charge interact via the 
-electromagnetic force, summarised in by the rules of \ac{QED}. 
-The weak interaction, governed by weak isospin transformations,
-only couples to the left-handed part of the fermion states. In 
-general a fermion state can be decomposed into its left- and right-handed parts
+The weak and electromagnetic forces were unified into the
+electroweak force. The unification of these forces was introduced 
+in the 1960s by Glashow \cite{glashow-ewk}, Weinberg \cite{weinberg-ewk} and Salam \cite{salam-ewk},
+is a key component of the \ac{SM}. Electroweak theory,
+governed by an SU(2)$\times$U(1) symmetry, implies the presence of weak
+neutral currents. 
+
+%Particles that carry electric charge interact via the
+%electromagnetic force, while the weak force works
+%between particles carrying weak isospin.
+The weak interaction, working on all fermions,
+only couples to the left-handed part of fermion states. In 
+general a fermion state $\chi$ can be decomposed into its left- and right-handed parts
 \begin{equation}\label{eqn:leftright}
 \chi=\psi_R+\psi_L,
 \end{equation}
-and only $\psi_L$ will interact via the weak force. Handedness and
-helicity have the same eigenstates for massless particles, and as
-such neutrinos, which are massless in the \ac{SM}, must all be left-handed.
+and only $\psi_L$ will interact via the weak force. For massless particles
+the general state $\chi$ is not a mixture of left-handed and right-handed parts,
+but is either completely left-handed or right-handed. As such neutrinos, which are
+massless in the \ac{SM}, must all be left-handed. %CAREFUL: handedness =/= helicity
 The observation of neutrino flavour oscillations since the formulation of
 the \ac{SM} implies that neutrinos do have a small but finite mass
-and so there must be right-handed neutrinos in the \ac{SM}. This is
-not discussed further here ADD REFERENCE.
-The weak isospin acts on doublets of left-handed lepton pairs, while
-the right-handed leptons transform as singlet states. This works similarly
-for the quarks, with weak isospin acting three left-handed doublets and
-six right-handed singlets. Note that the weak eigenstates of the quarks
-differ from the physical states, which mix via the \ac{CKM}-matrix CITATION
+and so there must be right-handed neutrinos in the \ac{SM}. This will
+not be discussed here, for a more detailed account see reference \cite{pdg-2014}.
+%The weak isospin acts on doublets of left-handed lepton pairs, while
+%the right-handed leptons transform as singlet states. This works similarly
+%for the quarks, with weak isospin acting three left-handed doublets and
+Another feature of the weak force is that the weak eigenstates of the quarks
+differ from the physical states, which mix via the \ac{CKM}-matrix \cite{ckm-matrix-cabibbo,ckm-matrix-KM}
 in charged current interactions as
 \begin{equation}\label{eqn:ckm_matrix}
 \begin{pmatrix} d' \\
@@ -98,42 +119,148 @@ s\\
 b \end{pmatrix}.
 \end{equation}
 
-\subsection{The electroweak force}
-\label{sec:theory_sm_ewk}
-The unification of the weak and electromagnetic forces, introduced
-in the 1960s by Glashow \cite{glashow-ewk}, Weinberg \cite{weinberg-ewk} and Salam \cite{salam-ewk},
-is a key component of the \ac{SM}. The unification of these forces,
-governed by an SU(2)$\times$U(1) symmetry, implies the presence of a charged
-current. A quantum number, weak hypercharge $Y$, is introduced. Weak
-hypercharge is related to weak isospin $I_{1,2,3}$ and electric charge as
-\begin{equation}\label{eqn:hypercharge}
-Q=I_3 + \frac{1}{2}Y.
-\end{equation}
-We then have the three weak isospin fields, $W_{\mu}^{i}$, and the
-weak hypercharge field $Y_{\mu}$, which mix to form the physical \Pphoton,
+Going back to the symmetry of the unified electroweak forces,
+The SU(2) part of the symmetry is built from the weak
+isospin generators $I_{1,2,3} = \frac{1}{2}\sigma_{1,2,3}$,
+where $\sigma_i$ are the Pauli spin matrices. The U(1)
+symmetry comes from the weak hypercharge generator $Y$, which
+is related to weak isospin and electric charge as $Q = I_3 + \frac{1}{2}Y$.
+
+Associated gauge fields are the three weak fields $W_{\mu}^{i}$ and the
+weak hypercharge field $B_{\mu}$. These four fields mix to form the physical \Pphoton,
 \PZ and $\PW^{\pm}$ states as
-\begin{align}\label{eqn:ewk_propagators}
-\PW^{\pm} &= \frac{1}{\sqrt{2}}(W_{\mu}^1 \mp i W_{\mu}^2),\\
-A_{\mu} &= W_{\mu}^3\sin{\theta_W} + Y_{\mu}\cos{\theta_W},\\
+\begin{equation}\label{eqn:ewk_propagators_W}
+\PW^{\pm} &= \frac{1}{\sqrt{2}}(W_{\mu}^1 \mp i W_{\mu}^2),
+\end{equation}
+\begin{equation}\label{eqn:ewk_propagators_phot}
+A_{\mu} &= W_{\mu}^3\sin{\theta_W} + Y_{\mu}\cos{\theta_W},
+\end{equation}
+\begin{equation}\label{eqn:ewk_propagators_Z}
 Z_{\mu} &= W_{\mu}^3\cos{\theta_W} - Y_{\mu}\sin{\theta_W}.
-\end{align}
+\end{equation}
 In these equations $A_{\mu}$ is the photon field and $Z_{\mu}$ the \PZ field.
 The weak mixing angle $\theta_W$ is related to the weak (g) and electromagnetic (g')
 coupling constants as
 \begin{equation}\label{eqn:thetaw}
-g\sin{\theta_W} = g'\cos{\theta_W}
+\begin{split}
+&g\sin{\theta_W} = g'\cos{\theta_W} \Rightarrow \\
+&\sin{\theta_W} = \frac{g'}{\sqrt{g^2+g'^2}} \text{ and } \cos{\theta_W} = \frac{g}{\sqrt{g^2+g'^2}}
+\end{split}
 \end{equation}
 
-The gauge invariance of the Lagrangian would be broken
-by the addition of mass terms. For the photon this is fine, as we know it
-is massless, but it is known that the \PW and \PZ bosons, as well as fermions, 
-are massive. This means electroweak symmetry must be broken. In the \ac{SM}
+Neutral weak-current interactions were discovered in 1973 at the Gargamelle
+bubble chamber experiment at \acs{CERN} \cite{gargamelle}. This discovery was 
+followed 10 years later by the discovery of the $\PW^{\pm}$ \cite{UA1-1,UA2-1} and $\PZ$ \cite{UA1-2,UA2-2} bosons by the UA1
+and UA2 collaborations at \acs{CERN}.
+
+An issue with electroweak theory is that the gauge invariance of the Lagrangian would be
+broken by the addition of mass terms for the gauge bosons. However, the \PW and \PZ bosons are known to be massive. 
+Furthermore fermion mass terms would also not be gauge invariant, and it is also known
+that the fermions are massive.
+This means electroweak symmetry must be broken. In the \ac{SM}
 this is achieved via the Higgs mechanism.
 
 \subsection{The Higgs mechanism}
 \label{sec:theory_sm_higgsmech}
 The masses of the vector bosons are generated via the
-Higgs mechanism, proposed in the 1960s by Englert and Brout \cite{englertbrout}
+Higgs mechanism, proposed in the 1960s by Englert and Brout \cite{englertbrout},
+Higgs \cite{higgs-I,higgs-II,higgs-III} and Guralnik, Hagen and Kibble \cite{GHK}.
+The idea is to add a field that is symmetric under gauge transformations, but
+has a nonzero vacuum expectation value and thus breaks the symmetry spontaneously.
+According to Goldstone's theorem \cite{goldstone-theorem,goldstone-theorem-2} a 
+consequence of spontaneous symmetry breaking is the appearance of a 
+massless scalar (Goldstone boson) for each broken generator.
+
+The simplest addition to achieve this is a complex doublet,
+\begin{equation}\label{eqn:phi_hfield}
+\Phi = \begin{pmatrix} \phi^{+} \\
+\phi^{0} \end{pmatrix}.
+\end{equation}
+This field has an associated Lagrangian
+\begin{equation}\label{eqn:higgs_gen_lag}
+\begin{split}
+\mathcal{L}_{\text{Higgs}} = -(D_{\mu}\Phi)^{\dagger}(D^{\mu}\Phi) - V(\Phi^{\dagger}\Phi) \text{, where we choose, }\\
+V = \lambda(\Phi^{\dagger}\Phi - \frac{\mu^2}{2\lambda})^2,
+\end{split}
+\end{equation}
+Where $\lambda$ and $\mu^2$ are two real parameters, and $\lambda>0$ is needed for stability
+of the vacuum. To get spontaneous symmetry breaking we require $\mu^2>0$.
+
+Under a local $SU(2)\times U(1)$ transformation, with hypercharge Y=$\frac{1}{2}$
+the resulting transformation of the field is,
+\begin{equation}\label{eqn:hfield_trsf}
+\begin{pmatrix} \phi^+ \\
+\phi^0 \end{pmatrix} = \exp{\frac{i}{2}(\vec{\theta(x)}\cdot\vec{\sigma} + \rho(x))}
+\begin{pmatrix} \phi^+ \\
+\phi^0 \end{pmatrix}, 
+\end{equation}
+where $\vec{\sigma}$ are the Pauli spin matrices and $\vec{\theta(x)}$ and $\rho(x)$
+are functions of the space-time coordinates. From such a transformation
+the covariant derivative is required to be
+\begin{equation}\label{eqn:H_cov_deriv}
+D_{\mu} = \partial_{\mu} - \frac{i}{2}g\vec{W_{\mu}}\cdot\vec{\sigma} - \frac{i}{2}g'Y_{\mu}
+\end{equation}
+In the vacuum state we must have $V(\Phi^{\dagger}\Phi) =0$, which happens for nonzero values of $\Phi$,
+and we can choose $\phi^+$ = 0 and $\phi^0$ real to get:
+%\begin{equation}\label{eqn:vacuum_expt}
+%\begin{split}
+%&\Phi^{\dagger}\Phi - \frac{\mu^2}{2\lambda} = 0 \Rightarrow \\
+%&\Phi^{\dagger}\Phi = \frac{\mu^2}{2\lambda} \Rightarrow\\
+%&\phi^{+*}\phi^+ + \phi^{0*}\phi^0 = \frac{\mu^2}{2\lambda} \text{ and choosing } \phi^+ \text{ = 0 and } \phi^0 \text{ to be real,}\\
+%&\phi^0 = \frac{v}{\sqrt{2}} \text{ where } v \text{ is real and} v^2=\frac{\mu^2}{\lambda}.
+%\end{split}
+%\end{equation}
+\begin{equation}\label{eqn:field_vev}
+\langle 0 | \Phi | 0 \rangle = \begin{pmatrix} 0 \\
+\frac{v}{\sqrt{2}} \end{pmatrix},
+\end{equation}
+where $v$ is real and $v^2 = \frac{\mu^2}{\lambda}$.
+
+Looking at fluctuations around the vacuum state,
+\begin{equation}\label{eqn:fluctvac}
+\begin{split}
+&\delta\Phi = \frac{i}{2}(\vec{\theta}\cdot\vec{\sigma} + \rho)\Phi\\
+&=\frac{i}{2}\begin{pmatrix} \theta_3 + \rho & \theta_1 - i\theta_2 \\
+\theta_1+i\theta_2 & \rho - \theta_3 \end{pmatrix} \begin{pmatrix} 0\\
+\frac{v}{\sqrt{2}} \end{pmatrix}.
+\end{split}
+\end{equation}
+Requiring $\delta\Phi=0$, we have $\theta_1=\theta_2=0$ and $\rho=\theta_3$, 
+and the only remaining generator that leaves the field 
+invariant is $\frac{i}{2}\theta_3 + Y = I_3 +Y$ is the U(1) group. Denoting the 
+remaining generators as $\vec{b}$, and parameterising the field as an expansion around the
+vacuum state gives:
+\begin{equation}\label{eqn:vev_expansion}
+\Phi = \exp{\frac{i}{\sqrt{2}v}\vec{\theta}\cdot\vec{b}}\begin{pmatrix} 0 \\
+\frac{1}{\sqrt{2}} (v+H) \end{pmatrix}.
+\end{equation}
+By choosing the appropriate gauge the Goldstone bosons $\vec{\theta}$
+can be eliminated. They become the longitudinal degrees of freedom of the \PW and \PZ 
+bosons. This leaves us with
+\begin{equation}\label{eqn:vev_expansion_satisfied}
+\Phi = \begin{pmatrix} 0 \\
+\frac{1}{\sqrt{2}}(v+H) \end{pmatrix}
+\end{equation}
+Substituting this into the Lagrangian of equation \ref{eqn:higgs_gen_lag}, 
+and using the definitions of $\PW_{\mu}^{\pm}$ and $\PZ_{\mu}$ from 
+equations \ref{eqn:ewk_propagators}, we get
+\begin{equation}\label{eqn:completed_lagrangian}
+\mathcal{L}_{\text{Higgs}} = -\frac{1}{2}\partial_{\mu}H\partial^{\mu}H -\frac{g^2v^2}{4}\PW_{\mu}^- \PW^{\mu +} - \frac{g^2+g'^2}{8}v^2\PZ_{\mu}\PZ^{\mu}  - \mu^2H^2  + \text{terms of order 3 and up in the fields}.
+\end{equation}
+This gives us masses for the \PW bosons as $m_{\PW} = \frac{gv}{2}$ and a mass
+for the \PZ boson as $m_{\PZ} = \frac{1}{2}v\sqrt{g^2+g'^2}$. The photon remains massles. 
+The remaining mass term is for the field $H$, the
+Higgs field, which has a mass $m_{H} = \sqrt{2\mu^2}$.
+%Mass term : -1/2m_X^2. However for m_W note W_mu+Wmu- = 1/2(W_mu^1+iW_mu^2)(W_mu^1-iW_mu^2) = 
+%1/2*(W_mu^1W_mu^1+W_mu^2W_mu^2). But also W+^2+W^-2 = W1^2+W2^2 so masses end up the same
+
+Using the developments so far we can also add fermion masses
+through Yukawa couplings between the fermion- and Higgs fields
+\begin{equation}\label{eqn:yukawa_coupl}
+\lambda_f(\bar{\psi_L}\Phi\psi_R + \bar{\psi_R}\Phi\psi_L),
+\end{equation}
+where $\lambda_f$ are coupling constants specific to each fermion, $\lambda_f \propto m_f$.
+This means that heavier fermions have stronger couplings to the Higgs boson. 
 
 \section{Standard model Higgs boson measurements}
 \label{sec:theory_smH}
