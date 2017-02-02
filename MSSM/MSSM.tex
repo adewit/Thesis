@@ -5,7 +5,7 @@ decaying to a pair of \Pgt leptons will be discussed. The results presented
 here correspond to those from an analysis peformed on a dataset collected
 during the first half of the 2016 p--p running period of the \ac{LHC}. This dataset
 corresponds to an integrated luminosity of 12.9 fb$^{-1}$, and the analysis is
-detailed in reference \cite{CMS-PAS-HIG-16-037}. The \etau, \mutau, \tautau and \emu final
+detailed in Ref. \cite{CMS-PAS-HIG-16-037}. The \etau, \mutau, \tautau and \emu final
 states of the di-\Pgt pair were studied. The results of this search are 
 model--independent upper limits on $\sigma \times$ BR of \PHiggs or \PHiggsps 
 production in the gluon fusion (gg$\phi$) and b-associated (bb$\phi$) production 
@@ -16,8 +16,8 @@ A very similar analysis, not described in detail here,
 was performed on a dataset corresponding to 2.3 fb$^{-1}$ collected at $\sqrt{s}=13$ TeV during the 2015 \ac{LHC} p--p running period.  
 More information can be found in reference \cite{CMS-PAS-HIG-16-006}.
 
-For the analysis described in this chapter, as well as the 2015 analysis not detailed
-here, I was responsible for all stages of the analysis. This included optimisation 
+For the analysis described in this chapter, as well as the 2015 analysis,
+I was responsible for all stages of the analysis. This included optimisation 
 of object selection and categorisation,
 as well as studies of background methods for the \mutau, \etau and \tautau channels,
 evaluation of systematic uncertainties in all four channels, and production of
@@ -47,19 +47,18 @@ MSSM benchmark scenarios. These samples are generated using \texttt{Powheg} \cit
 
 Single-top and \ttbar background samples are generated using \texttt{Powheg},
 with \texttt{MadGraph5\_aMC@NLO} \cite{amcnlo} used for the generation of di--boson background
-samples and part of the W+$\gamma$ background, which is included in the \emu channel only.
+samples. %and part of the W+$\gamma$ background, which is included in the \emu channel only.
 \Wjets and \Zll backgrounds are generated with the \texttt{MadGraph 5} \cite{madgraph}
-matrix element generator. Both samples containing a mixture
+matrix element generator. Samples containing both a mixture
 of jet multiplicities (`inclusive' samples) and samples with 1,2,3 or 4 jets (`exclusive' samples)
 are generated. These exclusive samples increase the available number of
 background events with higher jet multiplicities. %note LO samples used because to get same number of effective
 %events would need to generate more NLO samples
 The `inclusive' and `exclusive' samples are reweighted
 before they are combined so as to preserve the correct
-fractions of events with each jet multiplicity.
-\texttt{MadGraph 5} 
-is also used to generate part of the W+$\gamma$ background
-samples.
+fractions of events with each jet multiplicity. The $\PW+\Pphoton$ background samples,
+only included in the \emu channel, is generated in part with \texttt{MadGraph 5} and in
+part with \texttt{MadGraph5\_aMC@NLO}.
 
 Parton showering and hadronisation are modelled using \texttt{PYTHIA 8.1} for all 
 samples, and  minimum--bias events generated with \texttt{PYTHIA 8.1} are
@@ -75,32 +74,92 @@ on how the objects used are reconstructed,
 and a more in--depth description of the identification criteria, 
 is given in chapter \ref{chap:objects}.
 
+The basis of the event selection is to select \mutau, \etau,
+\tautau and \emu pairs. Events are selected first by using a trigger,
+followed by additional selection criteria. For the \etau
+and \mutau channels we only trigger on the electron or muon. 
+While the lepton + hadronic tau cross triggers that are also available
+allow for a 3 (6) GeV lower \pT~threshold on the
+muon (electron), the benefit of using such a trigger is small as 
+most of the signal samples at high-mass, the region of interest in this
+analysis, have higher \pT~electrons and muons. This is illustrated
+in figure \ref{fig:mt_muonpt}a, which shows the \pT~of muons in the
+\mutau channel, with the signal normalised to 4000 times its cross--section
+times branching ratio at \mA=1 TeV and \tanb=50 in the $m_{h}^{\text{mod}+}$ scenario overlaid.
+In the \emu channel two dedicated electron-muon cross triggers
+are used. These have significantly lower online \pT~cuts 
+on the two leptons than the single lepton triggers. For the 
+\tautau channel a di-tau cross-trigger is used.
+
+Because the triggers involving electrons or muons reach 
+their maximum efficiency as a function of \pT~quickly, the offline \pT~cut
+on the electrons and muons is 1 GeV above the \pT~threshold of the trigger. The
+hadronic tau efficiency turns on much more slowly, and therefore the offline \pT~cut
+on the hadronic taus in the \tautau channel is 5 GeV above the trigger \pT~threshold.
+In addition, a requirement is made on the $\eta$ of the electrons, muons and
+hadronic taus. Such a selection is driven by the $\eta$ range covered by the tracker and the $\eta$
+range that is used in the reconstruction of the particles,
+although in some cases the used trigger is restricted in $\eta$ and the cut is chosen to
+align with that. As an illustration figure \ref{fig:mt_muonpt}b shows
+the $\eta$ distribution for electrons in the \etau channel, again with the signal overlaid.
+The signal peaks in the central $\eta$ region.
+
+Other selections include cuts on the impact parameters $d_{xy}$ and $d_{z}$, which
+ensure that the particle is compatible with having
+originated from the primary vertex. This reduces the selection of particles
+coming from pile--up events. Additional identification and isolation criteria
+are also applied. These will be discussed in the following sections.
+The optimisation of some of the selections will also be discussed there. Note that 
+the optimisations were all based on the dataset collected during 2015, which
+corresponds to an integrated luminosity of 2.3 fb$^{-1}$. 
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Muon \pT]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/pt_1_inclusive_mt_2016.pdf}}
+\subfloat[Electron $\eta$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/eta_1_inclusive_et_2016.pdf}}
+\end{center}
+\caption{(a) \pT~of the muon in the \mutau channel and (b) $\eta$ of the electron in the \etau channel.
+The gluon fusion (dashed blue line)
+and b-associated (dashed purple line) signals are overlaid. The signals are normalised to 4000 times their
+cross-section times branching ratio at \mA=1 TeV and \tanb=50 in the $m_{h}^{\text{mod+}}$ scenario.}
+\label{fig:mt_muonpt}
+\end{figure}
+ 
 \subsection{Pair selection and vetos}
 \label{sec:mssm_eventsel_pairs}
 The basis of the event selection is the selection of \mutau, \etau,
 \tautau and \emu pairs by the requirements described
 in the following subsections. After applying trigger
 requirements, identification criteria and kinematic cuts
-more than one possible candidate pair can exist. If this
-is the case for an event, the pair is chosen as follows:
-\begin{itemize}
-\setlength{\itemsep}{-\baselineskip}
-\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
-electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
-and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
-object with raw MVA isolation value nearest to 1.
-\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
-\item If the \pT~of candidate 1 is the same in both pairs, prefer the pair with most isolated
-candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
-and the $\Pgt_h$ for \etau and \mutau channels).
-\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
-\end{itemize}
+more than one possible candidate pair can exist. If
+this is the case the pair with the two most isolated candidates
+ is chosen, as isolated candidates are less likely 
+to be jets misreconstructed
+as leptons or hadronic taus.
+%If this
+%is the case for an event, the pair is chosen as follows:
+%\begin{itemize}
+%\setlength{\itemsep}{-\baselineskip}
+%\item Prefer the pair with most isolated candidate 1 (muon for \mutau and \emu channels,
+%electron for \etau channel, either of the $\Pgt_h$s in \tautau channel). For electrons
+%and muons this means the object with the smallest relative isolation value is preferred, for $\Pgt_h$s the
+%object with raw MVA isolation value nearest to 1.
+%\item If the isolation of candidate 1 is the same in both pairs, prefer the pair with highest candidate 1 \pT.
+%\item If the \pT~of candidate 1 is the same in both pairs, prefer the pair with most isolated
+%candidate 2 (e for the \emu channel, the other $\Pgt_h$ for the \tautau channel, 
+%and the $\Pgt_h$ for \etau and \mutau channels).
+%\item If the isolation of candidate 2 is the same in both pairs, prefer the pair with highest candidate 2 \pT.
+%\end{itemize}
 
 To prevent overlap with other channels, events are rejected
 if there are muons and electrons, other than those in the selected pair,
 with \pT~$>10$ GeV and passing loose ID and isolation requirements.
-This also reduces backgrounds from \WZ events. 
-In addition to this, \Zee events are 
+This also reduces backgrounds from \WZ events. The application
+of these vetos means that the selection of the pair with the
+two most isolated candidates is only important where hadronic
+taus are concerned, for if there were additional electrons
+or muons the event would not pass the electron or muon veto.
+In addition to these extra electron and muon vetos, \Zee events are 
 reduced in the \etau channel by rejecting events
 where an opposite--sign pair of electrons of \pT~$>15$ GeV
 and passing very loose ID and isolation requirements can be formed. 
@@ -109,23 +168,20 @@ is reduced in a similar fashion.
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu tau channel}}
 \label{sec:mssm_eventsel_mt}
-The first selection layer in the \mutau channel is a trigger
-that only requires a muon at \ac{L1}. At the level of the \ac{HLT}, 
-loose identification and isolation criteria are then applied to this muon.
+The trigger only requires a muon at \ac{L1}, while at the level of the \ac{HLT}
+loose identification and isolation criteria are applied to this muon.
 
-The offline event selection proceeds to require an oppositely charged
+The offline event selection requires an oppositely charged
 muon and hadronically decaying tau, which are well--separated ($\Delta R > 0.5$).
 The minimum \pT~of the muon is required to be 23 GeV, with $|\eta| < 2.1$. %due to trigger conditions
-Additional ``medium'' identification requirements are placed on the muon, in addition
-to requiring the muon to be consistent with having originated from the primary vertex, such that
-the impact parameters $d_{xy} < 0.045$ cm and $d_{z} < 0.2$ cm. The muon is also required
-to be isolated, with $I_{\text{rel}}^{\mu} < 0.15$, where the isolation variable is calculated using
-a cone size of $\Delta R = 0.4$.
+Additional ``medium'' identification requirements are placed on the muon, and the impact
+parameters of the muon must satisfy $d_{xy}<0.045$ cm and $d_{z}<0.2$ cm. The muon is also
+required to be isolated, with $I_{\text{rel}}^{\mu}<0.15$, where the isolation variable
+is calculated using a cone size of $\Delta R = 0.4$.
 
 The hadronic tau needs to have a \pT~greater than 30 GeV, $|\eta|<2.3$,
 is required to be reconstructed by the HPS algorithm and to pass the medium
-working point of the MVA isolation discriminator. The hadronic tau also needs
-to have originiated from the primary vertex and so the impact paramter $d_{z}$ is 
+working point of the MVA isolation discriminator. The impact parameter $d_{z}$ is
 required to be less than 0.2 cm. Finally the hadronic tau is required
 to satisfy the very loose working point of the anti--electron discriminator
 and the tight working point of the anti--muon discriminator.
@@ -147,18 +203,18 @@ isolation selection.
 The isolation variables studied include
 the $\Delta\beta$ corrected isolation variable analogous
 to the one given for electrons in equation \ref{eqn:electron_reliso} with 
-isolation cone sizes in $\Delta R$ of 0.3 and 0.4. In addition
+isolation cone sizes of $\Delta R$  0.3 and 0.4. In addition
 to this a very similar
 variable, which does not just consider charged \ac{PF} hadrons but
 also electrons and muons in the isolation sum, is considered. This
-variable is also studied for both cone sizes of 0.3 and 0.4. Finally,
+variable is also studied for cone sizes of 0.3 and 0.4. Finally,
 a relative isolation variable based solely on the \pT~of tracks from the primary
 vertex,
 \begin{equation}\label{eqn:reltrkiso}
 I_{\text{trk}} = \frac{\Sigma p_{\text{T}}^{\text{tracks from PV within cone of 0.3 of the muon}}}{p_{\text{T}}^{\mu}}, \end{equation} 
 is studied. The $S/\sqrt{B}$ for the different isolation variables is shown in figure \ref{fig:mssm_selection_mt_muons}a, with the
 size of the error interval from the maximum--likelihood fit to the \Ztautau signal strength shown in 
-\ref{fig:mssm_selection_mt_muons}b. From the fact that both figures of merit do not
+\ref{fig:mssm_selection_mt_muons}b. As both figures of merit do not
 change so much with varying isolation requirements we can see that this analysis
 is not so sensitive to fake, nonisolated muons. The choice of isolation variable is therefore
 driven mostly by simplicity and consistency with other \ac{CMS} analyses.
@@ -191,8 +247,8 @@ Because of the use of such a wide range of signal masses, it
 is not possible to choose a selection that is optimal
 for every mass point. This is illustrated in figure \ref{fig:mssm_selection_mt_taumt}:
 figure \ref{fig:mssm_selection_mt_taumt}a shows the upper limit on $\sigma\times$BR for
-the gluon fusion production process, at a mass $m_{\phi} = 160$ GeV, with
-figure \ref{fig:mssm_selection_mt_taumt}b showing this upper limit at $m_{\phi} = 2.9$ TeV.
+the gluon fusion production process, for a mass $m_{\phi} = 160$ GeV, with
+figure \ref{fig:mssm_selection_mt_taumt}b showing this upper limit for $m_{\phi} = 2.9$ TeV.
 Figure \ref{fig:mssm_gradcuts_mt} shows the effect of gradually loosening the \mT~and hadronic
 tau isolation working point selection on both the gg$\phi$ and bb$\phi$ production processes. 
 
@@ -217,28 +273,28 @@ hadronic tau isolation working point varies, with looser selections preferred at
 \subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_gradcuts_bbH_mt.pdf}}
 \end{center}
 \caption{Pre-fit expected limits on $\sigma \times$ BR in the \mutau channel for (a) gg$\phi$ and
-(b) bb$\phi$ production, for increasingly looser \mT~selection and tau isolation working point, starting
-at tight working point and \mT$<30$ GeV in green, medium working point and \mT$<40$ GeV in red,
-loose working point and \mT$<50$ GeV in blue and very loose working point and \mT$<60$ GeV in black. Loosening
+(b) bb$\phi$ production, for an increasingly looser \mT~selection and tau isolation working point, starting
+at the tight working point and \mT$<30$ GeV in green, the medium working point and \mT$<40$ GeV in red,
+the loose working point and \mT$<50$ GeV in blue and the very loose working point and \mT$<60$ GeV in black. Loosening
 the tau isolation working point and \mT~selection gradually improves limits at higher mass, and
 degrades them at low mass.}
 \label{fig:mssm_gradcuts_mt}
 \end{figure}
 
 From these figures
-we can observe that looser selections are preferred for higher masses. This behaviour can be
+we observe that looser selections are preferred for higher masses. This behaviour can be
 explained by considering the function of each of the selections. Tightening the hadronic
 tau isolation working point reduces the selection of fake taus and increases the proportion
 of backgrounds which contain real hadronic taus. The \mT~selection reduces
 the \Wjets background. As the backgrounds are concentrated at the lower
 end of the spectrum of mass--like discriminating variables, such tighter
-selections are preferred where signal and backgrounds overlap. However, at higher
-mass points the signal--sensitive range of the discriminating variable is 
-low in backgrounds and there is more benefit to loosening the selection
+selections are preferred where signal and backgrounds overlap. For higher masses the
+backgrounds are lower in the region where the signal peaks,
+and there is more benefit to loosening the selection
 to increase the signal efficiency than to keep the tighter selection
 to reduce an already low background.
-Using this, the selection was optimised for mass points of around 1 TeV, which leads to 
-the use of the medium hadronic tau isolation working point and a selection on \mT$<40$ GeV.
+The selection was optimised for masses around 800 GeV - 1 TeV, by
+using the medium hadronic tau isolation working point and a selection on \mT$<40$ GeV.
 
 The choice of the hadronic tau \pT~selection is driven by the effect on the low mass region:
 raising the \pT~selection by 10 GeV from the minimum of 20 GeV does not affect the sensivity
@@ -269,34 +325,35 @@ the effect on the bb$\phi$ production process is less pronounced.}
 \label{sec:mssm_eventsel_et}
 For selection of events in the \etau channel, the first step is
 a trigger that only requires an electron at \ac{L1}. Loose ID and isolation
-criteria are made on the electron at the \ac{HLT}.
+criteria are made on the electron with the \ac{HLT}.
 
-The offline event selection proceeds to require an oppositely charged
+The offline event selection requires an oppositely charged
 electron and hadronically decaying tau, which are well--separated ($\Delta R > 0.5$).
 The minimum \pT~of the electron is required to be 26 GeV, with $|\eta| < 2.1$. %due to trigger conditions
-This electron has to be consistent with having originated from the primary vertex, which
-is achieved by requiring the impact parameters to satisfy $d_{xy} < 0.045$ cm and $d_{z} < 0.2$ cm, and it
-is required to pass additional identification criteria. A selection on the MVA identification, which
-selects electrons from \Zee events with 80\% efficiency, is used. In addition the
+The impact parameters of the electron are required to satisfy
+$d_{xy} < 0.045$ cm and $d_{z} < 0.2$ cm, and the electron
+must pass additional identification criteria. The working point of the
+MVA identification discriminator that is used corresponds to a cut on the discriminator
+which selects electrons from \Zee events with 80\% efficiency. In addition the
 electron needs to be isolated, $I_{\text{rel}}^{\Pe} < 0.1$, with the relative isolation variable calculated with a cone size of 0.3.
 
 The hadronic tau is required to have a \pT~greater than 30 GeV, $|\eta|<2.3$,
 and is required to be reconstructed by the HPS algorithm and to pass the medium
-working point of the MVA isolation discriminator. It also needs
-to have originiated from the primary vertex and so the impact paramter $d_{z}$ is 
-required to be less than 0.2 cm. Finally, the hadronic tau must 
+working point of the MVA isolation discriminator. The impact parameter $d_{z}$ of the
+hadronic tau must be less than 0.2 cm.
+Finally, the hadronic tau must 
 pass the tight working point of the anti--electron discriminator
 and the loose working point of the anti--muon discriminator.
 
 Analogously to the muons, it was found that the analysis is not highly sensitive
-to the choice of electron isolation variable and selection.
+to the choice of electron isolation variable and cut value.
 A topological selection on the \mT~variable is also made in this channel to reject \Wjets events. 
-The used value of \mT~$< 50$ is obtained by performing a 2D optimisation where the \mT~selection
+The value of \mT~$< 50$ GeV that is used is obtained by performing a 2D optimisation where the \mT~selection
 and hadronic tau isolation working point are varied at the same time. The same considerations as
 for the \mutau channel apply, as illustrated in figure \ref{fig:mssm_gradcuts_et}.
 The choice of the hadronic tau \pT~selection of 30 GeV is
 made to recover some of the sensitivity lost at low mass by using looser \mT~and hadronic
-tau isolation selections. This is illustrated in figure \ref{fig:mssm_tauptcut_et}.
+tau isolation criteria. This is illustrated in figure \ref{fig:mssm_tauptcut_et}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -304,9 +361,9 @@ tau isolation selections. This is illustrated in figure \ref{fig:mssm_tauptcut_e
 \subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_gradcuts_bbH_et.pdf}}
 \end{center}
 \caption{Pre-fit expected limits on $\sigma \times$ BR in the \etau channel for (a) gg$\phi$ and
-(b) bb$\phi$ production, for increasingly looser \mT~selection and tau isolation working point, starting
-at tight working point and \mT$<40$ GeV in green, medium working point and \mT$<50$ GeV in red,
-loose working point and \mT$<60$ GeV in blue and very loose working point and \mT$<70$ GeV in black. Loosening
+(b) bb$\phi$ production, for an increasingly looser \mT~selection and tau isolation working point, starting
+at the tight working point and \mT$<40$ GeV in green, the medium working point and \mT$<50$ GeV in red,
+the loose working point and \mT$<60$ GeV in blue and the very loose working point and \mT$<70$ GeV in black. Loosening
 the tau isolation working point and \mT~selection gradually improves limits at higher mass, and
 degrades them at low mass.}
 \label{fig:mssm_gradcuts_et}
@@ -327,13 +384,12 @@ the effect on the bb$\phi$ production process is less pronounced.}
 
 \subsection{\texorpdfstring{Event selection in the \tautau channel}{Event selection in the tau tau channel}}
 \label{sec:mssm_eventsel_tt}
-Selection of events in the \tautau channel starts with a trigger
-that requires two hadronic taus at \ac{L1}. At the level of the \ac{HLT}, loose identification
-and isolation criteria are applied to these hadronic taus.
+The trigger in the \tautau channel requires two hadronic taus at \ac{L1} and the \ac{HLT}
+applies loose identification and isolation criteria to these hadronic taus.
 
-The offline event selection continues by requiring both hadronic taus to be oppositely charged, separated
+The offline event selection requires both hadronic taus to be oppositely charged, separated
 by $\Delta R > 0.5$, have \pT~of at least 40 GeV and satisfy $|\eta|<2.1$. Both taus need
-to pass decay mode finding and have originated from the primary vertex, with the impact parameter $d_{z} < 0.2$ cm. 
+to be reconstructed by the HPS algorithm, and their impact parameter $d_{z}$ must be less than 0.2 cm.
 Both taus need to pass the tight working point of the isolation discriminator, the very loose 
 working point of the anti--electron discriminator and the loose working point of the anti--muon discriminator. 
 The tight working point of the isolation discriminator is chosen to optimise the sensitivity
@@ -358,14 +414,13 @@ isolation requirements to these objects at \ac{HLT}. The \pT~requirements on
 the electron and muon are different in the two triggers, thus using the combination of the two
 improves the signal efficiency.
 
-The offline requirements on the \emu pair are that the electron 
-and muon are oppositely charged and separated by $\Delta R >$ 0.3. The 
-electron needs to have a minimum \pT~of 13 GeV and have $|\eta|< 2.5$. As
+Offline, the electron and muon are required to be oppositely charged
+and separated by $\Delta R >$0.3.
+The electron needs to have a minimum \pT~of 13 GeV and have $|\eta|< 2.5$. As
 in the \etau channel the electron's impact parameters have to 
-satisfy $d_{xy} < 0.045$ cm and $d_{z}<0.2$ cm. A selection is
-made on the electron identification MVA, using a working point that 
-is 80\% efficient for electrons in \Zee decays. The electron
-also needs to be isolated, $I_{\text{rel}}^{\Pe}<0.15$, where the relative isolation variable is calculated
+satisfy $d_{xy} < 0.045$ cm and $d_{z}<0.2$ cm. The additional
+identification requirement is identical to the criterium applied to electrons in the \etau channel.
+The electron also needs to be isolated, $I_{\text{rel}}^{\Pe}<0.15$, where the relative isolation variable is calculated
 with a cone size of 0.3.
 
 The muon needs to have a \pT~of at least 10 GeV, $|\eta|<2.4$ and 
@@ -393,7 +448,7 @@ The axis $\vec{\zeta}$ is the axis that bisects
 the directions $\vec{p}_{\text{T,1}}^{\text{  vis}}$ and $\vec{p}_{\text{T,2}}^{\text{  vis}}$
 of the visible decay products in the transverse plane. This definition is illustrated in figure
 \ref{fig:mssm_dzeta}a, with figure \ref{fig:mssm_dzeta}b showing the $D_{\zeta}$ distribution
-for \emu events. The used selection, $D_{\zeta} > -20$ GeV rejects $\ttbar$, \Wjets and diboson
+for \emu events. The selection used, $D_{\zeta} > -20$ GeV, rejects $\ttbar$, \Wjets and diboson
 events. 
 %The momentum of the neutrinos should not be in the opposite direction of the sum of the visible decay products
 %as the neutrinos and visible tau decay products travel at small angles from the original tau.
@@ -407,24 +462,13 @@ events.
 \emu channel\cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_dzeta}
 \end{figure}
-
+~\clearpage
 \subsection{Categorisation}
 \label{sec:mssm_eventsel_categories}
 As the analysis targets both the gluon fusion
-and the b--associated production modes of MSSM Higgs
-bosons, two exclusive categories are defined based on the 
-number of b--tagged jets. A jet is considered b--tagged
-if it passes the medium working point of the \ac{CSV}v2 discriminator. 
-The categories are defined as:
-\begin{itemize}
-\setlength{\itemsep}{-\baselineskip}
-\item \textbf{No b-tag}: 0 b--tagged jets. This category targets the gg$\phi$ production mode but is also sensitive to some of the bb$\phi$ signal.
-\item \textbf{B-tag}: At least 1 b--tagged jet, at most 1 
-jet with \pT$>30$ GeV. Due to the different phase space considered for
-b--tagging than for default jet reconstruction this requirement does not necessarily
-mean there will be only one b--tagged jet in the event. The requirement reduces the sizeable \ttbar
-background.
-\end{itemize}
+and the b--associated production modes, 
+the sensitivity to the signal can be increased by categorising
+based on the number of b--tagged jets in the event.
 
 \begin{figure}[h!]
 \begin{center}
@@ -438,7 +482,6 @@ scenario. We can see how the signal--sensitive bins motivate the choice of categ
 \label{fig:mssm_cats_mt}
 \end{figure}
 
-
 Figure \ref{fig:mssm_cats_mt}a shows the number of jets 
 in the \mutau channel, with figure \ref{fig:mssm_cats_mt}b showing
 the number of b--tagged jets in that channel. The gluon fusion
@@ -446,18 +489,32 @@ and b--associated signals are overlaid on these distributions, normalised
 to 100 times their cross--section times branching ratio at \mA=1 TeV and 
 \tanb=50 in the $m_{\text{h}}^{\text{mod+}}$ scenario. From the distribution of the
 gluon fusion signal in figure \ref{fig:mssm_cats_mt}b we can 
-see that the vast majority of these signal events do not have any b-tagged jets, which
-motivates the choice of the no b-tag category to target this production mode. From
-the b--associated signal in the same figure we also see that the majority of bb$\phi$
+see that the vast majority of these signal events do not have any b-tagged jets. To
+target this production mode we can use a category which requires 0 b-tagged jets.
+From the b--associated signal in the same figure we also see that the majority of bb$\phi$
 signal events do not have any b-tagged jets either: either the b-jets in these events 
-are too soft, or they do not pass the b-tagging requirements. This means the no b-tag 
-category is also sensitive to some of the bb$\phi$ signal. The other observation we 
-can make from the bb$\phi$ signal in figure \ref{fig:mssm_cats_mt}b is that there is not
+are too soft, or they do not pass the b-tagging requirements. This means that the category
+which requires 0 b-tagged jets
+is also sensitive to some of the bb$\phi$ signal. To target
+the bb$\phi$ signal, we then define another category with at least one b-tagged jet. 
+From the bb$\phi$ signal in figure \ref{fig:mssm_cats_mt}b we can also see that there is not
 such a large proportion of events with more than 1 b-tagged jet. From figure \ref{fig:mssm_cats_mt}a
 we see that the \ttbar background starts to become more sizeable for events with more than
-one jet. The definition of the b-tag category is therefore chosen with the inclusion
+one jet. The definition of the category that targets the bb$\phi$ signal is therefore chosen with the inclusion
 of the jet veto, such that the region where the \ttbar background becomes larger is excluded, 
 while retaining a large proportion of the bb$\phi$ signal.
+
+In summary, the two categories are defined as:
+\begin{itemize}
+\setlength{\itemsep}{-\baselineskip}
+\item \textbf{No b-tag}: 0 b--tagged jets. This category targets the gg$\phi$ production mode but is also sensitive to some of the bb$\phi$ signal.
+\item \textbf{B-tag}: At least 1 b--tagged jet, at most 1 
+jet with \pT$>30$ GeV. This second requirement, the jet veto, reduces the \ttbar background. 
+Due to the different phase space considered for
+b--tagging than for default jet reconstruction this requirement does not necessarily
+mean there will be only one b--tagged jet in the event.
+\end{itemize}
+
 
 \section{\ac{MC} to data correction factors}
 \label{sec:mssm_mccorrs}
@@ -465,7 +522,9 @@ Because \ac{MC} samples are used for the signal prediction, and
 to estimate some of the backgrounds, it is important to correct for possible 
 mis-modelling with respect to the data. Dedicated control regions in
 data are used to derive the \ac{MC} to data correction factors
-that are applied to the \ac{MC} samples.
+that are applied to the \ac{MC} samples. Where efficiencies
+are involved this scale factor is derived by measuring the efficiency
+in data and in \ac{MC} and constructing the scale factor as $\text{SF}=\frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 \subsubsection*{Tracking efficiency}
 A discrepancy between the track reconstruction efficiency
 in data and \ac{MC} for electrons and muons was found. It is corrected for using $\eta$--dependent
@@ -477,8 +536,6 @@ method using \Zeenog (\Zmmnog) events is used to measure
 the efficiencies for electrons (muons). The hadronic tau identification
 and isolation efficiency is measured using a tag--and--probe method
 making use of $Z\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgt_{h}$ events.
-The measured efficiencies are used to construct scale factors to be
-applied to the \ac{MC} samples as $SF = \frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 \subsubsection*{Trigger efficiency}
 The electron, muon and hadronic tau trigger efficiencies are also measured
 using tag--and--probe methods with the types of events as described for the identification
@@ -520,7 +577,20 @@ to better match the top quark \pT~distribution in \ac{MC}
 to that observed in data is applied to \ttbar events. Despite
 the fact that the correction was derived during Run-1, it still
 improves the data/\ac{MC} agreement in a \ttbar enriched
-control region.
+control region in the \emu channel, defined as 
+\MET>80 GeV and $D_{\zeta}<-20$ GeV. The improvement in data/\ac{MC} agreement
+by applying the top quark \pT~reweighting is illustrated in figure \ref{fig:mssm_corrs_toppt}.
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Without top-quark \pT~reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016_notoppt.png}}
+\subfloat[With top-quark \pT~reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}}
+\end{center}
+\caption{\mTtot~distribution in the \ttbar enriched control region \MET>80 GeV and $D_{\zeta}<-20$ GeV in the \emu channel,
+(a) without applying top quark \pT~reweighting and (b) with top quark \pT~reweighting.
+The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross--section uncertainty.}
+\label{fig:mssm_corrs_toppt}
+\end{figure}
+
 \subsubsection*{Drell-Yan shape reweighting}
 As the \ac{MC} samples used for the \Ztautau estimate
 do not model the data well for events with high di-lepton
@@ -529,6 +599,22 @@ These weights are derived in bins of $\PZ/\Pphotonx$ mass and \pT~
 using \Zmm events in data, in such a way that they do not
 change the overall Drell-Yan normalisation. The weights
 are then applied to the \Ztautau and \Zellell background processes.
+The mismodelling can be seen in figure \ref{fig:dyrwt}a, which
+shows the observed data and expected background distribution of the \PZ \pT~in
+\Zmm events. The overall effect of the reweighting, which is derived
+based on the events shown in figure \ref{fig:dyrwt}a, on the \Ztautau background
+shape in the no b-tag category of the \etau channel is shown in figure \ref{fig:dyrwt}b.
+\begin{figure}[h!]
+\begin{center}
+\subfloat[\Zmm events]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/pt_tt_inclusive_zmm_2016_log_noweight.png}}
+\subfloat[Effect of Drell-Yan shape reweighting on \Ztautau background]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_zttweight_et_nobtag.pdf}}
+\end{center}
+\caption{(a) The mismodelling in the \PZ \pT~distribution as observed
+in \Zmm events, used to derive the correction and (b) the impact of applying the Drell-Yan shape
+reweighting on the total transverse
+mass distribution of the \Ztautau background in the no b-tag category of the \etau channel.}
+\label{fig:dyrwt}
+\end{figure}
 
 \section{Discriminating variable}
 \label{sec:mssm_discrvar}
@@ -547,13 +633,86 @@ This means that $m_{\text{T}}(E_{\text{T}}^{\text{miss}},\Pgt_1^{\text{vis}})$ i
 to the \mT~defined for the \etau and \mutau channels in equation \ref{eqn:hhh_selection_mt}.
 The \mTtot~variable provides good separation between signal and QCD multi--jet events
 in the \etau, \mutau and \tautau channels, and between
-signal and \ttbar events in the \emu channel.
+signal and \ttbar events in the \emu channel. These are some of the 
+major backgrounds and thus good separation between these processes and 
+the signal is important for the sensitivity of the analysis.
+The separation between signal and backgrounds is illustrated in figure
+\ref{fig:mttot_sigseps}, where figure \ref{fig:mttot_sigseps} shows the total transverse mass
+distribution of the QCD
+background in the no b-tag category of the \tautau channel with the gluon fusion
+signal at 400 GeV, 1 TeV and 2 TeV overlaid. Figure \ref{fig:mttot_sigseps}b
+shows the total transverse mass distribution of the \ttbar background in the b-tag category of the \emu channel with
+the b-associated production signal at the same three masses overlaid. 
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[QCD and signal in \tautau no b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_sigsep_tt_nobtag.pdf}}
+\subfloat[\ttbar and signal in \emu b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_sigsep_em_btag.pdf}}
+\end{center}
+\caption{Total transverse mass distributions in (a) the no b-tag category of the \tautau
+channel, for QCD and gluon fusion signal at 400 GeV and 1 and 2 TeV overlaid and (b) in the b-tag
+category of the \emu channel, for \ttbar and b-associated signal at 400 GeV and 1 and 2 TeV. 
+The total transverse mass variable separates the signal and these backgrounds well.}
+\label{fig:mttot_sigseps}
+\end{figure}
+
 
 \section{Background estimation}
 \label{sec:mssm_bkgs}
-To estimate the backgrounds to the analysis a mixture of data--driven
-methods and \ac{MC} samples is employed. The methods used for background 
-estimation will be described in this section.
+There are several backgrounds in this analysis, and the different final
+states can have different background compositions. Consider figure \ref{fig:mssm_bkgs_overview}a,
+which shows the low $m_{\text{T}}^{\text{tot}}$ region in the no b-tag category
+of the \mutau channel and figure \ref{fig:mssm_bkgs_overview}b, which shows the low $m_{\text{T}}^{\text{tot}}$
+region in the b-tag category of the \emu channel. These regions are where the backgrounds are concentrated and it
+is therefore easier to see the different contributions. \Ztautau is a background in all four channels as 
+it has two real taus in the final state, like the signal that we are searching for. The only aspect
+that distinguishes the \Ztautau background from the gluon fusion signal is the mass of the particle. Smaller backgrounds
+from \Zellell decays also play a role, especially in the \mutau and \etau channels where such events
+might pass the selection for example if a jet is misreconstructed as a hadronic tau and only one of the leptons is reconstructed. 
+Production of QCD multijet events, labelled QCD on the plots in figure \ref{fig:mssm_bkgs_overview}, is a background when 
+two jets are misreconstructed as the two particles of the candidate pair. %Relatively likely to happen in tautau channel
+As visible in figure \ref{fig:mssm_bkgs_overview}b, the \ttbar background is particularly important in the b-tag category.
+This is because top quarks virtually always decay as $\Ptop\rightarrow \PW\Pbottom$. and so such events 
+always contain real b-jets. One or both of the \PW bosons, and additional jets in the event, can 
+then form \etau, \mutau, \tautau and \emu pairs.
+The \Wjets background arises in the \etau and \mutau channels when the lepton from the \PW decay and a jet misreconstructed
+as a hadronic tau form a pair. In the \tautau channel it is a background when the \PW decays into $\Pgt\Pgn$ with the tau 
+decaying hadronically and an additional jet in the event is misreconstructed as a hadronic tau, or when two jets are
+reconstructed as hadronic taus.
+In the \emu channel an additional lepton would have to originate from one of the jets, and so here this
+background is smaller. Backgrounds that are small in all channels are the di-boson and single-top backgrounds. In 
+figures showing the backgrounds the di-boson and single-top backgrounds are drawn together with the \Wjets 
+background as the `Electroweak' component.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[\mutau no b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure-aux_001-a.pdf}}
+\subfloat[\emu b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure-aux_003-b.pdf}}
+\end{center}
+\caption{The low $m_{\text{T}}^{\text{tot}}$ region in (a) the 
+no b-tag category of the \mutau channel and (b) the b-tag category of the \emu channel.
+This low $m_{\text{T}}^{\text{tot}}$ region is where the backgrounds
+are concentrated \cite{CMS-PAS-HIG-16-037-addit}.}
+\label{fig:mssm_bkgs_overview}
+\end{figure}
+
+To estimate these backgrounds a mixture of data-driven 
+methods and \ac{MC} samples is employed. The QCD background
+is estimated using data-driven techniques in all four channels.
+In the \mutau and \etau channels the \Wjets background is also
+estimated using data-driven techniques. The control regions used
+in the estimation of QCD and \Wjets in the \etau and \mutau channels
+are included in a simultaneous fit with the signal region to obtain
+the final results. More detail on this is given in section ADD SECTION.
+In the \emu and \tautau channels the \Wjets background is estimated using
+\ac{MC} samples. The \Ztautau and \Zellell backgrounds are also estimated
+using \ac{MC} samples, and a \Zmm control region
+is considered in a simultaneous fit with the signal region to correct and
+constrain the \Ztautau normalisation.
+The \ttbar, di-boson and single-top backgrounds are estimated
+using \ac{MC} samples, with cross-checks in control regions in data.
+The rest of this section describes the background estimation methods
+in more detail.
 
 \subsection{Generator matching}
 \label{sec:mssm_bkgs_genmatch}
@@ -655,15 +814,15 @@ Because of this contribution from QCD events in the high \mT~region we
 have, for \mT$>70$ GeV:
 \begin{equation}\label{eqn:wjets_ss_norm}
 \begin{split}
-N_{\text{data}}^{\text{SS, high } m_{\text{T}}} - N_{\text{other}}^{\text{SS,
- high } m_{\text{T}}} & =
+&N_{\text{data}}^{\text{SS, high } m_{\text{T}}} - N_{\text{other}}^{\text{SS,
+ high } m_{\text{T}}}  =
 N_{\text{QCD}}^{\text{SS, high } m_{\text{T}}} + N_{\text{W}}^{\text{SS, high } m_{\text{T}}} ~\\
-N_{\text{data}}^{\text{OS, high } m_{\text{T}}} - N_{\text{other}}^{\text{OS,
- high } m_{\text{T}}} & = N_{\text{QCD}}^{\text{OS, high } m_{\text{T}}} +
+&N_{\text{data}}^{\text{OS, high } m_{\text{T}}} - N_{\text{other}}^{\text{OS,
+ high } m_{\text{T}}}  = N_{\text{QCD}}^{\text{OS, high } m_{\text{T}}} +
 N_{\text{W}}^{\text{OS, high } m_{\text{T}}} \\
 & = R_{\text{QCD}}^{\text{OS/SS}}\cdot N_{\text{QCD}}^{\text{SS, high } m_{\text{T}}} +
 R_{\text{W}}^{\text{OS/SS}} \cdot N_{\text{W}}^{\text{SS, high } m_{\text{T}}} ~\\
-\Rightarrow N_{\text{W}}^{\text{SS, high } m_{\text{T}}}  &= \frac{N_{\text{data}}^{\text{OS,
+&\Rightarrow N_{\text{W}}^{\text{SS, high } m_{\text{T}}}  = \frac{N_{\text{data}}^{\text{OS,
  high } m_{\text{T}}}  - N_{\text{other}}^{\text{OS, high } m_{\text{T}}}  -
 R_{\text{QCD}}^{\text{OS/SS}}\cdot(N_{\text{data}}^{\text{SS, high } m_{\text{T}}}  -
 N_{\text{other}}^{\text{SS, high } m_{\text{T}}} )}{R_{\text{W}}^{\text{OS/SS}} -
@@ -672,7 +831,7 @@ R_{\text{QCD}}^{\text{OS/SS}}} ,
 \end{equation}
 where $R_{\text{W}}^{\text{OS/SS}}$ is the ratio between opposite-sign and same-sign \Wjets events
 and $R_{\text{QCD}}^{\text{OS/SS}}$ the ratio between opposite-sign and same-sign QCD events. Using 
-equations \ref{eqn:wjets_ss_norm}, the number of \Wjets events in the
+equation \ref{eqn:wjets_ss_norm}, the number of \Wjets events in the
 opposite-sign, high \mT~region is given by $R_{\text{W}}^{\text{OS/SS}}\cdot N_{\text{W}}^{\text{SS, high } m_{T}}$. 
 This is extrapolated to the number of \Wjets events in the signal region at low \mT~as:
 \begin{equation}\label{eqn:wjets_os_norm}
@@ -714,7 +873,7 @@ category the \ttbar background is larger than the \Wjets background.}
 
 \subsubsection{QCD OS/SS ratio}
 \label{sec:mssm_bkgs_etmt_qcdosss}
-The ratio of opposite--sign to same--sign QCD events, $R_{\text{QCD}}^{\text{OS/SS}}$ is measured
+The ratio of opposite--sign to same--sign QCD events, $R_{\text{QCD}}^{\text{OS/SS}}$, is measured
 in two anti-isolated sidebands by performing a fit to the distribution of the
 visible mass of the di-tau pair in 
 opposite-sign events. The QCD template, which is taken from same--sign events 
@@ -724,10 +883,10 @@ backgrounds to float within reasonable normalisation uncertainties. The
 resulting best fit value of the signal strengh parameter is taken as $R_{\text{QCD}}^{\text{OS/SS}}$.
 Of the two sidebands used, one is nearer the signal region ($0.15<I_{\text{rel}}^{\Pgm}<0.25$ for the \mutau channel and $0.1<I_{\text{rel}}^{\Pe}<0.2$ for the \etau channel)
 and one further away ($0.25<I_{\text{rel}}^{\Pgm}<0.5$ for the \mutau channel and $0.2<I_{\text{rel}}^{\Pe}<0.5$ for the \etau channel). The results of the fits,
-performed before the categorisation of events into the b-tag and no b-tag categories, are shown in figures \ref{fig:mssm_qcdosss_mtnear}--\ref{fig:mssm_qcdosss_mtfar}
-for the \mutau channel and in figures \ref{fig:mssm_qcdosss_etnear}--\ref{fig:mssm_qcdosss_etfar} for the \etau channel.
-$R_{\text{QCD}}^{\text{OS/SS}}$ is found to be consistent between the two sidebands within 10\% (1\%) in the \etau (\mutau) channel.
-Adding this in quadrature to the uncertainty on the fit in the sidebands nearest the signal region we find
+performed before the categorisation of events into the b-tag and no b-tag categories, are shown in figures \ref{fig:mssm_qcdosss_mtnear} and \ref{fig:mssm_qcdosss_mtfar}
+for the \mutau channel and in figures \ref{fig:mssm_qcdosss_etnear} and \ref{fig:mssm_qcdosss_etfar} for the \etau channel.
+The value of $R_{\text{QCD}}^{\text{OS/SS}}$ is found to be consistent between the two sidebands within 10\% (1\%) in the \etau (\mutau) channel.
+Adding this uncertainty in quadrature to the uncertainty on the fit in the sidebands nearest the signal region we find
 an overall uncertainty of 12\% in the \etau channel and 4\% in the \mutau channel.
 When performing the same fits in the no b-tag and b-tag categories to determine differences between
 this pre-categorisation opposite--sign to same--sign ratio, and the ratio as measured in categories it is found that 
@@ -745,7 +904,7 @@ in the no b-tag category.
 \subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_mt_1_postfit.png}}
 \end{center}
 \caption{The visible mass distribution of the di-$\tau$ pair in the \mutau channel for the sideband near the signal region, (a) before
-the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength 
 is 1.180$\pm$0.044.}
 \label{fig:mssm_qcdosss_mtnear}
 \end{figure}
@@ -756,7 +915,7 @@ is 1.180$\pm$0.044.}
 \subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_far_mt_1_postfit.png}}
 \end{center}
 \caption{The visible mass distribution of the di-$\tau$ pair in the \mutau channel for the sideband further away from the signal region, (a) before
-the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength 
 is 1.184$\pm$0.035.}
 \label{fig:mssm_qcdosss_mtfar}
 \end{figure}
@@ -767,8 +926,7 @@ is 1.184$\pm$0.035.}
 \subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_et_1_postfit.png}}
 \end{center}
 \caption{The visible mass distribution of the di-$\tau$ pair in the \etau channel for the sideband near the signal region, (a) before
-the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
-is 1.015$\pm$0.059.}
+the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength is 1.015$\pm$0.059.}
 \label{fig:mssm_qcdosss_etnear}
 \end{figure}
 
@@ -778,7 +936,7 @@ is 1.015$\pm$0.059.}
 \subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_far_et_1_postfit.png}}
 \end{center}
 \caption{The visible mass distribution of the di-$\tau$ pair in the \etau channel for the sideband further away from the signal region, (a) before
-the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength parameter
+the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength
 is 1.127$\pm$0.045.}
 \label{fig:mssm_qcdosss_etfar}
 \end{figure}
@@ -830,17 +988,17 @@ isolation requirements with respect to the signal region.
 In the no b-tag category the sideband used is determined
 by having the tau with highest \pT~pass the tight working
 point of the tau ID discriminator, as in the nominal selection.
-The other hadronic tau in the pair should not pass the tight working point,
-but should pass the medium working point. This sideband is 
+The other hadronic tau in the pair is required to fail the tight working point,
+but pass the medium working point. This sideband is 
 chosen as it is as close to the signal region as possible, and 
 this should minimise biases in the shape of the total transverse mass
 distribution. Other backgrounds
 in this sideband are subtracted from the observation to give
 the QCD estimate. Differences in normalisation due to
-the use of a loosened sideband are corrected for by loose-to-tight isolation
+the use of a loosened sideband are corrected for by the medium-to-tight isolation
 scale factor. This correction factor is measured as
 \begin{equation}\label{eqn:tautau_qcd}
-R_{QCD}^{\text{loose}\rightarrow\text{tight}} = \frac{N_{\text{obs}}^{SS,\text{nominal isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}{N_{\text{obs}}^{SS,\text{loosened isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}.
+R_{QCD}^{\text{medium}\rightarrow\text{tight}} = \frac{N_{\text{data}}^{SS,\text{nominal isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}{N_{\text{data}}^{SS,\text{loosened isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}.
 \end{equation}
 This correction factor takes the ratio between the observed data with other
 backgrounds subtracted in the region equivalent to the signal region, but with the
@@ -876,13 +1034,20 @@ leptons need to satisfy $I_{\text{rel}} < 0.4$ and at
 least one of them needs to fail the nominal isolation requirement.
 The opposite--sign to same--sign ratio is parameterised in terms
 of lepton kinematics and the separation in $\Delta R$ between the
-two leptons. These ratios are then applied to the same--sign region
-QCD estimate to give a QCD estimate in the signal region. 
-Because the opposite--sign to same--sign ratios are measured
-before applying the categorisation, and \ac{MC} studies suggest
+two leptons. These ratios are then applied to the estimate in the same--sign region
+to give an estimate in the signal region. The statistical uncertainty
+on the measurement is 13\%. Cross-checking the measurement 
+using QCD \ac{MC} samples, it is observed that there is a 19\% difference
+between the OS/SS ratio in the signal region and the sideband, the two
+uncertainties are added in quadrature. 
+The opposite--sign to same--sign ratios are measured
+before applying the categorisation, and because \ac{MC} studies suggest
 that the opposite--sign to same--sign ratio is different in the b-tag
 category than in the no b-tag category, an extra scale factor of 
-1.45/2.20 is applied to the QCD estimate in the b-tag category.
+1.45/2.20 $\pm$ 0.16 is applied to the QCD estimate in the b-tag category. This is 
+the ratio between the OS/SS ratio as measured in the b-tag category and 
+the measurement made before categorisation. The uncertainty is added in
+quadrature to the statistical and systematic uncertainties already described.
 
 
 \subsection{\texorpdfstring{\ttbar}{ttbar}}
@@ -891,7 +1056,7 @@ The \ttbar shape and normalisation are estimated from \ac{MC}
 samples and are checked against data in a control
 region with a \ttbar purity of 91\%. This control region
 is defined as $D_{\zeta} < -20$ GeV and \MET $>80$ GeV in 
-the \emu channel, and it is shown in figure \ref{fig:mssm_corrs_toppt}.
+the \emu channel, and it is shown in figure \ref{fig:mssm_corrs_toppt}b.
 Because the 6\%
 \ttbar normalisation uncertainty covers the observed
 discrepancy between data and \ac{MC}, no scale factor is applied.
@@ -904,14 +1069,6 @@ to a generator level tau. In the fully hadronic channel
 both taus need to be generator matched to a hadronically
 decaying tau.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}
-\end{center}
-\caption{\mTtot~distribution in the \ttbar enriched control region.
-The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross--section uncertainty.}
-\label{fig:mssm_corrs_toppt}
-\end{figure}
 
 
 \subsection{Other backgrounds}
@@ -927,7 +1084,7 @@ way as for the \ttbar background.
 In the \tautau and \emu channels the \Wjets background
 is less important than in the \etau and \mutau channels, and both
 its shape and normalisation are estimated from the
-\ac{MC} samples. In the \emu channel the \PW\Pphoton background
+\ac{MC} samples. In the \emu channel the $\PW\Pphoton$ background
 is also added to the \Wjets background component. For plotting purposes the single-top plus
 di-boson and \Wjets backgrounds are drawn together as the `electroweak' contribution for all channels, even though
 they are considered as separate components in the fit.
@@ -935,7 +1092,7 @@ they are considered as separate components in the fit.
 
 \section{Systematic uncertainties}
 \label{sec:mssm_uncs}
-Just like for the analysis presented in chapter \ref{chap:hhh}
+As for the analysis presented in chapter \ref{chap:hhh}
 two types of systematic uncertainty are considered. Normalisation
 uncertainties only affect the yield of a process while shape
 uncertainties affect both the process normalisation and the shape
@@ -950,8 +1107,8 @@ data collected during 2016 \cite{cms-pas-lum-15-001}, and it is
 applied to all processes for which the normalisation is estimated 
 using \ac{MC} samples.
 \subsubsection*{Identification, isolation and trigger efficiencies}
-The uncertainty on electron and muon identification, isolation, and
-trigger efficiency amounts to 2\% \cite{CMS-PAS-HIG-16-037}. For hadronic taus the identification and
+The combined uncertainty on the electron and muon identification, isolation, and
+trigger efficiencies amounts to 2\% \cite{CMS-PAS-HIG-16-037}. For hadronic taus the identification and
 isolation uncertainty amounts to 6\% in the \etau and \mutau channels
 and 12\% in the \tautau channel, with an additional 7\% uncertainty
 on the tau trigger efficiency added in quadrature for that channel \cite{CMS-PAS-HIG-16-037}. This
@@ -978,7 +1135,7 @@ background with the hadronic tau faked by a muon.
 \subsubsection*{Jet energy scale uncertainty}
 The uncertainties on the jet-energy corrections are applied
 by shifting the jet energy up and down by the \pT-and $\eta$-dependendent
-uncertainty, and evaluating the the change in process normalisation in
+uncertainty, and evaluating the change in the process normalisation in
 each category. Where the change in normalisation is non-negligible the
 uncertainty is applied. It ranges from 1--10\% depending on process and category.
 \subsubsection*{B-tag scale factors}
@@ -990,11 +1147,11 @@ and the overall change in normalisation for each process in each category is
 evaluated. If the change in normalisation is non-negligible this
 uncertainty is applied. The uncertainty varies from 1--5\%.
 \subsubsection*{\MET~resolution and response}
-Uncertainties on \MET~resolution and response are estimated
+Uncertainties on the \MET~resolution and response are estimated
 by varying the recoil correction parameters within their
 uncertainty and evaluating the effect on process
 normalisations. The uncertainty amounts to around 2\%.
-\subsubsection*{Background normalisation}
+\subsubsection*{Background normalisation uncertainties}
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
 \item \Ztautau: As the \Zmm control region is included in the simultaneous
@@ -1002,7 +1159,7 @@ fit with the signal region to correct the \Ztautau normalisation,
 the Drell-Yan cross section is not applied as an uncertainty. In the no b-tag (b-tag) category a 3\% (5\%)
 extrapolation uncertainty from \Zmm to \Ztautau is applied \cite{CMS-PAS-HIG-16-037}.
 \item \Zellell: The uncertainty on the Drell-Yan cross-section
-amounts to 4\% \cite{CMS-PAS-HIG-16-037}.
+is to 4\% \cite{CMS-PAS-HIG-16-037}.
 \item \ttbar: The uncertainty on the \ttbar production cross-section amounts
 to 6\% \cite{CMS-PAS-HIG-16-037}.
 \item di-boson and single-top: The uncertainty on the di-boson and
@@ -1038,16 +1195,16 @@ of the \etau channel.
 \end{itemize}
 \subsubsection*{Signal theory uncertainties}
 For interpretations of the results in MSSM benchmark scenarios, theory
-uncertainties on the SM and MSSM Higgs cross section predictions are taken into account.
+uncertainties on the SM and MSSM Higgs cross--section predictions are taken into account.
 The uncertainties for the SM signal processes are described in more detail in reference \cite{YR4}.
 Uncertainties due to different renormalisation scales
 amount to 3.9\% for gluon fusion,
 0.4\% for VBF, 2.8\% for ZH and 0.5\% for WH. The uncertainties
-due to different choice of pdf and $\alpha_s$ amount to 3.2\% for gluon fusion, 2.1\% for vector boson fusion,
+due to different choices of pdf set and $\alpha_s$ amount to 3.2\% for gluon fusion, 2.1\% for vector boson fusion,
 1.6\% for ZH and 1.9\% for WH.
-For the MSSM Higgs cross sections used in the models, the uncertainties
+For the MSSM Higgs cross--sections used in the models, the uncertainties
 due to different choices of factorisation and renormalisation scale
-are computed, separately for each \mA-\tanb~point, following the prescription in refs\cite{pdf-lhc,alphas-uncs}.
+are computed, separately for each \mA-\tanb~point, following the prescription in Refs. \cite{pdf-lhc,alphas-uncs}.
 
 \subsection{Shape uncertainties}
 \label{sec:mssm_uncs_shape}
@@ -1055,7 +1212,7 @@ are computed, separately for each \mA-\tanb~point, following the prescription in
 The energy of hadronic taus is varied up and down by 3\% \cite{CMS-PAS-HIG-16-037}, affecting
 the shape of the total transverse mass distribution.
 The uncertainty is applied to the signal samples and to
-backgrounds containing real hadronic taus in the \etau, \mutau, and \tautau channels:
+backgrounds containing real hadronic taus in the \etau, \mutau, and \tautau channels, namely
 \Ztautau, and the components of the \ttbar and single-top+di-boson background with real 
 hadronic taus.
 \subsubsection*{Electron energy scale}
@@ -1070,15 +1227,15 @@ uncertainty is applied to signal and backgrounds with real taus in the \etau, \m
 The shape difference between the nominal, up- and down- shapes for this uncertainty in the no b-tag category
 of the \tautau channel can be seen for a high-mass signal sample in figure \ref{fig:mssm_highpttauid_shapes}a and
 for the \Ztautau background in figure \ref{fig:mssm_highpttauid_shapes}b. Because the \Ztautau background
-has much softer hadronic taus than the high-mass signal sample, the shape-altering effect of this uncertainty
+has much softer hadronic taus than the high-mass signal sample, the impact of this uncertainty on the shape
 is much smaller.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[gg$\phi$ signal at $m_{\phi} = 3.2$ TeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/highpT_tauID_comp_tt_nobtag_ggh3200.pdf}}
 \subfloat[\Ztautau background]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/highpT_tauID_comp_tt_nobtag_ZTT.pdf}}
 \end{center}
-\caption{Shape-altering effect of the high-\pT~tau ID uncertainty in the no b-tag category of the
-\tautau channel for (a) a high-mass signal sample and (b) the \Ztautau background. The effect is much
+\caption{Impact of the high-\pT~tau ID uncertainty in the no b-tag category of the
+\tautau channel for (a) a high-mass signal sample and (b) the \Ztautau background. The effect on the shape is much
 larger in the high-mass signal sample, which contains hadronically decaying taus with much higher
 \pT~than the \Ztautau sample.}
 \label{fig:mssm_highpttauid_shapes}
@@ -1105,8 +1262,8 @@ is also indicated.
 \section{Signal extraction}
 \label{sec:mssm_signalextraction}
 The total transverse mass \mTtot~is used as discriminating variable in this analysis.
-All bins of the distribution are used to perform a shape analysis. The statistical
-methods, including the incorporation of nuisance parameters in the fit, were already
+All bins of the distribution are used to perform a shape analysis. The general statistical
+methods, including the incorporation of nuisance parameters in the fit, were 
 described in section \ref{sec:hhh_results_extraction}. Some additional
 methods are used for this analysis, and they will be discussed in this section.
 
@@ -1179,9 +1336,8 @@ predicts a production cross--section, and corresponding branching
 ratio into $\Pgt\Pgt$, for each of the three neutral Higgs bosons. The
 masses of the light h and the scalar H are also given as a function of \mA~and \tanb.
 To interpret the results of this search in a particular scenario, the predicted
-signal from the three neutral Higgs bosons is combined into a single signal template.
-Examples of what such a combined signal profile might look like are given in figures \ref{fig:mssm_results_mttot_mt}--\ref{fig:mssm_results_mttot_em},
-which give the \mTtot~distributions for all channels and categories with an example three-Higgs signal overlaid.
+signal from the three neutral Higgs bosons is combined into a single signal template\footnote{Examples of what such a combined signal profile might look like are given in figures \ref{fig:mssm_results_mttot_mt}--\ref{fig:mssm_results_mttot_em},
+which give the \mTtot~distributions for all channels and categories with an example three-Higgs signal overlaid.}.
 In this way the compatibility of the data with all three Higgs bosons, not just a single one, is tested.
 
 Simply comparing a three-Higgs-signal-plus-background hypothesis with a background-only 
@@ -1189,12 +1345,12 @@ hypothesis to determine the exclusion power of the search in a particular
 model is not strictly correct. Due to the existence of a Higgs boson with a 
 mass of 125 GeV, all MSSM benchmark scenarios must include a light Higgs boson
 with very similar properties to the boson discovered during Run 1 of the \ac{LHC}.
-Therefore we should perform a test that distinguishes between three-Higgs-signal-plus-background, and
-standard model Higgs-signal-plus-background.
+Therefore we should perform a test that distinguishes between a three-Higgs-signal-plus-background hypothesis, and
+a standard model Higgs-signal-plus-background hypothesis.
 
 This means the likelihood function defined in equation \ref{eqn:hhh_likelihood}
 must be modified. Instead of testing for the compatibility of the data with
-a signal + background expectation modified by the signal strenght modifier $\mu$ as
+a signal + background expectation modified by the signal strength modifier $\mu$ as
 $\mu \cdot s(\theta) + b(\theta)$, a likelihood should be constructed as:
 \begin{equation}\label{mssm_likelihood}
 \mathcal{L}(\text{data}|\mu, \theta) = \mathcal{L}(\text{data}|\mu \cdot s_{\text{MSSM}}(\theta) + (1-\mu)\cdot s_{\text{SM}}(\theta) + b(\theta)),
@@ -1210,7 +1366,7 @@ The modification of the likelihood function means it is no longer possible
 to use the profile likelihood ratio of equation \ref{eqn:hhh_profilelikelihood}:
 we need to test $\mu=1$ against $\mu=0$, and 
 $\hat{\mu}$ in the denominator of equation \ref{eqn:hhh_profilelikelihood} is in 
-general not 0. A solution to this problem can be found in test statistic used at the Tevatron \cite{LHCHComb2011},
+general not 0. A solution to this problem can be found in the test statistic used at the Tevatron \cite{LHCHComb2011},
 \begin{equation}\label{eqn:mssm_tevatron_teststat}
 q_{\mu} = -2\text{ln }\frac{\mathcal{L}(\text{data}|\mu,\hat{\theta_{\mu}})}{\mathcal{L}(\text{data}|0,\hat{\theta_0})} \text{ with } 0\leq\mu.
 \end{equation}
@@ -1222,12 +1378,12 @@ q_{\text{MSSMvsSM}} = -2\text{ln }\frac{\mathcal{L}(\text{data}|s_{\text{MSSM}}(
 
 The asymptotic approximation, discussed in section \ref{sec:hhh_results_extraction}, can not be applied
 to the Tevatron test statistic, and therefore the probability density functions need to be generated 
-with toy datasets. Using these pdfs we can then calculate $CL_s(\mu=1)$ as defined in equation \ref{eqn:hhh_cls}.
-If $CL_s < 0.05$ the MSSM hypothesis is excluded at 95 \% CL. The generation of toy datasets and 
-calculation of corresponding $CL_s$ value is performed for many points in a grid in the \mA-\tanb~plane,
+with toy datasets. Using these probability density functions  we can then calculate $CL_s(\mu=1)$ as defined in equation \ref{eqn:hhh_cls}.
+If $CL_s < 0.05$ the MSSM hypothesis is excluded at 95\% CL. The generation of toy datasets and 
+calculation of corresponding $CL_s$ values is performed for many points in a grid in the \mA-\tanb~plane,
 with interpolation between grid points performed to obtain a smooth exclusion contour.
 The pdfs for the SM and MSSM hypotheses, as well as the resulting $CL_s$ values,
-are given for three \mA-\tanb~points in figure \ref{fig:mssm_mssmvssm_toys}. In figure \ref{fig:mssm_mssmvssm_toys}a
+are given for three illustrative \mA-\tanb~points in figure \ref{fig:mssm_mssmvssm_toys}. In figure \ref{fig:mssm_mssmvssm_toys}a
 there is no separation between the MSSM and SM pdfs, and so we cannot exclude this point. The separation
 between the pdfs in figure \ref{fig:mssm_mssmvssm_toys}b is much improved, and the observation is most compatible
 with the SM hypothesis. This point is on the edge of being excluded. Finally the pdfs in figure \ref{fig:mssm_mssmvssm_toys}c
@@ -1239,8 +1395,8 @@ are very well separated, and the observation is compatible with the SM hypothesi
 \subfloat[\mA=1.2 TeV, \tanb=50]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/plot_mA_1200_tanb_50.png}}~\\
 \subfloat[\mA=700 GeV, \tanb=60]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/plot_mA_700_tanb_60.png}}
 \end{center}
-\caption{Pdfs, obtained by generating a large number of toy datasets, for the SM and MSSM hypothesis at three different points in the $m_{\text{h}}^{\text{mod+}}$
-scenario, each with different levels of separation between the MSSM and SM pdfs.}
+\caption{Probability density functions, obtained by generating a large number of toy datasets, for the SM and MSSM hypotheses at three different points in the $m_{\text{h}}^{\text{mod+}}$
+scenario, each with different levels of separation between the MSSM and SM distributions.}
 \label{fig:mssm_mssmvssm_toys}
 \end{figure}
 
@@ -1312,7 +1468,7 @@ and \tanb=50 in the $m_{h}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037
 \label{fig:mssm_results_mttot_em}
 \end{figure}
 
-None of these distributions show hints of a significant excess. The
+None of these distributions show a significant excess. The
 95\% CL upper limits on $\sigma\times$BR are shown in figure \ref{fig:mssm_results_limits}a
 for gluon fusion and in figure \ref{fig:mssm_results_limits}b for b--associated
 production. All channels and categories are combined. 
@@ -1323,7 +1479,8 @@ production. All channels and categories are combined.
 \end{center}
 \caption{Upper limits at 95\% CL for (a) the gluon fusion production
 process and (b) the b--associated production process. All four final states and 
-all categories are combined for these limits \cite{CMS-PAS-HIG-16-037}.}
+all categories are combined for these limits. The green and yellow bands indicate
+the $\pm 1\sigma$(68\%) and $\pm 2\sigma$(95\%) probability intervals on the expected limit \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_results_limits}
 \end{figure}
 
@@ -1381,7 +1538,8 @@ also indicates the current lack of sensitivity to the standard model Higgs boson
 \caption{Upper limits at 95\% CL for (a) the gluon fusion production
 process and (b) the b--associated production process. The SM, 125 GeV Higgs boson
 is included as one of the backgrounds. All four final states and 
-all categories are combined for these limits \cite{CMS-PAS-HIG-16-037-addit}.}
+all categories are combined for these limits. The light and dark green bands indicate
+the $\pm 1\sigma$(68\%) and $\pm 2\sigma$(95\%) probability intervals on the expected limit \cite{CMS-PAS-HIG-16-037-addit}.}
 \label{fig:mssm_results_greenband}
 \end{figure}
 
@@ -1431,8 +1589,9 @@ limits at high \tanb~have been significantly improved, by around 300 GeV.
 obtained by the combination
 of all channels in the \AHtotautau analysis. The blue shaded area bounded by the 
 solid black line is the observed exclusion, with the dashed black line the
-expected exclusion. The grey bands indicate the $\pm 1,2$ $\sigma$ 
-expected exclusion. The red shaded area in the $m_{h}^{\text{mod}+}$ figure
+expected exclusion. The light and dark grey bands indicate
+the $\pm 1\sigma$(68\%) and $\pm 2\sigma$(95\%) probability intervals on the expected limit.
+The red shaded area in the $m_{h}^{\text{mod}+}$ figure
 is excluded by the lack of a light Higgs boson with mass compatible with 125 GeV \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_mhmodp_2016}
 \end{figure}
@@ -1453,7 +1612,8 @@ thus expected to grow with more data.
 
 \chapter{Combination of MSSM analyses}
 \label{sec:mssm_combination}
-The results of the search for MSSM \AHtotautau on a dataset
+The results of the search for neutral Higgs bosons in the  MSSM using the di-tau
+final state, using a dataset
 corresponding to an integrated luminosity of 12.9 fb$^{-1}$, collected during the
 first half of 2016 and thus referred to as `2016 analysis', can be combined 
 with a previous search. This previous analysis, very similar to the 2016 analysis,
@@ -1466,17 +1626,15 @@ a first step on the way to combining the \AHtotautau analysis with
 searches for charged Higgs bosons or heavy neutral Higgs bosons in 
 other final states. 
 
-Because the 2015 analysis is very similar to the 2016 analysis it 
-is not described in detail, however, the results will
+The 2015 analysis uses the same channels, categories, and very
+similar background estimation methods as the 2016 analysis and so
+it is not described in detail. The results of the analysis will 
 be presented, and key differences with the more recent result highlighted
 where needed.
 
-\section{Results from 2015 analysis}
+\section{Results from the 2015 analysis}
 \label{sec:mssm_combination_2015}
-The results from the search for \AHtotautau on a
-dataset corresponding to an integrated luminosity of 2.3 fb$^{-1}$
-collected at a centre-of-mass energy of 13 TeV during 2015 are presented
-in this section. Like for the analysis presented in 
+As for the analysis presented in 
 chapter \ref{chap:mssm} a shape analysis is performed, however a different
 discriminating variable is used. The variable used is the transverse component of the di-$\Pgt$ mass
 as reconstructed using the \texttt{SVFit} algorithm, 
