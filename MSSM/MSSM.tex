@@ -221,8 +221,8 @@ driven mostly by simplicity and consistency with other \ac{CMS} analyses.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[$S/\sqrt{B}$]{\includegraphics[width=0.7\textwidth]{./MSSM/Figures/s_over_root_b_mt_m.pdf}}~\\
-\subfloat[Size of error interval]{\includegraphics[width=0.7\textwidth]{./MSSM/Figures/mt_muons_iso_errint.pdf}}
+\subfloat[$S/\sqrt{B}$]{\includegraphics[width=0.7\textwidth]{./MSSM/Figures/s_over_root_b_mt_m.png}}~\\
+\subfloat[Size of error interval]{\includegraphics[width=0.7\textwidth]{./MSSM/Figures/mt_muons_iso_errint.png}}
 \end{center}
 \caption{(a) The $S/\sqrt{B}$ for \Ztautau signal and (b) the size of the error interval on 
 the best--fit value of a maximum--likeihood fit to the \Ztautau signal strength,
@@ -254,8 +254,8 @@ tau isolation working point selection on both the gg$\phi$ and bb$\phi$ producti
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[$m_{\phi} = 160$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_160_range12.pdf}}
-\subfloat[$m_{\phi} = 2.9$ TeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_2900_range12.pdf}}
+\subfloat[$m_{\phi} = 160$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_160_range12.png}}
+\subfloat[$m_{\phi} = 2.9$ TeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_2900_range12.png}}
 %\subfloat[$m_{\phi} = 1600$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_1600_range12.pdf}}
 %\subfloat[$m_{\phi} = 2900$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_2900_range12.pdf}}
 \end{center}
@@ -392,17 +392,20 @@ by $\Delta R > 0.5$, have \pT~of at least 40 GeV and satisfy $|\eta|<2.1$. Both 
 to be reconstructed by the HPS algorithm, and their impact parameter $d_{z}$ must be less than 0.2 cm.
 Both taus need to pass the tight working point of the isolation discriminator, the very loose 
 working point of the anti--electron discriminator and the loose working point of the anti--muon discriminator. 
-The tight working point of the isolation discriminator is chosen to optimise the sensitivity
-of this channel for higher masses, while retaining the second best senstivity in the intermediate
-mass range, as seen in figure \ref{fig:mssm_tauid_tt} for the gg$\phi$ process.
+The tight working point of the isolation discriminator is chosen such that
+the channel is near-optimal at high mass, while not losing too much sensitivity in the low-intermediate mass range.
+This is illustrated in figure \ref{fig:mssm_tauid_tt} for the gg$\phi$ process.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{./MSSM/Figures/ggh_tt_isolation.png}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_thesis_ttopt_ggH.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mssm_thesis_ttopt_bbH.pdf}}
 \end{center}
-\caption{Expected upper limits for gg$\phi$ process in the \tautau channel, using the 
-loose (green), medium (red), tight (blue, very tight (black) and very very tight (gold)
-working point.}
+\caption{Expected upper limits for (a) the gg$\phi$ process and (b) the bb$\phi$ process 
+in the \tautau channel, using the 
+medium (green), tight (red) and very tight working point of the tau isolation discriminator.
+The pattern is roughly the same as in the \etau and \mutau channels, with looser selections preferred at high
+mass.}
 \label{fig:mssm_tauid_tt}
 \end{figure}
 
@@ -1612,13 +1615,13 @@ thus expected to grow with more data.
 
 \chapter{Combination of MSSM analyses}
 \label{sec:mssm_combination}
-The results of the search for neutral Higgs bosons in the  MSSM using the di-tau
+The results of the search for neutral Higgs bosons in the MSSM using the di-tau
 final state, using a dataset
 corresponding to an integrated luminosity of 12.9 fb$^{-1}$, collected during the
 first half of 2016 and thus referred to as `2016 analysis', can be combined 
-with a previous search. This previous analysis, very similar to the 2016 analysis,
+with a previous search. This previous analysis
 was performed on a dataset corresponding to an integrated luminosity of 2.3 fb$^{-1}$
-collected during 2015 (`2015 analysis'), detailed in reference \cite{CMS-PAS-HIG-16-006}.
+collected during 2015 (`2015 analysis'), and is detailed in Ref. \cite{CMS-PAS-HIG-16-006}.
 By combining the two analyses we should be able to set the most stringent
 limits on the two MSSM production modes, and in the \mA-\tanb~plane of 
 MSSM benchmark scenarios, available at the time of writing. It is also
@@ -1710,7 +1713,8 @@ at higher mass.
 \end{center}
 \caption{Upper limits at 95\% CL for (a) the gluon fusion production
 process and (b) the b--associated production process. All four final states and 
-all categories are combined for these limits \cite{CMS-PAS-HIG-16-006}.}
+all categories are combined for these limits. The green and yellow bands indicate
+the $\pm 1\sigma$(68\%) and $\pm 2\sigma$(95\%) probability intervals on the expected limit  \cite{CMS-PAS-HIG-16-006}.}
 \label{fig:mssm_results_hig16006_limits}
 \end{figure}
 
@@ -1753,7 +1757,7 @@ The third column of this table gives the motivation for the chosen correlation.
 
 \begin{table}[htp]
 \begin{center}
-\caption{Correlations between nuisance parameters in 2015 and 2016 analysis}
+\caption{Correlations between nuisance parameters in the 2015 and 2016 analysis}
 {\footnotesize
 \begin{tabular}{p{3cm}p{2cm}p{10cm}}
 \toprule
@@ -1763,7 +1767,7 @@ Luminosity & Partially \mbox{correlated} & Recommended by the CMS collaborators 
 \midrule
 Jet energy scale & Fully \mbox{correlated} & Recommended by the CMS collaborators who derive jet energy corrections, after dedicated studies.\\
 \midrule
-B-tagging & Uncorrelated & Scale factors used in 2015 and 2016 analysis measured via different methods.\\
+B-tagging & Uncorrelated & Scale factors used in the 2015 and 2016 analysis measured via different methods.\\
 \midrule
 Mis-tagging & Partially \mbox{correlated} & Recommended by the CMS collaborators responsible for deriving b-tagging scale factors, after dedicated studies.\\
 \midrule
@@ -1779,7 +1783,7 @@ Tau energy scale & Correlated & There is no reason to expect a different best-fi
 \midrule
 Electron energy scale & Correlated & There is no reason to expect a different best-fit energy scale between 2015 and 2016.\\
 \midrule
-Drell-Yan shape & Correlated & \scriptsize{The same \ac{MC} samples, exhibiting the observed discrepancies, are used. In addition the weights as derived for the 2015 analysis and the 2016 analysis are very similar.}\\
+Drell-Yan shape & Correlated & \scriptsize{The same \ac{MC} samples, are used in 2014 and 2016 to derive the correction. The weights derived for the 2015 analysis and the 2016 analysis are very similar.}\\
 \midrule
 W jet$\rightarrow\Pgt_{h}$ fake rate shape & Uncorrelated & \scriptsize{Correction not applied in the 2016 dataset while it was applied for the 2015 analysis. The uncertainties have a different functional form, possibly due to different jet$\rightarrow\Pgt_{h}$ fake rates as a result of the use of a different tau isolation working point.}\\
 \midrule
@@ -1787,28 +1791,28 @@ MET uncertainties & Correlated & The same MVA \MET training was used both for 20
 \midrule
 \mbox{Top quark} \pT~reweighting & Correlated & The same corrections were applied to the 2015 and 2016 analyses.\\
 \midrule
-Drell-Yan $\sigma$& Correlated & Theoretical uncertainty so should be correlated.\\
+Drell-Yan $\sigma$& Correlated & The same recommended cross sections were used in 2015 and 2016.\\
 \midrule
-Di--boson $\sigma$ & Correlated & Theoretical uncertainty so should be correlated.\\
+Di--boson $\sigma$ & Correlated & The same recommended cross sections were used in 2015 and 2016.\\
 \midrule
-\ttbar $\sigma$ & Correlated & Theoretical uncertainty so should be correlated.\\
+\ttbar $\sigma$ & Correlated & The same recommended cross sections were used in 2015 and 2016.\\
 \midrule
-\Wjets $\sigma$ & Correlated & Theoretical uncertainty so should be correlated.\\
+\Wjets $\sigma$ & Correlated & The same recommended cross section was used in 2015 and 2016..\\
 \midrule
-SM signal theory uncertainties & Correlated & Theoretical uncertainties so should be correlated.\\
+SM signal theory uncertainties & Correlated & The same recommende cross sections were used in 2015 and 2016..\\
 \midrule
-\Ztautau \mbox{acceptance} & N/A & \scriptsize{Uncertainty only exists in 2015 analysis as no fits to the \Zmm control region were included yet.}\\
+\Ztautau \mbox{acceptance} & N/A & \scriptsize{Uncertainty only exists in the 2015 analysis as no fits to the \Zmm control region were included.}\\
 \midrule
 \Ztautau \mbox{extrapolation}& N/A & \scriptsize{Uncertainty only exists in 2016 analysis as fits to the \Zmm control regions were included and this uncertainty should cover only the extrapolation from \Zmm to \Ztautau, not the full acceptance.}\\
 \midrule
 %e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expect to behave the same in 2015 and 2016 datasets.\\
-%$\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied yet\\
+%$\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied.\\
 %jet$\rightarrow\Pgt_{h}$ fake rate & Correlated & ....\\
 %QCD extrapolation uncertainty (\emu channel) & Uncorrelated & Use of slightly different anti-iso sideband in 2015 and 2016 analyses\\
 %QCD normalisation uncertainty (\tautau channel) & Uncorrelated & Use of different anti-isolated sideband\\
-%Parameters tying control regions to signal region normalisations & Uncorrelated & 2016 control region fits should not influence the 2015 SR and vice versa\\
+%Parameters tying control regions to signal region normalisations & Uncorrelated & 2016 control region fits should not influence the 2015 signal region and vice versa\\
 %Statistical uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated\\
-%Systematic uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Uncertainty based on high \mT~ region with anti-isolated $\Pgt_{h}$, but because of the tau \pT~ cuts being different in 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that\\
+%Systematic uncertainty on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Uncertainty based on high \mT~ region with anti-isolated $\Pgt_{h}$, but because of the tau \pT~cuts being different in the 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that\\
 %Statistical uncertainty on W low/high\mT~ ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated\\
 %Systematic uncertainty on W low/high\mT~ ratio (\etau and \mutau) & Uncorrelated & This was already uncorrelated between channels and categories in each individual analysis, we can't claim to know the correlation between the two years any more accurately\\
 %QCD OS/SS ratio statistical uncertainty (\etau and \mutau) & Uncorrelated & Statistical uncertainties should not be correlated\\
@@ -1838,7 +1842,7 @@ Parameters tying control regions to signal region normalisations & Uncorrelated 
 \midrule
 Statistical \mbox{uncertainty} on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated.\\
 \midrule
-Systematic \mbox{uncertainty} on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & \scriptsize{Uncertainty based on high \mT~ region with anti-isolated $\Pgt_{h}$, but because of the tau \pT~ cuts being different in 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that.}\\
+Systematic \mbox{uncertainty} on W opposite--sign to same--sign ratio (\etau and \mutau)& Uncorrelated & \scriptsize{Uncertainty based on high \mT~ region with anti-isolated $\Pgt_{h}$, but because of the tau \pT~cuts being different in the 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that.}\\
 \midrule
 Statistical \mbox{uncertainty} on W low/high-\mT~\mbox{ratio} (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated.\\
 \midrule
@@ -1872,7 +1876,8 @@ from the individual 2015 and 2016 limits.
 \caption{Upper limits at 95\% CL for (a) the gluon fusion production
 process and (b) the b--associated production process. These results
 combine all categories and all four final states from both the 2015
-and the 2016 analysis.}
+and the 2016 analyses. The green and yellow bands indicate
+the $\pm 1\sigma$(68\%) and $\pm 2\sigma$(95\%) probability intervals on the expected limit.}
 \label{fig:mssm_results_combination_limits}
 \end{figure}
 
@@ -1883,21 +1888,23 @@ gluon fusion limits in figure \ref{fig:mssm_results_combination_limits_comp}a sh
 higher masses the sensitivity is only very slightly improved with respect to the 
 analysis of the 12.9 fb$^{-1}$ dataset. However, for masses between 200 and 800 GeV
 there is a larger improvement in sensitivity from combining the two analyses.
-This behaviour is expected since the analysis on the 2016 dataset used a slightly different
+This behaviour is expected since the 2016 analysis used a slightly different
 selection that made the analysis more optimal at masses above 800 GeV,
-and slightly less optimal below this mass, than the analysis on the 2015 dataset. This
+and slightly less optimal below this mass. This
 effect is less visible on the b--associated production limits shown in figure \ref{fig:mssm_results_combination_limits_comp}b.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_limitcomp_ggH.pdf}}
-\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_limitcomp_bbH.pdf}}
+\subfloat[gg$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_comparison_ggH_with_ratio.pdf}}
+\subfloat[bb$\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_combination_comparison_bbH_with_ratio.pdf}}
 \end{center}
 \caption{Comparison of the expected upper limits at 95\% CL for (a) the gluon fusion production
 process and (b) the b--associated production process. The green curve shows the results
 from combining the 2015 and 2016 analyses (integrated luminosity of 15.2 fb$^{-1}$),
 with the red line indicating the limits from the 2016 analysis only (integrated luminosity of 12.9 fb$^{-1}$)
-and the blue line indicating the limits from the 2015 analysis only (integrated luminosity of 2.3 fb$^{-1}$).}
+and the blue line indicating the limits from the 2015 analysis only (integrated luminosity of 2.3 fb$^{-1}$).
+The plotted relative difference is with respect to the limits from the 2016 analysis, showing how the combination
+improves on those limits by between a few per cent at high mass up to 40\% at low mass.}
 \label{fig:mssm_results_combination_limits_comp}
 \end{figure}
 
