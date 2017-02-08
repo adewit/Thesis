@@ -74,14 +74,14 @@ on how the objects used are reconstructed,
 and a more in--depth description of the identification criteria, 
 is given in chapter \ref{chap:objects}.
 
-The basis of the event selection is to select \mutau, \etau,
+The basis of the event selection is to identify \mutau, \etau,
 \tautau and \emu pairs. Events are selected first by using a trigger,
 followed by additional selection criteria. For the \etau
 and \mutau channels we only trigger on the electron or muon. 
 While the lepton + hadronic tau cross triggers that are also available
 allow for a 3 (6) GeV lower \pT~threshold on the
 muon (electron), the benefit of using such a trigger is small as 
-most of the signal samples at high-mass, the region of interest in this
+most of the signals at high-mass, the region of interest in this
 analysis, have higher \pT~electrons and muons. This is illustrated
 in figure \ref{fig:mt_muonpt}a, which shows the \pT~of muons in the
 \mutau channel, with the signal normalised to 4000 times its cross--section
@@ -97,20 +97,22 @@ on the electrons and muons is 1 GeV above the \pT~threshold of the trigger. The
 hadronic tau efficiency turns on much more slowly, and therefore the offline \pT~cut
 on the hadronic taus in the \tautau channel is 5 GeV above the trigger \pT~threshold.
 In addition, a requirement is made on the $\eta$ of the electrons, muons and
-hadronic taus. Such a selection is driven by the $\eta$ range covered by the tracker and the $\eta$
-range that is used in the reconstruction of the particles,
-although in some cases the used trigger is restricted in $\eta$ and the cut is chosen to
-align with that. As an illustration figure \ref{fig:mt_muonpt}b shows
+hadronic taus. This election is driven by the $\eta$ range covered by the tracker and
+that is thus used for the reconstruction of the particles. For some of the
+channels the used trigger is restricted in $\eta$. If that is the case
+then the cut is chosen to align with the trigger restrictions.
+As an illustration figure \ref{fig:mt_muonpt}b shows
 the $\eta$ distribution for electrons in the \etau channel, again with the signal overlaid.
 The signal peaks in the central $\eta$ region.
 
 Other selections include cuts on the impact parameters $d_{xy}$ and $d_{z}$, which
-ensure that the particle is compatible with having
-originated from the primary vertex. This reduces the selection of particles
-coming from pile--up events. Additional identification and isolation criteria
-are also applied. These will be discussed in the following sections.
+ensure that the particle is likely to have
+originated from the primary vertex. This reduces the number of selected particles
+which come from pile--up interactions.
+Additional identification and isolation criteria
+are also applied; these will be discussed in sections \ref{sec:mssm_eventsel_pairs}--\ref{sec:mssm_eventsel_em}.
 The optimisation of some of the selections will also be discussed there. Note that 
-the optimisations were all based on the dataset collected during 2015, which
+the optimisations were all based on the dataset collected during the 2015 p-p running period of the \ac{LHC}, which
 corresponds to an integrated luminosity of 2.3 fb$^{-1}$. 
 
 \begin{figure}[h!]
@@ -127,9 +129,7 @@ cross-section times branching ratio at \mA=1 TeV and \tanb=50 in the $m_{h}^{\te
  
 \subsection{Pair selection and vetos}
 \label{sec:mssm_eventsel_pairs}
-The basis of the event selection is the selection of \mutau, \etau,
-\tautau and \emu pairs by the requirements described
-in the following subsections. After applying trigger
+After applying trigger
 requirements, identification criteria and kinematic cuts
 more than one possible candidate pair can exist. If
 this is the case the pair with the two most isolated candidates
@@ -157,8 +157,8 @@ with \pT~$>10$ GeV and passing loose ID and isolation requirements.
 This also reduces backgrounds from \WZ events. The application
 of these vetos means that the selection of the pair with the
 two most isolated candidates is only important where hadronic
-taus are concerned, for if there were additional electrons
-or muons the event would not pass the electron or muon veto.
+taus are concerned, for if there were additional electrons (muons)
+the event would not pass the electron (muon) veto.
 In addition to these extra electron and muon vetos, \Zee events are 
 reduced in the \etau channel by rejecting events
 where an opposite--sign pair of electrons of \pT~$>15$ GeV
@@ -518,6 +518,47 @@ b--tagging than for default jet reconstruction this requirement does not necessa
 mean there will be only one b--tagged jet in the event.
 \end{itemize}
 
+\section{Discriminating variable}
+\label{sec:mssm_discrvar}
+The discriminating variable used for signal extraction is the total transverse mass,
+\begin{equation}\label{eqn:mttot}
+m_{\text{T}}^{\text{tot}} = \sqrt{(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_1^{\text{vis}}))^2+
+(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_2^{\text{vis}}))^2 + (m_{\text{T}}(\Pgt_1^{\text{vis}},\Pgt_2^{\text{vis}}))^2}.
+\end{equation}
+
+$m_{\text{T}}(1,2)$ is defined as,
+\begin{equation}\label{eqn:mttot_12}
+m_{\text{T}}(1,2) = \sqrt{2p_{\text{T},1}p_{\text{T},2}(1-\cos{(\Delta\phi(1,2))})}.
+\end{equation}
+
+This means that $m_{\text{T}}(E_{\text{T}}^{\text{miss}},\Pgt_1^{\text{vis}})$ is equivalent
+to the \mT~defined for the \etau and \mutau channels in equation \ref{eqn:hhh_selection_mt}.
+The \mTtot~variable provides good separation between signal and QCD multi--jet events
+in the \etau, \mutau and \tautau channels, and between
+signal and \ttbar events in the \emu channel. These are some of the 
+major backgrounds and thus good separation between these processes and 
+the signal is important for the sensitivity of the analysis.
+The separation between signal and backgrounds is illustrated in figure
+\ref{fig:mttot_sigseps}, where figure \ref{fig:mttot_sigseps}a shows the total transverse mass
+distribution of the QCD
+background in the no b-tag category of the \tautau channel with the gluon fusion
+signal at 400 GeV, 1 TeV and 2 TeV overlaid. Figure \ref{fig:mttot_sigseps}b
+shows the total transverse mass distribution of the \ttbar background in the b-tag category of the \emu channel with
+the b-associated production signal at the same three masses overlaid. 
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[QCD and signal in \tautau no b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_sigsep_tt_nobtag.pdf}}
+\subfloat[\ttbar and signal in \emu b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_sigsep_em_btag.pdf}}
+\end{center}
+\caption{Total transverse mass distributions in (a) the no b-tag category of the \tautau
+channel, for QCD and gluon fusion signal at 400 GeV and 1 and 2 TeV overlaid and (b) in the b-tag
+category of the \emu channel, for \ttbar and b-associated signal at 400 GeV and 1 and 2 TeV. 
+The total transverse mass variable separates the signal and these backgrounds well.}
+\label{fig:mttot_sigseps}
+\end{figure}
+
+
 
 \section{\ac{MC} to data correction factors}
 \label{sec:mssm_mccorrs}
@@ -619,45 +660,6 @@ mass distribution of the \Ztautau background in the no b-tag category of the \et
 \label{fig:dyrwt}
 \end{figure}
 
-\section{Discriminating variable}
-\label{sec:mssm_discrvar}
-The discriminating variable used for signal extraction is the total transverse mass,
-\begin{equation}\label{eqn:mttot}
-m_{\text{T}}^{\text{tot}} = \sqrt{(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_1^{\text{vis}}))^2+
-(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_2^{\text{vis}}))^2 + (m_{\text{T}}(\Pgt_1^{\text{vis}},\Pgt_2^{\text{vis}}))^2}.
-\end{equation}
-
-$m_{\text{T}}(1,2)$ is defined as,
-\begin{equation}\label{eqn:mttot_12}
-m_{\text{T}}(1,2) = \sqrt{2p_{\text{T},1}p_{\text{T},2}(1-\cos{(\Delta\phi(1,2))})}.
-\end{equation}
-
-This means that $m_{\text{T}}(E_{\text{T}}^{\text{miss}},\Pgt_1^{\text{vis}})$ is equivalent
-to the \mT~defined for the \etau and \mutau channels in equation \ref{eqn:hhh_selection_mt}.
-The \mTtot~variable provides good separation between signal and QCD multi--jet events
-in the \etau, \mutau and \tautau channels, and between
-signal and \ttbar events in the \emu channel. These are some of the 
-major backgrounds and thus good separation between these processes and 
-the signal is important for the sensitivity of the analysis.
-The separation between signal and backgrounds is illustrated in figure
-\ref{fig:mttot_sigseps}, where figure \ref{fig:mttot_sigseps} shows the total transverse mass
-distribution of the QCD
-background in the no b-tag category of the \tautau channel with the gluon fusion
-signal at 400 GeV, 1 TeV and 2 TeV overlaid. Figure \ref{fig:mttot_sigseps}b
-shows the total transverse mass distribution of the \ttbar background in the b-tag category of the \emu channel with
-the b-associated production signal at the same three masses overlaid. 
-
-\begin{figure}[h!]
-\begin{center}
-\subfloat[QCD and signal in \tautau no b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_sigsep_tt_nobtag.pdf}}
-\subfloat[\ttbar and signal in \emu b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_sigsep_em_btag.pdf}}
-\end{center}
-\caption{Total transverse mass distributions in (a) the no b-tag category of the \tautau
-channel, for QCD and gluon fusion signal at 400 GeV and 1 and 2 TeV overlaid and (b) in the b-tag
-category of the \emu channel, for \ttbar and b-associated signal at 400 GeV and 1 and 2 TeV. 
-The total transverse mass variable separates the signal and these backgrounds well.}
-\label{fig:mttot_sigseps}
-\end{figure}
 
 
 \section{Background estimation}
@@ -668,22 +670,22 @@ which shows the low $m_{\text{T}}^{\text{tot}}$ region in the no b-tag category
 of the \mutau channel and figure \ref{fig:mssm_bkgs_overview}b, which shows the low $m_{\text{T}}^{\text{tot}}$
 region in the b-tag category of the \emu channel. These regions are where the backgrounds are concentrated and it
 is therefore easier to see the different contributions. \Ztautau is a background in all four channels as 
-it has two real taus in the final state, like the signal that we are searching for. The only aspect
-that distinguishes the \Ztautau background from the gluon fusion signal is the mass of the particle. Smaller backgrounds
+it has two real taus in the final state, like the signal that we are searching for. 
+Smaller backgrounds 
 from \Zellell decays also play a role, especially in the \mutau and \etau channels where such events
-might pass the selection for example if a jet is misreconstructed as a hadronic tau and only one of the leptons is reconstructed. 
-Production of QCD multijet events, labelled QCD on the plots in figure \ref{fig:mssm_bkgs_overview}, is a background when 
+might pass the selection if for example a jet is misreconstructed as a hadronic tau and only one of the leptons is reconstructed. 
+Production of QCD multijet events, labelled `QCD' on the plots in figure \ref{fig:mssm_bkgs_overview}, is a background when 
 two jets are misreconstructed as the two particles of the candidate pair. %Relatively likely to happen in tautau channel
 As visible in figure \ref{fig:mssm_bkgs_overview}b, the \ttbar background is particularly important in the b-tag category.
-This is because top quarks virtually always decay as $\Ptop\rightarrow \PW\Pbottom$. and so such events 
-always contain real b-jets. One or both of the \PW bosons, and additional jets in the event, can 
-then form \etau, \mutau, \tautau and \emu pairs.
-The \Wjets background arises in the \etau and \mutau channels when the lepton from the \PW decay and a jet misreconstructed
+This is because top quarks virtually always decay as $\Ptop\rightarrow \PW\Pbottom$, and so such events nearly 
+always contain real b-jets. The decay products  of one or both of the \PW bosons, and additional jets in the event, can 
+then form \etau, \mutau, \tautau and \emu pairs.\\
+The \Wjets process is a background in the \etau and \mutau channels when the lepton from the \PW decay and a jet misreconstructed
 as a hadronic tau form a pair. In the \tautau channel it is a background when the \PW decays into $\Pgt\Pgn$ with the tau 
 decaying hadronically and an additional jet in the event is misreconstructed as a hadronic tau, or when two jets are
 reconstructed as hadronic taus.
-In the \emu channel an additional lepton would have to originate from one of the jets, and so here this
-background is smaller. Backgrounds that are small in all channels are the di-boson and single-top backgrounds. In 
+In the \emu channel an additional lepton would have to originate from one of the jets, and so in this
+channel this background is smaller. Backgrounds that are small in all channels are the di-boson and single-top backgrounds. In 
 figures showing the backgrounds the di-boson and single-top backgrounds are drawn together with the \Wjets 
 background as the `Electroweak' component.
 
@@ -704,12 +706,12 @@ methods and \ac{MC} samples is employed. The QCD background
 is estimated using data-driven techniques in all four channels.
 In the \mutau and \etau channels the \Wjets background is also
 estimated using data-driven techniques. The control regions used
-in the estimation of QCD and \Wjets in the \etau and \mutau channels
+for the estimation of QCD and \Wjets in the \etau and \mutau channels
 are included in a simultaneous fit with the signal region to obtain
-the final results. More detail on this is given in section ADD SECTION.
+the final results. More detail on this is given in section \ref{sec:mssm_sigext_ctrl}.
 In the \emu and \tautau channels the \Wjets background is estimated using
-\ac{MC} samples. The \Ztautau and \Zellell backgrounds are also estimated
-using \ac{MC} samples, and a \Zmm control region
+\ac{MC} samples. The \Ztautau and \Zellell backgrounds are estimated
+using \ac{MC} samples for all four channels. A \Zmm control region
 is considered in a simultaneous fit with the signal region to correct and
 constrain the \Ztautau normalisation.
 The \ttbar, di-boson and single-top backgrounds are estimated
@@ -962,19 +964,17 @@ events obtained by subtracting other backgrounds from the
 observed number of events in the same--sign region is multiplied
 by $R_{\text{QCD}}^{\text{OS/SS}}$ as derived in section \ref{sec:mssm_bkgs_etmt_qcdosss} 
 to obtain an estimate of the number of QCD events in the signal region.
-
-\subsubsection{Control regions in the fit}
-\label{sec:mssm_bkgs_etmt_ctrl}
-Several control regions in data are used for the estimation
-of the QCD and \Wjets backgrounds: the same--sign and 
-opposite--sign high \mT~regions, as well as the same--sign
-low \mT~region. This leads to three control regions used 
-in each category of both the \mutau and \etau channels to determine
-the initial estimate of the background normalisations.
-These control regions are included in a simultaneous fit
-with the signal regions to obtain the final results. More detail
-can be found in section \ref{sec:mssm_sigext_ctrl}.
-
+%\subsubsection{Control regions in the fit}
+%\label{sec:mssm_bkgs_etmt_ctrl}
+%Several control regions in data are used for the estimation
+%of the QCD and \Wjets backgrounds: the same--sign and 
+%opposite--sign high \mT~regions, as well as the same--sign
+%low \mT~region. This leads to three control regions used 
+%in each category of both the \mutau and \etau channels to determine
+%the initial estimate of the background normalisations.
+%These control regions are included in a simultaneous fit
+%with the signal regions to obtain the final results. More detail
+%can be found in section \ref{sec:mssm_sigext_ctrl}.
 
 \subsection{\texorpdfstring{QCD in the \tautau and \emu channels}{QCD in the tautau and emu channels}}
 \label{sec:mssm_bkgs_qcd}
@@ -1739,21 +1739,32 @@ The idea of combining the two analyses is to combine the
 individual likelihoods to improve the analysis sensitivity and
 physics reach. To do this correctly the correlations between
 nuisance parameters in the 2015 and 2016 analyses need to be taken into account.
-The correct way to establish the correlations is to perform
-dedicated studies into them. In many cases such studies would be 
-unfeasible to perform, or it would not be clear how to approach the 
-problem in the first place.
 
-Even without performing these studies, a choice of correlation scheme can be motivated
-by carefully considering the differences between the two analyses and the conditions
-under which they were performed.
-This is what has been done for this combination.
+The choice of correlation scheme is decided on
+based on the procedure used for the ATLAS and \ac{CMS}
+Higgs combinations \cite{MassComb,CouplComb}. This means
+uncertainties are either considered 100\% correlated or fully uncorrelated. Partial
+correlations are not taken into account, with a small number of exceptions. The
+correlations used for this combination are given in table \ref{tab:mssm_combination_correlations},
+with the motivation for the chosen correlation given in the third column of the table.
+The chosen correlation scheme is motivated
+by carefully considering the differences between the two analyses
+and the conditions under which they were perofrmed.
+
+%The correct way to establish the correlations is to perform
+%dedicated studies into them. In many cases such studies would be 
+%unfeasible to perform, or it would not be clear how to approach the 
+%problem in the first place.
+%Even without performing these studies, a choice of correlation scheme can be motivated
+%by carefully considering the differences between the two analyses and the conditions
+%under which they were performed.
+%This is what has been done for this combination.
 %Strictly, studies into the underlying correlations between
 %nuisance parameters should be performed. This is however not always
 %feasible and in some cases
-The correlation scheme between nuisance parameters relating to the 2015 and 2016
-analyses, as used for this combination, is given in table \ref{tab:mssm_combination_correlations}. 
-The third column of this table gives the motivation for the chosen correlation.
+%The correlation scheme between nuisance parameters relating to the 2015 and 2016
+%analyses, as used for this combination, is given in table \ref{tab:mssm_combination_correlations}. 
+%The third column of this table gives the motivation for the chosen correlation.
 
 \begin{table}[htp]
 \begin{center}
@@ -1828,7 +1839,7 @@ SM signal theory uncertainties & Correlated & The same recommende cross sections
 {\footnotesize
 \begin{tabular}{p{3cm}p{2cm}p{10cm}}
 \midrule
-e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expect to behave the same in 2015 and 2016 datasets.\\
+e$\rightarrow\Pgt_{h}$ fake rate & Correlated & Expected to behave the same in 2015 and 2016 datasets, the same anti-electron discriminator was used and the uncertainty on the fake rate should not be affected by the use of a different hadronic tau ID discriminator working point.\\
 \midrule
 $\mu\rightarrow\Pgt_{h}$ fake rate & Uncorrelated & Measurement had not been made at time of 2015 analysis and so no scale factors were applied yet, while this had changed for the 2016 analysis.\\
 \midrule
