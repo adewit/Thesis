@@ -59,7 +59,7 @@ avoid double counting with the \ttbar \ac{MC}.
 \section{Event selection and categorisation}
 \label{sec:hhh_selection}
 This section gives an overview of the event selection, a detailed description of the physics
-objecs used in this analysis is given in chapter OBJECTS.
+objecs used in this analysis is given in chapter \ref{chap:objects}.
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu-tau channel}}
 \label{sec:hhh_selection_mutau}
@@ -75,8 +75,8 @@ The muon is required to have a \pT~of at
 least 20 GeV and $|\eta| < 2.1$, and should be compatible with originating from the 
 primary vertex. This means the impact parameters $d_{xy}$ and $d_{z}$ must be smaller
 than 0.045 and 0.2 cm respectively. Tight muon identification
-criteria and tight isolation requirements $I_{\text{rel}}^{\mu} < 0.1$, as described 
-in section OBJECTS, are applied. The hadronic tau must have a \pT~of at least
+criteria and tight isolation requirements $I_{\text{rel}}^{\mu} < 0.1$
+ are applied. The hadronic tau must have a \pT~of at least
 20 GeV, $|\eta| < 2.3$, and must have $d_{z} < 0.2$ cm. It is required to pass 
 the decay mode finding identification
 from the HPS algorithm. Additionally
@@ -177,7 +177,7 @@ are shown in figure \ref{fig:Hhh_selection_mt}.
 \subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_mt_2012.pdf}}
 \subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_et_2012.pdf}}
 \end{center}
-\caption{\mT~distributions in the \mutau (left) and \etau (right) channels}
+\caption[\mT~distributions in the \mutau and \etau channels.]{\mT~distributions in the \mutau (left) and \etau (right) channels.}
 \label{fig:Hhh_selection_mt}
 \end{figure}
 
@@ -211,7 +211,7 @@ channels, illustrates this.
 \subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/n_bjets_csv_2jetinclusive_mt_2012_log.pdf}}
 \subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/n_bjets_csv_2jetinclusive_et_2012_log.pdf}}
 \end{center}
-\caption{Number of b-tagged jets in the 2-jet selection of the \mutau (left) and \etau (right) channels. The signal
+\caption[Number of b-tagged jets in the 2-jet selection of the \mutau and \etau channels.]{Number of b-tagged jets in the 2-jet selection of the \mutau (left) and \etau (right) channels. The signal
 at \mH~=$300$~GeV and \tanb~=2, multiplied by a factor of 10, is overlaid on the figures.}
 \label{fig:Hhh_selection_bjets}
 \end{figure} 
@@ -236,7 +236,8 @@ the 2jet-2tag category.
 \subfloat[$m_{\Pgt\Pgt}$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/m_sv_2jet2tag_mt_2012.pdf}}
 \subfloat[$m_{jj}$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mjj_2jet2tag_mt_2012.pdf}}
 \end{center}
-\caption{Reconstructed di-\Pgt invariant mass (left) and di-jet invariant mass (right) in the 2jet-2tag category of the \mutau
+\caption[Reconstruced di-\Pgt invariant mass and di-jet invariant mass in
+the 2jet-2tag category of the \mutau channel.]{Reconstructed di-\Pgt invariant mass (left) and di-jet invariant mass (right) in the 2jet-2tag category of the \mutau
 channel. The signal for a heavy Higgs boson H with mass \mH = 300 GeV at \tanb=2 in the low \tanb~ MSSM scenario, enlarged by a factor 10, is overlaid on the figures.
 In both variables the signal peaks at around 125 GeV.}
 \label{fig:Hhh_selection_masscuts}
@@ -274,7 +275,7 @@ in events passing the selection of the \etau channel as described in section
 \ref{sec:hhh_selection_etau}, with the 2-jet requirement lifted.
 
 Differences in \MET resolution and response between data and \ac{MC} are accounted for by
-applying Z--recoil corrections to DY, \Wjets and signal \ac{MC} events. Chapter OBJECTS
+applying Z--recoil corrections to DY, \Wjets and signal \ac{MC} events. Chapter \ref{chap:objects} 
 gives more details on how these corrections are derived.
 
 To correct for the difference in b--tagging efficiency and light jet mis--tagging
@@ -374,8 +375,7 @@ A $\chi^2$ corresponding to the agreement between the fitted and measured recoil
 \chi^2_{\text{recoil}} = (\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{measured}})^T V_{\text{recoil}}^{-1}(\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{measured}})
 \end{equation}
 where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as in equation \ref{eqn:kinfit_recoilcov} from the covariance matrices of the b-jets and
-the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET as discussed in the
-OBJECTS section,
+the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET,
 while the covariance matrices of the b-jets can be written in terms of the position, momentum and resolution of the b-jets. 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilcov}
@@ -407,7 +407,9 @@ is forced to 250 GeV.
 \subfloat[Signal]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mHvsmttbb_signal.pdf}}
 \subfloat[\ttbar background]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mHvsmttbb_ttbar.pdf}}
 \end{center}
-\caption{Comparison of the reconstructed heavy Higgs mass using the kinematic fit (blue) and
+\caption[Comparison of the reconstructed heavy Higgs mass
+using the kinematic fit in signal events with $m_{H}=300$ GeV and \ttbar 
+background events in the 2jet-1tag category of the \mutau channel.]{Comparison of the reconstructed heavy Higgs mass using the kinematic fit (blue) and
 4-body mass without use of the kinematic fit (black) in signal events with $m_{H} = 300 $~GeV (left) and \ttbar background events (right) in 
 the 2jet-1tag category of the \mutau channel. The kinematic fit greatly improves the resolution and 
 accuracy of the mean of the mass distribution in signal events.}
@@ -579,7 +581,8 @@ all $\ell\ell\tau\tau$ final states combined, is shown in figure \ref{fig:AZhUpp
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_010-a.pdf}
-\caption{The 95\% confidence level expected (dashed) and observed (solid)
+\caption[The 95\% confidence level expected and observed upper limits on the 
+$\sigma \times$ BR for the \AtoZhtolltautau process.]{The 95\% confidence level expected (dashed) and observed (solid)
 upper limits on the $\sigma \times BR$ for the \AtoZhtolltautau process.
 The green and yellow bands indicate the $\pm 1 \sigma $ and $2\sigma$
 expectations \cite{CMS-HIG-14-034}.}
@@ -721,7 +724,8 @@ respectively.
 \subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_mt_1_shapes_postfit.pdf}}~\\
 \subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_mt_2_shapes_postfit.pdf}}
 \end{center}
-\caption{Distributions of $m_{H}^{\text{kinfit}}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
+\caption[Distributions of $m_{h}^{\text{kinfit}}$ in the 2jet-0tag,
+2jet-1tag and 2jet-2tag categories of the \mutau channel.]{Distributions of $m_{H}^{\text{kinfit}}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
 of the \mutau channel. The \Htohhtobbtautau signal for \mA $= 300 $~GeV at \tanb=2 in the low \tanb~MSSM
 scenario, multiplied by 10, is also overlaid. Note that at low \tanb \mA$\neq$\mH, ~\mH~ at the point
 in the MSSM scenario considered is around 316 GeV.}
@@ -734,7 +738,8 @@ in the MSSM scenario considered is around 316 GeV.}
 \subfloat[2jet-1tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_et_1_shapes_postfit.pdf}}~\\
 \subfloat[2jet-2tag]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/htt_et_2_shapes_postfit.pdf}}
 \end{center}
-\caption{Distributions of $m_{H}^{\text{kinfit}}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
+\caption[Distributions of $m_{H}^{\text{kinfit}}$ in the 2jet-0tag,
+2jet-1tag and 2jet-2tag categories of the \etau channel.]{Distributions of $m_{H}^{\text{kinfit}}$ in the 2jet-0tag, 2jet-1tag and 2jet-2tag categories 
 of the \etau channel. The \Htohhtobbtautau signal for \mA $ = 300 $~GeV at \tanb=2 in the low \tanb~ MSSM
 scenario, multiplied by 10, is also overlaid. Note that at this low value of \tanb \mA$\neq$ \mH, in 
 this case \mH is around 316 GeV.}
@@ -757,7 +762,8 @@ channel.
 \begin{center}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_008-d.pdf}}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/hhh_limit_comparison.pdf}}
-\caption{Expected and observed 95\% CL upper limits on cross-section times branching ratio
+\caption[Expected and observed 95\% CL upper limits on cross--section
+times branching ratio for the \Htohhtobbtautau process.]{Expected and observed 95\% CL upper limits on cross-section times branching ratio
 for the \Htohhtobbtautau process. In these limits the three final states of \etau, \mutau and \tautau are combined \cite{CMS-HIG-14-034} (left).
 The right hand side panel shows the expected 95\% CL upper limits on cross-section times branching ratio for the \Htohhtobbtautau
 process, separated by channel. The blue line shows the limit for the \tautau channel, the green line for the \mutau channel, the red line
@@ -834,7 +840,8 @@ the analysis is not yet sensitive enough to actually observe this corridor.
 \begin{center}
 \subfloat[\Htohhtobbtautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/Hhh2HDM.pdf}}
 \subfloat[\AtoZhtolltautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/AZh2HDM.pdf}}
-\caption{Search for \Htohhtobbtautau (left) and \AtoZhtolltautau (right) interpreted in a type II 
+\caption[Search for \Htohhtobbtautau and search for \AtoZhtolltautau
+interpreted in a type II 2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV.]{Search for \Htohhtobbtautau (left) and \AtoZhtolltautau (right) interpreted in a type II 
 2HDM, assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV. The expected (dashed line)
 and observed (solid line) exclusion contours at 95\% confidence level are overlaid
 on the cross--section times branching ratio of the searched-for process.
@@ -892,7 +899,10 @@ kinematically allowed, resulting in a reduction of the \AtoZh branching ratio.
 \begin{center}
 \subfloat[\Htohhtobbtautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/Hhhlowtbhigh.pdf}}
 \subfloat[\AtoZhtolltautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/AZhlowtbhigh.pdf}}
-\caption{Cross-section times branching ratio of the \Htohhtobbtautau process (left) and of the
+\caption[Cross-section times branching ratio of the \Htohhtobbtautau
+process and the \AtoZhtolltautau process in the low-\tanb ~MSSM scenario. The
+expected and observed 95\% CL exclusion limits for the \AtoZhtolltautau analysis
+in the low \tanb~MSSM scenario have been overlaid.]{Cross-section times branching ratio of the \Htohhtobbtautau process (left) and of the
 \AtoZhtolltautau process (right) in the low-\tanb ~MSSM scenario. On the right-hand side
 plot the expected and observed 95\% CL exclusion limits for the \AtoZhtolltautau analysis in the low \tanb ~MSSM scenario
 have been overlaid on the cross-section times branching ratio. Areas where the cross-section times branching
@@ -948,7 +958,8 @@ This region is therefore excluded, as indicated by the red band.
 \begin{center}
 \subfloat[type-II 2HDM]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_012.pdf}}
 \subfloat[low \tanb ~MSSM scenario]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure_011.pdf}}
-\caption{Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
+\caption[Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
+interpreted in a type II 2HDM and in the low \tanb~MSSM scenario.]{Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
 interpreted in a type II 2HDM assuming $m_{H} = m_{A} = m_{H^{+}} = 300$ GeV (left) and interpreted
 in the low \tanb ~MSSM scenario (right). The shaded blue area bounded by
 the solid black line indicates the observed excluded region at 95\% confidence level.
