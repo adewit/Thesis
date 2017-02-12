@@ -1,26 +1,26 @@
-\chapter{Object Reconstruction}
+\chapter{Object reconstruction}
 \label{chap:objects}
 
-In this chapter the reconstruction of the physics objects necessary to be able to perform searches with \Pgt leptons
-in the final state in \ac{CMS} will be discussed. Section \ref{sec:objects_pv} details the algorithms
+In this chapter the reconstruction of the physics objects necessary for performing searches with taus 
+in the final state with \ac{CMS} will be discussed. Section \ref{sec:objects_pv} details the algorithms
 used to reconstruct charged particle tracks in the inner tracker, with section \ref{sec:objects_ele}
 describing how these tracks are combined with \ac{ECAL} energy deposits to reconstruct electrons.
 The reconstruction of muons by the combination of tracks in the inner tracker with hits in the muon 
 chambers will be discussed in section \ref{sec:objects_muo}.
 Section \ref{sec:objects_pf}
-describes the \ac{PF} algorithm, which uses information from all subdetectors in \ac{CMS} to reconstruct
+describes the \ac{PF} algorithm, which uses information from all sub-detectors in \ac{CMS} to reconstruct
 all stable particles. \ac{PF} is of particular importance for the reconstruction of jets, missing transverse
-energy and hadronic taus as detailed in sections \ref{sec:objects_jets}, \ref{sec:objects_met} and \ref{sec:objects_tau} 
+energy and hadronically decaying taus as detailed in sections \ref{sec:objects_jets}, \ref{sec:objects_met} and \ref{sec:objects_tau} 
 respectively.
 
 \section{Tracks and vertices}
 \label{sec:objects_pv}
-To reconstruct the trajectories of charged particles - and therefore
-their momenta and positions - from the hits they leave in the 
+To reconstruct the trajectories of charged particles, and therefore
+their momenta and positions, from the hits they leave in the 
 inner tracker the
 \ac{CTF} algorithm is used \cite{cms-trk-algos}. This algorithm performs four steps.
 First, initial estimates of the parameters of the trajectory are given by track seeds, 
-made out of the hits found in 2 or 3 layers of the inner tracker. These track seeds
+made out of the hits found in two or three layers of the inner tracker. These track seeds
 are extrapolated using a \ac{KF} \cite{trk-kf}, which extrapolates the seeding
 trajectories along the expected flight path of a charged particle. Any additional
 matched hits found along this extrapolated trajectory are added to the track.
@@ -30,28 +30,29 @@ estimate of the track parameters. Finally, tracks that fail a set of quality
 criteria are rejected.
 
 These four steps are repeated six times. After each iteration
-the hits associated with reconstructed tracks are removed, and the settings
-of the algorithm updated, so as to be able to reconstruct as many
-tracks as possible. The tracking efficiency for muons and pions was measured in p--p
-collisions at $\sqrt{s} = 7$ TeV and found to be $ > 98.5\%$ for tracks
-with \pT $ > 500 $ MeV and $ > 99 \%$ for tracks with \pT $ > 2 $ GeV \cite{cms-trk-7tev}.
+the hits associated with reconstructed tracks are removed and the settings
+of the algorithm updated, in order to reconstruct as many
+tracks as possible. The tracking efficiency for muons and pions was measured in p-p
+collisions at $\sqrt{s} = 7\,\TeV$ and found to be $ > 98.5\%$ for tracks
+with \pT $ > 500\,\MeV$ and $ > 99 \%$ for tracks with \pT $ > 2\,\GeV$ \cite{cms-trk-7tev}.
 %The tracking software at CMS is commonly referred to as the Combinatorial Track Finder (CTF), which is an adaptation of the combinatorial Kalman filter [29–31], which in turn is an extension of the Kalman filter [32] to allow pattern recognition and track fitting to occur in the same frame- work. The collection of reconstructed tracks is produced by multiple passes (iterations) of the CTF track reconstruction sequence, in a process called iterative tracking.
 %Kalman filter : In its linear form the Kal- ,nan filter is the optimal recursive estimator of the state vector of a (discrete) linear dynamic system. In such a system the evolution of the state vector is described by a linear transformation plus a random disturbance w, which is the process noise
 
 \enlargethispage{\baselineskip}
 Primary vertices are reconstructed by clustering
-tracks that appear to have originated from the same vertex, then fitting 
+tracks that are compatible with have originated from the same vertex, then fitting 
 these tracks for the position of the vertex. The clustering 
 is performed using the \ac{DA} algorithm \cite{vtx-da}, which identifies
 the most probable vertex candidates and assigns tracks to them. Vertex
 candidates with at least two associated tracks are fitted using an adaptive
 vertex fitter \cite{vtx-adaptivefit} to determine the best estimate of the 
-vertex position. The analyses presented in chapter \ref{chap:mssm} take the primary
-vertex of the hard scatter as the reconstructed vertex for which the scalar sum of the \pT s of
-the associated tracks is largest. This differs from the analysis presented in chapter \ref{chap:hhh},
-where requirements on the quality of the vertex
-fit and the distance between the vertex and the nominal interaction point 
-were additionally made.
+vertex position. The analyses presented in chapters \ref{chap:hhh} and \ref{chap:mssm} take the primary
+vertex of the hard scatter to be the reconstructed vertex with the largest scalar \pT~sum of the associated
+tracks. %which the scalar sum of the \pT s of
+%the associated tracks is largest. %This differs from the analysis presented in chapter \ref{chap:hhh},
+%where requirements on the quality of the vertex
+%fit and the distance between the vertex and the nominal interaction point 
+%were additionally made.
  %By doing this both the best estimate
 %of the vertex position and an indicator for the success of the fit are obtained.
 %Each track is assigned a weight $w_i$ between 0 and 1, where values 
@@ -71,8 +72,8 @@ were additionally made.
 %quality requirements were removed and the primary vertex of the hard scatter was simply taken
 %as the reconstructed vertex with largest scalar sum \pT~ of tracks.
 
-The resolution of the x-- and z--coordinates of the primary vertex were measured in
-collisions at $\sqrt{s}=13$ TeV and depend strongly on the number of tracks
+The resolutions of the $x$ and $z$ coordinates of the primary vertex were measured in
+collisions at $\sqrt{s}=13\,\TeV$ and depend strongly on the number of tracks
 associated with the vertex, as figure \ref{fig:objects_tracks_pvres} shows.
 ~\vspace{-1\baselineskip}
 \begin{figure}[h!]
@@ -80,14 +81,14 @@ associated with the vertex, as figure \ref{fig:objects_tracks_pvres} shows.
 \subfloat[Resolution in x]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/PVResX.png}}
 \subfloat[Resolution in z]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/PVResZ.png}}
 \end{center}
-\caption[Resolution of the x- and z- coordinates of reconstructed
-primary vertices as a function of the scalar sum of the \pT s of the associated
-tracks.]{Resolution of the x-- (a) and z--coordinate  (b)
+\caption[Resolution of the $x$ and $z$ coordinates of reconstructed
+primary vertices as a function of the scalar \pT~sum of the associated
+tracks.]{Resolution of (a) the $x$ coordinate and (b) the $z$ coordinate 
 of reconstructed primary vertices
-as a function of the scalar sum of the \pT s of the associated tracks, 
+as a function of the scalar \pT~sum of the associated tracks, 
 measured in 2015 (blue triangles) and 2016 (red squares).
 The resolution improves
-with higher scalar sum of the \pT s of the associated tracks, which corresponds to larger numbers of tracks \cite{cms-trk-dp}.}
+with higher scalar \pT~sum of the associated tracks, which corresponds to larger numbers of tracks \cite{cms-trk-dp}.}
 \label{fig:objects_tracks_pvres}
 \end{figure}
 
