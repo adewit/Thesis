@@ -139,11 +139,11 @@ must also be reconstructed as an electron by the \ac{PF} algorithm,
 and must in addition pass more advanced identification criteria based on some of the variables used in the
 standalone electron reconstruction. This provides separation power from backgrounds
 such as photon conversions, jets misidentified as electrons, or electrons from b- and c-quark
-decays. Both a cut-based and a BDT-based algorithm are available. %FIXME define BDT
+decays. Both a cut-based algorithm and an algorithm based on \acp{BDT} are available. %FIXME define BDT
 For the selection of electrons in 
-the analyses presented in later chapters the BDT-based algorithm is used, 
+the analyses presented in later chapters the \ac{BDT}-based algorithm is used, 
 with exceptions for the loose identification criteria required for vetoing electrons. 
-The variables used in this BDT include:%FIXME full stop usage?!
+The variables used in this \ac{BDT} include:%FIXME full stop usage?!
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
 \item Cluster shape variables, such as $\sigma_{i\eta,i\eta}$, the energy-weighted width of the supercluster in units of $\eta$ crystals (illustrated in figure \ref{fig:ele_id_vars}a). 
@@ -172,9 +172,9 @@ $1/E_{\text{SC}} - 1/p_{\Pe}$, where $E_{\text{SC}}$ is the energy in the superc
 \subfloat[$1/E_{\text{SC}} - 1/p_{e}$]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/OneoverEminOneoverp.png}}
 \end{center}
 \caption[$\sigma_{i\eta,i\eta}$ and $1/E_{\text{SC}}-1/p_{e}$ for real 
-and misidentified electrons at 8 TeV, for data and MC]{(a) $\sigma_{i\eta,i\eta}$ and (b) $1/E_{\text{SC}} - 1/p_{e}$ for real (black points)  and 
-misidentified (yellow triangles) electrons in a dataset corresponding to 19.7 fb$^{-1}$
-taken at $\sqrt{s} = 8$ TeV, overlaid on the distributions for simulated 
+and misidentified electrons at $8\,\TeV$, for data and MC]{(a) $\sigma_{i\eta,i\eta}$ and (b) $1/E_{\text{SC}} - 1/p_{e}$ for real (black points)  and 
+misidentified (yellow triangles) electrons in a dataset corresponding to $19.7\,\invfb$
+taken at $\sqrt{s} = 8\,\TeV$, overlaid on the distributions for simulated 
 real electrons in purple \cite{cms-elereco-run1}.}
 \label{fig:ele_id_vars}
 \end{figure}
@@ -358,7 +358,7 @@ The muon track is removed from the block before the next step of the algorithm.
 
 Secondly, tracks are refitted with the \ac{GSF} and the compatibility
 of the track with the already linked \ac{ECAL} clusters is assessed using
-\ac{BDTs} which take several variables into account. If the candidate
+\acp{BDT} which take several variables into account. If the candidate
 passes, it is identified as a \ac{PF} electron and the track and
 \ac{ECAL} clusters are removed from the block.
 
@@ -556,7 +556,7 @@ the large $\Ptop \rightarrow \PW \Pbottom$ branching ratio. %Measurements
 \begin{figure}[h!]
 %\subfloat[CSVv2 distribution]{\includegraphics[width=0.6\textwidth]{./Objects/Plots/CSVDistributionMultijet.pdf}}\\
 \includegraphics[width=0.7\textwidth]{./Objects/Plots/CSVSF.png}
-\caption[The b-tagging scale factors and uncertainties for b-jets in the data sample collected during 2015 as a function of jet \pT~for the medium working point of the CSVv2 discriminant.]{%(a) distribution of CSVv2 discriminant for multijet events in 2.6 fb$^{-1}$ 
+\caption[The b-tagging scale factors and uncertainties for b-jets in the data sample collected during 2015 as a function of jet \pT~for the medium working point of the CSVv2 discriminant.]{%(a) distribution of CSVv2 discriminant for multijet events in $2.6\,\invfb$ 
 %collected at $\sqrt{s} = 13$ TeV and (b) 
 The b-tagging scale factors and uncertainties for b-jets in the data sample collected during 2015
 as a function of jet \pT~for the medium working point of the CSVv2 discriminant \cite{cms-btag-run2}.}
@@ -608,18 +608,18 @@ constituents selected as the di-tau candidate.
 \subfloat[\MET~resolution]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/transverse_resolution_npv.png}}
 \end{center}
 \caption[\MET~distributions comparing MVA \MET~to PF \MET~for
-\Zmm events, in a sample corresponding to 42 pb$^{-1}$ of data collected
+\Zmm events, in a sample corresponding to $42\,\invpb$ of data collected
 at $\sqrt{s}=13\,\TeV$.]{(a) \MET~distributions comparing MVA \MET~(brown circles) to \ac{PF} \MET~(black circles) for
-\Zmm events, which contain no genuine \MET~, in a sample corresponding to 42 pb$^{-1}$ of data collected at $\sqrt{s}=13\,\TeV$. The 
+\Zmm events, which contain no genuine \MET~, in a sample corresponding to $42\,\invpb$ of data collected at $\sqrt{s}=13\,\TeV$. The 
 \MET~values for MVA \MET~are lower than for \ac{PF} \MET. (b) The \MET~resolution for \ac{PF} \MET~in blue and MVA \MET~in red/brown
 circles, as a function of number of vertices. The MVA \MET~resolution is more stable with increased pileup \cite{cms-dp-mvamet}.}
 \label{fig:objects_mvamet}
 \end{figure}
 
-Two \ac{BDTs} trained on \Zmm events are used to compute this correction.
+Two \acp{BDT} trained on \Zmm events are used to compute this correction.
 The first one corrects the direction of the hadronic recoil, the second
 one uses a data sample with the corrected recoil direction to compute a correction
-to the magnitude of the hadronic recoil. This BDT regression uses the magnitude of the hadronic
+to the magnitude of the hadronic recoil. This \ac{BDT} regression uses the magnitude of the hadronic
 recoil, its azimuthal angle and the scalar \pT~sum of all \ac{PF} particles for several 
 different \MET~definitions \cite{cms-met-run1} as input. Figure \ref{fig:objects_mvamet} shows
 the performance of the MVA \MET~in data collected at $\sqrt{s}=13\,\TeV$ compared with 
@@ -773,7 +773,7 @@ of electrons and photons included in strips but which are located outside of the
 p_{\text{T}}^{\text{strip, outer}} = \Sigma p_{\text{T}}^{\Pe/\Pphoton}(\Delta R > R_{\text{sig}}) < 0.10\cdot p_{\text{T}}^{\Pgt},
 \end{equation}
 can be made.
-An MVA \Pgth isolation discriminator combines isolation variables with tau lifetime information into a BDT to discriminate between \Pgth decays and quark and gluon jets.
+An MVA \Pgth isolation discriminator combines isolation variables with tau lifetime information into a \ac{BDT} to discriminate between \Pgth decays and quark and gluon jets.
 Some of the variables used as input are:
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
@@ -804,7 +804,7 @@ discriminator performs better than the cut-based discriminator alone.
 
 In order to reduce the $\Pe\rightarrow$\Pgth and $\Pgm\rightarrow$\Pgth fake rates, 
 anti-electron and anti-muon discriminators are used. 
-The anti-electron discriminator is a BDT-based discriminator trained using input variables such as:
+The anti-electron discriminator is a \ac{BDT}-based discriminator trained using input variables such as:
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
 \item Kinematic variables of the \Pgth candidate and \ac{GSF} track, including visible mass of the \Pgth.
