@@ -3,9 +3,10 @@
 In this chapter the search for neutral Higgs bosons \PHiggs or \PHiggsps
 decaying to a pair of tau leptons will be discussed. The results presented
 here correspond to those from an analysis peformed on a dataset collected
-during the first half of the 2016 p-p running period of the \ac{LHC}. This dataset
-corresponds to an integrated luminosity of $12.9\,\invfb$, and the analysis is
-detailed in reference \cite{CMS-PAS-HIG-16-037}. The \etau, \mutau, \tautau and \emu final
+during the first half of the 2016 p-p running period of the \ac{LHC} \cite{CMS-PAS-HIG-16-037}. %This dataset
+%corresponds to an integrated luminosity of $12.9\,\invfb$, and the analysis is
+%detailed in reference \cite{CMS-PAS-HIG-16-037}. 
+The \etau, \mutau, \tautau and \emu final
 states of the di-tau pair were studied. The results of this search are 
 model-independent upper limits on \xsbr of \PHiggs or \PHiggsps 
 production in the gluon fusion ($\Pgluon\Pgluon\phi$) and b-associated ($\Pbottom\Pbottom\phi$) production 
@@ -36,29 +37,29 @@ the 2016 p-p running period of the \ac{LHC}. %Section
 
 Signal and background events were generated using
 various \ac{MC} event generators. Signal samples
-for the $\Pg\Pg \rightarrow \phi$ and $\Pg\Pg \rightarrow \Pbottom\APbottom\phi$
+for the $\Pg\Pg \rightarrow \phi$ and $\Pg\Pg \rightarrow \Pbottom\Pbottom\phi$
 production processes of the \PHiggs or \PHiggsps bosons were generated using \texttt{PYTHIA 8.1} \cite{pythia81}.
 These samples were produced for a range of masses between $90\,\GeV$ and $3.2\,\TeV$.
 This range is slightly wider than the range in which MSSM Higgs sector
 benchmark computations are available, $90\,\GeV$--$2\,\TeV$, and 
 improves on the mass range of $90\,\GeV$ to $1\,\TeV$ that was studied during Run 1 in the context of \ac{BSM} Higgs searches.
 \ac{SM} Higgs boson signal samples are used for the interpretation of the analysis results in 
-\ac{MSSM} benchmark scenarios. These samples are generated using \texttt{Powheg} \cite{powheg1,powheg2,powheg3}.
+\ac{MSSM} benchmark scenarios. These samples are generated using \texttt{POWHEG} \cite{powheg1,powheg2,powheg3}.
 
-Single-top and \ttbar background samples are generated using \texttt{Powheg},
+Single-top and \ttbar background samples are generated using \texttt{POWHEG},
 with \texttt{MadGraph5\_aMC@NLO} \cite{amcnlo} used for the generation of di-boson background
 samples. %and part of the W+$\gamma$ background, which is included in the \emu channel only.
 \Wjets and \Zll backgrounds are generated with the \texttt{MadGraph 5} \cite{madgraph}
 matrix element generator. Samples containing both a mixture
-of jet multiplicities (`inclusive' samples) and samples with 1,2,3 or 4 jets (`exclusive' samples)
+of jet multiplicities (`inclusive' samples) and samples with one, two, three or four jets (`exclusive' samples)
 are generated. These exclusive samples increase the available number of
 background events with higher jet multiplicities. %note LO samples used because to get same number of effective
 %events would need to generate more NLO samples
 The `inclusive' and `exclusive' samples are reweighted
 before they are combined so as to preserve the correct
 fractions of events with each jet multiplicity. The $\PW+\Pphoton$ background samples,
-only included in the \emu channel, are generated in part with \texttt{MadGraph 5} and in
-part with \texttt{MadGraph5\_aMC@NLO}.
+only included in the \emu channel, are generated either with \texttt{MadGraph 5} or 
+with \texttt{MadGraph5\_aMC@NLO}.
 
 Parton showering and hadronisation are modelled using \texttt{PYTHIA 8.1} for all 
 samples, and  minimum-bias events generated with \texttt{PYTHIA 8.1} are
@@ -77,30 +78,30 @@ is given in chapter \ref{chap:objects}.
 The basis of the event selection is to identify \mutau, \etau,
 \tautau and \emu pairs. Events are selected first by using a trigger,
 followed by additional selection criteria. For the \etau
-and \mutau channels we only trigger on the electron or muon. 
-While the lepton + hadronic tau cross triggers that are also available
+and \mutau channels events are selected by only triggering on the electron or muon. 
+While the lepton + hadronic tau cross-triggers that are also available
 allow for a $3\,\GeV$ ($6\,\GeV$) lower \pT~threshold on the
 muon (electron), the benefit of using such a trigger is small: 
 most of the signals at high mass, the region of interest in this
 analysis, have higher \pT~electrons and muons. This is illustrated
 in figure \ref{fig:mt_muonpt}a, which shows the \pT~of muons in the
-\mutau channel, with the signal normalised to 4000 times its \xsbr 
- at \mA~$=1\,\TeV$ and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod}+}$ scenario overlaid.
-In the \emu channel two dedicated electron-muon cross triggers
+\mutau channel. The signal is overlaid, with a normalisation of 4000 times its \xsbr 
+ at \mA~$=1\,\TeV$ and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod}+}$ scenario.
+In the \emu channel two dedicated electron-muon cross-triggers
 are used. These have significantly lower \pT~cuts 
 on the two leptons than the single lepton triggers. For the 
-\tautau channel a di-tau cross-trigger is used.
+\tautau channel a di-tau trigger is used.
 
 Because the triggers involving electrons or muons reach 
 their maximum efficiency as a function of \pT~quickly, the offline \pT~cut
-on the electrons and muons is 1 GeV above the \pT~threshold of the trigger. The
+on the electrons and muons is $1\,\GeV$ above the \pT~threshold of the trigger. The
 hadronic tau efficiency turns on much more slowly, and therefore the offline \pT~cut
 on the hadronic taus in the \tautau channel is $5\,\GeV$ above the trigger \pT~threshold.
 In addition, a requirement is made on the $\eta$ of the electrons, muons and
 hadronic taus. This selection is driven by the $\eta$ range covered by the tracker and
-that is thus used for the reconstruction of the particles. For some of the
-channels the used trigger is restricted in $\eta$. If that is the case
-then the cut is chosen to align with the trigger restrictions.
+so the range that is used for the reconstruction of the particles. For some of the
+channels the trigger that is used is restricted in $\eta$. If that is the case
+the cut is chosen to be the same as the trigger restrictions.
 As an illustration figure \ref{fig:mt_muonpt}b shows
 the $\eta$ distribution for electrons in the \etau channel, again with the signal overlaid.
 The signal peaks in the central $\eta$ region.
@@ -129,14 +130,14 @@ and b-associated (dashed purple line) signals are overlaid. The signals are norm
 \label{fig:mt_muonpt}
 \end{figure}
  
-\subsection{Pair selection and vetos}
+\subsection{Pair selection and vetoes}
 \label{sec:mssm_eventsel_pairs}
 After applying trigger
 requirements, identification criteria and kinematic cuts
 more than one possible candidate pair can exist. If
 this is the case the pair with the two most isolated candidates
  is chosen, as isolated candidates are less likely 
-to be jets misreconstructed
+to be jets mis-reconstructed
 as leptons or hadronic taus.
 %If this
 %is the case for an event, the pair is chosen as follows:
@@ -154,10 +155,10 @@ as leptons or hadronic taus.
 %\end{itemize}
 
 To prevent overlap with other channels, events are rejected
-if there are muons and electrons, other than those in the selected pair,
+if there are muons or electrons, other than those in the selected pair,
 with \pT~$>10\,\GeV$ and passing loose ID and isolation requirements.
 This also reduces backgrounds from di-boson events. The application
-of these vetos means that the selection of the pair with the
+of these vetoes means that the selection of the pair with the
 two most isolated candidates is only important where hadronic
 taus are concerned, for if there were additional electrons (muons)
 the event would not pass the electron (muon) veto.
@@ -170,34 +171,34 @@ is reduced in a similar fashion.
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu tau channel}}
 \label{sec:mssm_eventsel_mt}
-The trigger only requires a muon at \ac{L1}, while at the level of the \ac{HLT}
-loose identification and isolation criteria are applied to this muon.
+The trigger only requires a muon at \ac{L1}, to which loose identification and
+isolation criteria are applied at the level of the \ac{HLT}
 
 The offline event selection requires an oppositely charged
-muon and hadronically decaying tau, which are well-separated ($\Delta R > 0.5$).
-The minimum \pT~of the muon is required to be $23\,\GeV$, with $|\eta| < 2.1$. %due to trigger conditions
+muon and hadronically decaying tau, which are separated by $\Delta R > 0.5$.
+The muon is required to have \pT~$> 23\,\GeV$, and $|\eta| < 2.1$. %due to trigger conditions
 Additional ``medium'' identification requirements are placed on the muon, and the impact
-parameters of the muon must satisfy $d_{xy}<0.045\,\cm$ and $d_{z}<0.2\,\cm$. The muon is also
+parameters must satisfy $d_{xy}<0.045\,\cm$ and $d_{z}<0.2\,\cm$. The muon is also
 required to be isolated, with $I_{\text{rel}}^{\mu}<0.15$, where the isolation variable
 is calculated using a cone size of $\Delta R = 0.4$.
 
-The hadronic tau needs to have a \pT~greater than $30\,\GeV$, $|\eta|<2.3$,
-is required to be reconstructed by the HPS algorithm and to pass the medium
+The hadronic tau needs to have \pT~$>30\,\GeV$ and $|\eta|<2.3$.
+It is required to be reconstructed by the HPS algorithm and to pass the medium
 working point of the MVA isolation discriminator. The impact parameter $d_{z}$ is
 required to be less than $0.2\,\cm$. Finally the hadronic tau is required
 to satisfy the very loose working point of the anti-electron discriminator
 and the tight working point of the anti-muon discriminator.
 
-The selection on the muon's relative isolation is chosen after comparing
+The selection on the relative isolation of the muon is chosen after comparing
 the performance of several isolation variables, using different relative isolation selections.
 This was based on a simple \mutau channel
-event selection as described above, only varying the isolation requirements.
+event selection as described above, with only the isolation being varied.
 The selection was optimised based on two figures of merit, both of
-which consider \Ztautau as the signal and the other backgrounds
-as background. The first figure of merit used is the number of signal events divided by the
+which consider \Ztautau, instead of the Higgs processes, as the signal.
+The first figure of merit used is the number of signal events divided by the
 square root of the number of background events, $S/\sqrt{B}$, after
-the selection. The aim with this figure of merit is to choose
-the isolation selection that maximises it. The second figure of merit
+the selection. The aim is to identify 
+the isolation selection that maximises $S/\sqrt{B}$. The second figure of merit
 is the uncertainty interval on the best-fit value for a maximum-likelihood fit
 to the \Ztautau signal strength, which should be minimised by the choice of
 isolation selection.
@@ -205,7 +206,7 @@ isolation selection.
 The isolation variables studied include
 the $\Delta\beta$ corrected isolation variable analogous
 to the one given for electrons in equation \ref{eqn:electron_reliso} with 
-isolation cone sizes of $\Delta R$ 0.3 and 0.4. In addition
+isolation cone sizes of 0.3 and 0.4 in $\Delta R$. In addition
 to this a very similar
 variable, which does not just consider charged \ac{PF} hadrons but
 also electrons and muons in the isolation sum, is considered. This
@@ -216,9 +217,9 @@ vertex,
 I_{\text{trk}} = \frac{\Sigma p_{\text{T}}^{\text{tracks from PV within cone of 0.3 of the muon}}}{p_{\text{T}}^{\mu}}, \end{equation} 
 is studied. The $S/\sqrt{B}$ for the different isolation variables is shown in figure \ref{fig:mssm_selection_mt_muons}a, with the
 size of the error interval from the maximum-likelihood fit to the \Ztautau signal strength shown in 
-\ref{fig:mssm_selection_mt_muons}b. As both figures of merit do not
-change so much with varying isolation requirements we can see that this analysis
-is not so sensitive to fake, nonisolated muons. The choice of isolation variable is therefore
+\ref{fig:mssm_selection_mt_muons}b. Both figures of merit do not
+change significantly when varying the isolation requirements meaning that this analysis
+is not so sensitive to fake, non-isolated muons. The choice of isolation variable is therefore
 driven mostly by simplicity and consistency with other \ac{CMS} analyses.
 
 \begin{figure}[h!]
@@ -232,8 +233,7 @@ maximum-likelihood fit to the \Ztautau signal strength, for various
 isolation selections.]{(a) The $S/\sqrt{B}$ for \Ztautau signal and (b) the size of the error interval on 
 the best-fit value of a maximum-likelihood fit to the \Ztautau signal strength,
 for various selections of the $\Delta\beta$-corrected
-isolation variable with a cone size of $\Delta R = 0.4$ (solid circles), 
-the $\Delta\beta$-corrected isolation variable with a cone size of $\Delta R = 0.3$ (open circles),
+isolation variable with a cone size of $\Delta R = 0.4$ (solid circles) and $\Delta R = 0.3$ (open circles),
 the $\Delta\beta$-corrected isolation variable including electrons and muons in the isolation
 sum, for a cone size of $\Delta R =0.4$ (upward facing triangles) and $\Delta R =0.3$ (downward facing triangles) and
 the tracker-based relative isolation (solid squares).}
@@ -244,8 +244,9 @@ A topological selection on the \mT~variable,
 introduced in section \ref{sec:hhh_selection_categories}, is made on 
 events in the \mutau channel. This selection and the
 choice of hadronic tau isolation working point provide two competing
-effects and therefore they are optimised in a 2D-optimisation. 
-The pre-fit expected upper limits on \xsbr for both $\Pgluon\Pgluon\phi$ and $\Pbottom\Pbottom\phi$
+effects and therefore they are optimised simultaneously.
+The ``pre-fit'' expected upper limits, determined without the fit
+to the real observed data, on \xsbr for both $\Pgluon\Pgluon\phi$ and $\Pbottom\Pbottom\phi$
 production with decay into $\Pgt\Pgt$ at several mass points 
 in the $90\,\GeV$--$3.2\,\TeV$ range are used as a figure of merit.
 Because of the use of such a wide range of signal masses, it
@@ -255,12 +256,12 @@ figure \ref{fig:mssm_selection_mt_taumt}a shows the upper limit on \xsbr for
 the gluon fusion production process, for a mass $m_{\phi} = 160\,\GeV$, with
 figure \ref{fig:mssm_selection_mt_taumt}b showing this upper limit for $m_{\phi} = 2.9\,\TeV$.
 Figure \ref{fig:mssm_gradcuts_mt} shows the effect of gradually loosening the \mT~and hadronic
-tau isolation working point selection on both the \Pgluon\Pgluon$\phi$ and \Pbottom\Pbottom$\phi$ production processes. 
+tau isolation working point selections on both the \Pgluon\Pgluon$\phi$ and \Pbottom\Pbottom$\phi$ production processes. 
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[$m_{\phi} = 160$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_160_range12.png}}
-\subfloat[$m_{\phi} = 2.9$ TeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_2900_range12.png}}
+\subfloat[$m_{\phi} = 160\,\GeV$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_160_range12.png}}
+\subfloat[$m_{\phi} = 2.9\,\TeV$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_2900_range12.png}}
 %\subfloat[$m_{\phi} = 1600$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_1600_range12.pdf}}
 %\subfloat[$m_{\phi} = 2900$ GeV]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/optimisation_ggh_mt_2900_range12.pdf}}
 \end{center}

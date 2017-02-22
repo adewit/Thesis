@@ -459,8 +459,8 @@ by diagonalising
 the neutral scalar Higgs squared-mass matrix,
 \begin{equation}\label{eqn:treelevel_mass}
 \mathcal{M}_{\text{tree}}^2 = \begin{pmatrix} 
-m_{A}^2\sin{\beta}^2 + m_{Z}^2\cos{\beta}^2 & -(m_{A}^2+m_{Z}^2)\sin{\beta}\cos{\beta}\\
--(m_{A}^2+m_{Z}^2)\sin{\beta}\cos{\beta} & m_{A}^2\cos{\beta}^2+m_{Z}^2\sin{\beta}^2 \end{pmatrix},
+m_{\PHiggsps}^2\sin{\beta}^2 + m_{\PZ}^2\cos{\beta}^2 & -(m_{\PHiggsps}^2+m_{\PZ}^2)\sin{\beta}\cos{\beta}\\
+-(m_{\PHiggsps}^2+m_{\PZ}^2)\sin{\beta}\cos{\beta} & m_{\PHiggsps}^2\cos{\beta}^2+m_{\PZ}^2\sin{\beta}^2 \end{pmatrix},
 \end{equation}
 of which \PHiggs and \PHiggslight are the eigenstates.
 As the self-interactions of the Higgs fields are not independent parameters,
@@ -470,7 +470,7 @@ one of the Higgs boson masses, conventionally chosen as \mA.
 The masses of the neutral scalars \PHiggs and \PHiggslight are the eigenvalues  
 of $\mathcal{M}_{\text{tree}}^2$,
 \begin{equation}\label{eqn:scalarmass}
-m_{\PHiggs,\PHiggslight}^2 = \frac{1}{2}[m_{A}^2+m_{Z}^2 \pm \sqrt{(m_A^2+m_Z^2)^2-4m_Z^2m_A^2\cos{2\beta}^2}].
+m_{\PHiggs,\PHiggslight}^2 = \frac{1}{2}[m_{\PHiggsps}^2+m_{\PZ}^2 \pm \sqrt{(m_{\PHiggsps}^2+m_{\PZ}^2)^2-4m_{\PZ}^2m_{\PHiggsps}^2\cos{2\beta}^2}].
 \end{equation}
 The masses of the charged Higgs bosons are
 \begin{equation}\label{mssm_chargedhigss_mass}
@@ -490,16 +490,16 @@ m_{\PHiggs^{\pm}}^2 = m_{\PHiggsps}^2+m_{\PW}^2,
 A consequence of equation \ref{eqn:scalarmass} is a tree-level upper bound on the mass of the light Higgs
 boson,
 \begin{equation}\label{eqn:mh_upper}
-m_{h} \leq m_{Z},
+m_{\PHiggslight} \leq m_{\PZ},
 \end{equation}
 and a constraint on $\alpha$,
 \begin{equation}\label{eqn:alpha_constraint}
-\cos{(\beta-\alpha)}^2 = \frac{m_h^2(m_Z^2-m_h^2)}{m_A^2(m_H^2-m_h^2)}.
+\cos{(\beta-\alpha)}^2 = \frac{m_{\PHiggslight}^2(m_{\PZ}^2-m_{\PHiggslight}^2)}{m_{\PHiggsps}^2(m_{\PHiggs}^2-m_{\PHiggslight}^2)}.
 \end{equation}
 
-The requirement that $m_h$ be less than the mass of the Z boson, $91.2\,\GeV$, seems 
+The requirement that $m_{\PHiggslight}$ be less than the mass of the \PZ boson, $91.2\,\GeV$, seems 
 problematic at first, as it is known that there is a Higgs state with a mass of $125\,\GeV$. However,
-the tree-level masses and couplings of the Higgs bosons in the MSSM can be
+the tree-level masses and couplings of the Higgs bosons in the \ac{MSSM} can be
 significantly altered by radiative corrections. The dominant effect is from
 incomplete cancellation of the stop- and top-loop corrections. This can increase the mass
 of the light Higgs boson up to a maximum of $135\,\GeV$.
@@ -526,7 +526,7 @@ Particle & Coupling to bosons & Coupling to up-type quarks & Coupling to down-ty
 \end{center}
 \end{table}
 
-In the \textit{decoupling limit}, when \mA$>>m_{Z}$ and $\cos{(\beta-\alpha)}$ tends
+In the \textit{decoupling limit}, when $m_{\PHiggsps} \gg m_{\PZ}$ and $\cos{(\beta-\alpha)}$ tends
 to 0, the mixing
 angle $\alpha \approx \beta - \pi/2$. This reduces the couplings in table
 \ref{tab:mssm_couplings} to the \ac{SM} couplings for the \PHiggslight boson, 
@@ -535,9 +535,9 @@ Higgs bosons, couplings to down-type quarks and leptons enhanced by a factor \ta
 and couplings to up-type quarks enhanced by a factor $\frac{1}{\tan{\beta}}$. This motivates
 the choice of decay into $\Pgt\Pgt$ as a search channel for the neutral Higgs bosons in the \ac{MSSM}.
 Figure \ref{fig:mssm_brtautau} shows the branching ratios of the \PHiggs boson 
-in the $m_{h}^{\text{mod+}}$ scenario
+in the $m_{\PHiggslight}^{\text{mod+}}$ scenario
 which will be discussed in more detail in section \ref{sec:theory_BSM_models_mhmodp}. 
-The branching ratio into di-$\Pgt$ pairs is large for \tanb=30. The branching ratios 
+The branching ratio into di-tau pairs is large for \tanb~$= 30$. The branching ratios 
  of the \PHiggsps boson follow a similar pattern.
 %Using trigon identities: cos alpha/cos beta = cos (beta-pi/2)/cos beta = cosbeta*cospi/2 + sin(beta)*sin(pi/2) over cos beta = sin beta /cos beta = tan beta
 %sin alpha = sin (beta-pi/2) = sinbeta cos pi/2 - cosbetasinpi/2 = -cosbeta 
@@ -552,7 +552,7 @@ The branching ratio into di-$\Pgt$ pairs is large for \tanb=30. The branching ra
 \subfloat[\tanb=5]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/YR4HXS_BRSummary_H_mhmodp_tanbeta5_FeynHiggs_HDecay.pdf}}
 \subfloat[\tanb=30]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/YR4HXS_BRSummary_H_mhmodp_tanbeta30_FeynHiggs_HDecay.pdf}}
 \end{center}
-\caption{Branching ratios of the \PHiggs boson in the $m_{h}^{\text{mod+}}$ scenario,
+\caption[Branching ratios of the \PHiggs boson in the $m_{\PHiggslight}^{\text{mod+}}$ scenario]{Branching ratios of the \PHiggs boson in the $m_{\PHiggslight}^{\text{mod+}}$ scenario,
 at (a) \tanb=5~and (b) \tanb=30. The branching ratio into $\tau\tau$ (blue), $b\bar{b}$ (red) 
 and $\mu\mu$ (yellow) is enhanced at high \tanb, while the branching ratio into 
 WW (grey) and \ttbar (green) is reduced \cite{MSSM-xswg-twiki}.}
@@ -563,7 +563,7 @@ The dominant neutral MSSM Higgs boson production processes at hadron colliders
 are slightly different from the \ac{SM} Higgs boson production processes. 
 Because the pseudoscalar A does not couple to the
 vector bosons, and in the decoupling limit the coupling of \PHiggs to vector
-bosons is suppressed with respect to the \ac{SM} expectation, VBF and \PW/\PZ associated
+bosons is suppressed with respect to the \ac{SM} expectation, VBF and \PW or \PZ associated
 production are not as important as for the production of the \ac{SM} Higgs boson. As in the \ac{SM}, gluon fusion production is 
 the dominant production mode at low \tanb.
 An example tree-level Feynman diagram for gluon fusion production, which proceeds via
@@ -571,7 +571,7 @@ a quark loop, is given in figure \ref{fig:production_mssm}a.
 At low \tanb~values this loop is dominated by top quarks, while at 
 high \tanb~the b-quark loop dominates. This is a result of the enhanced coupling to down-type fermions at high \tanb. 
 Due to the negative top-bottom loop interference effect the gluon fusion cross section decreases with increasing \tanb~up
-to around \tanb=3, when the cross section starts to increase with increasing \tanb~again.
+to around \tanb~$=3$, when the cross section starts to increase with increasing \tanb~again.
 
 Another consequence of the enhanced couplings to down-type fermions at high \tanb~is the dominance of b-associated production, where the Higgs boson is produced through
 bottom quark fusion. The tree-level Feynman diagram for this process is shown in figure \ref{fig:production_mssm}b.
@@ -598,7 +598,7 @@ Higgs doublet, there are no explicit \ac{SUSY} particles in the \ac{2HDM}.
 
 There are several different types of \ac{2HDM}, all distinguished by the couplings
 of the different Higgs states to bosons and fermions. In its most general
-form, there are 9 free parameters in the potential of a CP-conserving 2HDM. 
+form, there are nine free parameters in the potential of a CP-conserving 2HDM. 
 These are taken as \tanb, the mixing angle $\alpha$, already discussed in 
 the context of the \ac{MSSM}, the masses of the five Higgs bosons,
 and quartic couplings appearing in the potential. The most studied of the
@@ -628,7 +628,7 @@ and decay are enhanced for $250\leq m_{\PHiggs}\leq 350\,\GeV$ and $220 \leq m_{
 \subfloat[\PHiggs]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/typeII2HDMxsbr.png}}
 \subfloat[\PHiggsps]{\includegraphics[width=0.5\textwidth]{./Theory/Figures/typeII2HDMxsbrA.png}}
 \end{center}
-\caption[Inclusive production cross--section times branching ratio for an example of a type-II 2HDM, for the \PHiggs and \PHiggsps boson.]{Inclusive production cross--section times branching ratio for an example
+\caption[Inclusive production \xsbr for an example of a type-II 2HDM, for the \PHiggs and \PHiggsps boson.]{Inclusive production \xsbr for an example
 of a type-II \ac{2HDM}, for (a) the \PHiggs boson and (b) the \PHiggsps boson. The
 top figures use \tanb=1 and $\cos{(\beta-\alpha)}=-0.11$, the bottom
 figures are made for \tanb=10 and $\cos{(\beta-\alpha)}=-0.02$. At low \tanb~the \Htohh and
@@ -650,15 +650,15 @@ The parameters that need to be fixed in the benchmark scenarios are the
 \ac{SUSY} breaking scale $M_{\text{SUSY}}$, which is also the mass scale of the third generation squarks.
 In addition, the higgsino mass parameter $\mu_{\text{MSSM}}$, and the U(1) and SU(2) gaugino mass parameters, $M_1$ and $M_2$, need to be fixed.
 A choice for the masses of the stau ($m_{\tilde{\ell}_3}$) and the gluino ($m_{\tilde{g}}$) also needs to be made. The 
-trilinear couplings of the stops, sbottoms and staus to the Higgs field ($A_t$, $A_b$ and $A_{\Pgt}$) and the 
+trilinear couplings of the stops, sbottoms and staus to the Higgs field ($A_{\Ptop}$, $A_{\Pbottom}$ and $A_{\Pgt}$) and the 
 stop, sbottom and stau mixing parameters ($X_t$, $X_b$ and $X_{\tau}$) are also fixed. 
 
 Some of these parameters can be related to each other. For example,
-$X_t$, $X_b$ and $X_{\Pgt}$ can be expressed as:
+$X_{\Ptop}$, $X_{\Pbottom}$ and $X_{\Pgt}$ can be expressed as:
 \begin{equation}\label{eqn:trilinear_couplings}
 \begin{split}
-&X_t = A_t-\mu_{\text{MSSM}}\cot{\beta},\\
-&X_b = A_b-\mu_{\text{MSSM}}\tan{\beta},\\
+&X_{\Ptop} = A_{\Ptop}t-\mu_{\text{MSSM}}\cot{\beta},\\
+&X_{\Pbottom} = A_{\Pbottom}-\mu_{\text{MSSM}}\tan{\beta},\\
 &X_{\Pgt} = A_{\Pgt} - \mu_{\text{MSSM}}\tan{\beta}.
 \end{split}
 \end{equation}
@@ -689,7 +689,7 @@ couplings of the first and second generation squarks and sleptons are taken to b
 \subsection{The $m_{h}^{\text{mod+}}$ scenario}
 \label{sec:theory_BSM_models_mhmodp}
 The $m_{\PHiggslight}^{\text{mod+}}$ scenario \cite{MSSM-benchmark-scenarios}
-is a modification of the $m_{\PHiggslight}^{\text{max}}$ scenario \cite{MSSM-mhmax}. The $m_h^{\text{max}}$ scenario, which
+is a modification of the $m_{\PHiggslight}^{\text{max}}$ scenario \cite{MSSM-mhmax}. The $m_{\PHiggslight}^{\text{max}}$ scenario, which
 was used for interpretations of \ac{MSSM}
  Higgs boson searches at LEP and the Tevatron, allows
 the mass of the light Higgs boson to reach the highest a-priori expected 
@@ -702,7 +702,7 @@ to be $1\,\TeV$. The stop mixing parameter is positive, $X_t= 1.5 M_{\text{SUSY}
 %negative stop mixing (-1.9 M_SUSY) results in better agreements with B(b->sgamma) 
 %meausrements 
 The remaining parameters are set as $\mu_{\text{MSSM}}=200\,\GeV$, $m_{\tilde{g}} = 1.5\,\TeV$,
-$m_{\tilde{\ell}_3} = 1\,\TeV$, and $A_b=A_t=A_{\Pgt}$. 
+$m_{\tilde{\ell}_3} = 1\,\TeV$, and $A_{\Pbottom}=A_{\Ptop}=A_{\Pgt}$. 
 %Figure \ref{fig:mhmodp_mh}a
 %shows the mass of the light Higgs boson in the $m_{h}^{\text{mod+}}$ scenario, showing
 %that its mass is compatible with 125 GeV over a large part of the parameter space. Masses within 
@@ -712,7 +712,7 @@ $m_{\tilde{\ell}_3} = 1\,\TeV$, and $A_b=A_t=A_{\Pgt}$.
 
 Figure \ref{fig:mhmodp_xs} shows the cross sections of
 gluon fusion and b-associated production of the \PHiggs boson 
-in the $m_h^{\text{mod+}}$ scenario. Gluon fusion 
+in the $m_{\PHiggslight}^{\text{mod+}}$ scenario. Gluon fusion 
 production dominates at low \tanb, while b-associated production has a larger cross section
 at high \tanb. The behaviour of the production cross sections of the \PHiggsps boson
 is similar.
@@ -778,15 +778,15 @@ if $M_{\text{SUSY}}$ is allowed to be greater than $3\,\TeV$ \cite{MSSM-reopen}.
 %where the ±3 GeV variation corresponds to a rough estimate of the theoretical uncertainty of the MSSM prediction for mh, due to the unknown effect of higher-order correction
 
 Two approches for the definition of an \ac{MSSM} scenario that gives
-access to the low-\tanb~region have been developed, they will be
+access to the low \tanb~region have been developed, they will be
 discussed in the next sections.
 
-\subsubsection{The low-\tanb-scenario}
+\subsubsection{The low-\tanb~scenario}
 \label{sec:theory_BSM_model_lowtb}
-In the low-\tanb-scenario \cite{Hein-low-tb-high,MSSM-lowtanb}, the SUSY parameters entering
+In the low-\tanb~scenario \cite{Hein-low-tb-high,MSSM-lowtanb}, the SUSY parameters entering
 the radiative corrections are tuned to obtain light 
 Higgs boson masses of around $125\,\GeV$ in most of the \mA-\tanb~plane considered.
-Figure \ref{fig:mhmodp_mh}b shows that, apart from in a corner of \tanb~1-4 and 
+Figure \ref{fig:mhmodp_mh}b shows that, apart from in a corner of \tanb~1--4 and 
 \mA~$150$--$250\,\GeV$, \mh~is compatible with $125\,\GeV$.
 
 \begin{figure}[h!]
@@ -813,16 +813,16 @@ the mass of the light Higgs boson is compatible with $125\,\GeV$ nearly everywhe
 %\end{figure}
 To obtain \mh$\approx125\,\GeV$ over a large part of the parameter
 space, 
-$M_{\text{SUSY}}$ is not fixed but varies between a few TeV and 100 TeV, while
+$M_{\text{SUSY}}$ is not fixed but varies between a few $\TeV$ and $100\,\TeV$, while
 varying the parameter $X_t$ as:
 \begin{equation}
 \begin{split}
-\tan{\beta} \leq 2 &: \frac{X_t}{M_{\text{SUSY}}} = 2,\\
-2 < \tan{\beta} \leq 8.6 &: \frac{X_t}{M_{\text{SUSY}}} = 0.0375\text{tan}^2\beta - 0.7\tan{\beta} + 3.25,\\
-8.6 < \tan{\beta} &: \frac{X_t}{M_{\text{SUSY}}} = 0.
+\tan{\beta} \leq 2 &: \frac{X_{\Ptop}}{M_{\text{SUSY}}} = 2,\\
+2 < \tan{\beta} \leq 8.6 &: \frac{X_{\Ptop}}{M_{\text{SUSY}}} = 0.0375\text{tan}^2\beta - 0.7\tan{\beta} + 3.25,\\
+8.6 < \tan{\beta} &: \frac{X_{\Ptop}}{M_{\text{SUSY}}} = 0.
 \end{split}
 \end{equation}
-The other trilinear couplings are set to 2 TeV, with $\mu_{\text{MSSM}}$ set to 1.5 TeV and $M_2$ to 2 TeV.
+The other trilinear couplings are set to $2\,\TeV$, with $\mu_{\text{MSSM}}$ set to $1.5\,\TeV$ and $M_2$ to $2\,\TeV$.
 
 The branching fractions of \Htohh and \AtoZh in the low-\tanb~scenario are shown in
 figure \ref{fig:lowtbhigh_br}. For both decay channels there are areas in the \mA-\tanb~plane
@@ -858,7 +858,7 @@ be decomposed as,
 where the $\Delta\mathcal{M}^2_{ij}$ are the radiative corrections.
 The second assumption is that only $\Delta\mathcal{M}^2_{22}$ needs to be
 taken into account, as this is the element that involves the stop-top correction
-and so $\Delta\mathcal{M}^2_{22} >> \Delta\mathcal{M}^2_{12},\Delta\mathcal{M}^2_{11}$. 
+and so $\Delta\mathcal{M}^2_{22} \gg \Delta\mathcal{M}^2_{12},\Delta\mathcal{M}^2_{11}$. 
 Finally, all SUSY particles are assumed to be heavy enough not to be
 detected at the \acs{LHC} and apart from effects on the mass matrix, 
 the effects on the Higgs sector can be neglected.
@@ -868,26 +868,26 @@ Using these assumptions the lightest eigenvalue
 of the mass matrix can be inverted to get: 
 \begin{equation}
 \label{eqn:hmssm_deltam22}
-\Delta\mathcal{M}^2_{22} = \frac{m_h^2(m_A^2+m_Z^2 - m_h^2) - m_A^2m_Z^2\text{cos}^22\beta}{m_Z^2\text{cos}^2\beta + m_A^2\text{sin}^2\beta - m_h^2},
+\Delta\mathcal{M}^2_{22} = \frac{m_{\PHiggslight}^2(m_{\PHiggsps}^2+m_{\PZ}^2 - m_{\PHiggslight}^2) - m_{\PHiggsps}^2m_{\PZ}^2\text{cos}^22\beta}{m_{\PZ}^2\text{cos}^2\beta + m_A^2\text{sin}^2\beta - m_{\PHiggslight}^2},
 \end{equation}
 
 This means we can write,
 \begin{equation}
 \label{eqn:hmssm_mHalpha}
 \begin{split}
-&m^2_H = \frac{(m_A^2+m_Z^2-m_h^2)(m_z^2\cos{\beta}^2+m_A^2\sin{\beta}^2 - m_A^2m_Z^2\cos{2\beta}^2}{m_Z^2\cos{\beta}^2+m_A^2\sin{\beta}^2-m_h^2},\\
-&\tan{\alpha} = -\frac{(m_Z^2+m_A^2)\cos{\beta}\sin{\beta}}{m_Z^2\cos{\beta}^2+m_A^2\sin{\beta}^2-m_h^2}.
+&m^2_{\PHiggs} = \frac{(m_{\PHiggsps}^2+m_{\PZ}^2-m_{\PHiggslight}^2)(m_{\PZ}^2\cos{\beta}^2+m_{\PHiggsps}^2\sin{\beta}^2 - m_{\PHiggsps}^2m_{\PZ}^2\cos{2\beta}^2}{m_{\PZ}^2\cos{\beta}^2+m_{\PHiggsps}^2\sin{\beta}^2-m_{\PHiggslight}^2},\\
+&\tan{\alpha} = -\frac{(m_{\PZ}^2+m_{\PHiggsps}^2)\cos{\beta}\sin{\beta}}{m_{\PZ}^2\cos{\beta}^2+m_{\PHiggsps}^2\sin{\beta}^2-m_{\PHiggslight}^2}.
 \end{split}
 \end{equation}
-Combining this with the Hhh coupling,
+Combining this with the $\PHiggs$-$\PHiggslight\PHiggslight$ coupling,
 \begin{equation}
 \label{eqn:hmssm_Hhh}
-\lambda_{Hhh} = \lambda_{Hhh,tree} + 3\frac{\Delta\mathcal{M}^2_{22}\sin{\alpha}}{m_Z^2\sin{\beta}}\cos{\alpha}^2,
+\lambda_{\PHiggs\PHiggslight\PHiggslight} = \lambda_{\PHiggs\PHiggslight\PHiggslight,\text{tree}} + 3\frac{\Delta\mathcal{M}^2_{22}\sin{\alpha}}{m_{\PZ}^2\sin{\beta}}\cos{\alpha}^2,
 \end{equation}
 gives enough information to determine the cross sections and branching
 ratios of all of the five Higgs bosons as a function of \mA~and \tanb. The scenario
 is only well defined in regions where the denominator in equations
-\ref{eqn:hmssm_deltam22} and \ref{eqn:hmssm_mHalpha}, $m_Z^2\cos{\beta}^2+m_A^2\sin{\beta}^2 - m_h^2$, is nonzero. 
+\ref{eqn:hmssm_deltam22} and \ref{eqn:hmssm_mHalpha}, $m_{\PZ}^2\cos{\beta}^2+m_{\PHiggsps}^2\sin{\beta}^2 - m_{\PHiggslight}^2$, is nonzero. 
 This leads to a minimum accesible \mA~value of \mh~at high \tanb, and
 a minimum accessible \mA~of around $151\,\GeV$ for \tanb=1. In addition, the scenario
 can be formulated, but is not strictly valid, for values of \tanb~upwards of 10 \cite{CMS-PAS-HIG-16-007}.
@@ -936,16 +936,16 @@ in the $m_{\PHiggslight}^{\text{mod+}}$ (figure \ref{fig:bsm_summary}a)
 and hMSSM scenarios (figure \ref{fig:bsm_summary}b). The direct search for heavier Higgs bosons decaying into pairs
 of tau leptons (shown in dark blue) sets the most stringent limits at high \tanb, with searches for 
 heavy Higgs bosons decaying to $\Pbottom\Pbottom$ and to $\mu\mu$ both excluding smaller parts of the high \tanb-region.
-Searches for heavy Higgs bosons decaying to WW and ZZ are able to exclude part of the low-\tanb-region. In the 
+Searches for heavy Higgs bosons decaying to $\PW\PW$ and $\PZ\PZ$ are able to exclude part of the low \tanb~region. In the 
 hMSSM scenario searches for \Htohh and \AtoZh can exclude a small area at low \tanb~and between \mA~$=250--350\,\GeV$.
 The red exclusion contour in figure \ref{fig:bsm_summary}b is the re-interpretation of the analysis presented in
 chapter \ref{chap:hhh}.
 
 In Run 2 of the \acs{LHC} searches for \AHtotautau, setting more stringent limits than those shown in figure \ref{fig:bsm_summary},
 have been performed with the \acs{CMS} detector. The results of these searches will be presented in chapter \ref{chap:mssm}. 
-Similar searches have been performed by ATLAS \cite{ATLASMSSMtautau2016}. Neutral BSM Higgs bosons
+Similar searches have been performed by ATLAS \cite{ATLASMSSMtautau2016}. Neutral \ac{BSM} Higgs bosons
 are being searched for in other channels too, with some results for decays into $\Ptop\Ptop$ \cite{ATLASHttbar}, 
-ZZ \cite{CMSHZZ2016,ATLASHZZ2016}, and WW \cite{ATLASHeavyHWW} already public.
+$\PZ\PZ$ \cite{CMSHZZ2016,ATLASHZZ2016}, and $\PW\PW$ \cite{ATLASHeavyHWW} already public.
 In addition, searches for charged
 Higgs bosons \cite{ATLASHplustaunu,ATLASHplustb,CMSHplustaunu} and
 di-Higgs searches \cite{ATLASHbbgamgam,ATLASHgamgamWW,ATLASHhhbbbb,CMSbbgamgam,CMSHbbtautau,CMSHbbWW}, both in 
