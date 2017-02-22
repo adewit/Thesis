@@ -267,9 +267,9 @@ tau isolation working point selections on both the \Pgluon\Pgluon$\phi$ and \Pbo
 \end{center}
 \caption[Pre-fit expected limit on \xsbr for the $\Pg\Pg\phi$
 production process with decay into $\Pgt\Pgt$ as a function of tau isolation 
-working point and \mT~selection, for two mass points.]{Pre-fit expected limit on \xsbr for the $\Pg\Pg\phi$ production process with decay into $\Pgt\Pgt$,
-as a function of tau isolation working point (from very loose to very very tight) and
-of \mT~selection from \mT~$<20\,\GeV$ to \mT~$<40\,\GeV$, normalised to the best limit in the plane, indicated by the asterisk. This is shown
+working point and \mT~selection, for two mass points.]{Pre-fit expected limit on \xsbr for the $\Pg\Pg\phi\rightarrow\Pgt\Pgt$ process,
+as a function of the tau isolation working point (from very loose to very very tight) and
+of the \mT~selection from $\mTm<20\,\GeV$ to $\mTm<40\,\GeV$, normalised to the best limit in the plane, indicated by the asterisk. This is shown
 for (a) $m_{\phi} = 160\,\GeV$ and (b) $m_{\phi} = 2.9\,\TeV$. The most optimal combination of \mT~selection and 
 hadronic tau isolation working point varies, with looser selections preferred at higher mass.}
 \label{fig:mssm_selection_mt_taumt}
@@ -286,9 +286,9 @@ in the
 \mutau channel for an increasingly looser \mT~selection and tau isolation
 working point.]{Pre-fit expected limits on \xsbr in the \mutau channel for (a) $\Pg\Pg\phi$ and
 (b) $\Pbottom\Pbottom\phi$ production, for an increasingly looser \mT~selection and tau isolation working point, starting
-at the tight working point and \mT~$<30\,\GeV$ in green, the medium working point and \mT~$<40\,\GeV$ in red,
-the loose working point and \mT~$<50\,\GeV$ in blue and the very loose working point and \mT~$<60\,\GeV$ in black. Loosening
-the tau isolation working point and \mT~selection gradually improves limits at higher mass, and
+at the tight working point and $\mTm<30\,\GeV$ in green, the medium working point and $\mTm<40\,\GeV$ in red,
+the loose working point and $\mTm<50\,\GeV$ in blue and the very loose working point and $\mTm<60\,\GeV$ in black. Loosening
+the tau isolation working point and \mT~selection improves the limits at higher mass and
 degrades them at low mass.}
 \label{fig:mssm_gradcuts_mt}
 \end{figure}
@@ -305,17 +305,17 @@ and there is more benefit to loosening the selection
 to increase the signal efficiency than to keep the tighter selection
 to reduce an already low background.
 The selection was optimised for masses around $800\,\GeV$--$1\,\TeV$, by
-using the medium hadronic tau isolation working point and a selection on \mT~$<40\,\GeV$.
+using the medium hadronic tau isolation working point and a selection on $\mTm<40\,\GeV$.
 
 The choice of the hadronic tau \pT~selection is driven by the effect on the low mass region:
 raising the \pT~selection by $10\,\GeV$ from the minimum of $20\,\GeV$ does not affect the sensivity
 of the analysis for high mass points, while recovering some of the loss of loosening 
-tau isolation working point and \mT~cut. The reason for this is that when using \pT~$>30\,\GeV$ 
-fewer background events are selected. The effect of the increased hadronic tau \pT~selection on the 
+the tau isolation working point and \mT~cut. The reason for this is that when using $\pTm >30\,\GeV$ 
+the loss of background events exceeds the loss of signal events. The effect of the increased hadronic tau \pT~selection on the 
 upper limits for the $\Pg\Pg\phi$ production process is shown
-in figure \ref{fig:mssm_tauptcut}a, and on the $\Pbottom\Pbottom\phi$ production process
-in figure \ref{fig:mssm_tauptcut}b. At low mass the improvement in the $\Pg\Pg\phi$ limits
-obtained by increasing the \pT~selection is sizeable, for $\Pbottom\Pbottom\phi$ events the effect is much
+in figure~\ref{fig:mssm_tauptcut}a, and on the $\Pbottom\Pbottom\phi$ production process
+in figure~ \ref{fig:mssm_tauptcut}b. At low mass the improvement in the $\Pg\Pg\phi$ limits
+obtained by increasing the \pT~selection is sizeable; for $\Pbottom\Pbottom\phi$ events the effect is much
 less pronounced.
 
 \begin{figure}[h!]
@@ -326,9 +326,9 @@ less pronounced.
 \caption[Pre-fit expected limits on \xsbr in the
 \mutau channel for $\Pg\Pg\phi$ and $\Pbottom\Pbottom\phi$ production, comparing
 different hadronic tau \pT~cuts.]{Pre-fit expected limits on \xsbr in the \mutau channel for (a) $\Pg\Pg\phi$ production and (b) $\Pbottom\Pbottom\phi$ production. The
-limits when using the medium hadronic tau isolation working point and \mT~$<40\,\GeV$ selection using a minimum
+limits when using the medium hadronic tau isolation working point and $\mTm <40\,\GeV$ selection using a minimum
 hadronic tau \pT~selection of $20\,\GeV$ (red circles), $30\,\GeV$ (blue circles) and $40\,\GeV$ (black circles) are shown. The green
-circles show the limits using tighter tau isolation working point and \mT~selection. The limits on
+circles show the limits using the tight tau isolation working point and $\mTm<30\,\GeV$. The limits on
 the $\Pg\Pg\phi$ production process improve at low masses when increasing the minimum hadronic tau \pT~selection,
 the effect on the $\Pbottom\Pbottom\phi$ production process is less pronounced.}
 \label{fig:mssm_tauptcut}
@@ -338,20 +338,20 @@ the effect on the $\Pbottom\Pbottom\phi$ production process is less pronounced.}
 \label{sec:mssm_eventsel_et}
 For selection of events in the \etau channel, the first step is
 a trigger that only requires an electron at \ac{L1}. Loose ID and isolation
-criteria are made on the electron with the \ac{HLT}.
+criteria are applied to the electron with the \ac{HLT}.
 
 The offline event selection requires an oppositely charged
-electron and hadronically decaying tau, which are well-separated ($\Delta R > 0.5$).
-The minimum \pT~of the electron is required to be $26\,\GeV$, with $|\eta| < 2.1$. %due to trigger conditions
-The impact parameters of the electron are required to satisfy
+electron and hadronically decaying tau, which are separated by $\Delta R > 0.5$.
+The minimum electron is required to have $\pTm >26\,\GeV$ and $|\eta| < 2.1$. %due to trigger conditions
+The impact parameters are required to satisfy
 $d_{xy} < 0.045\,\cm$ and $d_{z} < 0.2\,\cm$, and the electron
-must pass additional identification criteria. The working point of the
-MVA identification discriminator that is used corresponds to a cut on the discriminator
-which selects electrons from \Zee events with 80\% efficiency. In addition the
+must pass additional identification criteria. The chosen working point of the
+MVA identification discriminator was designed
+to select electrons from \Zee events with 80\% efficiency. In addition the
 electron needs to be isolated, $I_{\text{rel}}^{\Pe} < 0.1$, with the relative isolation variable calculated with a cone size of 0.3.
 
-The hadronic tau is required to have a \pT~greater than $30\,\GeV$, $|\eta|<2.3$,
-and is required to be reconstructed by the HPS algorithm and to pass the medium
+The hadronic tau is required to have $\pTm > 30\,\GeV$, $|\eta|<2.3$,
+to be reconstructed by the HPS algorithm and to pass the medium
 working point of the MVA isolation discriminator. The impact parameter $d_{z}$ of the
 hadronic tau must be less than $0.2\,\cm$.
 Finally, the hadronic tau must 
@@ -361,8 +361,8 @@ and the loose working point of the anti-muon discriminator.
 Analogously to the muons, it was found that the analysis is not highly sensitive
 to the choice of electron isolation variable and cut value.
 A topological selection on the \mT~variable is also made in this channel to reject \Wjets events. 
-The value of \mT~$< 50\,\GeV$ that is used is obtained by performing a 2D optimisation where the \mT~selection
-and hadronic tau isolation working point are varied at the same time. The same considerations as
+The value of $\mTm< 50\,\GeV$ that is used is obtained by performing a simultaneous optimisation of the \mT~selection
+and hadronic tau isolation working point. The same considerations as
 for the \mutau channel apply, as illustrated in figure \ref{fig:mssm_gradcuts_et}.
 The choice of the hadronic tau \pT~selection of $30\,\GeV$ is
 made to recover some of the sensitivity lost at low mass by using looser \mT~and hadronic
@@ -377,9 +377,9 @@ tau isolation criteria. This is illustrated in figure \ref{fig:mssm_tauptcut_et}
 channel for $\Pg\Pg\phi$ and $\Pbottom\Pbottom\phi$ production for an increasingly
 looser \mT~selection and tau isolation working point.]{Pre-fit expected limits on \xsbr in the \etau channel for (a) $\Pg\Pg\phi$ and
 (b) $\Pbottom\Pbottom\phi$ production, for an increasingly looser \mT~selection and tau isolation working point, starting
-at the tight working point and \mT~$<40\,\GeV$ in green, the medium working point and \mT~$<50\,\GeV$ in red,
-the loose working point and \mT~$<60\,\GeV$ in blue and the very loose working point and \mT~$<70\,\GeV$ in black. Loosening
-the tau isolation working point and \mT~selection gradually improves limits at higher mass, and
+at the tight working point and $\mTm<40\,\GeV$ in green, the medium working point and $\mTm<50\,\GeV$ in red,
+the loose working point and $\mTm<60\,\GeV$ in blue and the very loose working point and $\mTm <70\,\GeV$ in black. Loosening
+the tau isolation working point and \mT~selection improves the limits at higher mass and
 degrades them at low mass.}
 \label{fig:mssm_gradcuts_et}
 \end{figure}
@@ -391,9 +391,9 @@ degrades them at low mass.}
 \caption[Pre-fit expected limits on \xsbr in the \etau
 channel for $\Pg\Pg\phi$ and $\Pbottom\Pbottom\phi$ production comparing different
 hadronic tau isolation cuts.]{Pre-fit expected limits on \xsbr in the \etau channel for (a) $\Pg\Pg\phi$ production and (b) $\Pbottom\Pbottom\phi$ production. The
-limits using the medium hadronic tau isolation working point and \mT$<40$ GeV selection using a minimum
+limits using the medium hadronic tau isolation working point and $\mTm<40$ GeV selection using a minimum
 hadronic tau \pT~cut of $20\,\GeV$ (red circles), $30\,\GeV$ (blue circles) and $40\,\GeV$ (black circles) are shown. The green
-circles show the limits using tighter tau isolation working point and \mT~selection. The limits on
+circles show the limits using the tight tau isolation working point and $\mTm<40\,\GeV$. The limits on
 the $\Pg\Pg\phi$ production process improve at low masses when increasing the hadronic tau \pT~cut,
 the effect on the $\Pbottom\Pbottom\phi$ production process is less pronounced.}
 \label{fig:mssm_tauptcut_et}
@@ -401,17 +401,17 @@ the effect on the $\Pbottom\Pbottom\phi$ production process is less pronounced.}
 
 \subsection{\texorpdfstring{Event selection in the \tautau channel}{Event selection in the tau tau channel}}
 \label{sec:mssm_eventsel_tt}
-The trigger in the \tautau channel requires two hadronic taus at \ac{L1} and the \ac{HLT}
-applies loose identification and isolation criteria to these hadronic taus.
+The trigger in the \tautau channel requires two hadronic taus at \ac{L1} to which loose identification
+and isolation criteria are applied in the \ac{HLT}
 
 The offline event selection requires both hadronic taus to be oppositely charged, separated
-by $\Delta R > 0.5$, have \pT~of at least $40\,\GeV$ and satisfy $|\eta|<2.1$. Both taus need
+by $\Delta R > 0.5$, to have $\pTm>40\,\GeV$ and to satisfy $|\eta|<2.1$. Both taus need
 to be reconstructed by the HPS algorithm, and their impact parameter $d_{z}$ must be less than $0.2\,\cm$.
 Both taus need to pass the tight working point of the isolation discriminator, the very loose 
 working point of the anti-electron discriminator and the loose working point of the anti-muon discriminator. 
 The tight working point of the isolation discriminator is chosen such that
-the channel is near-optimal at high mass, while not losing too much sensitivity in the low--intermediate mass range.
-This is illustrated in figure \ref{fig:mssm_tauid_tt} for the $\Pg\Pg\phi$ process.
+the channel is near-optimal at high mass, while not losing too much sensitivity in the low to intermediate mass range.
+This is illustrated in figure \ref{fig:mssm_tauid_tt}a for the $\Pg\Pg\phi$ process and in figure \ref{fig:mssm_tauid_tt}b for the $\Pbottom\Pbottom\phi$ process.
 
 \begin{figure}[h!]
 \begin{center}
@@ -423,7 +423,7 @@ in the \tautau channel, comparing different hadronic tau isolation working
 points.]{Expected upper limits for (a) the $\Pg\Pg\phi$ process and (b) the $\Pbottom\Pbottom\phi$ process 
 in the \tautau channel, using the 
 medium (green), tight (red) and very tight working point of the tau isolation discriminator.
-The pattern is roughly the same as in the \etau and \mutau channels, with looser selections preferred at high
+The pattern is similar to that in the \etau and \mutau channels, with looser selections preferred at high
 mass.}
 \label{fig:mssm_tauid_tt}
 \end{figure}
@@ -432,27 +432,27 @@ mass.}
 \label{sec:mssm_eventsel_em}
 Events in the \emu channel are first selected by two triggers
 that both require an electron and muon at \ac{L1} and apply loose ID and
-isolation requirements to these objects at \ac{HLT}. The \pT~requirements on
+isolation requirements to these objects in the \ac{HLT}. The \pT~requirements on
 the electron and muon are different in the two triggers, thus using the combination of the two
 improves the signal efficiency.
 
 Offline, the electron and muon are required to be oppositely charged
-and separated by $\Delta R >0.3$.
-The electron needs to have a minimum \pT~of $13\,\GeV$ and have $|\eta|< 2.5$. As
-in the \etau channel the electron's impact parameters have to 
-satisfy $d_{xy} < 0.045\,\cm$ and $d_{z}<0.2\,\cm$. The additional
-identification requirement is identical to the criterium applied to electrons in the \etau channel.
+and separated by $\Delta R > 0.3$.
+The electron needs to have $\pTm>13\,\GeV$ and $|\eta|< 2.5$. As
+in the \etau channel the impact parameters have to 
+satisfy $d_{xy} < 0.045\,\cm$ and $d_{z}<0.2\,\cm$. The same selection 
+on the MVA identification discriminator as in the \etau channel is applied.
 The electron also needs to be isolated, $I_{\text{rel}}^{\Pe}<0.15$, where the relative isolation variable is calculated
 with a cone size of 0.3.
 
-The muon needs to have a \pT~of at least $10\,\GeV$, $|\eta|<2.4$ and 
+The muon needs to have $\pTm>10\,\GeV$, $|\eta|<2.4$ and 
 its impact parameters need to be $d_{xy}<0.045\,\cm$ and $d_{z}<0.2\,\cm$.
-In addition to the kinematic requirements the muon must
-pass the medium identification criteria and be isolated with $I_{\text{rel}}^{\Pgm} < 0.2$,
+In addition to these requirements the muon must
+pass the ``medium'' identification criteria and be isolated with $I_{\text{rel}}^{\Pgm} < 0.2$,
 where the relative isolation variable is calculated using a cone size of 0.4.
 
-Because a combination of triggers is used, one with electron \pT~$> 23\,\GeV$ and muon \pT~$>8\,\GeV$ 
-and one with muon \pT~$> 23\,\GeV$ and electron \pT~$> 13\,\GeV$, the object firing
+Because a combination of triggers is used, one with electron $\pTm > 23\,\GeV$ and muon $\pTm>8\,\GeV$ 
+and one with muon $\pTm > 23\,\GeV$ and electron $\pTm > 13\,\GeV$, the object firing
 the higher \pT~trigger leg needs to have a transverse momentum
 of at least $24\,\GeV$ on top of the requirements already discussed. This avoids
 events in the lower part of the trigger turn-on curve being selected.
@@ -464,13 +464,13 @@ D_{\zeta} = P_{\zeta} - 1.85 P_{\zeta}^{\text{vis}}, \notag \\
 \text{where } P_{\zeta} = (\vec{p}_{\text{T},1}^{\text{  vis}} + \vec{p}_{\text{T},2}^{\text{  vis}} + E_{\text{T}}^{\text{miss}})\frac{\vec{\zeta}}{|\vec{\zeta}|}, \notag \\
 \text{and } P_{\zeta}^{\text{vis}} = (\vec{p}_{\text{T},1}^{\text{  vis}}+\vec{p}_{\text{T},2}^{\text{  vis}})\frac{\vec{\zeta}}{|\vec{\zeta}|}.
 \end{align}
-This means $D_{\zeta}$ is defined as the projection of the transverse momenta of the visible tau decay products plus missing energy \pT+\MET~onto 
+This means $D_{\zeta}$ is defined as the projection of the transverse momenta of the visible tau decay products plus missing energy, \pT+\MET, onto 
 the axis $\vec{\zeta}$, minus the projection of only the transverse momenta of the visible tau decay products onto this axis.
 The axis $\vec{\zeta}$ is the axis that bisects
 the directions $\vec{p}_{\text{T,1}}^{\text{  vis}}$ and $\vec{p}_{\text{T,2}}^{\text{  vis}}$
 of the visible decay products in the transverse plane. This definition is illustrated in figure
 \ref{fig:mssm_dzeta}a, with figure \ref{fig:mssm_dzeta}b showing the $D_{\zeta}$ distribution
-for \emu events. The selection used, $D_{\zeta} > -20\,\GeV$, rejects $\ttbar$, \Wjets and diboson
+for \emu events. The selection used, $D_{\zeta} > -20\,\GeV$, rejects $\ttbar$, \Wjets and di-boson
 events. 
 %The momentum of the neutrinos should not be in the opposite direction of the sum of the visible decay products
 %as the neutrinos and visible tau decay products travel at small angles from the original tau.
@@ -481,8 +481,8 @@ events.
 \subfloat[$D_{\zeta}$ distribution in \emu channel]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/pzeta_inclusive_em_2016.pdf}}
 \end{center}
 \caption[Reconstruction of the $D_{\zeta}$ variable and the $D_{\zeta}$ distribution
-in the \emu channel.]{(a) reconstruction of $D_{\zeta}$ \cite{cdf-dzeta} and (b) $D_{\zeta}$ distribution in the 
-\emu channel\cite{CMS-PAS-HIG-16-037}.}
+in the \emu channel.]{(a) Reconstruction of $D_{\zeta}$ \cite{cdf-dzeta} and (b) $D_{\zeta}$ distribution in the 
+\emu channel \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_dzeta}
 \end{figure}
 ~\clearpage
@@ -502,7 +502,7 @@ based on the number of b-tagged jets in the event.
 with the signal overlaid.]{(a) Number of jets and (b) number of b-tagged jets in the \mutau channel. The gluon fusion signal (dashed
 blue line) and b-associated signal (dashed purple line) are overlaid on the expected background distribution. The signals
 are normalised to 100 times their \xsbr at \mA~$=1\,\TeV$ and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$
-scenario. It is visible how the signal-sensitive bins motivate the choice of categories.}
+scenario. The signal-sensitive bins motivate the choice of categories.}
 \label{fig:mssm_cats_mt}
 \end{figure}
 
@@ -511,32 +511,33 @@ in the \mutau channel, with figure \ref{fig:mssm_cats_mt}b showing
 the number of b-tagged jets in that channel. The gluon fusion
 and b-associated signals are overlaid on these distributions, normalised
 to 100 times their \xsbr at \mA~$=1\,\TeV$ and 
-\tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario. From the distribution of the
-gluon fusion signal in figure \ref{fig:mssm_cats_mt}b we can 
-see that the vast majority of these signal events do not have any b-tagged jets. To
-target this production mode we can use a category which requires zero b-tagged jets.
-From the b-associated signal in the same figure we also see that the majority of $\Pbottom\Pbottom\phi$
-signal events do not have any b-tagged jets either: either the b-jets in these events 
+\tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario. 
+The distribution of the
+gluon fusion signal in figure \ref{fig:mssm_cats_mt}b shows that
+the vast majority of these signal events do not have any b-tagged jets. To
+target this production mode a category which requires nob-tagged jets can be used.
+The same figure also shows that the majority of $\Pbottom\Pbottom\phi$
+signal events do not have any b-tagged jets: either the b-jets in these events 
 are too soft, or they do not pass the b-tagging requirements. This means that the category
-which requires zero b-tagged jets
-is also sensitive to some of the $\Pbottom\Pbottom\phi$ signal. To target
+which requires no b-tagged jets
+is also sensitive to some of the $\Pbottom\Pbottom\phi$ signal. To target the remainder of 
 the $\Pbottom\Pbottom\phi$ signal, another category with at least one b-tagged jet is defined. 
-From the $\Pbottom\Pbottom\phi$ signal in figure \ref{fig:mssm_cats_mt}b it can be seen that there is not
-such a large proportion of events with more than one b-tagged jet. From figure \ref{fig:mssm_cats_mt}a
-it is visible that the \ttbar background starts to become more sizeable for events with more than
+The $\Pbottom\Pbottom\phi$ signal in figure \ref{fig:mssm_cats_mt}b shows that there is not
+such a large proportion of events with more than one b-tagged jet. Figure \ref{fig:mssm_cats_mt}a
+shows that the \ttbar background starts to become larger for events with more than
 one jet. The definition of the category that targets the $\Pbottom\Pbottom\phi$ signal is therefore chosen with the inclusion
-of the jet veto, such that the region where the \ttbar background becomes larger is excluded, 
+of a jet veto, such that the region where the \ttbar background becomes larger is excluded, 
 while retaining a large proportion of the $\Pbottom\Pbottom\phi$ signal.
 
 In summary, the two categories are defined as:
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
-\item \textbf{No b-tag}: zero b-tagged jets. This category targets the $\Pg\Pg\phi$ production mode but is also sensitive to some of the $\Pbottom\Pbottom\phi$ signal.
+\item \textbf{No b-tag}: No b-tagged jets. This category targets the $\Pg\Pg\phi$ production mode but is also sensitive to some of the $\Pbottom\Pbottom\phi$ signal.
 \item \textbf{b-Tag}: At least one b-tagged jet, at most one 
-jet with \pT~$>30\,\GeV$. This second requirement, the jet veto, reduces the \ttbar background. 
-Due to the different phase space considered for
-b-tagging than for default jet reconstruction this requirement does not necessarily
-mean there will be only one b-tagged jet in the event.
+jet with $\pTm>30\,\GeV$. This second requirement, the jet veto, reduces the \ttbar background. 
+Due to the lower \pT~requirement considered for
+b-tagging compared with the requirement for the jet veto, it is still possible for there
+to be more than one b-tagged jet in the event.
 \end{itemize}
 
 \section{Discriminating variable}
