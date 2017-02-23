@@ -545,14 +545,12 @@ to be more than one b-tagged jet in the event.
 The discriminating variable used for signal extraction is the total transverse mass,
 \begin{equation}\label{eqn:mttot}
 m_{\text{T}}^{\text{tot}} = \sqrt{(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_1^{\text{vis}}))^2+
-(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_2^{\text{vis}}))^2 + (m_{\text{T}}(\Pgt_1^{\text{vis}},\Pgt_2^{\text{vis}}))^2}.
+(m_{\text{T}}(E_{\text{T}}^{\text{miss}},\tau_2^{\text{vis}}))^2 + (m_{\text{T}}(\Pgt_1^{\text{vis}},\Pgt_2^{\text{vis}}))^2},
 \end{equation}
-
-$m_{\text{T}}(1,2)$ is defined as,
+where $m_{\text{T}}(1,2)$ is defined as,
 \begin{equation}\label{eqn:mttot_12}
 m_{\text{T}}(1,2) = \sqrt{2p_{\text{T},1}p_{\text{T},2}(1-\cos{(\Delta\phi(1,2))})}.
 \end{equation}
-
 This means that $m_{\text{T}}(E_{\text{T}}^{\text{miss}},\Pgt_1^{\text{vis}})$ is equivalent
 to the \mT~defined for the \etau and \mutau channels in equation \ref{eqn:hhh_selection_mt}.
 The \mTtot~variable provides good separation between signal and QCD multijet events
@@ -561,7 +559,7 @@ signal and \ttbar events in the \emu channel. These are some of the
 major backgrounds and thus good separation between these processes and 
 the signal is important for the sensitivity of the analysis.
 The separation between signal and backgrounds is illustrated in figure
-\ref{fig:mttot_sigseps}, where figure \ref{fig:mttot_sigseps}a shows the total transverse mass
+\ref{fig:mttot_sigseps}. Figure \ref{fig:mttot_sigseps}a shows the total transverse mass
 distribution of the QCD
 background in the no b-tag category of the \tautau channel with the gluon fusion
 signal at $400\,\GeV$, $1\,\TeV$ and $2\,\TeV$ overlaid. Figure \ref{fig:mttot_sigseps}b
@@ -584,21 +582,21 @@ The total transverse mass variable separates the signal and these backgrounds we
 
 
 
-\section{\acs{MC} to data correction factors}
+\section{\acl{MC} simulation to data correction factors}
 \label{sec:mssm_mccorrs}
-Because \ac{MC} samples are used for the signal prediction, and 
+Because simulated samples are used for the signal prediction, and 
 to estimate some of the backgrounds, it is important to correct for possible 
 mis-modelling with respect to the data. Dedicated control regions in
-data are used to derive the \ac{MC} to data correction factors
-that are applied to the \ac{MC} samples. Where efficiencies
+data are used to derive the \ac{MC} simulation to data correction factors
+that are applied to the simulated samples. Where efficiencies
 are involved this scale factor is derived by measuring the efficiency
-in data and in \ac{MC} and constructing the scale factor as $\text{SF}=\frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
+in data and in simulation and constructing the scale factor as $\text{SF}=\frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 \subsubsection*{Tracking efficiency}
 A discrepancy between the track reconstruction efficiency
-in data and \ac{MC} for electrons and muons was found. It is corrected for using $\eta$-dependent
+in data and simulation for electrons and muons was found. It is corrected for using $\eta$-dependent
 scale factors.% \cite{CMS-PAS-HIG-16-037}.
-\subsubsection*{Electron, muon and tau ID and isolation}
-Identification and isolation efficiencies in data and \ac{MC} are measured
+\subsubsection*{Electron, muon and tau identification and isolation}
+Identification and isolation efficiencies in data and simulation are measured
 for electrons, muons and hadronic taus. A tag-and-probe
 method using \Zeenog (\Zmmnog) events is used to measure
 the efficiencies for electrons (muons). The hadronic tau identification
@@ -608,10 +606,10 @@ making use of $\PZ\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgth$ events.
 The electron, muon and hadronic tau trigger efficiencies are also measured
 using tag-and-probe methods with the types of events as described for the identification
 and isolation efficiencies. Because no trigger simulation is applied to
-the \ac{MC} samples, the efficiency $\epsilon_{\text{Data}}$ is simply applied
-to the \ac{MC} events. Because two electron-muon cross triggers are 
+the simulated samples, the efficiency $\epsilon_{\text{Data}}$ is simply applied
+to the simulated events. Because two electron-muon cross-triggers are 
 used to select events in the \emu channel, the efficiencies of the different
-cross trigger legs need to be combined. With one of the cross triggers having a
+cross-trigger legs need to be combined. With one of the cross-triggers having a
 minimum \pT~of
 $23\,\GeV$ on the muon leg and $12\,\GeV$ on the electron leg, and the
 other having a minimum \pT~of $23\,\GeV$ on the electron leg and $8\,\GeV$ on the muon
@@ -625,68 +623,69 @@ leg, the combined efficiency of the two triggers becomes:
 The $\Pe\rightarrow\Pgth$ and $\Pgm\rightarrow\Pgth$ fake rates,
 after applying the anti-electron and anti-muon discriminators, are measured
 using a tag-and-probe method with \Zeenog and \Zmmnog events. Scale
-factors, applied to \ac{MC} events where the tau is faked by an electron or muon,
-are derived as the ratio between the fake rate in data and the fake rate in \ac{MC} events.
+factors, applied to simulated events where the tau is faked by an electron or muon,
+are derived as the ratio between the fake rate in data and the fake rate in simulation.
 \subsubsection*{\MET~recoil corrections}
-Differences in \MET~resolution and response between data and \ac{MC} 
+Differences in \MET~resolution and response between data and simulation
 are accounted for by the application of recoil corrections
 to signal, \Wjets and \Ztautau events. More detail
 about these corrections is given in section \ref{sec:objects_met_recoilcorr}.
 \subsubsection*{b-Tag scale factors}
 To correct for the difference in b-tagging efficiency
-and light jet mis-tagging rates between data and \ac{MC} events,
+and light jet mis-tagging rates between data and simulation,
 \pT- and $\eta$-dependent scale factors are derived as 
 described in reference \cite{cms-btag-run2}. They 
 are applied using the promote-demote method
 as outlined in equation \ref{eqn:promotedemote}.
 \subsubsection*{Top quark \pT~reweighting}
-A reweighting which was derived during \ac{LHC} Run 1
-to better match the top quark \pT~distribution in \ac{MC}
+A reweighting which was derived during Run 1
+to better match the top quark \pT~distribution in simulation
 to that observed in data is applied to \ttbar events. Despite
 the fact that the correction was derived during Run 1, it still
-improves the data/\ac{MC} agreement in a \ttbar enriched
+improves the agreement with data in a \ttbar enriched
 control region in the \emu channel, defined as 
-\MET~$>80\,\GeV$ and $D_{\zeta}<-20\,\GeV$. The improvement in data/\ac{MC} agreement
-by applying the top quark \pT~reweighting is illustrated in figure \ref{fig:mssm_corrs_toppt}.
+\MET~$>80\,\GeV$ and $D_{\zeta}<-20\,\GeV$. This
+is illustrated in figure \ref{fig:mssm_corrs_toppt}.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[Without top quark \pT~reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016_notoppt.png}}
 \subfloat[With top quark \pT~reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016.png}}
 \end{center}
-\caption[\mTtot~distribution in the \ttbar
-enriched control region, with and without applying top quark \pT~reweighting.]{\mTtot~distribution in the \ttbar enriched control region \MET~$>80\,\GeV$ and $D_{\zeta}<-20\,\GeV$ in the \emu channel,
-(a) without applying top quark \pT~reweighting and (b) with top quark \pT~reweighting.
+\caption[The \mTtot~distribution in the \ttbar
+enriched control region, with and without applying top quark \pT~reweighting.]{The \mTtot~distribution in the \ttbar enriched control region \MET~$>80\,\GeV$ and $D_{\zeta}<-20\,\GeV$ in the \emu channel,
+(a) without applying the top quark \pT~reweighting and (b) with the top quark \pT~reweighting.
 The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross section uncertainty.}
 \label{fig:mssm_corrs_toppt}
 \end{figure}
 
 \subsubsection*{Drell-Yan shape reweighting}
-As the \ac{MC} samples used for the \Ztautau estimate
-do not model the data well for events with high di-lepton
-mass and high \PZ boson \pT, a reweighting is applied to correct for this.
-These weights are derived in bins of $\PZ/\Pphotonx$ mass and \pT~
-using \Zmm events in data, in such a way that they do not
+As the \ac{MC} generator used for the \Ztautau estimate
+does not model the data well for events with high di-lepton
+mass and high \pT, a reweighting is applied to correct for this.
+These weights are derived in bins of di-lepton mass and 
+\pT~using \Zmm events in data in such a way that they do not
 change the overall Drell-Yan normalisation. The weights
 are then applied to the \Ztautau and \Zellell background processes.
-The mismodelling can be seen in figure \ref{fig:dyrwt}a, which
-shows the observed data and expected background distribution of the \PZ \pT~in
+The mis-modelling can be seen in figure \ref{fig:dyrwt}a, which
+shows the observed data and expected background distribution of the di-lepton \pT~in
 \Zmm events. The overall effect of the reweighting, which is derived
 based on the events shown in figure \ref{fig:dyrwt}a, on the \Ztautau background
 shape in the no b-tag category of the \etau channel is shown in figure \ref{fig:dyrwt}b.
+While the correction factor can be up to 20\% this figure shows
+that the total effect on the \Ztautau background distribution is small.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[\Zmm events]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/pt_tt_inclusive_zmm_2016_log_noweight.png}}
 \subfloat[Effect of Drell-Yan shape reweighting on \Ztautau background]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_zttweight_et_nobtag.pdf}}
 \end{center}
-\caption[The mismodelling in the \PZ boson \pT~distribution as observed
+\caption[The mis-modelling in the di-lepton \pT~distribution as observed
 in \Zmm events, and the impact of applying the Drell-Yan shape reweighting
-on the total transverse mass distribution of the \Ztautau background in the no b-tag category of the \etau channel.]{(a) The mismodelling in the \PZ boson \pT~distribution as observed
+on the total transverse mass distribution of the \Ztautau background in the no b-tag category of the \etau channel.]{(a) The mis-modelling in the di-lepton \pT~distribution as observed
 in \Zmm events, used to derive the correction and (b) the impact of applying the Drell-Yan shape
 reweighting on the total transverse
 mass distribution of the \Ztautau background in the no b-tag category of the \etau channel.}
 \label{fig:dyrwt}
 \end{figure}
-
 
 
 \section{Background estimation}
@@ -700,21 +699,20 @@ is therefore easier to see the different contributions. \Ztautau is a background
 it has two real taus in the final state, like the signal being searched for. 
 Smaller backgrounds 
 from \Zellell decays also play a role, especially in the \mutau and \etau channels where such events
-might pass the selection if for example a jet is misreconstructed as a hadronic tau and only one of the leptons is reconstructed. 
-Production of QCD multijet events, labelled `QCD' on the graphs in figure \ref{fig:mssm_bkgs_overview}, is a background when 
-two jets are misreconstructed as the two tau candidates. %Relatively likely to happen in tautau channel
+might pass the selection if, for example, one of the leptons or a jet is mis-reconstructed as a hadronic tau.
+Production of QCD multijet events, labelled `QCD' in figure \ref{fig:mssm_bkgs_overview}, is a background when 
+two jets are mis-reconstructed as the two tau candidates. %Relatively likely to happen in tautau channel
 As is visible in figure \ref{fig:mssm_bkgs_overview}b, the \ttbar background is particularly important in the b-tag category.
 This is because top quarks virtually always decay as $\Ptop\rightarrow \PW\Pbottom$, and so such events nearly 
-always contain real b-jets. The decay products of one or both of the \PW bosons, and additional jets in the event, can 
+always contain b-jets. The decay products of one or both of the \PW bosons, and additional jets in the event, can 
 then form \etau, \mutau, \tautau and \emu pairs.\\
-The \Wjets process is a background in the \etau and \mutau channels when the lepton from the \PW decay and a jet misreconstructed
-as a hadronic tau form a pair. In the \tautau channel it is a background when the \PW boson decays into $\Pgt\Pgn$ with the tau 
-decaying hadronically and an additional jet in the event is misreconstructed as a hadronic tau, or when two jets are
-reconstructed as hadronic taus.
+The \Wjets process is a background in the \etau and \mutau channels when the lepton from the \PW boson decay and a jet mis-reconstructed
+as a hadronic tau form a pair. In the \tautau channel it is a background when one \Pgth originates from a $\PW \rightarrow \Pgt\Pgn$ decay
+and the other from an additional jet in the event being mis-reconstruced as a hadronic tau. 
 In the \emu channel an additional lepton would have to originate from one of the jets, and so in this
-channel this background is smaller. Backgrounds that are small in all channels are the di-boson and single-top backgrounds. In 
-figures showing the backgrounds the di-boson and single-top backgrounds are drawn together with the \Wjets 
-background and is referred to as the `Electroweak' component.
+channel this background is smaller. The di-boson and single-top backgrounds are small in all channels. In
+figures the di-boson and single-top backgrounds are drawn together with the \Wjets 
+background and labelled collectively as the `Electroweak' component.
 
 \begin{figure}[h!]
 \begin{center}
@@ -730,106 +728,106 @@ are concentrated \cite{CMS-PAS-HIG-16-037-addit}.}
 \end{figure}
 
 To estimate these backgrounds a mixture of data-driven 
-methods and \ac{MC} samples is employed. The QCD background
+methods and predictions from simulation is employed. The QCD background
 is estimated using data-driven techniques in all four channels.
-In the \mutau and \etau channels the \Wjets background is also
+In the \mutau and \etau channels the \Wjets background yield is also
 estimated using data-driven techniques. The control regions used
 for the estimation of QCD and \Wjets in the \etau and \mutau channels
 are included in a simultaneous fit with the signal region to obtain
 the final results. More detail on this is given in section \ref{sec:mssm_sigext_ctrl}.
 In the \emu and \tautau channels the \Wjets background is estimated using
-\ac{MC} samples. The \Ztautau and \Zellell backgrounds are estimated
-using \ac{MC} samples for all four channels. A \Zmm control region
+simulation. The \Ztautau and \Zellell backgrounds are estimated
+using simulation for all four channels. A \Zmm control region
 is considered in a simultaneous fit with the signal region to correct and
 constrain the \Ztautau normalisation.
 The \ttbar, di-boson and single-top backgrounds are estimated
-using \ac{MC} samples, with cross-checks in control regions in data.
+using simulation, with cross-checks in control regions in data.
 The rest of this section describes the background estimation methods
 in more detail.
 
 \subsection{Generator matching}
 \label{sec:mssm_bkgs_genmatch}
-For backgrounds estimated from \ac{MC}, it is possible
-that it is more correct to split a background process
-into different sub-processes that should be treated separately in the fit to data.
+For backgrounds estimated from simulation, it can be
+beneficial to split a background process into different
+components that are allowed to vary independently, and be
+subject to different systematic uncertainties, in the fit to data.
 Taking the \mutau 
 channel as an example, a sample of Drell-Yan events
 will contain \Ztautau events, where one of the taus decays
 hadronically and the other tau decays to a muon, but also
-\Zmm events where one of the muons fakes a tau, or with an 
-additional jet in the event faking a hadronic tau and one of the
-muons not being properly reconstructed. Similarly, \ttbar background
+\Zmm events where one of the muons fakes a tau. 
+Similarly, \ttbar background
 events can be split into those with genuine taus, and those
-where a jet mimics a hadronic tau. In such cases dividing
-events from the same production process into sub-samples
-based on generator information allows for a more correct
+where a jet fakes a hadronic tau. In such cases dividing
+events from the same production process into separate components
+based on generator information allows for a correct
 treatment of systematic uncertainties.
 
-To determine the generator-level particle
+To determine the simulated particle
 that a reconstructed electron, muon, or hadronic tau
 originates from, reconstructed objects are matched
-to a set of generator level objects within a cone of $\Delta R = 0.2$.
-Five categories of generator-level object are considered for matching:
+to a set of simulated objects within a cone of $\Delta R = 0.2$.
+Five categories of simulated object are considered for matching:
 prompt electrons and muons,
 that is electrons and muons not originating from a hadron, tau or muon decay; electrons and muons
-from tau decays; and generator-level hadronic taus. These generator-level
-hadronic taus are rebuilt by summing the four-momenta
-of the visible decay products of the generator-level tau.
+from tau decays; and simulated hadronic taus. These simulated
+hadronic taus are built by summing the four-momenta
+of the visible decay products of the simulated tau lepton.
 
-If there is at least one generator-level object
+If there is at least one simulated object
 within a cone of $\Delta R = 0.2$ around the direction of the reconstructed
-object, the generator-level object nearest the reconstructed particle is chosen
+object, the simulated object nearest the reconstructed particle is chosen
 as the one the reconstructed particle is matched to. 
 If there are no 
-generator-level particles in the cone at all it is said to 
-have originated from pileup or a jet at generator level.
+simulated objects in the cone at all the reconstructed object is said to 
+have originated from a jet.
 
-The generator-level object type matched to a 
+The type of simulated object matched to a 
 reconstructed particle is used to perform the splitting
-of background samples, where this is used it is indicated.
+of background samples. In what follows, it is indicated where this 
+procedure is used.
 
 \subsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
 \label{sec:mssm_bkgs_ztt}
-For all channels, both shape and normalisation of the \Ztautau background 
+For all channels, both the shape and normalisation of the \Ztautau background 
 are estimated from the Drell-Yan
-\ac{MC} samples described in section \ref{sec:mssm_datasets}.
+simulation.
 For the \mutau and \etau channels, events from these samples 
 in which the reconstructed hadronic tau is matched to 
-a generator-level hadronic tau are considered part of the \Ztautau
+a simulated hadronic tau are considered part of the \Ztautau
 background. In the \tautau channel both reconstructed
-hadronic taus are required to be matched to a generator-level hadronic tau, and
+hadronic taus are required to be matched to a simulated hadronic tau, and
 in the \emu channel the \Ztautau component of the Drell-Yan background 
 is taken as those events where the reconstructed electron is not matched to
-a prompt electron at generator level and the reconstructed
+a simulated prompt electron and the reconstructed
 muon is not matched to a prompt muon. 
-Events in the Drell-Yan samples selected in the event selection
-but not satisfying the generator matching requirements are considered
-as the, much smaller, \Zll background.
-
-To correct and constrain the \Ztautau normalisation in the
-b-tag and no b-tag categories of all channels, \Zmm control
-regions are considered in a simultaneous fit with the signal region. More detail is given in 
-section \ref{sec:mssm_sigext_ctrl}.
+Events in the Drell-Yan simulation 
+that do not satisfy the generator matching requirements are considered
+as the much smaller \Zll background.
+%To correct and constrain the \Ztautau normalisation in the
+%b-tag and no b-tag categories of all channels, \Zmm control
+%regions are considered in a simultaneous fit with the signal region. More detail is given in 
+%section \ref{sec:mssm_sigext_ctrl}.
 
 \subsection{\texorpdfstring{\Wjets and QCD in the \etau and \mutau channels}{W+jets and QCD in the e tau and mu tau channels}}
 \label{sec:mssm_bkgs_mtet_wjetsqcd}
-A data--driven approach is used for the estimation of
+A data-driven approach is used for the estimation of
 both the \Wjets and QCD backgrounds in the \etau and \mutau channels. 
 The estimates of the normalisations of the two backgrounds are tied
 together due to the presence of some QCD contamination in the \Wjets-dominated
 control region. The shape of the \Wjets background is taken
-from the \ac{MC} samples. The QCD shape taken from same-sign
-data, that is events selected in observed data with the opposite charge requirement
-on the di-$\Pgt$ pair inverted but otherwise identical cuts to the signal region. Contributions
+from simulation. The QCD shape taken from same-sign
+data, that is, events selected in observed data with the opposite charge requirement
+on the di-tau pair inverted but otherwise identical cuts to the signal region. Contributions
 from other backgrounds in this region are subtracted.
 
 \subsubsection{\texorpdfstring{\Wjets normalisation}{W+jets normalisation}}
 \label{sec:mssm_bkgs_mtet_wjetsnorm}
 The \Wjets normalisation is derived using a high-\mT~control region, where
-selected events are required to satisfy \mT~$>70\,\GeV$. The 
+selected events are required to satisfy $\mTm>70\,\GeV$. The 
 \Wjets
 contribution in this region is enhanced, however there is still
-some contribution from QCD events in this region. This is visible in 
+some contamination from QCD events. This is visible in 
 figure \ref{fig:mssm_bkgs_wjets_mutau_mt} which shows the \mT~distribution in the
 \mutau channel, indicating the signal region and the high-\mT~control region. 
 
@@ -838,30 +836,36 @@ figure \ref{fig:mssm_bkgs_wjets_mutau_mt} which shows the \mT~distribution in th
 \includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_002.pdf}
 \end{center}
 \caption{Distribution of the transverse mass \mT~in the \mutau channel, indicating
-the signal region and the high \mT~control region. This distribution is plotted
+the signal region and the high-\mT~control region. This distribution is shown
 before dividing the events into categories \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_bkgs_wjets_mutau_mt}
 \end{figure}
 
-Because of this contribution from QCD events in the high \mT~region we
-have, for \mT~$>70\,\GeV$:
-\begin{equation}\label{eqn:wjets_ss_norm}
+Because of this contribution from QCD events in the high-\mT~region we
+have, for $\mTm>70\,\GeV$:\\
+\begin{minipage}{\textwidth}
+\begin{equation*}
 \begin{split}
-&N_{\text{data}}^{\text{SS, high } m_{\text{T}}} - N_{\text{other}}^{\text{SS,
- high } m_{\text{T}}}  =
-N_{\text{QCD}}^{\text{SS, high } m_{\text{T}}} + N_{\text{W}}^{\text{SS, high } m_{\text{T}}} ~\\
-&N_{\text{data}}^{\text{OS, high } m_{\text{T}}} - N_{\text{other}}^{\text{OS,
- high } m_{\text{T}}}  = N_{\text{QCD}}^{\text{OS, high } m_{\text{T}}} +
-N_{\text{W}}^{\text{OS, high } m_{\text{T}}} \\
-& = R_{\text{QCD}}^{\text{OS/SS}}\cdot N_{\text{QCD}}^{\text{SS, high } m_{\text{T}}} +
+N_{\text{data}}^{\text{SS, high } m_{\text{T}}} - N_{\text{other}}^{\text{SS,
+ high } m_{\text{T}}} &=
+N_{\text{QCD}}^{\text{SS, high } m_{\text{T}}} + N_{\text{W}}^{\text{SS, high } m_{\text{T}}}\\
+N_{\text{data}}^{\text{OS, high } m_{\text{T}}} - N_{\text{other}}^{\text{OS,
+ high } m_{\text{T}}}  &= N_{\text{QCD}}^{\text{OS, high } m_{\text{T}}} +
+N_{\text{W}}^{\text{OS, high } m_{\text{T}}}\\
+&= R_{\text{QCD}}^{\text{OS/SS}}\cdot N_{\text{QCD}}^{\text{SS, high } m_{\text{T}}} +
 R_{\text{W}}^{\text{OS/SS}} \cdot N_{\text{W}}^{\text{SS, high } m_{\text{T}}} ~\\
-&\Rightarrow N_{\text{W}}^{\text{SS, high } m_{\text{T}}}  = \frac{N_{\text{data}}^{\text{OS,
+\end{split}
+\end{equation*}
+~\vspace{-\baselineskip}
+\begin{equation}\label{eqn:wjets_ss_norm}
+\Rightarrow N_{\text{W}}^{\text{SS, high } m_{\text{T}}} = \frac{N_{\text{data}}^{\text{OS,
  high } m_{\text{T}}}  - N_{\text{other}}^{\text{OS, high } m_{\text{T}}}  -
 R_{\text{QCD}}^{\text{OS/SS}}\cdot(N_{\text{data}}^{\text{SS, high } m_{\text{T}}}  -
 N_{\text{other}}^{\text{SS, high } m_{\text{T}}} )}{R_{\text{W}}^{\text{OS/SS}} -
-R_{\text{QCD}}^{\text{OS/SS}}} ,
-\end{split}
+R_{\text{QCD}}^{\text{OS/SS}}},
 \end{equation}
+\end{minipage}
+
 where $R_{\text{W}}^{\text{OS/SS}}$ is the ratio between opposite-sign and same-sign \Wjets events
 and $R_{\text{QCD}}^{\text{OS/SS}}$ the ratio between opposite-sign and same-sign QCD events. Using 
 equation \ref{eqn:wjets_ss_norm}, the number of \Wjets events in the
