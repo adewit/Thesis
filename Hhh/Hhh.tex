@@ -134,7 +134,7 @@ working point of the MVA discriminator is required.
 
 If there is more than one possible \etau pair, the pair with the largest \pT$^{\Pe}$+\pT$^{\Pgth}$
 is taken. Similar additional vetoes as in the \mutau channel are applied.
-The event is rejected if an opposite-charge pair of electrons with \pT~ $> 15\,\GeV$, passing looser ID and
+The event is rejected if an opposite-charge pair of electrons with $\pTm > 15\,\GeV$, passing looser ID and
 isolation requirements than the signal electron requirements, can be formed. To prevent overlap with other channels and to reduce the di-boson
 background, events that have more than one electron or at least one muon passing \pT~$>10\,\GeV$ and loose ID and isolation
 requirements are rejected.
@@ -243,14 +243,14 @@ The signal peaks at around $125\,\GeV$ in both variables.}
 
 \section{\acl{MC} simulation to data correction factors}
 \label{sec:hhh_datamc}
-\ac{MC} samples are used for the estimation of some of the backgrounds and the signal, 
+Simulated samples are used for the estimation of some of the backgrounds and the signal, 
 and it is therefore important to correct for any mis-modelling. The \ac{MC} simulation to data 
 correction factors used for this are estimated in dedicated control regions.
 
 Identification, isolation, and trigger efficiencies are measured for electrons, muons
 and hadronic taus in data and simulated events.
 The difference between
-the efficiencies in data and simulated events are applied to \ac{MC} events as a
+the efficiencies in data and simulated events are applied to simulated events as a
 scale factor $\text{SF} = \frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
 
 For electrons and muons these efficiencies are measured using a 
@@ -263,7 +263,7 @@ The energy scale for hadronic taus is determined by fitting the mass of the
 hadronic tau candidate in $\PZ\rightarrow\Pgt\Pgt\rightarrow\Pgm\Pgth$ events.
 This fit is performed separately for each hadronic tau decay mode to obtain
 an energy scaling that is applied to reconstructed hadronic taus matched
-to simulated hadronic tau decays in \ac{MC} events.
+to simulated hadronic tau decays in simulation.
 
 In the \etau channel a scale factor is applied
 to the \Zee background to correct for differences in the $\Pe\rightarrow\Pgth$
@@ -274,13 +274,13 @@ in events passing the selection of the \etau channel as described in section
 \ref{sec:hhh_selection_etau}, but with the two-jet requirement removed.
 
 Differences in \MET~resolution and response between data and simulation are accounted for by
-applying recoil corrections to \Zellell, \Wjets and signal \ac{MC} events. Section \ref{sec:objects_met_recoilcorr} 
+applying recoil corrections to \Zellell, \Wjets and signal simulation. Section \ref{sec:objects_met_recoilcorr} 
 gives more details on how these corrections are derived.
 
 To correct for the differences in b-tagging efficiency and light jet mis-tagging
 rates between data and simulation, \pT~and $\eta$~dependent scale factors are 
 derived using the method described in reference \cite{BTV8TeV}. There are separate scale factors for 
-b-/c-jets and light jets. In this analysis the ``promote/demote'' method
+b-/c-jets and light jets. In this analysis the ``promote-demote'' method
 is used to apply these.
 
 In this method a demotion or promotion probability is assigned to every
@@ -290,7 +290,7 @@ jet as:
 &P(\text{promote}) = \frac{(\text{SF} - 1)(\epsilon_{\text{MC}}-1)}{\text{SF}} \text{    for SF > 1},
 \end{align}
 Where SF is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
-the b-tagging efficiency in \ac{MC} events for the type of jet (light, b- or c-)
+the b-tagging efficiency in simulated events for the type of jet (light, b- or c-)
 under consideration.
 
 \section{Discriminating variable}
@@ -426,14 +426,14 @@ The \Ztautau background is estimated using the embedded samples
 described in section \ref{sec:hhh_datasets}. To estimate the 
 yield of \Ztautau in each category the total
 yield after the initial event selection, before subdividing into categories, as
-estimated in the \Ztautau \ac{MC} sample is scaled by the efficiency with which 
+estimated in the simulated \Ztautau sample is scaled by the efficiency with which 
 such events pass the category selection in the embedded sample. The shape of
 the \Ztautau background is taken from the embedded sample after applying the full
 category selection. The contamination from the \ttbar background in the embedded
 sample is evaluated using the dedicated \ttbar embedded sample. This contribution
 is subtracted from the \Ztautau background.
 \subsection{\texorpdfstring{\ttbar}{ttbar}}
-Both the \ttbar shape and normalisation are estimated using \ac{MC} samples.
+Both the \ttbar shape and normalisation are estimated using simulation.
 These are checked against data in dedicated control regions. One such control
 region uses the \emu final state of the di-tau pair. A correction factor is estimated in 
 this control region and applied to the yield estimate from simulation in the signal region. 
@@ -446,8 +446,8 @@ in the signal region a sideband with \mT~greater
 than $70\,\GeV$ is used in the 2jet-0tag and 2jet-1tag categories.
 Contributions from other backgrounds are subtracted 
 from the data in this region, and a high-\mT~to low-\mT~extrapolation
- factor is determined from the \Wjets \ac{MC} 
-sample. The yield in the signal region is given by the data yield in the high-\mT~sideband, with
+ factor is determined from the \Wjets simulation.
+The yield in the signal region is given by the data yield in the high-\mT~sideband, with
 other backgrounds subtracted, multiplied by this extrapolation factor.
 In the 2jet-2tag category, a slightly different high-\mT~sideband of $60$--$120\,\GeV$ is used 
 as above $120\,\GeV$ the \ttbar background dominates over \Wjets. 
@@ -488,7 +488,7 @@ working point.
 \label{sec:hhh_backgrounds_other}
 The remaining backgrounds of \Zellell, di-boson and single-top
 events are small. Both shapes and normalisations are
-estimated using \ac{MC} samples.
+estimated using simulated samples.
  
 \section{Systematic uncertainties}
 \label{sec:hhh_uncs}
@@ -501,18 +501,18 @@ describes how these uncertainties are taken into account in the final result.
 \subsection{Normalisation uncertainties}
 \label{sec:hhh_uncs_norm}
 \subsubsection*{Luminosity uncertainty}
-The uncertainty on the luminosity measurement amounts to 2.6\% \cite{CMS-PAS-LUM-13-001} for data collected during
+The uncertainty in the luminosity measurement amounts to 2.6\% \cite{CMS-PAS-LUM-13-001} for data collected during
 2012. This uncertainty is applied to all processes in which
 the normalisation is estimated using simulation.
 \subsubsection*{Identification, isolation and trigger efficiencies}
-A systematic uncertainty on the efficiency measurements
-for the leptons is derived by combining the separate uncertainties on these measurements
+A systematic uncertainty in the efficiency measurements
+for the leptons is derived by combining the separate uncertainties in these measurements
 in quadrature. For electrons and muons this leads to a 2\% uncertainty. For hadronic taus a 6\% 
 uncertainty is measured on the tau identification efficiency, with an additional uncertainty of 3\% for
 the tau legs of the triggers \cite{CMS-HIG-14-034}. The identification, isolation and trigger efficiency measurement uncertainties are applied to all processes for which
 the normalisation is estimated using simulation.
 \subsubsection*{$\Pe\rightarrow\Pgth$ and $\Pgm\rightarrow\Pgth$ fake rates}
-The uncertainty on both the $\Pe\rightarrow\Pgth$ fake rate measurement and the
+The uncertainty in both the $\Pe\rightarrow\Pgth$ fake rate measurement and the
 $\Pgm\rightarrow\Pgth$ fake rate measurement is 30\% \cite{SMHtautauCMS}. The central value of the $\Pgm\rightarrow\Pgth$
 fake rate correction is close to 1, which is why it is not applied, but the uncertainty is 
 taken into account.
@@ -528,7 +528,7 @@ control region used for the \Wjets estimate. A 10\% change in the \ttbar yield c
 yield to vary by this amount.
 The light jet mis-tagging rate uncertainty varies between $1$--$5$\% for all processes in all channels.
 \subsubsection*{\MET~resolution and response}
-Uncertainties on the \MET~resolution and response are estimated by varying
+Uncertainties in the \MET~resolution and response are estimated by varying
 the recoil correction parameters within their estimated uncertainties. This 
 leads to a $1$--$10$\% uncertainty, depending on the category and process considered.
 \subsubsection*{Background normalisation}
@@ -536,9 +536,9 @@ leads to a $1$--$10$\% uncertainty, depending on the category and process consid
 \item \Ztautau : The inclusive normalisation of the embedded samples has a 3.3\% uncertainty, which is derived
 from combining the estimated normalisation uncertainty on the embedded samples themselves, and the uncertainty on the \ttbar embedded samples. In addition, an uncertainty of $5$--$6$\% for extrapolation from the inclusive selection to the category selection is applied.
 \item \Zellell: As this is a very small background after requiring two jets, the uncertainty on this estimate is derived from the statistical uncertainty on the yield estimate, which varies between $20$--$90$\%.
-\item \ttbar: The uncertainty on the \ttbar cross section is 10\% \cite{SMHtautauCMS}.
-\item Di-boson and single top: The combined uncertainty on the di-boson and single-top cross sections is 15\% \cite{SMHtautauCMS}.
-\item \Wjets: As the \Wjets yield is estimated from a high \mT~sideband in data, the uncertainty on this yield estimate is primarily due to the number of events available in the control region. The uncertainty ranges from 10\% in the 2jet-0tag category to 100\% in the 2jet-2tag category.
+\item \ttbar: The uncertainty in the \ttbar cross section is 10\% \cite{toppp}.
+\item Di-boson and single top: The combined uncertainty in the di-boson and single-top cross sections is 15\% \cite{8TeVdib,8TeVst}.
+\item \Wjets: As the \Wjets yield is estimated from a high \mT~sideband in data, the uncertainty in this yield estimate is primarily due to the number of events available in the control region. The uncertainty ranges from 10\% in the 2jet-0tag category to 100\% in the 2jet-2tag category.
 \item QCD: The QCD normalisation uncertainty is obtained by adding the statistical uncertainty on the data-subtracted same-sign region in quadrature with the 10\% uncertainty on the OS/SS ratio. This yields a 20\% uncertainty in the 2jet-0tag category, a 40\% uncertainty in the 2jet-1tag category and a $60$--$100$\% uncertainty in the 2jet-2tag category.
 \end{itemize}
 \subsection{Shape uncertainties}
@@ -546,7 +546,7 @@ from combining the estimated normalisation uncertainty on the embedded samples t
 \subsubsection*{Tau energy scale}
 The energy of hadronically decaying taus is varied up and down by a 3\% uncertainty \cite{SMHtautauCMS}. As this directly affects the kinematic fit mass distribution this uncertainty is then applied as a shape uncertainty.
 \subsubsection*{Jet energy scale}
-The uncertainties on the jet energy corrections are applied by shifting the jet energy up and down by the \pT-and $\eta$-dependent uncertainty \cite{cms-jec-2011}. Again, as this affects the shape of the kinematic fit mass distribution this uncertainty is applied as a shape uncertainty.
+The uncertainty in the jet energy corrections are applied by shifting the jet energy up and down by the \pT-and $\eta$-dependent uncertainty \cite{cms-jec-2011}. Again, as this affects the shape of the kinematic fit mass distribution this uncertainty is applied as a shape uncertainty.
 \section{\texorpdfstring{Overview of \AtoZhtolltautau}{Overview of A->Zh->lltautau}}
 \label{sec:hhh_azh}
 In this section a summary of the \AtoZhtolltautau analysis \cite{CMS-HIG-14-034}, which is combined with the 
@@ -597,8 +597,8 @@ Systematic uncertainties are also applied in the \AtoZhtolltautau analysis.
 For the purpose of combining the results with the \Htohhtobbtautau search,
 some of these are correlated between the two analyses.
 This applies to the
-luminosity uncertainty and the uncertainties on b-tagging efficiency
-and light jet mis-tagging rate.
+luminosity uncertainty and the uncertainties in the b-tagging efficiency
+and the light jet mis-tagging rate.
 
 \section{Results}
 \label{sec:hhh_results}
@@ -799,7 +799,7 @@ As discussed in section \ref{sec:theory_2HDM}, a \ac{2HDM} has more
 free parameters than a particular \ac{MSSM} benchmark scenario. To leave
 just two free parameters, it is enough to fix the masses of the five Higgs bosons
 and take the quartic couplings to be zero.
-For the interpretation shown here the assumption that \mA=\mH=\mHplus~$=300\,\GeV$ is made.
+For the interpretation shown here the assumption that $m_{\PHiggsps}=m_{\PHiggs}=m_{\PHiggs^+}=300\,\GeV$ is made.
 
 The couplings of the Higgs bosons to quarks and leptons, and of the heavy Higgs bosons to other
 particles, are defined by $\alpha$ and $\beta$, as in table \ref{tab:hhh_2HDM_couplings}.
@@ -844,8 +844,9 @@ the analysis is not yet sensitive enough to actually observe it.
 \subfloat[\Htohhtobbtautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/Hhh2HDM.pdf}}
 \subfloat[\AtoZhtolltautau]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/AZh2HDM.pdf}}
 \caption[Search for \Htohhtobbtautau and search for \AtoZhtolltautau
-interpreted in a type-II 2HDM, assuming \mA=\mH=\mHplus~$=300\,\GeV$.]{Search for (a) \Htohhtobbtautau and (b) \AtoZhtolltautau interpreted in a type-II 
-\ac{2HDM}, assuming \mA=\mH=\mHplus~$= 300\,\GeV$. The expected (dashed line)
+interpreted in a type-II 2HDM, assuming $m_{\PHiggsps}=m_{\PHiggs}=m_{\PHiggs^+}=300\,\GeV$.]{Search for (a) \Htohhtobbtautau and (b) \AtoZhtolltautau interpreted in a type-II 
+\ac{2HDM}, assuming $m_{\PHiggsps}=m_{\PHiggs}=m_{\PHiggs^+}=300\,\GeV$. 
+The expected (dashed line)
 and observed (solid line) exclusion contours at 95\% \ac{CL} are overlaid
 on the \xsbr of the searched-for process.
 Regions of the \cosba-\tanb~plane where the 

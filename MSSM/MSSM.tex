@@ -57,7 +57,7 @@ background events with higher jet multiplicities. %note LO samples used because 
 %events would need to generate more NLO samples
 The `inclusive' and `exclusive' samples are reweighted
 before they are combined so as to preserve the correct
-fractions of events with each jet multiplicity. The $\PW+\Pphoton$ background samples,
+fractions of events with each jet multiplicity. The $\PW{+}\Pphoton$ background samples,
 only included in the \emu channel, are generated either with \texttt{MadGraph 5} or 
 with \texttt{MadGraph5\_aMC@NLO}.
 
@@ -256,7 +256,7 @@ figure \ref{fig:mssm_selection_mt_taumt}a shows the upper limit on \xsbr for
 the gluon fusion production process, for a mass $m_{\phi} = 160\,\GeV$, with
 figure \ref{fig:mssm_selection_mt_taumt}b showing this upper limit for $m_{\phi} = 2.9\,\TeV$.
 Figure \ref{fig:mssm_gradcuts_mt} shows the effect of gradually loosening the \mT~and hadronic
-tau isolation working point selections on both the \Pgluon\Pgluon$\phi$ and \Pbottom\Pbottom$\phi$ production processes. 
+tau isolation working point selections on both the $\Pgluon\Pgluon\phi$ and $\Pbottom\Pbottom\phi$ production processes. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -533,7 +533,7 @@ In summary, the two categories are defined as:
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
 \item \textbf{No b-tag}: No b-tagged jets. This category targets the $\Pg\Pg\phi$ production mode but is also sensitive to some of the $\Pbottom\Pbottom\phi$ signal.
-\item \textbf{b-Tag}: At least one b-tagged jet, at most one 
+\item \textbf{B-tag}: At least one b-tagged jet, at most one 
 jet with $\pTm>30\,\GeV$. This second requirement, the jet veto, reduces the \ttbar background. 
 Due to the lower \pT~requirement considered for
 b-tagging compared with the requirement for the jet veto, it is still possible for there
@@ -899,7 +899,7 @@ $\frac{N_{\text{W,MC}}^{\text{OS,low } m_{\text{T}},\text{b-tag category}}}{N_{\
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_10_shapes_postfit.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_13_shapes_postfit.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_13_shapes_postfit.pdf}}
 \end{center}
 \caption[High-\mT~control region in the no b-tag and b-tag
 categories of the \etau channel.]{High-\mT~control region in the (a) no b-tag and (b) b-tag categories of the \etau
@@ -1141,100 +1141,99 @@ in the final result as described in section \ref{sec:hhh_results_extraction}.
 \subsection{Normalisation uncertainties}
 \label{sec:mssm_uncs_norm}
 \subsubsection*{Luminosity uncertainty}
-The uncertainty on the luminosity measurement amounts to 6.2\% for
+The uncertainty in the luminosity measurement amounts to 6.2\% for
 data collected during 2016 \cite{cms-pas-lum-15-001}, and it is
 applied to all processes for which the normalisation is estimated 
-using \ac{MC} samples.
+using simulation.
 \subsubsection*{Identification, isolation and trigger efficiencies}
-The combined uncertainty on the electron and muon identification, isolation, and
-trigger efficiencies amounts to 2\% \cite{CMS-PAS-HIG-16-037}. For hadronic taus the identification and
-isolation uncertainty amounts to 6\% in the \etau and \mutau channels
-and 12\% in the \tautau channel, with an additional 7\% uncertainty
-on the tau trigger efficiency added in quadrature for that channel \cite{CMS-PAS-HIG-16-037}. This
-uncertainty is split between a part that is correlated between the channels, 
+The combined uncertainty in the electron and muon identification, isolation, and
+trigger efficiencies amounts to 2\%. For hadronic taus the identification and
+isolation uncertainty amounts to 6\% per \Pgth in the \etau, \mutau and \tautau channels,
+with an additional 7\% uncertainty
+in the tau trigger efficiency added in quadrature for the \tautau channel. This
+uncertainty is split between a part that is correlated between the channels and a
+part that is not, The correlated part amounts to 
 a 5\% (10\%) uncertainty in the \etau and \mutau (\tautau) channels. The uncorrelated 
 part amounts to 3\% (9.2\%) for the \etau and \mutau (\tautau) channels.
-The uncertainties on lepton/hadronic tau identificiation, isolation and 
+The uncertainties on lepton and hadronic tau identification, isolation and 
 trigger efficiency are applied to all processes for which the normalisation
-is estimated using \ac{MC} samples.
+is estimated using simulation.
 \subsubsection*{$\text{jet}\rightarrow\Pgth$ fake rate}
-The uncertainty on the $\text{jet}\rightarrow\Pgth$ fake rate
+The uncertainty in the $\text{jet}\rightarrow\Pgth$ fake rate
 is 20\% \cite{cms-tau-2015}. This uncertainty is applied
-to those backgrounds where the normalisation is estimated from \ac{MC} and
-where the hadronic taus are mimicked by jets, that is the \Zellell background
+to those backgrounds where the normalisation is estimated using simulation and
+where the hadronic taus are faked by jets, that is the \Zellell background
 with a jet faking a hadronic tau, the \Wjets background in the fully hadronic
 channel, and the \ttbar background without real hadronic taus.
-\subsubsection*{$\Pe\rightarrow\Pgth$ and $\Pgm\rightarrow\Pgth$ fake rate}
-The $\Pe\rightarrow\Pgth$ fake rate uncertainty ranges from $10$--$30$\%,
+\subsubsection*{$\Pe\rightarrow\Pgth$ and $\Pgm\rightarrow\Pgth$ fake rates}
+The $\Pe\rightarrow\Pgth$ fake rate uncertainty ranges from $10$--$30$\%
 depending on the anti-electron discriminator used \cite{cms-tau-2015}. This uncertainty is 
-applied to the \Zellell background with the hadronic tau faked by an electron.
-The $\Pgm\rightarrow\Pgth$ fake rate uncertainty ranges from $20$--$30$\%, depending
-on the anti-muon discriminator used\cite{CMS-PAS-HIG-16-037}. This uncertainty is applied to the \Zellell
-background with the hadronic tau faked by a muon.
+applied to the \Zellell background in which the hadronic tau is faked by an electron.
+The $\Pgm\rightarrow\Pgth$ fake rate uncertainty ranges from $20$--$30$\% depending
+on the anti-muon discriminator used. This uncertainty is applied to the \Zellell
+background in which the hadronic tau is faked by a muon.
 \subsubsection*{Jet energy scale uncertainty}
-The uncertainties on the jet energy corrections are applied
-by shifting the jet energy up and down by the \pT-and $\eta$-dependendent
+The uncertainty in the jet energy corrections is applied
+by shifting the jet energy up and down by a \pT-and $\eta$-dependendent
 uncertainty, and evaluating the change in the process normalisation in
-each category. Where the change in normalisation is non-negligible the
-uncertainty is applied. It ranges from $1$--$10$\% depending on process and category.
+each category. The uncertainty ranges from $0$--$10$\% depending on process and category.
 \subsubsection*{b-Tag scale factors}
-Uncertainties on the b-tagging efficiency and light jet mis-tagging
-rates are given as a function of jet \pT-and $\eta$-for the 
+Uncertainties in the b-tagging efficiency and light jet mis-tagging
+rates are given as a function of jet \pT and $\eta$ for the 
 medium working point of the \ac{CSV}v2 discriminator \cite{cms-btag-run2}.
-The b-tagging scale factors are are varied within these uncertainties
+The b-tagging scale factors are varied within these uncertainties
 and the overall change in normalisation for each process in each category is
-evaluated. If the change in normalisation is non-negligible this
-uncertainty is applied. The uncertainty varies from $1$--$5$\%.
+evaluated. The uncertainty varies from $0$--$5$\%.
 \subsubsection*{\MET~resolution and response}
-Uncertainties on the \MET~resolution and response are estimated
+Uncertainties in the \MET~resolution and response are estimated
 by varying the recoil correction parameters within their
-uncertainty and evaluating the effect on process
+uncertainties and evaluating the effect on process
 normalisations. The uncertainty amounts to around 2\%.
 \subsubsection*{Background normalisation uncertainties}
 \begin{itemize}
 \setlength{\itemsep}{-\baselineskip}
 \item \Ztautau: As the \Zmm control region is included in the simultaneous
 fit with the signal region to correct the \Ztautau normalisation,
-the Drell-Yan cross section is not applied as an uncertainty. In the no b-tag (b-tag) category a 3\% (5\%)
-extrapolation uncertainty from \Zmm to \Ztautau is applied \cite{CMS-PAS-HIG-16-037}.
-\item \Zellell: The uncertainty on the Drell-Yan cross-section
-is to 4\% \cite{CMS-PAS-HIG-16-037}.
-\item \ttbar: The uncertainty on the \ttbar production cross-section amounts
-to 6\% \cite{CMS-PAS-HIG-16-037}.
-\item di-boson and single-top: The combined uncertainty on the di-boson and
-single-top production cross sections amounts to 5\% \cite{CMS-PAS-HIG-16-037}.
+the Drell-Yan cross section uncertainty is not applied. In the no b-tag (b-tag) category a 3\% (5\%)
+extrapolation uncertainty from the kinematic phase space of the \Zmm to the \Ztautau selection is applied.
+\item \Zellell: The uncertainty in the Drell-Yan cross section
+is 4\% \cite{fewz31}.
+\item \ttbar: The uncertainty in the \ttbar production cross section amounts
+to 6\% \cite{toppp}.
+\item Di-boson and single-top: The combined uncertainty on the di-boson and
+single-top production cross sections amounts to 5\% \cite{mcfm,hathor1,hathor2}.
 \item \Wjets: In the \mutau and \etau channels the statistical uncertainties
-on the observed data and subtracted backgrounds in the control regions are taken into account by
+in the observed data and subtracted backgrounds in the control regions are taken into account by
 the inclusion of these control regions in the fit. The statistical
-uncertainty on $R_{W}^{\text{OS/SS}}$ amounts to 2\% in the no b-tag
+uncertainty in $R_{\PW}^{\text{OS/SS}}$ amounts to 2\% in the no b-tag
 category in both the \etau and \mutau channels, and 11\% (14\%) in the b-tag
-category of the \mutau (\etau) channel. The systematic uncertainty on
+category of the \mutau (\etau) channel. The systematic uncertainty in
 this ratio amounts to 8\% (10\%) in the no b-tag (b-tag) category of both channels.
-The statistical uncertainty on the low \mT/high \mT~ratio is 2\% in the no b-tag
+The statistical uncertainty in the low-\mT to high-\mT~ratio is 2\% in the no b-tag
 category of both channels and 14\% (17\%) in the b-tag category of the \mutau (\etau) channel.
-The systematic uncertainty on this ratio amounts to 20\%. As the \Wjets background
-in the \tautau and \emu channels is estimated from \ac{MC} a 4\% theoretical
-production cross-section uncertainty is applied.
-\item QCD: In the \emu channel the uncertainty on the QCD estimate
+The systematic uncertainty in this ratio amounts to 20\%. As the \Wjets background
+in the \tautau and \emu channels is estimated from simulation a 4\% theoretical
+production cross section uncertainty is applied \cite{fewz31}.
+\item QCD: In the \emu channel the uncertainty in the QCD estimate
 is taken as the uncertainty on the measured opposite-sign to same-sign
 ratio, which is 23\% in the no b-tag category and 34\% in the b-tag category. In the
-\tautau channel the statistical uncertainty on the QCD estimate is derived from
+\tautau channel the statistical uncertainty in the QCD estimate is derived from
 the uncertainties on the observations and subtracted backgrounds in the
 sidebands used to derive the estimate. This uncertainty amounts to 3\% in the no b-tag
-category and 20\% in the b-tag category. An additional systematic uncertainty on the
+category and 20\% in the b-tag category. An additional systematic uncertainty in the
 extrapolation factor from the anti-isolated sideband into the signal region is found
 to be 12\% in the no b-tag category and 14\% in the b-tag category. For the \etau and
 \mutau channels the statistical
-uncertainties on the observation and subtracted \ac{MC} backgrounds in the control
-region used to derive the QCD estimate is accounted for by the inclusion of these control
-regions in the fit. The uncertainty on the opposite-sign to same-sign ratio, based on
+uncertainties in the observation and subtracted backgrounds in the control
+regions used to derive the QCD estimate is accounted for by the inclusion of these control
+regions in the fit. The uncertainty in the opposite-sign to same-sign ratio, based on
 the studies described in section \ref{sec:mssm_bkgs_etmt_qcdosss} is found to be 4\% (60\%) in the 
 no b-tag (b-tag) category of the \mutau channel, and 12\% (60\%) in the no b-tag (b-tag) category
 of the \etau channel. 
 \end{itemize}
 \subsubsection*{Signal theory uncertainties}
 For interpretations of the results in MSSM benchmark scenarios, theory
-uncertainties on the SM and MSSM Higgs cross section predictions are taken into account.
+uncertainties in the SM and MSSM Higgs cross section predictions are taken into account.
 The uncertainties for the SM signal processes are described in more detail in reference \cite{YR4}.
 Uncertainties due to different renormalisation scales
 amount to 3.9\% for gluon fusion,
@@ -1286,7 +1285,7 @@ To account for the uncertainty in the derivation of the top-quark \pT~reweightin
 uncertainty is applied to the \ttbar background. This uncertainty amounts to a 100\% variation
 of the correction, that is the difference between applying the correction twice and not applying the correction at all.
 \subsubsection*{Drell-Yan shape reweighting}
-An uncertainty on the Drell-Yan shape reweighting based on \Zmm events
+An uncertainty in the Drell-Yan shape reweighting based on \Zmm events
 is applied as 100\% of the correction to the \Ztautau background \cite{CMS-PAS-HIG-16-037}. 
 \subsubsection*{Jet$\rightarrow\Pgt_{h}$ fake rate shape reweighting}
 On the \Wjets background in the \etau and \mutau channels a shape 
@@ -1311,8 +1310,8 @@ methods are used for this analysis, and they will be discussed in this section.
 \subsection{Inclusion of control regions in the fit}
 \label{sec:mssm_sigext_ctrl}
 The control regions used for estimation of the 
-\Wjets and QCD background contributions in the signal regions, discussed
-in section \ref{sec:mssm_bkgs_etmt_ctrl}, are included in the fit. They
+\Wjets and QCD background contributions in the signal regions
+ are included in the fit. They
 are added to the likelihood as single-bin counting experiments. In a given
 category of one of the channels, the \Wjets
 normalisation is fully correlated between the three control 
@@ -1456,13 +1455,13 @@ observed at $125\,\GeV$.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_005-a.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_005-b.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_005-b.pdf}}
 \end{center}
 \caption[Distributions of \mTtot~in the no b-tag and b-tag categories
 of the \mutau channel.]{Distributions of \mTtot~in the (a) no b-tag and (b) b-tag categories 
 of the \mutau channel. The signal of the three neutral Higgs bosons at \mA~$=1\,\TeV$ 
-and \tanb~$=50$ in the $m_{\PHiggslight}^{mod+}$ scenario is overlaid. Note that, to incorporate
-the observed Higgs boson at $125\,\GeV$, the $m_{\PHiggslight}^{mod+}$ scenario includes a \PHiggslight boson
+and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario is overlaid. Note that, to incorporate
+the observed Higgs boson at $125\,\GeV$, the $m_{\PHiggslight}^{\text{mod+}}$ scenario includes a \PHiggslight boson
 at around $125\,\GeV$ with a much larger \xsbr than the $1\,\TeV$ \PHiggs and \PHiggsps, and this is
 the reason for the doubly-peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_results_mttot_mt}
@@ -1471,13 +1470,13 @@ the reason for the doubly-peaking shape of the overlaid signal \cite{CMS-PAS-HIG
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_006-a.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_006-b.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_006-b.pdf}}
 \end{center}
 \caption[Distributions of \mTtot~inthe no b-tag and b-tag 
 categories of the \etau channel.]{Distributions of \mTtot~in the (a) no b-tag and (b) b-tag categories 
 of the \etau channel. The signal of the three neutral Higgs bosons at \mA~=$1\,\TeV$
-and \tanb~$=50$ in the $m_{\PHiggslight}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
-%the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
+and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
+%the observed Higgs boson at 125 GeV, the $m_{h}^{\text{mod+}}$ scenario includes a h boson
 %at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
 %the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_results_mttot_et}
@@ -1486,12 +1485,12 @@ and \tanb~$=50$ in the $m_{\PHiggslight}^{mod+}$ scenario is overlaid \cite{CMS-
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_008-a.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_008-b.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_008-b.pdf}}
 \end{center}
 \caption[Distributions of \mTtot~in the no b-tag and b-tag categories
 of the \tautau channel.]{Distributions of \mTtot~in the (a) no b-tag and (b) b-tag categories 
 of the \tautau channel. The signal of the three neutral Higgs bosons at \mA~$=1\,\TeV$ 
-and \tanb~$=50$ in the $m_{\PHiggslight}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
+and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
 %the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
 %at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
 %the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
@@ -1501,12 +1500,12 @@ and \tanb~$=50$ in the $m_{\PHiggslight}^{mod+}$ scenario is overlaid \cite{CMS-
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_007-a.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_007-b.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/CMS-PAS-HIG-16-037_Figure_007-b.pdf}}
 \end{center}
 \caption[Distributions of \mTtot~in the no b-tag and b-tag categories of 
 the \emu channel.]{Distributions of \mTtot~in the (a) no b-tag and (b) b-tag categories 
 of the \emu channel. The signal of the three neutral Higgs bosons at \mA~$=1\,\TeV$ 
-and \tanb~$=50$ in the $m_{\PHiggslight}^{mod+}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
+and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario is overlaid \cite{CMS-PAS-HIG-16-037}.}% Note that, to incorporate
 %the observed Higgs boson at 125 GeV, the $m_{h}^{mod+}$ scenario includes a h boson
 %at around 125 GeV with a much larger $\sigma \times$BR than the 1 TeV H and A, and this is
 %the reason for the doubly--peaking shape of the overlaid signal \cite{CMS-PAS-HIG-16-037}.}
@@ -1694,7 +1693,7 @@ distributions for the signal region categories of the four channels are shown in
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_mt_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_mt_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_mt_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
 \end{center}
 \caption[Transverse component of the di-tau mass for expected backgrounds
 and observed events in the no b-tag and b-tag categories of the \mutau channel.]{Transverse component of the di-tau mass for expected backgrounds and
@@ -1708,7 +1707,7 @@ and once at higher mass, for the heavy \PHiggs and \PHiggsps.}
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
 \end{center}
 \caption[Transverse component of the di-tau mass for expected backgrounds
 and observed events in the no b-tag and b-tag categories of the \etau channel.]{Transverse component of the di-tau mass for expected backgrounds and
@@ -1722,7 +1721,7 @@ observed events in the (a) no b-tag and (b) b-tag categories of the \etau channe
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_tt_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_tt_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_tt_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
 \end{center}
 \caption[Transverse component of the di-tau mass for expected backgrounds
 and observed events in the no b-tag and b-tag categories of the \tautau
@@ -1737,7 +1736,7 @@ observed events in the (a) no b-tag and (b) b-tag categories of the \tautau chan
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_em_8_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
-\subfloat[b-Tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_em_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
+\subfloat[B-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_em_9_hig16006_shapeshig16006_postfit_logy_logx.pdf}}
 \end{center}
 \caption[Transverse component of the di-tau mass for expected backgrounds
 and observed events in the no b-tag and b-tag cateogires of the \emu channel.]{Transverse component of the di-tau mass for expected backgrounds and
@@ -1833,7 +1832,7 @@ Luminosity & Partially \mbox{correlated} & Recommended by the CMS collaborators 
 \midrule
 Jet energy scale & Fully \mbox{correlated} & Recommended by the CMS collaborators who derive jet energy corrections, after dedicated studies.\\
 \midrule
-B-tagging & Uncorrelated & Scale factors used in the 2015 and 2016 analysis measured via different methods.\\
+b-Tagging & Uncorrelated & Scale factors used in the 2015 and 2016 analysis measured via different methods.\\
 \midrule
 Mis-tagging & Partially \mbox{correlated} & Recommended by the CMS collaborators responsible for deriving b-tagging scale factors, after dedicated studies.\\
 \midrule
@@ -1859,7 +1858,7 @@ MET uncertainties & Correlated & The same MVA \MET training was used both for 20
 \midrule
 Drell-Yan $\sigma$& Correlated & The same recommended cross sections were used in 2015 and 2016.\\
 \midrule
-Di--boson $\sigma$ & Correlated & The same recommended cross sections were used in 2015 and 2016.\\
+Di-boson and single-top $\sigma$ & Correlated & The same recommended cross sections were used in 2015 and 2016.\\
 \midrule
 \ttbar $\sigma$ & Correlated & The same recommended cross sections were used in 2015 and 2016.\\
 \midrule
@@ -1906,13 +1905,13 @@ QCD normalisation uncertainty (\tautau channel) & Uncorrelated & Use of differen
 \midrule
 Parameters tying control regions to signal region normalisations & Uncorrelated & 2016 control region fits should not influence the 2015 signal region and vice versa.\\
 \midrule
-Statistical \mbox{uncertainty} on W opposite-sign to same-sign ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated.\\
+Statistical \mbox{uncertainty} in W opposite-sign to same-sign ratio (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated.\\
 \midrule
-Systematic \mbox{uncertainty} on W opposite-sign to same-sign ratio (\etau and \mutau)& Uncorrelated & \scriptsize{Uncertainty based on high \mT~region with anti-isolated $\Pgth$, but because of the tau \pT~cuts being different in the 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that.}\\
+Systematic \mbox{uncertainty} in W opposite-sign to same-sign ratio (\etau and \mutau)& Uncorrelated & \scriptsize{Uncertainty based on high \mT~region with anti-isolated $\Pgth$, but because of the tau \pT~cuts being different in the 2015 and 2016 analyses we could expect a different event composition in this region. In addition this uncertainty was already uncorrelated between channels and categories in each individual analysis, and we can't claim to know the correlation between the two years any more accurately than that.}\\
 \midrule
-Statistical \mbox{uncertainty} on W low/high-\mT~\mbox{ratio} (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated.\\
+Statistical \mbox{uncertainty} in W low/high-\mT~\mbox{ratio} (\etau and \mutau)& Uncorrelated & Statistical uncertainties should not be correlated.\\
 \midrule
-Systematic \mbox{uncertainty} on W low/high-\mT~\mbox{ratio} (\etau and \mutau) & Uncorrelated & \scriptsize{This was already uncorrelated between channels and categories in each individual analysis, we can't claim to know the correlation between the two years any more accurately.}\\
+Systematic \mbox{uncertainty} in W low/high-\mT~\mbox{ratio} (\etau and \mutau) & Uncorrelated & \scriptsize{This was already uncorrelated between channels and categories in each individual analysis, we can't claim to know the correlation between the two years any more accurately.}\\
 \midrule
 QCD OS/SS \mbox{ratio} statistical \mbox{uncertainty} (\etau and \mutau) & Uncorrelated & Statistical uncertainties should not be correlated.\\
 \midrule

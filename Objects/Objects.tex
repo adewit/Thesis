@@ -34,7 +34,7 @@ the hits associated with reconstructed tracks are removed and the settings
 of the algorithm updated, in order to reconstruct as many
 tracks as possible. The tracking efficiency for muons and pions was measured in p-p
 collisions at $\sqrt{s} = 7\,\TeV$ and found to be $ > 98.5\%$ for tracks
-with \pT $ > 500\,\MeV$ and $ > 99 \%$ for tracks with \pT $ > 2\,\GeV$ \cite{cms-trk-7tev}.
+with $\pTm > 500\,\MeV$ and $ > 99 \%$ for tracks with $\pTm > 2\,\GeV$ \cite{cms-trk-7tev}.
 %The tracking software at CMS is commonly referred to as the Combinatorial Track Finder (CTF), which is an adaptation of the combinatorial Kalman filter [29–31], which in turn is an extension of the Kalman filter [32] to allow pattern recognition and track fitting to occur in the same frame- work. The collection of reconstructed tracks is produced by multiple passes (iterations) of the CTF track reconstruction sequence, in a process called iterative tracking.
 %Kalman filter : In its linear form the Kal- ,nan filter is the optimal recursive estimator of the state vector of a (discrete) linear dynamic system. In such a system the evolution of the state vector is described by a linear transformation plus a random disturbance w, which is the process noise
 
@@ -213,7 +213,7 @@ tracker track, then reapplies the \ac{KF} to the combination
 of hits in the muon system and inner tracker. Conversely, the tracker muon reconstruction starts from
 tracks in the inner tracker which pass requirements on \pT~to be considered
 a muon candidate track. The trajectory is then extrapolated to the muon systems and
-considered a muon if at least one muon segment, a track stub in the \ac{DTs} or \ac{CSCs}, is found.
+considered a muon if at least one muon segment, a track stub in the \acp{DT} or \acp{CSC}, is found.
 Due to the requirement of a single muon segment this method is more efficient than the global muon
 reconstruction for muons with \pT~smaller than $5\,\GeV$ \cite{cms-muon-reco}.
 For muons with \pT~greater than $200\,\GeV$, the momentum resolution is improved
@@ -500,7 +500,7 @@ from these secondary vertices.
 For the analysis presented in chapter \ref{chap:hhh}
 the \ac{CSV} algorithm \cite{cms-btag-paper} has been used, with the upgraded
 \ac{CSV}v2 version of the algorithm \cite{cms-btag-run2} used for the analysis presented in chapter \ref{chap:mssm}. 
-The \ac{CSV} algorithm takes \ac{PF} jets with \pT~$> 20\,\GeV$ and $|\eta|<2.4$ as input and 
+The \ac{CSV} algorithm takes \ac{PF} jets with $\pTm> 20\,\GeV$ and $|\eta|<2.4$ as input and 
 uses a likelihood-based discriminator to determine 
 whether a jet is likely due to b-quark hadronisation or not.
 For this algorithm, secondary vertices are reconstructed from high-purity tracks
@@ -537,7 +537,7 @@ for the addition of extra variables to discriminate between b-jets and other jet
 %the distribution of the \ac{CSV}v2 discriminator in multijet events in the 2015 data sample.
 Once the discriminator has been constructed, loose, medium and tight working points
 can be determined as a minimum requirement on the discriminator such that the
-probability of misidentifying light-flavour jets with \pT~$> 30\,\GeV$ is around
+probability of misidentifying light-flavour jets with $\pTm> 30\,\GeV$ is around
 10\%, 1\% and 0.1\% respectively \cite{cms-btag-paper,cms-btag-run2}. 
 
 Because not all of the input variables to the \ac{CSV} algorithm are perfectly
@@ -578,7 +578,7 @@ The \ac{CMS} detector is able to detect most stable and long-lived particles,
 however, neutrinos and hypothetical neutral weakly interacting particles
 travel straight through the detector without being recorded. These particles
 will give rise to an energy imbalance in the transverse plane, and so their
-presence can be inferred from missing energy,\MET, in the event. 
+presence can be inferred from missing energy, \MET, in the event. 
 
 The \MET~is defined as $-\Sigma \vec{p}_{\text{T}}$, where
 the sum runs over all final-state particles and jets in the event. This quantity
@@ -640,7 +640,7 @@ is projected onto the axes parallel, $u_{\parallel}$, and perpendicular, $u_{\pe
 and neutrinos. For the analyses
 presented in chapters \ref{chap:hhh} and \ref{chap:mssm} it is measured in \Zmm events, where no neutrinos
 are present. Distributions of $u_{\parallel}$ and $u_{\perp}$ are fitted both in data
-and simulated events, using convolutions of gaussians. Corrections are then applied to the \ac{MC}
+and simulated events, using convolutions of gaussians. Corrections are then applied to the simulation
 as
 \begin{equation}\label{eqn:met_recoilcorr}
 u_{\parallel,\perp}' = <u_{\parallel,\perp}>_{\text{data}} + (u_{\parallel,\perp} - <u_{\parallel,\perp}>_{\text{MC}}) \cdot \frac{\sigma_{\text{Data}}}{\sigma_{\text{MC}}}.
@@ -760,8 +760,8 @@ I_{\Pgt} = \Sigma p_{\text{T}}^{\text{charged}}(d_Z < 0.2\text{ cm}) + \text{max
 where the first term denotes the sum of the transverse momenta of all charged particles not part
 of the identified \Pgth. Only particles with \pT~$> 0.5\,\GeV$ within a cone of $\Delta R = 0.5$ centred around the 
 direction of the \Pgth are taken into account and the charged particle tracks are required to be compatible with having
-originated from the \Pgth production vertex within $d_Z < 0.2\,\cm$. The second term denotes the sum
-of the transverse momenta of photons with \pT $ > 0.5$ GeV within a cone of $\Delta R = 0.5$ centred around the direction
+originated from the \Pgth production vertex within $d_z < 0.2\,\cm$. The second term denotes the sum
+of the transverse momenta of photons with $\pTm > 0.5$ GeV within a cone of $\Delta R = 0.5$ centred around the direction
 of the \Pgth. The effect of pileup on this term is accounted for by subtracting the sum of the momenta of charged
 particles with \pT~$> 0.5\,\GeV$, within a cone of $\Delta R = 0.8$ around the direction of the hadronic tau and
 tracks not compatible with having originated from the production vertex of the hadronic tau, multiplied by
