@@ -675,7 +675,7 @@ While the correction factor can be up to 20\% this figure shows
 that the total effect on the \Ztautau background distribution is small.
 \begin{figure}[h!]
 \begin{center}
-\subfloat[\Zmm events]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/pt_tt_inclusive_zmm_2016_log_noweight.png}}
+\subfloat[\Zmm events]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/Zmmnoweight2.png}}
 \subfloat[Effect of Drell-Yan shape reweighting on \Ztautau background]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mttot_zttweight_et_nobtag.pdf}}
 \end{center}
 \caption[The mis-modelling in the di-lepton \pT~distribution as observed
@@ -868,34 +868,34 @@ R_{\text{QCD}}^{\text{OS/SS}}},
 
 where $R_{\text{W}}^{\text{OS/SS}}$ is the ratio between opposite-sign and same-sign \Wjets events
 and $R_{\text{QCD}}^{\text{OS/SS}}$ the ratio between opposite-sign and same-sign QCD events. Using 
-equation \ref{eqn:wjets_ss_norm}, the number of \Wjets events in the
-opposite-sign, high \mT~region is given by $R_{\text{W}}^{\text{OS/SS}}\cdot N_{\text{W}}^{\text{SS, high } m_{T}}$. 
+equation~\ref{eqn:wjets_ss_norm}, the number of \Wjets events in the
+opposite-sign, high-\mT~region is given by $R_{\text{W}}^{\text{OS/SS}}\cdot N_{\text{W}}^{\text{SS, high } m_{\text{T}}}$. 
 This is extrapolated to the number of \Wjets events in the signal region at low \mT~as:
 \begin{equation}\label{eqn:wjets_os_norm}
-N_{\text{W}}^{\text{OS, low} m_{T}} = \frac{N_{\text{W,MC}}^{\text{OS, low} m_{T}}}{N_{\text{W,MC}}^{\text{OS, high} m_{T}}}\cdot R_{\text{W}}^{\text{OS/SS}} \cdot N_{\text{W}}^{\text{SS, high }m_{T}},
+N_{\text{W}}^{\text{OS, low } m_{\text{T}}} = \frac{N_{\text{W,MC}}^{\text{OS, low } m_{\text{T}}}}{N_{\text{W,MC}}^{\text{OS, high } m_{\text{T}}}}\cdot R_{\text{W}}^{\text{OS/SS}} \cdot N_{\text{W}}^{\text{SS, high }m_{\text{T}}},
 \end{equation}
-which means the estimate of the number of \Wjets events in the opposite-sign, high \mT, region
-is multiplied by a high \mT-to-low \mT~extrapolation factor determined from the \ac{MC} samples.
+which means the estimate of the number of \Wjets events in the opposite-sign, high-\mT, region
+is multiplied by a high-\mT to low-\mT~extrapolation factor determined from simulation.
 
 The use of the method presented relies on knowledge of $R_{\text{W}}^{\text{OS/SS}}$,
 $R_{\text{QCD}}^{\text{OS/SS}}$, and on these two ratios not being too similar to each other. 
 The ratio $R_{\text{QCD}}^{\text{OS/SS}}$ is measured in an anti-isolated
 control region in data; this measurement is described in section \ref{sec:mssm_bkgs_etmt_qcdosss}. $R_{\text{W}}^{\text{OS/SS}}$ is 
-taken from the \Wjets \ac{MC} samples, and is found to be between 4 and 5, while $R_{\text{QCD}}^{\text{OS/SS}}$
+taken from the \Wjets simulation, and is found to be between 4 and 5, while $R_{\text{QCD}}^{\text{OS/SS}}$
 is close to 1.
 
 The method described so far works well in the no b-tag categories, but in the b-tag category of both channels
 the \ttbar background dominates. This is illustrated in figure \ref{fig:bkgs_highmtctrl}, where
-the high-\mT~region in the no b-tag category (figure \ref{fig:bkgs_highmtctrl}a) is compared with the high-\mT~region in the 
-b-tag category (figure \ref{fig:bkgs_highmtctrl}b) of the \etau channel. It is clear that the \ttbar 
+the high-\mT~region in the no b-tag category, figure \ref{fig:bkgs_highmtctrl}a, is compared with the high-\mT~region in the 
+b-tag category, figure \ref{fig:bkgs_highmtctrl}b, of the \etau channel. It is clear that the \ttbar 
 background is much larger than the \Wjets background in the b-tag high-\mT~control region.
 For this reason the estimate of the number
 of \Wjets events in this category is made with a relaxed category selection where the b-tagging
-requirement itself is removed, but the jet requirements still stand. Events with at least one 
-jet with \pT~$>20\,\GeV$ and with $|\eta|<2.4$, but at most one jet with \pT~$>30\,\GeV$ and $|\eta|<4.7$, are therefore selected. The final \Wjets estimate in the b-tag category signal
+requirement itself is removed, but the jet requirements remain. Events with at least one 
+jet with $\pTm>20\,\GeV$ and with $|\eta|<2.4$, but at most one jet with $\pTm>30\,\GeV$ and $|\eta|<4.7$, are therefore selected. The final \Wjets estimate in the b-tag category signal
 region is determined by the estimate given by the number of \Wjets events
-estimated in the one-jet selection, multiplied by an extrapolation factor 
-$\frac{N_{\text{W,MC}}^{\text{OS,low } m_{T},\text{b-tag category}}}{N_{\text{W,MC}}^{\text{OS, low }m_{\text{T}},\text{one-jet selection}}}$.
+estimated in this one-jet selection, multiplied by an extrapolation factor 
+$\frac{N_{\text{W,MC}}^{\text{OS,low } m_{\text{T}},\text{b-tag category}}}{N_{\text{W,MC}}^{\text{OS, low }m_{\text{T}},\text{one-jet selection}}}$.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_10_shapes_postfit.pdf}}
@@ -916,21 +916,20 @@ in two anti-isolated sidebands by performing a fit to the distribution of the
 visible mass of the di-tau pair in 
 opposite-sign events. The QCD template, which is taken from same-sign events 
 assuming $R_{\text{QCD}}^{\text{OS/SS}} = 1$ is treated as the signal, and a binned maximum
-likelihood fit to the QCD signal strength is performed while allowing the other
-backgrounds to float within reasonable normalisation uncertainties. The
-resulting best fit value of the signal strengh parameter is taken as $R_{\text{QCD}}^{\text{OS/SS}}$.
-Of the two sidebands used, one is nearer the signal region ($0.15<I_{\text{rel}}^{\Pgm}<0.25$ for the \mutau channel and $0.1<I_{\text{rel}}^{\Pe}<0.2$ for the \etau channel)
-and one further away ($0.25<I_{\text{rel}}^{\Pgm}<0.5$ for the \mutau channel and $0.2<I_{\text{rel}}^{\Pe}<0.5$ for the \etau channel). The results of the fits,
+likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ is performed while allowing the other
+backgrounds to float within reasonable normalisation uncertainties. 
+Of the two sidebands used, one is nearer the signal region, $0.15<I_{\text{rel}}^{\Pgm}<0.25$ for the \mutau channel and $0.1<I_{\text{rel}}^{\Pe}<0.2$ for the \etau channel,
+and one further away, $0.25<I_{\text{rel}}^{\Pgm}<0.5$ for the \mutau channel and $0.2<I_{\text{rel}}^{\Pe}<0.5$ for the \etau channel. The results of the fits,
 performed before the categorisation of events into the b-tag and no b-tag categories, are shown in figures \ref{fig:mssm_qcdosss_mtnear} and \ref{fig:mssm_qcdosss_mtfar}
 for the \mutau channel and in figures \ref{fig:mssm_qcdosss_etnear} and \ref{fig:mssm_qcdosss_etfar} for the \etau channel.
 The value of $R_{\text{QCD}}^{\text{OS/SS}}$ is found to be consistent between the two sidebands within 10\% (1\%) in the \etau (\mutau) channel.
-Adding this uncertainty in quadrature to the uncertainty on the fit in the sidebands nearest the signal region we find
+Adding this uncertainty in quadrature to the uncertainty on the fit in the sidebands nearest the signal region gives
 an overall uncertainty of 12\% in the \etau channel and 4\% in the \mutau channel.
-When performing the same fits in the no b-tag and b-tag categories to determine differences between
-this pre-categorisation opposite-sign to same-sign ratio, and the ratio as measured in categories it is found that 
-the fit is not stable in the b-tag category due to the number of events in this region being too small.
+The same fits can be performed in the no b-tag and b-tag categories to test if $R_{\text{QCD}}^{\text{OS/SS}}$
+varies with the category selection, however it is found that
+the fit is not stable in the b-tag category due to the small number of events.
 The uncertainty on the ratio is increased for the b-tag category to cover the differences.
-The uncertainties are already large enough to cover differences between the pre-categorisation $R_{\text{QCD}}^{\text{OS/SS}}$ and the
+The uncertainties are already large enough to cover differences between the inclusive $R_{\text{QCD}}^{\text{OS/SS}}$ and the
 fits as performed in the no b-tag category. Therefore $R_{\text{QCD}}^{\text{OS/SS}}$ in the \mutau channel is taken to be
 1.18 in both the b-tag and the no b-tag category, with a 60\% uncertainty in the b-tag category and a 4\% uncertainty in the no b-tag category.
 In the \etau channel $R_{\text{QCD}}^{\text{OS/SS}}$ is taken to be 1.02 with a 60\% uncertainty in the b-tag category and a 12\% uncertainty
@@ -941,11 +940,11 @@ in the no b-tag category.
 \subfloat[Pre-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_mt_1_prefit.png}}
 \subfloat[Post-fit distribution]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/qcdosss_near_mt_1_postfit.png}}
 \end{center}
-\caption[The visible mass distribution of the di-$\tau$ pair
+\caption[The visible mass distribution of the di-tau pair
 in the \mutau channel for the sideband near the signal region, before
-and after the maximum likelihood fit to the QCD signal strength.]{The visible mass distribution of the di-tau pair in the \mutau channel for the sideband near the signal region, (a) before
-the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength 
-is $1.180\pm0.044$.}
+and after the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$.]{The visible mass distribution of the di-tau pair in the \mutau channel for the sideband near the signal region, (a) before
+the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ and (b) after the fit. The resulting value of $R_{\text{QCD}}^{\text{OS/SS}}$
+is $1.18\pm0.04$.}
 \label{fig:mssm_qcdosss_mtnear}
 \end{figure}
 
@@ -956,9 +955,9 @@ is $1.180\pm0.044$.}
 \end{center}
 \caption[The visible mass distribution of the di-tau pair in the
 \mutau channel for the sideband further away from the signal region,
-before and after the maximum likelihood fit to the QCD signal strength.]{The visible mass distribution of the di-tau pair in the \mutau channel for the sideband further away from the signal region, (a) before
-the maximum likelihood fit to the QCD signal strength and (b) after the fit. The resulting fitted signal strength 
-is $1.184\pm0.035$.}
+before and after the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$.]{The visible mass distribution of the di-tau pair in the \mutau channel for the sideband further away from the signal region, (a) before
+the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ (b) after the fit. The resulting value of $R_{\text{QCD}}^{\text{OS/SS}}$
+is $1.18\pm0.04$.}
 \label{fig:mssm_qcdosss_mtfar}
 \end{figure}
 
@@ -969,8 +968,8 @@ is $1.184\pm0.035$.}
 \end{center}
 \caption[The visible mass distribution of the di-tau pair in
 the \etau channel for the sideband near the signal region,
-before and after the maximum likelihood fit to the QCD signal strength.]{The visible mass distribution of the di-tau pair in the \etau channel for the sideband near the signal region, (a) before
-the maximum likelihood fit to the QCD signal strength and (b) after the fit. The resulting fitted signal strength is $1.015\pm0.059$.}
+before and after the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$.]{The visible mass distribution of the di-tau pair in the \etau channel for the sideband near the signal region, (a) before
+the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ and (b) after the fit. The resulting value of $R_{\text{QCD}}^{\text{OS/SS}}$ is $1.02\pm0.06$.}
 \label{fig:mssm_qcdosss_etnear}
 \end{figure}
 
@@ -981,30 +980,29 @@ the maximum likelihood fit to the QCD signal strength and (b) after the fit. The
 \end{center}
 \caption[The visible mass distribution of the di-tau pair
 in the \etau channel for the sideband further away from the signal
-region, before and after the maximum likelihood fit to the QCD signal 
-strength.]{The visible mass distribution of the di-tau pair in the \etau channel for the sideband further away from the signal region, (a) before
-the maximum likelihood fit to the QCD signal strenght and (b) after the fit. The resulting fitted signal strength
-is $1.127\pm0.045$.}
+region, before and after the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$.]{The visible 
+mass distribution of the di-tau pair in the \etau channel for the sideband further away from the signal region, (a) before
+the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ and (b) after the fit. The resulting value of $R_{\text{QCD}}^{\text{OS/SS}}$
+is $1.13\pm0.05$.}
 \label{fig:mssm_qcdosss_etfar}
 \end{figure}
 
 \subsubsection{QCD normalisation}
 \label{sec:mssm_bkgs_etmt_qcdnorm}
 The QCD normalisation is estimated by inverting the opposite-sign requirement
-of the di-tau pair in the signal region. The yield is taken from the same-sign
+of the di-tau pair in the signal region. The yield is taken from this same-sign
 region with otherwise identical cuts to the opposite-sign region. The contributions
 from other backgrounds in this region are subtracted to give an estimate of the number
-of QCD events in the same-sign region. For all backgrounds apart from \Wjets the
-yields to subtract are estimated using \ac{MC} samples. The number of \Wjets events
+of same-sign QCD events. For all backgrounds apart from \Wjets the
+yields to subtract are estimated using simulation. The number of \Wjets events
 expected in this region is given by
 \begin{equation}\label{eqn:wjets_qcdsub}
 N_{\text{W,SS low }m_{\text{T}}} = \frac{N_{\text{MC,SS low }m_{\text{T}}}}{N_{\text{MC,SS high }m_{\text{T}}}}N_{\text{W,SS high }m_{\text{T}}}.
 \end{equation}
 Because opposite-sign and same-sign QCD events do not
-necessarily appear in equal amounts the number of QCD
-events obtained by subtracting other backgrounds from the
-observed number of events in the same-sign region is multiplied
-by $R_{\text{QCD}}^{\text{OS/SS}}$ as derived in section \ref{sec:mssm_bkgs_etmt_qcdosss} 
+necessarily appear in equal amounts the number of same-sign QCD
+events estimated as above is multiplied
+by $R_{\text{QCD}}^{\text{OS/SS}}$ 
 to obtain an estimate of the number of QCD events in the signal region.
 %\subsubsection{Control regions in the fit}
 %\label{sec:mssm_bkgs_etmt_ctrl}
@@ -1030,10 +1028,10 @@ In the \tautau channel QCD events constitute by far the dominant background.
 The normalisation and shape 
 of this background are estimated from a sideband with relaxed 
 isolation requirements with respect to the signal region. 
-In the no b-tag category the sideband used is determined
-by having the tau with highest \pT~pass the tight working
+In the no b-tag category the sideband used is defined
+by having the \Pgth with highest \pT~pass the tight working
 point of the tau ID discriminator, as in the nominal selection.
-The other hadronic tau in the pair is required to fail the tight working point,
+The other \Pgth is required to fail the tight working point,
 but pass the medium working point. This sideband is 
 chosen as it is as close to the signal region as possible, and 
 this should minimise biases in the shape of the total transverse mass
@@ -1043,22 +1041,21 @@ the QCD estimate. Differences in normalisation due to
 the use of a loosened sideband are corrected for by the medium-to-tight isolation
 scale factor. This correction factor is measured as
 \begin{equation}\label{eqn:tautau_qcd}
-R_{QCD}^{\text{medium}\rightarrow\text{tight}} = \frac{N_{\text{data}}^{SS,\text{nominal isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}{N_{\text{data}}^{SS,\text{loosened isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}.
+R_{\text{QCD}}^{\text{medium}\rightarrow\text{tight}} = \frac{N_{\text{data}}^{SS,\text{nominal isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}{N_{\text{data}}^{SS,\text{loosened isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}.
 \end{equation}
-This correction factor takes the ratio between the observed data with other
-backgrounds subtracted in the region equivalent to the signal region, but with the
-charge requirement of the pair inverted, and the region equivalent to the sideband
-with loosened isolation but with the charge requirement on the pair inverted.
+This correction factor takes the ratio between the background-subtracted data in regions 
+equivalent to the signal region and the sideband with relaxed isolation, but with the
+charge requirement on the pair inverted.
 
 The QCD estimate in the b-tag category is derived using an analogous method, 
  however, the sideband as used for the 
 no b-tag category does not contain enough events to 
 provide a background estimate. Therefore a sideband where
-the highest \pT~tau passes the tight working point of the
-tau ID discriminator, and the other tau passes the loose working
+the highest \pT~\Pgth passes the tight working point of the
+tau ID discriminator, and the other \Pgth passes the loose working
 point of the discriminator, but not the tight working point, is used.
-This sideband is slightly further away from the signal region than the
-`tight-medium' sideband. %The bias from using this looser
+%This sideband is slightly further away from the signal region than the
+%`tight-medium' sideband. %The bias from using this looser
 %sideband has been assessed and has a less than 1$\sigma$ effect.
 %FIXME THIS ISN'T VERY USEFUL INFO!
 
@@ -1069,7 +1066,7 @@ is estimated by inverting the charge requirement
 of the pair, considering the same-sign region
 with otherwise identical cuts to the signal region.
 Other backgrounds present in this region are subtracted.
-Like for the \etau and \mutau channels, the number of
+As for the \etau and \mutau channels, the number of
 QCD events with opposite-sign \emu pairs is not
 necessarily equal to the number of QCD events
 with same-sign \emu pairs and therefore the ratio
@@ -1077,19 +1074,19 @@ of opposite-sign to same-sign pairs is measured by inverting
 the isolation requirements on the electron or muon. Both
 leptons need to satisfy $I_{\text{rel}} < 0.4$ and at 
 least one of them needs to fail the nominal isolation requirement.
-The opposite-sign to same-sign ratio is parameterised in terms
+The OS/SS ratio is parameterised in terms
 of lepton kinematics and the separation in $\Delta R$ between the
-two leptons. These ratios are then applied to the estimate in the same-sign region
+two leptons. These ratios are then applied to events in the same-sign region
 to give an estimate in the signal region. The statistical uncertainty
-on the measurement is 13\%. Cross-checking the measurement 
-using QCD \ac{MC} samples, it is observed that there is a 19\% difference
+in the measurement is 13\%. Cross-checking the measurement 
+using QCD simulation, it is observed that there is a 19\% difference
 between the OS/SS ratio in the signal region and the sideband, the two
 uncertainties are added in quadrature. 
-The opposite-sign to same-sign ratios are measured
-before applying the categorisation, and because \ac{MC} studies suggest
-that the opposite-sign to same-sign ratio is different in the b-tag
+The OS/SS ratios are measured
+before applying the categorisation, and because studies of simulated events suggest
+that the OS/SS ratio is different in the b-tag
 category than in the no b-tag category, an extra scale factor of 
-$1.45/2.20\pm0.16$ is applied to the QCD estimate in the b-tag category. This is 
+$0.66\pm0.16$ is applied to the QCD estimate in the b-tag category. This is 
 the ratio between the OS/SS ratio as measured in the b-tag category and 
 the measurement made before categorisation. The uncertainty is added in
 quadrature to the statistical and systematic uncertainties already described.
@@ -1097,39 +1094,36 @@ quadrature to the statistical and systematic uncertainties already described.
 
 \subsection{\texorpdfstring{\ttbar}{ttbar}}
 \label{sec:mssm_bkgs_tt}
-The \ttbar shape and normalisation are estimated from \ac{MC} 
-samples and are checked against data in a control
+The \ttbar shape and normalisation are estimated from simulation
+and are checked against data in a control
 region with a \ttbar purity of 91\%. This control region
 is defined as $D_{\zeta} < -20\,\GeV$ and \MET~$>80\,\GeV$ in 
 the \emu channel, and it is shown in figure \ref{fig:mssm_corrs_toppt}b.
 Because the 6\%
 \ttbar normalisation uncertainty covers the observed
-discrepancy between data and \ac{MC}, no scale factor is applied.
+discrepancy between data and simulation, no scale factor is applied.
 In the \mutau, \etau and \tautau channels
 the \ttbar contribution is split into
-two components, one with real taus and 
-one without, for fitting purposes. The component with real taus is composed
+two components, one with real hadronic taus and 
+one without, for fitting purposes. The component with real hadronic taus is composed
 of \ttbar events in which the hadronic tau is matched
-to a generator level tau. In the fully hadronic channel
-both taus need to be generator matched to a hadronically
-decaying tau.
-
-
+to a simulated hadronic tau. In the fully hadronic channel
+both hadronic taus need to be matched to simulated hadronic taus.
 
 \subsection{Other backgrounds}
 \label{sec:mssm_bkgs_other}
-For all channels the di-boson plus 
-single-top background is small.
-Both normalisation and shape are estimated from \ac{MC}
-samples. For the \etau, \mutau and \tautau channels
+For all channels the di-boson and
+single-top backgrounds are small.
+Both normalisation and shape are estimated from simulation.
+For the \etau, \mutau and \tautau channels
 this background contribution is split into a component
 where the hadronically decaying tau originates from a real
-tau, and one where it does not, for purposes of the fit. This is done in a similar
+hadronic tau, and one where it does not. This is done in a similar
 way as for the \ttbar background.
 In the \tautau and \emu channels the \Wjets background
 is less important than in the \etau and \mutau channels, and both
-its shape and normalisation are estimated from the
-\ac{MC} samples. In the \emu channel the $\PW\Pphoton$ background
+its shape and normalisation are estimated from 
+simulation. In the \emu channel the $\PW{+}\Pphoton$ background
 is also added to the \Wjets background component. %For plotting purposes the single-top plus
 %di-boson and \Wjets backgrounds are drawn together as the `electroweak' contribution for all channels, even though
 %they are considered as separate components in the fit.
