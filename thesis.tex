@@ -6,7 +6,7 @@
 %\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 
 %%For Cambridge soft-bound version
-\documentclass[hyperpdf,bindnopdf]{hepthesis}
+\documentclass[hyperpdf,nobind,oneside]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
 %\documentclass[hyperpdf,oneside]{hepthesis}
 
@@ -45,12 +45,13 @@
 \begin{document}
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-\begin{frontmatter}
-  \input{frontmatter}
-\end{frontmatter}
+%\begin{frontmatter}
+
+%\end{frontmatter}
 
 %% Start the content body of the thesis
 \begin{mainmatter}
+  \input{frontmatter}
   \input{Theory/Theory}
   \input{Detector/Detector}
   \input{Objects/Objects}
