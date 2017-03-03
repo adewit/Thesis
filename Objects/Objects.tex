@@ -40,13 +40,13 @@ with $\pTm > 500\,\MeV$ and $ > 99 \%$ for tracks with $\pTm > 2\,\GeV$ \cite{cm
 
 \enlargethispage{\baselineskip}
 Primary vertices are reconstructed by clustering
-tracks that are compatible with have originated from the same vertex, then fitting 
+tracks that are compatible with having originated from the same vertex, then fitting 
 these tracks for the position of the vertex. The clustering 
 is performed using the \ac{DA} algorithm \cite{vtx-da}, which identifies
 the most probable vertex candidates and assigns tracks to them. Vertex
 candidates with at least two associated tracks are fitted using an adaptive
 vertex fitter \cite{vtx-adaptivefit} to determine the best estimate of the 
-vertex position. The analyses presented in chapters \ref{chap:hhh} and \ref{chap:mssm} take the primary
+vertex position. The analyses presented in chapters~\ref{chap:hhh} and \ref{chap:mssm} take the primary
 vertex of the hard scatter to be the reconstructed vertex with the largest scalar \pT~sum of the associated
 tracks. %which the scalar sum of the \pT s of
 %the associated tracks is largest. %This differs from the analysis presented in chapter \ref{chap:hhh},
@@ -98,7 +98,7 @@ with higher scalar \pT~sum of the associated tracks, which corresponds to larger
 Electrons are reconstructed by combining tracks from 
 the inner tracker with energy deposits in the \ac{ECAL}.
 A standalone electron reconstruction algorithm \cite{cms-elereco-run1} complements the \ac{PF} approach
-that will be described in section \ref{sec:objects_pf}.%FIXME don't say this, they're more similar now
+that will be described in section \ref{sec:objects_pf}. %FIXME don't say this, they're more similar now
 Depending on the thickness of the intervening material, electrons lose up to an average of 86\% of their energy 
 due to bremsstrahlung before reaching the \ac{ECAL}.
 To accurately reconstruct the energy of the electron it is
@@ -172,7 +172,7 @@ $1/E_{\text{SC}} - 1/p_{\Pe}$, where $E_{\text{SC}}$ is the energy in the superc
 \subfloat[$1/E_{\text{SC}} - 1/p_{e}$]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/OneoverEminOneoverp.png}}
 \end{center}
 \caption[$\sigma_{i\eta,i\eta}$ and $1/E_{\text{SC}}-1/p_{e}$ for real 
-and misidentified electrons at $8\,\TeV$, for data and MC]{(a) $\sigma_{i\eta,i\eta}$ and (b) $1/E_{\text{SC}} - 1/p_{e}$ for real (black points)  and 
+and misidentified electrons at $8\,\TeV$, for data and simulation]{(a) $\sigma_{i\eta,i\eta}$ and (b) $1/E_{\text{SC}} - 1/p_{e}$ for real (black points)  and 
 misidentified (yellow triangles) electrons in a dataset corresponding to $19.7\,\invfb$
 taken at $\sqrt{s} = 8\,\TeV$, overlaid on the distributions for simulated 
 real electrons in purple \cite{cms-elereco-run1}.}
@@ -362,7 +362,7 @@ of the track with the already linked \ac{ECAL} clusters is assessed using
 passes, it is identified as a \ac{PF} electron and the track and
 \ac{ECAL} clusters are removed from the block.
 
-Following this, remaining tracks lead to charged hadrons. The track is
+After this, remaining tracks lead to charged hadrons. The track is
 given the momentum from the track fit, assuming the mass of a charged pion. If
 the energy measured in the calorimeters is compatible with the momentum assigned
 to the track, a charged hadron is identified and the
@@ -542,7 +542,7 @@ probability of misidentifying light-flavour jets with $\pTm> 30\,\GeV$ is around
 
 Because not all of the input variables to the \ac{CSV} algorithm are perfectly
 modelled in simulation, the b-tagging efficiency for different jet
-flavours is different in data and \ac{MC} simulation. Scale factors can be detemined
+flavours is different in data and \ac{MC} simulation. Scale factors can be determined
 as the ratio of tagging efficiencies between the two, which are applied to the simulated events in order to match the data.
 The measurement of the tagging efficiency
 for genuine b-jets is based on samples containing a muon overlapping with the jet, 
@@ -609,7 +609,7 @@ constituents selected as the di-tau candidate.
 \end{center}
 \caption[\MET~distributions comparing MVA \MET~to PF \MET~for
 \Zmm events, in a sample corresponding to $42\,\invpb$ of data collected
-at $\sqrt{s}=13\,\TeV$.]{(a) \MET~distributions comparing MVA \MET~(brown circles) to \ac{PF} \MET~(black circles) for
+at \mbox{$\sqrt{s}=13\,\TeV$}.]{(a) \MET~distributions comparing MVA \MET~(brown circles) to \ac{PF} \MET~(black circles) for
 \Zmm events, which contain no genuine \MET~, in a sample corresponding to $42\,\invpb$ of data collected at $\sqrt{s}=13\,\TeV$. The 
 \MET~values for MVA \MET~are lower than for \ac{PF} \MET. (b) The \MET~resolution for \ac{PF} \MET~in blue and MVA \MET~in red/brown
 circles, as a function of number of vertices. The MVA \MET~resolution is more stable with increased pileup \cite{cms-dp-mvamet}.}
@@ -752,7 +752,7 @@ within $\Delta z<0.4$~cm of the same vertex, and their total charge is required 
 
 %\subsection{Isolation and discrimination against light leptons}
 %\label{sec:objects_tau_iso}
-Requiring the reconstructed \Pgth to be isolated reduces the jet $\rightarrow$\Pgth fake rate. Isolation
+Requiring the reconstructed \Pgth to be isolated reduces the $\text{jet}\rightarrow\Pgth$ fake rate. Isolation
 discriminators can be defined using the isolation sum,
 \begin{equation}\label{eqn:cutbased_iso}
 I_{\Pgt} = \Sigma p_{\text{T}}^{\text{charged}}(d_Z < 0.2\text{ cm}) + \text{max}(0,\Sigma p_{\text{T}}^{\Pphoton} - \Delta \beta \Sigma p_{\text{T}}^{\text{charged}} (d_Z > 0.2 \text{ cm}) ),
@@ -760,7 +760,8 @@ I_{\Pgt} = \Sigma p_{\text{T}}^{\text{charged}}(d_Z < 0.2\text{ cm}) + \text{max
 where the first term denotes the sum of the transverse momenta of all charged particles not part
 of the identified \Pgth. Only particles with \pT~$> 0.5\,\GeV$ within a cone of $\Delta R = 0.5$ centred around the 
 direction of the \Pgth are taken into account and the charged particle tracks are required to be compatible with having
-originated from the \Pgth production vertex within $d_z < 0.2\,\cm$. The second term denotes the sum
+originated from the \Pgth production vertex. This is achieved by requiring the longitudinal impact parameter
+with respect to the primary vertex to be $d_z < 0.2\,\cm$. The second term of equation \ref{eqn:cutbased_iso} denotes the sum
 of the transverse momenta of photons with $\pTm > 0.5$ GeV within a cone of $\Delta R = 0.5$ centred around the direction
 of the \Pgth. The effect of pileup on this term is accounted for by subtracting the sum of the momenta of charged
 particles with \pT~$> 0.5\,\GeV$, within a cone of $\Delta R = 0.8$ around the direction of the hadronic tau and
@@ -797,7 +798,7 @@ Some of the variables used as input are:
 \end{itemize}
 
 Figure \ref{fig:tau_efficiency}a compares the \Pgth identification efficiency with the
-jet$\rightarrow$\Pgth fake rate for different working points of the
+$\text{jet}\rightarrow\Pgth$ fake rate for different working points of the
 MVA isolation discriminator, as well as the cut-based isolation discriminator based
 on the isolation sum and $p_{\text{T}}^{\text{strip,outer}}$. The MVA-based 
 discriminator performs better than the cut-based discriminator alone.
@@ -841,7 +842,7 @@ figures \ref{fig:tau_efficiency}b and \ref{fig:tau_efficiency}c, respectively.
 \end{center}
 \caption[Figures of the jet$\rightarrow$\Pgth fake rate in QCD MC events
 versus $\Pgth$ identification efficiency for simulated $\PHiggs\rightarrow\Pgt\Pgt$ events, the real
-$\Pgth$ identification efficiency for different working points of the anti-electron discriminator, and the $\Pe\rightarrow\Pgt_{h}$ fake rate for different
+$\Pgth$ identification efficiency for different working points of the anti-electron discriminator, and the \mbox{$\Pe\rightarrow\Pgth$} fake rate for different
 working points of the anti-electron discriminator.]{(a) The jet$\rightarrow$\Pgth fake rate in simulated QCD multijet events versus \Pgth identification
 efficiency for simulated $\PHiggs\rightarrow\Pgt\Pgt$ events, comparing the MVA-based isolation discriminator in red with the cut-based 
 isolation discriminator in pink. Tighter working points give lower hadronic tau identification
@@ -849,7 +850,7 @@ efficiencies and lower fake rates, and for the same \Pgth identification efficie
 from the MVA-based discriminator is lower than from the cut-based discriminator. (b) The real \Pgth identification
 efficiency for different working points of the anti-electron discriminator as a function of the \pT~of the \Pgth, and (c)
 the $\Pe\rightarrow$\Pgth fake rate for different working points of the anti-electron discriminator, as a function of
-the \pT~of the \Pe.}
+the \pT~of the electron.}
 \label{fig:tau_efficiency}
 \end{figure}
 The anti-muon discriminator is a cut-based discriminant, for which a loose and a tight working

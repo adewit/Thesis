@@ -1,7 +1,7 @@
 \chapter{\texorpdfstring{Search for \Htohhtobbtautau}{Search for H -> hh -> bbtautau}}
 \label{chap:hhh}
 In this chapter the search for a heavy Higgs boson decaying to a pair of $125\,\GeV$ Higgs bosons, with one of these Higgs bosons decaying to 
-a pair of b-jets and the other decaying to a pair of tau leptons is discussed. In this analysis, which 
+a pair of b-jets and the other decaying to a pair of tau leptons, is discussed. In this analysis, which 
 uses a dataset corresponding to $19.8\,\invfb$ collected during the 2012 p-p running
 period of the \ac{LHC}, the \etau, \mutau and \tautau final states
 of the di-tau pair are studied; these final states are referred to as channels. 
@@ -22,7 +22,7 @@ generic type-II \acp{2HDM}, a heavy neutral Higgs boson \PHiggs can decay to a p
 of \tanb, probing a region of parameter space not yet excluded by the stringent existing limits. In regions where
 the decay \Htohh is enhanced, the \AtoZh decay also has a large branching ratio, indicating the usefulness
 of both channels for probing the low \tanb~region. The $\Pbottom\Pbottom\Pgt\Pgt$ final state is chosen for the combination
-of the large $\PHiggslight(125) \rightarrow \Pbottom\Pbottom$ branching ratio and the cleaner \htotautau final state.
+of the large $\PHiggslight(125) \rightarrow \Pbottom\Pbottom$ branching ratio and the cleaner $\PHiggslight(125) \rightarrow \Pgt\Pgt$ final state.
 
 \section{Datasets and \acl{MC} samples}
 \label{sec:hhh_datasets}
@@ -196,8 +196,8 @@ smaller di-boson and single-top backgrounds are combined into the ``electroweak'
 %topology, whereas in other cases \mT will be lower
 
 After applying the \mT~selection, events are divided into three categories to maximise
-sensitivity to the signal: 2jet-0tag (at least two jets, none of which are b-tagged), 2jet-1tag 
-(at least two jets, exactly one of which is b-tagged), 2jet-2tag (at least two jets, at least two of which are b-tagged).
+sensitivity to the signal: 2jet-0tag (at least two jets, none of which are b-tagged), \mbox{2jet-1tag} 
+(at least two jets, exactly one of which is b-tagged), \mbox{2jet-2tag} (at least two jets, at least two of which are b-tagged).
 Jets are considered b-tagged if they pass the medium working point of the \ac{CSV} b-tagging discriminator.
 The 2jet-0tag category does not collect much of the signal and is dominated by 
 backgrounds, the 2jet-2tag category is the most sensitive to signal. 
@@ -234,8 +234,8 @@ the 2jet-2tag category.
 \subfloat[$m_{\Pgt\Pgt}$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/m_sv_2jet2tag_mt_2012.pdf}}
 \subfloat[$m_{jj}$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mjj_2jet2tag_mt_2012.pdf}}
 \end{center}
-\caption[Reconstruced di-tau invariant mass and di-jet invariant mass in
-the 2jet-2tag category of the \mutau channel.]{(a) Reconstructed di-tau invariant mass and (b) di-jet invariant mass in the 2jet-2tag category of the \mutau
+\caption[Reconstructed di-tau invariant mass and di-jet invariant mass in
+the \mbox{2jet-2tag} category of the \mutau channel.]{(a) Reconstructed di-tau invariant mass and (b) di-jet invariant mass in the \mbox{2jet-2tag} category of the \mutau
 channel. The signal for a heavy Higgs boson \PHiggs with mass \mH~$= 300\,\GeV$ at \tanb~$=2$ in the low-\tanb~MSSM scenario, multiplied by a factor 10, is overlaid.
 The signal peaks at around $125\,\GeV$ in both variables.}
 \label{fig:Hhh_selection_masscuts}
@@ -286,8 +286,8 @@ is used to apply these.
 In this method a demotion or promotion probability is assigned to every
 jet as:
 \begin{align}\label{eqn:promotedemote}
-&P(\text{demote}) = 1 - \text{SF} \text{  for SF < 1 }  \notag \\
-&P(\text{promote}) = \frac{(\text{SF} - 1)(\epsilon_{\text{MC}}-1)}{\text{SF}} \text{    for SF > 1},
+P(\text{demote}) &= 1 - \text{SF} \text{  for SF < 1 }  \notag \\
+P(\text{promote}) &= \frac{(\text{SF} - 1)(\epsilon_{\text{MC}}-1)}{\text{SF}} \text{    for SF > 1},
 \end{align}
 Where SF is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
 the b-tagging efficiency in simulated events for the type of jet (light, b- or c-)
@@ -396,7 +396,7 @@ distribution closer to the true value. It is also insightful to make such a comp
 for the \ttbar background, which is the dominant background in the most signal-sensitive categories as 
 shown in figure \ref{fig:Hhh_selection_bjets}. This comparison between four-body mass and
 kinematic fit mass for \ttbar events is shown in figure 
-\ref{fig:kinfitvsmjj}b. From this figure we can see that the mass distribution for
+\ref{fig:kinfitvsmjj}b. This figure shows that the mass distribution for
 background events is less affected by the kinematic fit, although due to the
 invariant mass constraint the minimum of the reconstructed mass distribution
 is forced to $250\,\GeV$.
@@ -445,7 +445,7 @@ be less than $30\,\GeV$. To estimate the remaining contribution
 in the signal region a sideband with \mT~greater
 than $70\,\GeV$ is used in the 2jet-0tag and 2jet-1tag categories.
 Contributions from other backgrounds are subtracted 
-from the data in this region, and a high-\mT~to low-\mT~extrapolation
+from the data in this region, and a high-\mT~to \mbox{low-\mT}~extrapolation
  factor is determined from the \Wjets simulation.
 The yield in the signal region is given by the data yield in the high-\mT~sideband, with
 other backgrounds subtracted, multiplied by this extrapolation factor.
@@ -457,7 +457,7 @@ the signal region is otherwise analogous.
 The shape of the \Wjets distribution is taken from the simulation. To 
 increase the number of events for this estimate, the b-tagging definition
 in the 2jet-1tag and 2jet-2tag categories is relaxed from the medium to the loose 
-working point for the purposes of shape estimation.
+working point for the purpose of shape estimation.
 \subsection{QCD multijet}
 \label{sec:hhh_backgrounds_qcd}
 A fully data-driven method is used to estimate the QCD background. Here, di-tau candidates
@@ -538,7 +538,7 @@ from combining the estimated normalisation uncertainty on the embedded samples t
 \item \Zellell: As this is a very small background after requiring two jets, the uncertainty on this estimate is derived from the statistical uncertainty on the yield estimate, which varies between $20$--$90$\%.
 \item \ttbar: The uncertainty in the \ttbar cross section is 10\% \cite{toppp}.
 \item Di-boson and single top: The combined uncertainty in the di-boson and single-top cross sections is 15\% \cite{8TeVdib,8TeVst}.
-\item \Wjets: As the \Wjets yield is estimated from a high \mT~sideband in data, the uncertainty in this yield estimate is primarily due to the number of events available in the control region. The uncertainty ranges from 10\% in the 2jet-0tag category to 100\% in the 2jet-2tag category.
+\item \Wjets: As the \Wjets yield is estimated from a high-\mT~sideband in data, the uncertainty in this yield estimate is primarily due to the number of events available in the control region. The uncertainty ranges from 10\% in the 2jet-0tag category to 100\% in the 2jet-2tag category.
 \item QCD: The QCD normalisation uncertainty is obtained by adding the statistical uncertainty on the data-subtracted same-sign region in quadrature with the 10\% uncertainty on the OS/SS ratio. This yields a 20\% uncertainty in the 2jet-0tag category, a 40\% uncertainty in the 2jet-1tag category and a $60$--$100$\% uncertainty in the 2jet-2tag category.
 \end{itemize}
 \subsection{Shape uncertainties}
@@ -634,7 +634,7 @@ the \xsbr of a possible signal.
 The second term in equation \ref{eqn:hhh_likelihood}, $p(\tilde{\theta}|\theta)$ represents the full set of 
 probability density functions of the uncertainties on the nominal
 values of the nuisance parameters $\tilde{\theta}$. Each nuisance parameter represents a systematic uncertainty
-as discussed in section \ref{sec:hhh_uncs}. The functional form of the probability density function
+as discussed in section~\ref{sec:hhh_uncs}. The functional form of the probability density function
 depends on the type of systematic uncertainty. Normalisation uncertainties are applied with log-normal constraints, which
 ensures that the process yields can never become negative, and therefore unphysical, in the fit. 
 %For a log-normal constraint an $n~\sigma$ upwards pull on a nuisance parameter $\theta$ measured with a systematic
@@ -642,7 +642,7 @@ ensures that the process yields can never become negative, and therefore unphysi
 %an $n~\sigma$ downwards pull multiplies the process yields by $(1+\kappa)^{-n}$, ensuring that process
 %yields do not become negative. 
 Shape uncertainties are accounted for using a vertical template morphing
-technique \cite{temp-morph-2011}. For each nuisance parameter that affects the shape of the fitted distribution, two additional
+technique~\cite{temp-morph-2011}. For each nuisance parameter that affects the shape of the fitted distribution, two additional
 templates corresponding to the quantity varied by $\pm 1 \sigma$ are generated. A nuisance
 parameter is added to the likelihood model with a gaussian constraint to smoothly interpolate between
 the nominal and $\pm 1\sigma$ templates. Limitations in the number of events used to construct the shape templates
@@ -767,7 +767,7 @@ channel.
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/hhh_limit_comparison.pdf}}
 \caption[Expected and observed upper limits at the 95\% CL on 
 \xsbr for the \Htohhtobbtautau process.]{Expected and observed upper limits at the 95\% \ac{CL} on \xsbr  
-for the \Htohhtobbtautau process. In (a) the three final states of \etau, \mutau and \tautau are combined. The green and yellow bands indicate the $\pm 1 \sigma $ and $\pm 2\sigma$ 
+for the \mbox{\Htohhtobbtautau} process. In (a) the three final states of \etau, \mutau and \tautau are combined. The green and yellow bands indicate the $\pm 1 \sigma $ and $\pm 2\sigma$ 
 probability intervals on the expected limit  \cite{CMS-HIG-14-034}.
 (b) Shows the expected upper limits at the 95\% \ac{CL} on \xsbr for the \Htohhtobbtautau
 process, separated by channel. The blue line shows the limit for the \tautau channel, the green line for the \mutau channel, the red line
@@ -801,10 +801,15 @@ free parameters than a particular \ac{MSSM} benchmark scenario. To leave
 just two free parameters, it is enough to fix the masses of the five Higgs bosons
 and take the quartic couplings to be zero.
 For the interpretation shown here the assumption that $m_{\PHiggsps}=m_{\PHiggs}=m_{\PHiggs^+}=300\,\GeV$ is made.
-
 The couplings of the Higgs bosons to quarks and leptons, and of the heavy Higgs bosons to other
 particles, are defined by $\alpha$ and $\beta$, as in table \ref{tab:hhh_2HDM_couplings}.
 
+The interpretations are made in the \cosba-\tanb~plane. Figure \ref{fig:HhhandAZh2HDMOverlaid}
+shows the observed and expected exclusion at the 95\% \ac{CL} for the \Htohh
+and \AtoZh analyses, overlaid on the \xsbr.
+The exclusion contours have some interesting features, most of which can be explained by the couplings
+in table \ref{tab:hhh_2HDM_couplings}. When \cosba=0, in the alignment limit, the couplings
+of all particles are exactly \ac{SM}-like. This is reflected in the \Htohh and \AtoZh branching ratios, 
 \begin{table}[htp]
 \begin{center}
 \caption{Couplings in the type-II 2HDM.}
@@ -822,13 +827,6 @@ $\PHiggsps \rightarrow \PZ\PHiggslight$ & $\sim$ \cosba\\
 \label{tab:hhh_2HDM_couplings}
 \end{center}
 \end{table}
-
-The interpretations are made in the \cosba-\tanb~plane. Figure \ref{fig:HhhandAZh2HDMOverlaid}
-shows the observed and expected exclusion at the 95\% \ac{CL} for the \Htohh
-and \AtoZh analyses, overlaid on the \xsbr.
-The exclusion contours have some interesting features, most of which can be explained by the couplings
-in table \ref{tab:hhh_2HDM_couplings}. When \cosba=0, in the alignment limit, the couplings
-of all particles are exactly \ac{SM}-like. This is reflected in the \Htohh and \AtoZh branching ratios, 
 which both vanish as \cosba~approaches zero. This leads to the corridor of non-exclusion down the 
 centre of the graphs in figure \ref{fig:HhhandAZh2HDMOverlaid}. Additionally,
 as the coupling of the \PHiggslight to pairs of b-quarks or tau leptons is proportional 
@@ -935,13 +933,13 @@ have been overlaid on (a) as the
 %\end{figure}
 
 
-The combined interpretation of both analyses in this model is presented figure 
+The combined interpretation of both analyses in this model is presented in figure 
 \ref{fig:HhhAZhMSSM2HDM}b.
 %The exclusion in this scenario is driven by the \AtoZh search as the \Htohh search is not
 %very sensitive in this model. 
 By combining the two analyses a slightly larger amount
 of the \mA-\tanb~plane can be excluded than using the \AtoZhtolltautau analysis alone. The features
-described for the figure \ref{fig:HhhAndAZhlowtanb}b are also visible in this figure. In a small region of phase
+described for figure \ref{fig:HhhAndAZhlowtanb}b are also visible in this figure. In a small region of phase
 space, at low \mA~and low~\tanb, this scenario predicts a light Higgs boson mass that is not compatible with $125\pm3\,\GeV$.
 This region is therefore excluded, as indicated by the red band. 
 
@@ -966,7 +964,7 @@ This region is therefore excluded, as indicated by the red band.
 \caption[Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
 interpreted in a type-II 2HDM and in the low-\tanb~MSSM scenario.]{Combination of the \AtoZhtolltautau and \Htohhtobbtautau searches
 interpreted in (a) a type-II \ac{2HDM} assuming $m_{\PHiggs} = m_{\PHiggsps} = m_{\PHiggs^{+}} = 300\,\GeV$ and 
-(b) in the low-\tanb~MSSM scenario. The shaded blue area bounded by
+(b) in the low-\tanb~MSSM scenario. The blue shaded area bounded by
 the solid black line indicates the observed excluded region at 95\% \ac{CL}.
 The dashed black line indicates the expected exclusion, with the grey bands showing
 the $\pm 1\sigma$ and $\pm2\sigma$ probability intervals on the expected exclusion \cite{CMS-HIG-14-034}. The area
