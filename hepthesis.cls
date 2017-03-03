@@ -537,6 +537,7 @@
   \setcounter{secnumdepth}{2}% number down to subsections
   \newcounter{iterlist}%
   \@oldfrontmatter%
+  \pagenumbering{arabic}
   \adjustwidth{\@frontmatterextramargin}{\@frontmatterextramargin}%
   \begin{\@frontmatterspacing}%
 }{%
@@ -553,7 +554,8 @@
   %\@oldmainmatter%
   \if@twoside\clearpage\fi%
   \@mainmattertrue%
-  \afterpage{\pagenumbering{arabic}}%
+ % \afterpage{\pagenumbering{arabic}}%
+ % \afterpage{\setcounter{page}{14}}
   \adjustwidth{\@mainmatterextramargin}{\@mainmatterextramargin}%
   \begin{\@mainmatterspacing}%
 }{%
