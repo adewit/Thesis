@@ -46,13 +46,13 @@
 \begin{document}
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-%\begin{frontmatter}
-
-%\end{frontmatter}
+\begin{frontmatter}
+ \pagenumbering{arabic}
+  \input{frontmatter}
+\end{frontmatter}
 
 %% Start the content body of the thesis
 \begin{mainmatter}
-  \input{frontmatter}
   \input{Theory/Theory}
   \input{Detector/Detector}
   \input{Objects/Objects}
