@@ -1,8 +1,8 @@
 \chapter{\texorpdfstring{Search for MSSM \AHtotautau}{Search for MSSM A/H -->tautau}}
 \label{chap:mssm}
 In this chapter the search for neutral Higgs bosons \PHiggs or \PHiggsps
-decaying to a pair of tau leptons will be discussed. The results presented
-here correspond to those from an analysis peformed on a dataset collected
+decaying to a pair of tau leptons is discussed. The results presented
+here correspond to those from an analysis performed on a dataset collected
 during the first half of the 2016 p-p running period of the \ac{LHC} \cite{CMS-PAS-HIG-16-037}. %This dataset
 %corresponds to an integrated luminosity of $12.9\,\invfb$, and the analysis is
 %detailed in reference \cite{CMS-PAS-HIG-16-037}. 
@@ -35,11 +35,11 @@ the 2016 p-p running period of the \ac{LHC}. %Section
 %period of the \ac{LHC}. This dataset corresponds to an integrated
 %luminosity of 2.3 fb$^{-1}$ collected at $\sqrt{s} = 13$ TeV.
 
-Signal and background events were generated using
+Signal and background events are generated using
 various \ac{MC} event generators. Signal samples
 for the $\Pg\Pg \rightarrow \phi$ and $\Pg\Pg \rightarrow \Pbottom\Pbottom\phi$
-production processes of the \PHiggs or \PHiggsps bosons were generated using \texttt{PYTHIA 8.1} \cite{pythia81}.
-These samples were produced for a range of masses between $90\,\GeV$ and $3.2\,\TeV$.
+production processes of the \PHiggs or \PHiggsps bosons are generated using \texttt{PYTHIA 8.1} \cite{pythia81}.
+These samples are produced for a range of masses between $90\,\GeV$ and $3.2\,\TeV$.
 This range is slightly wider than the range in which MSSM Higgs sector
 benchmark computations are available, $90\,\GeV$--$2\,\TeV$, and 
 improves on the mass range of $90\,\GeV$ to $1\,\TeV$ that was studied during Run 1 in the context of \ac{BSM} Higgs searches.
@@ -47,9 +47,9 @@ improves on the mass range of $90\,\GeV$ to $1\,\TeV$ that was studied during Ru
 \ac{MSSM} benchmark scenarios. These samples are generated using \texttt{POWHEG} \cite{powheg1,powheg2,powheg3}.
 
 Single-top and \ttbar background samples are generated using \texttt{POWHEG},
-with \texttt{MadGraph5\_aMC@NLO} \cite{amcnlo} used for the generation of di-boson background
-samples. %and part of the W+$\gamma$ background, which is included in the \emu channel only.
-\Wjets and \Zll backgrounds are generated with the \texttt{MadGraph 5} \cite{madgraph}
+while for the generation of di-boson background samples \texttt{MadGraph5\_aMC@NLO} \cite{amcnlo} is used.
+%and part of the W+$\gamma$ background, which is included in the \emu channel only.
+\Wjets and \mbox{\Zll} backgrounds are generated with the \texttt{MadGraph 5} \cite{madgraph}
 matrix element generator. Samples containing both a mixture
 of jet multiplicities (`inclusive' samples) and samples with one, two, three or four jets (`exclusive' samples)
 are generated. These exclusive samples increase the available number of
@@ -113,7 +113,7 @@ which come from pileup interactions.
 Additional identification and isolation criteria
 are also applied; these will be discussed in sections \ref{sec:mssm_eventsel_pairs}--\ref{sec:mssm_eventsel_em}.
 The optimisation of some of the selections will also be discussed there. Note that 
-the optimisations were all based on the dataset collected during the 2015 p-p running period of the \ac{LHC}, which
+the optimisations are all based on the dataset collected during the 2015 p-p running period of the \ac{LHC}, which
 corresponds to an integrated luminosity of $2.3\,\invfb$. 
 
 \begin{figure}[h!]
@@ -172,7 +172,7 @@ is reduced in a similar fashion.
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu tau channel}}
 \label{sec:mssm_eventsel_mt}
 The trigger only requires a muon at \ac{L1}, to which loose identification and
-isolation criteria are applied at the level of the \ac{HLT}
+isolation criteria are applied at the level of the \ac{HLT}.
 
 The offline event selection requires an oppositely charged
 muon and hadronically decaying tau, which are separated by $\Delta R > 0.5$.
@@ -273,7 +273,7 @@ The selection was optimised for masses around $800\,\GeV$--$1\,\TeV$, by
 using the medium hadronic tau isolation working point and a selection on $\mTm<40\,\GeV$.
 
 The choice of the hadronic tau \pT~selection is driven by the effect on the low mass region:
-raising the \pT~selection by $10\,\GeV$ from the minimum of $20\,\GeV$ does not affect the sensivity
+raising the \pT~selection by $10\,\GeV$ from the minimum of $20\,\GeV$ does not affect the sensitivity
 of the analysis for high mass points, while recovering some of the loss of loosening 
 the tau isolation working point and \mT~cut. The reason for this is that when using $\pTm >30\,\GeV$ 
 the loss of background events exceeds the loss of signal events. The effect of the increased hadronic tau \pT~selection on the 
@@ -402,7 +402,7 @@ the effect on the $\Pbottom\Pbottom\phi$ production process is less pronounced.}
 \subsection{\texorpdfstring{Event selection in the \tautau channel}{Event selection in the tau tau channel}}
 \label{sec:mssm_eventsel_tt}
 The trigger in the \tautau channel requires two hadronic taus at \ac{L1} to which loose identification
-and isolation criteria are applied in the \ac{HLT}
+and isolation criteria are applied in the \ac{HLT}.
 
 The offline event selection requires both hadronic taus to be oppositely charged, separated
 by $\Delta R > 0.5$, to have $\pTm>40\,\GeV$ and to satisfy $|\eta|<2.1$. Both taus need
@@ -515,7 +515,7 @@ to 100 times their \xsbr at \mA~$=1\,\TeV$ and
 The distribution of the
 gluon fusion signal in figure \ref{fig:mssm_cats_mt}b shows that
 the vast majority of these signal events do not have any b-tagged jets. To
-target this production mode a category which requires nob-tagged jets can be used.
+target this production mode a category which requires no b-tagged jets can be used.
 The same figure also shows that the majority of $\Pbottom\Pbottom\phi$
 signal events do not have any b-tagged jets: either the b-jets in these events 
 are too soft, or they do not pass the b-tagging requirements. This means that the category
@@ -705,7 +705,8 @@ two jets are mis-reconstructed as the two tau candidates. %Relatively likely to 
 As is visible in figure \ref{fig:mssm_bkgs_overview}b, the \ttbar background is particularly important in the b-tag category.
 This is because top quarks virtually always decay as $\Ptop\rightarrow \PW\Pbottom$, and so such events nearly 
 always contain b-jets. The decay products of one or both of the \PW bosons, and additional jets in the event, can 
-then form \etau, \mutau, \tautau and \emu pairs.\\
+then form \etau, \mutau, \tautau and \emu pairs.
+
 The \Wjets process is a background in the \etau and \mutau channels when the lepton from the \PW boson decay and a jet mis-reconstructed
 as a hadronic tau form a pair. In the \tautau channel it is a background when one \Pgth originates from a $\PW \rightarrow \Pgt\Pgn$ decay
 and the other from an additional jet in the event being mis-reconstruced as a hadronic tau. 
@@ -796,8 +797,8 @@ For the \mutau and \etau channels, events
 in which the reconstructed hadronic tau is matched to 
 a simulated hadronic tau are considered part of the \Ztautau
 background. In the \tautau channel both reconstructed
-hadronic taus are required to be matched to a simulated hadronic tau, and
-in the \emu channel the \Ztautau component of the Drell-Yan background 
+hadronic taus are required to be matched to a simulated hadronic tau. 
+In the \emu channel the \Ztautau component of the Drell-Yan background 
 is taken as those events where the reconstructed electron is not matched to
 a simulated prompt electron and the reconstructed
 muon is not matched to a prompt muon. 
@@ -835,7 +836,7 @@ figure \ref{fig:mssm_bkgs_wjets_mutau_mt} which shows the \mT~distribution in th
 \begin{center}
 \includegraphics[width=0.5\textwidth]{./MSSM/Figures/CMS-PAS-HIG-16-037_Figure_002.pdf}
 \end{center}
-\caption[Distribution of the transverse mass \mT~in the \mutau channel, indicating the signal region and the high-\mT~control region]{Distribution of the transverse mass \mT~in the \mutau channel, indicating
+\caption[Distribution of the transverse mass \mT~in the \mutau channel, indicating the signal region and the high-\mT~control region.]{Distribution of the transverse mass \mT~in the \mutau channel, indicating
 the signal region and the high-\mT~control region. This distribution is shown
 before dividing the events into categories \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_bkgs_wjets_mutau_mt}
@@ -986,6 +987,7 @@ the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ and (b) after the 
 is $1.13\pm0.05$.}
 \label{fig:mssm_qcdosss_etfar}
 \end{figure}
+\clearpage
 
 \subsubsection{QCD normalisation}
 \label{sec:mssm_bkgs_etmt_qcdnorm}
@@ -1138,6 +1140,11 @@ uncertainties affect both the process normalisation and the shape
 of the \mTtot~distribution. The uncertainties are taken into account 
 in the final result as described in section \ref{sec:hhh_results_extraction}.
 
+Overview tables of the systematic uncertainties per category of each
+channel can be found in appendix \ref{appendix:uncerts}. The correlations
+between the different channels and categories for these uncertainties
+are also indicated.
+
 \subsection{Normalisation uncertainties}
 \label{sec:mssm_uncs_norm}
 \subsubsection*{Luminosity uncertainty}
@@ -1174,7 +1181,7 @@ on the anti-muon discriminator used. This uncertainty is applied to the \Zellell
 background in which the hadronic tau is faked by a muon.
 \subsubsection*{Jet energy scale uncertainty}
 The uncertainty in the jet energy corrections is applied
-by shifting the jet energy up and down by a \pT-and $\eta$-dependendent
+by shifting the jet energy up and down by a \pT- and $\eta$-dependent
 uncertainty, and evaluating the change in the process normalisation in
 each category. The uncertainty ranges from $0$--$10$\% depending on process and category.
 \subsubsection*{b-Tag scale factors}
@@ -1294,10 +1301,6 @@ applied. This uncertainty is derived from variations in the data to simulation r
 for the $\text{jet}\rightarrow\Pgth$ fake rate as a function of jet \pT~in 
 \Wjets events.
 
-Overview tables of the systematic uncertainties per category of each
-channel can be found in appendix \ref{appendix:uncerts}. The correlations
-between the different channels and categories for these uncertainties
-is also indicated.
 
 \section{Signal extraction}
 \label{sec:mssm_signalextraction}
@@ -1749,6 +1752,7 @@ observed events in the (a) no b-tag and (b) b-tag categories of the \emu channel
 %and once at higher mass, for the heavy H and A.}
 \label{fig:mssm_hig16006_mtsv_em}
 \end{figure}
+\clearpage
 
 These distributions do not show any significant excesses of observed events over
 the background expectation. The upper limits
@@ -1798,7 +1802,7 @@ nuisance parameters in the 2015 and 2016 analyses need to be taken into account.
 The correlation scheme is chosen
 based on the procedure used for the ATLAS and \ac{CMS}
 Higgs combinations \cite{MassComb,CouplComb}. This means
-uncertainties are either considered 100\% (anti-)correlated or fully uncorrelated. Partial
+uncertainties are either considered 100\% \mbox{(anti-)correlated} or fully uncorrelated. Partial
 correlations are not taken into account, with a small number of exceptions. The
 correlations used for this combination are given in table \ref{tab:mssm_combination_correlations},
 with the motivation for the chosen correlation given in the third column of the table.

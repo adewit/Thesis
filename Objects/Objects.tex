@@ -172,7 +172,7 @@ $1/E_{\text{SC}} - 1/p_{\Pe}$, where $E_{\text{SC}}$ is the energy in the superc
 \subfloat[$1/E_{\text{SC}} - 1/p_{e}$]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/OneoverEminOneoverp.png}}
 \end{center}
 \caption[$\sigma_{i\eta,i\eta}$ and $1/E_{\text{SC}}-1/p_{e}$ for real 
-and misidentified electrons at $8\,\TeV$, for data and simulation]{(a) $\sigma_{i\eta,i\eta}$ and (b) $1/E_{\text{SC}} - 1/p_{e}$ for real (black points)  and 
+and misidentified electrons at $8\,\TeV$, for data and simulation.]{(a) $\sigma_{i\eta,i\eta}$ and (b) $1/E_{\text{SC}} - 1/p_{e}$ for real (black points)  and 
 misidentified (yellow triangles) electrons in a dataset corresponding to $19.7\,\invfb$
 taken at $\sqrt{s} = 8\,\TeV$, overlaid on the distributions for simulated 
 real electrons in purple \cite{cms-elereco-run1}.}
@@ -309,7 +309,7 @@ energy deposits in the calorimeters. These energy deposits are combined
 using a clustering algorithm, so that stable neutral particles can be identified and
 separated from charged hadrons, and in addition electrons and all bremsstrahlung photons
 can be reconstructed. Clustering is performed separately in the \ac{ECAL} barrel,
-\ac{ECAL} endcaps, first and second \ac{PS} layers, \ac{HCAL} barrel and \ac{HCAL} endcaps, with no 
+\ac{ECAL} endcaps, first and second preshower layers, \ac{HCAL} barrel and \ac{HCAL} endcaps, with no 
 clustering employed in the \ac{HF}.
 %And to aid energy measurement of charged hadrons for which
 %tracks were low quality, or high pT
@@ -331,7 +331,7 @@ in the event, which quantifies the link quality. Directly and indirectly
 linked elements are considered as input blocks to the reconstruction and
 identification algorithm. Links between charged tracks and calorimeter
 clusters are established by extrapolating the track from its last measured
-tracker hit to the \ac{PS} layers, the \ac{ECAL} and the \ac{HCAL}. %in ECAL to expected maximum of a 
+tracker hit to the preshower layers, the \ac{ECAL} and the \ac{HCAL}. %in ECAL to expected maximum of a 
 %typical longitudinal electron shower profile and in the HCAL at a depth correspnding to one interaction
 %length.
 If the extrapolated track position is within the boundaries of the cluster, plus the size
@@ -578,7 +578,7 @@ The \ac{CMS} detector is able to detect most stable and long-lived particles,
 however, neutrinos and hypothetical neutral weakly interacting particles
 travel straight through the detector without being recorded. These particles
 will give rise to an energy imbalance in the transverse plane, and so their
-presence can be inferred from missing energy, \MET, in the event. 
+presence can be inferred from missing transverse energy, \MET, in the event. 
 
 The \MET~is defined as $-\Sigma \vec{p}_{\text{T}}$, where
 the sum runs over all final-state particles and jets in the event. This quantity
@@ -587,9 +587,9 @@ the nonlinearity of the calorimeter
 response for hadronic particles.
 Therefore, to increase the accuracy of the \MET~measurement the jet energy corrections are propagated as
 \begin{equation}\label{eqn:objects_met_corr}
-\vec{E}_{\text{T}}^{\text{miss, corr}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma_{jets} (\vec{p}_{\text{T,jet}}^{\text{  corr}} - p_{\text{T,jet}}).
+\vec{E}_{\text{T}}^{\text{miss, corr}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma_{jets} (\vec{p}_{\text{T,jet}}^{\text{  corr}} - \vec{p}_{\text{T,jet}}),
 \end{equation}
-
+where `corr' refers to the corrected values.
 %The magnitude of the ⃗E/T can be underestimated or overestimated for a variety of reasons, including minimum energy thresholds in the calorimeters, pT thresholds and inefficiencies in the tracker, and the nonlinearity of the response of the calorimeter for hadronic particles due to its non-compensating nature. This bias is significantly reduced by correcting the pT of jets to the particle-level pT using jet energy corrections 
 The \MET~can also be mismeasured due to pileup interactions, and an improved
 measurement of the \MET~at high pileup can be obtained by using the MVA \MET~
@@ -601,6 +601,20 @@ recoil $\vec{u}_{\text{T}}$ reconstructed from \ac{PF} particles
 \end{equation}
 where $\Sigma \vec{p}_{\text{T}}^{\text{  lep}}$ corresponds to the vectorial sum of the transverse momenta of the
 constituents selected as the di-tau candidate.
+
+Two \acp{BDT} trained on \Zmm events are used to compute this correction.
+The first one corrects the direction of the hadronic recoil, the second
+one uses a data sample with the corrected recoil direction to compute a correction
+to the magnitude of the hadronic recoil. This \ac{BDT} regression uses the magnitude of the hadronic
+recoil, its azimuthal angle and the scalar \pT~sum of all \ac{PF} particles for several 
+different \MET~definitions \cite{cms-met-run1} as input. Figure \ref{fig:objects_mvamet} shows
+the performance of the MVA \MET~in data collected at $\sqrt{s}=13\,\TeV$ compared with 
+the \ac{PF} \MET. Figure \ref{fig:objects_mvamet}a indicates the lower MVA \MET~values for events without genuine
+\MET and figure \ref{fig:objects_mvamet}b shows the improved resolution at high pileup.
+
+In the process of calculating the corrections to the hadronic recoil using the MVA \MET~algorithm, an event-by-event
+estimator of the likelihood that the \MET~is due to unseen objects rather than induced
+by mismeasurement of jet energy is also determined~\cite{cms-met-run1}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -616,25 +630,13 @@ circles, as a function of number of vertices. The MVA \MET~resolution is more st
 \label{fig:objects_mvamet}
 \end{figure}
 
-Two \acp{BDT} trained on \Zmm events are used to compute this correction.
-The first one corrects the direction of the hadronic recoil, the second
-one uses a data sample with the corrected recoil direction to compute a correction
-to the magnitude of the hadronic recoil. This \ac{BDT} regression uses the magnitude of the hadronic
-recoil, its azimuthal angle and the scalar \pT~sum of all \ac{PF} particles for several 
-different \MET~definitions \cite{cms-met-run1} as input. Figure \ref{fig:objects_mvamet} shows
-the performance of the MVA \MET~in data collected at $\sqrt{s}=13\,\TeV$ compared with 
-the \ac{PF} \MET. Figure \ref{fig:objects_mvamet}a indicates the lower MVA \MET~values for events without genuine
-\MET and figure \ref{fig:objects_mvamet}b shows the improved resolution at high pileup.
 
-In the process of calculating the corrections to the hadronic recoil using the MVA \MET~algorithm, an event-by-event
-estimator of the likelihood that the \MET~is due to unseen objects rather than induced
-by mismeasurement of jet energy is also determined \cite{cms-met-run1}.
 %Further corrections improve the performance of the ⃗E/T reconstruction in events with large numbers of pileup interactions. The contribution to the genuine ⃗E/T from such interactions is
 %close to zero, as the probability to produce neutrinos is small in inelastic pp scattering (mini- mum bias) interactions. The vectorial ⃗pT sum of charged particles is therefore expected to be well balanced by that of neutral particles. However, the nonlinearity and minimum energy thresholds in the calorimeters cause ⃗E/ T to point on average in the direction of the vectorial ⃗pT sum of neutral particles.
 
 \subsection{Recoil corrections}
 \label{sec:objects_met_recoilcorr}
-To correct for the mismodelling of \MET~in simulated events, recoil corrections are determined. 
+To correct for the mis-modelling of \MET~in simulated events, recoil corrections are determined. 
 The hadronic recoil $\vec{u}_{\text{T}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma \vec{p}_{\text{T}}^{\text{ leptons}/\nu}$ 
 is projected onto the axes parallel, $u_{\parallel}$, and perpendicular, $u_{\perp}$, to the \pT~of the boson producing the leptons
 and neutrinos. For the analyses
@@ -840,7 +842,7 @@ figures \ref{fig:tau_efficiency}b and \ref{fig:tau_efficiency}c, respectively.
 \subfloat[Real \Pgth efficiency for anti-\Pe discriminator]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/TauEfficiencyEle.pdf}}
 \subfloat[$\Pe\rightarrow$\Pgth fake rate for the anti-\Pe discriminator]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/TauMisIDEle.pdf}}
 \end{center}
-\caption[Figures of the jet$\rightarrow$\Pgth fake rate in QCD MC events
+\caption[Figures of the jet$\rightarrow$\Pgth fake rate in simulated QCD events
 versus $\Pgth$ identification efficiency for simulated $\PHiggs\rightarrow\Pgt\Pgt$ events, the real
 $\Pgth$ identification efficiency for different working points of the anti-electron discriminator, and the \mbox{$\Pe\rightarrow\Pgth$} fake rate for different
 working points of the anti-electron discriminator.]{(a) The jet$\rightarrow$\Pgth fake rate in simulated QCD multijet events versus \Pgth identification
@@ -850,7 +852,7 @@ efficiencies and lower fake rates, and for the same \Pgth identification efficie
 from the MVA-based discriminator is lower than from the cut-based discriminator. (b) The real \Pgth identification
 efficiency for different working points of the anti-electron discriminator as a function of the \pT~of the \Pgth, and (c)
 the $\Pe\rightarrow$\Pgth fake rate for different working points of the anti-electron discriminator, as a function of
-the \pT~of the electron.}
+the \pT~of the electron \cite{cms-tau-2015}.}
 \label{fig:tau_efficiency}
 \end{figure}
 The anti-muon discriminator is a cut-based discriminant, for which a loose and a tight working

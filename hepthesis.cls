@@ -489,7 +489,7 @@
 
   %%   Hyperlinks (optional, has to come late in the package list)
   \ifx\@requirehyper\@empty\else%
-  \RequirePackage[colorlinks=false,bookmarks=true,plainpages=false]{hyperref}%
+  \RequirePackage[hidelinks,colorlinks=false,bookmarks=true,plainpages=false]{hyperref}%
   % pdfpagemode=None, FullScreen, UseThumbs, UseOutlines
   \fi
 }

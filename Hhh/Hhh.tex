@@ -28,16 +28,16 @@ of the large $\PHiggslight(125) \rightarrow \Pbottom\Pbottom$ branching ratio an
 \label{sec:hhh_datasets}
 The dataset used for this analysis corresponds to the full dataset collected by the CMS experiment during the 2012 p-p 
 running period of the LHC. 
-Signal and background events were generated using several different \ac{MC} event generators. The \texttt{MadGraph}
-\cite{madgraph} matrix element generator was used to generate samples of \Wjets, \Zellell, \ttbar and \ZZ, \WZ and \WW
+Signal and background events are generated using several different \ac{MC} event generators. The \texttt{MadGraph}
+\cite{madgraph} matrix element generator is used to generate samples of \Wjets, \Zellell, \ttbar and \ZZ, \WZ and \WW
 events. In addition to samples with a mixture of jet multiplicities (`inclusive' samples), samples binned in jet multiplicity
-were used for the \Wjets and \Zellell backgrounds. This increases the number of background events
+are used for the \Wjets and \Zellell backgrounds. This increases the number of background events
 in regions with multiple jets, which are important for this analysis due to the presence of b-jets in the final state. 
 The samples binned in jet multiplicity are combined with the
 inclusive samples such that the fraction of events with each jet multiplicity is preserved.
 
-Single top samples were produced with the \texttt{POWHEG} \cite{powheg1,powheg2} generator. Samples of \ggHtohhtobbtautau
-were generated in steps of $10\,\GeV$ between \mH $= 260$ -- $350\,\GeV$ using \texttt{PYTHIA 6} \cite{pythia64}. The maximum
+Single top samples are produced with the \texttt{POWHEG} \cite{powheg1,powheg2} generator. Samples of \ggHtohhtobbtautau
+are generated in steps of $10\,\GeV$ between \mH $= 260$ -- $350\,\GeV$ using \texttt{PYTHIA 6} \cite{pythia64}. The maximum
  mass is $350\,\GeV$ because for the interpretation of a resonance as a Higgs boson the decay \PHiggs $\rightarrow$ \ttbar
 starts to dominate beyond this mass. In all of the samples
 \texttt{TAUOLA} \cite{tauola} is used to decay the tau leptons, and parton showering and hadronisation are modelled using \texttt{PYTHIA 6} \cite{pythia64}.
@@ -50,7 +50,7 @@ To better model the \Ztautau background an embedding technique is used. In this 
 to decay the taus, with the final state particles passed through the detector simulation. %and tau polarisation effects are modelled using \texttt{TauSpinner} \cite{TauSpinner}. 
 Tracks in the inner tracking system, hits in the muon systems and energy deposits in the calorimeters
 due to the simulated taus are combined with the remains of the \Zmm event after the detector signals
-of the two muons originiating from the \PZ boson have been removed. This technique is also applied to 
+of the two muons originating from the \PZ boson have been removed. This technique is also applied to 
 a simulated \ttbar sample to estimate the \ttbar contamination in the \Zmm embedded sample. %This contribution
 %needs to be subtracted from the \Ztautau background estimated using the embedded \Zmm sample to
 %avoid double counting with the \ttbar \ac{MC}.
@@ -58,7 +58,7 @@ a simulated \ttbar sample to estimate the \ttbar contamination in the \Zmm embed
 \section{Event selection and categorisation}
 \label{sec:hhh_selection}
 This section gives an overview of the event selection; a detailed description of the physics
-objecs used in this analysis is given in chapter \ref{chap:objects}.
+objects used in this analysis is given in chapter \ref{chap:objects}.
 
 \subsection{\texorpdfstring{Event selection in the \mutau channel}{Event selection in the mu-tau channel}}
 \label{sec:hhh_selection_mutau}
@@ -164,7 +164,7 @@ and missing transverse energy, defined as,
 m_{\text{T}} = \sqrt{2p_{\text{T}}E_{\text{T}}^{\text{miss}}(1-\cos{\Delta\phi})}\,,
 \end{equation}
 is applied.
-In this eqation \pT~is the transverse momentum of the electron or muon, and $\Delta\phi$ the azimuthal
+In this equation \pT~is the transverse momentum of the electron or muon, and $\Delta\phi$ the azimuthal
 angle between this light lepton and the missing transverse energy. The \mT~distributions for the \etau
 and \mutau channels, using the selections as
 described in sections \ref{sec:hhh_selection_mutau} and \ref{sec:hhh_selection_etau},
@@ -218,7 +218,7 @@ In signal events the di-tau pair and di-jet pair
 are the decay products of a $125\,\GeV$ Higgs boson, therefore their invariant
 masses should be close to $125\,\GeV$. To reduce background contributions
 from events where the di-tau or di-jet mass is not compatible with
-$125\,\GeV$, requirements are made on the di-jet invariant mass, and the di-tau
+$125\,\GeV$, requirements are made on $m_{jj}$, the di-jet invariant mass, and on $m_{\Pgt\Pgt}$, the di-tau
 invariant mass as reconstructed using the \texttt{SVFit} algorithm \cite{HDiscoveryCMS,SVFit}. This algorithm provides
 a likelihood-based estimate of the di-tau mass using the visible decay products
 of the taus and the reconstructed \MET. The use of this algorithm greatly
@@ -306,7 +306,7 @@ case of this analysis these constraints are
 $m(\Pgt_{1},\Pgt_{2}) = m_{\PHiggslight} = 125\,\GeV$  and
 $m(\Pbottom_{1},\Pbottom_{2}) = m_{\PHiggslight} = 125\,\GeV$.
 The kinematic observables related to the hadronic taus and jets
-are varied within their uncertainties to fulfill these 
+are varied within their uncertainties to fulfil these 
 constraints. A $\chi^2$ cost term is introduced for each
 observable that is varied with respect to the measurement,
 the aim of the fit is to minimise the sum of these $\chi^2$ terms.
@@ -348,7 +348,7 @@ The fitting procedure additionally modifies the masses of the b-jets as
 \begin{equation}\label{eqn:kinfit_bjetmass}
 m_{\Pbottom_{1,2}}^{\text{fit}} = m_{\Pbottom{1,2}}\frac{E_{\Pbottom{1,2}}^{\text{fit}}}{E_{\Pbottom{1,2}}}.
 \end{equation}
-The $\chi^2$ term for each b-jet is calculated as $\chi_{\Pbottom 1,2}^2 = \frac{E_{\Pbottom 1,2}^{\text{fit}}-E_{\Pbottom 1,2}^{\text{meas}}}{\sigma_{\Pbottom 1,2}}$.
+The $\chi^2$ term for each b-jet is calculated as $\chi_{\Pbottom 1,2}^2 = \frac{E_{\Pbottom 1,2}^{\text{fit}}-E_{\Pbottom 1,2}^{\text{meas}}}{\sigma_{\Pbottom 1,2}}$, where `meas' denotes the measured value and `fit' the value given by the fit.
 
 For taus only the visible decay products are measured. Assuming these point in 
 the same direction as the original tau, a similar procedure as for the b-jets can be employed to constrain the energy of the second tau
@@ -614,7 +614,7 @@ and are used for all Higgs analyses in ATLAS and CMS.
 
 The likelihood function for data, whether observed or pseudo-data, is constructed as 
 \begin{equation} \label{eqn:hhh_likelihood}
-\mathcal{L}(\text{data}|\mu, \theta) = \Sigma_i\text{Poisson}(n_{i}|(\mu\cdot s_i(\theta) + b_i(\theta)) )\cdot p(\tilde{\theta}|\theta),
+\mathcal{L}(\text{data}|\mu, \theta) = \Pi_i\text{Poisson}(n_{i}|(\mu\cdot s_i(\theta) + b_i(\theta)) )\cdot p(\tilde{\theta}|\theta),
 \end{equation}
 where $\text{Poisson}(n_{i}|(\mu\cdot s_i(\theta)+b_i(\theta)))$ is given by
 \begin{equation}\label{eqn:hhh_poisson}
@@ -623,7 +623,7 @@ where $\text{Poisson}(n_{i}|(\mu\cdot s_i(\theta)+b_i(\theta)))$ is given by
 with $n_i$ the number of 
 data events in bin $i$.
 
-The first term in equation \ref{eqn:hhh_likelihood} integrates over all bins of the $m_{\PHiggs}^{\text{kinfit}}$ distribution 
+The first term in equation \ref{eqn:hhh_likelihood} runs over all bins of the $m_{\PHiggs}^{\text{kinfit}}$ distribution 
 in all channels and categories. The parameter $s$ represents the number of expected signal events
 in each bin, and $b$ the number of expected background events. These are functions of 
 $\theta$, the full set of nuisance parameters. The signal strength
@@ -777,7 +777,7 @@ sensitive, with the \tautau channel being more sensitive at higher masses.}
 \label{fig:hhh_results_modelindep}
 \end{center}
 \end{figure}
-
+\clearpage
 %\begin{figure}[h!]
 %\begin{center}
 %\includegraphics[width=0.7\textwidth]{Hhh/Plots/CMS-HIG-14-034_Figure-aux_033.pdf}
@@ -788,7 +788,6 @@ sensitive, with the \tautau channel being more sensitive at higher masses.}
 %\label{fig:hhh_results_modelindep_perchannel}
 %\end{center}
 %\end{figure}
-
 
 \subsection{Model-dependent results}
 \label{sec:hhh_results_modeldep}
@@ -804,13 +803,6 @@ and take the quartic couplings to be zero.
 For the interpretation shown here the assumption that $m_{\PHiggsps}=m_{\PHiggs}=m_{\PHiggs^+}=300\,\GeV$ is made.
 The couplings of the Higgs bosons to quarks and leptons, and of the heavy Higgs bosons to other
 particles, are defined by $\alpha$ and $\beta$, as in table \ref{tab:hhh_2HDM_couplings}.
-
-The interpretations are made in the \cosba-\tanb~plane. Figure \ref{fig:HhhandAZh2HDMOverlaid}
-shows the observed and expected exclusion at the 95\% \ac{CL} for the \Htohh
-and \AtoZh analyses, overlaid on the \xsbr.
-The exclusion contours have some interesting features, most of which can be explained by the couplings
-in table \ref{tab:hhh_2HDM_couplings}. When \cosba=0, in the alignment limit, the couplings
-of all particles are exactly \ac{SM}-like. This is reflected in the \Htohh and \AtoZh branching ratios, 
 \begin{table}[htp]
 \begin{center}
 \caption{Couplings in the type-II 2HDM.}
@@ -828,6 +820,13 @@ $\PHiggsps \rightarrow \PZ\PHiggslight$ & $\sim$ \cosba\\
 \label{tab:hhh_2HDM_couplings}
 \end{center}
 \end{table}
+
+The interpretations are made in the \cosba-\tanb~plane. Figure \ref{fig:HhhandAZh2HDMOverlaid}
+shows the observed and expected exclusion at the 95\% \ac{CL} for the \Htohh
+and \AtoZh analyses, overlaid on the \xsbr.
+The exclusion contours have some interesting features, most of which can be explained by the couplings
+in table \ref{tab:hhh_2HDM_couplings}. When \cosba=0, in the alignment limit, the couplings
+of all particles are exactly \ac{SM}-like. This is reflected in the \Htohh and \AtoZh branching ratios, 
 which both vanish as \cosba~approaches zero. This leads to the corridor of non-exclusion down the 
 centre of the graphs in figure \ref{fig:HhhandAZh2HDMOverlaid}. Additionally,
 as the coupling of the \PHiggslight to pairs of b-quarks or tau leptons is proportional 
@@ -836,6 +835,8 @@ and \AtoZhtolltautau vanish when $\alpha = 0$, leading to the corridor of non-ex
 at \cosba $ > 0$ and low \tanb~in the \AtoZh figure. A similar corridor is starting
 to become visible in the \xsbr structure of the \Htohh interpretation, but
 the analysis is not yet sensitive enough to actually observe it.
+
+
 %Additional regions of non--exclusion at low \tanb and \cosba near -1 are visible in the \Htohh 
 %interpretation, these are a result of the complex \Htohh branching ratio.
 
