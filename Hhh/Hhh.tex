@@ -1,5 +1,13 @@
 \chapter{\texorpdfstring{Search for \Htohhtobbtautau}{Search for H -> hh -> bbtautau}}
 \label{chap:hhh}
+The discovery of the $125\,\GeV$ Higgs boson by the ATLAS and CMS Collaborations in 2012 \cite{HDiscoveryATLAS,HDiscoveryCMS} has opened up
+new possibilities for probing the Higgs sector beyond the \ac{SM}. As discussed in chapter \ref{chap:theory}, in some \ac{MSSM} scenarios and some more
+generic type-II \acp{2HDM}, a heavy neutral Higgs boson \PHiggs can decay to a pair of $125\,\GeV$ Higgs bosons for low values
+of \tanb, probing a region of parameter space not yet excluded by the stringent existing limits. In regions where
+the decay \Htohh is enhanced, the \AtoZh decay also has a large branching ratio, indicating the usefulness
+of both channels for probing the low \tanb~region. The $\Pbottom\Pbottom\Pgt\Pgt$ final state is chosen for the combination
+of the large $\PHiggslight(125) \rightarrow \Pbottom\Pbottom$ branching ratio and the cleaner $\PHiggslight(125) \rightarrow \Pgt\Pgt$ final state.
+
 In this chapter the search for a heavy Higgs boson decaying to a pair of $125\,\GeV$ Higgs bosons, with one of these Higgs bosons decaying to 
 a pair of b-jets and the other decaying to a pair of tau leptons, is discussed. In this analysis, which 
 uses a dataset corresponding to $19.8\,\invfb$ collected during the 2012 p-p running
@@ -15,14 +23,6 @@ For these results I contributed to the analysis of the \etau and \mutau channels
 and was responsible for limit setting for the \Htohh analysis. This included performing the model interpretations
 of the \Htohh and \AtoZh analyses, plus their combination.
 Both searches, and their interpretations, are detailed in reference \cite{CMS-HIG-14-034}.
-
-The discovery of the $125\,\GeV$ Higgs boson by the ATLAS and CMS Collaborations in 2012 \cite{HDiscoveryATLAS,HDiscoveryCMS} has opened up
-new possibilities for probing the Higgs sector beyond the \ac{SM}. As discussed in chapter \ref{chap:theory}, in some \ac{MSSM} scenarios and some more
-generic type-II \acp{2HDM}, a heavy neutral Higgs boson \PHiggs can decay to a pair of $125\,\GeV$ Higgs bosons for low values
-of \tanb, probing a region of parameter space not yet excluded by the stringent existing limits. In regions where
-the decay \Htohh is enhanced, the \AtoZh decay also has a large branching ratio, indicating the usefulness
-of both channels for probing the low \tanb~region. The $\Pbottom\Pbottom\Pgt\Pgt$ final state is chosen for the combination
-of the large $\PHiggslight(125) \rightarrow \Pbottom\Pbottom$ branching ratio and the cleaner $\PHiggslight(125) \rightarrow \Pgt\Pgt$ final state.
 
 \section{Datasets and \acl{MC} samples}
 \label{sec:hhh_datasets}
@@ -97,7 +97,7 @@ exactly zero electrons to pass \pT~$>10\,\GeV$ and loose ID and isolation requir
 are applied to prevent overlap with other channels and to reduce the di-boson background. 
 
 In addition to the requirements on the di-tau pair, at least two jets with \pT~$>20\,\GeV$ are 
-required. No b-tagging requirements are applied at this stage, these will be discussed 
+required. No b-tagging requirements are applied at this stage; these will be discussed 
 in more detail in section \ref{sec:hhh_selection_categories}.
 
 %Figure \ref{fig:Hhh_selection_kinematics_mt} shows some of the kinematic variables 
@@ -182,7 +182,7 @@ are shown in figure \ref{fig:Hhh_selection_mt}.
 This quantity is required to be smaller than $30\,\GeV$ in both channels. In events
 where the missing energy and the light lepton are oriented back-to-back, \mT~is
 large, whereas it is closer to zero when the two are aligned. In $\PW\rightarrow\ell\nu$
-events, as the \PW boson is very heavy, the lepton and neutrino are more likely to be emitted back-to-back,
+events, as the \PW boson is very heavy, the lepton and neutrino are more likely to be emitted back-to-back, and
 therefore \mT~will be large. For \Ztautau and \htotautau events, the neutrinos in the $\tau\rightarrow\ell\nu\nu$ decay 
  are more likely to travel in the same direction as the visible decay products of 
 the tau, due to the smaller mass of the \Pgt compared with the \PW boson. Therefore requiring the
@@ -200,14 +200,14 @@ sensitivity to the signal: 2jet-0tag (at least two jets, none of which are b-tag
 (at least two jets, exactly one of which is b-tagged), \mbox{2jet-2tag} (at least two jets, at least two of which are b-tagged).
 Jets are considered b-tagged if they pass the medium working point of the \ac{CSV} b-tagging discriminator.
 The 2jet-0tag category does not collect much of the signal and is dominated by 
-backgrounds, the 2jet-2tag category is the most sensitive to signal. 
+backgrounds, and the 2jet-2tag category is the most sensitive to signal. 
 Figure \ref{fig:Hhh_selection_bjets}, which shows the number of b-tagged jets in the two-jet selection of the \mutau and \etau
 channels, illustrates this.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/n_bjets_csv_2jetinclusive_mt_2012_log.pdf}}
-\subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/n_bjets_csv_2jetinclusive_et_2012_log.pdf}}
+\subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/n_bjets_csv_2jetinclusive_mt_2012_log_corrs.pdf}}
+\subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/n_bjets_csv_2jetinclusive_et_2012_log_corrs.pdf}}
 \end{center}
 \caption[Number of b-tagged jets in the two-jet selection of the \mutau and \etau channels.]{Number of b-tagged jets in the two-jet selection of the (a) \mutau and (b) \etau channels. The signal
 at \mH~$=300\,\GeV$ and \tanb~$=2$ in the \ac{MSSM} low-\tanb~scenario, multiplied by a factor of 10, is overlaid.}
@@ -215,7 +215,7 @@ at \mH~$=300\,\GeV$ and \tanb~$=2$ in the \ac{MSSM} low-\tanb~scenario, multipli
 \end{figure} 
 
 In signal events the di-tau pair and di-jet pair 
-are the decay products of a $125\,\GeV$ Higgs boson, therefore their invariant
+are the decay products of a $125\,\GeV$ Higgs boson, and therefore their invariant
 masses should be close to $125\,\GeV$. To reduce background contributions
 from events where the di-tau or di-jet mass is not compatible with
 $125\,\GeV$, requirements are made on $m_{jj}$, the di-jet invariant mass, and on $m_{\Pgt\Pgt}$, the di-tau
@@ -224,15 +224,15 @@ a likelihood-based estimate of the di-tau mass using the visible decay products
 of the taus and the reconstructed \MET. The use of this algorithm greatly
 improves the separation between $\PZ\rightarrow\Pgt\Pgt$ and $\PHiggs\rightarrow\Pgt\Pgt$ events, 
 which is of great importance for the \ac{SM} $\PHiggs\rightarrow\Pgt\Pgt$ analysis \cite{HDiscoveryCMS}.
-By requiring $70 < m_{jj} < 150\,\GeV$ and $90 < m_{\Pgt\Pgt} < 150\,\GeV$ a 
+By requiring $70 < m_{jj} < 150\,\GeV$ and $90 < m_{\Pgt\Pgt} < 150\,\GeV$, a 
 large number of background events can be rejected, while retaining
 most of the signal. This is illustrated in figure \ref{fig:Hhh_selection_masscuts} for 
 the 2jet-2tag category.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[$m_{\Pgt\Pgt}$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/m_sv_2jet2tag_mt_2012.pdf}}
-\subfloat[$m_{jj}$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mjj_2jet2tag_mt_2012.pdf}}
+\subfloat[$m_{\Pgt\Pgt}$]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/m_sv_2jet2tag_mt_2012_corrs.pdf}}
+\subfloat[$m_{jj}$ ]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mjj_2jet2tag_mt_2012_corrs.pdf}}
 \end{center}
 \caption[Reconstructed di-tau invariant mass and di-jet invariant mass in
 the \mbox{2jet-2tag} category of the \mutau channel.]{(a) Reconstructed di-tau invariant mass and (b) di-jet invariant mass in the \mbox{2jet-2tag} category of the \mutau
@@ -241,10 +241,10 @@ The signal peaks at around $125\,\GeV$ in both variables.}
 \label{fig:Hhh_selection_masscuts}
 \end{figure}
 
-\section{\acl{MC} simulation to data correction factors}
+\section{\acl{MC} simulation-to-data correction factors}
 \label{sec:hhh_datamc}
 Simulated samples are used for the estimation of some of the backgrounds and the signal, 
-and it is therefore important to correct for any mis-modelling. The \ac{MC} simulation to data 
+and it is therefore important to correct for any mis-modelling. The \ac{MC} simulation-to-data 
 correction factors used for this are estimated in dedicated control regions.
 
 Identification, isolation, and trigger efficiencies are measured for electrons, muons
@@ -278,18 +278,19 @@ applying recoil corrections to \Zellell, \Wjets and signal simulation. Section \
 gives more details on how these corrections are derived.
 
 To correct for the differences in b-tagging efficiency and light jet mis-tagging
-rates between data and simulation, \pT~and $\eta$~dependent scale factors are 
+rates between data and simulation, \pT-and $\eta$-dependent scale factors are 
 derived using the method described in reference \cite{BTV8TeV}. There are separate scale factors for 
-b-/c-jets and light jets. In this analysis the ``promote-demote'' method
-is used to apply these.
+b-/c-jets and light jets. 
 
-In this method a demotion or promotion probability is assigned to every
+In this analysis the ``promote-demote'' method
+is used to apply these scale factors. In this method a demotion 
+or promotion probability is assigned to every
 jet as:
 \begin{align}\label{eqn:promotedemote}
 P(\text{demote}) &= 1 - \text{SF} \text{  for SF < 1 }  \notag \\
 P(\text{promote}) &= \frac{(\text{SF} - 1)(\epsilon_{\text{MC}}-1)}{\text{SF}} \text{    for SF > 1},
 \end{align}
-Where SF is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
+where `SF' is the scale factor mentioned above, and $\epsilon_{\text{MC}}$ is
 the b-tagging efficiency in simulated events for the type of jet (light, b- or c-)
 under consideration.
 
@@ -308,14 +309,14 @@ $m(\Pbottom_{1},\Pbottom_{2}) = m_{\PHiggslight} = 125\,\GeV$.
 The kinematic observables related to the hadronic taus and jets
 are varied within their uncertainties to fulfil these 
 constraints. A $\chi^2$ cost term is introduced for each
-observable that is varied with respect to the measurement,
+observable that is varied with respect to the measurement;
 the aim of the fit is to minimise the sum of these $\chi^2$ terms.
 
 For b-jets, the reconstructed direction in $\eta$ and $\phi$ is 
 assumed to be measured accurately in comparison with their energy.
 Therefore only their energy is varied in the fit. In addition, we assume
 that uncertainties in the energy measurement directly translate to
-uncertainties in the momentum measurement, therefore $\vec{\beta} = \vec{p}/E$ is
+uncertainties in the momentum measurement, and therefore $\vec{\beta} = \vec{p}/E$ is
 also kept constant. 
 
 Before the fit, the mass constraint gives:
@@ -361,21 +362,21 @@ enforcing that the heavy Higgs boson recoil from the fit is close to the reconst
 The measured recoil is 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilmeas}
-\vec{p_{\text{T,recoil}}}^{\text{meas}} = -\vec{p_{\text{T,\PHiggs}}}^{\text{meas}} = -\vec{p_{\text{T,miss}}}^{\text{meas}} - \vec{p_{\text{T},\Pbottom 1}}^{\text{meas}} - \vec{p_{\text{T},\Pbottom 2}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_1^{\text{vis}}}}^{\text{meas}} - \vec{p_{\text{T},\Pgt_2^{\text{vis}}}}^{\text{meas}},
+\vec{p}_{\text{T,recoil}}^{\text{ meas}} = -\vec{p}_{\text{T,\PHiggs}}^{\text{ meas}} = -\vec{p}_{\text{T,miss}}^{\text{ meas}} - \vec{p}_{\text{T},\Pbottom 1}^{\text{ meas}} - \vec{p}_{\text{T},\Pbottom 2}^{\text{ meas}} - \vec{p}_{\text{T},\Pgt_1^{\text{vis}}}^{\text{ meas}} - \vec{p}_{\text{T},\Pgt_2^{\text{vis}}}^{\text{ meas}},
 \end{equation}
 and the recoil from the fit is,
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilfit}
-\vec{p_{\text{T,recoil}}}^{\text{fit}} = -\vec{p_{\text{T,\PHiggs}}}^{\text{fit}} = - \vec{p_{\text{T},\Pbottom 1}}^{\text{fit}} - \vec{p_{\text{T},\Pbottom 2}}^{\text{fit}} - \vec{p_{\text{T},\Pgt_1}}^{\text{fit}} - \vec{p_{\text{T},\Pgt_2}}^{\text{fit}}.
+\vec{p}_{\text{T,recoil}}^{\text{ fit}} = -\vec{p}_{\text{T,\PHiggs}}^{\text{ fit}} = - \vec{p}_{\text{T},\Pbottom 1}^{\text{ fit}} - \vec{p}_{\text{T},\Pbottom 2}^{\text{ fit}} - \vec{p}_{\text{T},\Pgt_1}^{\text{ fit}} - \vec{p}_{\text{T},\Pgt_2}^{\text{ fit}}.
 \end{equation}
 A $\chi^2$ corresponding to the agreement between the fitted and measured recoil is reconstructed as
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilchi2}
-\chi^2_{\text{recoil}} = (\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{meas}})^T V_{\text{recoil}}^{-1}(\vec{p_{\text{T,recoil}}}^{\text{fit}} - \vec{p_{\text{T,recoil}}}^{\text{meas}}),
+\chi^2_{\text{recoil}} = (\vec{p}_{\text{T,recoil}}^{\text{ fit}} - \vec{p}_{\text{T,recoil}}^{\text{ meas}})^T V_{\text{recoil}}^{-1}(\vec{p}_{\text{T,recoil}}^{\text{ fit}} - \vec{p}_{\text{T,recoil}}^{\text{ meas}}),
 \end{equation}
 where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as 
 \begin{equation}\label{eqn:kinfit_recoilcov}
-V_{\text{recoil}} = V_{\vec{p_{\text{T,miss}}}} - V_{\Pbottom {1}} - V_{\Pbottom 2},
+V_{\text{recoil}} = V_{\vec{p}_{\text{T,miss}}} - V_{\Pbottom {1}} - V_{\Pbottom 2},
 \end{equation}
  from the covariance matrices of the b-jets and
 the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET,
@@ -423,11 +424,13 @@ used where possible.
 \subsection{\texorpdfstring{\Ztautau}{Z to tau tau}}
 \label{sec:hhh_backgrounds_ztt}
 The \Ztautau background is estimated using the embedded samples
-described in section \ref{sec:hhh_datasets}. To estimate the 
-yield of \Ztautau in each category the total
-yield after the initial event selection, before subdividing into categories, as
-estimated in the simulated \Ztautau sample is scaled by the efficiency with which 
-such events pass the category selection in the embedded sample. The shape of
+described in section \ref{sec:hhh_datasets}. The yield of
+\Ztautau in each category is evaluated in two steps. In the first
+step the total yield after the initial event selection, before subdividing into categories,
+is evaluated in the simulated \Ztautau sample. In the second step the yield obtained 
+in the first step is scaled by the efficiency with which such events pass the 
+category selection in the embedded sample.
+The shape of
 the \Ztautau background is taken from the embedded sample after applying the full
 category selection. The contamination from the \ttbar background in the embedded
 sample is evaluated using the dedicated \ttbar embedded sample. This contribution
@@ -623,7 +626,7 @@ where $\text{Poisson}(n_{i}|(\mu\cdot s_i(\theta)+b_i(\theta)))$ is given by
 with $n_i$ the number of 
 data events in bin $i$.
 
-The first term in equation \ref{eqn:hhh_likelihood} runs over all bins of the $m_{\PHiggs}^{\text{kinfit}}$ distribution 
+The first factor in equation \ref{eqn:hhh_likelihood} runs over all bins of the $m_{\PHiggs}^{\text{kinfit}}$ distribution 
 in all channels and categories. The parameter $s$ represents the number of expected signal events
 in each bin, and $b$ the number of expected background events. These are functions of 
 $\theta$, the full set of nuisance parameters. The signal strength
@@ -632,7 +635,7 @@ signal expectation. In the case of the \Htohhtobbtautau analysis the signal is n
 to $1\,\picobarn$, so the signal strength modifier represents
 the \xsbr of a possible signal.
 
-The second term in equation \ref{eqn:hhh_likelihood}, $p(\tilde{\theta}|\theta)$ represents the full set of 
+The second factor in equation \ref{eqn:hhh_likelihood}, $p(\tilde{\theta}|\theta)$ represents the full set of 
 probability density functions of the uncertainties on the nominal
 values of the nuisance parameters $\tilde{\theta}$. Each nuisance parameter represents a systematic uncertainty
 as discussed in section~\ref{sec:hhh_uncs}. The functional form of the probability density function
@@ -678,7 +681,7 @@ p_{\mu} = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{s+b}) = \int_{q_{\mu}^{\te
 
 and 
 \begin{equation}\label{eqn:hhh_pvaluebkg}
-1-p_b = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{b}) = \int_{q_{0}^{\text{obs}}}^{\infty} f(q_{\mu} | 0,\hat{\theta_{0}^{\text{obs}}}) dq_{\mu} ,
+1-p_b = P(q_{\mu} \geq q_{\mu}^{\text{obs}} | \text{b}) = \int_{q_{\mu}^{\text{obs}}}^{\infty} f(q_{\mu} | 0,\hat{\theta_{0}^{\text{obs}}}) dq_{\mu} ,
 \end{equation}
 
 where $f(q_{\mu}|\mu,\hat{\theta_{\mu}})$ and $f(q_{\mu} | 0,\hat{\theta_0})$ are the probability density functions of $q_{\mu}$ under

@@ -46,7 +46,8 @@ is performed using the \ac{DA} algorithm \cite{vtx-da}, which identifies
 the most probable vertex candidates and assigns tracks to them. Vertex
 candidates with at least two associated tracks are fitted using an adaptive
 vertex fitter \cite{vtx-adaptivefit} to determine the best estimate of the 
-vertex position. The analyses presented in chapters~\ref{chap:hhh} and \ref{chap:mssm} take the primary
+vertex position. The \Htohhtobbtautau and \AHtotautau analyses, described in chapters \ref{chap:hhh} and \ref{chap:mssm},
+take the primary
 vertex of the hard scatter to be the reconstructed vertex with the largest scalar \pT~sum of the associated
 tracks. %which the scalar sum of the \pT s of
 %the associated tracks is largest. %This differs from the analysis presented in chapter \ref{chap:hhh},
@@ -231,7 +232,7 @@ contained in the \ac{HCAL}. A larger contribution is expected
 from real muons originating from, for example, decays of hadrons. These
 backgrounds can be reduced by applying additional identification criteria.
 
-For the analysis presented in chapter \ref{chap:mssm}, ``medium'' muon requirements were applied \cite{CMS-PAS-HIG-16-037}.
+For the \AHtotautau analysis, ``medium'' muon requirements were applied \cite{CMS-PAS-HIG-16-037}.
 These requirements include:
 \begin{itemize}
 \setlength{\itemsep}{-0.5\baselineskip}
@@ -272,7 +273,7 @@ of a track with the muon track segments in the muon stations it has crossed.
 %\item The segment compatibility is $>$ 0.451
 %\end{itemize}
 
-In the analysis described in chapter \ref{chap:hhh}, where Run 1 data 
+In the \Htohhtobbtautau analysis, where Run 1 data 
 was used, muons were required to pass ``tight'' identification requirements \cite{cms-muon-reco}. 
 In addition to having to be reconstructed by the global muon algorithm, selections
 are made on the $\chi^2$ per degrees of freedom of the track fit, number of hits of the inner
@@ -418,11 +419,11 @@ of jet energy carried by different \ac{PF} particle types.
 
 Several methods exist for reducing the effects of pileup particles 
 on the jet energy and substructure.
-For the analysis presented in chapter \ref{chap:mssm} a
+For the \AHtotautau analysis a
 \ac{CHS} technique \cite{cms-jets-run2} is employed, 
 which means charged hadronic \ac{PF} candidates not associated with the primary vertex 
-are not considered in the jet clustering. For the analysis presented in
-chapter \ref{chap:hhh} a dedicated identification algorithm \cite{cms-jets-puid} 
+are not considered in the jet clustering. For the 
+\Htohhtobbtautau analysis a dedicated identification algorithm \cite{cms-jets-puid} 
 based on vertex information and jet shape information was used to reject jets due to pileup.
 
 \subsection{Jet energy corrections}
@@ -497,9 +498,9 @@ they travel for around $c\tau \approx 450\,\micron$ before decaying. This means
 they produce a displaced secondary decay vertex in the inner tracker.
 Algorithms for tagging b-jets usually rely on the information
 from these secondary vertices.
-For the analysis presented in chapter \ref{chap:hhh}
+For the \Htohhtobbtautau analysis 
 the \ac{CSV} algorithm \cite{cms-btag-paper} has been used, with the upgraded
-\ac{CSV}v2 version of the algorithm \cite{cms-btag-run2} used for the analysis presented in chapter \ref{chap:mssm}. 
+\ac{CSV}v2 version of the algorithm \cite{cms-btag-run2} used for the \AHtotautau analysis. 
 The \ac{CSV} algorithm takes \ac{PF} jets with $\pTm> 20\,\GeV$ and $|\eta|<2.4$ as input and 
 uses a likelihood-based discriminator to determine 
 whether a jet is likely due to b-quark hadronisation or not.
@@ -593,8 +594,8 @@ where `corr' refers to the corrected values.
 %The magnitude of the ⃗E/T can be underestimated or overestimated for a variety of reasons, including minimum energy thresholds in the calorimeters, pT thresholds and inefficiencies in the tracker, and the nonlinearity of the response of the calorimeter for hadronic particles due to its non-compensating nature. This bias is significantly reduced by correcting the pT of jets to the particle-level pT using jet energy corrections 
 The \MET~can also be mismeasured due to pileup interactions, and an improved
 measurement of the \MET~at high pileup can be obtained by using the MVA \MET~
-algorithm, used for \MET~reconstruction in the analyses presented in chapters \ref{chap:hhh} and 
-\ref{chap:mssm}. This algorithm computes a correction to the hadronic
+algorithm, used for \MET~reconstruction in the \Htohhtobbtautau and \AHtotautau analyses.
+This algorithm computes a correction to the hadronic
 recoil $\vec{u}_{\text{T}}$ reconstructed from \ac{PF} particles
 \begin{equation}\label{eqn:objects_met_recoil}
 \vec{u}_{\text{T}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma \vec{p}_{\text{T}}^{\text{  lep}},
@@ -603,7 +604,7 @@ where $\Sigma \vec{p}_{\text{T}}^{\text{  lep}}$ corresponds to the vectorial su
 constituents selected as the di-tau candidate.
 
 Two \acp{BDT} trained on \Zmm events are used to compute this correction.
-The first one corrects the direction of the hadronic recoil, the second
+The first one corrects the direction of the hadronic recoil, and the second
 one uses a data sample with the corrected recoil direction to compute a correction
 to the magnitude of the hadronic recoil. This \ac{BDT} regression uses the magnitude of the hadronic
 recoil, its azimuthal angle and the scalar \pT~sum of all \ac{PF} particles for several 
@@ -639,8 +640,8 @@ circles, as a function of number of vertices. The MVA \MET~resolution is more st
 To correct for the mis-modelling of \MET~in simulated events, recoil corrections are determined. 
 The hadronic recoil $\vec{u}_{\text{T}} = \vec{E}_{\text{T}}^{\text{miss}} - \Sigma \vec{p}_{\text{T}}^{\text{ leptons}/\nu}$ 
 is projected onto the axes parallel, $u_{\parallel}$, and perpendicular, $u_{\perp}$, to the \pT~of the boson producing the leptons
-and neutrinos. For the analyses
-presented in chapters \ref{chap:hhh} and \ref{chap:mssm} it is measured in \Zmm events, where no neutrinos
+and neutrinos. For the \Htohhtobbtautau and \AHtotautau analyses 
+it is measured in \Zmm events, where no neutrinos
 are present. Distributions of $u_{\parallel}$ and $u_{\perp}$ are fitted both in data
 and simulated events, using convolutions of gaussians. Corrections are then applied to the simulation
 as
@@ -782,7 +783,7 @@ Some of the variables used as input are:
 \setlength{\itemsep}{-0.5\baselineskip}
 \item Isolation sums, including those in equations \ref{eqn:cutbased_iso} and \ref{eqn:ptouter_iso}.
 \item Track-related variables such as impact parameters, quality of the track, and information about decay vertices.
-\item Information about photons: the momentum weighted $\Delta R$, $\Delta \eta$ and $\Delta \phi$ of photons in strips inside or outside the signal cone, in addition to the number of signal and isolation photons found.
+\item Information about photons: the momentum-weighted $\Delta R$, $\Delta \eta$ and $\Delta \phi$ of photons in strips inside or outside the signal cone, in addition to the number of signal and isolation photons found.
 \item \Pgth-related kinematic quantities, plus the reconstructed decay mode.  
 %\item The charged-and neutral-particle isolation sums
 %\item The reconstructed $\tau_{h}$ decay mode

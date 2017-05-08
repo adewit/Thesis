@@ -10,7 +10,7 @@ The \etau, \mutau, \tautau and \emu final
 states of the di-tau pair were studied. The results of this search are 
 model-independent upper limits on \xsbr of \PHiggs or \PHiggsps 
 production in the gluon fusion ($\Pgluon\Pgluon\phi$) and b-associated ($\Pbottom\Pbottom\phi$) production 
-modes (see chapter \ref{chap:theory}) and decay into $\Pgt\Pgt$. 
+modes and decay into $\Pgt\Pgt$. 
 In addition to the upper limits on \xsbr of these two processes, 
 the results are interpreted in \ac{MSSM} benchmark scenarios.
 A very similar analysis, not described in detail here,
@@ -78,7 +78,7 @@ is given in chapter \ref{chap:objects}.
 The basis of the event selection is to identify \mutau, \etau,
 \tautau and \emu pairs. Events are selected first by using a trigger,
 followed by additional selection criteria. For the \etau
-and \mutau channels events are selected by only triggering on the electron or muon. 
+and \mutau channels, events are selected by only triggering on the electron or muon. 
 While the lepton + hadronic tau cross-triggers that are also available
 allow for a $3\,\GeV$ ($6\,\GeV$) lower \pT~threshold on the
 muon (electron), the benefit of using such a trigger is small: 
@@ -133,7 +133,7 @@ and b-associated (dashed purple line) signals are overlaid. The signals are norm
 \subsection{Pair selection and vetoes}
 \label{sec:mssm_eventsel_pairs}
 After applying trigger
-requirements, identification criteria and kinematic cuts
+requirements, identification criteria and kinematic cuts,
 more than one possible candidate pair can exist. If
 this is the case the pair with the two most isolated candidates
  is chosen, as isolated candidates are less likely 
@@ -214,7 +214,8 @@ variable is also studied for cone sizes of 0.3 and 0.4. Finally,
 a relative isolation variable based solely on the \pT~of tracks from the primary
 vertex,
 \begin{equation}\label{eqn:reltrkiso}
-I_{\text{trk}} = \frac{\Sigma p_{\text{T}}^{\text{tracks from PV within cone of 0.3 of the muon}}}{p_{\text{T}}^{\mu}}, \end{equation} 
+I_{\text{trk}} = \frac{\Sigma p_{\text{T}}^{\text{trkPV}}}{p_{\text{T}}^{\mu}}, \end{equation} 
+where `trkPV' refers to tracks from the primary vertex which are within a cone of $\Delta R=0.3$ of the muon,
 is studied. The $S/\sqrt{B}$ for the different isolation variables is shown in figure \ref{fig:mssm_selection_mt_muons}a, with the
 size of the error interval from the maximum-likelihood fit to the \Ztautau signal strength shown in 
 \ref{fig:mssm_selection_mt_muons}b. Both figures of merit do not
@@ -460,8 +461,8 @@ events in the lower part of the trigger turn-on curve being selected.
 In addition to the selection described so far,
  a topological selection is made on the $D_{\zeta}$ variable \cite{cdf-dzeta},
 \begin{align}\label{eqn:mssm_em_dzeta}
-D_{\zeta} = P_{\zeta} - 1.85 P_{\zeta}^{\text{vis}}, \notag \\
-\text{where } P_{\zeta} = (\vec{p}_{\text{T},1}^{\text{  vis}} + \vec{p}_{\text{T},2}^{\text{  vis}} + E_{\text{T}}^{\text{miss}})\frac{\vec{\zeta}}{|\vec{\zeta}|} 
+&D_{\zeta} = P_{\zeta} - 1.85 P_{\zeta}^{\text{vis}}, \notag \\
+&\text{where } P_{\zeta} = (\vec{p}_{\text{T},1}^{\text{  vis}} + \vec{p}_{\text{T},2}^{\text{  vis}} + E_{\text{T}}^{\text{miss}})\frac{\vec{\zeta}}{|\vec{\zeta}|} 
 \text{ and } P_{\zeta}^{\text{vis}} = (\vec{p}_{\text{T},1}^{\text{  vis}}+\vec{p}_{\text{T},2}^{\text{  vis}})\frac{\vec{\zeta}}{|\vec{\zeta}|}.
 \end{align}
 This means $D_{\zeta}$ is defined as the projection of the transverse momenta of the visible tau decay products plus missing energy, \pT+\MET, onto 
@@ -582,12 +583,12 @@ The total transverse mass variable separates the signal and these backgrounds we
 
 
 
-\section{\acl{MC} simulation to data correction factors}
+\section{\acl{MC} simulation-to-data correction factors}
 \label{sec:mssm_mccorrs}
 Because simulated samples are used for the signal prediction, and 
 to estimate some of the backgrounds, it is important to correct for possible 
 mis-modelling with respect to the data. Dedicated control regions in
-data are used to derive the \ac{MC} simulation to data correction factors
+data are used to derive the \ac{MC} simulation-to-data correction factors
 that are applied to the simulated samples. Where efficiencies
 are involved this scale factor is derived by measuring the efficiency
 in data and in simulation and constructing the scale factor as $\text{SF}=\frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
@@ -711,8 +712,8 @@ The \Wjets process is a background in the \etau and \mutau channels when the lep
 as a hadronic tau form a pair. In the \tautau channel it is a background when one \Pgth originates from a $\PW \rightarrow \Pgt\Pgn$ decay
 and the other from an additional jet in the event being mis-reconstruced as a hadronic tau. 
 In the \emu channel an additional lepton would have to originate from one of the jets, and so in this
-channel this background is smaller. The di-boson and single-top backgrounds are small in all channels. In
-figures the di-boson and single-top backgrounds are drawn together with the \Wjets 
+channel this background is smaller. The di-boson and single-top backgrounds are small in all channels. In all
+figures in this chapter the di-boson and single-top backgrounds are drawn together with the \Wjets 
 background and labelled collectively as the `Electroweak' component.
 
 \begin{figure}[h!]
@@ -896,7 +897,7 @@ requirement itself is removed, but the jet requirements remain. Events with at l
 jet with $\pTm>20\,\GeV$ and with $|\eta|<2.4$, but at most one jet with $\pTm>30\,\GeV$ and $|\eta|<4.7$, are therefore selected. The final \Wjets estimate in the b-tag category signal
 region is determined by the estimate given by the number of \Wjets events
 estimated in this one-jet selection, multiplied by an extrapolation factor 
-$\frac{N_{\text{W,MC}}^{\text{OS,low } m_{\text{T}},\text{b-tag category}}}{N_{\text{W,MC}}^{\text{OS, low }m_{\text{T}},\text{one-jet selection}}}$.
+$N_{\text{W,MC}}^{\text{OS,low } m_{\text{T}},\text{b-tag category}}/N_{\text{W,MC}}^{\text{OS, low }m_{\text{T}},\text{one-jet selection}}$.
 \begin{figure}[h!]
 \begin{center}
 \subfloat[No b-tag]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/htt_et_10_shapes_postfit.pdf}}
@@ -1043,7 +1044,7 @@ the QCD estimate. Differences in normalisation due to
 the use of a loosened sideband are corrected for by the medium-to-tight isolation
 scale factor. This correction factor is measured as
 \begin{equation}\label{eqn:tautau_qcd}
-R_{\text{QCD}}^{\text{medium}\rightarrow\text{tight}} = \frac{N_{\text{data}}^{SS,\text{nominal isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}{N_{\text{data}}^{SS,\text{loosened isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}.
+R_{\text{QCD}}^{\text{medium}\rightarrow\text{tight}} = \frac{N_{\text{data}}^{SS,\text{nominal isolation}}-N_{\text{other bkgs}}^{SS,\text{nominal isolation}}}{N_{\text{data}}^{SS,\text{loosened isolation}}-N_{\text{other bkgs}}^{SS,\text{loosened isolation}}}.
 \end{equation}
 This correction factor takes the ratio between the background-subtracted data in regions 
 equivalent to the signal region and the sideband with relaxed isolation, but with the
@@ -1133,7 +1134,7 @@ is also added to the \Wjets background component. %For plotting purposes the sin
 
 \section{Systematic uncertainties}
 \label{sec:mssm_uncs}
-As for the analysis presented in chapter \ref{chap:hhh}
+As for the \Htohhtobbtautau analysis
 two types of systematic uncertainty are considered. Normalisation
 uncertainties only affect the yield of a process while shape
 uncertainties affect both the process normalisation and the shape
@@ -1370,7 +1371,7 @@ $\mu_{\Pg\Pg\phi}^{N\%}$ and $\mu_{\Pbottom\Pbottom\phi}^{N\%}$ for which:
 \end{split}
 \end{equation}
 
-\subsection{MSSMvsSM hypothesis testing}
+\subsection{MSSM vs SM hypothesis testing}
 \label{sec:mssm_sigext_mssmvssm}
 The results of the search are interpreted in \ac{MSSM} benchmark
 scenarios, with the interpretation made in the \mA-\tanb~plane.
@@ -1409,7 +1410,7 @@ The modification of the likelihood function means it is no longer possible
 to use the profile likelihood ratio of equation \ref{eqn:hhh_profilelikelihood}:
 a test of $\mu=1$ against $\mu=0$ has to be made, and 
 $\hat{\mu}$ in the denominator of equation \ref{eqn:hhh_profilelikelihood} is in 
-general not zero. A solution to this problem can be found in the test statistic used at the Tevatron \cite{LHCHComb2011},
+general not zero. A solution to this problem can be found in the test statistic used at the Tevatron \cite{LHCHComb2011,TEV-Higgs},
 \begin{equation}\label{eqn:mssm_tevatron_teststat}
 q_{\mu} = -2\text{ln }\frac{\mathcal{L}(\text{data}|\mu,\hat{\theta_{\mu}})}{\mathcal{L}(\text{data}|0,\hat{\theta_0})} \text{ with } 0\leq\mu.
 \end{equation}
@@ -1419,10 +1420,10 @@ the desired `MSSMvsSM' test statistic can be defined, using $\mu=1$, as,
 q_{\text{MSSMvsSM}} = -2\text{ln }\frac{\mathcal{L}(\text{data}|s_{\text{MSSM}}(\theta) + b(\theta))}{\mathcal{L}(\text{data}|s_{\text{SM}}(\theta)+b(\theta))}.
 \end{equation}
 
-The asymptotic approximation, discussed in section \ref{sec:hhh_results_extraction}, can not be applied
+The asymptotic approximation, discussed in section \ref{sec:hhh_results_extraction}, cannot be applied
 to this test statistic, and therefore the probability density functions need to be generated 
-with toy datasets. Using these probability density functions $\text{CL}_s(\mu=1)$ can be calculated as defined in equation \ref{eqn:hhh_cls}.
-If $\text{CL}_s < 0.05$ the \ac{MSSM} hypothesis is excluded at the 95\% CL. The generation of toy datasets and 
+with toy datasets. Using these probability density functions, $\text{CL}_s(\mu=1)$ can be calculated as defined in equation \ref{eqn:hhh_cls}.
+If $\text{CL}_s < 0.05$, the \ac{MSSM} hypothesis is excluded at the 95\% CL. The generation of toy datasets and 
 calculation of corresponding $\text{CL}_s$ values is performed for many points in a grid in the \mA-\tanb~plane,
 with interpolation between grid points performed to obtain a smooth exclusion contour.
 The probability distribution functions for the \ac{SM} and \ac{MSSM} hypotheses, as well as the resulting $\text{CL}_s$ values,
