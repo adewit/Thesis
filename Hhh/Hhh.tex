@@ -19,8 +19,9 @@ which all three channels are combined. The \etau and \mutau channels will be des
 be covered, although the limits shown in section \ref{sec:hhh_results} will include this final state.
 In addition the results are interpreted in the context of the \ac{MSSM} and a type-II \ac{2HDM}.
 These interpretations are made in combination with the results of a search for \AtoZhtolltautau \cite{CMS-HIG-14-034}. 
-For these results I contributed to the analysis of the \etau and \mutau channels,
-and was responsible for limit setting for the \Htohh analysis. This included performing the model interpretations
+For these results I contributed to the analysis of the \etau and \mutau channels, studying alternative \ttbar
+background rejection methods and other uses of the kinmeatic fit variable which are not further discussed.
+My main contribution was the statistical inference for the \Htohh analysis, which included limit setting and performing the model interpretations
 of the \Htohh and \AtoZh analyses, plus their combination.
 Both searches, and their interpretations, are detailed in reference \cite{CMS-HIG-14-034}.
 
@@ -28,10 +29,12 @@ Both searches, and their interpretations, are detailed in reference \cite{CMS-HI
 \label{sec:hhh_datasets}
 The dataset used for this analysis corresponds to the full dataset collected by the CMS experiment during the 2012 p-p 
 running period of the LHC. 
-Signal and background events are generated using several different \ac{MC} event generators. The \texttt{MadGraph}
+Signal and background events are generated using several different \ac{MC} event generators. With the exception
+of the embedded samples described later in this section, all of these simulated
+samples are centrally produced for use by all CMS analyses. The \texttt{MadGraph}
 \cite{madgraph} matrix element generator is used to generate samples of \Wjets, \Zellell, \ttbar and \ZZ, \WZ and \WW
 events. In addition to samples with a mixture of jet multiplicities (`inclusive' samples), samples binned in jet multiplicity
-are used for the \Wjets and \Zellell backgrounds. This increases the number of background events
+are used for the \Wjets and \Zellell backgrounds. This increases the number of simulated background events
 in regions with multiple jets, which are important for this analysis due to the presence of b-jets in the final state. 
 The samples binned in jet multiplicity are combined with the
 inclusive samples such that the fraction of events with each jet multiplicity is preserved.
@@ -45,7 +48,7 @@ Minimum bias events generated using \texttt{PYTHIA 6} are added to all \ac{MC} s
 interactions. The \ac{MC} samples are then reweighted so that the pileup distribution matches the
 pileup distribution in data. The detector response to the final simulated particles is modelled using a \texttt{GEANT4}-based \cite{Geant4} detector simulation.
 
-To better model the \Ztautau background an embedding technique is used. In this method, 
+To better model the \Ztautau background an embedding technique is used \cite{SMHtautauCMS}. In this method, 
 \Zmm events are selected in data and the muons are replaced by simulated taus. \texttt{TAUOLA} is used
 to decay the taus, with the final state particles passed through the detector simulation. %and tau polarisation effects are modelled using \texttt{TauSpinner} \cite{TauSpinner}. 
 Tracks in the inner tracking system, hits in the muon systems and energy deposits in the calorimeters
@@ -79,7 +82,7 @@ criteria and a tight isolation requirement, $I_{\text{rel}}^{\mu} < 0.1$,
 $20\,\GeV$, $|\eta| < 2.3$, and must have $d_{z} < 0.2\,\cm$. It is required to pass 
 the decay mode finding identification
 from the HPS algorithm. Additionally,
-the combined isolation is required to be
+the isolation sum (equation \ref{eqn:cutbased_iso}) is required to be
 at most $1.5\,\GeV$. To reject $\Pe/\Pgm \rightarrow$ \Pgth fakes, and to
 reduce the contribution of \Zmm background events, the hadronic tau is 
 also required to pass the tight working point of the anti-muon discriminator
@@ -172,10 +175,11 @@ are shown in figure \ref{fig:Hhh_selection_mt}.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_mt_2012.pdf}}
-\subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_et_2012.pdf}}
+\subfloat[\mutau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_mt_2012_corrs.pdf}}
+\subfloat[\etau channel]{\includegraphics[width=0.5\textwidth]{Hhh/Plots/mt_1_2jetinclusive_et_2012_corrs.pdf}}
 \end{center}
-\caption[\mT~distributions in the \mutau and \etau channels.]{\mT~distributions in the (a) \mutau and (b) \etau channels.}
+\caption[\mT~distributions in the \mutau and \etau channels.]{\mT~distributions in the (a) \mutau and (b) \etau channels. The signal
+at \mH~$=300\,\GeV$ and \tanb~$=2$ in the \ac{MSSM} low-\tanb~scenario, multiplied by a factor of 100, is overlaid.}
 \label{fig:Hhh_selection_mt}
 \end{figure}
 
@@ -198,7 +202,8 @@ smaller di-boson and single-top backgrounds are combined into the ``electroweak'
 After applying the \mT~selection, events are divided into three categories to maximise
 sensitivity to the signal: 2jet-0tag (at least two jets, none of which are b-tagged), \mbox{2jet-1tag} 
 (at least two jets, exactly one of which is b-tagged), \mbox{2jet-2tag} (at least two jets, at least two of which are b-tagged).
-Jets are considered b-tagged if they pass the medium working point of the \ac{CSV} b-tagging discriminator.
+Jets are considered b-tagged if they pass the medium working point of the \ac{CSV} b-tagging discriminator. The
+typical b-tagging efficiency at this working point is 70\% \cite{BTV8TeV}.
 The 2jet-0tag category does not collect much of the signal and is dominated by 
 backgrounds, and the 2jet-2tag category is the most sensitive to signal. 
 Figure \ref{fig:Hhh_selection_bjets}, which shows the number of b-tagged jets in the two-jet selection of the \mutau and \etau
@@ -305,14 +310,14 @@ di-jet candidates.
 In a kinematic fit constraints are made on the event kinematics, in the
 case of this analysis these constraints are
 $m(\Pgt_{1},\Pgt_{2}) = m_{\PHiggslight} = 125\,\GeV$  and
-$m(\Pbottom_{1},\Pbottom_{2}) = m_{\PHiggslight} = 125\,\GeV$.
+$m(\text{j}_{1},\text{j}_{2}) = m_{\PHiggslight} = 125\,\GeV$.
 The kinematic observables related to the hadronic taus and jets
 are varied within their uncertainties to fulfil these 
 constraints. A $\chi^2$ cost term is introduced for each
 observable that is varied with respect to the measurement;
 the aim of the fit is to minimise the sum of these $\chi^2$ terms.
 
-For b-jets, the reconstructed direction in $\eta$ and $\phi$ is 
+For jets, the reconstructed direction in $\eta$ and $\phi$ is 
 assumed to be measured accurately in comparison with their energy.
 Therefore only their energy is varied in the fit. In addition, we assume
 that uncertainties in the energy measurement directly translate to
@@ -322,13 +327,13 @@ also kept constant.
 Before the fit, the mass constraint gives:
 ~\vspace{-0.5\baselineskip}
 \begin{align}\label{eqn:kinfit_prefit}
-m_{\PHiggslight}^2 &= E_{\PHiggslight}^2 - \vec{p_{\PHiggslight}}^2 = (E_{\Pbottom 1}+E_{\Pbottom 2})^2 - (\vec{p_{\Pbottom 1}} + \vec{p_{\Pbottom 2}})^2 \notag\\
-& = 2E_{\Pbottom 1}E_{\Pbottom 2} + m_{\Pbottom 1}^2 +m_{\Pbottom 2}^2 - 2\vec{p_{\Pbottom 1}}\vec{p_{\Pbottom 2}} \notag\\
-& = m_{\Pbottom 1}^2 +m_{\Pbottom 2}^2 - 2E_{\Pbottom 1}E_{\Pbottom 2}(1-\vec{\beta_{\Pbottom 1}}\vec{\beta_{\Pbottom 2}})\notag\\
-&\Rightarrow (1-\vec{\beta_{\Pbottom 1}}\vec{\beta_{\Pbottom 2}}) = \frac{m_{\PHiggslight}^2 - m_{\Pbottom 1}^2 - m_{\Pbottom 2}^2}{2E_{\Pbottom 1}E_{\Pbottom 2}}.
+m_{\PHiggslight}^2 &= E_{\PHiggslight}^2 - \vec{p_{\PHiggslight}}^2 = (E_{\text{j} 1}+E_{\text{j} 2})^2 - (\vec{p_{\text{j} 1}} + \vec{p_{\text{j} 2}})^2 \notag\\
+& = 2E_{\text{j} 1}E_{\text{j} 2} + m_{\text{j} 1}^2 +m_{\text{j} 2}^2 - 2\vec{p_{\text{j} 1}}\vec{p_{\text{j} 2}} \notag\\
+& = m_{\text{j} 1}^2 +m_{\text{j} 2}^2 - 2E_{\text{j} 1}E_{\text{j} 2}(1-\vec{\beta_{\text{j} 1}}\vec{\beta_{\text{j} 2}})\notag\\
+&\Rightarrow (1-\vec{\beta_{\text{j} 1}}\vec{\beta_{\text{j} 2}}) = \frac{m_{\PHiggslight}^2 - m_{\text{j} 1}^2 - m_{\text{j} 2}^2}{2E_{\text{j} 1}E_{\text{j} 2}}.
 \end{align}
 When varying the energy of the first jet in the fit, equation \ref{eqn:kinfit_prefit} can be 
-rewritten to derive an expression for the updated energy of the second jet. Using $\mathcal{A} = (1-\vec{\beta_{\Pbottom 1}}\vec{\beta_{\Pbottom 2}})$ 
+rewritten to derive an expression for the updated energy of the second jet. Using $\mathcal{A} = (1-\vec{\beta_{\text{j} 1}}\vec{\beta_{\text{j} 2}})$ 
 and
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:gamma_def}
@@ -337,22 +342,22 @@ and
 we get:
 ~\vspace{-0.5\baselineskip}
 \begin{align}\label{eqn:kinfit_variation}
-m_{\PHiggslight}^2 &= m_{\Pbottom 1}^2 + m_{\Pbottom 2}^2 - 2E_{\Pbottom 1}E_{\Pbottom 2}(1-\vec{\beta_{\Pbottom 1}}\vec{\beta_{\Pbottom 2}})\notag\\
-&= m_{\Pbottom 1}^2 +\frac{E_{\Pbottom 2,\text{fit}}^2}{\gamma_{\Pbottom 2}^2} +2\mathcal{A}E_{\Pbottom 1}E_{\Pbottom 2,\text{fit}}\notag\\
-\Rightarrow E_{\Pbottom 2}^{\text{fit}}& = \frac{(-2E_{\Pbottom 1}\mathcal{A} + \sqrt{4E_{\Pbottom 1}^2\mathcal{A} - 4(m_{\Pbottom 1}^2-m_{\PHiggslight}^2)\gamma_{\Pbottom 2}^{-2}})\gamma_{\Pbottom 2}^2}{2}\notag\\
-&= - E_{\Pbottom 1}\mathcal{A}\gamma_{\Pbottom 2}^2+\sqrt{E_{\Pbottom 1}^2\mathcal{A}\gamma_{\Pbottom 2}^4 - (m_{\Pbottom 1}^2 - m_{\PHiggslight}^2)\gamma_{\Pbottom 2}^2}\notag\\
-&\Rightarrow E_{\Pbottom 2}^{\text{fit}} = E_{\Pbottom 1}\mathcal{A}\gamma_{\Pbottom 2}^2(-1 + \sqrt{1+\frac{m_{\PHiggslight}^2 - m_{\Pbottom 1}^2}{E_{\Pbottom 1}^2\mathcal{A}\gamma_{\Pbottom 2}^2}}).
+m_{\PHiggslight}^2 &= m_{\text{j} 1}^2 + m_{\text{j} 2}^2 - 2E_{\text{j} 1}E_{\text{j} 2}(1-\vec{\beta_{\text{j} 1}}\vec{\beta_{\text{j} 2}})\notag\\
+&= m_{\text{j} 1}^2 +\frac{E_{\text{j} 2,\text{fit}}^2}{\gamma_{\text{j} 2}^2} +2\mathcal{A}E_{\text{j} 1}E_{\text{j} 2,\text{fit}}\notag\\
+\Rightarrow E_{\text{j} 2}^{\text{fit}}& = \frac{(-2E_{\text{j} 1}\mathcal{A} + \sqrt{4E_{\text{j} 1}^2\mathcal{A} - 4(m_{\text{j} 1}^2-m_{\PHiggslight}^2)\gamma_{\text{j} 2}^{-2}})\gamma_{\text{j} 2}^2}{2}\notag\\
+&= - E_{\text{j} 1}\mathcal{A}\gamma_{\text{j} 2}^2+\sqrt{E_{\text{j} 1}^2\mathcal{A}\gamma_{\text{j} 2}^4 - (m_{\text{j} 1}^2 - m_{\PHiggslight}^2)\gamma_{\text{j} 2}^2}\notag\\
+&\Rightarrow E_{\text{j} 2}^{\text{fit}} = E_{\text{j} 1}\mathcal{A}\gamma_{\text{j} 2}^2(-1 + \sqrt{1+\frac{m_{\PHiggslight}^2 - m_{\text{j} 1}^2}{E_{\text{j} 1}^2\mathcal{A}\gamma_{\text{j} 2}^2}}).
 \end{align}
 
-The fitting procedure additionally modifies the masses of the b-jets as 
+The fitting procedure additionally modifies the masses of the jets as 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_bjetmass}
-m_{\Pbottom_{1,2}}^{\text{fit}} = m_{\Pbottom{1,2}}\frac{E_{\Pbottom{1,2}}^{\text{fit}}}{E_{\Pbottom{1,2}}}.
+m_{\text{j}_{1,2}}^{\text{fit}} = m_{\text{j}{1,2}}\frac{E_{\text{j}{1,2}}^{\text{fit}}}{E_{\text{j}{1,2}}}.
 \end{equation}
-The $\chi^2$ term for each b-jet is calculated as $\chi_{\Pbottom 1,2}^2 = \frac{E_{\Pbottom 1,2}^{\text{fit}}-E_{\Pbottom 1,2}^{\text{meas}}}{\sigma_{\Pbottom 1,2}}$, where `meas' denotes the measured value and `fit' the value given by the fit.
+The $\chi^2$ term for each jet is calculated as $\chi_{\text{j} 1,2}^2 = \frac{E_{\text{j} 1,2}^{\text{fit}}-E_{\text{j} 1,2}^{\text{meas}}}{\sigma_{\text{j} 1,2}}$, where `meas' denotes the measured value and `fit' the value given by the fit.
 
 For taus only the visible decay products are measured. Assuming these point in 
-the same direction as the original tau, a similar procedure as for the b-jets can be employed to constrain the energy of the second tau
+the same direction as the original tau, a similar procedure as for the jets can be employed to constrain the energy of the second tau
 when varying the energy of the first tau in the fit. The masses of the taus are kept fixed at $m_{\Pgt}$ throughout the procedure.
 
 Due to the missing energy associated with the tau decays, additional constraints
@@ -362,12 +367,12 @@ enforcing that the heavy Higgs boson recoil from the fit is close to the reconst
 The measured recoil is 
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilmeas}
-\vec{p}_{\text{T,recoil}}^{\text{ meas}} = -\vec{p}_{\text{T,\PHiggs}}^{\text{ meas}} = -\vec{p}_{\text{T,miss}}^{\text{ meas}} - \vec{p}_{\text{T},\Pbottom 1}^{\text{ meas}} - \vec{p}_{\text{T},\Pbottom 2}^{\text{ meas}} - \vec{p}_{\text{T},\Pgt_1^{\text{vis}}}^{\text{ meas}} - \vec{p}_{\text{T},\Pgt_2^{\text{vis}}}^{\text{ meas}},
+\vec{p}_{\text{T,recoil}}^{\text{ meas}} = -\vec{p}_{\text{T,\PHiggs}}^{\text{ meas}} = -\vec{p}_{\text{T,miss}}^{\text{ meas}} - \vec{p}_{\text{T},\text{j} 1}^{\text{ meas}} - \vec{p}_{\text{T},\text{j} 2}^{\text{ meas}} - \vec{p}_{\text{T},\Pgt_1^{\text{vis}}}^{\text{ meas}} - \vec{p}_{\text{T},\Pgt_2^{\text{vis}}}^{\text{ meas}},
 \end{equation}
 and the recoil from the fit is,
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_recoilfit}
-\vec{p}_{\text{T,recoil}}^{\text{ fit}} = -\vec{p}_{\text{T,\PHiggs}}^{\text{ fit}} = - \vec{p}_{\text{T},\Pbottom 1}^{\text{ fit}} - \vec{p}_{\text{T},\Pbottom 2}^{\text{ fit}} - \vec{p}_{\text{T},\Pgt_1}^{\text{ fit}} - \vec{p}_{\text{T},\Pgt_2}^{\text{ fit}}.
+\vec{p}_{\text{T,recoil}}^{\text{ fit}} = -\vec{p}_{\text{T,\PHiggs}}^{\text{ fit}} = - \vec{p}_{\text{T},\text{j} 1}^{\text{ fit}} - \vec{p}_{\text{T},\text{j} 2}^{\text{ fit}} - \vec{p}_{\text{T},\Pgt_1}^{\text{ fit}} - \vec{p}_{\text{T},\Pgt_2}^{\text{ fit}}.
 \end{equation}
 A $\chi^2$ corresponding to the agreement between the fitted and measured recoil is reconstructed as
 ~\vspace{-0.5\baselineskip}
@@ -376,17 +381,17 @@ A $\chi^2$ corresponding to the agreement between the fitted and measured recoil
 \end{equation}
 where the covariance matrix $V_{\text{recoil}}$ of the recoil vector is estimated as 
 \begin{equation}\label{eqn:kinfit_recoilcov}
-V_{\text{recoil}} = V_{\vec{p}_{\text{T,miss}}} - V_{\Pbottom {1}} - V_{\Pbottom 2},
+V_{\text{recoil}} = V_{\vec{p}_{\text{T,miss}}} - V_{\text{j} {1}} - V_{\text{j} 2},
 \end{equation}
- from the covariance matrices of the b-jets and
+ from the covariance matrices of the jets and
 the covariance matrix of the missing transverse momentum. The latter is estimated in the process of determining the MVA \MET,
-while the covariance matrices of the b-jets can be written in terms of the position, momentum and resolution of the b-jets. 
+while the covariance matrices of the jets can be written in terms of the position, momentum, and energy resolution of the jets. 
 The total $\chi^2$ term that needs to be minimised in the fit can then be written as
 ~\vspace{-0.5\baselineskip}
 \begin{equation}\label{eqn:kinfit_chitot}
-\chi^2 = \chi^2_{\Pbottom 1} + \chi^2_{\Pbottom 2} + \chi^2_{\text{recoil}}.
+\chi^2 = \chi^2_{\text{j} 1} + \chi^2_{\text{j} 2} + \chi^2_{\text{recoil}}.
 \end{equation}
-The results of the kinematic fit are the tau and b-jet four-vectors with their energies and momenta
+The results of the kinematic fit are the tau and jet four-vectors with their energies and momenta
 set to the best fit values found for them in the fit. These can then be added together to find
 the mass of the heavy Higgs boson as reconstructed by the kinematic fit.
 
@@ -395,7 +400,7 @@ improves the resolution of the reconstructed heavy Higgs boson mass in signal ev
 compared with the simple four-body mass reconstruction. It also shifts the mean of the
 distribution closer to the true value. It is also insightful to make such a comparison
 for the \ttbar background, which is the dominant background in the most signal-sensitive categories as 
-shown in figure \ref{fig:Hhh_selection_bjets}. This comparison between four-body mass and
+shown in figure \ref{fig:Hhh_selection_masscuts}. This comparison between four-body mass and
 kinematic fit mass for \ttbar events is shown in figure 
 \ref{fig:kinfitvsmjj}b. This figure shows that the mass distribution for
 background events is less affected by the kinematic fit, although due to the
@@ -436,11 +441,15 @@ category selection. The contamination from the \ttbar background in the embedded
 sample is evaluated using the dedicated \ttbar embedded sample. This contribution
 is subtracted from the \Ztautau background.
 \subsection{\texorpdfstring{\ttbar}{ttbar}}
-Both the \ttbar shape and normalisation are estimated using simulation.
+The \ttbar shape and normalisation are both estimated using simulation.
+%Both the \ttbar shape and normalisation are estimated using simulation.
 These are checked against data in dedicated control regions. One such control
 region uses the \emu final state of the di-tau pair. A correction factor is estimated in 
 this control region and applied to the yield estimate from simulation in the signal region. 
-%The resulting scale factor is 1.033 ± 0.013(stat.) ± 0.088(syst.). 
+The resulting scale factor is $1.033 \pm 0.013\text{ (stat.)}\pm 0.088\text{ (syst.)}$. The
+statistical and systematic uncertainties are added in quadrature to give a 9\% uncertainty,
+which is applied to the \ttbar process.
+ 
 \subsection{\texorpdfstring{\Wjets}{W + jets}}
 \label{sec:hhh_backgrounds_wjets}
 The \Wjets background is greatly reduced by requiring \mT~to
@@ -491,14 +500,18 @@ working point.
 \label{sec:hhh_backgrounds_other}
 The remaining backgrounds of \Zellell, di-boson and single-top
 events are small. Both shapes and normalisations are
-estimated using simulated samples.
+estimated using simulated samples. Dedicated $\Pe\rightarrow\Pgth$
+fake rate corrections, described in section \ref{sec:hhh_datamc}, are
+applied to adjust the \Zee normalisation. The $\Pgm\rightarrow\Pgth$ 
+fake rate correction was found to be close to 1 and therefore the \Zmm
+normalisation is not subject to such an additional correction factor.
  
 \section{Systematic uncertainties}
 \label{sec:hhh_uncs}
 Two types of systematic uncertainties are considered: normalisation
 uncertainties and shape uncertainties. Normalisation uncertainties affect only
 the yield of a process, while shape uncertainties affect both the yield of a process and the 
-shape of its kinematic fit mass distribution. 
+shape of the kinematic fit mass distribution. 
 Section \ref{sec:hhh_results_extraction}
 describes how these uncertainties are taken into account in the final result.
 \subsection{Normalisation uncertainties}
@@ -517,7 +530,7 @@ the normalisation is estimated using simulation.
 \subsubsection*{$\Pe\rightarrow\Pgth$ and $\Pgm\rightarrow\Pgth$ fake rates}
 The uncertainty in both the $\Pe\rightarrow\Pgth$ fake rate measurement and the
 $\Pgm\rightarrow\Pgth$ fake rate measurement is 30\% \cite{SMHtautauCMS}. The central value of the $\Pgm\rightarrow\Pgth$
-fake rate correction is close to 1, which is why it is not applied, but the uncertainty is 
+fake rate correction is close \mbox{to 1,} which is why it is not applied, but the uncertainty is 
 taken into account.
 \subsubsection*{b-Tag scale factors}
 The b-tag scale factors are varied within their uncertainties, as described in reference \cite{cms-btag-paper}, to determine the effect
@@ -538,9 +551,9 @@ leads to a $1$--$10$\% uncertainty, depending on the category and process consid
 \begin{itemize}
 \setlength{\itemsep}{-0.5\baselineskip}
 \item \Ztautau : The inclusive normalisation of the embedded samples has a 3.3\% uncertainty, which is derived
-from combining the estimated normalisation uncertainty on the embedded samples themselves, and the uncertainty on the \ttbar embedded samples. In addition, an uncertainty of $5$--$6$\% for extrapolation from the inclusive selection to the category selection is applied.
+from combining the estimated normalisation uncertainty on the embedded samples themselves and the uncertainty on the \ttbar embedded samples. In addition, an uncertainty of $5$--$6$\% for extrapolation from the inclusive selection to the category selection is applied.
 \item \Zellell: As this is a very small background after requiring two jets, the uncertainty on this estimate is derived from the statistical uncertainty on the yield estimate, which varies between $20$--$90$\%.
-\item \ttbar: The uncertainty in the \ttbar cross section is 10\% \cite{toppp}.
+\item \ttbar: The uncertainty in the measured \ttbar scale factor 9\%. 
 \item Di-boson and single top: The combined uncertainty in the di-boson and single-top cross sections is 15\% \cite{8TeVdib,8TeVst}.
 \item \Wjets: As the \Wjets yield is estimated from a high-\mT~sideband in data, the uncertainty in this yield estimate is primarily due to the number of events available in the control region. The uncertainty ranges from 10\% in the 2jet-0tag category to 100\% in the 2jet-2tag category.
 \item QCD: The QCD normalisation uncertainty is obtained by adding the statistical uncertainty on the data-subtracted same-sign region in quadrature with the 10\% uncertainty on the OS/SS ratio. This yields a 20\% uncertainty in the 2jet-0tag category, a 40\% uncertainty in the 2jet-1tag category and a $60$--$100$\% uncertainty in the 2jet-2tag category.
@@ -635,7 +648,7 @@ signal expectation. In the case of the \Htohhtobbtautau analysis the signal is n
 to $1\,\picobarn$, so the signal strength modifier represents
 the \xsbr of a possible signal.
 
-The second factor in equation \ref{eqn:hhh_likelihood}, $p(\tilde{\theta}|\theta)$ represents the full set of 
+The second factor in equation \ref{eqn:hhh_likelihood}, $p(\tilde{\theta}|\theta)$, represents the full set of 
 probability density functions of the uncertainties on the nominal
 values of the nuisance parameters $\tilde{\theta}$. Each nuisance parameter represents a systematic uncertainty
 as discussed in section~\ref{sec:hhh_uncs}. The functional form of the probability density function
@@ -721,7 +734,7 @@ described in this chapter, removing the need to generate toy datasets.
 
 The $m_{\PHiggs}^{\text{kinfit}}$ distributions in all categories of the \mutau and \etau channels, after the fit to the
 observed data has been performed, are shown in figures \ref{fig:hhh_results_mhkinfit_mutau} and \ref{fig:hhh_results_mhkinfit_etau} 
-respectively.
+respectively. The numbers of observed events, compared with the background expectation, are given in appendix \ref{appendix:yields_bbtautau}.
 
 \begin{figure}[h!]
 \begin{center}

@@ -202,7 +202,9 @@ The \ET$^{\text{neutral}}$ and \ET$^{\text{photon}}$ sums
 run over all neutral hadronic energy and photon energy. %within the cone of radius $\Delta R$.
 The contribution from neutral particles due to pileup needs to be subtracted from
 the sum of these two terms. It is estimated as the sum of charged hadronic \pT~for hadrons not associated
-with the primary vertex, multiplied by a $\Delta \beta$ factor of $\frac{1}{2}$.
+with the primary vertex, multiplied by a $\Delta \beta$ factor of $\frac{1}{2}$. This factor
+is the average ratio of neutral to charged particles, which is measured in jets 
+by studying the fraction of energy carried by charged and neutral constituents \cite{cms-pf-2010-2}.
 
 \section{Muons}
 \label{sec:objects_muo}
@@ -274,7 +276,7 @@ of a track with the muon track segments in the muon stations it has crossed.
 %\end{itemize}
 
 In the \Htohhtobbtautau analysis, where Run 1 data 
-was used, muons were required to pass ``tight'' identification requirements \cite{cms-muon-reco}. 
+were used, muons were required to pass ``tight'' identification requirements \cite{cms-muon-reco}. 
 In addition to having to be reconstructed by the global muon algorithm, selections
 are made on the $\chi^2$ per degrees of freedom of the track fit, number of hits of the inner
 track in different tracker layers and number of muon segments the inner track is matched to.
@@ -399,8 +401,8 @@ define distance parameters $d_{ij}$, denoting the distance between object (parti
 particles) $i$ and 
 object $j$, and $d_{iB}$ denoting the distance between 
 object $i$ and the beam. The smallest of these distances
-is determined and if this is a distance between an object i and an object j, objects
-i and j are combined. If the smallest distance is a $d_{iB}$, object i
+is determined and if this is a distance between an object $i$ and an object $j$, objects
+$i$ and $j$ are combined. If the smallest distance is a $d_{iB}$, object $i$
 is called a jet and removed from the list of objects. In the anti-\kT~algorithm
 these distance parameters are defined as:
 \begin{align}\label{eqn:objects_antikt}
@@ -408,7 +410,7 @@ d_{ij}=\text{min}(p_{\text{T},i}^{-2},p_{\text{T},j}^{-2})\frac{\Delta_{ij}^2}{R
 d_{iB} = p_{\text{T}}^{-2},
 \end{align}
 where $\Delta_{ij} = \sqrt{(y_i-y_j)^2+(\phi_i - \phi_j)^2}$ is the distance
-between the objects i and j in rapidity-azimuthal angle space. The radius
+between the objects $i$ and $j$ in rapidity-azimuthal angle space. The radius
 parameter $R$ was chosen as 0.5 during Run~1 \cite{cms-jec-2011} and as 0.4 during Run~2 \cite{cms-jets-run2}. 
 This algorithm is collinear- and infrared-safe, which means that the number of jets
 is not affected by the emission of soft collinear gluons or parton splitting.
@@ -753,6 +755,10 @@ upper limit on the mass at least $1.2\,\GeV$ and at most $4.0\,\GeV$.
 within $\Delta z<0.4$~cm of the same vertex, and their total charge is required to be $\pm 1$.
 \end{itemize}
 
+The three prong + 1 \Ppizero decay mode, which would reconstruct the 
+\Ptaupm $\rightarrow$ h$^{\pm}$h$^{\mp}$h$^{\pm}$\Ppizero\Pnut decay, 
+suffers from large contamination by jets and is therefore not considered.
+
 %\subsection{Isolation and discrimination against light leptons}
 %\label{sec:objects_tau_iso}
 Requiring the reconstructed \Pgth to be isolated reduces the $\text{jet}\rightarrow\Pgth$ fake rate. Isolation
@@ -769,7 +775,9 @@ of the transverse momenta of photons with $\pTm > 0.5$ GeV within a cone of $\De
 of the \Pgth. The effect of pileup on this term is accounted for by subtracting the sum of the momenta of charged
 particles with \pT~$> 0.5\,\GeV$, within a cone of $\Delta R = 0.8$ around the direction of the hadronic tau and
 tracks not compatible with having originated from the production vertex of the hadronic tau, multiplied by
-a $\Delta \beta$ factor of 0.2.%FIXME rephrase
+a $\Delta \beta$ factor of 0.2. This factor accounts for the fraction of neutral to charged energy. To determine 
+it, the photon energy sum discussed above is fitted as a function of the quantity $\Sigma p_{\text{T}}^{\text{charged}} (d_Z > 0.2 \text{ cm})$.
+The slope of this linear fit is taken as the $\Delta \beta$ factor.
 
 In addition to the isolation sum, a requirement on the sum of transverse momenta
 of electrons and photons included in strips but which are located outside of the signal cone,
@@ -778,13 +786,14 @@ p_{\text{T}}^{\text{strip, outer}} = \Sigma p_{\text{T}}^{\Pe/\Pphoton}(\Delta R
 \end{equation}
 can be made.
 An MVA \Pgth isolation discriminator combines isolation variables with tau lifetime information into a \ac{BDT} to discriminate between \Pgth decays and quark and gluon jets.
-Some of the variables used as input are:
+The variables used as inputs are:
 \begin{itemize}
 \setlength{\itemsep}{-0.5\baselineskip}
-\item Isolation sums, including those in equations \ref{eqn:cutbased_iso} and \ref{eqn:ptouter_iso}.
-\item Track-related variables such as impact parameters, quality of the track, and information about decay vertices.
+\item Isolation sums of charged and neutral particles, in addition to the isolation sums in equations \ref{eqn:cutbased_iso} and \ref{eqn:ptouter_iso}.
+\item Track-related variables: the impact parameters, quality of the track, information about decay vertices.
 \item Information about photons: the momentum-weighted $\Delta R$, $\Delta \eta$ and $\Delta \phi$ of photons in strips inside or outside the signal cone, in addition to the number of signal and isolation photons found.
-\item \Pgth-related kinematic quantities, plus the reconstructed decay mode.  
+\item \Pgth-related variables: the reconstructed decay mode and \Pgth kinematics.  
+\item The ratio of the total electromagnetic energy to the total energy within the \Pgth signal cone.
 %\item The charged-and neutral-particle isolation sums
 %\item The reconstructed $\tau_{h}$ decay mode
 %\item The transverse impact parameter $d_{xy}$ of the leading track of the $\tau_{h}$ candidate with the vertex, and its significance $d_{xy}/\sigma_{d_{xy}}$, and its sign (the projection of the impact parameter vector on the $\tau_h$ direction)
@@ -808,29 +817,30 @@ discriminator performs better than the cut-based discriminator alone.
 
 In order to reduce the $\Pe\rightarrow\Pgth$ and $\Pgm\rightarrow\Pgth$ fake rates, 
 anti-electron and anti-muon discriminators are used. 
-The anti-electron discriminator is a \ac{BDT}-based discriminator trained using input variables such as:
+The anti-electron discriminator is a \ac{BDT}-based discriminator trained using the following input variables:
 \begin{itemize}
 \setlength{\itemsep}{-0.5\baselineskip}
-\item Kinematic variables of the \Pgth candidate and \ac{GSF} track, including visible mass of the \Pgth.
-\item Energy and momentum ratios such as the fraction of electromagnetic energy, \ac{ECAL} and \ac{HCAL} energy relative to track momentum.
-\item Photon-related variables, such as the momentum-weighted $\Delta \eta$ and $\Delta \phi$ between photons, the fraction of the \Pgth energy carried by photons, and the number of photons found in strips.
+\item Kinematic variables of the \Pgth candidate and the \ac{GSF} track, plus the visible mass of the \Pgth candidate.
+\item Energy and momentum ratios: the fraction of electromagnetic energy, plus the \ac{ECAL} and \ac{HCAL} energy relative to track momentum.
+\item Photon-related variables: the momentum-weighted $\Delta \eta$ and $\Delta \phi$ between photons, the fraction of the \Pgth energy carried by photons, the ratio of
+the energies of bremsstrahlung photons measured in the \ac{ECAL} and the tracker, and the number of photons found in strips.
 \item Information on the quality of the track.
+%\item Distance in $\eta$ and $\phi$ of the \ac{GSF} track to the nearest boundary between \ac{ECAL} modules.
+%\item $(p_{in} - p_{out})/p_{in}$
+%\item $\chi^2/Ndof$ of the GSF track fit
+%\item $N_{hits}^{GSF}-N_{hits}^{KF}/N_{hits}^{GSF}+N_{hits}^{KF}$, With $N_{hits}^{GSF}$ the number of hits associated with the track in the \ac{GSF} track reconstruction algorithm, and
+%similarly $N_{hits}^{KF}$ for the \ac{KF} track reconstruction algorithm.
 %\item \pT, $\eta$ of the $\Pgt_{h}$ candidate
 %\item \pT, $\eta$, $\sigma_{p_{\text{T}}}/p_{\text{T}}$ of the \ac{GSF} track
-%\item Distance in $\eta$ and $\phi$ of the \ac{GSF} track to the nearest boundary between \ac{ECAL} modules.
 %\item Electromagnetic energy fraction $E_{\text{ECAL}}/(E_{\text{ECAL}}+E_{\text{HCAL}})$
+%\item The ratio between the total \ac{ECAL} energy and inner track momentum
 %\item Ratio of \ac{ECAL} and \ac{HCAL} energy fractions relative to the momentum of the leading charged track
 %\item The \pT weighted RMS distances in $\eta$ and $\phi$ between the photons in any strip and the leading 
 %charged track (calculated separately for photons inside and outside the $\Pgt$ signal cone)
 %\item The fraction of $\Pgt_{h}$ energy carried by photons (calculated separately for photons inside and outside the $\Pgt_h$ signal cone)
-%\item $(p_{in} - p_{out})/p_{in}$
-%\item The number of photons in any of the strips associated with the $\Pgt_h$ candidate, calculated separately for photons inside and outside the $\Pgt_h$ signal cone
-%\item The ratio between the total \ac{ECAL} energy and inner track momentum
 %\item The ratio of energies of bremsstrahlung photons measured in the \ac{ECAL} and the tracker
 %\item The visible mass of the $\Pgt_h$ candidate, for photons and charged particles within the $\Pgt_h$ signal cone
-%\item $\chi^2/Ndof$ of the GSF track fit
-%\item $N_{hits}^{GSF}-N_{hits}^{KF}/N_{hits}^{GSF}+N_{hits}^{KF}$, With $N_{hits}^{GSF}$ the number of hits associated with the track in the \ac{GSF} track reconstruction algorithm, and
-%similarly $N_{hits}^{KF}$ for the \ac{KF} track reconstruction algorithm.
+%\item The number of photons in any of the strips associated with the $\Pgt_h$ candidate, calculated separately for photons inside and outside the $\Pgt_h$ signal cone
 \end{itemize}
 
 Five working points are provided, ranging from very loose to very tight. The \Pgth efficiency
@@ -839,21 +849,22 @@ figures \ref{fig:tau_efficiency}b and \ref{fig:tau_efficiency}c, respectively.
 
 \begin{figure}[h!]
 \begin{center}
-\subfloat[Isolation performance]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/TauEfficiencyIsol.pdf}}\\
+\subfloat[Isolation performance]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/TauEfficiencyIsol.png}}\\
 \subfloat[Real \Pgth efficiency for anti-\Pe discriminator]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/TauEfficiencyEle.pdf}}
 \subfloat[$\Pe\rightarrow$\Pgth fake rate for the anti-\Pe discriminator]{\includegraphics[width=0.5\textwidth]{./Objects/Plots/TauMisIDEle.pdf}}
 \end{center}
 \caption[Figures of the jet$\rightarrow$\Pgth fake rate in simulated QCD events
-versus $\Pgth$ identification efficiency for simulated $\PHiggs\rightarrow\Pgt\Pgt$ events, the real
+versus $\Pgth$ identification efficiency for simulated $\PHiggs\rightarrow\Pgt\Pgt$ events, the 
 $\Pgth$ identification efficiency for different working points of the anti-electron discriminator, and the \mbox{$\Pe\rightarrow\Pgth$} fake rate for different
 working points of the anti-electron discriminator.]{(a) The jet$\rightarrow$\Pgth fake rate in simulated QCD multijet events versus \Pgth identification
 efficiency for simulated $\PHiggs\rightarrow\Pgt\Pgt$ events, comparing the MVA-based isolation discriminator in red with the cut-based 
 isolation discriminator in pink. Tighter working points give lower hadronic tau identification
 efficiencies and lower fake rates, and for the same \Pgth identification efficiency the fake rate
-from the MVA-based discriminator is lower than from the cut-based discriminator. (b) The real \Pgth identification
-efficiency for different working points of the anti-electron discriminator as a function of the \pT~of the \Pgth, and (c)
-the $\Pe\rightarrow$\Pgth fake rate for different working points of the anti-electron discriminator, as a function of
-the \pT~of the electron \cite{cms-tau-2015}.}
+from the MVA-based discriminator is lower than from the cut-based discriminator. Figure adapted from \cite{cms-tau-2015}. (b) The \Pgth identification
+efficiency in simulated \Ztautau events for different working points of the anti-electron discriminator as a function of the \pT~of the \Pgth, and (c)
+the $\Pe\rightarrow$\Pgth fake rate in simulated \Zee events for different working points of the anti-electron discriminator, as a function of
+the \pT~of the electron \cite{cms-tau-2015}. Note that the efficiencies and fake rates are fully derived from simulation and serve to give
+an indication of the efficiencies of the different working points relative to each other.}
 \label{fig:tau_efficiency}
 \end{figure}
 The anti-muon discriminator is a cut-based discriminant, for which a loose and a tight working

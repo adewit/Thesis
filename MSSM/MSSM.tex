@@ -36,7 +36,8 @@ the 2016 p-p running period of the \ac{LHC}. %Section
 %luminosity of 2.3 fb$^{-1}$ collected at $\sqrt{s} = 13$ TeV.
 
 Signal and background events are generated using
-various \ac{MC} event generators. Signal samples
+various \ac{MC} event generators. All of these simulated samples
+are centrally produced for use by all CMS analyses. Signal samples
 for the $\Pg\Pg \rightarrow \phi$ and $\Pg\Pg \rightarrow \Pbottom\Pbottom\phi$
 production processes of the \PHiggs or \PHiggsps bosons are generated using \texttt{PYTHIA 8.1} \cite{pythia81}.
 These samples are produced for a range of masses between $90\,\GeV$ and $3.2\,\TeV$.
@@ -56,8 +57,9 @@ are generated. These exclusive samples increase the available number of
 background events with higher jet multiplicities. %note LO samples used because to get same number of effective
 %events would need to generate more NLO samples
 The `inclusive' and `exclusive' samples are reweighted
-before they are combined so as to preserve the correct
-fractions of events with each jet multiplicity. The $\PW{+}\Pphoton$ background samples,
+before they are combined so that the 
+fraction of events with each jet multiplicity is the same as in the
+inclusive sample only. The $\PW{+}\Pphoton$ background samples,
 only included in the \emu channel, are generated either with \texttt{MadGraph 5} or 
 with \texttt{MadGraph5\_aMC@NLO}.
 
@@ -220,8 +222,9 @@ is studied. The $S/\sqrt{B}$ for the different isolation variables is shown in f
 size of the error interval from the maximum-likelihood fit to the \Ztautau signal strength shown in 
 \ref{fig:mssm_selection_mt_muons}b. Both figures of merit do not
 change significantly when varying the isolation requirements meaning that this analysis
-is not so sensitive to fake, non-isolated muons. The choice of isolation variable is therefore
-driven mostly by simplicity and consistency with other \ac{CMS} analyses.
+is not so sensitive to fake, non-isolated muons. The choice of isolation variable, $\Delta\beta$
+corrected isolation as in equation \ref{eqn:electron_reliso} with a cone size of $\Delta R=0.4$, is therefore
+driven mostly by simplicity and consistency with other \ac{CMS} analyses. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -461,51 +464,49 @@ events in the lower part of the trigger turn-on curve being selected.
 In addition to the selection described so far,
  a topological selection is made on the $D_{\zeta}$ variable \cite{cdf-dzeta},
 \begin{align}\label{eqn:mssm_em_dzeta}
-&D_{\zeta} = P_{\zeta} - 1.85 P_{\zeta}^{\text{vis}}, \notag \\
-&\text{where } P_{\zeta} = (\vec{p}_{\text{T},1}^{\text{  vis}} + \vec{p}_{\text{T},2}^{\text{  vis}} + E_{\text{T}}^{\text{miss}})\frac{\vec{\zeta}}{|\vec{\zeta}|} 
-\text{ and } P_{\zeta}^{\text{vis}} = (\vec{p}_{\text{T},1}^{\text{  vis}}+\vec{p}_{\text{T},2}^{\text{  vis}})\frac{\vec{\zeta}}{|\vec{\zeta}|}.
+&D_{\zeta} = P_{\zeta}^{\text{miss}} - 0.85 P_{\zeta}^{\text{vis}}, \notag \\
+&\text{where } P_{\zeta}^{\text{miss}} = \vec{E}_{\text{T}}^{\text{miss}}\cdot\frac{\vec{\zeta}}{|\vec{\zeta}|} 
+\text{ and } P_{\zeta}^{\text{vis}} = (\vec{p}_{\text{T},1}^{\text{  vis}}+\vec{p}_{\text{T},2}^{\text{  vis}})\cdot\frac{\vec{\zeta}}{|\vec{\zeta}|}.
 \end{align}
 This means $D_{\zeta}$ is defined as the projection of the transverse momenta of the visible tau decay products plus missing energy, \pT+\MET, onto 
 the axis $\vec{\zeta}$, minus the projection of only the transverse momenta of the visible tau decay products onto this axis.
 The axis $\vec{\zeta}$ is the axis that bisects
 the directions $\vec{p}_{\text{T,1}}^{\text{  vis}}$ and $\vec{p}_{\text{T,2}}^{\text{  vis}}$
 of the visible decay products in the transverse plane. This definition is illustrated in figure
-\ref{fig:mssm_dzeta}a, with figure \ref{fig:mssm_dzeta}b showing the $D_{\zeta}$ distribution
+\ref{fig:mssm_dzeta}a. In \Ztautau and \AHtotautau events, the neutrinos from the $\tau\rightarrow\ell\nu\nu$ decay 
+are more likely to travel in the same direction as the visible decay products of the tau. This means the missing
+energy is not expected to point in the opposite direction of the momentum sum of 
+the visible tau decay products, making $D_{\zeta}$ more likely to be positive. In decays of
+di-boson, \ttbar and \Wjets events, leptons and neutrinos are more likely to be emitted back-to-back
+and therefore $D_{\zeta}$ is not preferentially positive.
+Figure \ref{fig:mssm_dzeta}b shows the $D_{\zeta}$ distribution
 for \emu events. The selection used, $D_{\zeta} > -20\,\GeV$, rejects $\ttbar$, \Wjets and di-boson
 events. 
 %The momentum of the neutrinos should not be in the opposite direction of the sum of the visible decay products
 %as the neutrinos and visible tau decay products travel at small angles from the original tau.
 
+
 \begin{figure}[h!]
 \begin{center}
-\subfloat[Reconstruction of $D_{\zeta}$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/PZeta.pdf}}
+\subfloat[Reconstruction of $D_{\zeta}$]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/PZeta_adapted_ok.png}}
 \subfloat[$D_{\zeta}$ distribution in \emu channel]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/pzeta_inclusive_em_2016.pdf}}
 \end{center}
 \caption[Reconstruction of the $D_{\zeta}$ variable and the $D_{\zeta}$ distribution
-in the \emu channel.]{(a) Reconstruction of $D_{\zeta}$ \cite{cdf-dzeta} and (b) $D_{\zeta}$ distribution in the 
-\emu channel \cite{CMS-PAS-HIG-16-037}.}
+in the \emu channel.]{(a) Reconstruction of $D_{\zeta}$ (adapted from \cite{cdf-dzeta}) and (b) $D_{\zeta}$ distribution in the 
+\emu channel \cite{CMS-PAS-HIG-16-037}. The events shown in (b) were selected according to the requirements described in this section.}
 \label{fig:mssm_dzeta}
 \end{figure}
+
 
 \subsection{Categorisation}
 \label{sec:mssm_eventsel_categories}
 As the analysis targets both the gluon fusion
 and the b-associated production modes, 
 the sensitivity to the signal can be increased by categorising
-based on the number of b-tagged jets in the event.
-
-\begin{figure}[h!]
-\begin{center}
-\subfloat[Number of jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_jets_inclusive_mt_2016_log.pdf}}
-\subfloat[Number of b-tagged jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_bjets_inclusive_mt_2016_log.pdf}}
-\end{center}
-\caption[Number of jets and number of b-tagged jets in the \mutau channel, 
-with the signal overlaid.]{(a) Number of jets and (b) number of b-tagged jets in the \mutau channel. The gluon fusion signal (dashed
-blue line) and b-associated signal (dashed purple line) are overlaid on the expected background distribution. The signals
-are normalised to 100 times their \xsbr at \mA~$=1\,\TeV$ and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$
-scenario. The signal-sensitive bins motivate the choice of categories.}
-\label{fig:mssm_cats_mt}
-\end{figure}
+based on the number of b-tagged jets in the event. Jets
+are considered b-tagged if they pass the medium working point
+of the \ac{CSV}v2 discriminator; the typical b-tagging efficiency at this
+working point is 69\% \cite{cms-btag-run2}.
 
 Figure \ref{fig:mssm_cats_mt}a shows the number of jets 
 in the \mutau channel, with figure \ref{fig:mssm_cats_mt}b showing
@@ -540,6 +541,21 @@ Due to the lower \pT~requirement considered for
 b-tagging compared with the requirement for the jet veto, it is still possible for there
 to be more than one b-tagged jet in the event.
 \end{itemize}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Number of jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_jets_inclusive_mt_2016_log.pdf}}
+\subfloat[Number of b-tagged jets]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/n_bjets_inclusive_mt_2016_log.pdf}}
+\end{center}
+\caption[Number of jets and number of b-tagged jets in the \mutau channel, 
+with the signal overlaid.]{(a) Number of jets and (b) number of b-tagged jets in the \mutau channel. The gluon fusion signal (dashed
+blue line) and b-associated signal (dashed purple line) are overlaid on the expected background distribution. The signals
+are normalised to 100 times their \xsbr at \mA~$=1\,\TeV$ and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$
+scenario. The signal-sensitive bins motivate the choice of categories. The events shown in these
+figures were selected according to the requirements described in section \ref{sec:mssm_eventsel_mt}.}
+\label{fig:mssm_cats_mt}
+\end{figure}
+
 
 \section{Discriminating variable}
 \label{sec:mssm_discrvar}
@@ -587,8 +603,8 @@ The total transverse mass variable separates the signal and these backgrounds we
 \label{sec:mssm_mccorrs}
 Because simulated samples are used for the signal prediction, and 
 to estimate some of the backgrounds, it is important to correct for possible 
-mis-modelling with respect to the data. Dedicated control regions in
-data are used to derive the \ac{MC} simulation-to-data correction factors
+mis-modelling with respect to the data. Dedicated control regions 
+are used to derive the \ac{MC} simulation-to-data correction factors
 that are applied to the simulated samples. Where efficiencies
 are involved this scale factor is derived by measuring the efficiency
 in data and in simulation and constructing the scale factor as $\text{SF}=\frac{\epsilon_{\text{Data}}}{\epsilon_{\text{MC}}}$.
@@ -631,13 +647,6 @@ Differences in \MET~resolution and response between data and simulation
 are accounted for by the application of recoil corrections
 to signal, \Wjets and \Ztautau events. More detail
 about these corrections is given in section \ref{sec:objects_met_recoilcorr}.
-\subsubsection*{b-Tag scale factors}
-To correct for the difference in b-tagging efficiency
-and light jet mis-tagging rates between data and simulation,
-\pT- and $\eta$-dependent scale factors are derived as 
-described in reference \cite{cms-btag-run2}. They 
-are applied using the promote-demote method
-as outlined in equation \ref{eqn:promotedemote}.
 \subsubsection*{Top quark \pT~reweighting}
 A reweighting which was derived during Run 1
 to better match the top quark \pT~distribution in simulation
@@ -646,7 +655,7 @@ the fact that the correction was derived during Run 1, it still
 improves the agreement with data in a \ttbar enriched
 control region in the \emu channel, defined as 
 \MET~$>80\,\GeV$ and $D_{\zeta}<-20\,\GeV$. This
-is illustrated in figure \ref{fig:mssm_corrs_toppt}.
+is illustrated in figure \ref{fig:mssm_corrs_toppt}. 
 \begin{figure}[h!]
 \begin{center}
 \subfloat[Without top quark \pT~reweighting]{\includegraphics[width=0.5\textwidth]{./MSSM/Figures/mt_tot_ttcontrol_em_2016_notoppt.png}}
@@ -655,10 +664,19 @@ is illustrated in figure \ref{fig:mssm_corrs_toppt}.
 \caption[The \mTtot~distribution in the \ttbar
 enriched control region, with and without applying top quark \pT~reweighting.]{The \mTtot~distribution in the \ttbar enriched control region \MET~$>80\,\GeV$ and \mbox{$D_{\zeta}<-20\,\GeV$} in the \emu channel,
 (a) without applying the top quark \pT~reweighting and (b) with the top quark \pT~reweighting.
-The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross section uncertainty.}
+The uncertainty band includes the statistical uncertainty as well as a 6\% \ttbar cross section uncertainty.
+The remaining disagreement between data and simulation after applying the reweighting is covered by
+an associated systematic uncertainty which is further discussed in section \ref{sec:mssm_uncs_shape}.}
 \label{fig:mssm_corrs_toppt}
 \end{figure}
 
+\subsubsection*{b-Tag scale factors}
+To correct for the difference in b-tagging efficiency
+and light jet mis-tagging rates between data and simulation,
+\pT- and $\eta$-dependent scale factors are derived as 
+described in reference \cite{cms-btag-run2}. They 
+are applied using the promote-demote method
+as outlined in equation \ref{eqn:promotedemote}.
 \subsubsection*{Drell-Yan shape reweighting}
 As the \ac{MC} generator used for the \Ztautau estimate
 does not model the data well for events with high di-lepton
@@ -684,7 +702,9 @@ in \mbox{\Zmm} events, and the impact of applying the Drell-Yan shape reweightin
 on the total transverse mass distribution of the \Ztautau background in the no b-tag category of the \etau channel.]{(a) The mis-modelling in the di-lepton \pT~distribution as observed
 in \Zmm events, used to derive the correction and (b) the impact of applying the Drell-Yan shape
 reweighting on the total transverse
-mass distribution of the \Ztautau background in the no b-tag category of the \etau channel.}
+mass distribution of the \Ztautau background in the no b-tag category of the \etau channel. The events shown in (a) were selected 
+by requiring two oppositely charged muons, passing kinematic cuts, identification and isolation requirements equivalent to the selections
+applied to muons as described in section \ref{sec:mssm_eventsel_mt}.}
 \label{fig:dyrwt}
 \end{figure}
 
@@ -811,6 +831,8 @@ as the much smaller \Zellell background.
 %regions are considered in a simultaneous fit with the signal region. More detail is given in 
 %section \ref{sec:mssm_sigext_ctrl}.
 
+\clearpage
+
 \subsection{\texorpdfstring{\Wjets and QCD in the \etau and \mutau channels}{W+jets and QCD in the e tau and mu tau channels}}
 \label{sec:mssm_bkgs_mtet_wjetsqcd}
 A data-driven approach is used for the estimation of
@@ -818,7 +840,7 @@ both the \Wjets and QCD backgrounds in the \etau and \mutau channels.
 The estimates of the normalisations of the two backgrounds are tied
 together due to the presence of some QCD contamination in the \Wjets-dominated
 control region. The shape of the \Wjets background is taken
-from simulation. The QCD shape taken from same-sign
+from simulation. The QCD shape is taken from same-sign
 data, that is, events selected in observed data with the opposite charge requirement
 on the di-tau pair inverted but otherwise identical cuts to the signal region. Contributions
 from other backgrounds in this region are subtracted.
@@ -844,7 +866,13 @@ before dividing the events into categories \cite{CMS-PAS-HIG-16-037}.}
 \end{figure}
 
 Because of this contribution from QCD events in the high-\mT~region we
-have, for $\mTm>70\,\GeV$:\\
+can construct two equations relating the QCD and \Wjets yields to the observed
+data. One of the equations relates these yields in the opposite-sign high-\mT~region,
+the other relates them in the same-sign high-\mT~region. Additionally 
+relating the opposite-sign yields to the same-sign yields using the
+ratios of opposite-sign to same-sign QCD and \Wjets events gives enough
+information to solve these equations for the yield of same-sign \Wjets events.
+Writing the yield of process $x$ in region $y$ as $N_x^y$, this means, for $\mTm>70\,\GeV$:\\
 \begin{minipage}{\textwidth}
 \begin{equation*}
 \begin{split}
@@ -936,6 +964,7 @@ fits as performed in the no b-tag category. Therefore $R_{\text{QCD}}^{\text{OS/
 1.18 in both the b-tag and the no b-tag category, with a 60\% uncertainty in the b-tag category and a 4\% uncertainty in the no b-tag category.
 In the \etau channel $R_{\text{QCD}}^{\text{OS/SS}}$ is taken to be 1.02 with a 60\% uncertainty in the b-tag category and a 12\% uncertainty
 in the no b-tag category.
+\clearpage
 
 \begin{figure}[h!]
 \begin{center}
@@ -988,7 +1017,6 @@ the maximum likelihood fit to $R_{\text{QCD}}^{\text{OS/SS}}$ and (b) after the 
 is $1.13\pm0.05$.}
 \label{fig:mssm_qcdosss_etfar}
 \end{figure}
-\clearpage
 
 \subsubsection{QCD normalisation}
 \label{sec:mssm_bkgs_etmt_qcdnorm}
@@ -1343,7 +1371,7 @@ in section \ref{sec:mssm_eventsel_categories} the two signals cannot be fully se
 of the categorisation used. 
 However, in the upper limits on \xsbr for the $\Pg\Pg\phi$
 process no assumptions should be made about the presence or lack of the $\Pbottom\Pbottom\phi$
-process and vice versa. Therefore when calculating the upper limits on the $\Pg\Pg\phi$ ($\Pbottom\Pbottom\phi$)
+process and vice versa. Therefore, when calculating the upper limits on the $\Pg\Pg\phi$ ($\Pbottom\Pbottom\phi$)
 process, the contribution of the $\Pbottom\Pbottom\phi$ ($\Pg\Pg\phi$) process is profiled. This means it is allowed
 to vary freely in the fit like a nuisance parameter.
 
@@ -1432,6 +1460,7 @@ there is no separation between the \ac{MSSM} and \ac{SM} distributions, and so t
 between the distributions in figure \ref{fig:mssm_mssmvssm_toys}b is much improved, and the observation is most compatible
 with the \ac{SM} hypothesis. This point is on the edge of being excluded. Finally the distributions in figure \ref{fig:mssm_mssmvssm_toys}c
 are very well separated, and the observation is compatible with the \ac{SM} hypothesis, meaning this point of the parameter space is excluded.
+\clearpage
 
 \begin{figure}[h!]
 \begin{center}
@@ -1443,8 +1472,8 @@ are very well separated, and the observation is compatible with the \ac{SM} hypo
 scenario, each with different levels of separation between the \ac{MSSM} and \ac{SM} distributions.}
 \label{fig:mssm_mssmvssm_toys}
 \end{figure}
-\clearpage
 
+\vspace{-1\baselineskip}
 \section{Results}
 \label{sec:mssm_results}
 \subsection{Model-independent results}
@@ -1455,7 +1484,15 @@ data has been performed, are shown in figures \ref{fig:mssm_results_mttot_mt}--\
 The signal of the three neutral Higgs bosons at \mA~$=1\,\TeV$ and \tanb~$=50$ in the $m_{\PHiggslight}^{\text{mod+}}$ scenario is overlaid 
 on the total transverse mass distributions. The signal peaks twice due to the presence of a light Higgs boson
 with mass compatible with $125\,\GeV$ in this model, which is necessary to incorporate the Higgs boson
-observed at $125\,\GeV$.
+observed at $125\,\GeV$. The numbers of observed events, compared with the background expectation, are given in 
+appendix \ref{appendix:yields_mssm}.
+
+Out of the 400 nuisance parameters in this analysis, in the fit to data 14 are pulled by more than one standard deviation and 
+none by more than two standard deviations. It is reasonable for a small fraction of the pulls to be greater than one standard deviation.
+In the low-mass region the dominant systematic uncertainties are the uncertainty related to the Drell-Yan shape reweighting, 
+the QCD OS/SS ratio uncertainties, the \Pgth identification efficiency uncertainty, and the high-\mT~to low-\mT~extrapolation uncertainty for the \Wjets background.
+Above around $800\,\GeV$ the analysis becomes more statistically limited. In this region dominant uncertainties are due to the limited numbers of available simulated events in the 
+background templates, the Drell-Yan shape reweighting uncertainty, the high-\pT~\Pgth identification efficiency uncertainty and the \Pgth energy scale uncertainty. 
 
 None of these distributions show a significant excess of observed events over the background
 expectation. The
@@ -1471,7 +1508,8 @@ $200\,\GeV$, beyond which the \tautau channel becomes more sensitive. The \etau
 channel is always slightly less sensitive than the \mutau channel. The \emu channel
 is the least sensitive over a large part of the mass range, until it overtakes the 
 \etau channel in sensitivity at $1.6\,\TeV$ and is slightly more sensitive than the
-\mutau channel at $3.2\,\TeV$. The \emu channel becomes more sensitive at higher masses as
+\mutau channel at $3.2\,\TeV$. The \emu channel becomes more sensitive than the 
+other channels at higher masses as
 a narrower binning of the \mTtot~distribution is possible than for the other channels.
 The \mTtot~distribution for the high mass signals is therefore wide enough to span
 more than the highest \mTtot~bin used in the fit.
@@ -1551,6 +1589,7 @@ all categories are combined for these limits. The green and yellow bands indicat
 the $\pm 1\sigma$ and $\pm 2\sigma$ probability intervals on the expected limit \cite{CMS-PAS-HIG-16-037}.}
 \label{fig:mssm_results_limits}
 \end{figure}
+
 \begin{figure}[h!]
 \begin{center}
 \subfloat[$\Pg\Pg\phi$]{\includegraphics[width=0.5\textwidth]{MSSM/Figures/mssm_hig16037_limitcomp_ggh.pdf}}
@@ -1568,7 +1607,6 @@ and \emu (gold) channels.} %For masses below $200\,\GeV$ the \mutau channel is t
 \end{figure}
 
 \clearpage
-
 \subsection{Sensitivity to the \acs{SM} Higgs boson}
 \label{sec:mssm_results_125GeV}
 As limits are set on \ac{MSSM} Higgs boson production 
@@ -1595,7 +1633,6 @@ all categories are combined for these limits. The dark and light green bands ind
 the $\pm 1\sigma$ and $\pm 2\sigma$ probability intervals on the expected limit \cite{CMS-PAS-HIG-16-037-addit}.}
 \label{fig:mssm_results_greenband}
 \end{figure}
-
 
 \subsection{2D likelihood scans}
 \label{sec:mssm_results_2D}

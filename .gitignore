@@ -7,6 +7,5 @@ PhDTemplateLATEX
 *.lof
 *.lot
 *.out
-*.pdf
 .DS_Store
 *.nlo
